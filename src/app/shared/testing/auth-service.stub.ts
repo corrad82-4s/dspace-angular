@@ -9,7 +9,8 @@ import { hasValue } from '../empty.util';
 
 export const authMethodsMock = [
   new AuthMethod('password'),
-  new AuthMethod('shibboleth', 'dspace.test/shibboleth')
+  new AuthMethod('shibboleth', 'dspace.test/shibboleth'),
+  new AuthMethod('oidc', 'dspace.test/oidc')
 ];
 
 export class AuthServiceStub {

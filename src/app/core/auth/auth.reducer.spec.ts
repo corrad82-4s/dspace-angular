@@ -487,7 +487,8 @@ describe('authReducer', () => {
     };
     const authMethods = [
       new AuthMethod(AuthMethodType.Password),
-      new AuthMethod(AuthMethodType.Shibboleth, 'location')
+      new AuthMethod(AuthMethodType.Shibboleth, 'location'),
+      new AuthMethod(AuthMethodType.Oidc, 'location'),
     ];
     const action = new RetrieveAuthMethodsSuccessAction(authMethods);
     const newState = authReducer(initialState, action);

@@ -61,6 +61,7 @@ export class AuthInterceptor implements HttpInterceptor {
    * @param http
    */
   private isAuthRequest(http: HttpRequest<any> | HttpResponseBase): boolean {
+    // TODO: verificare se serve aggiungere qualcosa qua
     return http && http.url
       && (http.url.endsWith('/authn/login')
         || http.url.endsWith('/authn/logout')
@@ -139,9 +140,11 @@ export class AuthInterceptor implements HttpInterceptor {
    */
   private parseAuthMethodsFromHeaders(headers: HttpHeaders): AuthMethod[] {
     let authMethodModels: AuthMethod[] = [];
-    if (isNotEmpty(headers.get('www-authenticate'))) {
-      // get the realms from the header -  a realm is a single auth method
-      const completeWWWauthenticateHeader = headers.get('www-authenticate');
+//    if (isNotEmpty(headers.get('www-authenticate'))) {
+  if (isNotEmpty(headers.get('WWW-Authenticate'))) {  
+// get the realms from the header -  a realm is a single auth method
+//      const completeWWWauthenticateHeader = headers.get('www-authenticate');
+      const completeWWWauthenticateHeader = headers.get('WWW-Authenticate');
       const regex = /(\w+ (\w+=((".*?")|[^,]*)(, )?)*)/g;
       const realms = completeWWWauthenticateHeader.match(regex);
 

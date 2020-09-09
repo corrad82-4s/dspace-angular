@@ -186,6 +186,7 @@ import { ItemVersionsComponent } from './item/item-versions/item-versions.compon
 import { SortablejsModule } from 'ngx-sortablejs';
 import { LogInContainerComponent } from './log-in/container/log-in-container.component';
 import { LogInShibbolethComponent } from './log-in/methods/shibboleth/log-in-shibboleth.component';
+import { LogInOidcComponent } from './log-in/methods/oidc/log-in-oidc.component';
 import { LogInPasswordComponent } from './log-in/methods/password/log-in-password.component';
 import { LogInComponent } from './log-in/log-in.component';
 import { CustomSwitchComponent } from './form/builder/ds-dynamic-form-ui/models/custom-switch/custom-switch.component';
