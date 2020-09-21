@@ -11,6 +11,7 @@ import { AdminCurationTasksComponent } from './admin-curation-tasks/admin-curati
 
 const REGISTRIES_MODULE_PATH = 'registries';
 export const ACCESS_CONTROL_MODULE_PATH = 'access-control';
+export const INSTITUTIONS_MODULE_PATH = 'institutions';
 
 export function getRegistriesModulePath() {
   return new URLCombiner(getAdminModulePath(), REGISTRIES_MODULE_PATH).toString();
@@ -23,6 +24,10 @@ export function getAccessControlModulePath() {
 @NgModule({
   imports: [
     RouterModule.forChild([
+      {
+        path: INSTITUTIONS_MODULE_PATH,
+        loadChildren: './admin-institutions/admin-institutions.module#AdminInstitutionsModule'
+      },
       {
         path: REGISTRIES_MODULE_PATH,
         loadChildren: './admin-registries/admin-registries.module#AdminRegistriesModule'

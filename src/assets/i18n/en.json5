@@ -16,11 +16,33 @@
 
   "404.page-not-found": "page not found",
 
+
+
   "admin.curation-tasks.breadcrumbs": "System curation tasks",
 
   "admin.curation-tasks.title": "System curation tasks",
 
   "admin.curation-tasks.header": "System curation tasks",
+
+
+
+  "admin.institution.new.breadcrumbs": "Create Institution",
+
+  "admin.institution.new.error": "An error occurred while creating the new institution",
+
+  "admin.institution.new.header": "Create Institution",
+
+  "admin.institution.new.name": "Name",
+
+  "admin.institution.new.success": "The new institution was successfully created",
+
+  "admin.institution.new.title": "Create Institution",
+
+  "admin.institution.explore.breadcrumbs": "Explore Institutions",
+
+  "admin.institution.explore.title": "Explore Institutions",
+
+
 
   "admin.registries.bitstream-formats.breadcrumbs": "Format registry",
 
@@ -2061,6 +2083,13 @@
   "menu.section.import_batch": "Batch Import (ZIP)",
 
   "menu.section.import_metadata": "Metadata",
+
+
+  "menu.section.institutions": "Institutions",
+
+  "menu.section.institutions_new": "New",
+
+  "menu.section.institutions_explore": "Explore",
 
 
 

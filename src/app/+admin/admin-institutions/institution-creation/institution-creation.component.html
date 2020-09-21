@@ -1,0 +1,10 @@
+<div class="container">
+  <h2> {{ 'admin.institution.new.header' | translate }} </h2>
+  <form [formGroup]="form" (ngSubmit)="submit()">
+    <div class="form-group">
+      <label for="name">{{ 'admin.institution.new.name' | translate }}</label>
+      <input type="text" class="form-control" id="name" formControlName="name" required>
+    </div>
+    <button type="submit" class="btn btn-primary float-right" [disabled]="form.invalid" >Submit</button>
+  </form>
+</div>

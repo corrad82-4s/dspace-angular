@@ -180,6 +180,7 @@ import { ResearcherProfile } from './profile/model/researcher-profile.model';
 import { SectionDataService } from './layout/section-data.service';
 import { Section } from './layout/models/section.model';
 import { SearchConfigResponseParsingService } from './data/search-config-response-parsing.service';
+import { InstitutionDataService } from './institution/institution-data.service';
 
 /**
  * When not in production, endpoint responses can be mocked for testing purposes
@@ -330,7 +331,8 @@ const PROVIDERS = [
   VocabularyTreeviewService,
   SearchcomponentService,
   ResearcherProfileService,
-  SectionDataService
+  SectionDataService,
+  InstitutionDataService
 ];
 
 /**
