@@ -2,10 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
-import { Subscription } from 'rxjs';
-import { getCommunityPageRoute } from 'src/app/+community-page/community-page-routing.module';
+import { BehaviorSubject, Observable, Subscription } from 'rxjs';
+import { getCommunityPageRoute } from 'src/app/+community-page/community-page-routing-paths';
 import { InstitutionDataService } from 'src/app/core/institution/institution-data.service';
 import { NotificationsService } from 'src/app/shared/notifications/notifications.service';
+import { getInstitutionExploreRoute } from '../admin-institutions-routing.module';
 
 /**
  * A component to create a new institution starting from the configured institution template.
@@ -19,6 +20,12 @@ export class InstitutionCreationComponent implements OnInit {
   form: FormGroup;
 
   subs: Subscription[] = [];
+
+ /**
+  * A boolean representing if a create delete operation is pending
+  * @type {BehaviorSubject<boolean>}
+  */
+ processingCreate$: BehaviorSubject<boolean>  = new BehaviorSubject<boolean>(false);
 
   constructor(
     private formBuilder: FormBuilder,
@@ -39,15 +46,26 @@ export class InstitutionCreationComponent implements OnInit {
   }
 
   submit() {
+    this.processingCreate$.next(true);
     const institutionName = this.form.value.name;
     this.subs.push(this.institutionService.createInstitution(institutionName)
       .subscribe((remoteData) => {
+        this.processingCreate$.next(false);
         if (remoteData.hasSucceeded) {
           this.notificationService.success(this.translateService.instant('admin.institution.new.success'));
-          this.router.navigateByUrl(getCommunityPageRoute(remoteData.payload.id));
+          this.router.navigateByUrl(getInstitutionExploreRoute());
         } else {
-          this.notificationService.success(this.translateService.instant('admin.institution.new.error'));
+          this.notificationService.error(this.translateService.instant('admin.institution.new.error'));
         }
       }));
+  }
+
+  /**
+   * Return a boolean representing if a create operation is pending.
+   *
+   * @return {Observable<boolean>}
+   */
+  isProcessingCreate(): Observable<boolean> {
+    return this.processingCreate$.asObservable();
   }
 }

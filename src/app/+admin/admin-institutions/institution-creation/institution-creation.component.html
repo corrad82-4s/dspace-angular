@@ -5,6 +5,14 @@
       <label for="name">{{ 'admin.institution.new.name' | translate }}</label>
       <input type="text" class="form-control" id="name" formControlName="name" required>
     </div>
-    <button type="submit" class="btn btn-primary float-right" [disabled]="form.invalid" >Submit</button>
+    
+    <button type="submit" class="btn btn-primary float-right" [disabled]="form.invalid || (isProcessingCreate() | async)" >
+      <span *ngIf="(isProcessingCreate() | async)">
+        <i class='fas fa-circle-notch fa-spin'></i> {{'admin.institution.new.processing' | translate}}
+      </span>
+      <span *ngIf="!(isProcessingCreate() | async)">
+          {{'admin.institution.new.submit' | translate}}
+      </span>
+    </button>
   </form>
 </div>

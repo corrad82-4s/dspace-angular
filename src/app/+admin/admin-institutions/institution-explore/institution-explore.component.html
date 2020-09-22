@@ -1,3 +1,58 @@
 <div class="container">
-  EXPLORE
+  <h2> {{ 'admin.institution.explore.header' | translate }} </h2>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="container">
+        <ul class="nav flex-column">
+          <li class="nav-item" *ngFor="let institution of (institutions$ | async)">
+            <a [ngClass]="getInstitutionLinkClass(institution)" (click)="changeCurrentInstitution(institution)" [routerLink]="" >
+              {{getName(institution)}}
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-8">
+      <div *ngIf="currentInstitution" class="container">
+        <span class="row m-1">
+          <span class="font-weight-bold col-4">
+            {{ 'admin.institution.explore.name' | translate }}
+          </span>
+          <span class="txt-value col">
+            <span class="row">
+              <a [routerLink]="getCurrentCommunityPath()" >
+                {{getName(currentInstitution)}}
+              </a>
+            </span>
+          </span>
+        </span>
+        <span class="row m-1">
+          <span class="font-weight-bold col-4">
+            {{ 'admin.institution.explore.entities' | translate }}
+          </span>
+          <span class="txt-value col" *ngIf="( getCurrentInstitutionEntities$() | async) as entities">
+            <span class="row" *ngIf="entities.length === 0">  {{ 'admin.institution.explore.no-entities' | translate }} </span>
+            <span class="row" *ngFor="let entity of entities">
+              <a [routerLink]="getCollectionPath(entity)" >
+                {{getName(entity)}}
+              </a>
+            </span>
+          </span>
+        </span>
+        <span class="row m-1">
+          <span class="font-weight-bold col-4">
+            {{ 'admin.institution.explore.roles' | translate }}
+          </span>
+          <span class="txt-value col" *ngIf="getCurrentInstitutionalScopedRoles() as scopedRoles">
+            <span class="row" *ngIf="scopedRoles.length === 0">  {{ 'admin.institution.explore.no-roles' | translate }} </span>
+            <span class="row" *ngFor="let scopedRole of scopedRoles">
+              <a [routerLink]="getGroupPath(scopedRole)" >
+                {{scopedRole.value}}
+              </a>
+            </span>
+          </span>
+        </span>
+      </div>
+    </div>
+  </div>
 </div>

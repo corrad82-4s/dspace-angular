@@ -11,8 +11,9 @@ import { environment } from 'src/environments/environment';
 import { RestResponse, ErrorResponse } from '../cache/response.models';
 import { CommunityDataService } from '../data/community-data.service';
 import { ConfigurationDataService } from '../data/configuration-data.service';
+import { PaginatedList } from '../data/paginated-list';
 import { RemoteData } from '../data/remote-data';
-import { PostRequest } from '../data/request.models';
+import { FindListOptions, PostRequest } from '../data/request.models';
 import { RequestService } from '../data/request.service';
 import { HttpOptions } from '../dspace-rest-v2/dspace-rest-v2.service';
 import { Community } from '../shared/community.model';
@@ -50,19 +51,24 @@ export class InstitutionDataService {
     const href$ = this.communityDataService.getEndpoint();
     combineLatest([template$, href$, parentCommunity$]).pipe(
       map(([template, href, parentCommunity]: [Community, string, Community]) => {
-        const hrefWithParent = `${href}?parent=${parentCommunity.id}`
-        return new PostRequest(requestId, hrefWithParent, template.self, options);
+        const hrefWithParentAndName = `${href}?parent=${parentCommunity.id}&name=${name}`
+        return new PostRequest(requestId, hrefWithParentAndName, template.self, options);
       }),
       configureRequest(this.requestService)
     ).subscribe()
 
     return this.fetchCreateResponse(requestId).pipe(
-      getFirstSucceededRemoteDataPayload(),
-      flatMap((institution: Community) => this.patchInstitutionName(name, institution)),
+      getFinishedRemoteData(),
       catchError((error: Error) => {
         this.notificationsService.error('Server Error:', error.message);
         return createFailedRemoteDataObject$() as Observable<RemoteData<Community>>
       })
+    );
+  }
+
+  findAll(options: FindListOptions): Observable<RemoteData<PaginatedList<Community>>> {
+    return this.getInstitutionsCommunity().pipe(
+      flatMap((parentCommunity) => this.communityDataService.findByParent(parentCommunity.id, options))
     );
   }
 
@@ -89,28 +95,6 @@ export class InstitutionDataService {
     return selfLink$.pipe(
       switchMap((selfLink: string) => this.communityDataService.findByHref(selfLink)),
     )
-  }
-
-  /**
-   * Perform a patch operation to change the institution name
-   * @param name
-   * @param institution
-   * @protected
-   */
-  protected patchInstitutionName(name: string, institution: Community): Observable<RemoteData<Community>> {
-    const operation: ReplaceOperation<string> = {
-      path: '/metadata/dc.title/0',
-      op: 'replace',
-      value: name
-    };
-
-    console.log('institution',institution);
-
-    return this.communityDataService.patch(institution, [operation]).pipe(
-      flatMap( () => this.communityDataService.findById(institution.id)),
-      tap((x) => console.log('tap',x)),
-      getFinishedRemoteData()
-    );
   }
 
   /**

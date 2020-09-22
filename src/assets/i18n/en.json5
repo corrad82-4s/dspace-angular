@@ -34,11 +34,28 @@
 
   "admin.institution.new.name": "Name",
 
+  "admin.institution.new.processing": "Loading",
+
+  "admin.institution.new.submit": "Submit",
+
   "admin.institution.new.success": "The new institution was successfully created",
 
   "admin.institution.new.title": "Create Institution",
+  
 
   "admin.institution.explore.breadcrumbs": "Explore Institutions",
+
+  "admin.institution.explore.header": "Explore Institutions",
+
+  "admin.institution.explore.entities": "Entities",
+
+  "admin.institution.explore.name": "Institution name",
+
+  "admin.institution.explore.no-entities": "No available entities",
+
+  "admin.institution.explore.no-roles": "No available roles",
+
+  "admin.institution.explore.roles": "Roles",
 
   "admin.institution.explore.title": "Explore Institutions",
 
@@ -313,6 +330,8 @@
 
   "admin.access-control.groups.badge.role": "Role",
 
+  "admin.access-control.groups.badge.scoped": "Institutional Scoped Role",
+
   "admin.access-control.groups.title": "DSpace Angular :: Groups",
 
   "admin.access-control.groups.head": "Groups/Roles",
@@ -375,6 +394,8 @@
   "admin.access-control.groups.form.groupType.normal": "Normal type",
 
   "admin.access-control.groups.form.groupType.role": "Role type",
+
+  "admin.access-control.groups.form.groupType.scoped": "Institutional Scoped Role type",
 
   "admin.access-control.groups.form.notification.created.success": "Successfully created Group \"{{name}}\"",
 
