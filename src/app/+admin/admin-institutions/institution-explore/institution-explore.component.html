@@ -6,7 +6,7 @@
         <ul class="nav flex-column">
           <li class="nav-item" *ngFor="let institution of (institutions$ | async)">
             <a [ngClass]="getInstitutionLinkClass(institution)" (click)="changeCurrentInstitution(institution)" [routerLink]="" >
-              {{getName(institution)}}
+              {{institution.name}}
             </a>
           </li>
         </ul>
@@ -21,7 +21,7 @@
           <span class="txt-value col">
             <span class="row">
               <a [routerLink]="getCurrentCommunityPath()" >
-                {{getName(currentInstitution)}}
+                {{currentInstitution.name}}
               </a>
             </span>
           </span>
@@ -34,7 +34,7 @@
             <span class="row" *ngIf="entities.length === 0">  {{ 'admin.institution.explore.no-entities' | translate }} </span>
             <span class="row" *ngFor="let entity of entities">
               <a [routerLink]="getCollectionPath(entity)" >
-                {{getName(entity)}}
+                {{entity.name}}
               </a>
             </span>
           </span>

@@ -1,14 +1,11 @@
 import { HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { ReplaceOperation } from 'fast-json-patch';
-import { Observable, combineLatest } from 'rxjs';
-import { map, flatMap, catchError, distinctUntilChanged, switchMap, tap } from 'rxjs/operators';
+import { combineLatest, Observable } from 'rxjs';
+import { catchError, distinctUntilChanged, flatMap, map, switchMap } from 'rxjs/operators';
 import { isNotEmpty } from 'src/app/shared/empty.util';
 import { NotificationsService } from 'src/app/shared/notifications/notifications.service';
 import { createFailedRemoteDataObject$ } from 'src/app/shared/remote-data.utils';
-import { followLink } from 'src/app/shared/utils/follow-link-config.model';
-import { environment } from 'src/environments/environment';
-import { RestResponse, ErrorResponse } from '../cache/response.models';
+import { ErrorResponse, RestResponse } from '../cache/response.models';
 import { CommunityDataService } from '../data/community-data.service';
 import { ConfigurationDataService } from '../data/configuration-data.service';
 import { PaginatedList } from '../data/paginated-list';
@@ -17,7 +14,7 @@ import { FindListOptions, PostRequest } from '../data/request.models';
 import { RequestService } from '../data/request.service';
 import { HttpOptions } from '../dspace-rest-v2/dspace-rest-v2.service';
 import { Community } from '../shared/community.model';
-import { configureRequest, getFirstSucceededRemoteDataPayload, getResponseFromEntry, getFinishedRemoteData, getRemoteDataPayload } from '../shared/operators';
+import { configureRequest, getFinishedRemoteData, getFirstSucceededRemoteDataPayload, getRemoteDataPayload, getResponseFromEntry } from '../shared/operators';
 
 /**
  * Service to handle institutions.
@@ -77,7 +74,6 @@ export class InstitutionDataService {
     const selfLink$ = this.requestService.getByUUID(requestId).pipe(
       getResponseFromEntry(),
       map((response: RestResponse) => {
-        console.log('response', response);
         if (!response.isSuccessful && response instanceof ErrorResponse) {
           throw new Error(response.errorMessage);
         } else {
