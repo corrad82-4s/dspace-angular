@@ -28,7 +28,7 @@
 
   "admin.institution.new.breadcrumbs": "Create Institution",
 
-  "admin.institution.new.error": "An error occurred while creating the new institution",
+  "admin.institution.new.error": "An error occurred while creating the new institution. Check if the template institution is defined and if an institution with the same name already exists.",
 
   "admin.institution.new.header": "Create Institution",
 

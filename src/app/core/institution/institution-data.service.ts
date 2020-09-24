@@ -56,10 +56,7 @@ export class InstitutionDataService {
 
     return this.fetchCreateResponse(requestId).pipe(
       getFinishedRemoteData(),
-      catchError((error: Error) => {
-        this.notificationsService.error('Server Error:', error.message);
-        return createFailedRemoteDataObject$() as Observable<RemoteData<Community>>
-      })
+      catchError((error: Error) => createFailedRemoteDataObject$() as Observable<RemoteData<Community>>)
     );
   }
 
@@ -74,8 +71,8 @@ export class InstitutionDataService {
     const selfLink$ = this.requestService.getByUUID(requestId).pipe(
       getResponseFromEntry(),
       map((response: RestResponse) => {
-        if (!response.isSuccessful && response instanceof ErrorResponse) {
-          throw new Error(response.errorMessage);
+        if (!response.isSuccessful ) {
+          throw new Error((response as any).errorMessage);
         } else {
           return response;
         }
