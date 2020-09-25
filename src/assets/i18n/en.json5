@@ -8,8 +8,6 @@
 
   "401.unauthorized": "unauthorized",
 
-
-
   "404.help": "We can't find the page you're looking for. The page may have been moved or deleted. You can use the button below to get back to the home page. ",
 
   "404.link.home-page": "Take me to the home page",
@@ -25,6 +23,30 @@
   "admin.curation-tasks.header": "System curation tasks",
 
 
+
+  "admin.edit-user-agreement.breadcrumbs": "Edit User Agreement",
+
+  "admin.edit-user-agreement.confirm.title": "Force acceptance",
+
+  "admin.edit-user-agreement.confirm.info":"Do you want to force all users to accept the new user agreement?",
+
+  "admin.edit-user-agreement.confirm.cancel":"Cancel",
+
+  "admin.edit-user-agreement.confirm.no":"No, update only",
+
+  "admin.edit-user-agreement.confirm.yes":"Yes, update and force",
+
+  "admin.edit-user-agreement.save-button": "Save",
+
+  "admin.edit-user-agreement.header": "Edit User Agreement",
+
+  "admin.edit-user-agreement.success": "User agreement successfully updated",
+
+  "admin.edit-user-agreement.error": "An error occurred while updating the user agreement",
+
+  "admin.edit-user-agreement.title": "Edit User Agreement",
+
+  
 
   "admin.institution.new.breadcrumbs": "Create Institution",
 
@@ -1419,6 +1441,8 @@
 
   "info.end-user-agreement.accept.success": "Successfully updated the End User Agreement",
 
+  "info.end-user-agreement.accept.warning": "Before you can proceed, you must agree to the End User Agreement",
+
   "info.end-user-agreement.breadcrumbs": "End User Agreement",
 
   "info.end-user-agreement.buttons.cancel": "Cancel",
@@ -2218,6 +2242,7 @@
 
   "menu.section.toggle.statistics_task": "Toggle Statistics Task section",
 
+  "menu.section.edit_user_agreement":"Edit User Agreement",
 
   "menu.section.workflow": "Administer Workflow",
 
