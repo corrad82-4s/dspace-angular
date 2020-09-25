@@ -173,6 +173,10 @@ import { VocabularyService } from './submission/vocabularies/vocabulary.service'
 import { VocabularyTreeviewService } from '../shared/vocabulary-treeview/vocabulary-treeview.service';
 import { ConfigurationDataService } from './data/configuration-data.service';
 import { ConfigurationProperty } from './shared/configuration-property.model';
+import { ReloadGuard } from './reload/reload.guard';
+import { EndUserAgreementCurrentUserGuard } from './end-user-agreement/end-user-agreement-current-user.guard';
+import { EndUserAgreementCookieGuard } from './end-user-agreement/end-user-agreement-cookie.guard';
+import { EndUserAgreementService } from './end-user-agreement/end-user-agreement.service';
 import { SearchcomponentService } from './layout/searchcomponent.service';
 import { SearchComponent } from './layout/models/search-component.model';
 import { ResearcherProfileService } from './profile/researcher-profile.service';
@@ -180,6 +184,8 @@ import { ResearcherProfile } from './profile/model/researcher-profile.model';
 import { SectionDataService } from './layout/section-data.service';
 import { Section } from './layout/models/section.model';
 import { SearchConfigResponseParsingService } from './data/search-config-response-parsing.service';
+import { OrcidQueueService } from './orcid/orcid-queue.service';
+import { OrcidQueue } from './orcid/model/orcid-queue.model';
 
 /**
  * When not in production, endpoint responses can be mocked for testing purposes
@@ -307,6 +313,10 @@ const PROVIDERS = [
   MetadataSchemaDataService,
   MetadataFieldDataService,
   TokenResponseParsingService,
+  ReloadGuard,
+  EndUserAgreementCurrentUserGuard,
+  EndUserAgreementCookieGuard,
+  EndUserAgreementService,
   // register AuthInterceptor as HttpInterceptor
   {
     provide: HTTP_INTERCEPTORS,
@@ -330,7 +340,8 @@ const PROVIDERS = [
   VocabularyTreeviewService,
   SearchcomponentService,
   ResearcherProfileService,
-  SectionDataService
+  SectionDataService,
+  OrcidQueueService
 ];
 
 /**
@@ -389,6 +400,7 @@ export const models =
     ConfigurationProperty,
     SearchComponent,
     ResearcherProfile,
+    OrcidQueue,
     Section
   ];
 

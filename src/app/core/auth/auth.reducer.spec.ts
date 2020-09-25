@@ -15,6 +15,7 @@ import {
   RedirectWhenAuthenticationIsRequiredAction,
   RedirectWhenTokenExpiredAction,
   RefreshTokenAction,
+  RefreshTokenAndRedirectSuccessAction,
   RefreshTokenErrorAction,
   RefreshTokenSuccessAction,
   ResetAuthenticationMessagesAction,
@@ -42,6 +43,7 @@ describe('authReducer', () => {
     initialState = {
       authenticated: false,
       loaded: false,
+      blocking: true,
       loading: false,
     };
     const action = new AuthenticateAction('user', 'password');
@@ -49,6 +51,7 @@ describe('authReducer', () => {
     state = {
       authenticated: false,
       loaded: false,
+      blocking: true,
       error: undefined,
       loading: true,
       info: undefined
@@ -62,6 +65,7 @@ describe('authReducer', () => {
       authenticated: false,
       loaded: false,
       error: undefined,
+      blocking: true,
       loading: true,
       info: undefined
     };
@@ -76,6 +80,7 @@ describe('authReducer', () => {
       authenticated: false,
       loaded: false,
       error: undefined,
+      blocking: true,
       loading: true,
       info: undefined
     };
@@ -84,6 +89,7 @@ describe('authReducer', () => {
     state = {
       authenticated: false,
       loaded: false,
+      blocking: false,
       loading: false,
       info: undefined,
       authToken: undefined,
@@ -96,6 +102,7 @@ describe('authReducer', () => {
   it('should properly set the state, in response to a AUTHENTICATED action', () => {
     initialState = {
       authenticated: false,
+      blocking: false,
       loaded: false,
       error: undefined,
       loading: true,
@@ -103,8 +110,15 @@ describe('authReducer', () => {
     };
     const action = new AuthenticatedAction(mockTokenInfo);
     const newState = authReducer(initialState, action);
-
-    expect(newState).toEqual(initialState);
+    state = {
+      authenticated: false,
+      blocking: true,
+      loaded: false,
+      error: undefined,
+      loading: true,
+      info: undefined
+    };
+    expect(newState).toEqual(state);
   });
 
   it('should properly set the state, in response to a AUTHENTICATED_SUCCESS action', () => {
@@ -112,6 +126,7 @@ describe('authReducer', () => {
       authenticated: false,
       loaded: false,
       error: undefined,
+      blocking: true,
       loading: true,
       info: undefined
     };
@@ -122,6 +137,7 @@ describe('authReducer', () => {
       authToken: mockTokenInfo,
       loaded: false,
       error: undefined,
+      blocking: true,
       loading: true,
       info: undefined
     };
@@ -133,6 +149,7 @@ describe('authReducer', () => {
       authenticated: false,
       loaded: false,
       error: undefined,
+      blocking: true,
       loading: true,
       info: undefined
     };
@@ -143,6 +160,7 @@ describe('authReducer', () => {
       authToken: undefined,
       error: 'Test error message',
       loaded: true,
+      blocking: false,
       loading: false,
       info: undefined
     };
@@ -153,6 +171,7 @@ describe('authReducer', () => {
     initialState = {
       authenticated: false,
       loaded: false,
+      blocking: false,
       loading: false,
     };
     const action = new CheckAuthenticationTokenAction();
@@ -160,6 +179,7 @@ describe('authReducer', () => {
     state = {
       authenticated: false,
       loaded: false,
+      blocking: true,
       loading: true,
     };
     expect(newState).toEqual(state);
@@ -169,6 +189,7 @@ describe('authReducer', () => {
     initialState = {
       authenticated: false,
       loaded: false,
+      blocking: false,
       loading: true,
     };
     const action = new CheckAuthenticationTokenCookieAction();
@@ -176,6 +197,7 @@ describe('authReducer', () => {
     state = {
       authenticated: false,
       loaded: false,
+      blocking: true,
       loading: true,
     };
     expect(newState).toEqual(state);
@@ -187,6 +209,7 @@ describe('authReducer', () => {
       authToken: mockTokenInfo,
       loaded: true,
       error: undefined,
+      blocking: false,
       loading: false,
       info: undefined,
       user: EPersonMock
@@ -204,6 +227,7 @@ describe('authReducer', () => {
       authToken: mockTokenInfo,
       loaded: true,
       error: undefined,
+      blocking: false,
       loading: false,
       info: undefined,
       user: EPersonMock
@@ -216,7 +240,8 @@ describe('authReducer', () => {
       authToken: undefined,
       error: undefined,
       loaded: false,
-      loading: false,
+      blocking: true,
+      loading: true,
       info: undefined,
       refreshing: false,
       user: undefined
@@ -230,6 +255,7 @@ describe('authReducer', () => {
       authToken: mockTokenInfo,
       loaded: true,
       error: undefined,
+      blocking: false,
       loading: false,
       info: undefined,
       user: EPersonMock
@@ -242,6 +268,7 @@ describe('authReducer', () => {
       authToken: mockTokenInfo,
       loaded: true,
       error: 'Test error message',
+      blocking: false,
       loading: false,
       info: undefined,
       user: EPersonMock
@@ -255,6 +282,7 @@ describe('authReducer', () => {
       authToken: mockTokenInfo,
       loaded: false,
       error: undefined,
+      blocking: true,
       loading: true,
       info: undefined
     };
@@ -265,6 +293,7 @@ describe('authReducer', () => {
       authToken: mockTokenInfo,
       loaded: true,
       error: undefined,
+      blocking: false,
       loading: false,
       info: undefined,
       user: EPersonMock
@@ -277,6 +306,7 @@ describe('authReducer', () => {
       authenticated: false,
       loaded: false,
       error: undefined,
+      blocking: true,
       loading: true,
       info: undefined
     };
@@ -287,6 +317,7 @@ describe('authReducer', () => {
       authToken: undefined,
       error: 'Test error message',
       loaded: true,
+      blocking: false,
       loading: false,
       info: undefined
     };
@@ -299,6 +330,7 @@ describe('authReducer', () => {
       authToken: mockTokenInfo,
       loaded: true,
       error: undefined,
+      blocking: false,
       loading: false,
       info: undefined,
       user: EPersonMock
@@ -311,6 +343,7 @@ describe('authReducer', () => {
       authToken: mockTokenInfo,
       loaded: true,
       error: undefined,
+      blocking: false,
       loading: false,
       info: undefined,
       user: EPersonMock,
@@ -325,6 +358,7 @@ describe('authReducer', () => {
       authToken: mockTokenInfo,
       loaded: true,
       error: undefined,
+      blocking: false,
       loading: false,
       info: undefined,
       user: EPersonMock,
@@ -338,6 +372,7 @@ describe('authReducer', () => {
       authToken: newTokenInfo,
       loaded: true,
       error: undefined,
+      blocking: false,
       loading: false,
       info: undefined,
       user: EPersonMock,
@@ -352,6 +387,7 @@ describe('authReducer', () => {
       authToken: mockTokenInfo,
       loaded: true,
       error: undefined,
+      blocking: false,
       loading: false,
       info: undefined,
       user: EPersonMock,
@@ -364,6 +400,7 @@ describe('authReducer', () => {
       authToken: undefined,
       error: undefined,
       loaded: false,
+      blocking: false,
       loading: false,
       info: undefined,
       refreshing: false,
@@ -378,6 +415,7 @@ describe('authReducer', () => {
       authToken: mockTokenInfo,
       loaded: true,
       error: undefined,
+      blocking: false,
       loading: false,
       info: undefined,
       user: EPersonMock
@@ -387,6 +425,7 @@ describe('authReducer', () => {
       authenticated: false,
       authToken: undefined,
       loaded: false,
+      blocking: false,
       loading: false,
       error: undefined,
       info: 'Message',
@@ -410,6 +449,7 @@ describe('authReducer', () => {
     initialState = {
       authenticated: false,
       loaded: false,
+      blocking: false,
       loading: false,
     };
     const action = new AddAuthenticationMessageAction('Message');
@@ -417,6 +457,7 @@ describe('authReducer', () => {
     state = {
       authenticated: false,
       loaded: false,
+      blocking: false,
       loading: false,
       info: 'Message'
     };
@@ -427,6 +468,7 @@ describe('authReducer', () => {
     initialState = {
       authenticated: false,
       loaded: false,
+      blocking: false,
       loading: false,
       error: 'Error',
       info: 'Message'
@@ -436,6 +478,7 @@ describe('authReducer', () => {
     state = {
       authenticated: false,
       loaded: false,
+      blocking: false,
       loading: false,
       error: undefined,
       info: undefined
@@ -447,6 +490,7 @@ describe('authReducer', () => {
     initialState = {
       authenticated: false,
       loaded: false,
+      blocking: false,
       loading: false
     };
     const action = new SetRedirectUrlAction('redirect.url');
@@ -454,6 +498,7 @@ describe('authReducer', () => {
     state = {
       authenticated: false,
       loaded: false,
+      blocking: false,
       loading: false,
       redirectUrl: 'redirect.url'
     };
@@ -464,6 +509,7 @@ describe('authReducer', () => {
     initialState = {
       authenticated: false,
       loaded: false,
+      blocking: false,
       loading: false,
       authMethods: []
     };
@@ -472,6 +518,7 @@ describe('authReducer', () => {
     state = {
       authenticated: false,
       loaded: false,
+      blocking: true,
       loading: true,
       authMethods: []
     };
@@ -482,6 +529,7 @@ describe('authReducer', () => {
     initialState = {
       authenticated: false,
       loaded: false,
+      blocking: true,
       loading: true,
       authMethods: []
     };
@@ -494,6 +542,7 @@ describe('authReducer', () => {
     state = {
       authenticated: false,
       loaded: false,
+      blocking: false,
       loading: false,
       authMethods: authMethods
     };
@@ -504,6 +553,7 @@ describe('authReducer', () => {
     initialState = {
       authenticated: false,
       loaded: false,
+      blocking: true,
       loading: true,
       authMethods: []
     };
@@ -513,8 +563,38 @@ describe('authReducer', () => {
     state = {
       authenticated: false,
       loaded: false,
+      blocking: false,
       loading: false,
       authMethods: [new AuthMethod(AuthMethodType.Password)]
+    };
+    expect(newState).toEqual(state);
+  });
+
+  it('should properly set the state, in response to a REFRESH_TOKEN_AND_REDIRECT_SUCCESS action', () => {
+    initialState = {
+      authenticated: true,
+      authToken: mockTokenInfo,
+      loaded: true,
+      error: undefined,
+      blocking: false,
+      loading: false,
+      info: undefined,
+      user: EPersonMock,
+      refreshing: true
+    };
+    const newTokenInfo = new AuthTokenInfo('Refreshed token');
+    const action = new RefreshTokenAndRedirectSuccessAction(newTokenInfo,'/redirect-url');
+    const newState = authReducer(initialState, action);
+    state = {
+      authenticated: true,
+      authToken: newTokenInfo,
+      loaded: true,
+      error: undefined,
+      blocking: false,
+      loading: false,
+      info: undefined,
+      user: EPersonMock,
+      refreshing: false
     };
     expect(newState).toEqual(state);
   });

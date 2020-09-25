@@ -154,4 +154,20 @@ export class AuthServiceStub {
   resetAuthenticationError() {
     return;
   }
+
+  setRedirectUrlIfNotSet(url: string) {
+    return;
+  }
+
+  redirectAfterLoginSuccess() {
+    return;
+  }
+
+  clearRedirectUrl() {
+    return;
+  }
+
+  public replaceToken(token: AuthTokenInfo) {
+    return token;
+  }
 }
