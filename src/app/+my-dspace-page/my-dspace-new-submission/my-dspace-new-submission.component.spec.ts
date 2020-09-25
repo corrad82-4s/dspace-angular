@@ -20,11 +20,11 @@ import { NotificationsServiceStub } from '../../shared/testing/notifications-ser
 import { SharedModule } from '../../shared/shared.module';
 import { getMockScrollToService } from '../../shared/mocks/scroll-to-service.mock';
 import { UploaderService } from '../../shared/uploader/uploader.service';
-import { By } from '@angular/platform-browser';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { HostWindowService } from '../../shared/host-window.service';
 import { HostWindowServiceStub } from '../../shared/testing/host-window-service.stub';
 import { UploaderComponent } from 'src/app/shared/uploader/uploader.component';
+import { By } from '@angular/platform-browser';
 
 describe('MyDSpaceNewSubmissionComponent test', () => {
 
@@ -117,16 +117,6 @@ describe('MyDSpaceNewSubmissionComponent test', () => {
       comp.uploadFilesOptions.url = 'https://fake.upload-api.url';
       comp.uploaderComponent = TestBed.createComponent(UploaderComponent).componentInstance;
       comp.uploaderComponent.uploader = uploader;
-    });
-
-    it('should call app.openDialog', () => {
-      spyOn(comp, 'openDialog');
-      const submissionButton = fixture.debugElement.query(By.css('button.btn-primary'));
-      submissionButton.triggerEventHandler('click', {
-        preventDefault: () => {/**/
-        }
-      });
-      expect(comp.openDialog).toHaveBeenCalled();
     });
 
     it('should show a collection selector if only one file are uploaded', () => {

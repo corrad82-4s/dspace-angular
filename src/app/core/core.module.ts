@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { HTTP_INTERCEPTORS, HttpClient } from '@angular/common/http';
 import { ModuleWithProviders, NgModule, Optional, SkipSelf } from '@angular/core';
+
 import { DynamicFormLayoutService, DynamicFormService, DynamicFormValidationService } from '@ng-dynamic-forms/core';
 import { EffectsModule } from '@ngrx/effects';
 
@@ -15,8 +16,8 @@ import { MenuService } from '../shared/menu/menu.service';
 import { EndpointMockingRestService } from '../shared/mocks/dspace-rest-v2/endpoint-mocking-rest.service';
 import {
   MOCK_RESPONSE_MAP,
-  ResponseMapMock,
-  mockResponseMap
+  mockResponseMap,
+  ResponseMapMock
 } from '../shared/mocks/dspace-rest-v2/mocks/response-map.mock';
 import { NotificationsService } from '../shared/notifications/notifications.service';
 import { SelectableListService } from '../shared/object-list/selectable-list/selectable-list.service';
@@ -80,9 +81,6 @@ import { EPersonDataService } from './eperson/eperson-data.service';
 import { EpersonResponseParsingService } from './eperson/eperson-response-parsing.service';
 import { EPerson } from './eperson/models/eperson.model';
 import { Group } from './eperson/models/group.model';
-import { AuthorityService } from './integration/authority.service';
-import { IntegrationResponseParsingService } from './integration/integration-response-parsing.service';
-import { AuthorityValue } from './integration/models/authority.value';
 import { JsonPatchOperationsBuilder } from './json-patch/builder/json-patch-operations-builder';
 import { MetadataField } from './metadata/metadata-field.model';
 import { MetadataSchema } from './metadata/metadata-schema.model';
@@ -144,7 +142,6 @@ import { ScriptDataService } from './data/processes/script-data.service';
 import { ProcessFilesResponseParsingService } from './data/process-files-response-parsing.service';
 import { WorkflowActionDataService } from './data/workflow-action-data.service';
 import { WorkflowAction } from './tasks/models/workflow-action-object.model';
-import { LocaleInterceptor } from './locale/locale.interceptor';
 import { ItemTemplateDataService } from './data/item-template-data.service';
 import { TemplateItem } from './shared/template-item.model';
 import { Feature } from './shared/feature.model';
@@ -155,13 +152,40 @@ import { SiteAdministratorGuard } from './data/feature-authorization/feature-aut
 import { Registration } from './shared/registration.model';
 import { MetadataSchemaDataService } from './data/metadata-schema-data.service';
 import { MetadataFieldDataService } from './data/metadata-field-data.service';
+import { LocaleInterceptor } from './locale/locale.interceptor';
+import { DsDynamicTypeBindRelationService } from '../shared/form/builder/ds-dynamic-form-ui/ds-dynamic-type-bind-relation.service';
+import { TabDataService } from './layout/tab-data.service';
+import { Tab } from './layout/models/tab.model';
+import { BoxDataService } from './layout/box-data.service';
+import { Box } from './layout/models/box.model';
+import { MetadataComponentsDataService } from './layout/metadata-components-data.service';
+import { MetadataComponent } from './layout/models/metadata-component.model';
 import { TokenResponseParsingService } from './auth/token-response-parsing.service';
 import { SubmissionCcLicenseDataService } from './submission/submission-cc-license-data.service';
 import { SubmissionCcLicence } from './submission/models/submission-cc-license.model';
 import { SubmissionCcLicenceUrl } from './submission/models/submission-cc-license-url.model';
 import { SubmissionCcLicenseUrlDataService } from './submission/submission-cc-license-url-data.service';
+import { VocabularyEntry } from './submission/vocabularies/models/vocabulary-entry.model';
+import { Vocabulary } from './submission/vocabularies/models/vocabulary.model';
+import { VocabularyEntriesResponseParsingService } from './submission/vocabularies/vocabulary-entries-response-parsing.service';
+import { VocabularyEntryDetail } from './submission/vocabularies/models/vocabulary-entry-detail.model';
+import { VocabularyService } from './submission/vocabularies/vocabulary.service';
+import { VocabularyTreeviewService } from '../shared/vocabulary-treeview/vocabulary-treeview.service';
 import { ConfigurationDataService } from './data/configuration-data.service';
 import { ConfigurationProperty } from './shared/configuration-property.model';
+import { ReloadGuard } from './reload/reload.guard';
+import { EndUserAgreementCurrentUserGuard } from './end-user-agreement/end-user-agreement-current-user.guard';
+import { EndUserAgreementCookieGuard } from './end-user-agreement/end-user-agreement-cookie.guard';
+import { EndUserAgreementService } from './end-user-agreement/end-user-agreement.service';
+import { SearchcomponentService } from './layout/searchcomponent.service';
+import { SearchComponent } from './layout/models/search-component.model';
+import { ResearcherProfileService } from './profile/researcher-profile.service';
+import { ResearcherProfile } from './profile/model/researcher-profile.model';
+import { SectionDataService } from './layout/section-data.service';
+import { Section } from './layout/models/section.model';
+import { SearchConfigResponseParsingService } from './data/search-config-response-parsing.service';
+import { OrcidQueueService } from './orcid/orcid-queue.service';
+import { OrcidQueue } from './orcid/model/orcid-queue.model';
 
 /**
  * When not in production, endpoint responses can be mocked for testing purposes
@@ -195,7 +219,7 @@ const PROVIDERS = [
   SiteDataService,
   DSOResponseParsingService,
   { provide: MOCK_RESPONSE_MAP, useValue: mockResponseMap },
-  { provide: DSpaceRESTv2Service, useFactory: restServiceFactory, deps: [MOCK_RESPONSE_MAP, HttpClient]},
+  { provide: DSpaceRESTv2Service, useFactory: restServiceFactory, deps: [MOCK_RESPONSE_MAP, HttpClient] },
   DynamicFormLayoutService,
   DynamicFormService,
   DynamicFormValidationService,
@@ -218,6 +242,7 @@ const PROVIDERS = [
   FacetValueResponseParsingService,
   FacetValueMapResponseParsingService,
   FacetConfigResponseParsingService,
+  SearchConfigResponseParsingService,
   MappedCollectionsReponseParsingService,
   DebugResponseParsingService,
   SearchResponseParsingService,
@@ -237,8 +262,6 @@ const PROVIDERS = [
   SubmissionResponseParsingService,
   SubmissionJsonPatchOperationsService,
   JsonPatchOperationsBuilder,
-  AuthorityService,
-  IntegrationResponseParsingService,
   UploaderService,
   UUIDService,
   NotificationsService,
@@ -263,6 +286,7 @@ const PROVIDERS = [
   ClaimedTaskDataService,
   PoolTaskDataService,
   BitstreamDataService,
+  DsDynamicTypeBindRelationService,
   EntityTypeService,
   ContentSourceResponseParsingService,
   ItemTemplateDataService,
@@ -289,6 +313,10 @@ const PROVIDERS = [
   MetadataSchemaDataService,
   MetadataFieldDataService,
   TokenResponseParsingService,
+  ReloadGuard,
+  EndUserAgreementCurrentUserGuard,
+  EndUserAgreementCookieGuard,
+  EndUserAgreementService,
   // register AuthInterceptor as HttpInterceptor
   {
     provide: HTTP_INTERCEPTORS,
@@ -303,7 +331,17 @@ const PROVIDERS = [
   },
   NotificationsService,
   FilteredDiscoveryPageResponseParsingService,
-  { provide: NativeWindowService, useFactory: NativeWindowFactory }
+  { provide: NativeWindowService, useFactory: NativeWindowFactory },
+  TabDataService,
+  BoxDataService,
+  MetadataComponentsDataService,
+  VocabularyService,
+  VocabularyEntriesResponseParsingService,
+  VocabularyTreeviewService,
+  SearchcomponentService,
+  ResearcherProfileService,
+  SectionDataService,
+  OrcidQueueService
 ];
 
 /**
@@ -334,7 +372,6 @@ export const models =
     SubmissionSectionModel,
     SubmissionUploadsModel,
     AuthStatus,
-    AuthorityValue,
     BrowseEntry,
     BrowseDefinition,
     ClaimedTask,
@@ -354,7 +391,17 @@ export const models =
     Feature,
     Authorization,
     Registration,
-    ConfigurationProperty
+    Tab,
+    Box,
+    MetadataComponent,
+    Vocabulary,
+    VocabularyEntry,
+    VocabularyEntryDetail,
+    ConfigurationProperty,
+    SearchComponent,
+    ResearcherProfile,
+    OrcidQueue,
+    Section
   ];
 
 @NgModule({

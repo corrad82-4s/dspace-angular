@@ -2,14 +2,19 @@ import { distinctUntilChanged, filter, map } from 'rxjs/operators';
 import { ChangeDetectorRef, Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
 import { AbstractControl, FormArray, FormControl, FormGroup } from '@angular/forms';
 
-import { DynamicFormArrayModel, DynamicFormControlEvent, DynamicFormControlModel, DynamicFormGroupModel, DynamicFormLayout, } from '@ng-dynamic-forms/core';
+import {
+  DynamicFormArrayModel,
+  DynamicFormControlEvent,
+  DynamicFormControlModel,
+  DynamicFormGroupModel,
+  DynamicFormLayout,
+} from '@ng-dynamic-forms/core';
 import { findIndex } from 'lodash';
 import { FormBuilderService } from './builder/form-builder.service';
 import { Observable, Subscription } from 'rxjs';
 import { hasValue, isNotEmpty, isNotNull, isNull } from '../empty.util';
 import { FormService } from './form.service';
 import { FormEntry, FormError } from './form.reducer';
-import { DYNAMIC_FORM_CONTROL_TYPE_SCROLLABLE_DROPDOWN } from './builder/ds-dynamic-form-ui/models/scrollable-dropdown/dynamic-scrollable-dropdown.model';
 import { QUALDROP_GROUP_SUFFIX } from './builder/ds-dynamic-form-ui/models/ds-dynamic-qualdrop.model';
 
 const QUALDROP_GROUP_REGEX = new RegExp(`${QUALDROP_GROUP_SUFFIX}_\\d+$`);
@@ -60,6 +65,7 @@ export class FormComponent implements OnDestroy, OnInit {
   @Input() parentFormModel: DynamicFormGroupModel | DynamicFormGroupModel[];
   @Input() formGroup: FormGroup;
   @Input() formLayout = null as DynamicFormLayout;
+  @Input() arrayButtonsStyle: string;
 
   /* tslint:disable:no-output-rename */
   @Output('dfBlur') blur: EventEmitter<DynamicFormControlEvent> = new EventEmitter<DynamicFormControlEvent>();
@@ -150,8 +156,8 @@ export class FormComponent implements OnDestroy, OnInit {
     this.formValid = this.getFormGroupValidStatus();
 
     this.subs.push(this.formGroup.statusChanges.pipe(
-      filter((currentStatus) => this.formValid !== this.getFormGroupValidStatus()))
-      .subscribe((currentStatus) => {
+      filter(() => this.formValid !== this.getFormGroupValidStatus()))
+      .subscribe(() => {
         this.formService.setStatusChanged(this.formId, this.getFormGroupValidStatus());
         this.formValid = this.getFormGroupValidStatus();
       }));
@@ -182,7 +188,6 @@ export class FormComponent implements OnDestroy, OnInit {
               if (field) {
                 const model: DynamicFormControlModel = this.formBuilderService.findById(fieldId, formModel);
                 this.formService.addErrorToField(field, model, error.message);
-                // this.formService.validateAllFormFields(formGroup);
                 this.changeDetectorRef.detectChanges();
 
               }
@@ -316,7 +321,7 @@ export class FormComponent implements OnDestroy, OnInit {
 
     // set that field to the new value
     const model = arrayContext.groups[arrayContext.groups.length - 1].group[0] as any;
-    if (model.type === DYNAMIC_FORM_CONTROL_TYPE_SCROLLABLE_DROPDOWN) {
+    if (model.hasAuthority) {
       model.value = Object.values(value)[0];
       const ctrl = formArrayControl.controls[formArrayControl.length - 1];
       const ctrlValue = ctrl.value;

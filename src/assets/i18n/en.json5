@@ -1,12 +1,12 @@
 {
 
+  "Biography": "English Biography",
+
   "401.help": "You're not authorized to access this page. You can use the button below to get back to the home page.",
 
   "401.link.home-page": "Take me to the home page",
 
   "401.unauthorized": "unauthorized",
-
-
 
   "404.help": "We can't find the page you're looking for. The page may have been moved or deleted. You can use the button below to get back to the home page. ",
 
@@ -14,11 +14,39 @@
 
   "404.page-not-found": "page not found",
 
+
+
   "admin.curation-tasks.breadcrumbs": "System curation tasks",
 
   "admin.curation-tasks.title": "System curation tasks",
 
   "admin.curation-tasks.header": "System curation tasks",
+
+
+
+  "admin.edit-user-agreement.breadcrumbs": "Edit User Agreement",
+
+  "admin.edit-user-agreement.confirm.title": "Force acceptance",
+
+  "admin.edit-user-agreement.confirm.info":"Do you want to force all users to accept the new user agreement?",
+
+  "admin.edit-user-agreement.confirm.cancel":"Cancel",
+
+  "admin.edit-user-agreement.confirm.no":"No, update only",
+
+  "admin.edit-user-agreement.confirm.yes":"Yes, update and force",
+
+  "admin.edit-user-agreement.save-button": "Save",
+
+  "admin.edit-user-agreement.header": "Edit User Agreement",
+
+  "admin.edit-user-agreement.success": "User agreement successfully updated",
+
+  "admin.edit-user-agreement.error": "An error occurred while updating the user agreement",
+
+  "admin.edit-user-agreement.title": "Edit User Agreement",
+
+
 
   "admin.registries.bitstream-formats.breadcrumbs": "Format registry",
 
@@ -108,7 +136,7 @@
 
   "admin.registries.bitstream-formats.table.supportLevel.head": "Support Level",
 
-  "admin.registries.bitstream-formats.title": "DSpace Angular :: Bitstream Format Registry",
+  "admin.registries.bitstream-formats.title": "DSpace Cris Angular :: Bitstream Format Registry",
 
 
 
@@ -136,7 +164,7 @@
 
   "admin.registries.metadata.schemas.table.namespace": "Namespace",
 
-  "admin.registries.metadata.title": "DSpace Angular :: Metadata Registry",
+  "admin.registries.metadata.title": "DSpace Cris Angular :: Metadata Registry",
 
 
 
@@ -188,7 +216,7 @@
 
   "admin.registries.schema.return": "Return",
 
-  "admin.registries.schema.title": "DSpace Angular :: Metadata Schema Registry",
+  "admin.registries.schema.title": "DSpace Cris Angular :: Metadata Schema Registry",
 
 
 
@@ -260,6 +288,10 @@
 
   "admin.access-control.epeople.form.groupsEPersonIsMemberOf": "Member of these groups:",
 
+  "admin.access-control.epeople.form.roles": "Roles",
+
+  "admin.access-control.epeople.form.rolesNoAvailable": "No roles available",
+
   "admin.access-control.epeople.form.table.id": "ID",
 
   "admin.access-control.epeople.form.table.name": "Name",
@@ -273,10 +305,21 @@
   "admin.access-control.epeople.notification.deleted.success": "Successfully deleted EPerson: \"{{name}}\"",
 
 
+  "admin.access-control.groups.badge.disabled": "Disabled",
+
+  "admin.access-control.groups.badge.enabled": "Enabled",
+
+  "admin.access-control.groups.badge.permanent": "Permanent",
+
+  "admin.access-control.groups.badge.institutional": "Institutional Role",
+
+  "admin.access-control.groups.badge.normal": "Normal",
+
+  "admin.access-control.groups.badge.role": "Role",
 
   "admin.access-control.groups.title": "DSpace Angular :: Groups",
 
-  "admin.access-control.groups.head": "Groups",
+  "admin.access-control.groups.head": "Groups/Roles",
 
   "admin.access-control.groups.button.add": "Add group",
 
@@ -296,15 +339,23 @@
 
   "admin.access-control.groups.table.edit": "Edit",
 
+  "admin.access-control.groups.table.edit.buttons.disable": "Disable \"{{name}}\"",
+
   "admin.access-control.groups.table.edit.buttons.edit": "Edit \"{{name}}\"",
 
-  "admin.access-control.groups.table.edit.buttons.remove": "Delete \"{{name}}\"",
+  "admin.access-control.groups.table.type": "Type",
+
+  "admin.access-control.groups.table.status": "Status",
 
   "admin.access-control.groups.no-items": "No groups found with this in their name or this as UUID",
 
   "admin.access-control.groups.notification.deleted.success": "Successfully deleted group \"{{name}}\"",
 
   "admin.access-control.groups.notification.deleted.failure": "Failed to delete group \"{{name}}\"",
+
+  "admin.access-control.groups.notification.edit.success": "Successfully edited group \"{{name}}\"",
+
+  "admin.access-control.groups.notification.edit.failure": "Failed to edit group \"{{name}}\"",
 
 
   "admin.access-control.groups.form.head.create": "Create group",
@@ -314,6 +365,20 @@
   "admin.access-control.groups.form.groupName": "Group name",
 
   "admin.access-control.groups.form.groupDescription": "Description",
+
+  "admin.access-control.groups.form.groupStatus": "Status",
+
+  "admin.access-control.groups.form.groupStatus.enabled": "Enabled",
+
+  "admin.access-control.groups.form.groupStatus.disabled": "Disabled",
+
+  "admin.access-control.groups.form.groupType": "Type",
+
+  "admin.access-control.groups.form.groupType.institutional": "Institutional Role type",
+
+  "admin.access-control.groups.form.groupType.normal": "Normal type",
+
+  "admin.access-control.groups.form.groupType.role": "Role type",
 
   "admin.access-control.groups.form.notification.created.success": "Successfully created Group \"{{name}}\"",
 
@@ -504,14 +569,26 @@
   "bitstream.edit.title": "Edit bitstream",
 
 
-
   "browse.comcol.by.author": "By Author",
 
   "browse.comcol.by.dateissued": "By Issue Date",
 
+  "browse.comcol.by.ouname": "By Name",
+
+  "browse.comcol.by.pjtitle": "By Title",
+
+  "browse.comcol.by.rodept": "By Department",
+
+  "browse.comcol.by.rpdept": "By Department",
+
+  "browse.comcol.by.rpname": "By Name",
+
   "browse.comcol.by.subject": "By Subject",
 
   "browse.comcol.by.title": "By Title",
+
+  "browse.comcol.by.type": "By Type",
+
 
   "browse.comcol.head": "Browse",
 
@@ -521,7 +598,19 @@
 
   "browse.metadata.dateissued": "Issue Date",
 
+  "browse.metadata.ouname" : "Name",
+
+  "browse.metadata.pjtitle" : "Title",
+
+  "browse.metadata.rodept": "Department",
+
+  "browse.metadata.rpdept": "Department",
+
+  "browse.metadata.rpname": "Name",
+
   "browse.metadata.subject": "Subject",
+
+  "browse.metadata.type": "Type",
 
   "browse.metadata.title": "Title",
 
@@ -529,7 +618,19 @@
 
   "browse.metadata.dateissued.breadcrumbs": "Browse by Date",
 
+  "browse.metadata.ouname.breadcrumbs" : "Browse by Name",
+
+  "browse.metadata.pjtitle.breadcrumbs" : "Browse by Title",
+
+  "browse.metadata.rodept.breadcrumbs": "Browse by Department",
+
+  "browse.metadata.rpdept.breadcrumbs" : "Browse by Department",
+
+  "browse.metadata.rpname.breadcrumbs": "Browse by Name",
+
   "browse.metadata.subject.breadcrumbs": "Browse by Subject",
+
+  "browse.metadata.type.breadcrumbs": "Browse by Type",
 
   "browse.metadata.title.breadcrumbs": "Browse by Title",
 
@@ -658,8 +759,6 @@
 
   "collection.edit.logo.upload": "Drop a Collection Logo to upload",
 
-
-
   "collection.edit.notifications.success": "Successfully edited the Collection",
 
   "collection.edit.return": "Return",
@@ -753,6 +852,14 @@
   "collection.form.tableofcontents": "News (HTML)",
 
   "collection.form.title": "Name",
+
+  "collection.form.entityType": "Entity Type",
+
+  "collection.form.errors.entityType.required": "Please choose an entity type for this collection",
+
+  "collection.form.errors.submissionDefinition.required": "Please choose a submission definition for this collection",
+
+  "collection.form.submissionDefinition": "Submission definition",
 
 
 
@@ -936,6 +1043,9 @@
   "community.sub-community-list.head": "Communities of this Community",
 
 
+  "datafile.listelement.badge": "Data File",
+
+  "datapackage.listelement.badge": "Data Package",
 
   "curation-task.task.checklinks.label":  "Check Links in Metadata",
 
@@ -1044,6 +1154,118 @@
   "error.validation.filerequired": "The file upload is mandatory",
 
 
+  "explore.browse-section.title" : "Browse",
+
+  "explore.facet-section.title" : "Discover",
+
+  "explore.index.all" : "All",
+
+  "explore.index.author" : "Author",
+
+  "explore.index.birthDate" : "Birthday",
+
+  "explore.index.dateIssued" : "Date issued",
+
+  "explore.index.dateissued" : "Date issued",
+
+  "explore.index.dc.date.accessioned" : "Date accesioned",
+
+  "explore.index.dc.title" : "Title",
+
+  "explore.index.entityType" : "Entity type",
+
+  "explore.index.familyName" : "Family name",
+
+  "explore.index.givenName" : "Given name",
+
+  "explore.index.has_content_in_original_bundle" : "Has content in original bundle",
+
+  "explore.index.isAuthorOfPublication" : "Publication's author",
+
+  "explore.index.isJournalOfPublication" : "Publication's journal",
+
+  "explore.index.isOrgUnitOfPerson" : "Person's organization",
+
+  "explore.index.isOrgUnitOfProject" : "Project's organization",
+
+  "explore.index.isOrgUnitOfPublication" : "Publication's organization",
+
+  "explore.index.isPersonOfOrgUnit" : "Organization's person",
+
+  "explore.index.isPersonOfProject" : "Project's person",
+
+  "explore.index.isProjectOfOrgUnit" : "Organization's project",
+
+  "explore.index.isProjectOfPerson" : "Person's project",
+
+  "explore.index.isProjectOfPublication" : "Publication's project",
+
+  "explore.index.isPublicationOfAuthor" : "Author's publication",
+
+  "explore.index.isPublicationOfJournalIssue" : "Journal issue's publication",
+
+  "explore.index.isPublicationOfOrgUnit" : "Organization's publication",
+
+  "explore.index.isPublicationOfProject" : "Project's publication",
+
+  "explore.index.itemidentifier" : "Item identifier",
+
+  "explore.index.jobTitle" : "Job title",
+
+  "explore.index.knowsLanguage" : "Knows languages",
+
+  "explore.index.organizationAddressCountry" : "Organization address country",
+
+  "explore.index.organizationAddressLocality" : "Organization address locality",
+
+  "explore.index.organizationFoundingDate" : "Organization founding date",
+
+  "explore.index.organizationLegalName" : "Organization legal name",
+
+  "explore.index.original_bundle_descriptions" : "Original bundle descriptions",
+
+  "explore.index.original_bundle_filenames" : "Original bundle filenames",
+
+  "explore.index.ouname" : "Name",
+
+  "explore.index.pjtitle" : "Title",
+
+  "explore.index.projectinvestigators" : "Project investigators",
+
+  "explore.index.rodept" : "Department",
+
+  "explore.index.rpdept" : "Department",
+
+  "explore.index.rpname" : "Name",
+
+  "explore.index.subject" : "Subject",
+
+  "explore.index.title" : "Title",
+
+  "explore.index.type" : "Type",
+
+  "explore.search-section.fundings.title": "Search Projects",
+
+  "explore.search-section.orgunits.title": "Search Organizations",
+
+  "explore.search-section.publications.title": "Search Research Outputs",
+
+  "explore.search-section.researcherprofiles.title": "Search People",
+
+  "explore.search-section.search-button": "Search",
+
+  "explore.search-section.reset-button": "Reset",
+
+  "explore.fundings.breadcrumbs": "Projects",
+
+  "explore.orgunits.breadcrumbs": "Organizations",
+
+  "explore.publications.breadcrumbs": "Research Outputs",
+
+  "explore.researcherprofiles.breadcrumbs": "People",
+
+  "explore.title": "Explore section",
+
 
   "footer.copyright": "copyright © 2002-{{ year }}",
 
@@ -1144,7 +1366,11 @@
 
   "form.no-value": "No value entered",
 
-  "form.other-information": {},
+  "form.other-information.data-oairecerif_author_affiliation": "Affiliation",
+
+  "form.other-information.data-oairecerif_editor_affiliation": "Affiliation",
+
+  "form.other-information.not-available": "Not available",
 
   "form.remove": "Remove",
 
@@ -1162,11 +1388,37 @@
 
   "home.description": "",
 
-  "home.title": "DSpace Angular :: Home",
+  "home.title": "DSpace Cris Angular :: Home",
 
-  "home.top-level-communities.head": "Communities in DSpace",
+  "home.top-level-communities.head": "Communities in DSpace Cris",
 
   "home.top-level-communities.help": "Select a community to browse its collections.",
+
+
+
+  "info.end-user-agreement.accept": "I have read and I agree to the End User Agreement",
+
+  "info.end-user-agreement.accept.error": "An error occurred accepting the End User Agreement",
+
+  "info.end-user-agreement.accept.success": "Successfully updated the End User Agreement",
+
+  "info.end-user-agreement.accept.warning": "Before you can proceed, you must agree to the End User Agreement",
+
+  "info.end-user-agreement.breadcrumbs": "End User Agreement",
+
+  "info.end-user-agreement.buttons.cancel": "Cancel",
+
+  "info.end-user-agreement.buttons.save": "Save",
+
+  "info.end-user-agreement.head": "End User Agreement",
+
+  "info.end-user-agreement.title": "End User Agreement",
+
+  "info.privacy.breadcrumbs": "Privacy Statement",
+
+  "info.privacy.head": "Privacy Statement",
+
+  "info.privacy.title": "Privacy Statement",
 
 
 
@@ -1678,7 +1930,7 @@
 
   "journal.search.results.head": "Journal Search Results",
 
-  "journal.search.title": "DSpace Angular :: Journal Search",
+  "journal.search.title": "DSpace Cris Angular :: Journal Search",
 
 
 
@@ -1810,17 +2062,15 @@
 
   "menu.section.browse_community_by_title": "By Title",
 
-  "menu.section.browse_global": "All of DSpace",
+  "menu.section.explore_publications": "Research Outputs",
 
-  "menu.section.browse_global_by_author": "By Author",
+  "menu.section.explore_researcherprofiles": "People",
 
-  "menu.section.browse_global_by_dateissued": "By Issue Date",
+  "menu.section.explore_orgunits": "Organizations",
 
-  "menu.section.browse_global_by_subject": "By Subject",
+  "menu.section.explore_fundings": "Projects",
 
-  "menu.section.browse_global_by_title": "By Title",
-
-  "menu.section.browse_global_communities_and_collections": "Communities & Collections",
+  "menu.section.communities_and_collections": "Communities & Collections",
 
 
 
@@ -1948,6 +2198,7 @@
 
   "menu.section.toggle.statistics_task": "Toggle Statistics Task section",
 
+  "menu.section.edit_user_agreement":"Edit User Agreement",
 
   "menu.section.workflow": "Administer Workflow",
 
@@ -2100,13 +2351,100 @@
 
   "person.page.orcid": "ORCID",
 
+  "person.page.orcid.create": "Create an ORCID ID",
+
+  "person.page.orcid.granted-authorizations": "Granted authorizations",
+
+  "person.page.orcid.link": "Connect to ORCID ID",
+
+  "person.page.orcid.missing-authorizations": "Missing authorizations",
+
+  "person.page.orcid.missing-authorizations-message": "The following authorizations are missing:",
+
+  "person.page.orcid.no-missing-authorizations-message": "Great! This box is empty, so you have granted all access rights to use all functions offers by your institution.",
+
+  "person.page.orcid.no-orcid-message": "No ORCID iD associated yet",
+
+  "person.page.orcid.profile-preferences": "Profile preferences",
+
+  "person.page.orcid.project-preferences": "Project preferences",
+
+  "person.page.orcid.publications-preferences": "Publication preferences",
+
+  "person.page.orcid.remove-orcid-message": "If you need to remove your ORCID, please contact the repository administrator",
+
+  "person.page.orcid.save.preference.changes": "Save changes",
+
+  "person.page.orcid.sync-profile.affiliation" : "Affiliation",
+
+  "person.page.orcid.sync-profile.bibliographic" : "Bibliographic data",
+
+  "person.page.orcid.sync-profile.education" : "Education",
+
+  "person.page.orcid.sync-profile.identifiers" : "Identifiers",
+
+  "person.page.orcid.sync-projects.all" : "All projects",
+
+  "person.page.orcid.sync-projects.mine" : "My projects",
+
+  "person.page.orcid.sync-projects.my-selected" : "Selected projects",
+
+  "person.page.orcid.sync-projects.disabled" : "Disabled",
+
+  "person.page.orcid.sync-publications.all" : "All publications",
+
+  "person.page.orcid.sync-publications.mine" : "My publications",
+
+  "person.page.orcid.sync-publications.my-selected" : "Selected publications",
+
+  "person.page.orcid.sync-publications.disabled" : "Disabled",
+
+  "person.page.orcid.sync-queue.delete" : "Delete",
+
+  "person.page.orcid.sync-queue.delete.error": "The deletion of the ORCID queue record failed",
+
+  "person.page.orcid.sync-queue.delete.success": "The ORCID queue record have been deleted successfully",
+
+  "person.page.orcid.sync-queue.empty-message": "The ORCID queue registry is empty",
+
+  "person.page.orcid.sync-queue.entity-name" : "Name",
+
+  "person.page.orcid.sync-queue.send" : "Send",
+
+  "person.page.orcid.sync-queue.send.error": "The submission to ORCID failed",
+
+  "person.page.orcid.sync-queue.send.success": "The submission to ORCID was completed successfully",
+
+  "person.page.orcid.synchronization-mode": "Synchronization mode",
+
+  "person.page.orcid.synchronization-mode.batch": "Batch",
+
+  "person.page.orcid.synchronization-mode.label": "Synchronization mode",
+
+  "person.page.orcid.synchronization-mode-message": "Enable 'Manual' Synchronization mode to disable batch synchronization, so you must send your data to ORCID Registry manually",
+
+  "person.page.orcid.synchronization-settings-update.success": "The synchronization settings have been updated successfully",
+
+  "person.page.orcid.synchronization-settings-update.error": "The update of the synchronization settings failed",
+
+
+  "person.page.orcid.synchronization-mode.manual": "Manual",
+
+  "person.page.orcid.scope.authenticate": "Get your ORCID iD",
+
+  "person.page.orcid.scope.read-limited": "Read your information with visibility set to Trusted Parties",
+
+  "person.page.orcid.scope.activities-update": "Add/update your research activities",
+
+  "person.page.orcid.scope.person-update": "Add/update other information about you",
+
   "person.page.staffid": "Staff ID",
 
   "person.page.titleprefix": "Person: ",
 
   "person.search.results.head": "Person Search Results",
 
-  "person.search.title": "DSpace Angular :: Person Search",
+  "person.search.title": "DSpace Cris Angular :: Person Search",
 
 
 
@@ -2261,6 +2599,8 @@
 
   "profile.card.security": "Security",
 
+  "profile.card.researcher": "Researcher Profile",
+
   "profile.form.submit": "Update Profile",
 
   "profile.groups.head": "Authorization groups you belong to",
@@ -2351,7 +2691,7 @@
 
   "publication.search.results.head": "Publication Search Results",
 
-  "publication.search.title": "DSpace Angular :: Publication Search",
+  "publication.search.title": "DSpace Cris Angular :: Publication Search",
 
 
   "register-email.title": "New user registration",
@@ -2448,6 +2788,28 @@
   "relationships.isVolumeOf": "Journal Volumes",
 
   "relationships.isContributorOf": "Contributors",
+
+
+
+  "researcher.profile.action.processing" : "Processing...",
+
+  "researcher.profile.associated": "Researcher profile associated",
+
+  "researcher.profile.create.new": "Create new",
+
+  "researcher.profile.delete": "Delete",
+
+  "researcher.profile.expose": "Expose",
+
+  "researcher.profile.hide": "Hide",
+
+  "researcher.profile.not.associated": "Researcher profile not yet associated",
+
+  "researcher.profile.view": "View",
+
+  "researcher.profile.private.visibility" : "PRIVATE",
+
+  "researcher.profile.public.visibility" : "PUBLIC",
 
 
 
@@ -2549,7 +2911,7 @@
 
   "search.switch-configuration.title": "Show",
 
-  "search.title": "DSpace Angular :: Search",
+  "search.title": "DSpace Cris Angular :: Search",
 
   "search.breadcrumbs": "Search",
 
@@ -2813,6 +3175,45 @@
   "submission.import-external.preview.error.import.title": "Submission error",
 
   "submission.import-external.preview.error.import.body": "An error occurs during the external source entry import process.",
+  "submission.sections.detect-duplicate.clear-decision": "Undo",
+
+  "submission.sections.detect-duplicate.clear-decision-help": "Click for clear the decision about this pontential duplicate",
+
+  "submission.sections.detect-duplicate.confirm-duplicate": "Confirm (It's a duplicate)",
+
+  "submission.sections.detect-duplicate.confirm-not-duplicate": "Confirm (It's not a duplicate)",
+
+  "submission.sections.detect-duplicate.decision-success-notice": "Choice registered successfully",
+
+  "submission.sections.detect-duplicate.disclaimer": "The system has identified some potential duplicates. Please carefully review the list and flag each occurency with the appropriate choice or discard this submission.",
+
+  "submission.sections.detect-duplicate.disclaimer-ctrl": "The system has identified some potential duplicates. Please carefully review the list and the submitter comments and perform the appropriate action.",
+
+  "submission.sections.detect-duplicate.disclaimer-no-match": "All your feedback on potential duplicates have been registered correctly.",
+
+  "submission.sections.detect-duplicate.duplicate": "It's a duplicate",
+
+  "submission.sections.detect-duplicate.duplicate-ctrl": "Mark the record to merge",
+
+  "submission.sections.detect-duplicate.duplicate-detected": "Potential duplicate detected",
+
+  "submission.sections.detect-duplicate.duplicate-help": "Click here if this is a duplicate of your item",
+
+  "submission.sections.detect-duplicate.note-help": "Please enter your reason for the duplication into the box below.",
+
+  "submission.sections.detect-duplicate.note-placeholder": "Describe the reason of duplication",
+
+  "submission.sections.detect-duplicate.no-decision": "No decision yet",
+
+  "submission.sections.detect-duplicate.not-duplicate": "It's not a duplicate",
+
+  "submission.sections.detect-duplicate.not-duplicate-help": "Click here if this is not a duplicate of your item",
+
+  "submission.sections.detect-duplicate.submitter-decision": "Submitter decision:",
+
+  "submission.sections.detect-duplicate.submitter-note": "Submitter note:",
+
+
 
   "submission.sections.describe.relationship-lookup.close": "Close",
 
@@ -3012,6 +3413,38 @@
 
   "submission.sections.submit.progressbar.CClicense": "Creative commons license",
 
+  "submission.sections.submit.progressbar.describe.equipment": "Equipment basic information",
+
+  "submission.sections.submit.progressbar.describe.event": "Event basic information",
+
+  "submission.sections.submit.progressbar.describe.journal": "Journal basic information",
+
+  "submission.sections.submit.progressbar.describe.orgunit": "Org Unit basic information",
+
+  "submission.sections.submit.progressbar.describe.patent": "Patent basic information",
+
+  "submission.sections.submit.progressbar.describe.patent_indexing": "Patent indexing",
+
+  "submission.sections.submit.progressbar.describe.patent_references": "Patent references",
+
+  "submission.sections.submit.progressbar.describe.product": "Product basic information",
+
+  "submission.sections.submit.progressbar.describe.product_indexing": "Product indexing",
+
+  "submission.sections.submit.progressbar.describe.product_references": "Product references",
+
+  "submission.sections.submit.progressbar.describe.project": "Project basic information",
+
+  "submission.sections.submit.progressbar.describe.publication": "Publication basic information",
+
+  "submission.sections.submit.progressbar.describe.publication_bibliographic_details": "Publication bibliographic details",
+
+  "submission.sections.submit.progressbar.describe.publication_indexing": "Publication indexing",
+
+  "submission.sections.submit.progressbar.describe.publication_references": "Publication references",
+
+  "submission.sections.submit.progressbar.describe.rp": "Researcher basic information",
+
   "submission.sections.submit.progressbar.describe.recycle": "Recycle",
 
   "submission.sections.submit.progressbar.describe.stepcustom": "Describe",
@@ -3140,7 +3573,46 @@
 
 
 
-  "title": "DSpace",
+  "title": "DSpace Cris",
+
+
+
+  "tree.description.srsc": "Research Subject Categories",
+
+
+
+  "treeview.header": "Hierarchical tree view",
+
+
+
+  "treeview.search.form.reset": "Reset",
+
+  "treeview.search.form.search": "Search",
+
+  "treeview.search.no-result": "There were no items to show",
+
+
+
+  "treeview.load-more": "Load more",
+
+
+
+
+
+  "vocabulary-treeview.header": "Hierarchical tree view",
+
+  "vocabulary-treeview.load-more": "Load more",
+
+  "vocabulary-treeview.search.form.reset": "Reset",
+
+  "vocabulary-treeview.search.form.search": "Search",
+
+  "vocabulary-treeview.search.no-result": "There were no items to show",
+
+  "vocabulary-treeview.tree.description.nsi": "The Norwegian Science Index",
+
+  "vocabulary-treeview.tree.description.srsc": "Research Subject Categories",
+
 
 
   "administrativeView.search.results.head": "Administrative Search",
@@ -3202,6 +3674,12 @@
 
   "workflow-item.send-back.button.cancel": "Cancel",
 
-  "workflow-item.send-back.button.confirm": "Send back"
+  "workflow-item.send-back.button.confirm": "Send back",
+
+  "relation.rp.researchoutputs.search.results.head": "Related Publications",
+
+  "relation.rp.projects.search.results.head": "Related Projects",
+
+  "layout.i18n.link.default": "link"
 }
 

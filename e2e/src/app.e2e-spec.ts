@@ -7,10 +7,10 @@ describe('protractor App', () => {
     page = new ProtractorPage();
   });
 
-  it('should display translated title "DSpace Angular :: Home"', () => {
+  it('should display translated title "DSpace Cris Angular :: Home"', () => {
     page.navigateTo();
     page.waitUntilNotLoading();
-    expect<any>(page.getPageTitleText()).toEqual('DSpace Angular :: Home');
+    expect<any>(page.getPageTitleText()).toEqual('DSpace Cris Angular :: Home');
   });
 
   it('should contain a news section', () => {

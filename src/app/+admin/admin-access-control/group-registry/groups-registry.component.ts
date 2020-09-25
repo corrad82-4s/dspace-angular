@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
+
 import { TranslateService } from '@ngx-translate/core';
 import { Observable } from 'rxjs';
-import { take } from 'rxjs/operators';
+import { take, first } from 'rxjs/operators';
+
 import { PaginatedList } from '../../../core/data/paginated-list';
 import { RemoteData } from '../../../core/data/remote-data';
 import { EPersonDataService } from '../../../core/eperson/eperson-data.service';
@@ -14,6 +16,8 @@ import { RouteService } from '../../../core/services/route.service';
 import { hasValue } from '../../../shared/empty.util';
 import { NotificationsService } from '../../../shared/notifications/notifications.service';
 import { PaginationComponentOptions } from '../../../shared/pagination/pagination-component-options.model';
+import { MetadataValue } from 'src/app/core/shared/metadata.models';
+import { ReplaceOperation, Operation } from 'fast-json-patch';
 
 @Component({
   selector: 'ds-groups-registry',
@@ -94,9 +98,6 @@ export class GroupsRegistryComponent implements OnInit {
    * Delete Group
    */
   deleteGroup(group: Group) {
-    // TODO (backend)
-    console.log('TODO implement editGroup', group);
-    this.notificationsService.error('TODO implement deleteGroup (not yet implemented in backend)');
     if (hasValue(group.id)) {
       this.groupService.deleteGroup(group).pipe(take(1)).subscribe((success: boolean) => {
         if (success) {
@@ -151,4 +152,64 @@ export class GroupsRegistryComponent implements OnInit {
   getOptionalComColFromName(groupName: string): string {
     return this.groupService.getUUIDFromString(groupName);
   }
+
+  /**
+   * Returns the type of the given group (lowercase).
+   * @param group the group whose type to calculate
+   */
+  getGroupType(group: Group): string {
+    const type = group.firstMetadataValue('perucris.group.type');
+    if (!type) {
+      return 'normal';
+    }
+    return type.toLowerCase();
+  }
+
+  /**
+   * Returns true if the given group is enabled.
+   * @param group the group to check
+   */
+  isEnabled(group: Group): boolean {
+    const status = group.firstMetadataValue('perucris.group.status');
+    return !status || status.toUpperCase() === 'ENABLED';
+  }
+
+  /**
+   * Toggle the given group status.
+   *
+   * @param group the group to edit
+   */
+  toggleGroupStatus(group: Group) {
+    const nextStatus: string = this.isEnabled(group) ? 'DISABLED' : 'ENABLED';
+    const path = '/metadata/perucris.group.status';
+    let operation: Operation = null;
+    if ( group.hasMetadata('perucris.group.status')) {
+      operation = {
+        path: path,
+        op: 'replace',
+        value: nextStatus
+      };
+    } else {
+      operation = {
+        path: path,
+        op: 'add',
+        value: nextStatus
+      };
+    }
+
+    this.groupService.patch(group, [operation])
+      .pipe(first())
+      .subscribe((response: any) => {
+        if (response.isSuccessful) {
+          const msg = this.translateService.get('admin.access-control.groups.notification.edit.success', { name: group.name });
+          this.notificationsService.success( msg );
+          this.groupService.clearGroupLinkRequests(group._links.subgroups.href);
+          this.groupService.clearGroupLinkRequests(group._links.epersons.href);
+        } else {
+          const msg = this.translateService.get('admin.access-control.groups.notification.edit.failure', { name: group.name });
+          this.notificationsService.error( msg );
+        }
+      });
+  }
+
 }

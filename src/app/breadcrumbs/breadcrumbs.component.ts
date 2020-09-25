@@ -24,6 +24,11 @@ export class BreadcrumbsComponent implements OnInit {
    */
   showBreadcrumbs: boolean;
 
+  /**
+   * Whether or not to show breadcrumbs with a fluid container
+   */
+  showBreadcrumbsFluid: boolean;
+
   constructor(
     private route: ActivatedRoute,
     private router: Router
@@ -55,6 +60,11 @@ export class BreadcrumbsComponent implements OnInit {
         this.showBreadcrumbs = data.showBreadcrumbs;
       } else if (isUndefined(data.breadcrumb)) {
         this.showBreadcrumbs = false;
+      }
+      if (hasValue(data.showBreadcrumbsFluid)) {
+        this.showBreadcrumbsFluid = data.showBreadcrumbsFluid;
+      } else {
+        this.showBreadcrumbsFluid = false;
       }
     }
 

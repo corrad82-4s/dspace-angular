@@ -54,7 +54,6 @@ script:
   - ng lint || travis_terminate 1;
   - travis_wait yarn run build:prod || travis_terminate 1;
   - yarn test:headless || travis_terminate 1;
-  - yarn run e2e:ci || travis_terminate 1;
 
 after_script:
   # Shutdown docker after everything runs

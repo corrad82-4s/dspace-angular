@@ -45,12 +45,16 @@ describe('GroupFormComponent', () => {
   let groups;
   let groupName;
   let groupDescription;
+  let groupType;
+  let groupStatus;
   let expected;
 
   beforeEach(async(() => {
     groups = [GroupMock, GroupMock2]
     groupName = 'testGroupName';
     groupDescription = 'testDescription';
+    groupType = 'NORMAL';
+    groupStatus = 'ENABLED';
     expected = Object.assign(new Group(), {
       name: groupName,
       metadata: {
@@ -59,6 +63,16 @@ describe('GroupFormComponent', () => {
             value: groupDescription
           }
         ],
+        'perucris.group.type': [
+          {
+            value: groupType
+          }
+        ],
+        'perucris.group.status': [
+          {
+            value: groupStatus
+          }
+        ]
       },
     });
     ePersonDataServiceStub = {};
@@ -135,6 +149,8 @@ describe('GroupFormComponent', () => {
       spyOn(component.submitForm, 'emit');
       component.groupName.value = groupName;
       component.groupDescription.value = groupDescription;
+      component.groupType.value = groupType;
+      component.groupStatus.value = groupStatus;
     });
     describe('without active Group', () => {
       beforeEach(() => {

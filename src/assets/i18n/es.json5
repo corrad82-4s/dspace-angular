@@ -1,5 +1,7 @@
 {
 
+  "Biography": "Spanish Biography",
+
   // "404.help": "We can't find the page you're looking for. The page may have been moved or deleted. You can use the button below to get back to the home page. ",
   "404.help": "No es posible encontrar la página que busca. La página puede haber sido movida o eliminada. Puede utilizar el botón de abajo para regresar a la página de inicio. ",
 
@@ -1197,7 +1199,7 @@
 
   // "communityList.title": "List of Communities",
   // TODO New key - Add a translation
-  "communityList.title": "List of Communities",
+  "communityList.title": "Lista de comunidades",
 
   // "communityList.showMore": "Show More",
   // TODO New key - Add a translation
@@ -2514,7 +2516,15 @@
   // "menu.section.browse_global_communities_and_collections": "Communities & Collections",
   "menu.section.browse_global_communities_and_collections": "Comunidades & Colecciones",
 
+  "menu.section.explore_publications": "Resultados de la investigación",
 
+  "menu.section.explore_researcherprofiles": "Personas",
+
+  "menu.section.explore_orgunits": "Organizaciones",
+
+  "menu.section.explore_fundings": "Proyectos",
+
+  "menu.section.communities_and_collections": "Comunidades & Colecciones",
 
   // "menu.section.control_panel": "Control Panel",
   "menu.section.control_panel": "Panel de Control",
@@ -2595,7 +2605,7 @@
   // "menu.section.icon.unpin": "Unpin sidebar",
   "menu.section.icon.unpin": "Unpin sidebar",
 
-
+  "menu.section.processes": "Procesos",
 
   // "menu.section.import": "Import",
   "menu.section.import": "Importar",

@@ -33,6 +33,10 @@ import { SubmissionImportExternalSearchbarComponent } from './import-external/im
 import { SubmissionImportExternalPreviewComponent } from './import-external/import-external-preview/submission-import-external-preview.component';
 import { SubmissionImportExternalCollectionComponent } from './import-external/import-external-collection/submission-import-external-collection.component';
 import { SubmissionSectionCcLicensesComponent } from './sections/cc-license/submission-section-cc-licenses.component';
+import { CoreState } from '../core/core.reducers';
+import { SubmissionSectionDetectDuplicateComponent } from './sections/detect-duplicate/section-detect-duplicate.component';
+import { DuplicateMatchComponent } from './sections/detect-duplicate/duplicate-match/duplicate-match.component';
+import { DetectDuplicateService } from './sections/detect-duplicate/detect-duplicate.service';
 
 @NgModule({
   imports: [
@@ -50,6 +54,7 @@ import { SubmissionSectionCcLicensesComponent } from './sections/cc-license/subm
     SubmissionSectionLicenseComponent,
     SubmissionSectionCcLicensesComponent,
     SectionsDirective,
+    SubmissionSectionContainerComponent,
     SubmissionEditComponent,
     SubmissionFormSectionAddComponent,
     SubmissionFormCollectionComponent,
@@ -64,7 +69,9 @@ import { SubmissionSectionCcLicensesComponent } from './sections/cc-license/subm
     SubmissionImportExternalComponent,
     SubmissionImportExternalSearchbarComponent,
     SubmissionImportExternalPreviewComponent,
-    SubmissionImportExternalCollectionComponent
+    SubmissionImportExternalCollectionComponent,
+    SubmissionSectionDetectDuplicateComponent,
+    DuplicateMatchComponent
   ],
   entryComponents: [
     SubmissionSectionUploadComponent,
@@ -73,7 +80,8 @@ import { SubmissionSectionCcLicensesComponent } from './sections/cc-license/subm
     SubmissionSectionContainerComponent,
     SubmissionImportExternalPreviewComponent,
     SubmissionImportExternalCollectionComponent,
-    SubmissionSectionCcLicensesComponent
+    SubmissionSectionCcLicensesComponent,
+    SubmissionSectionDetectDuplicateComponent
   ],
   exports: [
     SubmissionEditComponent,
@@ -84,7 +92,8 @@ import { SubmissionSectionCcLicensesComponent } from './sections/cc-license/subm
   providers: [
     SectionUploadService,
     SectionsService,
-    SubmissionUploadsConfigService
+    SubmissionUploadsConfigService,
+    DetectDuplicateService
   ]
 })
 

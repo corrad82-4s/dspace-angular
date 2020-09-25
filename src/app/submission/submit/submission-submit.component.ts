@@ -11,6 +11,7 @@ import { SubmissionService } from '../submission.service';
 import { SubmissionObject } from '../../core/submission/models/submission-object.model';
 import { Collection } from '../../core/shared/collection.model';
 import { Item } from '../../core/shared/item.model';
+import { WorkspaceitemSectionsObject } from '../../core/submission/models/workspaceitem-sections.model';
 
 /**
  * This component allows to submit a new workspaceitem.
@@ -34,6 +35,18 @@ export class SubmissionSubmitComponent implements OnDestroy, OnInit {
    * @type {string}
    */
   public collectionParam: string;
+
+  /**
+   * The list of submission's sections
+   * @type {WorkspaceitemSectionsObject}
+   */
+  public sections: WorkspaceitemSectionsObject;
+
+  /**
+   * The entity type input to create a new submission
+   * @type {string}
+   */
+  public entityTypeParam: string;
 
   /**
    * The submission self url
@@ -79,7 +92,10 @@ export class SubmissionSubmitComponent implements OnDestroy, OnInit {
               private route: ActivatedRoute) {
     this.route
       .queryParams
-      .subscribe((params) => { this.collectionParam = (params.collection); });
+      .subscribe((params) => {
+        this.collectionParam = (params.collection);
+        this.entityTypeParam = (params.entityType);
+      });
   }
 
   /**
@@ -88,7 +104,7 @@ export class SubmissionSubmitComponent implements OnDestroy, OnInit {
   ngOnInit() {
     // NOTE execute the code on the browser side only, otherwise it is executed twice
     this.subs.push(
-      this.submissionService.createSubmission(this.collectionParam)
+      this.submissionService.createSubmission(this.collectionParam, this.entityTypeParam)
         .subscribe((submissionObject: SubmissionObject) => {
           // NOTE new submission is created on the browser side only
           if (isNotNull(submissionObject)) {
@@ -97,6 +113,7 @@ export class SubmissionSubmitComponent implements OnDestroy, OnInit {
               this.router.navigate(['/mydspace']);
             } else {
               this.collectionId = (submissionObject.collection as Collection).id;
+              this.sections = submissionObject.sections;
               this.selfUrl = submissionObject._links.self.href;
               this.submissionDefinition = (submissionObject.submissionDefinition as SubmissionDefinitionsModel);
               this.submissionId = submissionObject.id;

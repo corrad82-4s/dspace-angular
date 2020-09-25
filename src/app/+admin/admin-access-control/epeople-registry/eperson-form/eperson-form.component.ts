@@ -1,30 +1,31 @@
-import { Component, EventEmitter, OnDestroy, OnInit, Output } from '@angular/core';
+import { ChangeDetectorRef, Component, EventEmitter, OnDestroy, OnInit, Output, ViewRef } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import {
+  DynamicCheckboxGroupModel,
   DynamicCheckboxModel,
   DynamicFormControlModel,
   DynamicFormLayout,
   DynamicInputModel
 } from '@ng-dynamic-forms/core';
 import { TranslateService } from '@ngx-translate/core';
-import { Subscription, combineLatest, of } from 'rxjs';
+import { combineLatest, of, Subscription } from 'rxjs';
 import { Observable } from 'rxjs/internal/Observable';
-import { switchMap, take } from 'rxjs/operators';
+import { map, take, tap } from 'rxjs/operators';
+import { AuthService } from '../../../../core/auth/auth.service';
 import { RestResponse } from '../../../../core/cache/response.models';
+import { AuthorizationDataService } from '../../../../core/data/feature-authorization/authorization-data.service';
 import { PaginatedList } from '../../../../core/data/paginated-list';
 import { RemoteData } from '../../../../core/data/remote-data';
 import { EPersonDataService } from '../../../../core/eperson/eperson-data.service';
 import { GroupDataService } from '../../../../core/eperson/group-data.service';
 import { EPerson } from '../../../../core/eperson/models/eperson.model';
 import { Group } from '../../../../core/eperson/models/group.model';
-import { getRemoteDataPayload, getSucceededRemoteData } from '../../../../core/shared/operators';
+import { getFirstSucceededRemoteDataPayload, getFirstSucceededRemoteListPayload, getPaginatedListPayload, getRemoteDataPayload, getSucceededRemoteData } from '../../../../core/shared/operators';
 import { hasValue } from '../../../../shared/empty.util';
 import { FormBuilderService } from '../../../../shared/form/builder/form-builder.service';
 import { NotificationsService } from '../../../../shared/notifications/notifications.service';
 import { PaginationComponentOptions } from '../../../../shared/pagination/pagination-component-options.model';
-import { AuthService } from '../../../../core/auth/auth.service';
-import { AuthorizationDataService } from '../../../../core/data/feature-authorization/authorization-data.service';
-import { FeatureID } from '../../../../core/data/feature-authorization/feature-id';
+import { EpersonRegistrationService } from 'src/app/core/data/eperson-registration.service';
 
 @Component({
   selector: 'ds-eperson-form',
@@ -53,6 +54,11 @@ export class EPersonFormComponent implements OnInit, OnDestroy {
   firstName: DynamicInputModel;
   lastName: DynamicInputModel;
   email: DynamicInputModel;
+  /**
+   * Dynamic checkbox group model for the eperson roles.
+   */
+  roles: DynamicCheckboxGroupModel;
+  institutionalScopedRoles: DynamicCheckboxGroupModel[];
   // booleans
   canLogIn: DynamicCheckboxModel;
   requireCertificate: DynamicCheckboxModel;
@@ -77,6 +83,11 @@ export class EPersonFormComponent implements OnInit, OnDestroy {
       }
     },
     email: {
+      grid: {
+        host: 'row'
+      }
+    },
+    roles: {
       grid: {
         host: 'row'
       }
@@ -107,12 +118,6 @@ export class EPersonFormComponent implements OnInit, OnDestroy {
    * An EventEmitter that's fired whenever the form is cancelled
    */
   @Output() cancelForm: EventEmitter<any> = new EventEmitter();
-
-  /**
-   * Observable whether or not the admin is allowed to reset the EPerson's password
-   * TODO: Initialize the observable once the REST API supports this (currently hardcoded to return false)
-   */
-  canReset$: Observable<boolean> = of(false);
 
   /**
    * Observable whether or not the admin is allowed to delete the EPerson
@@ -154,13 +159,19 @@ export class EPersonFormComponent implements OnInit, OnDestroy {
    */
   isImpersonated = false;
 
+  /**
+   * A map between the id of Institutional scoped roles and the related Institutional roles.
+   */
+  institutionalRoleMap = new Map<string,Group>();
+
   constructor(public epersonService: EPersonDataService,
               public groupsDataService: GroupDataService,
               private formBuilderService: FormBuilderService,
               private translateService: TranslateService,
               private notificationsService: NotificationsService,
               private authService: AuthService,
-              private authorizationService: AuthorizationDataService) {
+              private epersonRegistrationService: EpersonRegistrationService,
+              private changeDetectorRef: ChangeDetectorRef) {
     this.subs.push(this.epersonService.getActiveEPerson().subscribe((eperson: EPerson) => {
       this.epersonInitial = eperson;
       if (hasValue(eperson)) {
@@ -174,10 +185,17 @@ export class EPersonFormComponent implements OnInit, OnDestroy {
       this.translateService.get(`${this.messagePrefix}.firstName`),
       this.translateService.get(`${this.messagePrefix}.lastName`),
       this.translateService.get(`${this.messagePrefix}.email`),
+      this.translateService.get(`${this.messagePrefix}.roles`),
+      this.translateService.get(`${this.messagePrefix}.rolesNoAvailable`),
       this.translateService.get(`${this.messagePrefix}.canLogIn`),
       this.translateService.get(`${this.messagePrefix}.requireCertificate`),
       this.translateService.get(`${this.messagePrefix}.emailHint`),
-    ).subscribe(([firstName, lastName, email, canLogIn, requireCertificate, emailHint]) => {
+      this.groupsDataService.searchGroups('ROLE:').pipe(getFirstSucceededRemoteListPayload()),
+      this.groupsDataService.searchGroups('INSTITUTIONAL:').pipe(getFirstSucceededRemoteListPayload()),
+      this.epersonService.getActiveEPerson()
+    ).subscribe(([firstName, lastName, email, roles, rolesNoAvailable, canLogIn, requireCertificate,
+                  emailHint, roleGroups, institutionalRoleGroups, eperson]) => {
+
       this.firstName = new DynamicInputModel({
         id: 'firstName',
         label: firstName,
@@ -207,6 +225,12 @@ export class EPersonFormComponent implements OnInit, OnDestroy {
         required: true,
         hint: emailHint
       });
+      this.roles = new DynamicCheckboxGroupModel({
+        id: 'roles',
+        label: roles,
+        name: 'roles',
+        group: this.initDynamicCheckboxModels(roleGroups, rolesNoAvailable)
+      });
       this.canLogIn = new DynamicCheckboxModel(
         {
           id: 'canLogIn',
@@ -221,32 +245,97 @@ export class EPersonFormComponent implements OnInit, OnDestroy {
           name: 'requireCertificate',
           value: (this.epersonInitial != null ? this.epersonInitial.requireCertificate : false)
         });
-      this.formModel = [
-        this.firstName,
-        this.lastName,
-        this.email,
-        this.canLogIn,
-        this.requireCertificate,
-      ];
-      this.formGroup = this.formBuilderService.createFormGroup(this.formModel);
-      this.subs.push(this.epersonService.getActiveEPerson().subscribe((eperson: EPerson) => {
-        if (eperson != null) {
-          this.groups = this.groupsDataService.findAllByHref(eperson._links.groups.href, {
-            currentPage: 1,
-            elementsPerPage: this.config.pageSize
+
+      const institutionalScopedRoleSearchSubs: Array<Observable<{'scopes': Group[], 'name': string }>> = [];
+      for (const institutionalRoleGroup of institutionalRoleGroups) {
+        institutionalScopedRoleSearchSubs.push( this.groupsDataService.findAllByHref(institutionalRoleGroup._links.subgroups.href)
+            .pipe (getFirstSucceededRemoteDataPayload(),
+                   getPaginatedListPayload(),
+                   tap((groups) => {
+                    for (const group of groups) {
+                      this.institutionalRoleMap.set(group.id, institutionalRoleGroup);
+                    }
+                   }),
+                   map( (groups) => {
+                      return { scopes: groups, name: institutionalRoleGroup.name}
+                   })));
+      }
+
+      this.institutionalScopedRoles = [];
+
+      if (institutionalScopedRoleSearchSubs.length === 0) {
+        this.setupForm(eperson);
+      }
+
+      combineLatest(institutionalScopedRoleSearchSubs).subscribe((institutionalRoles) => {
+        for (const institutionalRole of institutionalRoles) {
+          const checkboxGroupModel = new DynamicCheckboxGroupModel({
+            id: institutionalRole.name,
+            label: institutionalRole.name,
+            name: institutionalRole.name,
+            group: this.initDynamicCheckboxModels(institutionalRole.scopes, rolesNoAvailable)
           });
+
+          this.institutionalScopedRoles.push( checkboxGroupModel );
+          this.formLayout[institutionalRole.name] = { grid: { host: 'row' } };
+
+          if (eperson != null) {
+            const epersonRoles = eperson.allMetadata('perucris.eperson.institutional-scoped-role');
+            for (const checkboxModel of checkboxGroupModel.group) {
+              for (const epersonRole of epersonRoles) {
+                if ( checkboxModel.id === epersonRole.authority ) {
+                  checkboxModel.value = true;
+                }
+              }
+            }
+          }
+
+          this.setupForm(eperson);
         }
-        this.formGroup.patchValue({
-          firstName: eperson != null ? eperson.firstMetadataValue('eperson.firstname') : '',
-          lastName: eperson != null ? eperson.firstMetadataValue('eperson.lastname') : '',
-          email: eperson != null ? eperson.email : '',
-          canLogIn: eperson != null ? eperson.canLogIn : true,
-          requireCertificate: eperson != null ? eperson.requireCertificate : false
+
+      });
+
+      if (eperson != null) {
+        this.groups = this.groupsDataService.findAllByHref(eperson._links.groups.href, {
+          currentPage: 1,
+          elementsPerPage: this.config.pageSize
         });
-      }));
-      this.canImpersonate$ = this.epersonService.getActiveEPerson().pipe(
-        switchMap((eperson) => this.authorizationService.isAuthorized(FeatureID.LoginOnBehalfOf, hasValue(eperson) ? eperson.self : undefined))
-      );
+
+        const epersonRoles = eperson.allMetadata('perucris.eperson.role');
+        for (const checkboxModel of this.roles.group) {
+          for (const epersonRole of epersonRoles) {
+            if ( checkboxModel.id === epersonRole.authority ) {
+              checkboxModel.value = true;
+            }
+          }
+        }
+      }
+
+    });
+  }
+
+  private setupForm(eperson: EPerson) {
+    this.formModel = [
+      this.firstName,
+      this.lastName,
+      this.email,
+      this.roles,
+      ...this.institutionalScopedRoles,
+      this.canLogIn,
+      this.requireCertificate,
+    ];
+    this.formGroup = this.formBuilderService.createFormGroup(this.formModel);
+    if (!(this.changeDetectorRef as ViewRef).destroyed) {
+      this.changeDetectorRef.detectChanges();
+    }
+
+    this.formGroup.patchValue({
+      firstName: eperson != null ? eperson.firstMetadataValue('eperson.firstname') : '',
+      lastName: eperson != null ? eperson.firstMetadataValue('eperson.lastname') : '',
+      email: eperson != null ? eperson.email : '',
+      roles: eperson != null ? this.initRoleValues(eperson, 'perucris.eperson.role') : {},
+      canLogIn: eperson != null ? eperson.canLogIn : true,
+      requireCertificate: eperson != null ? eperson.requireCertificate : false
     });
   }
 
@@ -279,6 +368,9 @@ export class EPersonFormComponent implements OnInit, OnDestroy {
                 value: this.lastName.value
               },
             ],
+            'perucris.eperson.role' : this.getSelectedRoles(),
+            'perucris.eperson.institutional-role' : this.getSelectedInstitutionalRoles(),
+            'perucris.eperson.institutional-scoped-role' : this.getSelectedInstitutionalScopedRoles()
           },
           email: this.email.value,
           canLogIn: this.canLogIn.value,
@@ -332,6 +424,9 @@ export class EPersonFormComponent implements OnInit, OnDestroy {
             value: (this.lastName.value ? this.lastName.value : ePerson.firstMetadataValue('eperson.lastname'))
           },
         ],
+        'perucris.eperson.role' : this.getSelectedRoles(),
+        'perucris.eperson.institutional-role' : this.getSelectedInstitutionalRoles(),
+        'perucris.eperson.institutional-scoped-role' : this.getSelectedInstitutionalScopedRoles()
       },
       email: (hasValue(values.email) ? values.email : ePerson.email),
       canLogIn: (hasValue(values.canLogIn) ? values.canLogIn : ePerson.canLogIn),
@@ -414,10 +509,106 @@ export class EPersonFormComponent implements OnInit, OnDestroy {
   }
 
   /**
+   * Sends an email to current eperson address with the information
+   * to reset password
+   */
+  resetPassword() {
+    if (hasValue(this.epersonInitial.email)) {
+      this.epersonRegistrationService.registerEmail(this.epersonInitial.email).subscribe((response: RestResponse) => {
+        if (response.isSuccessful) {
+          this.notificationsService.success(this.translateService.get('admin.access-control.epeople.actions.reset'),
+            this.translateService.get('forgot-email.form.success.content', {email: this.epersonInitial.email}));
+        } else {
+          this.notificationsService.error(this.translateService.get('forgot-email.form.error.head'),
+            this.translateService.get('forgot-email.form.error.content', {email: this.epersonInitial.email}));
+        }
+      }
+    );
+    }
+  }
+
+  /**
    * Cancel the current edit when component is destroyed & unsub all subscriptions
    */
   ngOnDestroy(): void {
     this.onCancel();
     this.subs.filter((sub) => hasValue(sub)).forEach((sub) => sub.unsubscribe());
+  }
+
+  private initRoleValues(eperson: EPerson, roleMetadata: string) {
+    const roleValues = {}
+    eperson.allMetadata(roleMetadata)
+      .forEach((metadata) => roleValues[metadata.authority] = true);
+    return roleValues;
+  }
+
+  private initDynamicCheckboxModels(groups: Group[], rolesNoAvailable): DynamicCheckboxModel[] {
+    const roleCheckboxModels = groups.map( (group) =>
+      new DynamicCheckboxModel({
+        id: group.id,
+        label: group.name,
+        value: false
+      },
+      {
+        element: {
+          control: 'btn-outline-info'
+      }
+      })
+    );
+    if ( roleCheckboxModels.length === 0) {
+      roleCheckboxModels.push(new DynamicCheckboxModel({
+        id: 'rolesNoAvailable',
+        label: rolesNoAvailable,
+        value: false,
+        disabled: true
+      }));
+    }
+    return roleCheckboxModels;
+  }
+
+  private getSelectedRoles() {
+    return this.roles.group
+      .filter((model) => model.value === true)
+      .map((model) => new Object({
+        value: model.label,
+        authority: model.name,
+        confidence: 600
+      }));
+  }
+
+  private getSelectedInstitutionalRoles() {
+    const roles = [];
+    const institutionalRoleIds = [];
+    for (const institutionalScopedRole of this.institutionalScopedRoles) {
+      roles.push(...institutionalScopedRole.group
+        .filter((model) => model.value === true)
+        .map((model) => this.institutionalRoleMap.get(model.name))
+        .filter((institutionalRole) => {
+          const includes = institutionalRoleIds.includes(institutionalRole.id);
+          institutionalRoleIds.push(institutionalRole.id);
+          return !includes;
+        })
+        .map((institutionalRole) => new Object({
+            value: institutionalRole.name,
+            authority: institutionalRole.id,
+            confidence: 600
+          })
+        ));
+    }
+    return roles;
+  }
+
+  private getSelectedInstitutionalScopedRoles() {
+    const roles = [];
+    for (const institutionalScopedRole of this.institutionalScopedRoles) {
+      roles.push(...institutionalScopedRole.group
+        .filter((model) => model.value === true)
+        .map((model) => new Object({
+          value: model.label,
+          authority: model.name,
+          confidence: 600
+        })));
+    }
+    return roles;
   }
 }

@@ -8,9 +8,7 @@
 
   </div>
   <div class="add">
-    <button class="btn btn-lg btn-primary mt-1 ml-2" (click)="openDialog()" role="button" title="{{'mydspace.new-submission' | translate}}">
-      <i class="fa fa-plus-circle" aria-hidden="true"></i>
-    </button>
+    <ds-my-dspace-new-submission-dropdown></ds-my-dspace-new-submission-dropdown>
   </div>
   <div class="add">
     <a class="btn btn-lg btn-primary mt-1 ml-2" [routerLink]="['/import-external']" role="button" title="{{'mydspace.new-submission-external' | translate}}">

@@ -231,6 +231,117 @@ describe('EPersonDataService', () => {
         expect(requestService.configure).toHaveBeenCalledWith(expected);
       });
     });
+
+    describe('add role', () => {
+      const role = {
+        value: 'User Role',
+        confidence: 600,
+        authority: '3d27c6d2-16b6-4c3b-bf35-50a340619cb4'
+      };
+
+      beforeEach(() => {
+        const changedEPerson = Object.assign(new EPerson(), {
+          id: EPersonMock.id,
+          metadata: {
+            'eperson.firstname': [
+              {
+                value: EPersonMock.firstMetadataValue('eperson.firstname'),
+              }
+            ],
+            'eperson.lastname': [
+              {
+                value: EPersonMock.firstMetadataValue('eperson.lastname'),
+              },
+            ],
+            'perucris.eperson.role': [ role ],
+          },
+          email: EPersonMock.email,
+          canLogIn: EPersonMock.canLogIn,
+          requireCertificate: EPersonMock.requireCertificate,
+          _links: EPersonMock._links,
+        });
+        service.updateEPerson(changedEPerson).subscribe();
+      });
+      it('should send PatchRequest with add role metadata operations', () => {
+        const operations = [{ op: 'add', path: '/metadata/perucris.eperson.role', value: role }];
+        const expected = new PatchRequest(requestService.generateRequestId(), epersonsEndpoint + '/' + EPersonMock.uuid, operations);
+        expect(requestService.configure).toHaveBeenCalledWith(expected);
+      });
+    });
+
+    describe('add institutional role', () => {
+      const role = {
+        value: 'Institutional Role',
+        confidence: 600,
+        authority: '3d27c6d2-16b6-4c3b-bf35-50a340619cb4'
+      };
+
+      beforeEach(() => {
+        const changedEPerson = Object.assign(new EPerson(), {
+          id: EPersonMock.id,
+          metadata: {
+            'eperson.firstname': [
+              {
+                value: EPersonMock.firstMetadataValue('eperson.firstname'),
+              }
+            ],
+            'eperson.lastname': [
+              {
+                value: EPersonMock.firstMetadataValue('eperson.lastname'),
+              },
+            ],
+            'perucris.eperson.institutional-role': [ role ],
+          },
+          email: EPersonMock.email,
+          canLogIn: EPersonMock.canLogIn,
+          requireCertificate: EPersonMock.requireCertificate,
+          _links: EPersonMock._links,
+        });
+        service.updateEPerson(changedEPerson).subscribe();
+      });
+      it('should send PatchRequest with add institutional role metadata operations', () => {
+        const operations = [{ op: 'add', path: '/metadata/perucris.eperson.institutional-role', value: role }];
+        const expected = new PatchRequest(requestService.generateRequestId(), epersonsEndpoint + '/' + EPersonMock.uuid, operations);
+        expect(requestService.configure).toHaveBeenCalledWith(expected);
+      });
+    });
+
+    describe('add institutional scoped role', () => {
+      const role = {
+        value: 'Role A - University X',
+        confidence: 600,
+        authority: '3d27c6d2-16b6-4c3b-bf35-50a340619cb4'
+      };
+
+      beforeEach(() => {
+        const changedEPerson = Object.assign(new EPerson(), {
+          id: EPersonMock.id,
+          metadata: {
+            'eperson.firstname': [
+              {
+                value: EPersonMock.firstMetadataValue('eperson.firstname'),
+              }
+            ],
+            'eperson.lastname': [
+              {
+                value: EPersonMock.firstMetadataValue('eperson.lastname'),
+              },
+            ],
+            'perucris.eperson.institutional-scoped-role': [ role ],
+          },
+          email: EPersonMock.email,
+          canLogIn: EPersonMock.canLogIn,
+          requireCertificate: EPersonMock.requireCertificate,
+          _links: EPersonMock._links,
+        });
+        service.updateEPerson(changedEPerson).subscribe();
+      });
+      it('should send PatchRequest with add institutional scoped role metadata operations', () => {
+        const operations = [{ op: 'add', path: '/metadata/perucris.eperson.institutional-scoped-role', value: role }];
+        const expected = new PatchRequest(requestService.generateRequestId(), epersonsEndpoint + '/' + EPersonMock.uuid, operations);
+        expect(requestService.configure).toHaveBeenCalledWith(expected);
+      });
+    });
   });
 
   describe('clearEPersonRequests', () => {

@@ -1,5 +1,5 @@
-import { Inject, Injectable } from '@angular/core';
-import { HttpHeaders } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { HttpHeaders, HttpParams } from '@angular/common/http';
 import { Router } from '@angular/router';
 
 import { Observable, of as observableOf, Subscription, timer as observableTimer } from 'rxjs';
@@ -8,7 +8,7 @@ import { Store } from '@ngrx/store';
 import { TranslateService } from '@ngx-translate/core';
 
 import { submissionSelector, SubmissionState } from './submission.reducers';
-import { hasValue, isEmpty, isNotUndefined } from '../shared/empty.util';
+import { hasValue, isEmpty, isNotEmpty, isNotUndefined } from '../shared/empty.util';
 import {
   CancelSubmissionFormAction,
   ChangeSubmissionCollectionAction,
@@ -28,7 +28,6 @@ import {
   SubmissionSectionObject
 } from './objects/submission-objects.reducer';
 import { submissionObjectFromIdSelector } from './selectors';
-import { GlobalConfig } from '../../config/global-config.interface';
 import { HttpOptions } from '../core/dspace-rest-v2/dspace-rest-v2.service';
 import { SubmissionRestService } from '../core/submission/submission-rest.service';
 import { SectionDataObject } from './sections/models/section-data.model';
@@ -47,6 +46,8 @@ import { RequestService } from '../core/data/request.service';
 import { SearchService } from '../core/shared/search/search.service';
 import { Item } from '../core/shared/item.model';
 import { environment } from '../../environments/environment';
+import { NotificationOptions } from '../shared/notifications/models/notification-options.model';
+import { ScrollToConfigOptions, ScrollToService } from '@nicky-lenaers/ngx-scroll-to';
 
 /**
  * A service that provides methods used in submission process.
@@ -68,11 +69,11 @@ export class SubmissionService {
   private workflowLinkPath = 'workflowitems';
   /**
    * Initialize service variables
-   * @param {GlobalConfig} EnvConfig
    * @param {NotificationsService} notificationsService
    * @param {SubmissionRestService} restService
    * @param {Router} router
    * @param {RouteService} routeService
+   * @param {ScrollToService} scrollToService
    * @param {Store<SubmissionState>} store
    * @param {TranslateService} translate
    * @param {SearchService} searchService
@@ -83,6 +84,7 @@ export class SubmissionService {
               protected router: Router,
               protected routeService: RouteService,
               protected store: Store<SubmissionState>,
+              protected scrollToService: ScrollToService,
               protected translate: TranslateService,
               protected searchService: SearchService,
               protected requestService: RequestService) {
@@ -105,11 +107,46 @@ export class SubmissionService {
    *
    * @param collectionId
    *    The owning collection id
+   * @param entityType
+   *    The entity type
    * @return Observable<SubmissionObject>
    *    observable of SubmissionObject
    */
-  createSubmission(collectionId?: string): Observable<SubmissionObject> {
-    return this.restService.postToEndpoint(this.workspaceLinkPath, {}, null, null, collectionId).pipe(
+  createSubmission(collectionId?: string, entityType?: string,): Observable<SubmissionObject> {
+    const paramsObj = Object.create({});
+
+    if (isNotEmpty(entityType)) {
+      paramsObj.entityType = entityType;
+    }
+
+    const params = new HttpParams({fromObject: paramsObj});
+    const options: HttpOptions = Object.create({});
+    options.params = params;
+    return this.restService.postToEndpoint(this.workspaceLinkPath, {}, null, options, collectionId).pipe(
+      map((workspaceitem: SubmissionObject[]) => workspaceitem[0] as SubmissionObject),
+      catchError(() => observableOf({} as SubmissionObject)))
+  }
+
+  /**
+   * Perform a REST call to create a new workspaceitem for a specified collection and return response
+   *
+   * @param collectionId
+   *    The collection id
+   * @return Observable<SubmissionObject>
+   *    observable of SubmissionObject
+   */
+  createSubmissionForCollection(collectionId: string): Observable<SubmissionObject> {
+    const paramsObj = Object.create({});
+
+    if (isNotEmpty(collectionId)) {
+      paramsObj.collection = collectionId;
+    }
+
+    const params = new HttpParams({fromObject: paramsObj});
+    const options: HttpOptions = Object.create({});
+    options.params = params;
+
+    return this.restService.postToEndpoint(this.workspaceLinkPath, {}, null, options).pipe(
       map((workspaceitem: SubmissionObject[]) => workspaceitem[0] as SubmissionObject),
       catchError(() => observableOf({} as SubmissionObject)))
   }
@@ -431,6 +468,21 @@ export class SubmissionService {
   }
 
   /**
+   * Return the save-decision status of the submission
+   *
+   * @param submissionId
+   *    The submission id
+   * @return Observable<boolean>
+   *    observable with submission save-decision status
+   */
+  getSubmissionDuplicateDecisionProcessingStatus(submissionId: string): Observable<boolean> {
+    return this.getSubmissionObject(submissionId).pipe(
+      map((state: SubmissionObjectEntry) => state.saveDecisionPending),
+      distinctUntilChanged(),
+      startWith(false));
+  }
+
+  /**
    * Return the visibility status of the specified section
    *
    * @param sectionData
@@ -469,8 +521,20 @@ export class SubmissionService {
    *    The section type
    */
   notifyNewSection(submissionId: string, sectionId: string, sectionType?: SectionsType) {
-    const m = this.translate.instant('submission.sections.general.metadata-extracted-new-section', { sectionId });
-    this.notificationsService.info(null, m, null, true);
+    if (sectionType === SectionsType.DetectDuplicate || sectionId === 'detect-duplicate') {
+      this.setActiveSection(submissionId, sectionId);
+      const msg = this.translate.instant('submission.sections.detect-duplicate.duplicate-detected', { sectionId });
+      this.notificationsService.warning(null, msg, new NotificationOptions(10000));
+      const config: ScrollToConfigOptions = {
+        target: sectionId,
+        offset: -70
+      };
+
+      this.scrollToService.scrollTo(config);
+    } else {
+      const m = this.translate.instant('submission.sections.general.metadata-extracted-new-section', { sectionId });
+      this.notificationsService.info(null, m, null, true);
+    }
   }
 
   /**

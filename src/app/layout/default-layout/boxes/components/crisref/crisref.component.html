@@ -1,0 +1,17 @@
+<span class="{{containerStyle}}">
+  <span class="{{labelStyle}}">
+    {{label | translate}}
+  </span>
+  <span class="{{valueStyle}}">
+    <a
+      *ngFor="let ref of references"
+      href="{{ref.link}}"
+      rel="noopener noreferrer"
+      [routerLink]="['/items/' + ref.id]">
+      {{ref.value}} <i class="{{ref.icon}}"></i>
+    </a>
+    <span *ngFor="let t of text">
+      {{t}}
+    </span>
+  </span>
+</span>

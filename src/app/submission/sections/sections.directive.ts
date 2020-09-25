@@ -9,6 +9,7 @@ import { hasValue, isNotEmpty, isNotNull } from '../../shared/empty.util';
 import { SubmissionSectionError, SubmissionSectionObject } from '../objects/submission-objects.reducer';
 import parseSectionErrorPaths, { SectionErrorPath } from '../utils/parseSectionErrorPaths';
 import { SubmissionService } from '../submission.service';
+import { SectionsType } from './sections-type';
 
 /**
  * Directive for handling generic section functionality
@@ -30,6 +31,12 @@ export class SectionsDirective implements OnDestroy, OnInit {
    * @type {string}
    */
   @Input() sectionId: string;
+
+  /**
+   * The section type
+   * @type {SectionsType}
+   */
+  @Input() sectionType: SectionsType;
 
   /**
    * The submission id
@@ -104,7 +111,7 @@ export class SectionsDirective implements OnDestroy, OnInit {
       }));
 
     this.subs.push(
-      this.sectionService.getSectionState(this.submissionId, this.sectionId).pipe(
+      this.sectionService.getSectionState(this.submissionId, this.sectionId, this.sectionType).pipe(
         map((state: SubmissionSectionObject) => state.errors))
         .subscribe((errors: SubmissionSectionError[]) => {
           if (isNotEmpty(errors)) {
@@ -220,7 +227,7 @@ export class SectionsDirective implements OnDestroy, OnInit {
    *    Emits true whenever section is valid
    */
   public removeSection(submissionId: string, sectionId: string) {
-    this.sectionService.removeSection(submissionId, sectionId)
+    this.sectionService.dispatchRemoveSection(submissionId, sectionId)
   }
 
   /**

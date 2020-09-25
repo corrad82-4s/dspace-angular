@@ -1,6 +1,7 @@
 <ng-container [formGroup]="group">
     <div [dynamicId]="bindId && model.id"
          [formArrayName]="model.id"
+         [class.d-none]="model.hidden"
          [ngClass]="getClass('element', 'control')">
         <div role="group"
              formGroupName="0" [ngClass]="[getClass('element', 'group'), getClass('grid', 'group')]">
@@ -31,6 +32,8 @@
 <ng-template #controlContainer let-idx>
     <ds-dynamic-form-control-container *ngFor="let _model of model.groups[idx].group"
                                        [bindId]="false"
+                                       [formGroup]="group"
+                                       [formModel]="formModel"
                                        [context]="model.groups[idx]"
                                        [group]="control.get([idx])"
                                        [hidden]="_model.hidden"

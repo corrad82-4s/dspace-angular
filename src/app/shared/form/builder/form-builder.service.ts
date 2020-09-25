@@ -10,8 +10,10 @@ import {
   DynamicFormArrayModel,
   DynamicFormControlModel,
   DynamicFormGroupModel,
-  DynamicFormService, DynamicFormValidationService,
-  DynamicPathable, parseReviver,
+  DynamicFormService,
+  DynamicFormValidationService,
+  DynamicPathable,
+  parseReviver,
 } from '@ng-dynamic-forms/core';
 import { isObject, isString, mergeWith } from 'lodash';
 
@@ -24,17 +26,33 @@ import { DynamicRelationGroupModel } from './ds-dynamic-form-ui/models/relation-
 import { DynamicRowArrayModel } from './ds-dynamic-form-ui/models/ds-dynamic-row-array-model';
 import { DsDynamicInputModel } from './ds-dynamic-form-ui/models/ds-dynamic-input.model';
 import { FormFieldMetadataValueObject } from './models/form-field-metadata-value.model';
-import { isNgbDateStruct } from '../../date.util';
+import { dateToString, isNgbDateStruct } from '../../date.util';
 import { DYNAMIC_FORM_CONTROL_TYPE_RELATION_GROUP } from './ds-dynamic-form-ui/ds-dynamic-form-constants';
 
 @Injectable()
 export class FormBuilderService extends DynamicFormService {
+
+  private typeBindModel: DynamicFormControlModel;
+
+  /**
+   * This map contains the active forms model
+   */
+  private formModels: Map<string, DynamicFormControlModel[]>;
 
   constructor(
     validationService: DynamicFormValidationService,
     protected rowParser: RowParser
   ) {
     super(validationService);
+    this.formModels = new Map();
+  }
+
+  getTypeBindModel() {
+    return this.typeBindModel
+  }
+
+  setTypeBindModel(model: DynamicFormControlModel) {
+    this.typeBindModel = model;
   }
 
   findById(id: string, groupModel: DynamicFormControlModel[], arrayIndex = null): DynamicFormControlModel | null {
@@ -110,6 +128,8 @@ export class FormBuilderService extends DynamicFormService {
       const controlLanguage = (controlModel as DsDynamicInputModel).hasLanguages ? (controlModel as DsDynamicInputModel).language : null;
       if (isString(controlValue)) {
         return new FormFieldMetadataValueObject(controlValue, controlLanguage, null, null, controlModelIndex);
+      } else if (isNgbDateStruct(controlValue)) {
+        return new FormFieldMetadataValueObject(dateToString(controlValue))
       } else if (isObject(controlValue)) {
         const authority = (controlValue as any).authority || (controlValue as any).id || null;
         const place = controlModelIndex || (controlValue as any).place;
@@ -202,7 +222,7 @@ export class FormBuilderService extends DynamicFormService {
     return result;
   }
 
-  modelFromConfiguration(submissionId: string, json: string | SubmissionFormsModel, scopeUUID: string, sectionData: any = {}, submissionScope?: string, readOnly = false): DynamicFormControlModel[] | never {
+  modelFromConfiguration(submissionId: string, json: string | SubmissionFormsModel, scopeUUID: string, sectionData: any = {}, submissionScope?: string, readOnly = false, typeBindModel = null): DynamicFormControlModel[] | never {
     let rows: DynamicFormControlModel[] = [];
     const rawData = typeof json === 'string' ? JSON.parse(json, parseReviver) : json;
 
@@ -219,6 +239,13 @@ export class FormBuilderService extends DynamicFormService {
       });
     }
 
+    if (isNull(typeBindModel)) {
+      typeBindModel = this.findById('dc_type', rows);
+    }
+
+    if (typeBindModel !== null) {
+      this.setTypeBindModel(typeBindModel);
+    }
     return rows;
   }
 
@@ -301,6 +328,41 @@ export class FormBuilderService extends DynamicFormService {
     }
 
     return (tempModel.id !== tempModel.name) ? tempModel.name : tempModel.id;
+  }
+
+  /**
+   * Add new form model to formModels map
+   * @param id id of model
+   * @param model model
+   */
+  addFormModel(id: string, model: DynamicFormControlModel[]): void {
+    this.formModels.set(id, model);
+  }
+
+  /**
+   * If present, remove form model from formModels map
+   * @param id id of model
+   */
+  removeFormModel(id: string): void {
+    if (this.formModels.has(id)) {
+      this.formModels.delete(id);
+    }
+  }
+
+  /**
+   * This method searches a field in all forms instantiate by section-form.component
+   * and, if find it, update its value
+   * @param fieldId id of field to update
+   * @param value new value to set
+   */
+  updateValue(fieldId: string, value: any) {
+    this.formModels.forEach( (model, formId) => {
+      const fieldModel: any = this.findById(fieldId, model);
+      if (hasValue(fieldModel)) {
+        fieldModel.valueUpdates.next(value);
+        return;
+      }
+    });
   }
 
 }

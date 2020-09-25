@@ -44,8 +44,8 @@
             <tr>
               <th scope="col">{{messagePrefix + 'table.id' | translate}}</th>
               <th scope="col">{{messagePrefix + 'table.name' | translate}}</th>
-              <th scope="col">{{messagePrefix + 'table.members' | translate}}</th>
-              <!--              <th scope="col">{{messagePrefix + 'table.comcol' | translate}}</th>-->
+              <th scope="col">{{messagePrefix + 'table.status' | translate}}</th>
+              <th scope="col">{{messagePrefix + 'table.type' | translate}}</th>
               <th>{{messagePrefix + 'table.edit' | translate}}</th>
             </tr>
             </thead>
@@ -53,8 +53,12 @@
             <tr *ngFor="let group of (groups | async)?.payload?.page">
               <td>{{group.id}}</td>
               <td>{{group.name}}</td>
-              <td>{{(getMembers(group) | async)?.payload?.totalElements + (getSubgroups(group) | async)?.payload?.totalElements}}</td>
-              <!--              <td>{{getOptionalComColFromName(group.name)}}</td>-->
+              <td> 
+                <span *ngIf="isEnabled(group)"  class="badge badge-success">{{messagePrefix + 'badge.enabled' | translate}}</span>
+                <span *ngIf="!isEnabled(group)" class="badge badge-secondary">{{messagePrefix + 'badge.disabled' | translate}}</span>
+                <span *ngIf="group?.permanent" class="badge badge-danger">{{messagePrefix + 'badge.permanent' | translate}}</span>
+              </td>
+              <td><span class="badge badge-info">{{messagePrefix + 'badge.' + getGroupType(group) | translate}}</span></td>
               <td>
                 <div class="btn-group edit-field">
                   <button [routerLink]="groupService.getGroupEditPageRouterLink(group)"

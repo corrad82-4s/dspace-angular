@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, Inject, ViewChild } from '@angular/core';
+import { ChangeDetectorRef, Component, Inject, ViewChild, OnDestroy } from '@angular/core';
 import { DynamicFormControlEvent, DynamicFormControlModel } from '@ng-dynamic-forms/core';
 
 import { combineLatest as observableCombineLatest, Observable, Subscription } from 'rxjs';
@@ -17,7 +17,6 @@ import { JsonPatchOperationPathCombiner } from '../../../core/json-patch/builder
 import { SubmissionFormsModel } from '../../../core/config/models/config-submission-forms.model';
 import { SubmissionSectionError, SubmissionSectionObject } from '../../objects/submission-objects.reducer';
 import { FormFieldPreviousValueObject } from '../../../shared/form/builder/models/form-field-previous-value-object';
-import { GlobalConfig } from '../../../../config/global-config.interface';
 import { SectionDataObject } from '../models/section-data.model';
 import { renderSectionFor } from '../sections-decorator';
 import { SectionsType } from '../sections-type';
@@ -45,7 +44,7 @@ import { environment } from '../../../../environments/environment';
   templateUrl: './section-form.component.html',
 })
 @renderSectionFor(SectionsType.SubmissionForm)
-export class SubmissionSectionformComponent extends SectionModelComponent {
+export class SubmissionSectionformComponent extends SectionModelComponent implements OnDestroy {
 
   /**
    * The form id
@@ -161,7 +160,7 @@ export class SubmissionSectionformComponent extends SectionModelComponent {
       tap((config: SubmissionFormsModel) => this.formConfig = config),
       flatMap(() =>
         observableCombineLatest(
-          this.sectionService.getSectionData(this.submissionId, this.sectionData.id),
+          this.sectionService.getSectionData(this.submissionId, this.sectionData.id, this.sectionData.sectionType),
           this.submissionObjectService.getHrefByID(this.submissionId).pipe(take(1)).pipe(
             switchMap((href: string) => {
               this.objectCache.remove(href);
@@ -250,6 +249,8 @@ export class SubmissionSectionformComponent extends SectionModelComponent {
         sectionData,
         this.submissionService.getSubmissionScope()
       );
+      // Add created model to formBulderService
+      this.formBuilderService.addFormModel(this.sectionData.id, this.formModel);
     } catch (e) {
       const msg: string = this.translate.instant('error.submission.sections.init-form-error') + e.toString();
       const sectionError: SubmissionSectionError = {
@@ -319,7 +320,7 @@ export class SubmissionSectionformComponent extends SectionModelComponent {
       /**
        * Subscribe to section state
        */
-      this.sectionService.getSectionState(this.submissionId, this.sectionData.id).pipe(
+      this.sectionService.getSectionState(this.submissionId, this.sectionData.id, this.sectionData.sectionType).pipe(
         filter((sectionState: SubmissionSectionObject) => {
           return isNotEmpty(sectionState) && (isNotEmpty(sectionState.data) || isNotEmpty(sectionState.errors))
         }),
@@ -430,5 +431,11 @@ export class SubmissionSectionformComponent extends SectionModelComponent {
    */
   isFieldToRemove(fieldId, index) {
     return this.fieldsOnTheirWayToBeRemoved.has(fieldId) && this.fieldsOnTheirWayToBeRemoved.get(fieldId).includes(index);
+  }
+
+  ngOnDestroy(): void {
+    super.ngOnDestroy();
+    // Remove this model from formBulderService
+    this.formBuilderService.removeFormModel(this.sectionData.id);
   }
 }

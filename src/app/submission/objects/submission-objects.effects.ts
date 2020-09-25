@@ -1,11 +1,22 @@
 import { Injectable } from '@angular/core';
+
 import { Actions, Effect, ofType } from '@ngrx/effects';
 import { Store } from '@ngrx/store';
 import { TranslateService } from '@ngx-translate/core';
 import { isEqual, union } from 'lodash';
 
 import { from as observableFrom, Observable, of as observableOf } from 'rxjs';
-import { catchError, filter, map, mergeMap, switchMap, take, tap, withLatestFrom } from 'rxjs/operators';
+import {
+  catchError,
+  concatMap,
+  filter,
+  map,
+  mergeMap,
+  switchMap,
+  take,
+  tap,
+  withLatestFrom
+} from 'rxjs/operators';
 import { SubmissionObject } from '../../core/submission/models/submission-object.model';
 import { WorkflowItem } from '../../core/submission/models/workflowitem.model';
 import { WorkspaceitemSectionUploadObject } from '../../core/submission/models/workspaceitem-section-upload.model';
@@ -24,6 +35,9 @@ import {
   DepositSubmissionAction,
   DepositSubmissionErrorAction,
   DepositSubmissionSuccessAction,
+  DisableSectionAction,
+  DisableSectionErrorAction,
+  DisableSectionSuccessAction,
   DiscardSubmissionErrorAction,
   DiscardSubmissionSuccessAction,
   InitSectionAction,
@@ -38,9 +52,13 @@ import {
   SaveSubmissionSectionFormAction,
   SaveSubmissionSectionFormErrorAction,
   SaveSubmissionSectionFormSuccessAction,
+  SetDuplicateDecisionAction,
+  SetDuplicateDecisionErrorAction,
+  SetDuplicateDecisionSuccessAction,
   SubmissionObjectAction,
   SubmissionObjectActionTypes,
-  UpdateSectionDataAction
+  UpdateSectionDataAction,
+  UpdateSectionDataSuccessAction
 } from './submission-objects.actions';
 import { SubmissionObjectEntry, SubmissionSectionObject } from './submission-objects.reducer';
 import { Item } from '../../core/shared/item.model';
@@ -64,7 +82,8 @@ export class SubmissionObjectEffects {
         const selfLink = sectionDefinition._links.self.href || sectionDefinition._links.self;
         const sectionId = selfLink.substr(selfLink.lastIndexOf('/') + 1);
         const config = sectionDefinition._links.config ? (sectionDefinition._links.config.href || sectionDefinition._links.config) : '';
-        const enabled = (sectionDefinition.mandatory) || (isNotEmpty(action.payload.sections) && action.payload.sections.hasOwnProperty(sectionId));
+        const enabled = (sectionDefinition.mandatory && sectionDefinition.sectionType !== SectionsType.DetectDuplicate) ||
+          (isNotEmpty(action.payload.sections) && action.payload.sections.hasOwnProperty(sectionId));
         let sectionData;
         if (sectionDefinition.sectionType !== SectionsType.SubmissionForm) {
           sectionData = (isNotUndefined(action.payload.sections) && isNotUndefined(action.payload.sections[sectionId])) ? action.payload.sections[sectionId] : Object.create(null);
@@ -117,7 +136,7 @@ export class SubmissionObjectEffects {
    */
   @Effect() saveSubmission$ = this.actions$.pipe(
     ofType(SubmissionObjectActionTypes.SAVE_SUBMISSION_FORM),
-    switchMap((action: SaveSubmissionFormAction) => {
+    concatMap((action: SaveSubmissionFormAction) => {
       return this.operationsService.jsonPatchByResourceType(
         this.submissionService.getSubmissionObjectLinkName(),
         action.payload.submissionId,
@@ -131,7 +150,7 @@ export class SubmissionObjectEffects {
    */
   @Effect() saveForLaterSubmission$ = this.actions$.pipe(
     ofType(SubmissionObjectActionTypes.SAVE_FOR_LATER_SUBMISSION_FORM),
-    switchMap((action: SaveForLaterSubmissionFormAction) => {
+    concatMap((action: SaveForLaterSubmissionFormAction) => {
       return this.operationsService.jsonPatchByResourceType(
         this.submissionService.getSubmissionObjectLinkName(),
         action.payload.submissionId,
@@ -156,7 +175,7 @@ export class SubmissionObjectEffects {
    */
   @Effect() saveSection$ = this.actions$.pipe(
     ofType(SubmissionObjectActionTypes.SAVE_SUBMISSION_SECTION_FORM),
-    switchMap((action: SaveSubmissionSectionFormAction) => {
+    concatMap((action: SaveSubmissionSectionFormAction) => {
       return this.operationsService.jsonPatchByResourceID(
         this.submissionService.getSubmissionObjectLinkName(),
         action.payload.submissionId,
@@ -180,7 +199,7 @@ export class SubmissionObjectEffects {
   @Effect() saveAndDeposit$ = this.actions$.pipe(
     ofType(SubmissionObjectActionTypes.SAVE_AND_DEPOSIT_SUBMISSION),
     withLatestFrom(this.store$),
-    switchMap(([action, currentState]: [SaveAndDepositSubmissionAction, any]) => {
+    concatMap(([action, currentState]: [SaveAndDepositSubmissionAction, any]) => {
       return this.operationsService.jsonPatchByResourceType(
         this.submissionService.getSubmissionObjectLinkName(),
         action.payload.submissionId,
@@ -195,6 +214,38 @@ export class SubmissionObjectEffects {
         }),
         catchError(() => observableOf(new SaveSubmissionFormErrorAction(action.payload.submissionId))));
     }));
+
+  @Effect() removeSection$ = this.actions$.pipe(
+    ofType(SubmissionObjectActionTypes.DISABLE_SECTION),
+    concatMap((action: DisableSectionAction) => {
+      return this.operationsService.jsonPatchByResourceID(
+        this.submissionService.getSubmissionObjectLinkName(),
+        action.payload.submissionId,
+        'sections',
+        action.payload.sectionId).pipe(
+        map(() => new DisableSectionSuccessAction(action.payload.submissionId, action.payload.sectionId)),
+        catchError(() => observableOf(new DisableSectionErrorAction(action.payload.submissionId, action.payload.sectionId))));
+    }));
+
+  @Effect() saveDuplicateDecision$ = this.actions$.pipe(
+    ofType(SubmissionObjectActionTypes.SET_DUPLICATE_DECISION),
+    switchMap((action: SetDuplicateDecisionAction) => {
+      return this.operationsService.jsonPatchByResourceID(
+        this.submissionService.getSubmissionObjectLinkName(),
+        action.payload.submissionId,
+        'sections',
+        action.payload.sectionId).pipe(
+        map((response: SubmissionObject[]) => new SetDuplicateDecisionSuccessAction(
+          action.payload.submissionId,
+          action.payload.sectionId,
+          response)
+        ),
+        catchError(() => observableOf(new SetDuplicateDecisionErrorAction(action.payload.submissionId))));
+  }));
+
+  @Effect({dispatch: false}) setDuplicateDecisionSuccess$ = this.actions$.pipe(
+    ofType(SubmissionObjectActionTypes.SET_DUPLICATE_DECISION_SUCCESS),
+    tap(() => this.notificationsService.success(null, this.translate.get('submission.sections.detect-duplicate.decision-success-notice'))));
 
   /**
    * Dispatch a [DepositSubmissionSuccessAction] or a [DepositSubmissionErrorAction] on error
@@ -246,28 +297,32 @@ export class SubmissionObjectEffects {
    * Adds all metadata an item to the SubmissionForm sections of the submission
    */
   @Effect() addAllMetadataToSectionData = this.actions$.pipe(
-    ofType(SubmissionObjectActionTypes.UPLOAD_SECTION_DATA),
+    ofType(SubmissionObjectActionTypes.UPDATE_SECTION_DATA),
     switchMap((action: UpdateSectionDataAction) => {
-      return this.sectionService.getSectionState(action.payload.submissionId, action.payload.sectionId)
+      return this.sectionService.getSectionState(action.payload.submissionId, action.payload.sectionId, SectionsType.Upload)
         .pipe(map((section: SubmissionSectionObject) => [action, section]), take(1));
     }),
     filter(([action, section]: [UpdateSectionDataAction, SubmissionSectionObject]) => section.sectionType === SectionsType.SubmissionForm),
     switchMap(([action, section]: [UpdateSectionDataAction, SubmissionSectionObject]) => {
-      const submissionObject$ = this.submissionObjectService
-        .findById(action.payload.submissionId, followLink('item')).pipe(
-          getFirstSucceededRemoteDataPayload()
+      if (section.sectionType === SectionsType.SubmissionForm) {
+        const submissionObject$ = this.submissionObjectService
+          .findById(action.payload.submissionId, followLink('item')).pipe(
+            getFirstSucceededRemoteDataPayload()
+          );
+
+        const item$ = submissionObject$.pipe(
+          switchMap((submissionObject: SubmissionObject) => (submissionObject.item as Observable<RemoteData<Item>>).pipe(
+            getFirstSucceededRemoteDataPayload(),
+          )));
+
+        return item$.pipe(
+          map((item: Item) => item.metadata),
+          filter((metadata) => !isEqual(action.payload.data, metadata)),
+          map((metadata: any) => new UpdateSectionDataAction(action.payload.submissionId, action.payload.sectionId, metadata, action.payload.errors))
         );
-
-      const item$ = submissionObject$.pipe(
-        switchMap((submissionObject: SubmissionObject) => (submissionObject.item as Observable<RemoteData<Item>>).pipe(
-          getFirstSucceededRemoteDataPayload(),
-        )));
-
-      return item$.pipe(
-        map((item: Item) => item.metadata),
-        filter((metadata) => !isEqual(action.payload.data, metadata)),
-        map((metadata: any) => new UpdateSectionDataAction(action.payload.submissionId, action.payload.sectionId, metadata, action.payload.errors))
-      );
+      } else {
+        return observableOf(new UpdateSectionDataSuccessAction());
+      }
     }),
   );
 
@@ -381,5 +436,4 @@ export class SubmissionObjectEffects {
     }
     return mappedActions;
   }
-
 }

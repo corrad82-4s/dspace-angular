@@ -19,7 +19,7 @@ export const environment: GlobalConfig = {
   // The 'nameSpace' must always end in "/api" as that's the subpath of the REST API in the backend.
   rest: {
     ssl: true,
-    host: 'dspace7.4science.cloud',
+    host: 'dspacecris7.4science.cloud',
     port: 443,
     // NOTE: Space is capitalized because 'namespace' is a reserved string in TypeScript
     nameSpace: '/server/api',
@@ -80,6 +80,14 @@ export const environment: GlobalConfig = {
           name: 'dc.author',
           style: 'fas fa-user'
         },
+        {
+          name: 'dc.contributor.author',
+          style: 'fas fa-user'
+        },
+        {
+          name: 'local.contributor.affiliation',
+          style: 'fas fa-university'
+        },
         // default configuration
         {
           name: 'default',
@@ -117,6 +125,12 @@ export const environment: GlobalConfig = {
 
         ]
       }
+    },
+    detectDuplicate: {
+      // NOTE: list of additional item metadata to show for duplicate match presentation list
+      metadataDetailsList: [
+        { label: 'Document type', name: 'dc.type' }
+      ]
     }
   },
   // Angular Universal settings
@@ -140,33 +154,37 @@ export const environment: GlobalConfig = {
     label: 'English',
     active: true,
   }, {
+    code: 'es',
+    label: 'Spanish',
+    active: true,
+  }, {
     code: 'de',
     label: 'Deutsch',
-    active: true,
+    active: false,
   }, {
     code: 'cs',
     label: 'Čeština',
-    active: true,
+    active: false,
   }, {
     code: 'nl',
     label: 'Nederlands',
-    active: true,
+    active: false,
   }, {
     code: 'pt',
     label: 'Português',
-    active: true,
+    active: false,
   }, {
     code: 'fr',
     label: 'Français',
-    active: true,
+    active: false,
   }, {
     code: 'lv',
     label: 'Latviešu',
-    active: true,
+    active: false,
   },{
     code: 'fi',
     label: 'Suomi',
-    active: true,
+    active: false,
   }],
   // Browse-By Pages
   browseBy: {
@@ -200,6 +218,30 @@ export const environment: GlobalConfig = {
       {
         id: 'subject',
         type: BrowseByType.Metadata
+      },
+      {
+        id: 'rodept',
+        type: BrowseByType.Metadata
+      },
+      {
+        id: 'type',
+        type: BrowseByType.Metadata
+      },
+      {
+        id: 'rpname',
+        type: BrowseByType.Title
+      },
+      {
+        id: 'rpdept',
+        type: BrowseByType.Metadata
+      },
+      {
+        id: 'ouname',
+        type: BrowseByType.Title
+      },
+      {
+        id: 'pjtitle',
+        type: BrowseByType.Title
       }
     ]
   },
@@ -216,4 +258,34 @@ export const environment: GlobalConfig = {
   theme: {
     name: 'default',
   },
+  layout: {
+    urn: [
+      {
+        name: 'doi',
+        baseUrl: 'https://doi.org/'
+      },
+      {
+        name: 'hdl',
+        baseUrl: 'https://hdl.handle.net/'
+      },
+      {
+        name: 'mailto',
+        baseUrl: 'mailto:'
+      }
+    ],
+    crisRef: [
+      {
+        entityType: 'DEFAULT',
+        icon: 'fa fa-info'
+      },
+      {
+        entityType: 'PERSON',
+        icon: 'fa fa-user'
+      },
+      {
+        entityType: 'ORGUNIT',
+        icon: 'fa fa-university'
+      }
+    ]
+  }
 };

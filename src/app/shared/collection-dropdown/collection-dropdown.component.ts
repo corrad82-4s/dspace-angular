@@ -1,4 +1,4 @@
-import { Component, OnInit, HostListener, ChangeDetectorRef, OnDestroy, Output, EventEmitter, ElementRef } from '@angular/core';
+import { Component, OnInit, HostListener, ChangeDetectorRef, OnDestroy, Output, EventEmitter, ElementRef, Input } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Observable, Subscription, BehaviorSubject } from 'rxjs';
 import { hasValue } from '../empty.util';
@@ -92,6 +92,16 @@ export class CollectionDropdownComponent implements OnInit, OnDestroy {
    */
   currentQuery: string;
 
+  /**
+   * If present this value is used to filter collection list
+   */
+  @Input() metadata: string;
+
+  /**
+   * If present this value is used to filter collection list
+   */
+  @Input() metadatavalue: string;
+
   constructor(
     private changeDetectorRef: ChangeDetectorRef,
     private collectionDataService: CollectionDataService,
@@ -176,9 +186,20 @@ export class CollectionDropdownComponent implements OnInit, OnDestroy {
       elementsPerPage: 10,
       currentPage: page
     };
-    this.searchListCollection$ = this.collectionDataService
-      .getAuthorizedCollection(query, findOptions, followLink('parentCommunity'))
-      .pipe(
+    let searchListService$: Observable<RemoteData<PaginatedList<Collection>>> = null;
+    if (this.metadata) {
+      searchListService$ = this.collectionDataService
+      .getAuthorizedCollectionAndMetadata(
+        query,
+        this.metadata,
+        this.metadatavalue,
+        findOptions,
+        followLink('parentCommunity'));
+    } else {
+      searchListService$ = this.collectionDataService
+      .getAuthorizedCollection(query, findOptions, followLink('parentCommunity'));
+    }
+    this.searchListCollection$ = searchListService$.pipe(
         getSucceededRemoteWithNotEmptyData(),
         switchMap((collections: RemoteData<PaginatedList<Collection>>) => {
           if ( (this.searchListCollection.length + findOptions.elementsPerPage) >= collections.payload.totalElements ) {

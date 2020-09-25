@@ -10,6 +10,7 @@ import { DYNAMIC_FORM_CONTROL_TYPE_RELATION_GROUP } from '../../ds-dynamic-form-
 export interface DynamicRelationGroupModelConfig extends DsDynamicInputModelConfig {
   submissionId: string,
   formConfiguration: FormRowModel[],
+  isInlineGroup: boolean,
   mandatoryField: string,
   relationFields: string[],
   scopeUUID: string,
@@ -22,6 +23,7 @@ export interface DynamicRelationGroupModelConfig extends DsDynamicInputModelConf
 export class DynamicRelationGroupModel extends DsDynamicInputModel {
   @serializable() submissionId: string;
   @serializable() formConfiguration: FormRowModel[];
+  @serializable() isInlineGroup: boolean;
   @serializable() mandatoryField: string;
   @serializable() relationFields: string[];
   @serializable() scopeUUID: string;
@@ -38,6 +40,7 @@ export class DynamicRelationGroupModel extends DsDynamicInputModel {
     this.relationFields = config.relationFields;
     this.scopeUUID = config.scopeUUID;
     this.submissionScope = config.submissionScope;
+    this.isInlineGroup = config.isInlineGroup;
     const value = config.value || [];
     this.valueUpdates.next(value);
   }

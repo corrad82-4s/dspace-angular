@@ -37,9 +37,9 @@ const _isAuthenticatedLoaded = (state: AuthState) => state.loaded;
  * Return the users state
  * @function _getAuthenticatedUserId
  * @param {State} state
- * @returns {string} User ID
+ * @returns {string} User
  */
-const _getAuthenticatedUserId = (state: AuthState) => state.userId;
+const _getAuthenticatedUser = (state: AuthState) => state.user;
 
 /**
  * Returns the authentication error.
@@ -64,6 +64,14 @@ const _getAuthenticationInfo = (state: AuthState) => state.info;
  * @returns {boolean}
  */
 const _isLoading = (state: AuthState) => state.loading;
+
+/**
+ * Returns true if everything else should wait for authentication.
+ * @function _isBlocking
+ * @param {State} state
+ * @returns {boolean}
+ */
+const _isBlocking = (state: AuthState) => state.blocking;
 
 /**
  * Returns true if a refresh token request is in progress.
@@ -118,12 +126,12 @@ export const getAuthenticationMethods = createSelector(getAuthState, _getAuthent
 
 /**
  * Returns the authenticated user id
- * @function getAuthenticatedUserId
+ * @function getAuthenticatedUser
  * @param {AuthState} state
  * @param {any} props
  * @return {string} User ID
  */
-export const getAuthenticatedUserId = createSelector(getAuthState, _getAuthenticatedUserId);
+export const getAuthenticatedUser = createSelector(getAuthState, _getAuthenticatedUser);
 
 /**
  * Returns the authentication error.
@@ -169,6 +177,16 @@ export const isAuthenticatedLoaded = createSelector(getAuthState, _isAuthenticat
  * @return {boolean}
  */
 export const isAuthenticationLoading = createSelector(getAuthState, _isLoading);
+
+/**
+ * Returns true if the authentication should block everything else
+ *
+ * @function isAuthenticationBlocking
+ * @param {AuthState} state
+ * @param {any} props
+ * @return {boolean}
+ */
+export const isAuthenticationBlocking = createSelector(getAuthState, _isBlocking);
 
 /**
  * Returns true if the refresh token request is loading.

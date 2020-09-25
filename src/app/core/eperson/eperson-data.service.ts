@@ -162,7 +162,16 @@ export class EPersonDataService extends DataService<EPerson> {
    * @param newEPerson
    */
   private generateOperations(oldEPerson: EPerson, newEPerson: EPerson): Operation[] {
-    let operations = this.comparator.diff(oldEPerson, newEPerson).filter((operation: Operation) => operation.op === 'replace');
+    let operations = this.comparator.diff(oldEPerson, newEPerson)
+      .filter((operation: Operation) => operation.op === 'replace'
+                                    && !operation.path.startsWith('/metadata/perucris.eperson.role')
+                                    && !operation.path.startsWith('/metadata/perucris.eperson.institutional-role')
+                                    && !operation.path.startsWith('/metadata/perucris.eperson.institutional-scoped-role'));
+
+    this.addAndRemoveRoles(oldEPerson, newEPerson, 'perucris.eperson.role', operations);
+    this.addAndRemoveRoles(oldEPerson, newEPerson, 'perucris.eperson.institutional-role', operations);
+    this.addAndRemoveRoles(oldEPerson, newEPerson, 'perucris.eperson.institutional-scoped-role', operations);
+
     if (hasValue(oldEPerson.email) && oldEPerson.email !== newEPerson.email) {
       operations = [...operations, {
         op: 'replace', path: '/email', value: newEPerson.email
@@ -179,6 +188,25 @@ export class EPersonDataService extends DataService<EPerson> {
       }];
     }
     return operations;
+  }
+
+  private addAndRemoveRoles(oldEPerson: EPerson, newEPerson: EPerson, roleMetadata: string, operations: Operation[]) {
+    const oldRoles = oldEPerson.allMetadata(roleMetadata).sort((r1, r2) => (r2.place - r1.place));
+    for (const oldRole of oldRoles) {
+      if ( !newEPerson.hasMetadata(roleMetadata, { authority: oldRole.authority } ) ) {
+        operations.push( {
+          op: 'remove', path: '/metadata/' + roleMetadata + '/' + oldRole.place
+        });
+      }
+    }
+
+    for (const newRole of newEPerson.allMetadata(roleMetadata)) {
+      if ( !oldEPerson.hasMetadata(roleMetadata, { authority: newRole.authority } ) ) {
+        operations.push( {
+          op: 'add', path: '/metadata/' + roleMetadata , value: newRole
+        });
+      }
+    }
   }
 
   /**

@@ -5,12 +5,14 @@ import {
   DynamicFormControlModel,
   DynamicFormLayout,
   DynamicInputModel,
-  DynamicTextAreaModel
+  DynamicSelectModel,
+  DynamicTextAreaModel,
+  DynamicRadioGroupModel
 } from '@ng-dynamic-forms/core';
 import { TranslateService } from '@ngx-translate/core';
 import { combineLatest } from 'rxjs/internal/observable/combineLatest';
 import { Subscription } from 'rxjs/internal/Subscription';
-import { take } from 'rxjs/operators';
+import { take, first } from 'rxjs/operators';
 import { RestResponse } from '../../../../core/cache/response.models';
 import { PaginatedList } from '../../../../core/data/paginated-list';
 import { EPersonDataService } from '../../../../core/eperson/eperson-data.service';
@@ -20,6 +22,8 @@ import { getRemoteDataPayload, getSucceededRemoteData } from '../../../../core/s
 import { hasValue, isNotEmpty } from '../../../../shared/empty.util';
 import { FormBuilderService } from '../../../../shared/form/builder/form-builder.service';
 import { NotificationsService } from '../../../../shared/notifications/notifications.service';
+import { deepClone } from 'fast-json-patch/lib/core';
+import { DSpaceObject } from 'src/app/core/shared/dspace-object.model';
 
 @Component({
   selector: 'ds-group-form',
@@ -42,6 +46,8 @@ export class GroupFormComponent implements OnInit, OnDestroy {
    */
   groupName: DynamicInputModel;
   groupDescription: DynamicTextAreaModel;
+  groupType: DynamicSelectModel<string>;
+  groupStatus: DynamicRadioGroupModel<string>;
 
   /**
    * A list of all dynamic input models
@@ -62,6 +68,17 @@ export class GroupFormComponent implements OnInit, OnDestroy {
         host: 'row'
       }
     },
+    groupType: {
+      grid: {
+        host: 'row'
+      }
+    },
+    groupStatus: {
+      grid: {
+        host: 'row',
+        option: 'btn-outline-info'
+      }
+    }
   };
 
   /**
@@ -105,7 +122,17 @@ export class GroupFormComponent implements OnInit, OnDestroy {
     combineLatest(
       this.translateService.get(`${this.messagePrefix}.groupName`),
       this.translateService.get(`${this.messagePrefix}.groupDescription`),
-    ).subscribe(([groupName, groupDescription]) => {
+      this.translateService.get(`${this.messagePrefix}.groupType`),
+      this.translateService.get(`${this.messagePrefix}.groupType.normal`),
+      this.translateService.get(`${this.messagePrefix}.groupType.role`),
+      this.translateService.get(`${this.messagePrefix}.groupType.institutional`),
+      this.translateService.get(`${this.messagePrefix}.groupStatus`),
+      this.translateService.get(`${this.messagePrefix}.groupStatus.enabled`),
+      this.translateService.get(`${this.messagePrefix}.groupStatus.disabled`),
+      this.groupDataService.getActiveGroup()
+    ).subscribe(([groupName, groupDescription, groupType, normalType, roleType, institutionalType,
+                  groupStatus, enabledStatus, disabledStatus, activeGroup]) => {
+
       this.groupName = new DynamicInputModel({
         id: 'groupName',
         label: groupName,
@@ -121,23 +148,54 @@ export class GroupFormComponent implements OnInit, OnDestroy {
         name: 'groupDescription',
         required: false,
       });
+      this.groupType = new DynamicSelectModel<string>({
+        id: 'groupType',
+        name: 'groupType',
+        options: [{label: normalType, value: 'NORMAL'},
+                  {label: roleType, value: 'ROLE'},
+                  {label: institutionalType, value: 'INSTITUTIONAL'}],
+        label: groupType,
+        value: 'NORMAL'
+      });
+      this.groupStatus = new DynamicRadioGroupModel<string>({
+        id: 'groupStatus',
+        name: 'groupStatus',
+        options: [{label: enabledStatus, value: 'ENABLED'},{label: disabledStatus, value: 'DISABLED'}],
+        label: groupStatus,
+        value: 'ENABLED'
+      });
       this.formModel = [
         this.groupName,
-        this.groupDescription
+        this.groupDescription,
+        this.groupType
       ];
+
+      if (activeGroup && !activeGroup.permanent) {
+        this.formModel.push(this.groupStatus);
+      }
+
       this.formGroup = this.formBuilderService.createFormGroup(this.formModel);
-      this.subs.push(this.groupDataService.getActiveGroup().subscribe((activeGroup: Group) => {
-        if (activeGroup != null) {
-          this.groupBeingEdited = activeGroup;
-          this.formGroup.patchValue({
-            groupName: activeGroup != null ? activeGroup.name : '',
-            groupDescription: activeGroup != null ? activeGroup.firstMetadataValue('dc.description') : '',
-          });
-          if (activeGroup.permanent) {
-            this.formGroup.get('groupName').disable();
-          }
+
+      if (activeGroup != null) {
+        this.groupBeingEdited = activeGroup;
+        this.formGroup.patchValue({
+          groupName: activeGroup != null ? activeGroup.name : '',
+          groupDescription: activeGroup != null ? activeGroup.firstMetadataValue('dc.description') : '',
+          groupType: activeGroup != null && activeGroup.firstMetadataValue('perucris.group.type') != null ?
+              activeGroup.firstMetadataValue('perucris.group.type') : 'NORMAL',
+          groupStatus: activeGroup != null && activeGroup.firstMetadataValue('perucris.group.status') != null ?
+              activeGroup.firstMetadataValue('perucris.group.status') : 'ENABLED'
+        });
+
+        if (activeGroup.permanent) {
+          this.formGroup.get('groupName').disable();
         }
-      }));
+
+        this.formGroup.get('groupType').disable();
+
+        this.groupStatus.value = activeGroup != null && activeGroup.firstMetadataValue('perucris.group.status') != null ?
+          activeGroup.firstMetadataValue('perucris.group.status') : 'ENABLED';
+      }
     });
   }
 
@@ -167,6 +225,16 @@ export class GroupFormComponent implements OnInit, OnDestroy {
                 value: this.groupDescription.value
               }
             ],
+            'perucris.group.type': [
+              {
+                value: this.groupType.value
+              }
+            ],
+            'perucris.group.status': [
+              {
+                value: this.groupStatus.value
+              }
+            ]
           },
         };
         if (group === null) {
@@ -225,14 +293,42 @@ export class GroupFormComponent implements OnInit, OnDestroy {
   }
 
   /**
-   * // TODO
+   * Edit the group information with new values
    * @param group
    * @param values
    */
   editGroup(group: Group, values) {
-    // TODO (backend)
-    console.log('TODO implement editGroup', values);
-    this.notificationsService.error('TODO implement editGroup (not yet implemented in backend) ');
+    const editedGroup = Object.assign(deepClone(group), {
+      id: group.id,
+      name: (hasValue(values.name) ? values.name : group.name),
+      permanent: (hasValue(values.permanent) ? values.permanent : group.permanent),
+      handle: (hasValue(values.handle) ? values.handle : group.handle),
+      _links: group._links,
+    });
+
+    if ( this.groupDescription && this.groupDescription.value) {
+      this.addOrReplaceMetadataValue(group, editedGroup, 'dc.description', this.groupDescription.value);
+    }
+
+    if ( this.groupStatus && this.groupStatus.value) {
+      this.addOrReplaceMetadataValue(group, editedGroup, 'perucris.group.status', this.groupStatus.value);
+    }
+
+    this.groupDataService
+        .updateGroup(editedGroup)
+        .pipe(first())
+        .subscribe((response: any) => {
+          if (response.isSuccessful) {
+            this.notificationsService.success(
+              this.translateService.get('admin.access-control.groups.notification.edit.success', { name: group.name }));
+            this.groupDataService.clearGroupLinkRequests(group._links.subgroups.href);
+            this.groupDataService.clearGroupLinkRequests(group._links.epersons.href);
+            this.router.navigate(['groups']);
+          } else {
+            this.notificationsService.error(
+              this.translateService.get('admin.access-control.groups.notification.edit.failure', { name: group.name }));
+          }
+        });
   }
 
   /**
@@ -276,5 +372,13 @@ export class GroupFormComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.onCancel();
     this.subs.filter((sub) => hasValue(sub)).forEach((sub) => sub.unsubscribe());
+  }
+
+  private addOrReplaceMetadataValue(dspaceObject: DSpaceObject, editedObject: any, metadataField: string, value: string | string[]) {
+    if (dspaceObject.hasMetadata(metadataField)) {
+      editedObject.metadata[metadataField][0].value = value;
+    } else {
+      editedObject.metadata[metadataField] = [Object.assign<any,any>({}, {value: value})];
+    }
   }
 }

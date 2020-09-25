@@ -1,0 +1,12 @@
+<div class="{{containerStyle}}">
+  <span *ngIf="hasLabel" class="lbl {{labelStyle}}">
+    {{label | translate}}
+  </span>
+  <span class="{{valueStyle}}">
+    <ds-truncatable [id]="item.id">
+      <ds-truncatable-part [id]="item.id" [minLines]="3">
+        {{metadataValue}}
+      </ds-truncatable-part>
+    </ds-truncatable>
+  </span>
+</div>

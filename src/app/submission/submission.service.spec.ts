@@ -1,7 +1,7 @@
 import { StoreModule } from '@ngrx/store';
 import { async, fakeAsync, flush, TestBed, tick } from '@angular/core/testing';
 import { ActivatedRoute, Router } from '@angular/router';
-import { HttpHeaders } from '@angular/common/http';
+import { HttpHeaders, HttpParams } from '@angular/common/http';
 
 import { of as observableOf } from 'rxjs';
 import { TestScheduler } from 'rxjs/testing';
@@ -48,6 +48,8 @@ import { SearchService } from '../core/shared/search/search.service';
 import { Item } from '../core/shared/item.model';
 import { storeModuleConfig } from '../app.reducer';
 import { environment } from '../../environments/environment';
+import { ScrollToService } from '@nicky-lenaers/ngx-scroll-to';
+import { NotificationOptions } from '../shared/notifications/models/notification-options.model';
 
 describe('SubmissionService test suite', () => {
   const collectionId = '43fe1f8c-09a6-4fcf-9c78-5d4fed8f2c8f';
@@ -194,6 +196,7 @@ describe('SubmissionService test suite', () => {
         },
         isLoading: false,
         savePending: false,
+        saveDecisionPending: false,
         depositPending: false
       }
     }
@@ -339,6 +342,7 @@ describe('SubmissionService test suite', () => {
         },
         isLoading: false,
         savePending: false,
+        saveDecisionPending: false,
         depositPending: false
       }
     }
@@ -373,6 +377,7 @@ describe('SubmissionService test suite', () => {
         { provide: ActivatedRoute, useValue: new MockActivatedRoute() },
         { provide: SearchService, useValue: searchService },
         { provide: RequestService, useValue: requestServce },
+        ScrollToService,
         NotificationsService,
         RouteService,
         SubmissionService,
@@ -397,17 +402,55 @@ describe('SubmissionService test suite', () => {
 
   describe('createSubmission', () => {
     it('should create a new submission', () => {
+      const paramsObj = Object.create({});
+      const params = new HttpParams({fromObject: paramsObj});
+      const options: HttpOptions = Object.create({});
+      options.params = params;
       service.createSubmission();
 
       expect((service as any).restService.postToEndpoint).toHaveBeenCalled();
-      expect((service as any).restService.postToEndpoint).toHaveBeenCalledWith('workspaceitems', {}, null, null, undefined);
+      expect((service as any).restService.postToEndpoint).toHaveBeenCalledWith('workspaceitems', {}, null, options, undefined);
+    });
+
+    it('should create a new submission with entity type', () => {
+      const entityType = 'Publication'
+      const params = new HttpParams({fromObject: {entityType: entityType}});
+      const options: HttpOptions = Object.create({});
+      options.params = params;
+
+      service.createSubmission(undefined, 'Publication');
+
+      expect((service as any).restService.postToEndpoint).toHaveBeenCalled();
+      expect((service as any).restService.postToEndpoint).toHaveBeenCalledWith('workspaceitems', {}, null, options, undefined);
     });
 
     it('should create a new submission with collection', () => {
+      const paramsObj = Object.create({});
+      const params = new HttpParams({fromObject: paramsObj});
+      const options: HttpOptions = Object.create({});
+      options.params = params;
+
       service.createSubmission(collectionId);
 
       expect((service as any).restService.postToEndpoint).toHaveBeenCalled();
-      expect((service as any).restService.postToEndpoint).toHaveBeenCalledWith('workspaceitems', {}, null, null, collectionId);
+      expect((service as any).restService.postToEndpoint).toHaveBeenCalledWith('workspaceitems', {}, null, options, collectionId);
+    });
+  });
+
+  describe('createSubmissionForCollection', () => {
+    it('should create a new submission', () => {
+      const paramsObj = Object.create({});
+
+      paramsObj.collection = '1234';
+
+      const params = new HttpParams({fromObject: paramsObj});
+      const options: HttpOptions = Object.create({});
+      options.params = params;
+
+      service.createSubmissionForCollection('1234');
+
+      expect((service as any).restService.postToEndpoint).toHaveBeenCalled();
+      expect((service as any).restService.postToEndpoint).toHaveBeenCalledWith('workspaceitems', {}, null, options);
     });
   });
 
@@ -748,6 +791,21 @@ describe('SubmissionService test suite', () => {
     });
   });
 
+  describe('getSubmissionDuplicateDecisionProcessingStatus', () => {
+    it('should return submission save-decision status', () => {
+      spyOn((service as any).store, 'select').and.returnValue(hot('-a', {
+        a: subState.objects[826]
+      }));
+
+      const result = service.getSubmissionDuplicateDecisionProcessingStatus('826');
+      const expected = cold('aa', {
+        a: false
+      });
+
+      expect(result).toBeObservable(expected);
+    });
+  });
+
   describe('isSectionHidden', () => {
     it('should return true/false when section is hidden/visible', () => {
       let section: any = {
@@ -805,15 +863,24 @@ describe('SubmissionService test suite', () => {
   });
 
   describe('notifyNewSection', () => {
-    it('should return true/false when section is loading/not loading', fakeAsync(() => {
+    it('should use the correct message when the sectionId is not equal to \'detect-duplicte\'', fakeAsync(() => {
       spyOn((service as any).translate, 'get').and.returnValue(observableOf('test'));
-
       spyOn((service as any).notificationsService, 'info');
 
       service.notifyNewSection(submissionId, sectionId);
       flush();
 
       expect((service as any).notificationsService.info).toHaveBeenCalledWith(null, 'submission.sections.general.metadata-extracted-new-section', null, true);
+    }));
+    it('should use the correct message when the sectionId is equal to \'detect-duplicte\'', fakeAsync(() => {
+      const dtSetctionId = 'detect-duplicate';
+      spyOn((service as any).translate, 'get').and.returnValue(observableOf(dtSetctionId));
+      spyOn((service as any).notificationsService, 'warning');
+
+      service.notifyNewSection(submissionId, dtSetctionId);
+      flush();
+
+      expect((service as any).notificationsService.warning).toHaveBeenCalledWith(null, 'submission.sections.detect-duplicate.duplicate-detected', new NotificationOptions(10000));
     }));
   });
 

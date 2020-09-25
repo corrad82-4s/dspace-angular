@@ -20,7 +20,9 @@ import {
   SaveSubmissionSectionFormErrorAction,
   SaveSubmissionSectionFormSuccessAction,
   SubmissionObjectActionTypes,
-  UpdateSectionDataAction
+  UpdateSectionDataAction,
+  SetDuplicateDecisionErrorAction,
+  SetDuplicateDecisionSuccessAction
 } from './submission-objects.actions';
 import {
   mockSectionsData,
@@ -276,7 +278,7 @@ describe('SubmissionObjectEffects test suite', () => {
 
   describe('saveSubmissionSuccess$', () => {
 
-    it('should return a UPLOAD_SECTION_DATA action for each updated section', () => {
+    it('should return a UPDATE_SECTION_DATA action for each updated section', () => {
       store.nextState({
         submission: {
           objects: submissionState
@@ -687,6 +689,71 @@ describe('SubmissionObjectEffects test suite', () => {
       submissionObjectEffects.saveForLaterSubmissionSuccess$.subscribe(() => {
         expect(notificationsServiceStub.success).toHaveBeenCalled();
         expect(submissionServiceStub.redirectToMyDSpace).toHaveBeenCalled();
+      });
+    });
+  });
+
+  describe('saveDuplicateDecision$', () => {
+    it('should return a SET_DUPLICATE_DECISION action on success', () => {
+      actions = hot('--a-', {
+        a: {
+          type: SubmissionObjectActionTypes.SET_DUPLICATE_DECISION,
+          payload: {
+            submissionId: submissionId,
+            sectionId: 'detect-duplicate'
+          }
+        }
+      });
+
+      submissionJsonPatchOperationsServiceStub.jsonPatchByResourceID.and.returnValue(observableOf(mockSubmissionRestResponse));
+      const expected = cold('--b-', {
+        b: new SetDuplicateDecisionSuccessAction(
+          submissionId,
+          'detect-duplicate',
+          mockSubmissionRestResponse as any,
+        )
+      });
+
+      expect(submissionObjectEffects.saveDuplicateDecision$).toBeObservable(expected);
+    });
+
+    it('should return a SET_DUPLICATE_DECISION_ERROR action on error', () => {
+      actions = hot('--a-', {
+        a: {
+          type: SubmissionObjectActionTypes.SET_DUPLICATE_DECISION,
+          payload: {
+            submissionId: submissionId,
+            sectionId: 'detect-duplicate'
+          }
+        }
+      });
+
+      submissionJsonPatchOperationsServiceStub.jsonPatchByResourceID.and.callFake(
+        () => observableThrowError('Error')
+      );
+      const expected = cold('--b-', {
+        b: new SetDuplicateDecisionErrorAction(
+          submissionId
+        )
+      });
+
+      expect(submissionObjectEffects.saveDuplicateDecision$).toBeObservable(expected);
+    });
+  });
+
+  describe('setDuplicateDecisionSuccess$', () => {
+    it('should display a dedup success notification', () => {
+      actions = hot('--a-', {
+        a: {
+          type: SubmissionObjectActionTypes.SET_DUPLICATE_DECISION_SUCCESS,
+          payload: {
+            submissionId: submissionId
+          }
+        }
+      });
+
+      submissionObjectEffects.setDuplicateDecisionSuccess$.subscribe(() => {
+        expect(notificationsServiceStub.success).toHaveBeenCalled();
       });
     });
   });

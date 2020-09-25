@@ -1,0 +1,2 @@
+<h2 class="mb-3">{{ 'info.end-user-agreement.head' | translate }}</h2>
+<p class="text-justify" *ngFor="let paragraph of (userAgreementText$ | async)">{{paragraph}}</p>

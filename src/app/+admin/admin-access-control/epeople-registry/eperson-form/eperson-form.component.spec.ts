@@ -1,18 +1,24 @@
-import { HttpClient } from '@angular/common/http';
-import { Store } from '@ngrx/store';
-import { of as observableOf } from 'rxjs';
 import { CommonModule } from '@angular/common';
-import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { ChangeDetectorRef, NO_ERRORS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, inject, TestBed } from '@angular/core/testing';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+import { RouterTestingModule } from '@angular/router/testing';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { Store } from '@ngrx/store';
 import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-translate/core';
+import { of as observableOf } from 'rxjs';
 import { Observable } from 'rxjs/internal/Observable';
+import { GroupDataService } from 'src/app/core/eperson/group-data.service';
+import { Group } from 'src/app/core/eperson/models/group.model';
+import { InstitutionalRoleGroupMock, InstitutionalScopedRoleGroupMock, InstitutionalScopedRoleGroupMock2, RoleGroupMock, RoleGroupMock2 } from 'src/app/shared/testing/group-mock';
+import { AuthService } from '../../../../core/auth/auth.service';
 import { RemoteDataBuildService } from '../../../../core/cache/builders/remote-data-build.service';
 import { ObjectCacheService } from '../../../../core/cache/object-cache.service';
 import { RestResponse } from '../../../../core/cache/response.models';
 import { DSOChangeAnalyzer } from '../../../../core/data/dso-change-analyzer.service';
+import { AuthorizationDataService } from '../../../../core/data/feature-authorization/authorization-data.service';
 import { PaginatedList } from '../../../../core/data/paginated-list';
 import { RemoteData } from '../../../../core/data/remote-data';
 import { FindListOptions } from '../../../../core/data/request.models';
@@ -22,20 +28,17 @@ import { HALEndpointService } from '../../../../core/shared/hal-endpoint.service
 import { PageInfo } from '../../../../core/shared/page-info.model';
 import { UUIDService } from '../../../../core/shared/uuid.service';
 import { FormBuilderService } from '../../../../shared/form/builder/form-builder.service';
+import { getMockFormBuilderService } from '../../../../shared/mocks/form-builder-service.mock';
+import { TranslateLoaderMock } from '../../../../shared/mocks/translate-loader.mock';
+import { getMockTranslateService } from '../../../../shared/mocks/translate.service.mock';
 import { NotificationsService } from '../../../../shared/notifications/notifications.service';
+import { createSuccessfulRemoteDataObject$ } from '../../../../shared/remote-data.utils';
+import { AuthServiceStub } from '../../../../shared/testing/auth-service.stub';
+import { EpersonRegistrationService } from 'src/app/core/data/eperson-registration.service';
+import { EPersonMock, EPersonMock2 } from '../../../../shared/testing/eperson.mock';
+import { NotificationsServiceStub } from '../../../../shared/testing/notifications-service.stub';
 import { EPeopleRegistryComponent } from '../epeople-registry.component';
 import { EPersonFormComponent } from './eperson-form.component';
-import { EPersonMock, EPersonMock2 } from '../../../../shared/testing/eperson.mock';
-import { createSuccessfulRemoteDataObject$ } from '../../../../shared/remote-data.utils';
-import { getMockFormBuilderService } from '../../../../shared/mocks/form-builder-service.mock';
-import { getMockTranslateService } from '../../../../shared/mocks/translate.service.mock';
-import { NotificationsServiceStub } from '../../../../shared/testing/notifications-service.stub';
-import { TranslateLoaderMock } from '../../../../shared/mocks/translate-loader.mock';
-import { AuthService } from '../../../../core/auth/auth.service';
-import { AuthServiceStub } from '../../../../shared/testing/auth-service.stub';
-import { AuthorizationDataService } from '../../../../core/data/feature-authorization/authorization-data.service';
-import { GroupDataService } from '../../../../core/eperson/group-data.service';
-import { createPaginatedList } from '../../../../shared/testing/utils.test';
 
 describe('EPersonFormComponent', () => {
   let component: EPersonFormComponent;
@@ -45,9 +48,10 @@ describe('EPersonFormComponent', () => {
 
   let mockEPeople;
   let ePersonDataServiceStub: any;
+  let groupDataServiceStub: any;
   let authService: AuthServiceStub;
   let authorizationService: AuthorizationDataService;
-  let groupsDataService: GroupDataService;
+  let epersonRegistrationService: EpersonRegistrationService;
 
   beforeEach(async(() => {
     mockEPeople = [EPersonMock, EPersonMock2];
@@ -110,18 +114,34 @@ describe('EPersonFormComponent', () => {
 
       }
     };
+
+    groupDataServiceStub = {
+      searchGroups(query: string): Observable<RemoteData<PaginatedList<Group>>> {
+        if (query === 'ROLE:') {
+          return createSuccessfulRemoteDataObject$(new PaginatedList(new PageInfo(), [RoleGroupMock, RoleGroupMock2]));
+        } else {
+          return createSuccessfulRemoteDataObject$(new PaginatedList(new PageInfo(), [InstitutionalRoleGroupMock]));
+        }
+      },
+      findAllByHref(href: string): Observable<RemoteData<PaginatedList<Group>>> {
+        return createSuccessfulRemoteDataObject$(new PaginatedList(new PageInfo(), [InstitutionalScopedRoleGroupMock, InstitutionalScopedRoleGroupMock2]));
+      },
+      getGroupRegistryRouterLink(): string {
+        return '';
+      }
+    };
+
     builderService = getMockFormBuilderService();
     translateService = getMockTranslateService();
     authService = new AuthServiceStub();
     authorizationService = jasmine.createSpyObj('authorizationService', {
       isAuthorized: observableOf(true)
     });
-    groupsDataService = jasmine.createSpyObj('groupsDataService', {
-      findAllByHref: createSuccessfulRemoteDataObject$(createPaginatedList([])),
-      getGroupRegistryRouterLink: ''
+    epersonRegistrationService = jasmine.createSpyObj('epersonRegistrationService', {
+      registerEmail: observableOf(new RestResponse(true, 200, 'Success'))
     });
     TestBed.configureTestingModule({
-      imports: [CommonModule, NgbModule, FormsModule, ReactiveFormsModule, BrowserModule,
+      imports: [CommonModule, NgbModule, FormsModule, ReactiveFormsModule, BrowserModule, RouterTestingModule,
         TranslateModule.forRoot({
           loader: {
             provide: TranslateLoader,
@@ -132,6 +152,7 @@ describe('EPersonFormComponent', () => {
       declarations: [EPeopleRegistryComponent, EPersonFormComponent],
       providers: [EPersonFormComponent,
         { provide: EPersonDataService, useValue: ePersonDataServiceStub },
+        { provide: GroupDataService, useValue: groupDataServiceStub },
         { provide: NotificationsService, useValue: new NotificationsServiceStub() },
         { provide: FormBuilderService, useValue: builderService },
         { provide: DSOChangeAnalyzer, useValue: {} },
@@ -143,8 +164,9 @@ describe('EPersonFormComponent', () => {
         { provide: HALEndpointService, useValue: {} },
         { provide: AuthService, useValue: authService },
         { provide: AuthorizationDataService, useValue: authorizationService },
-        { provide: GroupDataService, useValue: groupsDataService },
-        EPeopleRegistryComponent
+        { provide: EpersonRegistrationService, useValue: epersonRegistrationService },
+        EPeopleRegistryComponent,
+        ChangeDetectorRef
       ],
       schemas: [NO_ERRORS_SCHEMA]
     }).compileComponents();
@@ -187,18 +209,51 @@ describe('EPersonFormComponent', () => {
               value: lastName
             },
           ],
+          'perucris.eperson.role': [
+            {
+              value: RoleGroupMock2.name,
+              authority: RoleGroupMock2.id,
+              confidence: 600
+            },
+          ],
+          'perucris.eperson.institutional-role': [
+            {
+              value: InstitutionalRoleGroupMock.name,
+              authority: InstitutionalRoleGroupMock.id,
+              confidence: 600
+            },
+          ],
+          'perucris.eperson.institutional-scoped-role': [
+            {
+              value: InstitutionalScopedRoleGroupMock.name,
+              authority: InstitutionalScopedRoleGroupMock.id,
+              confidence: 600
+            },
+          ]
         },
         email: email,
         canLogIn: canLogIn,
         requireCertificate: requireCertificate,
       });
       spyOn(component.submitForm, 'emit');
+
       component.firstName.value = firstName;
       component.lastName.value = lastName;
       component.email.value = email;
       component.canLogIn.value = canLogIn;
       component.requireCertificate.value = requireCertificate;
+      component.roles.group.forEach((model) => {
+        if (model.name === RoleGroupMock2.id) {
+          model.value = true;
+        }
+      });
+      component.institutionalScopedRoles[0].group.forEach((model) => {
+        if (model.name === InstitutionalScopedRoleGroupMock.id) {
+          model.value = true;
+        }
+      });
     });
+
     describe('without active EPerson', () => {
       beforeEach(() => {
         spyOn(ePersonDataServiceStub, 'getActiveEPerson').and.returnValue(observableOf(undefined));
@@ -229,6 +284,27 @@ describe('EPersonFormComponent', () => {
                 value: lastName
               },
             ],
+            'perucris.eperson.role': [
+              {
+                value: RoleGroupMock2.name,
+                authority: RoleGroupMock2.id,
+                confidence: 600
+              },
+            ],
+            'perucris.eperson.institutional-role': [
+              {
+                value: InstitutionalRoleGroupMock.name,
+                authority: InstitutionalRoleGroupMock.id,
+                confidence: 600
+              },
+            ],
+            'perucris.eperson.institutional-scoped-role': [
+              {
+                value: InstitutionalScopedRoleGroupMock.name,
+                authority: InstitutionalScopedRoleGroupMock.id,
+                confidence: 600
+              },
+            ]
           },
           email: email,
           canLogIn: canLogIn,
@@ -283,4 +359,22 @@ describe('EPersonFormComponent', () => {
     });
   });
 
+  describe('Reset Password', () => {
+    let ePersonId;
+    let ePersonEmail;
+
+    beforeEach(() => {
+      ePersonId = 'testEPersonId';
+      ePersonEmail = 'person.email@4science.it';
+      component.epersonInitial = Object.assign(new EPerson(), {
+        id: ePersonId,
+        email: ePersonEmail
+      });
+      component.resetPassword();
+    });
+
+    it('should call epersonRegistrationService.registerEmail', () => {
+      expect(epersonRegistrationService.registerEmail).toHaveBeenCalledWith(ePersonEmail);
+    });
+  });
 });
