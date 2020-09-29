@@ -7,11 +7,15 @@ import { AdminWorkflowPageComponent } from './admin-workflow-page/admin-workflow
 import { I18nBreadcrumbsService } from '../core/breadcrumbs/i18n-breadcrumbs.service';
 import { AdminCurationTasksComponent } from './admin-curation-tasks/admin-curation-tasks.component';
 import { AdminEditUserAgreementComponent } from './admin-edit-user-agreement/admin-edit-user-agreement.component';
-import { ACCESS_CONTROL_MODULE_PATH, REGISTRIES_MODULE_PATH } from './admin-routing-paths';
+import { ACCESS_CONTROL_MODULE_PATH, REGISTRIES_MODULE_PATH, INSTITUTIONS_MODULE_PATH } from './admin-routing-paths';
 
 @NgModule({
   imports: [
     RouterModule.forChild([
+      {
+        path: INSTITUTIONS_MODULE_PATH,
+        loadChildren: './admin-institutions/admin-institutions.module#AdminInstitutionsModule'
+      },
       {
         path: REGISTRIES_MODULE_PATH,
         loadChildren: './admin-registries/admin-registries.module#AdminRegistriesModule'

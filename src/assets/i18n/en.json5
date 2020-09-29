@@ -46,6 +46,41 @@
 
   "admin.edit-user-agreement.title": "Edit User Agreement",
 
+  
+
+  "admin.institution.new.breadcrumbs": "Create Institution",
+
+  "admin.institution.new.error": "An error occurred while creating the new institution. Check if the template institution is defined and if an institution with the same name already exists.",
+
+  "admin.institution.new.header": "Create Institution",
+
+  "admin.institution.new.name": "Name",
+
+  "admin.institution.new.processing": "Loading",
+
+  "admin.institution.new.submit": "Submit",
+
+  "admin.institution.new.success": "The new institution was successfully created",
+
+  "admin.institution.new.title": "Create Institution",
+  
+
+  "admin.institution.explore.breadcrumbs": "Explore Institutions",
+
+  "admin.institution.explore.header": "Explore Institutions",
+
+  "admin.institution.explore.entities": "Entities",
+
+  "admin.institution.explore.name": "Institution name",
+
+  "admin.institution.explore.no-entities": "No available entities",
+
+  "admin.institution.explore.no-roles": "No available roles",
+
+  "admin.institution.explore.roles": "Institutional Scoped Roles",
+
+  "admin.institution.explore.title": "Explore Institutions",
+
 
 
   "admin.registries.bitstream-formats.breadcrumbs": "Format registry",
@@ -317,6 +352,8 @@
 
   "admin.access-control.groups.badge.role": "Role",
 
+  "admin.access-control.groups.badge.scoped": "Institutional Scoped Role",
+
   "admin.access-control.groups.title": "DSpace Angular :: Groups",
 
   "admin.access-control.groups.head": "Groups/Roles",
@@ -379,6 +416,8 @@
   "admin.access-control.groups.form.groupType.normal": "Normal type",
 
   "admin.access-control.groups.form.groupType.role": "Role type",
+
+  "admin.access-control.groups.form.groupType.scoped": "Institutional Scoped Role type",
 
   "admin.access-control.groups.form.notification.created.success": "Successfully created Group \"{{name}}\"",
 
@@ -2135,6 +2174,13 @@
   "menu.section.import_batch": "Batch Import (ZIP)",
 
   "menu.section.import_metadata": "Metadata",
+
+
+  "menu.section.institutions": "Institutions",
+
+  "menu.section.institutions_new": "New",
+
+  "menu.section.institutions_explore": "Explore",
 
 
 
