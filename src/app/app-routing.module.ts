@@ -14,13 +14,15 @@ import {
   PROFILE_MODULE_PATH,
   ADMIN_MODULE_PATH,
   BITSTREAM_MODULE_PATH,
-  INFO_MODULE_PATH
+  INFO_MODULE_PATH,
+  EDIT_ITEM_PATH
 } from './app-routing-paths';
 import { COLLECTION_MODULE_PATH } from './+collection-page/collection-page-routing-paths';
 import { COMMUNITY_MODULE_PATH } from './+community-page/community-page-routing-paths';
 import { ITEM_MODULE_PATH } from './+item-page/item-page-routing-paths';
 import { ReloadGuard } from './core/reload/reload.guard';
 import { EndUserAgreementCurrentUserGuard } from './core/end-user-agreement/end-user-agreement-current-user.guard';
+import { SiteRegisterGuard } from './core/data/feature-authorization/feature-authorization-guard/site-register.guard';
 
 @NgModule({
   imports: [
@@ -33,7 +35,7 @@ import { EndUserAgreementCurrentUserGuard } from './core/end-user-agreement/end-
             { path: 'community-list', loadChildren: './community-list-page/community-list-page.module#CommunityListPageModule', canActivate: [EndUserAgreementCurrentUserGuard] },
             { path: 'id', loadChildren: './+lookup-by-id/lookup-by-id.module#LookupIdModule', canActivate: [EndUserAgreementCurrentUserGuard] },
             { path: 'handle', loadChildren: './+lookup-by-id/lookup-by-id.module#LookupIdModule', canActivate: [EndUserAgreementCurrentUserGuard] },
-            { path: REGISTER_PATH, loadChildren: './register-page/register-page.module#RegisterPageModule' },
+            { path: REGISTER_PATH, loadChildren: './register-page/register-page.module#RegisterPageModule', canActivate: [SiteRegisterGuard] },
             { path: FORGOT_PASSWORD_PATH, loadChildren: './forgot-password/forgot-password.module#ForgotPasswordModule', canActivate: [EndUserAgreementCurrentUserGuard] },
             { path: COMMUNITY_MODULE_PATH, loadChildren: './+community-page/community-page.module#CommunityPageModule', canActivate: [EndUserAgreementCurrentUserGuard] },
             { path: COLLECTION_MODULE_PATH, loadChildren: './+collection-page/collection-page.module#CollectionPageModule', canActivate: [EndUserAgreementCurrentUserGuard] },
@@ -60,6 +62,11 @@ import { EndUserAgreementCurrentUserGuard } from './core/end-user-agreement/end-
             {
               path: WORKFLOW_ITEM_MODULE_PATH,
               loadChildren: './+workflowitems-edit-page/workflowitems-edit-page.module#WorkflowItemsEditPageModule',
+              canActivate: [EndUserAgreementCurrentUserGuard]
+            },
+            {
+              path: EDIT_ITEM_PATH,
+              loadChildren: './edit-item/edit-item.module#EditItemModule',
               canActivate: [EndUserAgreementCurrentUserGuard]
             },
             {

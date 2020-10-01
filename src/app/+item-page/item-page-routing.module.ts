@@ -11,6 +11,7 @@ import { DSOBreadcrumbsService } from '../core/breadcrumbs/dso-breadcrumbs.servi
 import { LinkService } from '../core/cache/builders/link.service';
 import { UploadBitstreamComponent } from './bitstreams/upload/upload-bitstream.component';
 import { UPLOAD_BITSTREAM_PATH, ITEM_EDIT_PATH, getItemModuleRoute } from './item-page-routing-paths';
+import { ItemPageAdministratorGuard } from './item-page-administrator.guard';
 import { CrisItemPageTabResolver } from '../cris-item-page/cris-item-page-tab.resolver';
 
 export function getItemPageRoute(itemId: string) {
@@ -45,7 +46,8 @@ export function getItemEditPath(id: string) {
           {
             path: ITEM_EDIT_PATH,
             loadChildren: './edit-item-page/edit-item-page.module#EditItemPageModule',
-            canActivate: [AuthenticatedGuard]
+            canActivate: [ItemPageAdministratorGuard],
+            data: { title: 'submission.edit.title' }
           },
           {
             path: UPLOAD_BITSTREAM_PATH,
@@ -60,7 +62,8 @@ export function getItemEditPath(id: string) {
     ItemPageResolver,
     ItemBreadcrumbResolver,
     DSOBreadcrumbsService,
-    LinkService
+    LinkService,
+    ItemPageAdministratorGuard
   ]
 
 })

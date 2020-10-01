@@ -177,6 +177,7 @@ import { ReloadGuard } from './reload/reload.guard';
 import { EndUserAgreementCurrentUserGuard } from './end-user-agreement/end-user-agreement-current-user.guard';
 import { EndUserAgreementCookieGuard } from './end-user-agreement/end-user-agreement-cookie.guard';
 import { EndUserAgreementService } from './end-user-agreement/end-user-agreement.service';
+import { SiteRegisterGuard } from './data/feature-authorization/feature-authorization-guard/site-register.guard';
 import { SearchcomponentService } from './layout/searchcomponent.service';
 import { SearchComponent } from './layout/models/search-component.model';
 import { ResearcherProfileService } from './profile/researcher-profile.service';
@@ -184,9 +185,15 @@ import { ResearcherProfile } from './profile/model/researcher-profile.model';
 import { SectionDataService } from './layout/section-data.service';
 import { Section } from './layout/models/section.model';
 import { SearchConfigResponseParsingService } from './data/search-config-response-parsing.service';
+import { InstitutionDataService } from './institution/institution-data.service';
 import { OrcidQueueService } from './orcid/orcid-queue.service';
 import { OrcidQueue } from './orcid/model/orcid-queue.model';
-import { InstitutionDataService } from './institution/institution-data.service';
+import { OrcidHistoryService } from './orcid/orcid-history.service';
+import { OrcidHistory } from './orcid/model/orcid-history.model';
+import { EditItem } from './submission/models/edititem.model';
+import { EditItemDataService } from './submission/edititem-data.service';
+import { EditItemMode } from './submission/models/edititem-mode.model';
+import { EditItemModeDataService } from './submission/edititemmode-data.service';
 
 /**
  * When not in production, endpoint responses can be mocked for testing purposes
@@ -311,6 +318,7 @@ const PROVIDERS = [
   FeatureDataService,
   AuthorizationDataService,
   SiteAdministratorGuard,
+  SiteRegisterGuard,
   MetadataSchemaDataService,
   MetadataFieldDataService,
   TokenResponseParsingService,
@@ -342,8 +350,11 @@ const PROVIDERS = [
   SearchcomponentService,
   ResearcherProfileService,
   SectionDataService,
+  InstitutionDataService,
   OrcidQueueService,
-  InstitutionDataService
+  OrcidHistoryService,
+  EditItemDataService,
+  EditItemModeDataService
 ];
 
 /**
@@ -403,7 +414,10 @@ export const models =
     SearchComponent,
     ResearcherProfile,
     OrcidQueue,
-    Section
+    OrcidHistory,
+    Section,
+    EditItem,
+    EditItemMode
   ];
 
 @NgModule({
