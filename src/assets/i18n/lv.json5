@@ -2299,7 +2299,11 @@
   
   // "login.form.shibboleth": "Log in with Shibboleth",
   "login.form.shibboleth": "Pieslēgties ar Shibboleth",
-  
+
+  // "login.form.oidc": "Log in with OpenID",
+  // TODO New key - Add a translation
+  "login.form.oidc": "Log in with OpenID",
+
   // "login.form.submit": "Log in",
   "login.form.submit": "Pieslēgties",
   

@@ -2055,6 +2055,8 @@
 
   "login.form.shibboleth": "Log in with Shibboleth",
 
+  "login.form.oidc": "Log in with OpenID",
+
   "login.form.submit": "Log in",
 
   "login.title": "Login",
