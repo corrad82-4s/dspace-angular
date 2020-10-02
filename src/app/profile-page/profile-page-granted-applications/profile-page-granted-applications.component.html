@@ -1,0 +1,59 @@
+<h3 class="mt-4">{{'profile.granted-applications.head' | translate}}</h3>
+
+<ds-pagination [paginationOptions]="paginationOptions"
+               [collectionSize]="(getApplications() | async)?.length"
+               [disableRouteParameterUpdate]="true"
+               [hideGear]="true"
+               (pageChange)="setPage($event)">
+
+  <table class="table table-striped table-bordered table-hover">
+    <thead>
+      <tr class="text-center">
+        <th scope="col">{{'profile.granted-applications.table.id' | translate}}</th>
+        <th scope="col">{{'profile.granted-applications.table.client-id' | translate}}</th>
+        <th scope="col">{{'profile.granted-applications.table.client-name' | translate}}</th>
+        <th scope="col">{{'profile.granted-applications.table.scopes' | translate}}</th>
+        <th scope="col">{{'profile.granted-applications.table.revoke' | translate}}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let entry of (getApplications() | async) | paginate: { itemsPerPage: paginationOptions.pageSize,
+                    currentPage: paginationOptions.currentPage, totalItems: (getApplications() | async)?.length }; trackById">
+        <td>{{entry.id}}</td>
+        <td>{{entry.clientId}}</td>
+        <td>{{entry.clientName}}</td>
+        <td>
+          <ul>
+            <li *ngFor="let scope of entry.scopes">{{scope}}</li>
+          </ul>
+        </td>
+        <td class="text-center">
+          <div class="btn-group edit-field">
+            <button class="btn btn-outline-primary btn-sm"
+                    [disabled]="(processing$ | async)"
+                    [title]="'profile.granted-applications.table.revoke' | translate"
+                    (click)="confirmRevoke(content, entry.place, entry.encodedValue);$event.stopImmediatePropagation();">
+              <i class="fas fa-trash-alt fa-fw"></i>
+            </button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</ds-pagination>
+
+<ng-template #content let-c="close" let-d="revoke">
+  <div class="modal-header">
+    <h4 class="modal-title text-danger">{{'profile.granted-applications.revoke.title' | translate}}</h4>
+    <button type="button" class="close" aria-label="Close" (click)="d('cancel')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p>{{'profile.granted-applications.revoke.info' | translate}}</p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" (click)="c('cancel')">{{'profile.granted-applications.revoke.cancel' | translate}}</button>
+    <button type="button" class="btn btn-danger" (click)="c('ok')">{{'profile.granted-applications.revoke.submit' | translate}}</button>
+  </div>
+</ng-template>

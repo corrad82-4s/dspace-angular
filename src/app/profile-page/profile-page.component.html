@@ -25,6 +25,8 @@
     </div>
     <button class="btn btn-outline-primary" (click)="updateProfile()">{{'profile.form.submit' | translate}}</button>
 
+    <ds-profile-page-granted-applications [user]="user"></ds-profile-page-granted-applications>
+
     <ng-container *ngVar="(groupsRD$ | async)?.payload?.page as groups">
       <div *ngIf="groups">
         <h3 class="mt-4">{{'profile.groups.head' | translate}}</h3>
