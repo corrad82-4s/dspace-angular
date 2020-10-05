@@ -85,9 +85,6 @@ export class ProfilePageGrantedApplicationsComponent implements OnInit, OnDestro
     this.paginationOptions.pageSize = 5;
     if (this.user) {
       this.userUUID = this.user.id;
-      console.log(Metadata.all(this.user.metadata, EPERSON_GRANTED_METADATA),
-        Metadata.all(this.user.metadata, EPERSON_REJECT_METADATA));
-
       // Subscribe to metadata list changes
       this.sub = this.grantedMetadataValues$.pipe(
         filter((metadataValues) => isNotEmpty(metadataValues)),
@@ -152,11 +149,12 @@ export class ProfilePageGrantedApplicationsComponent implements OnInit, OnDestro
         id: parsedObj.id,
         clientName: parsedObj.clientName,
         clientId: parsedObj.clientId,
-        scopes: parsedObj.scopes.split(','),
+        scopes: parsedObj.scopes.split(',').map((value: string) => value.trim()),
         encodedValue: metadata.value,
         place: metadata.place
       }
     });
+
     this.applicationList$.next(list);
   }
 
