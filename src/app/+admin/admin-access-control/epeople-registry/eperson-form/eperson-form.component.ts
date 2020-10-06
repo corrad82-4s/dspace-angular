@@ -10,10 +10,9 @@ import {
 import { TranslateService } from '@ngx-translate/core';
 import { combineLatest, of, Subscription } from 'rxjs';
 import { Observable } from 'rxjs/internal/Observable';
-import { map, take, tap } from 'rxjs/operators';
+import { flatMap, map, reduce, take, tap } from 'rxjs/operators';
 import { AuthService } from '../../../../core/auth/auth.service';
 import { RestResponse } from '../../../../core/cache/response.models';
-import { AuthorizationDataService } from '../../../../core/data/feature-authorization/authorization-data.service';
 import { PaginatedList } from '../../../../core/data/paginated-list';
 import { RemoteData } from '../../../../core/data/remote-data';
 import { EPersonDataService } from '../../../../core/eperson/eperson-data.service';
@@ -191,10 +190,15 @@ export class EPersonFormComponent implements OnInit, OnDestroy {
       this.translateService.get(`${this.messagePrefix}.requireCertificate`),
       this.translateService.get(`${this.messagePrefix}.emailHint`),
       this.groupsDataService.searchGroups('ROLE:').pipe(getFirstSucceededRemoteListPayload()),
-      this.groupsDataService.searchGroups('INSTITUTIONAL:').pipe(getFirstSucceededRemoteListPayload()),
+      this.groupsDataService.searchGroups('INSTITUTIONAL:').pipe(
+        getFirstSucceededRemoteListPayload(),
+        flatMap((institutionalRoleGroups) => institutionalRoleGroups),
+        flatMap( (institutionalRoleGroup) => this.findInstitutionalScopedRoles(institutionalRoleGroup)),
+        reduce((acc: any, value: any) => [...acc, ...value], [])
+      ),
       this.epersonService.getActiveEPerson()
     ).subscribe(([firstName, lastName, email, roles, rolesNoAvailable, canLogIn, requireCertificate,
-                  emailHint, roleGroups, institutionalRoleGroups, eperson]) => {
+                  emailHint, roleGroups, institutionalRoles, eperson]) => {
 
       this.firstName = new DynamicInputModel({
         id: 'firstName',
@@ -246,54 +250,32 @@ export class EPersonFormComponent implements OnInit, OnDestroy {
           value: (this.epersonInitial != null ? this.epersonInitial.requireCertificate : false)
         });
 
-      const institutionalScopedRoleSearchSubs: Array<Observable<{'scopes': Group[], 'name': string }>> = [];
-      for (const institutionalRoleGroup of institutionalRoleGroups) {
-        institutionalScopedRoleSearchSubs.push( this.groupsDataService.findAllByHref(institutionalRoleGroup._links.subgroups.href)
-            .pipe (getFirstSucceededRemoteDataPayload(),
-                   getPaginatedListPayload(),
-                   tap((groups) => {
-                    for (const group of groups) {
-                      this.institutionalRoleMap.set(group.id, institutionalRoleGroup);
-                    }
-                   }),
-                   map( (groups) => {
-                      return { scopes: groups, name: institutionalRoleGroup.name}
-                   })));
-      }
-
       this.institutionalScopedRoles = [];
 
-      if (institutionalScopedRoleSearchSubs.length === 0) {
-        this.setupForm(eperson);
-      }
+      for (const institutionalRole of institutionalRoles) {
+        const checkboxGroupModel = new DynamicCheckboxGroupModel({
+          id: institutionalRole.name,
+          label: institutionalRole.name,
+          name: institutionalRole.name,
+          group: this.initDynamicCheckboxModels(institutionalRole.scopes, rolesNoAvailable)
+        });
 
-      combineLatest(institutionalScopedRoleSearchSubs).subscribe((institutionalRoles) => {
-        for (const institutionalRole of institutionalRoles) {
-          const checkboxGroupModel = new DynamicCheckboxGroupModel({
-            id: institutionalRole.name,
-            label: institutionalRole.name,
-            name: institutionalRole.name,
-            group: this.initDynamicCheckboxModels(institutionalRole.scopes, rolesNoAvailable)
-          });
+        this.institutionalScopedRoles.push( checkboxGroupModel );
+        this.formLayout[institutionalRole.name] = { grid: { host: 'row' } };
 
-          this.institutionalScopedRoles.push( checkboxGroupModel );
-          this.formLayout[institutionalRole.name] = { grid: { host: 'row' } };
-
-          if (eperson != null) {
-            const epersonRoles = eperson.allMetadata('perucris.eperson.institutional-scoped-role');
-            for (const checkboxModel of checkboxGroupModel.group) {
-              for (const epersonRole of epersonRoles) {
-                if ( checkboxModel.id === epersonRole.authority ) {
-                  checkboxModel.value = true;
-                }
+        if (eperson != null) {
+          const epersonRoles = eperson.allMetadata('perucris.eperson.institutional-scoped-role');
+          for (const checkboxModel of checkboxGroupModel.group) {
+            for (const epersonRole of epersonRoles) {
+              if ( checkboxModel.id === epersonRole.authority ) {
+                checkboxModel.value = true;
               }
             }
           }
-
-          this.setupForm(eperson);
         }
+      }
 
-      });
+      this.setupForm(eperson);
 
       if (eperson != null) {
         this.groups = this.groupsDataService.findAllByHref(eperson._links.groups.href, {
@@ -535,6 +517,21 @@ export class EPersonFormComponent implements OnInit, OnDestroy {
     this.subs.filter((sub) => hasValue(sub)).forEach((sub) => sub.unsubscribe());
   }
 
+  private findInstitutionalScopedRoles(institutionalRole: Group): Observable<{name: string, scopes: Group[]}> {
+    return this.groupsDataService.findAllByHref(institutionalRole._links.subgroups.href).pipe(
+      getFirstSucceededRemoteDataPayload(),
+      getPaginatedListPayload(),
+      tap((groups) => {
+        for (const group of groups) {
+          this.institutionalRoleMap.set(group.id, institutionalRole);
+        }
+      }),
+      map( (groups) => {
+        return { name: institutionalRole.name, scopes: groups }
+      })
+    )
+  }
+
   private initRoleValues(eperson: EPerson, roleMetadata: string) {
     const roleValues = {}
     eperson.allMetadata(roleMetadata)
@@ -611,4 +608,5 @@ export class EPersonFormComponent implements OnInit, OnDestroy {
     }
     return roles;
   }
+
 }

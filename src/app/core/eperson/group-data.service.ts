@@ -416,12 +416,13 @@ export class GroupDataService extends DataService<Group> {
   }
 
   /**
-   * Returns true if the active group is a role group.
+   * Returns true if the active group is a role group (role, institutional role or institutional scoped role).
    */
   public isActiveGroupRole(): Observable<boolean> {
     return this.getActiveGroup().pipe (map( (activeGroup) => {
       return activeGroup != null && (activeGroup.firstMetadataValue('perucris.group.type') === 'ROLE' ||
-        activeGroup.firstMetadataValue('perucris.group.type') === 'INSTITUTIONAL');
+        activeGroup.firstMetadataValue('perucris.group.type') === 'INSTITUTIONAL' ||
+        activeGroup.firstMetadataValue('perucris.group.type') === 'SCOPED');
     }))
   }
 

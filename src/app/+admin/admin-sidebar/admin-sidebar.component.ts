@@ -275,7 +275,7 @@ export class AdminSidebarComponent extends MenuComponent implements OnInit {
           link: ''
         } as LinkMenuItemModel,
         icon: 'cogs',
-        index: 9
+        index: 10
       },
 
       /* Processes */
@@ -289,7 +289,7 @@ export class AdminSidebarComponent extends MenuComponent implements OnInit {
           link: '/processes'
         } as LinkMenuItemModel,
         icon: 'terminal',
-        index: 10
+        index: 11
       },
     ];
     menuList.forEach((menuSection) => this.menuService.addSection(this.menuID, Object.assign(menuSection, {
@@ -488,6 +488,41 @@ export class AdminSidebarComponent extends MenuComponent implements OnInit {
             link: ''
           } as LinkMenuItemModel,
         },
+        /* Institutions */
+        {
+          id: 'institutions',
+          active: false,
+          visible: authorized,
+          model: {
+            type: MenuItemType.TEXT,
+            text: 'menu.section.institutions'
+          } as TextMenuItemModel,
+          icon: 'university',
+          index: 5
+        },
+        {
+          id: 'institutions_new',
+          parentID: 'institutions',
+          active: false,
+          visible: authorized,
+          model: {
+            type: MenuItemType.LINK,
+            text: 'menu.section.institutions_new',
+            link: 'admin/institutions/new'
+          } as LinkMenuItemModel,
+        },
+        {
+          id: 'institutions_explore',
+          parentID: 'institutions',
+          active: false,
+          visible: authorized,
+          model: {
+            type: MenuItemType.LINK,
+            text: 'menu.section.institutions_explore',
+            link: 'admin/institutions/explore'
+          } as LinkMenuItemModel,
+        },
+
         /*  Admin Search */
         {
           id: 'admin_search',
@@ -499,7 +534,7 @@ export class AdminSidebarComponent extends MenuComponent implements OnInit {
             link: '/admin/search'
           } as LinkMenuItemModel,
           icon: 'search',
-          index: 5
+          index: 6
         },
         /*  Registries */
         {
@@ -511,7 +546,7 @@ export class AdminSidebarComponent extends MenuComponent implements OnInit {
             text: 'menu.section.registries'
           } as TextMenuItemModel,
           icon: 'list',
-          index: 6
+          index: 7
         },
         {
           id: 'registries_metadata',
@@ -547,7 +582,7 @@ export class AdminSidebarComponent extends MenuComponent implements OnInit {
             link: 'admin/curation-tasks'
           } as LinkMenuItemModel,
           icon: 'filter',
-          index: 7
+          index: 8
         },
 
         /* Workflow */
@@ -561,8 +596,22 @@ export class AdminSidebarComponent extends MenuComponent implements OnInit {
             link: '/admin/workflow'
           } as LinkMenuItemModel,
           icon: 'user-check',
-          index: 11
+          index: 12
         },
+
+        /* User agreement edit*/
+        {
+          id: 'user_agreement_edit',
+          active: false,
+          visible: authorized,
+          model: {
+            type: MenuItemType.LINK,
+            text: 'menu.section.edit_user_agreement',
+            link: '/admin/edit-user-agreement'
+          } as LinkMenuItemModel,
+          icon: 'list-alt',
+            index: 13
+        }
       ];
 
       menuList.forEach((menuSection) => this.menuService.addSection(this.menuID, Object.assign(menuSection, {

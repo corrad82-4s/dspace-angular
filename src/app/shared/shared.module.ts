@@ -24,6 +24,7 @@ import { FileDropzoneNoUploaderComponent } from './file-dropzone-no-uploader/fil
 import { PublicationListElementComponent } from './object-list/item-list-element/item-types/publication/publication-list-element.component';
 import { EnumKeysPipe } from './utils/enum-keys-pipe';
 import { FileSizePipe } from './utils/file-size-pipe';
+import { MetadataFieldValidator } from './utils/metadatafield-validator.directive';
 import { SafeUrlPipe } from './utils/safe-url-pipe';
 import { ConsolePipe } from './utils/console.pipe';
 import { CollectionListElementComponent } from './object-list/collection-list-element/collection-list-element.component';
@@ -183,6 +184,7 @@ import { ItemVersionsComponent } from './item/item-versions/item-versions.compon
 import { SortablejsModule } from 'ngx-sortablejs';
 import { LogInContainerComponent } from './log-in/container/log-in-container.component';
 import { LogInShibbolethComponent } from './log-in/methods/shibboleth/log-in-shibboleth.component';
+import { LogInOidcComponent } from './log-in/methods/oidc/log-in-oidc.component';
 import { LogInPasswordComponent } from './log-in/methods/password/log-in-password.component';
 import { LogInComponent } from './log-in/log-in.component';
 import { CustomSwitchComponent } from './form/builder/ds-dynamic-form-ui/models/custom-switch/custom-switch.component';
@@ -388,6 +390,7 @@ const COMPONENTS = [
   ExistingMetadataListElementComponent,
   ExistingRelationListElementComponent,
   LogInShibbolethComponent,
+  LogInOidcComponent,
   LogInPasswordComponent,
   LogInContainerComponent,
   ItemVersionsComponent,
@@ -473,6 +476,7 @@ const ENTRY_COMPONENTS = [
   ExistingRelationListElementComponent,
   LogInPasswordComponent,
   LogInShibbolethComponent,
+  LogInOidcComponent,
   ItemVersionsComponent,
   BundleListElementComponent,
   ItemVersionsNoticeComponent,
@@ -480,6 +484,7 @@ const ENTRY_COMPONENTS = [
   ClaimedTaskActionsRejectComponent,
   ClaimedTaskActionsReturnToPoolComponent,
   ClaimedTaskActionsEditMetadataComponent,
+  CollectionDropdownComponent,
   FileDownloadLinkComponent,
   CurationFormComponent,
   ExportMetadataSelectorComponent,
@@ -519,7 +524,8 @@ const DIRECTIVES = [
   FileValueAccessorDirective,
   FileValidator,
   ClaimedTaskActionsDirective,
-  NgForTrackByIdDirective
+  NgForTrackByIdDirective,
+  MetadataFieldValidator
 ];
 
 @NgModule({

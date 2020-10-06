@@ -3,7 +3,7 @@ import { Store } from '@ngrx/store';
 import { Operation } from 'fast-json-patch';
 import { Observable } from 'rxjs';
 import { distinctUntilChanged, filter, find, first, map, mergeMap, switchMap, take } from 'rxjs/operators';
-import { hasValue, isNotEmpty, isNotEmptyOperator } from '../../shared/empty.util';
+import { hasValue, hasValueOperator, isNotEmpty, isNotEmptyOperator } from '../../shared/empty.util';
 import { NotificationOptions } from '../../shared/notifications/models/notification-options.model';
 import { NotificationsService } from '../../shared/notifications/notifications.service';
 import { FollowLinkConfig } from '../../shared/utils/follow-link-config.model';
@@ -376,9 +376,18 @@ export abstract class DataService<T extends CacheableObject> implements UpdateDa
     ).subscribe();
 
     return this.requestService.getByUUID(requestId).pipe(
-      find((request: RequestEntry) => request && request.completed),
+      hasValueOperator(),
+      find((request: RequestEntry) => request.completed),
       map((request: RequestEntry) => request.response)
     );
+  }
+
+  createPatchFromCache(object: T): Observable<Operation[]> {
+    const oldVersion$ = this.findByHref(object._links.self.href);
+    return oldVersion$.pipe(
+      getSucceededRemoteData(),
+      getRemoteDataPayload(),
+      map((oldVersion: T) => this.comparator.diff(oldVersion, object)));
   }
 
   /**
@@ -409,18 +418,16 @@ export abstract class DataService<T extends CacheableObject> implements UpdateDa
    * @param {DSpaceObject} object The given object
    */
   update(object: T): Observable<RemoteData<T>> {
-    const oldVersion$ = this.findByHref(object._links.self.href);
-    return oldVersion$.pipe(
-      getSucceededRemoteData(),
-      getRemoteDataPayload(),
-      mergeMap((oldVersion: T) => {
-          const operations = this.comparator.diff(oldVersion, object);
-          if (isNotEmpty(operations)) {
-            this.objectCache.addPatch(object._links.self.href, operations);
+    return this.createPatchFromCache(object)
+      .pipe(
+        mergeMap((operations: Operation[]) => {
+            if (isNotEmpty(operations)) {
+              this.objectCache.addPatch(object._links.self.href, operations);
+            }
+            return this.findByHref(object._links.self.href);
           }
-          return this.findByHref(object._links.self.href);
-        }
-      ));
+        )
+      );
   }
 
   /**

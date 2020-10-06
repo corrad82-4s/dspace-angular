@@ -9,7 +9,8 @@ import { hasValue } from '../empty.util';
 
 export const authMethodsMock = [
   new AuthMethod('password'),
-  new AuthMethod('shibboleth', 'dspace.test/shibboleth')
+  new AuthMethod('shibboleth', 'dspace.test/shibboleth'),
+  new AuthMethod('oidc', 'dspace.test/oidc')
 ];
 
 export class AuthServiceStub {
@@ -153,5 +154,21 @@ export class AuthServiceStub {
 
   resetAuthenticationError() {
     return;
+  }
+
+  setRedirectUrlIfNotSet(url: string) {
+    return;
+  }
+
+  redirectAfterLoginSuccess() {
+    return;
+  }
+
+  clearRedirectUrl() {
+    return;
+  }
+
+  public replaceToken(token: AuthTokenInfo) {
+    return token;
   }
 }

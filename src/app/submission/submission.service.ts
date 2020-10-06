@@ -67,6 +67,7 @@ export class SubmissionService {
 
   private workspaceLinkPath = 'workspaceitems';
   private workflowLinkPath = 'workflowitems';
+  private editItemsLinkPath = 'edititems';
   /**
    * Initialize service variables
    * @param {NotificationsService} notificationsService
@@ -149,6 +150,24 @@ export class SubmissionService {
     return this.restService.postToEndpoint(this.workspaceLinkPath, {}, null, options).pipe(
       map((workspaceitem: SubmissionObject[]) => workspaceitem[0] as SubmissionObject),
       catchError(() => observableOf({} as SubmissionObject)))
+  }
+
+  /**
+   * Perform a REST call to deposit a workspaceitem and return response
+   *
+   * @param selfUrl
+   *    The workspaceitem self url
+   * @param collectionId
+   *    Optional collection id
+   * @return Observable<SubmissionObject>
+   *    observable of SubmissionObject
+   */
+  createSubmissionFromExternalSource(selfUrl: string, collectionId?: string): Observable<SubmissionObject[]> {
+    const options: HttpOptions = Object.create({});
+    let headers = new HttpHeaders();
+    headers = headers.append('Content-Type', 'text/uri-list');
+    options.headers = headers;
+    return this.restService.postToEndpoint(this.workspaceLinkPath, selfUrl, null, options, collectionId) as Observable<SubmissionObject[]>;
   }
 
   /**
@@ -363,7 +382,7 @@ export class SubmissionService {
     } else if (url.startsWith('/workflowitems')) {
       return this.workflowLinkPath;
     } else {
-      return 'edititems';
+      return this.editItemsLinkPath;
     }
   }
 
@@ -381,6 +400,9 @@ export class SubmissionService {
         break;
       case this.workflowLinkPath:
         scope = SubmissionScopeType.WorkflowItem;
+        break;
+      case this.editItemsLinkPath:
+        scope = SubmissionScopeType.EditItem;
         break;
     }
     return scope;

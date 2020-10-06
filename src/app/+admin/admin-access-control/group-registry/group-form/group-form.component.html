@@ -23,7 +23,7 @@
       <ds-members-list *ngIf="groupBeingEdited != null && !(groupDataService.isActiveGroupRole() | async) && (groupDataService.isActiveGroupEnabled() | async)" 
         [messagePrefix]="messagePrefix + '.members-list'">
       </ds-members-list>
-      <ds-subgroups-list *ngIf="groupBeingEdited != null && (groupDataService.isActiveGroupEnabled() | async)" 
+      <ds-subgroups-list *ngIf="groupBeingEdited != null && !(groupDataService.isActiveGroupRole() | async) && (groupDataService.isActiveGroupEnabled() | async)" 
         [messagePrefix]="messagePrefix + '.subgroups-list'">
       </ds-subgroups-list>
 

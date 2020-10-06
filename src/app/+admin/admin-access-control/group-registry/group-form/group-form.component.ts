@@ -126,11 +126,12 @@ export class GroupFormComponent implements OnInit, OnDestroy {
       this.translateService.get(`${this.messagePrefix}.groupType.normal`),
       this.translateService.get(`${this.messagePrefix}.groupType.role`),
       this.translateService.get(`${this.messagePrefix}.groupType.institutional`),
+      this.translateService.get(`${this.messagePrefix}.groupType.scoped`),
       this.translateService.get(`${this.messagePrefix}.groupStatus`),
       this.translateService.get(`${this.messagePrefix}.groupStatus.enabled`),
       this.translateService.get(`${this.messagePrefix}.groupStatus.disabled`),
       this.groupDataService.getActiveGroup()
-    ).subscribe(([groupName, groupDescription, groupType, normalType, roleType, institutionalType,
+    ).subscribe(([groupName, groupDescription, groupType, normalType, roleType, institutionalType, scopedType,
                   groupStatus, enabledStatus, disabledStatus, activeGroup]) => {
 
       this.groupName = new DynamicInputModel({
@@ -142,21 +143,30 @@ export class GroupFormComponent implements OnInit, OnDestroy {
         },
         required: true,
       });
+
       this.groupDescription = new DynamicTextAreaModel({
         id: 'groupDescription',
         label: groupDescription,
         name: 'groupDescription',
         required: false,
       });
+
+      const groupTypeOptions = [
+        {label: normalType, value: 'NORMAL', disabled: false},
+        {label: roleType, value: 'ROLE', disabled: false},
+        {label: institutionalType, value: 'INSTITUTIONAL', disabled: false}
+      ];
+      if (activeGroup != null) {
+        groupTypeOptions.push({label: scopedType, value: 'SCOPED', disabled:true});
+      }
       this.groupType = new DynamicSelectModel<string>({
         id: 'groupType',
         name: 'groupType',
-        options: [{label: normalType, value: 'NORMAL'},
-                  {label: roleType, value: 'ROLE'},
-                  {label: institutionalType, value: 'INSTITUTIONAL'}],
+        options: groupTypeOptions,
         label: groupType,
         value: 'NORMAL'
       });
+
       this.groupStatus = new DynamicRadioGroupModel<string>({
         id: 'groupStatus',
         name: 'groupStatus',
