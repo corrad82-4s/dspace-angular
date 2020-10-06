@@ -513,7 +513,7 @@ describe('authReducer', () => {
       loading: false,
       authMethods: []
     };
-    const action = new RetrieveAuthMethodsAction(new AuthStatus());
+    const action = new RetrieveAuthMethodsAction(new AuthStatus(), true);
     const newState = authReducer(initialState, action);
     state = {
       authenticated: false,
@@ -538,7 +538,7 @@ describe('authReducer', () => {
       new AuthMethod(AuthMethodType.Shibboleth, 'location'),
       new AuthMethod(AuthMethodType.Oidc, 'location'),
     ];
-    const action = new RetrieveAuthMethodsSuccessAction(authMethods);
+    const action = new RetrieveAuthMethodsSuccessAction(authMethods, false);
     const newState = authReducer(initialState, action);
     state = {
       authenticated: false,
@@ -550,7 +550,31 @@ describe('authReducer', () => {
     expect(newState).toEqual(state);
   });
 
-  it('should properly set the state, in response to a RETRIEVE_AUTH_METHODS_ERROR action', () => {
+  it('should properly set the state, in response to a RETRIEVE_AUTH_METHODS_SUCCESS action with blocking as true', () => {
+    initialState = {
+      authenticated: false,
+      loaded: false,
+      blocking: true,
+      loading: true,
+      authMethods: []
+    };
+    const authMethods = [
+      new AuthMethod(AuthMethodType.Password),
+      new AuthMethod(AuthMethodType.Shibboleth, 'location')
+    ];
+    const action = new RetrieveAuthMethodsSuccessAction(authMethods, true);
+    const newState = authReducer(initialState, action);
+    state = {
+      authenticated: false,
+      loaded: false,
+      blocking: true,
+      loading: false,
+      authMethods: authMethods
+    };
+    expect(newState).toEqual(state);
+  });
+
+  it('should properly set the state, in response to a RETRIEVE_AUTH_METHODS_ERROR action ', () => {
     initialState = {
       authenticated: false,
       loaded: false,
@@ -559,12 +583,33 @@ describe('authReducer', () => {
       authMethods: []
     };
 
-    const action = new RetrieveAuthMethodsErrorAction();
+    const action = new RetrieveAuthMethodsErrorAction(false);
     const newState = authReducer(initialState, action);
     state = {
       authenticated: false,
       loaded: false,
       blocking: false,
+      loading: false,
+      authMethods: [new AuthMethod(AuthMethodType.Password)]
+    };
+    expect(newState).toEqual(state);
+  });
+
+  it('should properly set the state, in response to a RETRIEVE_AUTH_METHODS_ERROR action with blocking as true', () => {
+    initialState = {
+      authenticated: false,
+      loaded: false,
+      blocking: true,
+      loading: true,
+      authMethods: []
+    };
+
+    const action = new RetrieveAuthMethodsErrorAction(true);
+    const newState = authReducer(initialState, action);
+    state = {
+      authenticated: false,
+      loaded: false,
+      blocking: true,
       loading: false,
       authMethods: [new AuthMethod(AuthMethodType.Password)]
     };
