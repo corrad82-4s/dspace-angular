@@ -46,7 +46,7 @@
 
   "admin.edit-user-agreement.title": "Edit User Agreement",
 
-  
+
 
   "admin.institution.new.breadcrumbs": "Create Institution",
 
@@ -63,7 +63,7 @@
   "admin.institution.new.success": "The new institution was successfully created",
 
   "admin.institution.new.title": "Create Institution",
-  
+
 
   "admin.institution.explore.breadcrumbs": "Explore Institutions",
 
@@ -2690,6 +2690,28 @@
   "profile.card.security": "Security",
 
   "profile.form.submit": "Update Profile",
+
+  "profile.granted-applications.head": "Manage list of granted authorization to third parties applications",
+
+  "profile.granted-applications.revoke.cancel": "Cancel",
+
+  "profile.granted-applications.revoke.error": "An error occurred while revoking the grant to application.",
+
+  "profile.granted-applications.revoke.info": "This operation can't be undone. Are you sure?",
+
+  "profile.granted-applications.revoke.submit": "Yes, I'm sure",
+
+  "profile.granted-applications.revoke.title": "Revoke grants",
+
+  "profile.granted-applications.table.client-id": "Client ID",
+
+  "profile.granted-applications.table.client-name": "Client name",
+
+  "profile.granted-applications.table.id": "ID",
+
+  "profile.granted-applications.table.revoke": "Revoke",
+
+  "profile.granted-applications.table.scopes": "Scopes",
 
   "profile.groups.head": "Authorization groups you belong to",
 

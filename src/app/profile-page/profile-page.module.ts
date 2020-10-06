@@ -6,6 +6,7 @@ import { ProfilePageComponent } from './profile-page.component';
 import { ProfilePageMetadataFormComponent } from './profile-page-metadata-form/profile-page-metadata-form.component';
 import { ProfilePageSecurityFormComponent } from './profile-page-security-form/profile-page-security-form.component';
 import { ProfilePageResearcherFormComponent } from './profile-page-researcher-form/profile-page-researcher-form.component';
+import { ProfilePageGrantedApplicationsComponent } from './profile-page-granted-applications/profile-page-granted-applications.component';
 
 @NgModule({
   imports: [
@@ -20,7 +21,8 @@ import { ProfilePageResearcherFormComponent } from './profile-page-researcher-fo
     ProfilePageComponent,
     ProfilePageMetadataFormComponent,
     ProfilePageSecurityFormComponent,
-    ProfilePageResearcherFormComponent
+    ProfilePageResearcherFormComponent,
+    ProfilePageGrantedApplicationsComponent
   ]
 })
 export class ProfilePageModule {
