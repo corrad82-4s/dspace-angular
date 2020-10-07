@@ -738,7 +738,7 @@
   "bulk-import.title" : "Bulk import",
 
   "bulk-import.workflow" : "Use collection workflow",
-  
+
 
 
   "chips.remove": "Remove chip",
@@ -3333,6 +3333,10 @@
   "submission.import-external.source.orcidV2": "ORCID",
 
   "submission.import-external.source.pubmed": "Pubmed",
+
+  "submission.import-external.source.scopus": "Scopus",
+
+  "submission.import-external.source.alicia": "Alicia",
 
   "submission.import-external.source.lcname": "Library of Congress Names",
 
