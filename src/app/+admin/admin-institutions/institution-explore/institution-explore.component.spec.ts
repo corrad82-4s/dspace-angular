@@ -6,6 +6,7 @@ import { BrowserModule, By } from '@angular/platform-browser';
 import { RouterTestingModule } from '@angular/router/testing';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { of } from 'rxjs';
 import { CollectionDataService } from 'src/app/core/data/collection-data.service';
 import { PaginatedList } from 'src/app/core/data/paginated-list';
 import { RequestService } from 'src/app/core/data/request.service';
@@ -26,6 +27,11 @@ describe('InstitutionExploreComponent', () => {
   let institutionService: InstitutionDataService;
   let collectionService: any;
   let requestService: any;
+
+  const template = Object.assign(new Community(), {
+    name: 'Template',
+    id: '8885554123456'
+  });
 
   const firstInstitution = Object.assign(new Community(), {
     name: 'First Institution',
@@ -71,7 +77,8 @@ describe('InstitutionExploreComponent', () => {
       findByParent: createSuccessfulRemoteDataObject$(new PaginatedList(pageInfo, [firstCollection, secondCollection]))
     });
     institutionService = jasmine.createSpyObj('institutionDataService', {
-      findAll: createSuccessfulRemoteDataObject$(new PaginatedList(pageInfo, [firstInstitution, secondInstitution]))
+      findAll: createSuccessfulRemoteDataObject$(new PaginatedList(pageInfo, [firstInstitution, secondInstitution])),
+      getInstitutionTemplate: of(template)
     });
 
     TestBed.configureTestingModule({
@@ -107,10 +114,12 @@ describe('InstitutionExploreComponent', () => {
 
   it('should show all the institutions', fakeAsync(() => {
     const institutionList = fixture.debugElement.query(By.css('#institutionList'));
-    expect(institutionList.children.length).toEqual(2);
-    const firstInstitutionLink = institutionList.children[0].children[0];
+    expect(institutionList.children.length).toEqual(3);
+    const templateInstitutionLink = institutionList.children[0].children[0];
+    expect(templateInstitutionLink.nativeElement.textContent.trim()).toEqual('Template');
+    const firstInstitutionLink = institutionList.children[1].children[0];
     expect(firstInstitutionLink.nativeElement.textContent.trim()).toEqual('First Institution');
-    const secondInstitutionLink = institutionList.children[1].children[0];
+    const secondInstitutionLink = institutionList.children[2].children[0];
     expect(secondInstitutionLink.nativeElement.textContent.trim()).toEqual('Second Institution');
   }))
 
@@ -118,7 +127,7 @@ describe('InstitutionExploreComponent', () => {
 
     beforeEach(fakeAsync(() => {
       const institutionList = fixture.debugElement.query(By.css('#institutionList'));
-      const firstInstitutionLink = institutionList.children[0].children[0];
+      const firstInstitutionLink = institutionList.children[1].children[0];
       firstInstitutionLink.triggerEventHandler('click', {});
       fixture.detectChanges();
       tick();
