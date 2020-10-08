@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { getCollectionPageRoute } from 'src/app/+collection-page/collection-page-routing-paths';
 import { getCommunityPageRoute } from 'src/app/+community-page/community-page-routing-paths';
@@ -68,14 +68,25 @@ export class InstitutionExploreComponent implements OnInit {
    * Update the list of institutions.
    */
   updatePage() {
-    this.institutionService.findAll({
-      currentPage: this.config.currentPage,
-      elementsPerPage: this.config.pageSize,
-      sort: { field: this.sortConfig.field, direction: this.sortConfig.direction }
-    }).pipe(getFirstSucceededRemoteDataWithNotEmptyPayload()).subscribe((results) => {
-      this.requestService.removeByHrefSubstring(results.self)
-      this.institutions$.next(results.page);
-    });
+    combineLatest(
+      this.institutionService.findAll({ currentPage: this.config.currentPage,
+        elementsPerPage: this.config.pageSize,
+        sort: { field: this.sortConfig.field, direction: this.sortConfig.direction }}).pipe(getFirstSucceededRemoteDataWithNotEmptyPayload()),
+      this.institutionService.getInstitutionTemplate()
+    ).subscribe(([institutions, template]) => {
+
+      this.requestService.removeByHrefSubstring(institutions.self)
+      if (!template || this.templateIncludedInInstitutions(institutions.page, template)) {
+        this.institutions$.next(institutions.page);
+      } else {
+        this.institutions$.next([template, ...institutions.page]);
+      }
+
+    })
+  }
+
+  private templateIncludedInInstitutions(institutions: Community[], template: Community): boolean {
+    return institutions.map((community) => community.id).includes(template.id)
   }
 
   changeCurrentInstitution(institution: Community) {
