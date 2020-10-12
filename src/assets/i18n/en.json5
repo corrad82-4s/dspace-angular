@@ -3535,6 +3535,8 @@
 
   "submission.sections.describe.relationship-lookup.selection-tab.title.pubmed": "Search Results",
 
+  "submission.sections.describe.relationship-lookup.selection-tab.title.alicia": "Search Results",
+
   "submission.sections.describe.relationship-lookup.name-variant.notification.content": "Would you like to save \"{{ value }}\" as a name variant for this person so you and others can reuse it for future submissions? If you don\'t you can still use it for this submission.",
 
   "submission.sections.describe.relationship-lookup.name-variant.notification.confirm": "Save a new name variant",
