@@ -101,7 +101,7 @@ export class SubmissionImportExternalSearchbarComponent implements OnInit {
     this.sourceList = [];
     this.findListOptions = Object.assign({}, new FindListOptions(), {
       elementsPerPage: 5,
-      currentPage: 0,
+      currentPage: 1,
     });
     this.externalService.findAll(this.findListOptions).pipe(
       catchError(() => {
@@ -139,7 +139,7 @@ export class SubmissionImportExternalSearchbarComponent implements OnInit {
    * Load the next pages of external sources.
    */
   public onScroll(): void {
-    if (!this.sourceListLoading && this.pageInfo.currentPage <= this.pageInfo.totalPages) {
+    if (!this.sourceListLoading && ((this.pageInfo.currentPage + 1) <= this.pageInfo.totalPages)) {
       this.sourceListLoading = true;
       this.findListOptions = Object.assign({}, new FindListOptions(), {
         elementsPerPage: 5,
