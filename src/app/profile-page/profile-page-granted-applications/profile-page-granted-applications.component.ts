@@ -150,6 +150,8 @@ export class ProfilePageGrantedApplicationsComponent implements OnInit, OnDestro
         clientName: parsedObj.clientName,
         clientId: parsedObj.clientId,
         scopes: parsedObj.scopes.split(',').map((value: string) => value.trim()),
+        issuedAt: parsedObj.issuedAt,
+        expireAt: parsedObj.expireAt,
         encodedValue: metadata.value,
         place: metadata.place
       }

@@ -2707,6 +2707,12 @@
 
   "profile.granted-applications.table.client-name": "Client name",
 
+  "profile.granted-applications.table.issued-at": "Issued At",
+
+  "profile.granted-applications.table.expire-at": "Expire At",
+
+  "profile.granted-applications.table.not-available": "Not Available",
+
   "profile.granted-applications.table.id": "ID",
 
   "profile.granted-applications.table.revoke": "Revoke",
