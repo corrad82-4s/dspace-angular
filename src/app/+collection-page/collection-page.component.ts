@@ -27,6 +27,7 @@ import { PaginationComponentOptions } from '../shared/pagination/pagination-comp
 import { getBulkImportRoute } from '../app-routing-paths';
 import { AuthorizationDataService } from '../core/data/feature-authorization/authorization-data.service';
 import { FeatureID } from '../core/data/feature-authorization/feature-id';
+import { getCollectionEditRoute } from './collection-page-routing-paths';
 
 @Component({
   selector: 'ds-collection-page',
@@ -123,6 +124,10 @@ export class CollectionPageComponent implements OnInit {
 
   getBulkImportPageRouterLink(collection: Collection) {
     return getBulkImportRoute(collection);
+  }
+
+  getCollectionEditPageRouterLink(collection: Collection) {
+    return getCollectionEditRoute(collection.uuid);
   }
 
   isCollectionAdmin(collection: Collection): Observable<boolean> {
