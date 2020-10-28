@@ -935,6 +935,8 @@
 
   "collection.page.bulk-import": "Import items into this collection",
 
+  "collection.page.edit": "Edit this collection",
+
   "collection.page.handle": "Permanent URI for this collection",
 
   "collection.page.license": "License",
@@ -2707,6 +2709,12 @@
 
   "profile.granted-applications.table.client-name": "Client name",
 
+  "profile.granted-applications.table.issued-at": "Issued At",
+
+  "profile.granted-applications.table.expire-at": "Expire At",
+
+  "profile.granted-applications.table.not-available": "Not Available",
+
   "profile.granted-applications.table.id": "ID",
 
   "profile.granted-applications.table.revoke": "Revoke",
@@ -3324,6 +3332,8 @@
 
   "submission.import-external.search.source.hint": "Pick an external source",
 
+  "submission.import-external.source.arxiv": "arXiv",
+
   "submission.import-external.source.loading": "Loading ...",
 
   "submission.import-external.source.sherpaJournal": "SHERPA Journals",
@@ -3535,6 +3545,8 @@
 
   "submission.sections.describe.relationship-lookup.selection-tab.title.pubmed": "Search Results",
 
+  "submission.sections.describe.relationship-lookup.selection-tab.title.alicia": "Search Results",
+
   "submission.sections.describe.relationship-lookup.name-variant.notification.content": "Would you like to save \"{{ value }}\" as a name variant for this person so you and others can reuse it for future submissions? If you don\'t you can still use it for this submission.",
 
   "submission.sections.describe.relationship-lookup.name-variant.notification.confirm": "Save a new name variant",
@@ -3616,6 +3628,8 @@
   "submission.sections.submit.progressbar.describe.publication_indexing": "Publication indexing",
 
   "submission.sections.submit.progressbar.describe.publication_references": "Publication references",
+
+  "submission.sections.submit.progressbar.describe.publication_thesis": "Publication Thesis",
 
   "submission.sections.submit.progressbar.describe.rp": "Researcher basic information",
 

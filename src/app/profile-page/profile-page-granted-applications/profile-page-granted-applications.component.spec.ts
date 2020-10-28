@@ -73,7 +73,7 @@ describe('ProfilePageGrantedApplicationsComponent', () => {
         virtualValue: ''
       }],
       'perucris.oidc.granted': [{
-        value: '{\"id\":\"dc39e3a0-921e-4b0b-b10d-f528e63cc1bc\",\"clientName\":\"DSpace\",\"scopes\":\"openid\",\"clientId\":\"10\"}',
+        value: '{\"id\":\"dc39e3a0-921e-4b0b-b10d-f528e63cc1bc\",\"clientName\":\"DSpace\",\"scopes\":\"openid\",\"clientId\":\"10\",\"issuedAt\":\"1603202524\",\"expireAt\":\"2233922524\"}',
         language: null,
         authority: null,
         confidence: -1,
@@ -82,7 +82,7 @@ describe('ProfilePageGrantedApplicationsComponent', () => {
         isVirtual: false,
         virtualValue: ''
       }, {
-        value: '{\"id\":\"ec9131b8-c583-4f28-b9fd-a6d73a178aa4\",\"clientName\":\"DSpace\",\"scopes\":\"openid\",\"clientId\":\"10\"}',
+        value: '{\"id\":\"ec9131b8-c583-4f28-b9fd-a6d73a178aa4\",\"clientName\":\"DSpace\",\"scopes\":\"openid\",\"clientId\":\"10\",\"issuedAt\":\"1603202524\",\"expireAt\":\"2233922524\"}',
         language: null,
         authority: null,
         confidence: -1,
@@ -119,7 +119,7 @@ describe('ProfilePageGrantedApplicationsComponent', () => {
         virtualValue: ''
       }],
       'perucris.oidc.reject': [{
-        value: '{\"id\":\"c304ac89-431c-4c84-9231-3f3aff6c1009\",\"clientName\":\"DSpace\",\"scopes\":\"openid\",\"clientId\":\"10\"}',
+        value: '{\"id\":\"c304ac89-431c-4c84-9231-3f3aff6c1009\",\"clientName\":\"DSpace\",\"scopes\":\"openid\",\"clientId\":\"10\",\"issuedAt\":\"1603202524\",\"expireAt\":\"2233922524\"}',
         language: null,
         authority: null,
         confidence: -1,
@@ -128,7 +128,7 @@ describe('ProfilePageGrantedApplicationsComponent', () => {
         isVirtual: false,
         virtualValue: ''
       }, {
-        value: '{\"id\":\"4e1d9555-1c1c-4974-8b86-a0b358002fdf\",\"clientName\":\"DSpace\",\"scopes\":\"openid\",\"clientId\":\"10\"}',
+        value: '{\"id\":\"4e1d9555-1c1c-4974-8b86-a0b358002fdf\",\"clientName\":\"DSpace\",\"scopes\":\"openid\",\"clientId\":\"10\",\"issuedAt\":\"1603202524\",\"expireAt\":\"2233922524\"}',
         language: null,
         authority: null,
         confidence: -1,
@@ -146,7 +146,9 @@ describe('ProfilePageGrantedApplicationsComponent', () => {
       clientName: 'DSpace',
       clientId: '10',
       scopes: ['openid'],
-      encodedValue: '{\"id\":\"dc39e3a0-921e-4b0b-b10d-f528e63cc1bc\",\"clientName\":\"DSpace\",\"scopes\":\"openid\",\"clientId\":\"10\"}',
+      issuedAt: '1603202524',
+      expireAt: '2233922524',
+      encodedValue: '{\"id\":\"dc39e3a0-921e-4b0b-b10d-f528e63cc1bc\",\"clientName\":\"DSpace\",\"scopes\":\"openid\",\"clientId\":\"10\",\"issuedAt\":\"1603202524\",\"expireAt\":\"2233922524\"}',
       place: 0
     },
     {
@@ -154,7 +156,9 @@ describe('ProfilePageGrantedApplicationsComponent', () => {
       clientName: 'DSpace',
       clientId: '10',
       scopes: ['openid'],
-      encodedValue: '{\"id\":\"ec9131b8-c583-4f28-b9fd-a6d73a178aa4\",\"clientName\":\"DSpace\",\"scopes\":\"openid\",\"clientId\":\"10\"}',
+      issuedAt: '1603202524',
+      expireAt: '2233922524',
+      encodedValue: '{\"id\":\"ec9131b8-c583-4f28-b9fd-a6d73a178aa4\",\"clientName\":\"DSpace\",\"scopes\":\"openid\",\"clientId\":\"10\",\"issuedAt\":\"1603202524\",\"expireAt\":\"2233922524\"}',
       place: 1
     },
     {
@@ -162,6 +166,8 @@ describe('ProfilePageGrantedApplicationsComponent', () => {
       clientName: 'ClientName',
       clientId: '3',
       scopes: ['pgc-role', 'email', 'openid', 'profile'],
+      issuedAt: undefined,
+      expireAt: undefined,
       encodedValue: '{\"id\":\"ffba24b8-89ed-46c0-af76-c50990070757\",\"clientName\":\"ClientName\",\"scopes\":\"pgc-role, email, openid, profile\",\"clientId\":\"3\"}',
       place: 2
     },
@@ -170,6 +176,8 @@ describe('ProfilePageGrantedApplicationsComponent', () => {
       clientName: 'ClientName',
       clientId: '3',
       scopes: ['pgc-role', 'email', 'openid', 'profile'],
+      issuedAt: undefined,
+      expireAt: undefined,
       encodedValue: '{\"id\":\"ddcd731e-7b03-464a-bfca-faf63bc91538\",\"clientName\":\"ClientName\",\"scopes\":\"pgc-role, email, openid, profile\",\"clientId\":\"3\"}',
       place: 3
     },
@@ -178,6 +186,8 @@ describe('ProfilePageGrantedApplicationsComponent', () => {
       clientName: 'ClientName',
       clientId: '3',
       scopes: ['pgc-role', 'email', 'openid', 'profile'],
+      issuedAt: undefined,
+      expireAt: undefined,
       encodedValue: '{\"id\":\"8071b18c-ad45-4172-b5f7-92589721e252\",\"clientName\":\"ClientName\",\"scopes\":\"pgc-role, email, openid, profile\",\"clientId\":\"3\"}',
       place: 4
     }
@@ -236,6 +246,7 @@ describe('ProfilePageGrantedApplicationsComponent', () => {
 
     it('should build application list from metadata', () => {
       componentAsAny.buildApplicationListFromMetadata(metadataList);
+      console.log(componentAsAny.applicationList$.value);
       expect(componentAsAny.applicationList$.value).toEqual(applicationList);
     });
 
