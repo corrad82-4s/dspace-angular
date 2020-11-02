@@ -2769,7 +2769,13 @@
 
   "profile.title": "Update Profile",
 
-
+  "profile.twofactor.title": "Manage two factor authentication",
+  "profile.twofactor.text": "Two factor authentication state",
+  "profile.twofactor.enabled": "Enabled",
+  "profile.twofactor.disabled": "Disabled",
+  "profile.twofactor.update": "Update",
+  "profile.twofactor.notification.error": "Error updating two factor authentication state",
+  
 
   "profile.breadcrumbs": "Update Profile",
 

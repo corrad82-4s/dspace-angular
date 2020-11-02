@@ -23,9 +23,13 @@
         ></ds-profile-page-security-form>
       </div>
     </div>
+
     <button class="btn btn-outline-primary" (click)="updateProfile()">{{'profile.form.submit' | translate}}</button>
 
+    <ds-profile-page-twophase-authtentication [user]="user"></ds-profile-page-twophase-authtentication>
+
     <ds-profile-page-granted-applications [user]="user"></ds-profile-page-granted-applications>
+
 
     <ng-container *ngVar="(groupsRD$ | async)?.payload?.page as groups">
       <div *ngIf="groups">

@@ -1,0 +1,20 @@
+<h3 class="mt-4">{{'profile.twofactor.title' | translate}}</h3>
+
+
+
+<table class="table table-striped table-bordered table-hover">
+  <tbody>
+    <tr>
+      <td>{{ 'profile.twofactor.text' | translate }}</td>
+      <td>
+        <select [(ngModel)]='twoPhaseValue' class='form-control' (change)="updateTwoPhase($event)">
+          <option value='Enabled'>{{ 'profile.twofactor.enabled' | translate }}</option>
+          <option value='Disabled'>{{ 'profile.twofactor.disabled' | translate }}</option>
+        </select>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<button class="btn btn-outline-primary" (click)="saveTwoPhase()">{{'profile.twofactor.update' | translate}}</button>
+
