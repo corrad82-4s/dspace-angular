@@ -1,4 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable, Subscription } from 'rxjs';
 import { of as observableOf } from 'rxjs';
 import { PaginatedList } from '../../../core/data/paginated-list';
@@ -6,20 +7,18 @@ import { EntityTypeService } from '../../../core/data/entity-type.service';
 import { ItemType } from '../../../core/shared/item-relationships/item-type.model';
 import { FindListOptions } from '../../../core/data/request.models';
 import { hasValue } from '../../../shared/empty.util';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { CreateItemParentSelectorComponent } from 'src/app/shared/dso-selector/modal-wrappers/create-item-parent-selector/create-item-parent-selector.component';
 import { flatMap, map, take } from 'rxjs/operators';
 import { RemoteData } from '../../../core/data/remote-data';
 
 /**
- * This component represents the new submission dropdown
+ * This component represents the 'Import metadata from external source' dropdown menu
  */
 @Component({
-  selector: 'ds-my-dspace-new-submission-dropdown',
-  styleUrls: ['./my-dspace-new-submission-dropdown.component.scss'],
-  templateUrl: './my-dspace-new-submission-dropdown.component.html'
+  selector: 'ds-my-dspace-new-external-dropdown',
+  styleUrls: ['./my-dspace-new-external-dropdown.component.scss'],
+  templateUrl: './my-dspace-new-external-dropdown.component.html'
 })
-export class MyDSpaceNewSubmissionDropdownComponent implements OnInit, OnDestroy {
+export class MyDSpaceNewExternalDropdownComponent implements OnInit, OnDestroy {
 
   /**
    * Used to verify if there are one or more entities available
@@ -51,17 +50,17 @@ export class MyDSpaceNewSubmissionDropdownComponent implements OnInit, OnDestroy
    * Initialize instance variables
    *
    * @param {EntityTypeService} entityTypeService
-   * @param {NgbModal} modalService
+   * @param {Router} router
    */
   constructor(private entityTypeService: EntityTypeService,
-              private modalService: NgbModal) { }
+              private router: Router) { }
 
   /**
    * Initialize entity type list
    */
   ngOnInit() {
     this.initialized$ = observableOf(false);
-    this.moreThanOne$ = this.entityTypeService.hasMoreThanOneAuthorized();
+    this.moreThanOne$ = this.entityTypeService.hasMoreThanOneAuthorizedImport();
     this.singleEntity$ = this.moreThanOne$.pipe(
       flatMap((response: boolean) => {
         if (!response) {
@@ -69,7 +68,7 @@ export class MyDSpaceNewSubmissionDropdownComponent implements OnInit, OnDestroy
             elementsPerPage: 1,
             currentPage: 1
           };
-          return this.entityTypeService.getAllAuthorizedRelationshipType(findListOptions).pipe(
+          return this.entityTypeService.getAllAuthorizedRelationshipTypeImport(findListOptions).pipe(
             map((entities: RemoteData<PaginatedList<ItemType>>) => {
               this.initialized$ = observableOf(true);
               return entities.payload.page[0];
@@ -89,13 +88,10 @@ export class MyDSpaceNewSubmissionDropdownComponent implements OnInit, OnDestroy
   }
 
   /**
-   * Method called on clicking the button "New Submition", It opens a dialog for
-   * select a collection.
+   * Method called on clicking the button 'Import metadata from external source'. It opens the page of the external import.
    */
-  openDialog(entity: ItemType) {
-    const modalRef = this.modalService.open(CreateItemParentSelectorComponent);
-    modalRef.componentInstance.metadata = 'relationship.type';
-    modalRef.componentInstance.metadatavalue = entity.label;
+  openPage(entity: ItemType) {
+    this.router.navigate(['/import-external'], { queryParams: { entity: entity.label } });
   }
 
   /**
