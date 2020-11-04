@@ -48,7 +48,7 @@ export class NavbarComponent extends MenuComponent {
       {
         id: `communities_and_collections`,
         active: false,
-        visible: true,
+        visible: false,
         model: {
           type: MenuItemType.LINK,
           text: `menu.section.communities_and_collections`,

@@ -242,6 +242,75 @@ export const environment: GlobalConfig = {
       {
         id: 'pjtitle',
         type: BrowseByType.Title
+      },
+      {
+        id: 'eqtitle',
+        type: BrowseByType.Title
+      },
+      {
+        id: 'rotitle',
+        type: BrowseByType.Title
+      },
+      {
+        id: 'rodateissued',
+        type: BrowseByType.Date,
+        metadataField: 'dc.date.issued'
+      },
+      {
+        id: 'rodatecreated',
+        type: BrowseByType.Date,
+      },
+      {
+        id: 'rodatemodified',
+        type: BrowseByType.Date,
+      },
+      {
+        id: 'rpdatecreated',
+        type: BrowseByType.Date,
+      },
+      {
+        id: 'rpdatemodified',
+        type: BrowseByType.Date,
+      },
+      {
+        id: 'outitle',
+        type: BrowseByType.Title,
+      },
+      {
+        id: 'oudatecreated',
+        type: BrowseByType.Date,
+      },
+      {
+        id: 'oudatemodified',
+        type: BrowseByType.Date,
+      },
+      {
+        id: 'pftitle',
+        type: BrowseByType.Title,
+      },
+      {
+        id: 'pfdatecreated',
+        type: BrowseByType.Date,
+      },
+      {
+        id: 'pfdatemodified',
+        type: BrowseByType.Date,
+      },
+      {
+        id: 'pfdatestart',
+        type: BrowseByType.Date,
+      },
+      {
+        id: 'eqdateend',
+        type: BrowseByType.Date,
+      },
+      {
+        id: 'eqdatecreated',
+        type: BrowseByType.Date,
+      },
+      {
+        id: 'eqdatemodified',
+        type: BrowseByType.Date,
       }
     ]
   },
