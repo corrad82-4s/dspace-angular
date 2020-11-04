@@ -643,6 +643,18 @@
 
   "browse.metadata.rodept": "Department",
 
+  "browse.metadata.rotitle": "Title",
+
+  "browse.metadata.rodateissued": "Date Issued",
+
+  "browse.metadata.rodatecreated": "Date Created",
+
+  "browse.metadata.rodatemodified": "Date Modified",
+
+  "browse.metadata.rpdatecreated": "Date Created",
+
+  "browse.metadata.rpdatemodified": "Date Modified",
+
   "browse.metadata.rpdept": "Department",
 
   "browse.metadata.rpname": "Name",
@@ -659,9 +671,35 @@
 
   "browse.metadata.ouname.breadcrumbs" : "Browse by Name",
 
+  "browse.metadata.oudatecreated.breadcrumbs" : "Browse by Creation Date",
+
+  "browse.metadata.oudatemodified.breadcrumbs" : "Browse by Modification Date",
+
+  "browse.metadata.pftitle.breadcrumbs" : "Browse by Title",
+
+  "browse.metadata.pfdatecreated.breadcrumbs" : "Browse by Creation Date",
+
+  "browse.metadata.pfdatemodified.breadcrumbs" :  "Browse by Modification Date",
+
+  "browse.metadata.pfdatestart.breadcrumbs" : "Browse by Start Date",
+
+  "browse.metadata.pfdateend.breadcrumbs" :  "Browse by End Date",
+
   "browse.metadata.pjtitle.breadcrumbs" : "Browse by Title",
 
   "browse.metadata.rodept.breadcrumbs": "Browse by Department",
+
+  "browse.metadata.rotitle.breadcrumbs": "Browse by Title",
+
+  "browse.metadata.rodateissued.breadcrumbs": "Date Issued",
+
+  "browse.metadata.rodatecreated.breadcrumbs": "Date Created",
+
+  "browse.metadata.rodatemodified.breadcrumbs": "Date Modified",
+
+  "browse.metadata.rpdatecreated.breadcrumbs": "Date Created",
+
+  "browse.metadata.rpdatemodified.breadcrumbs": "Date Modified",
 
   "browse.metadata.rpdept.breadcrumbs" : "Browse by Department",
 
@@ -1296,9 +1334,19 @@
 
   "explore.index.birthDate" : "Birthday",
 
+  "explore.index.rodatecreated" : "Date created",
+
+  "explore.index.rpdatecreated" : "Date created",
+
   "explore.index.dateIssued" : "Date issued",
 
+  "explore.index.rodateissued" : "Date issued",
+
   "explore.index.dateissued" : "Date issued",
+
+  "explore.index.rodatemodified" : "Date modified",
+
+  "explore.index.rpdatemodified" : "Date modified",
 
   "explore.index.dc.date.accessioned" : "Date accesioned",
 
@@ -1312,11 +1360,23 @@
 
   "explore.index.eqorgunit" : "Organization",
 
+  "explore.index.eqdatecreated" : "Date Created",
+
+  "explore.index.eqdatemodified" : "Date Modified",
+
+  "explore.index.equipmentUsage" :  "Usage",
+
+  "explore.index.equipmentResearchLine" : "Research Line",
+
+  "explore.index.equipmentManufacturingCountry" :  "Manufacturing Country",
+
   "explore.index.entityType" : "Entity type",
 
   "explore.index.familyName" : "Family name",
 
   "explore.index.funding" : "Funding",
+
+  "explore.index.geolocation" : "Geolocation",
 
   "explore.index.givenName" : "Given name",
 
@@ -1354,9 +1414,13 @@
 
   "explore.index.itemidentifier" : "Item identifier",
 
+  "explore.index.itemtype" : "Type",
+
   "explore.index.jobTitle" : "Job title",
 
   "explore.index.knowsLanguage" : "Knows languages",
+
+  "explore.index.ocde" : "OCDE Subject",
 
   "explore.index.organization" : "Organization",
 
@@ -1374,9 +1438,33 @@
 
   "explore.index.ouname" : "Name",
 
+  "explore.index.oudatecreated" : "Date Created",
+
+  "explore.index.oudatemodified" : "Date Modified",
+
   "explore.index.projectOrgUnits" : "Organizations",
 
+  "explore.index.peruCrisJuridicalNature" : "Juridical Nature",
+
+  "explore.index.peruCrisKeywords" : "Keywords",
+
   "explore.index.personOrgUnits" : "Organizations",
+
+  "explore.index.peruCrisCiuu" : "Industrial Classification",
+
+  "explore.index.peruCrisClassification" : "Classification",
+
+  "explore.index.peruCrisSector" : "Sector",
+
+  "explore.index.pftitle" : "Title",
+
+  "explore.index.pfdatecreated" : "Date Created",
+
+  "explore.index.pfdatemodified" : "Date Modified",
+
+  "explore.index.pfdatestart" : "Date Start",
+
+  "explore.index.pfdateend" :  "Date Start",
 
   "explore.index.pjtitle" : "Title",
 
@@ -1384,15 +1472,22 @@
 
   "explore.index.rodept" : "Department",
 
+  "explore.index.rotitle" : "Title",
+
   "explore.index.rpdept" : "Department",
 
   "explore.index.rpname" : "Name",
 
   "explore.index.subject" : "Subject",
 
+  "explore.index.suneduClassification" : "Sunedu Classification",
+
   "explore.index.title" : "Title",
 
   "explore.index.type" : "Type",
+
+  "explore.index.ubigeo" : "Ubigeo",
+
 
   "explore.search-section.infrastructure.title": "Infrastructure",
 
@@ -2815,7 +2910,7 @@
   "profile.twofactor.disabled": "Disabled",
   "profile.twofactor.update": "Update",
   "profile.twofactor.notification.error": "Error updating two factor authentication state",
-  
+
 
   "profile.breadcrumbs": "Update Profile",
 
@@ -3226,9 +3321,25 @@
 
   "search.filters.filter.eqorgunit.placeholder": "Organization",
 
+  "search.filters.filter.equipmentUsage.head": "Usage",
+
+  "search.filters.filter.equipmentUsage.placeholder": "Usage",
+
+  "search.filters.filter.equipmentResearchLine.head": "Research Line",
+
+  "search.filters.filter.equipmentResearchLine.placeholder": "Research Line",
+
+  "search.filters.filter.equipmentManufacturingCountry.head": "Manufacturing Country",
+
+  "search.filters.filter.equipmentManufacturingCountry.placeholder": "Manufacturing Country",
+
   "search.filters.filter.funding.head": "Funding",
 
   "search.filters.filter.funding.placeholder": "Funding",
+
+  "search.filters.filter.geolocation.head" : "Geolocation",
+
+  "search.filters.filter.geolocation.placeholder" : "Geolocation",
 
   "search.filters.filter.has_content_in_original_bundle.head": "Has files",
 
@@ -3256,6 +3367,35 @@
 
   "search.filters.filter.personOrgUnits.placeholder" : "Organizations",
 
+  "search.filters.filter.peruCrisClassification.head" : "Classification",
+
+  "search.filters.filter.peruCrisClassification.placeholder" : "Classification",
+
+
+  "search.filters.filter.suneduClassification.head" : "Sunedu Classification",
+
+  "search.filters.filter.suneduClassification.placeholder" : "Sunedu Classification",
+
+
+  "search.filters.filter.peruCrisCiuu.head" : "Industrial Classification",
+
+  "search.filters.filter.peruCrisCiuu.placeholder" : "Industrial Classification",
+
+
+  "search.filters.filter.peruCrisSector.head" : "Sector",
+
+  "search.filters.filter.peruCrisSector.placeholder" : "Sector",
+
+
+  "search.filters.filter.peruCrisJuridicalNature.head" : "Juridical Nature",
+
+  "search.filters.filter.peruCrisJuridicalNature.placeholder" : "Juridical Nature",
+
+
+  "search.filters.filter.peruCrisKeywords.head" : "Keywords",
+
+  "search.filters.filter.peruCrisKeywords.placeholder" : "Keywords",
+
   "search.filters.filter.namedresourcetype.head": "Status",
 
   "search.filters.filter.namedresourcetype.placeholder": "Status",
@@ -3263,6 +3403,10 @@
   "search.filters.filter.objectpeople.head": "People",
 
   "search.filters.filter.objectpeople.placeholder": "People",
+
+  "search.filters.filter.ocde.head": "OCDE Subject",
+
+  "search.filters.filter.ocde.placeholder": "OCDE Subject",
 
   "search.filters.filter.organization.head": "Organization",
 
@@ -3295,6 +3439,10 @@
   "search.filters.filter.submitter.head": "Submitter",
 
   "search.filters.filter.submitter.placeholder": "Submitter",
+
+  "search.filters.filter.ubigeo.head": "Ubigeo",
+
+  "search.filters.filter.ubigeo.placeholder": "Ubigeo",
 
 
 
