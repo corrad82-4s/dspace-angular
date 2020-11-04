@@ -301,7 +301,7 @@ export const environment: GlobalConfig = {
         type: BrowseByType.Date,
       },
       {
-        id: 'eqdateend',
+        id: 'pfdateend',
         type: BrowseByType.Date,
       },
       {
