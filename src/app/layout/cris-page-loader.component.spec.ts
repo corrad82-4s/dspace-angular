@@ -26,6 +26,7 @@ import { EditItemDataService } from '../core/submission/edititem-data.service';
 import { EditItem } from '../core/submission/models/edititem.model';
 import { AuthorizationDataService } from '../core/data/feature-authorization/authorization-data.service';
 import { FeatureID } from '../core/data/feature-authorization/feature-id';
+import { AuthService } from "../core/auth/auth.service";
 
 const testType = LayoutPage.DEFAULT;
 
@@ -66,6 +67,13 @@ class AuthorizationDataServiceMock {
   }
 }
 
+// tslint:disable-next-line: max-classes-per-file
+class AuthServiceMock {
+  isAuthenticated(): Observable<boolean> {
+    return of(true);
+  }
+}
+
 describe('CrisPageLoaderComponent', () => {
   let component: CrisPageLoaderComponent;
   let fixture: ComponentFixture<CrisPageLoaderComponent>;
@@ -84,6 +92,7 @@ describe('CrisPageLoaderComponent', () => {
         { provide: TabDataService, useClass: TabDataServiceMock },
         { provide: EditItemDataService, useClass: EditItemDataServiceMock },
         { provide: AuthorizationDataService, useClass: AuthorizationDataServiceMock },
+        { provide: AuthService, useClass: AuthServiceMock },
         { provide: Router, useValue: {} },
         { provide: ActivatedRoute, useValue: {} },
         { provide: ComponentFactoryResolver, useValue: {} },
