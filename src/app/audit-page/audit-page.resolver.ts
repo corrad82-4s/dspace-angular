@@ -26,7 +26,6 @@ export class AuditPageResolver implements Resolve<RemoteData<Audit>> {
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<RemoteData<Audit>> {
     // return this.auditService.findById(route.params.id, followLink('eperson')).pipe(
     return this.auditService.findById(route.params.id).pipe(
-      tap(value => {  }),
       getAllSucceededRemoteData(),
       find((RD) => hasValue(RD.error) || RD.hasSucceeded),
     );

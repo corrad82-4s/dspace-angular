@@ -20,8 +20,8 @@ import { PaginatedList } from '../data/paginated-list';
 import { RemoteData } from '../data/remote-data';
 import { FindListOptions } from '../data/request.models';
 import { RequestService } from '../data/request.service';
-import { followLink, FollowLinkConfig } from "../../shared/utils/follow-link-config.model";
-import { getFinishedRemoteData, getFirstSucceededRemoteDataPayload, getSucceededRemoteData } from "../shared/operators";
+import { followLink, FollowLinkConfig } from '../../shared/utils/follow-link-config.model';
+import { getFinishedRemoteData, getFirstSucceededRemoteDataPayload, getSucceededRemoteData } from '../shared/operators';
 
 /* tslint:disable:max-classes-per-file */
 
@@ -83,7 +83,7 @@ export class AuditDataService {
       searchParams: [new RequestParam('object', objectId)]
     });
     return this.dataService.searchBy(searchMethod, optionsWithObject, followLink('eperson'));
-      //.pipe(tap(value => {debugger; }));
+      // .pipe(tap(value => {debugger; }));
   }
 
   findById(id: string, ...linksToFollow: Array<FollowLinkConfig<Audit>>): Observable<RemoteData<Audit>> {
@@ -134,6 +134,5 @@ export class AuditDataService {
     }
     return null;
   }
-
 
 }
