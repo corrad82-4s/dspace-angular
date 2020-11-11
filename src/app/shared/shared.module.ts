@@ -213,6 +213,13 @@ import { EntityDropdownComponent } from './entity-dropdown/entity-dropdown.compo
 import { DsSelectComponent } from './ds-select/ds-select.component';
 import { VocabularyTreeviewComponent } from './vocabulary-treeview/vocabulary-treeview.component';
 import { CurationFormComponent } from '../curation-form/curation-form.component';
+import { SearchChartsComponent } from './search/search-charts/search-charts.component';
+import { SearchChartBarComponent } from './search/search-charts/search-chart/search-chart-bar/search-chart-bar.component';
+import { SearchChartPieComponent } from './search/search-charts/search-chart/search-chart-pie/search-chart-pie.component';
+import { SearchChartLineComponent } from './search/search-charts/search-chart/search-chart-line/search-chart-line.component';
+import { SearchChartFilterWrapperComponent } from './search/search-charts/search-chart/search-chart-wrapper/search-chart-wrapper.component';
+import { SearchChartComponent } from './search/search-charts/search-chart/search-chart.component';
+import { ChartsModule } from '../charts/charts.module';
 import { ItemExportComponent } from './item-export/item-export/item-export.component';
 import { ItemExportModalWrapperComponent } from './item-export/item-export-modal-wrapper/item-export-modal-wrapper.component';
 
@@ -237,7 +244,8 @@ const MODULES = [
   TextMaskModule,
   MenuModule,
   DragDropModule,
-  CdkTreeModule
+  CdkTreeModule,
+  ChartsModule
 ];
 
 const ROOT_MODULES = [
@@ -413,7 +421,14 @@ const COMPONENTS = [
   ConfirmationModalComponent,
   VocabularyTreeviewComponent,
   ItemExportComponent,
-  ItemExportModalWrapperComponent
+  ItemExportModalWrapperComponent,
+  VocabularyTreeviewComponent,
+  SearchChartsComponent,
+  SearchChartBarComponent,
+  SearchChartPieComponent,
+  SearchChartLineComponent,
+  SearchChartFilterWrapperComponent,
+  SearchChartComponent
 ];
 
 const ENTRY_COMPONENTS = [
@@ -496,6 +511,13 @@ const ENTRY_COMPONENTS = [
   CurationFormComponent,
   ExportMetadataSelectorComponent,
   ConfirmationModalComponent,
+  VocabularyTreeviewComponent,
+  SearchChartsComponent,
+  SearchChartBarComponent,
+  SearchChartPieComponent,
+  SearchChartLineComponent,
+  SearchChartFilterWrapperComponent,
+  SearchChartComponent,
   VocabularyTreeviewComponent,
   ItemExportComponent
 ];
