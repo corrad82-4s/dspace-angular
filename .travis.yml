@@ -45,6 +45,7 @@ install:
 before_script:
   - echo "Check Docker containers"
   - docker container ls
+  - export NODE_OPTIONS="--max-old-space-size=8192"
   # The following line could be enabled to verify that the rest server is responding.
   #- echo "Check REST API available (via Docker)"
   #- curl http://localhost:8080/server/
