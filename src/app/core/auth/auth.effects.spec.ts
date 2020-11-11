@@ -442,6 +442,7 @@ describe('AuthEffects', () => {
           const expected = cold('--b-', { b: new RetrieveAuthMethodsErrorAction(false) });
 
           expect(authEffects.retrieveMethods$).toBeObservable(expected);
+          done();
         });
       });
     });
