@@ -7,8 +7,8 @@ import { ProfilePageMetadataFormComponent } from './profile-page-metadata-form/p
 import { ProfilePageSecurityFormComponent } from './profile-page-security-form/profile-page-security-form.component';
 import { ProfilePageResearcherFormComponent } from './profile-page-researcher-form/profile-page-researcher-form.component';
 import { ProfilePageGrantedApplicationsComponent } from './profile-page-granted-applications/profile-page-granted-applications.component';
-import { ProfilePageTwophaseAuthentication } from './profile-page-twophase-authentication/profile-page-twophase-authentication.component';
- 
+import { ProfilePageTwophaseAuthenticationComponent } from './profile-page-twophase-authentication/profile-page-twophase-authentication.component';
+
 @NgModule({
   imports: [
     ProfilePageRoutingModule,
@@ -24,7 +24,7 @@ import { ProfilePageTwophaseAuthentication } from './profile-page-twophase-authe
     ProfilePageSecurityFormComponent,
     ProfilePageResearcherFormComponent,
     ProfilePageGrantedApplicationsComponent,
-    ProfilePageTwophaseAuthentication
+    ProfilePageTwophaseAuthenticationComponent
   ]
 })
 export class ProfilePageModule {

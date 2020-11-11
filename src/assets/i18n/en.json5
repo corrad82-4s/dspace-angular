@@ -647,6 +647,18 @@
 
   "browse.metadata.pjtitle" : "Title",
 
+  "browse.metadata.oudatecreated": "Creation Date",
+
+  "browse.metadata.oudatemodified": "Modification Date",
+
+  "browse.metadata.pfdatecreated": "Creation Date",
+
+  "browse.metadata.pfdatemodified": "Modification Date",
+
+  "browse.metadata.pfdatestart": "Start Date",
+
+  "browse.metadata.pfdateend": "End Date",
+
   "browse.metadata.rodept": "Department",
 
   "browse.metadata.rotitle": "Title",
@@ -1295,7 +1307,7 @@
 
   "confirmation-modal.export-metadata.confirm": "Export",
 
-
+  "equipment.listelement.badge": "Equipment",
 
   "error.bitstream": "Error fetching bitstream",
 
@@ -1660,6 +1672,7 @@
 
   "form.submit": "Submit",
 
+  "funding.listelement.badge" : "Funding",
 
 
   "home.description": "",
@@ -2873,6 +2886,7 @@
 
   "audit.detail.back.subject": "Subject Audit Logs",
 
+  "patent.listelement.badge": "Patent",
 
   "profile.breadcrumbs": "Update Profile",
 
@@ -3329,6 +3343,14 @@
 
   "search.filters.filter.birthDate.placeholder": "Birth Date",
 
+  "search.filters.filter.chart.bar.dateIssued.year.head": "Year",
+
+  "search.filters.filter.chart.bar.dateIssued.year.placeholder": "Year",
+
+  "search.filters.filter.chart.pie.itemtype_filter.head": "Type",
+
+  "search.filters.filter.chart.pie.itemtype_filter.placeholder": "Type",
+
   "search.filters.filter.creativeDatePublished.head": "Date Published",
 
   "search.filters.filter.creativeDatePublished.placeholder": "Date Published",
@@ -3412,6 +3434,7 @@
   "search.filters.filter.knowsLanguage.head": "Known language",
 
   "search.filters.filter.knowsLanguage.placeholder": "Known language",
+
 
   "search.filters.filter.projectOrgUnits.head" : "Organizations",
 

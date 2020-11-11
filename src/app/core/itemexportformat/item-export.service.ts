@@ -89,14 +89,14 @@ export class ItemExportFormatService {
    * Get all item export formats for the requested entityType and compatible with the given molteplicity
    *
    * @param entityTypeId The entityType id (null means every entity types)
-   * @param molteplicity The requested molteplicity 
+   * @param molteplicity The requested molteplicity
    * @param options The [[FindListOptions]] object
    * @return Observable<{ [entityType: string]: ItemExportFormat[]}>
    *    dictionary which map for the requested entityTypesId all the allowed export formats
    */
   byEntityTypeAndMolteplicity(entityTypeId: string, molteplicity: ItemExportFormatMolteplicity): Observable<{ [entityType: string]: ItemExportFormat[]}> {
     const searchHref = 'byEntityTypeAndMolteplicity';
-    
+
     const searchParams = [];
     if (molteplicity) {
       searchParams.push(new RequestParam('molteplicity', molteplicity));
@@ -107,18 +107,18 @@ export class ItemExportFormatService {
 
     return this.dataService.searchBy(searchHref, { searchParams, elementsPerPage: 100}).pipe(
       filter((itemExportFormats: RemoteData<PaginatedList<ItemExportFormat>>) => !itemExportFormats.isResponsePending),
-      map(response => {
-        const map = {};
-        response.payload.page.forEach(format => map[format.entityType] = map[format.entityType] ? [...map[format.entityType], format] : [format]);
-        return map;
+      map((response) => {
+        const aMap = {};
+        response.payload.page.forEach((format) => aMap[format.entityType] = aMap[format.entityType] ? [...aMap[format.entityType], format] : [format]);
+        return aMap;
       }));
   }
 
   /**
    * Starts item-export script.
-   * @param uuid 
-   * @param format 
-   *  
+   * @param uuid
+   * @param format
+   *
    * @return an Observable containing the processNumber if the script starts successfully, or null in case of errors
    */
   public doExport(uuid: string, format: ItemExportFormat): Observable<number> {
@@ -126,20 +126,20 @@ export class ItemExportFormatService {
     let parameterValues = [];
     parameterValues = this.uuidParameter(uuid, parameterValues);
     parameterValues = this.formatParameter(format, parameterValues);
-    
+
     return this.launchScript(ITEM_EXPORT_SCRIPT_NAME, parameterValues);
   }
 
   /**
    * * Starts a bulk-item-export script.
-   * 
+   *
    * @param entityType The requested entityType
    * @param format The requested export format
    * @param searchOptions the state of the search to model into a bulk-item-export process
-   * 
+   *
    * @return an Observable containing the processNumber if the script starts successfully, or null in case of errors
    */
-  public doExportMulti(entityType: string, format: ItemExportFormat, searchOptions: SearchOptions) : Observable<number> {
+  public doExportMulti(entityType: string, format: ItemExportFormat, searchOptions: SearchOptions): Observable<number> {
 
     let parameterValues = [];
     parameterValues = this.entityTypeParameter(entityType, parameterValues);
@@ -198,10 +198,10 @@ export class ItemExportFormatService {
   private filtersParameter(searchOptions: SearchOptions, parameterValues: ProcessParameter[]): ProcessParameter[] {
     if (searchOptions.filters && searchOptions.filters.length > 0) {
       const value = searchOptions.filters
-        .filter(filter => filter.key.includes('f.'))
-        .map(filter => filter.key.replace('f.', '') + '=' + filter.values[0])
+        .filter((aFilter) => aFilter.key.includes('f.'))
+        .map((aFilter) => aFilter.key.replace('f.', '') + '=' + aFilter.values[0])
         .join('&');
-      return [...parameterValues, Object.assign(new ProcessParameter(), { name: '-sf', value })];      
+      return [...parameterValues, Object.assign(new ProcessParameter(), { name: '-sf', value })];
     }
     return parameterValues;
   }

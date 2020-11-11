@@ -11,9 +11,7 @@ import { distinctUntilChanged, filter, take } from 'rxjs/operators';
 import { RestResponse } from '../../core/cache/response.models';
 import { BehaviorSubject, Observable, Subscription } from 'rxjs';
 
-
 export const EPERSON_TWOPHASE_AUTHENTICATION = 'perucris.authentication.twophase';
-
 
 @Component({
   selector: 'ds-profile-page-twophase-authtentication',
@@ -23,7 +21,7 @@ export const EPERSON_TWOPHASE_AUTHENTICATION = 'perucris.authentication.twophase
  * Component for a user to edit their security information
  * Displays a form containing a password field and a confirmation of the password
  */
-export class ProfilePageTwophaseAuthentication implements OnInit {
+export class ProfilePageTwophaseAuthenticationComponent implements OnInit {
 
   /**
    * The user to display the third parties applications for
@@ -46,11 +44,10 @@ export class ProfilePageTwophaseAuthentication implements OnInit {
   public twoPhaseValue: string;
 
     /**
-   * A boolean representing if an operation is processing
-   * @type {BehaviorSubject<boolean>}
-   */
+     * A boolean representing if an operation is processing
+     * @type {BehaviorSubject<boolean>}
+     */
   public processing$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
-
 
   constructor(protected translate: TranslateService,
               protected epersonService: EPersonDataService,
@@ -64,12 +61,12 @@ export class ProfilePageTwophaseAuthentication implements OnInit {
     if (this.user) {
       this.userUUID = this.user.id;
       const metadataValue = Metadata.first(this.user.metadata, EPERSON_TWOPHASE_AUTHENTICATION);
-      if(metadataValue) {
+      if (metadataValue) {
         const twoPhaseState = metadataValue.value;
         this.twoPhaseEnabled = twoPhaseState;
-        this.twoPhaseValue = twoPhaseState == 'true' ? 'Enabled' : 'Disabled';  
+        this.twoPhaseValue = twoPhaseState === 'true' ? 'Enabled' : 'Disabled';
       } else {
-        this.twoPhaseEnabled = "false";
+        this.twoPhaseEnabled = 'false';
         this.twoPhaseValue = 'Disabled';
       }
     }
@@ -81,12 +78,12 @@ export class ProfilePageTwophaseAuthentication implements OnInit {
    */
   updateTwoPhase(event): void {
     const currentValue = event.currentTarget.value;
-    if(currentValue == 'Enabled') {
-      this.twoPhaseEnabled = "true";
-      this.twoPhaseValue = "Enabled";
+    if (currentValue === 'Enabled') {
+      this.twoPhaseEnabled = 'true';
+      this.twoPhaseValue = 'Enabled';
     } else {
-      this.twoPhaseEnabled = "false";
-      this.twoPhaseValue = "Disabled";
+      this.twoPhaseEnabled = 'false';
+      this.twoPhaseValue = 'Disabled';
     }
   }
 
@@ -95,7 +92,7 @@ export class ProfilePageTwophaseAuthentication implements OnInit {
    */
   saveTwoPhase(): void {
     this.processing$.next(true);
-    let operations : Operation[] = [
+    const operations: Operation[] = [
       { op: 'remove', path: `/metadata/${EPERSON_TWOPHASE_AUTHENTICATION}` },
       { op: 'add', path: `/metadata/${EPERSON_TWOPHASE_AUTHENTICATION}/-`, value: this.twoPhaseEnabled }
     ];
