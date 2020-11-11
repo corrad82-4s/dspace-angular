@@ -123,7 +123,7 @@ describe('LogInComponent', () => {
 
     it('should render a log-in container component for each auth method available', () => {
       const loginContainers = fixture.debugElement.queryAll(By.css('ds-log-in-container'));
-      expect(loginContainers.length).toBe(2);
+      expect(loginContainers.length).toBe(3);
 
     });
   });
