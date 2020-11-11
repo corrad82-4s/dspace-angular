@@ -4,7 +4,7 @@ import { Store } from '@ngrx/store';
 import { Observable, of } from 'rxjs';
 import { Audit } from 'src/app/core/audit/model/audit.model';
 import { AUDIT } from 'src/app/core/audit/model/audit.resource-type';
-import { map, switchMap, take, tap } from 'rxjs/operators';
+import { map, startWith } from 'rxjs/operators';
 import { NotificationsService } from 'src/app/shared/notifications/notifications.service';
 import { dataService } from '../cache/builders/build-decorators';
 import { RemoteDataBuildService } from '../cache/builders/remote-data-build.service';
@@ -20,8 +20,13 @@ import { PaginatedList } from '../data/paginated-list';
 import { RemoteData } from '../data/remote-data';
 import { FindListOptions } from '../data/request.models';
 import { RequestService } from '../data/request.service';
-import { followLink, FollowLinkConfig } from "../../shared/utils/follow-link-config.model";
-import { getFinishedRemoteData, getFirstSucceededRemoteDataPayload, getSucceededRemoteData } from "../shared/operators";
+import {
+  getFirstSucceededRemoteDataPayload,
+  getFirstSucceededRemoteDataWithNotEmptyPayload,
+} from '../shared/operators';
+
+import {DSONameService} from '../breadcrumbs/dso-name.service';
+import {followLink, FollowLinkConfig} from '../../shared/utils/follow-link-config.model';
 
 /* tslint:disable:max-classes-per-file */
 
@@ -63,6 +68,7 @@ export class AuditDataService {
     protected halService: HALEndpointService,
     protected notificationsService: NotificationsService,
     protected ePersonService: EPersonDataService,
+    protected dsoNameService: DSONameService,
     protected http: HttpClient,
     protected comparator: DefaultChangeAnalyzer<Audit>) {
 
@@ -83,19 +89,18 @@ export class AuditDataService {
       searchParams: [new RequestParam('object', objectId)]
     });
     return this.dataService.searchBy(searchMethod, optionsWithObject, followLink('eperson'));
-      //.pipe(tap(value => {debugger; }));
   }
 
-  findById(id: string, ...linksToFollow: Array<FollowLinkConfig<Audit>>): Observable<RemoteData<Audit>> {
-    return this.dataService.findById(id, ...linksToFollow);
+  findById(id: string): Observable<RemoteData<Audit>> {
+    return this.dataService.findById(id, followLink('eperson'));
   }
 
-  findAll(options: FindListOptions = {}, ...linksToFollow: Array<FollowLinkConfig<Audit>>): Observable<RemoteData<PaginatedList<Audit>>> {
-    return this.dataService.findAll(options, ...linksToFollow);
+  findAll(options: FindListOptions = {}): Observable<RemoteData<PaginatedList<Audit>>> {
+    return this.dataService.findAll(options, followLink('eperson'));
   }
 
   /**
-   * Get the name of an EPerson by ID
+   * Get the name of the eperson related to the audit.
    * @param id  ID of the EPerson
    */
   getEpersonName(audit: Audit): Observable<string> {
@@ -104,9 +109,11 @@ export class AuditDataService {
       return of(AUDIT_PERSON_NOT_AVAILABLE);
     }
 
+    // TODO to be reviewed when https://github.com/DSpace/dspace-angular/issues/644 will be resolved
     return audit.eperson.pipe(
-      getFinishedRemoteData(),
-      map((rd: RemoteData<EPerson>) => rd.hasSucceeded ? rd.payload.name : AUDIT_PERSON_NOT_AVAILABLE));
+      getFirstSucceededRemoteDataWithNotEmptyPayload(),
+      map((eperson: EPerson) => this.dsoNameService.getName(eperson)),
+      startWith(AUDIT_PERSON_NOT_AVAILABLE));
   }
 
   /**
@@ -134,6 +141,5 @@ export class AuditDataService {
     }
     return null;
   }
-
 
 }
