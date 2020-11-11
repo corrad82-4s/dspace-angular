@@ -647,6 +647,18 @@
 
   "browse.metadata.pjtitle" : "Title",
 
+  "browse.metadata.oudatecreated": "Creation Date",
+
+  "browse.metadata.oudatemodified": "Modification Date",
+
+  "browse.metadata.pfdatecreated": "Creation Date",
+
+  "browse.metadata.pfdatemodified": "Modification Date",
+
+  "browse.metadata.pfdatestart": "Start Date",
+
+  "browse.metadata.pfdateend": "End Date",
+
   "browse.metadata.rodept": "Department",
 
   "browse.metadata.rotitle": "Title",
