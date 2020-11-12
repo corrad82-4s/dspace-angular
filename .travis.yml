@@ -7,7 +7,7 @@ cache:
   yarn: true
 
 node_js:
-  - "10"
+#  - "10"
   - "12"
 
 # Install latest chrome (for e2e headless testing). Run an update if needed.
