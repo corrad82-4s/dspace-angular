@@ -106,9 +106,9 @@ export class Audit implements CacheableObject {
   subject?: Observable<RemoteData<DSpaceObject>>;
 
     /**
-   * The Object for this audit
-   * Will be undefined unless the object {@link HALLink} has been resolved.
-   */
+     * The Object for this audit
+     * Will be undefined unless the object {@link HALLink} has been resolved.
+     */
   @link(ITEM)
   object?: Observable<RemoteData<DSpaceObject>>;
 }

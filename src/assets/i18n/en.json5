@@ -647,6 +647,18 @@
 
   "browse.metadata.pjtitle" : "Title",
 
+  "browse.metadata.oudatecreated": "Creation Date",
+
+  "browse.metadata.oudatemodified": "Modification Date",
+
+  "browse.metadata.pfdatecreated": "Creation Date",
+
+  "browse.metadata.pfdatemodified": "Modification Date",
+
+  "browse.metadata.pfdatestart": "Start Date",
+
+  "browse.metadata.pfdateend": "End Date",
+
   "browse.metadata.rodept": "Department",
 
   "browse.metadata.rotitle": "Title",
@@ -1295,7 +1307,7 @@
 
   "confirmation-modal.export-metadata.confirm": "Export",
 
-
+  "equipment.listelement.badge": "Equipment",
 
   "error.bitstream": "Error fetching bitstream",
 
@@ -1660,6 +1672,7 @@
 
   "form.submit": "Submit",
 
+  "funding.listelement.badge" : "Funding",
 
 
   "home.description": "",
@@ -2134,6 +2147,12 @@
 
   "item.page.filesection.license.bundle" : "License bundle",
 
+  "item.preview.dc.identifier.doi" : "DOI",
+
+  "item.preview.dc.relation.ispartof" : "Journal or Serie",
+
+  "item.preview.dc.subject.ocde" : "OCDE",
+
   "item.preview.dc.identifier.uri": "Identifier:",
 
   "item.preview.dc.contributor.author": "Authors:",
@@ -2144,6 +2163,8 @@
 
   "item.preview.dc.identifier.other": "Other identifier:",
 
+  "item.preview.dc.identifier.pmid" : "Pubmed Id",
+
   "item.preview.dc.language.iso": "Language:",
 
   "item.preview.dc.subject": "Subjects:",
@@ -2153,6 +2174,10 @@
   "item.preview.dc.identifier": "Identifier:",
 
   "item.preview.dc.source": "Source:",
+
+  "item.preview.dc.relation.isbn" : "ISBN",
+
+  "item.preview.dc.relation.issn" : "ISSN",
 
   "item.preview.person.familyName": "Surname:",
 
@@ -2873,6 +2898,7 @@
 
   "audit.detail.back.subject": "Subject Audit Logs",
 
+  "patent.listelement.badge": "Patent",
 
   "profile.breadcrumbs": "Update Profile",
 
@@ -3320,6 +3346,22 @@
   "search.filters.applied.f.withdrawn": "Withdrawn",
 
 
+  "search.filters.applied.f.chart.pie.itemtype_filter" : "Pie Chart",
+
+  "search.filters.applied.f.chart.pie.itemtype_filter" : "Pie Chart",
+
+  "search.filters.applied.f.chart.bar.dateIssued.year": "Bar Chart",
+
+  "search.filters.applied.charts.title": "Research Output",
+
+  "search.filters.applied.charts.chart.pie": "Item Type",
+
+  "search.filters.applied.charts.chart.bar": "Date Issued",
+
+  "search.filters.applied.charts.chart.line": "Line",
+
+
+
 
   "search.filters.filter.author.head": "Author",
 
@@ -3328,6 +3370,14 @@
   "search.filters.filter.birthDate.head": "Birth Date",
 
   "search.filters.filter.birthDate.placeholder": "Birth Date",
+
+  "search.filters.filter.chart.bar.dateIssued.year.head": "Year",
+
+  "search.filters.filter.chart.bar.dateIssued.year.placeholder": "Year",
+
+  "search.filters.filter.chart.pie.itemtype_filter.head": "Type",
+
+  "search.filters.filter.chart.pie.itemtype_filter.placeholder": "Type",
 
   "search.filters.filter.creativeDatePublished.head": "Date Published",
 
@@ -3413,6 +3463,7 @@
 
   "search.filters.filter.knowsLanguage.placeholder": "Known language",
 
+
   "search.filters.filter.projectOrgUnits.head" : "Organizations",
 
   "search.filters.filter.projectOrgUnits.placeholder" : "Organizations",
@@ -3497,6 +3548,23 @@
   "search.filters.filter.ubigeo.head": "Ubigeo",
 
   "search.filters.filter.ubigeo.placeholder": "Ubigeo",
+
+
+  "search.filters.filter.chart.head": "Charts",
+
+  "search.filters.filter.chart.placeholder": "Charts",
+
+  "search.filters.filter.chart.pie.itemtype_filter.head": "Pie Chart",
+
+  "search.filters.filter.chart.pie.itemtype_filter.placeholder": "Pie Chart",
+
+  "search.filters.filter.chart.bar.dateIssued.year.head": "Bart Chart",
+
+  "search.filters.filter.chart.bar.dateIssued.year.placeholder": "Bart Chart",
+
+  "search.filters.filter.chart.line.dateIssued.year.head": "Line Chart",
+
+  "search.filters.filter.chart.line.dateIssued.year.placeholder": "Line Chart",
 
 
 
@@ -3963,6 +4031,8 @@
 
   "submission.sections.submit.progressbar.describe.event": "Event basic information",
 
+  "submission.sections.submit.progressbar.describe.funding": "Funding basic information",
+
   "submission.sections.submit.progressbar.describe.journal": "Journal basic information",
 
   "submission.sections.submit.progressbar.describe.orgunit": "Org Unit basic information",
@@ -3972,6 +4042,8 @@
   "submission.sections.submit.progressbar.describe.patent_indexing": "Patent indexing",
 
   "submission.sections.submit.progressbar.describe.patent_references": "Patent references",
+
+  "submission.sections.submit.progressbar.describe.person": "Person basic information",
 
   "submission.sections.submit.progressbar.describe.product": "Product basic information",
 

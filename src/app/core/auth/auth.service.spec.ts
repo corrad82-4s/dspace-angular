@@ -178,7 +178,7 @@ describe('AuthService test', () => {
       authStatus.authMethods = authMethodsMock;
       authService.retrieveAuthMethodsFromAuthStatus(authStatus).subscribe((authMethods: AuthMethod[]) => {
         expect(authMethods).toBeDefined();
-        expect(authMethods.length).toBe(2);
+        expect(authMethods.length).toBe(3);
       });
     });
   });

@@ -14,8 +14,6 @@ import { SortDirection } from 'src/app/core/cache/models/sort-options.model';
 import { ItemDataService } from 'src/app/core/data/item-data.service';
 import { getSucceededRemoteData, redirectToPageNotFoundOn404 } from 'src/app/core/shared/operators';
 
-
-
 /**
  * Component displaying a list of all audit about a object in a paginated table
  */
@@ -67,12 +65,12 @@ export class ObjectAuditOverviewComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.route.paramMap.subscribe(paramMap => {
+    this.route.paramMap.subscribe((paramMap) => {
       this.itemService.findById(paramMap.get('objectId')).pipe(
         getSucceededRemoteData(),
         redirectToPageNotFoundOn404(this.router),
         take(1)
-      ).subscribe(rd => {
+      ).subscribe((rd) => {
         this.object = rd.payload;
         this.setAudits();
       })
@@ -118,6 +116,5 @@ export class ObjectAuditOverviewComponent implements OnInit {
   getOtherObject(audit: Audit, contextObjectId: string): Observable<any> {
     return this.auditService.getOtherObject(audit, contextObjectId);
   }
-
 
 }
