@@ -4,6 +4,7 @@ import { FacetSection } from 'src/app/core/layout/models/section.model';
 import { getFirstSucceededRemoteDataPayload } from 'src/app/core/shared/operators';
 import { SearchService } from 'src/app/core/shared/search/search.service';
 import { SearchFilterConfig } from 'src/app/shared/search/search-filter-config.model';
+import {FilterType} from '../../../shared/search/filter-type.model';
 
 /**
  * Component representing the Facet component section.
@@ -31,11 +32,13 @@ export class FacetSectionComponent implements OnInit {
 
     ngOnInit() {
       this.discoveryConfiguration = this.facetSection.discoveryConfigurationName;
+      const chartTypes = [FilterType['chart.bar'], FilterType['chart.line'], FilterType['chart.pie']];
       this.searchService.searchFacets(null, this.discoveryConfiguration)
         .pipe( getFirstSucceededRemoteDataPayload() )
         .subscribe((facetConfigs) => {
           for (const config of facetConfigs) {
-            if (config._embedded.values.length > 0) {
+            if (config._embedded.values.length > 0 &&
+              chartTypes.every((e) => e !== config.type)) {
               this.facets.push(config);
               this.facets$.next(this.facets);
             }
