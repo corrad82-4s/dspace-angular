@@ -16,6 +16,12 @@
                        <i class="fa fa-file-import" aria-hidden="true"></i>
                      </a>
                 </div>
+              <button *ngIf="isCollectionAdmin(collection) | async"
+                      class="btn btn-lg btn-outline-primary float-right"
+                      (click)="exportCollection(collection)"
+                      title="{{'collection.page.export' | translate}}">
+                <i class="fa fa-file-export" aria-hidden="true"></i>
+              </button>
                 <header class="comcol-header border-bottom mb-4 pb-4">
                   <!-- Collection Name -->
                 <ds-comcol-page-header

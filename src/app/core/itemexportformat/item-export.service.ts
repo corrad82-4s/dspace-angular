@@ -2,8 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 import { Store } from '@ngrx/store';
-import { Observable, of as observableOf, of } from 'rxjs';
-import { filter, take, map } from 'rxjs/operators';
+import { Observable } from 'rxjs';
+import { filter, map, take } from 'rxjs/operators';
 
 import { NotificationsService } from 'src/app/shared/notifications/notifications.service';
 import { dataService } from '../cache/builders/build-decorators';
@@ -20,13 +20,17 @@ import { ITEM_EXPORT_FORMAT } from './model/item-export-format.resource-type';
 import { PaginatedList } from '../data/paginated-list';
 import { RemoteData } from '../data/remote-data';
 import { RequestParam } from '../cache/models/request-param.model';
-import { ProcessParameter } from 'src/app/process-page/processes/process-parameter.model';
-import { ITEM_EXPORT_SCRIPT_NAME, BULK_ITEM_EXPORT_SCRIPT_NAME, ScriptDataService } from '../data/processes/script-data.service';
+import { ProcessParameter } from '../../process-page/processes/process-parameter.model';
+import {
+  BULK_ITEM_EXPORT_SCRIPT_NAME,
+  ITEM_EXPORT_SCRIPT_NAME,
+  ScriptDataService
+} from '../data/processes/script-data.service';
 import { RequestEntry } from '../data/request.reducer';
 import { isNotEmpty } from 'src/app/shared/empty.util';
 import { TranslateService } from '@ngx-translate/core';
-import { SearchOptions } from 'src/app/shared/search/search-options.model';
-import { PaginatedSearchOptions } from 'src/app/shared/search/paginated-search-options.model';
+import { SearchOptions } from '../../shared/search/search-options.model';
+import { PaginatedSearchOptions } from '../../shared/search/paginated-search-options.model';
 
 /* tslint:disable:max-classes-per-file */
 
@@ -76,7 +80,6 @@ export class ItemExportFormatService {
     protected http: HttpClient,
     protected comparator: DefaultChangeAnalyzer<ItemExportFormat>,
     protected itemService: ItemDataService,
-
     protected translate: TranslateService,
     private scriptDataService: ScriptDataService) {
 
@@ -90,11 +93,10 @@ export class ItemExportFormatService {
    *
    * @param entityTypeId The entityType id (null means every entity types)
    * @param molteplicity The requested molteplicity
-   * @param options The [[FindListOptions]] object
    * @return Observable<{ [entityType: string]: ItemExportFormat[]}>
    *    dictionary which map for the requested entityTypesId all the allowed export formats
    */
-  byEntityTypeAndMolteplicity(entityTypeId: string, molteplicity: ItemExportFormatMolteplicity): Observable<{ [entityType: string]: ItemExportFormat[]}> {
+  byEntityTypeAndMolteplicity(entityTypeId: string, molteplicity: ItemExportFormatMolteplicity): Observable<{ [entityType: string]: ItemExportFormat[] }> {
     const searchHref = 'byEntityTypeAndMolteplicity';
 
     const searchParams = [];
@@ -105,12 +107,12 @@ export class ItemExportFormatService {
       searchParams.push(new RequestParam('entityTypeId', entityTypeId));
     }
 
-    return this.dataService.searchBy(searchHref, { searchParams, elementsPerPage: 100}).pipe(
+    return this.dataService.searchBy(searchHref, { searchParams, elementsPerPage: 100 }).pipe(
       filter((itemExportFormats: RemoteData<PaginatedList<ItemExportFormat>>) => !itemExportFormats.isResponsePending),
       map((response) => {
-        const aMap = {};
-        response.payload.page.forEach((format) => aMap[format.entityType] = aMap[format.entityType] ? [...aMap[format.entityType], format] : [format]);
-        return aMap;
+        const page = {};
+        response.payload.page.forEach((format) => page[format.entityType] = page[format.entityType] ? [...page[format.entityType], format] : [format]);
+        return page;
       }));
   }
 
@@ -198,8 +200,8 @@ export class ItemExportFormatService {
   private filtersParameter(searchOptions: SearchOptions, parameterValues: ProcessParameter[]): ProcessParameter[] {
     if (searchOptions.filters && searchOptions.filters.length > 0) {
       const value = searchOptions.filters
-        .filter((aFilter) => aFilter.key.includes('f.'))
-        .map((aFilter) => aFilter.key.replace('f.', '') + '=' + aFilter.values[0])
+        .filter((searchFilter) => searchFilter.key.includes('f.'))
+        .map((searchFilter) => searchFilter.key.replace('f.', '') + '=' + searchFilter.values[0])
         .join('&');
       return [...parameterValues, Object.assign(new ProcessParameter(), { name: '-sf', value })];
     }
@@ -221,14 +223,20 @@ export class ItemExportFormatService {
 
   private configurationParameter(searchOptions: SearchOptions, parameterValues: ProcessParameter[]): ProcessParameter[] {
     if (searchOptions.configuration) {
-      return [...parameterValues, Object.assign(new ProcessParameter(), { name: '-c', value: searchOptions.configuration })];
+      return [...parameterValues, Object.assign(new ProcessParameter(), {
+        name: '-c',
+        value: searchOptions.configuration
+      })];
     }
     return parameterValues;
   }
 
   private sortParameter(searchOptions: SearchOptions, parameterValues: ProcessParameter[]): ProcessParameter[] {
     if (searchOptions instanceof PaginatedSearchOptions) {
-      return [...parameterValues, Object.assign(new ProcessParameter(), { name: '-so', value: searchOptions.sort.field + ',' + searchOptions.sort.direction })];
+      return [...parameterValues, Object.assign(new ProcessParameter(), {
+        name: '-so',
+        value: searchOptions.sort.field + ',' + searchOptions.sort.direction
+      })];
     }
     return parameterValues;
   }

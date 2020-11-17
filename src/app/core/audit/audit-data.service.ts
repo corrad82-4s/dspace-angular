@@ -100,8 +100,8 @@ export class AuditDataService {
   }
 
   /**
-   * Get the name of the eperson related to the audit.
-   * @param id  ID of the EPerson
+   * Get the name of an EPerson by ID
+   * @param audit  The audit object
    */
   getEpersonName(audit: Audit): Observable<string> {
 
@@ -119,7 +119,7 @@ export class AuditDataService {
   /**
    *
    * @param audit
-   * @param subjectId
+   * @param contextObjectId
    */
   getOtherObject(audit: Audit, contextObjectId: string): Observable<any> {
     const otherObjectHref = this.getOtherObjectHref(audit, contextObjectId);
