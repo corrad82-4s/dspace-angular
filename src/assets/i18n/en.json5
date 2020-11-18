@@ -2226,6 +2226,27 @@
 
   "item.preview.person.identifier.orcid": "ORCID:",
 
+  "item.preview.renati.advisor.dni" : "Renati Advisor DNI",
+
+  "item.preview.renati.advisor.orcid" : "Renati Author ORCID",
+
+  "item.preview.renati.author.dni" : "Renati Author DNI",
+
+  "item.preview.renati.discipline" : "Renati Advisor ORCID",
+
+  "item.preview.renati.juror" : "Renati Juror",
+
+  "item.preview.renati.level" : "Renati Level",
+
+  "item.preview.renati.type" : "Renati Type",
+
+  "item.preview.thesis.degree.name" : "Thesis Degree Name",
+
+  "item.preview.thesis.degree.discipline" : "Thesis Degree Discipline",
+
+  "item.preview.thesis.degree.grantor" : "Thesis Degree Grantor",
+
+
 
   "item.select.confirm": "Confirm selected",
 
