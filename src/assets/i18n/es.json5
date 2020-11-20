@@ -176,7 +176,7 @@
 
   // "admin.registries.metadata.title": "DSpace Angular :: Metadata Registry",
   "admin.registries.metadata.title": "DSpace Angular :: Registro de metadatos",
-  
+
 
 
   // "admin.registries.schema.description": "This is the metadata schema for \"{{namespace}}\".",
@@ -1346,7 +1346,7 @@
   // "community.sub-community-list.head": "Communities of this Community",
   "community.sub-community-list.head": "Comunidades de esta Comunidad",
 
-  
+
 
   // "dso-selector.create.collection.head": "New collection",
   "dso-selector.create.collection.head": "Nueva colección",
@@ -1377,7 +1377,7 @@
 
   // "dso-selector.placeholder": "Search for a {{ type }}",
   "dso-selector.placeholder": "Buscar por {{ type }}",
-  
+
 
 
   // "error.bitstream": "Error fetching bitstream",
@@ -1543,7 +1543,7 @@
 
   // "home.top-level-communities.help": "Select a community to browse its collections.",
   "home.top-level-communities.help": "Seleccionar una comunidad para navegar sus colecciones.",
-  
+
 
 
 
@@ -2637,7 +2637,7 @@
 
   // "menu.section.registries_metadata": "Metadata",
   "menu.section.registries_metadata": "Metadatos",
-  
+
 
 
   // "menu.section.statistics": "Statistics",
@@ -3539,9 +3539,9 @@
   // TODO New key - Add a translation
   "submission.sections.describe.relationship-lookup.external-source.import-modal.head.lcname": "Importing from LC Name",
 
-  // "submission.sections.describe.relationship-lookup.external-source.import-modal.head.orcidV2": "Importing from ORCID",
+  // "submission.sections.describe.relationship-lookup.external-source.import-modal.head.orcid": "Importing from ORCID",
   // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.external-source.import-modal.head.orcidV2": "Importing from ORCID",
+  "submission.sections.describe.relationship-lookup.external-source.import-modal.head.orcid": "Importing from ORCID",
 
   // "submission.sections.describe.relationship-lookup.external-source.import-modal.head.sherpaJournal": "Importing from Sherpa Journal",
   // TODO New key - Add a translation
@@ -3651,9 +3651,9 @@
   // TODO New key - Add a translation
   "submission.sections.describe.relationship-lookup.search-tab.tab-title.sherpaPublisher": "Sherpa Publishers ({{ count }})",
 
-  // "submission.sections.describe.relationship-lookup.search-tab.tab-title.orcidV2": "ORCID ({{ count }})",
+  // "submission.sections.describe.relationship-lookup.search-tab.tab-title.orcid": "ORCID ({{ count }})",
   // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.search-tab.tab-title.orcidV2": "ORCID ({{ count }})",
+  "submission.sections.describe.relationship-lookup.search-tab.tab-title.orcid": "ORCID ({{ count }})",
 
   // "submission.sections.describe.relationship-lookup.search-tab.tab-title.lcname": "LC Names ({{ count }})",
   // TODO New key - Add a translation
@@ -3731,9 +3731,9 @@
   // TODO New key - Add a translation
   "submission.sections.describe.relationship-lookup.selection-tab.title.sherpaPublisher": "Search Results",
 
-  // "submission.sections.describe.relationship-lookup.selection-tab.title.orcidV2": "Search Results",
+  // "submission.sections.describe.relationship-lookup.selection-tab.title.orcid": "Search Results",
   // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.selection-tab.title.orcidV2": "Search Results",
+  "submission.sections.describe.relationship-lookup.selection-tab.title.orcid": "Search Results",
 
   // "submission.sections.describe.relationship-lookup.selection-tab.title.lcname": "Search Results",
   // TODO New key - Add a translation
