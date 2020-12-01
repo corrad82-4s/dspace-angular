@@ -3272,6 +3272,8 @@
 
   "researcher.profile.public.visibility" : "PUBLIC",
 
+  "researcherprofile.error.claim.title" : "Error",
+
 
 
   "resource-policies.add.button": "Add",
@@ -4106,6 +4108,8 @@
   "submission.sections.submit.progressbar.describe.patent_references": "Patent references",
 
   "submission.sections.submit.progressbar.describe.person": "Person basic information",
+
+  "submission.sections.submit.progressbar.describe.person-cv": "Profile basic information",
 
   "submission.sections.submit.progressbar.describe.product": "Product basic information",
 
