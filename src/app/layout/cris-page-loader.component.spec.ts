@@ -25,7 +25,6 @@ import { tabs } from '../shared/testing/tab.mock';
 import { PageInfo } from '../core/shared/page-info.model';
 import { PaginatedList } from '../core/data/paginated-list';
 import { FeatureID } from '../core/data/feature-authorization/feature-id';
-import { AuthService } from '../core/auth/auth.service';
 
 const testType = LayoutPage.DEFAULT;
 

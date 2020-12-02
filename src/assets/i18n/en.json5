@@ -2830,6 +2830,8 @@
 
   "person.search.title": "DSpace Cris Angular :: Person Search",
 
+  "personcv.listelement.badge": "Profile",
+
 
 
   "process.new.select-parameters": "Parameters",
@@ -3271,6 +3273,8 @@
   "researcher.profile.private.visibility" : "PRIVATE",
 
   "researcher.profile.public.visibility" : "PUBLIC",
+
+  "researcherprofile.error.claim.title" : "Error",
 
 
 
@@ -4106,6 +4110,8 @@
   "submission.sections.submit.progressbar.describe.patent_references": "Patent references",
 
   "submission.sections.submit.progressbar.describe.person": "Person basic information",
+
+  "submission.sections.submit.progressbar.describe.person-cv": "Profile basic information",
 
   "submission.sections.submit.progressbar.describe.product": "Product basic information",
 
