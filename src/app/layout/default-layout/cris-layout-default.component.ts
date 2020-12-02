@@ -1,33 +1,34 @@
-import {
-  ChangeDetectorRef,
-  Component,
-  ComponentFactoryResolver,
-  ComponentRef,
-  OnDestroy,
-  OnInit,
-  ViewChild
-} from '@angular/core';
+import { Component, ComponentFactoryResolver, ComponentRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
 
 import { BehaviorSubject, Observable } from 'rxjs';
 import { map, mergeMap, startWith, take } from 'rxjs/operators';
 
-import { Tab } from '../../core/layout/models/tab.model';
-import { CrisLayoutLoaderDirective } from '../directives/cris-layout-loader.directive';
-import { TabDataService } from '../../core/layout/tab-data.service';
-import { getAllSucceededRemoteDataPayload, getFirstSucceededRemoteListPayload } from '../../core/shared/operators';
-import { GenericConstructor } from '../../core/shared/generic-constructor';
-import { getCrisLayoutTab } from '../decorators/cris-layout-tab.decorator';
-import { CrisLayoutPage } from '../decorators/cris-layout-page.decorator';
-import { CrisLayoutPage as CrisLayoutPageObj } from '../models/cris-layout-page.model';
-import { LayoutPage } from '../enums/layout-page.enum';
-import { isNotEmpty } from '../../shared/empty.util';
-import { EditItemDataService } from '../../core/submission/edititem-data.service';
-import { EditItem } from '../../core/submission/models/edititem.model';
-import { followLink } from '../../shared/utils/follow-link-config.model';
-import { EditItemMode } from '../../core/submission/models/edititem-mode.model';
-import { AuthorizationDataService } from 'src/app/core/data/feature-authorization/authorization-data.service';
-import { FeatureID } from 'src/app/core/data/feature-authorization/feature-id';
-import { AuthService } from '../../core/auth/auth.service';
+import {Tab} from '../../core/layout/models/tab.model';
+import {CrisLayoutLoaderDirective} from '../directives/cris-layout-loader.directive';
+import {TabDataService} from '../../core/layout/tab-data.service';
+import {
+  getAllSucceededRemoteDataPayload,
+  getFirstSucceededRemoteListPayload,
+  getSucceededRemoteData
+} from '../../core/shared/operators';
+import {GenericConstructor} from '../../core/shared/generic-constructor';
+import {getCrisLayoutTab} from '../decorators/cris-layout-tab.decorator';
+import {CrisLayoutPage} from '../decorators/cris-layout-page.decorator';
+import {CrisLayoutPage as CrisLayoutPageObj} from '../models/cris-layout-page.model';
+import {LayoutPage} from '../enums/layout-page.enum';
+import {isNotEmpty, isNotUndefined} from '../../shared/empty.util';
+import {EditItemDataService} from '../../core/submission/edititem-data.service';
+import {EditItem} from '../../core/submission/models/edititem.model';
+import {followLink} from '../../shared/utils/follow-link-config.model';
+import {EditItemMode} from '../../core/submission/models/edititem-mode.model';
+import {AuthorizationDataService} from 'src/app/core/data/feature-authorization/authorization-data.service';
+import {FeatureID} from 'src/app/core/data/feature-authorization/feature-id';
+import {AuthService} from '../../core/auth/auth.service';
+import {ResearcherProfileService} from '../../core/profile/researcher-profile.service';
+import {ResearcherProfile} from '../../core/profile/model/researcher-profile.model';
+import {RemoteData} from '../../core/data/remote-data';
+import {Router} from '@angular/router';
+import {NotificationsService} from '../../shared/notifications/notifications.service';
 
 /**
  * This component defines the default layout for all DSpace Items.
@@ -75,11 +76,13 @@ export class CrisLayoutDefaultComponent extends CrisLayoutPageObj implements OnI
 
   constructor(
     private tabService: TabDataService,
-    public cd: ChangeDetectorRef,
     private componentFactoryResolver: ComponentFactoryResolver,
     private editItemService: EditItemDataService,
     private authService: AuthService,
-    private authorizationService: AuthorizationDataService
+    private authorizationService: AuthorizationDataService,
+    private researcherProfileService: ResearcherProfileService,
+    private router: Router,
+    private notificationsService: NotificationsService
   ) {
     super();
   }
@@ -202,4 +205,25 @@ export class CrisLayoutDefaultComponent extends CrisLayoutPageObj implements OnI
     }
   }
 
+  claim() {
+
+    this.researcherProfileService.createFromExternalSource(this.item._links.self.href)
+      .pipe(
+        getSucceededRemoteData(),
+        take(1),
+        mergeMap((rd: RemoteData<ResearcherProfile>) => {
+          return this.researcherProfileService.findRelatedItemId(rd.payload)
+        }))
+      .subscribe((id: string) => {
+        if (isNotUndefined(id)) {
+          this.router.navigateByUrl('/items/' + id);
+        } else {
+          this.notificationsService.error('researcherprofile.error.claim.title', 'researcherprofile.error.claim.body');
+        }
+        })
+  }
+
+  isClaimable() {
+    return this.authorizationService.isAuthorized(FeatureID.CanClaimItem, this.item._links.self.href)
+  }
 }

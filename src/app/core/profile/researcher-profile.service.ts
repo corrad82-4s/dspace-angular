@@ -1,10 +1,10 @@
-import { HttpClient } from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 import { Store } from '@ngrx/store';
 import { ReplaceOperation } from 'fast-json-patch';
 import { Observable, of as observableOf } from 'rxjs';
-import { catchError, flatMap, map, take, tap } from 'rxjs/operators';
+import {catchError, distinctUntilChanged, filter, find, flatMap, map, switchMap, take, tap} from 'rxjs/operators';
 
 import { NotificationsService } from 'src/app/shared/notifications/notifications.service';
 import { dataService } from '../cache/builders/build-decorators';
@@ -16,10 +16,15 @@ import { DefaultChangeAnalyzer } from '../data/default-change-analyzer.service';
 import { ItemDataService } from '../data/item-data.service';
 import { RequestService } from '../data/request.service';
 import { HALEndpointService } from '../shared/hal-endpoint.service';
-import { getFirstSucceededRemoteDataPayload, getFinishedRemoteData } from '../shared/operators';
+import {getFirstSucceededRemoteDataPayload, getFinishedRemoteData, getResponseFromEntry} from '../shared/operators';
 import { ResearcherProfile } from './model/researcher-profile.model';
 import { RESEARCHER_PROFILE } from './model/researcher-profile.resource-type';
 import { RestResponse } from '../cache/response.models';
+import {HttpOptions} from '../dspace-rest-v2/dspace-rest-v2.service';
+import {hasValue, isNotEmpty} from '../../shared/empty.util';
+import {PostRequest, SubmissionPostRequest} from '../data/request.models';
+import {RemoteData} from '../data/remote-data';
+import {RequestEntry} from '../data/request.reducer';
 
 /* tslint:disable:max-classes-per-file */
 
@@ -91,6 +96,39 @@ export class ResearcherProfileService {
                 map((remoteData) => remoteData.payload));
     }
 
+  /**
+   * Creates a researcher profile starting from an external source URI
+   * @param sourceUri URI of source item of researcher profile.
+   */
+  public createFromExternalSource(sourceUri: string): Observable<RemoteData<ResearcherProfile>> {
+    const options: HttpOptions = Object.create({});
+    let headers = new HttpHeaders();
+    headers = headers.append('Content-Type', 'text/uri-list');
+    options.headers = headers;
+
+    const requestId = this.requestService.generateRequestId();
+    const href$ = this.halService.getEndpoint(this.dataService.getLinkPath());
+
+    href$.pipe(
+      find((href: string) => hasValue(href)),
+      map((href: string) => {
+        const request = new PostRequest(requestId, href, sourceUri, options);
+        this.requestService.configure(request);
+      })
+    ).subscribe();
+
+    return this.requestService.getByUUID(requestId).pipe(
+      find((request: RequestEntry) => request.completed),
+      getResponseFromEntry(),
+      map((response: any) => {
+        if (isNotEmpty(response.resourceSelfLinks)) {
+          return response.resourceSelfLinks[0];
+        }
+      }),
+      switchMap((selfLink: string) => this.dataService.findByHref(selfLink))
+    );
+  }
+
     /**
      * Delete a researcher profile.
      *
@@ -140,5 +178,4 @@ export class ResearcherProfileService {
         return this.dataService.patch(researcherProfile, [replaceOperation])
             .pipe (flatMap( (response ) => this.findById(researcherProfile.id)));
     }
-
 }

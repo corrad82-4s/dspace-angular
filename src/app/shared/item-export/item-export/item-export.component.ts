@@ -4,7 +4,10 @@ import { Router } from '@angular/router';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { Observable } from 'rxjs';
 import { take, tap } from 'rxjs/operators';
-import { ItemExportFormatMolteplicity, ItemExportFormatService } from 'src/app/core/itemexportformat/item-export.service';
+import {
+  ItemExportFormatMolteplicity,
+  ItemExportFormatService
+} from 'src/app/core/itemexportformat/item-export.service';
 import { ItemExportFormat } from 'src/app/core/itemexportformat/model/item-export-format.model';
 import { Item } from 'src/app/core/shared/item.model';
 import { isEmpty } from 'src/app/shared/empty.util';
@@ -13,8 +16,6 @@ import { SearchOptions } from '../../search/search-options.model';
 @Component({
   selector: 'ds-item-export',
   templateUrl: './item-export.component.html'
-  // ,
-  // changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ItemExportComponent implements OnInit {
 
@@ -28,7 +29,8 @@ export class ItemExportComponent implements OnInit {
 
   constructor(private itemExportFormatService: ItemExportFormatService,
               private router: Router,
-              public activeModal: NgbActiveModal) { }
+              public activeModal: NgbActiveModal) {
+  }
 
   ngOnInit() {
     if (this.item) {
