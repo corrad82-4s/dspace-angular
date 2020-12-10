@@ -23,6 +23,9 @@ export class ClaimItemSelectorComponent extends DSOSelectorModalWrapperComponent
 
   listEntries$: Observable<RemoteData<PaginatedList<SearchResult<DSpaceObject>>>>;
 
+  viewMode = ViewMode.ListElement;
+
+  // enum to be exposed
   linkTypes = CollectionElementLinkType;
 
   constructor(protected activeModal: NgbActiveModal, protected route: ActivatedRoute, private router: Router,
@@ -34,6 +37,7 @@ export class ClaimItemSelectorComponent extends DSOSelectorModalWrapperComponent
     this.listEntries$ = this.profileClaimService.search(this.dso as EPerson);
   }
 
+  // triggered when an item is selected
   selectItem(dso: DSpaceObject): void {
     this.close();
     this.navigate(dso);
