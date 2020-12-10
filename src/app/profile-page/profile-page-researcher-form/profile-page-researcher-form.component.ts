@@ -1,9 +1,13 @@
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { BehaviorSubject, Observable } from 'rxjs';
+import {BehaviorSubject, Observable, of} from 'rxjs';
 import { EPerson } from 'src/app/core/eperson/models/eperson.model';
 import { ResearcherProfile } from 'src/app/core/profile/model/researcher-profile.model';
 import { ResearcherProfileService } from 'src/app/core/profile/researcher-profile.service';
+import {mergeMap, take} from 'rxjs/operators';
+import {ProfileClaimService} from '../profile-claim/profile-claim.service';
+import {ClaimItemSelectorComponent} from '../../shared/dso-selector/modal-wrappers/claim-item-selector/claim-item-selector.component';
 
 @Component({
     selector: 'ds-profile-page-researcher-form',
@@ -37,8 +41,11 @@ export class ProfilePageResearcherFormComponent implements OnInit {
      */
     processingCreate$: BehaviorSubject<boolean>  = new BehaviorSubject<boolean>(false);
 
+    canClaim$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false)
+
     constructor( protected researcherProfileService: ResearcherProfileService,
-                 protected router: Router) {
+                 protected router: Router, private claimService: ProfileClaimService,
+                 private modalService: NgbModal) {
 
     }
 
@@ -46,12 +53,26 @@ export class ProfilePageResearcherFormComponent implements OnInit {
      * Initialize the component searching the current user researcher profile.
      */
     ngOnInit(): void {
+
         this.researcherProfileService.findById(this.user.id)
-            .subscribe ( (researcherProfile) => {
-                if ( researcherProfile != null) {
-                    this.researcherProfile$.next(researcherProfile);
+        .pipe(
+            take(1),
+            mergeMap((rp: ResearcherProfile) => {
+                if (rp != null) {
+                    this.researcherProfile$.next(rp);
                 }
-            });
+                return of(rp != null);
+            }),
+            mergeMap((profileFound: boolean) => {
+                if (profileFound) {
+                    return of(false);
+                }
+                return this.claimService.canClaimProfiles(this.user);
+            })
+        )
+        .subscribe((canClaim: boolean) => {
+            this.canClaim$.next(canClaim);
+        })
     }
 
     /**
@@ -64,6 +85,11 @@ export class ProfilePageResearcherFormComponent implements OnInit {
                 this.researcherProfile$.next(researcherProfile);
                 this.processingCreate$.next(false);
             });
+    }
+
+    claim(): void {
+        const modal = this.modalService.open(ClaimItemSelectorComponent);
+        modal.componentInstance.dso = this.user;
     }
 
     /**
@@ -94,6 +120,8 @@ export class ProfilePageResearcherFormComponent implements OnInit {
                 }
                 this.processingDelete$.next(false);
             });
+        this.claimService.canClaimProfiles(this.user)
+          .subscribe((canClaim: boolean) => this.canClaim$.next(canClaim));
     }
 
     /**
@@ -122,6 +150,10 @@ export class ProfilePageResearcherFormComponent implements OnInit {
      */
     isProcessingCreate(): Observable<boolean> {
         return this.processingCreate$.asObservable();
+    }
+
+    canClaim(): Observable<boolean> {
+        return this.canClaim$.asObservable();
     }
 
 }

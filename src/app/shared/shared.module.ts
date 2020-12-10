@@ -222,6 +222,7 @@ import { SearchChartComponent } from './search/search-charts/search-chart/search
 import { ChartsModule } from '../charts/charts.module';
 import { ItemExportComponent } from './item-export/item-export/item-export.component';
 import { ItemExportModalWrapperComponent } from './item-export/item-export-modal-wrapper/item-export-modal-wrapper.component';
+import { ClaimItemSelectorComponent } from './dso-selector/modal-wrappers/claim-item-selector/claim-item-selector.component';
 
 const MODULES = [
   // Do NOT include UniversalModule, HttpModule, or JsonpModule here
@@ -352,6 +353,7 @@ const COMPONENTS = [
   CreateItemParentSelectorComponent,
   EditCommunitySelectorComponent,
   EditCollectionSelectorComponent,
+  ClaimItemSelectorComponent,
   EditItemSelectorComponent,
   CommunitySearchResultListElementComponent,
   CollectionSearchResultListElementComponent,
@@ -469,6 +471,7 @@ const ENTRY_COMPONENTS = [
   CreateCommunityParentSelectorComponent,
   CreateCollectionParentSelectorComponent,
   CreateItemParentSelectorComponent,
+  ClaimItemSelectorComponent,
   EditCommunitySelectorComponent,
   EditCollectionSelectorComponent,
   EditItemSelectorComponent,
