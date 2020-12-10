@@ -1278,6 +1278,9 @@
   "curation.form.handle.hint": "Hint: Enter [your-handle-prefix]/0 to run a task across entire site (not all tasks may support this capability)",
 
 
+  "dso-selector.claim.item.head": "Claim",
+
+  "dso-selector.claim.item.body": "We have found following profiles that match with your personal data",
 
   "dso-selector.create.collection.head": "New collection",
 
@@ -3259,6 +3262,8 @@
   "researcher.profile.associated": "Researcher profile associated",
 
   "researcher.profile.create.new": "Create new",
+
+  "researcher.profile.create.fromEpersonData": "Claim Profile",
 
   "researcher.profile.delete": "Delete",
 

@@ -198,6 +198,7 @@ import { AuditDataService } from './audit/audit-data.service';
 import { Audit } from './audit/model/audit.model';
 import { ItemExportFormatService } from './itemexportformat/item-export.service';
 import { ItemExportFormat } from './itemexportformat/model/item-export-format.model';
+import { ProfileClaimService } from '../profile-page/profile-claim/profile-claim.service';
 
 /**
  * When not in production, endpoint responses can be mocked for testing purposes
@@ -353,6 +354,7 @@ const PROVIDERS = [
   VocabularyEntriesResponseParsingService,
   VocabularyTreeviewService,
   SearchcomponentService,
+  ProfileClaimService,
   ResearcherProfileService,
   ItemExportFormatService,
   SectionDataService,
