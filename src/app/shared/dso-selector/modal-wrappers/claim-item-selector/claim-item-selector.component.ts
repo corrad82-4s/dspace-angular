@@ -12,6 +12,7 @@ import { ProfileClaimService } from 'src/app/profile-page/profile-claim/profile-
 import { Input } from '@angular/core';
 import { CollectionElementLinkType } from 'src/app/shared/object-collection/collection-element-link.type';
 import { getItemPageRoute } from 'src/app/+item-page/item-page-routing-paths';
+import { ViewMode } from 'src/app/core/shared/view-mode.model';
 
 @Component({
   selector: 'ds-claim-item-selector',
