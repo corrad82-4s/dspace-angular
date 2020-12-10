@@ -1,3 +1,4 @@
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { Router } from '@angular/router';
@@ -11,7 +12,10 @@ import { ResearcherProfile } from 'src/app/core/profile/model/researcher-profile
 import { ResearcherProfileService } from 'src/app/core/profile/researcher-profile.service';
 import { RouterStub } from 'src/app/shared/testing/router.stub';
 import { VarDirective } from 'src/app/shared/utils/var.directive';
+import { ProfileClaimService } from '../profile-claim/profile-claim.service';
 import { ProfilePageResearcherFormComponent } from './profile-page-researcher-form.component';
+import { ClaimItemSelectorComponent } from 'src/app/shared/dso-selector/modal-wrappers/claim-item-selector/claim-item-selector.component';
+import { NgModule } from '@angular/core';
 
 describe('ProfilePageResearcherFormComponent', () => {
 
@@ -23,6 +27,18 @@ describe('ProfilePageResearcherFormComponent', () => {
     let profile: ResearcherProfile;
 
     let researcherProfileService: ResearcherProfileService;
+
+    let profileClaimService: ProfileClaimService;
+
+    let modalService: NgbModal;
+
+//     @NgModule({
+//         declarations: [ClaimItemSelectorComponent],
+//         entryComponents: [
+//             ClaimItemSelectorComponent,
+//         ]
+//       })
+//       class TestModule {}
 
     function init() {
         router = new RouterStub();
@@ -45,6 +61,14 @@ describe('ProfilePageResearcherFormComponent', () => {
            findRelatedItemId: observableOf ( 'a42557ca-cbb8-4442-af9c-3bb5cad2d075' )
         });
 
+        profileClaimService = jasmine.createSpyObj('ProfileClaimService', {
+            canClaimProfiles: observableOf(false)
+        });
+
+        modalService = jasmine.createSpyObj('NgbModal', {
+            open: null
+        })
+
     }
 
     beforeEach(async(() => {
@@ -54,7 +78,8 @@ describe('ProfilePageResearcherFormComponent', () => {
           imports: [TranslateModule.forRoot(), RouterTestingModule.withRoutes([])],
           providers: [
             { provide: ResearcherProfileService, useValue: researcherProfileService },
-            {provide: Router, useValue: router}
+            { provide: Router, useValue: router},
+            { provide: ProfileClaimService, useValue: profileClaimService}
           ],
           schemas: [NO_ERRORS_SCHEMA]
         }).compileComponents();
@@ -101,6 +126,7 @@ describe('ProfilePageResearcherFormComponent', () => {
         it('should delete the profile', () => {
             component.deleteProfile(profile);
             expect(researcherProfileService.delete).toHaveBeenCalledWith(profile);
+            expect(profileClaimService.canClaimProfiles).toHaveBeenCalledWith(user);
         });
 
     });
@@ -113,5 +139,13 @@ describe('ProfilePageResearcherFormComponent', () => {
         });
 
     });
+
+    //FIXME : fix component injection
+    xdescribe('claimProfile', () => {
+        it('should open modal', () => {
+            component.claim();
+            expect(modalService.open).toHaveBeenCalledTimes(1);
+        });
+    })
 
 });

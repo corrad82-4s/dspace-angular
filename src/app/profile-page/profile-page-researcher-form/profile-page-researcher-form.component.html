@@ -1,8 +1,8 @@
 <div *ngVar="(researcherProfile$ | async) as researcherProfile">
     <div *ngIf="researcherProfile">
         <p>{{'researcher.profile.associated' | translate}}</p>
-        <p>Status: 
-            <span [ngClass]="{'font-weight-bold' : true, 'text-success' : researcherProfile.visible, 'text-warning' : !researcherProfile.visible}"> 
+        <p>Status:
+            <span [ngClass]="{'font-weight-bold' : true, 'text-success' : researcherProfile.visible, 'text-warning' : !researcherProfile.visible}">
                 {{ (researcherProfile.visible ? 'researcher.profile.public.visibility' : 'researcher.profile.private.visibility' ) | translate }}
             </span>
         </p>
@@ -18,13 +18,18 @@
             <i class="fas fa-plus"></i> &nbsp;{{'researcher.profile.create.new' | translate}}
         </span>
     </button>
+    <button *ngIf="!researcherProfile && (canClaim() | async)" class="btn btn-primary" (click)="claim()">
+      <span *ngIf="!(isProcessingCreate() | async)">
+              <i class="fas fa-plus"></i> &nbsp;{{'researcher.profile.create.fromEpersonData' | translate}}
+          </span>
+    </button>
     <ng-container *ngIf="researcherProfile">
         <button class="btn btn-primary" [disabled]="!researcherProfile" (click)="viewProfile(researcherProfile)">
             {{'researcher.profile.view' | translate}}
         </button>
         <button class="btn btn-outline-primary" [disabled]="!researcherProfile" (click)="toggleProfileVisibility(researcherProfile)">
             <span>
-                <i class="fas fa-edit"></i> 
+                <i class="fas fa-edit"></i>
                 &nbsp;{{(researcherProfile.visible ? 'researcher.profile.hide' : 'researcher.profile.expose' ) | translate}}
             </span>
         </button>

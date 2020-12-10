@@ -82,4 +82,11 @@ export class EPerson extends DSpaceObject {
   @link(GROUP, true)
   public groups?: Observable<RemoteData<PaginatedList<Group>>>;
 
+  dni(): string {
+    return this.firstMetadataValue('perucris.eperson.dni');
+  }
+
+  orcidId(): string {
+    return this.firstMetadataValue('perucris.eperson.orcid');
+  }
 }
