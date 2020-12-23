@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { distinctUntilChanged, first, flatMap, map } from 'rxjs/operators';
+import { distinctUntilChanged, flatMap, map } from 'rxjs/operators';
 
 import { FollowLinkConfig } from '../../../shared/utils/follow-link-config.model';
 import { dataService } from '../../cache/builders/build-decorators';
@@ -22,7 +22,7 @@ import { PaginatedList } from '../../data/paginated-list';
 import { Vocabulary } from './models/vocabulary.model';
 import { VOCABULARY } from './models/vocabularies.resource-type';
 import { VocabularyEntry } from './models/vocabulary-entry.model';
-import { hasValue, isNotEmpty, isNotEmptyOperator } from '../../../shared/empty.util';
+import { isNotEmpty, isNotEmptyOperator } from '../../../shared/empty.util';
 import {
   configureRequest,
   filterSuccessfulResponses,
@@ -151,6 +151,8 @@ export class VocabularyService {
   getVocabularyEntries(vocabularyOptions: VocabularyOptions, pageInfo: PageInfo): Observable<RemoteData<PaginatedList<VocabularyEntry>>> {
 
     const options: VocabularyFindOptions = new VocabularyFindOptions(
+      vocabularyOptions.scope,
+      vocabularyOptions.metadata,
       null,
       null,
       null,
@@ -180,6 +182,8 @@ export class VocabularyService {
    */
   getVocabularyEntriesByValue(value: string, exact: boolean, vocabularyOptions: VocabularyOptions, pageInfo: PageInfo): Observable<RemoteData<PaginatedList<VocabularyEntry>>> {
     const options: VocabularyFindOptions = new VocabularyFindOptions(
+      vocabularyOptions.scope,
+      vocabularyOptions.metadata,
       null,
       value,
       exact,
@@ -230,6 +234,8 @@ export class VocabularyService {
   getVocabularyEntryByID(ID: string, vocabularyOptions: VocabularyOptions): Observable<VocabularyEntry> {
     const pageInfo = new PageInfo()
     const options: VocabularyFindOptions = new VocabularyFindOptions(
+      vocabularyOptions.scope,
+      vocabularyOptions.metadata,
       null,
       null,
       null,
@@ -316,6 +322,8 @@ export class VocabularyService {
       null,
       null,
       null,
+      null,
+      null,
       pageInfo.elementsPerPage,
       pageInfo.currentPage
     );
@@ -333,6 +341,8 @@ export class VocabularyService {
    */
   searchTopEntries(name: string, pageInfo: PageInfo, ...linksToFollow: Array<FollowLinkConfig<VocabularyEntryDetail>>): Observable<RemoteData<PaginatedList<VocabularyEntryDetail>>> {
     const options: VocabularyFindOptions = new VocabularyFindOptions(
+      null,
+      null,
       null,
       null,
       null,
