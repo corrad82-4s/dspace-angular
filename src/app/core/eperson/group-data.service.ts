@@ -41,7 +41,6 @@ import { GROUP } from './models/group.resource-type';
 import { DSONameService } from '../breadcrumbs/dso-name.service';
 import { Community } from '../shared/community.model';
 import { Collection } from '../shared/collection.model';
-import { Operation } from 'fast-json-patch';
 
 const groupRegistryStateSelector = (state: AppState) => state.groupRegistry;
 const editGroupSelector = createSelector(groupRegistryStateSelector, (groupRegistryState: GroupRegistryState) => groupRegistryState.editGroup);
@@ -415,19 +414,6 @@ export class GroupDataService extends DataService<Group> {
     return this.requestService.getByUUID(requestId).pipe(
       getResponseFromEntry(),
       tap(() => this.requestService.removeByHrefSubstring(link)),
-    );
-  }
-
-  /**
-   * Gets the restResponse from the requestService
-   * @param requestId
-   */
-  protected fetchResponse(requestId: string): Observable<RestResponse> {
-    return this.requestService.getByUUID(requestId).pipe(
-      getResponseFromEntry(),
-      map((response: RestResponse) => {
-        return response;
-      })
     );
   }
 

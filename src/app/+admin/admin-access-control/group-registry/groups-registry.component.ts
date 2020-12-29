@@ -5,12 +5,10 @@ import { TranslateService } from '@ngx-translate/core';
 import { BehaviorSubject, combineLatest as observableCombineLatest, Subscription, Observable, of as observableOf } from 'rxjs';
 import { filter } from 'rxjs/internal/operators/filter';
 import { ObservedValueOf } from 'rxjs/internal/types';
-import { catchError, map, switchMap, take } from 'rxjs/operators';
+import { catchError, map, switchMap, take, first } from 'rxjs/operators';
 import { DSpaceObjectDataService } from '../../../core/data/dspace-object-data.service';
 import { AuthorizationDataService } from '../../../core/data/feature-authorization/authorization-data.service';
 import { FeatureID } from '../../../core/data/feature-authorization/feature-id';
-import { Observable } from 'rxjs';
-import { take, first } from 'rxjs/operators';
 
 import { PaginatedList } from '../../../core/data/paginated-list';
 import { RemoteData } from '../../../core/data/remote-data';

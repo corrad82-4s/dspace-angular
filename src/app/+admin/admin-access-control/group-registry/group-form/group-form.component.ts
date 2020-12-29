@@ -513,11 +513,14 @@ export class GroupFormComponent implements OnInit, OnDestroy {
           }
         })
       )
-  private addOrReplaceMetadataValue(dspaceObject: DSpaceObject, editedObject: any, metadataField: string, value: string | string[]) {
-    if (dspaceObject.hasMetadata(metadataField)) {
-      editedObject.metadata[metadataField][0].value = value;
-    } else {
-      editedObject.metadata[metadataField] = [Object.assign<any,any>({}, {value: value})];
+      }
     }
-  }
+
+    // private addOrReplaceMetadataValue(dspaceObject: DSpaceObject, editedObject: any, metadataField: string, value: string | string[]) {
+    //   if (dspaceObject.hasMetadata(metadataField)) {
+    //     editedObject.metadata[metadataField][0].value = value;
+    //   } else {
+    //     editedObject.metadata[metadataField] = [Object.assign<any,any>({}, {value: value})];
+    //   }
+    // }
 }
