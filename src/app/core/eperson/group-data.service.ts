@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 import { createSelector, select, Store } from '@ngrx/store';
+import { Operation } from 'fast-json-patch/lib/core';
 import { Observable, of as observableOf } from 'rxjs';
 import { catchError, filter, find, map, skipWhile, switchMap, take, tap } from 'rxjs/operators';
 import {
@@ -16,7 +17,7 @@ import { FollowLinkConfig } from '../../shared/utils/follow-link-config.model';
 import { RemoteDataBuildService } from '../cache/builders/remote-data-build.service';
 import { RequestParam } from '../cache/models/request-param.model';
 import { ObjectCacheService } from '../cache/object-cache.service';
-import { RestResponse } from '../cache/response.models';
+import { ErrorResponse, RestResponse } from '../cache/response.models';
 import { DataService } from '../data/data.service';
 import { DSOChangeAnalyzer } from '../data/dso-change-analyzer.service';
 import { PaginatedList } from '../data/paginated-list';
@@ -29,7 +30,6 @@ import {
   PatchRequest,
   PostRequest
 } from '../data/request.models';
-
 import { RequestService } from '../data/request.service';
 import { HttpOptions } from '../dspace-rest-v2/dspace-rest-v2.service';
 import { HALEndpointService } from '../shared/hal-endpoint.service';
@@ -54,10 +54,10 @@ const editGroupSelector = createSelector(groupRegistryStateSelector, (groupRegis
 })
 @dataService(GROUP)
 export class GroupDataService extends DataService<Group> {
-  public ePersonsEndpoint = 'epersons';
-  public subgroupsEndpoint = 'subgroups';
   protected linkPath = 'groups';
   protected browseEndpoint = '';
+  public ePersonsEndpoint = 'epersons';
+  public subgroupsEndpoint = 'subgroups';
 
   constructor(
     protected comparator: DSOChangeAnalyzer<Group>,
@@ -166,10 +166,13 @@ export class GroupDataService extends DataService<Group> {
 
   /**
    * Method to delete a group
-   * @param id The group id to delete
+   * @param group The group to delete
    */
-  public deleteGroup(group: Group): Observable<boolean> {
-    return this.delete(group.id).pipe(map((response: RestResponse) => response.isSuccessful));
+  public deleteGroup(group: Group): Observable<[boolean, string]> {
+    return this.delete(group.id).pipe(map((response: RestResponse) => {
+      const errorMessage = response.isSuccessful === false ? (response as ErrorResponse).errorMessage : undefined;
+      return [response.isSuccessful, errorMessage];
+    }));
   }
 
   /**
@@ -183,7 +186,7 @@ export class GroupDataService extends DataService<Group> {
   /**
    * Add a new patch to the object cache
    * The patch is derived from the differences between the given object and its version in the object cache
-   * @param {DSpaceObject} group The given object
+   * @param group The group with changes
    */
   updateGroup(group: Group): Observable<RestResponse> {
     const requestId = this.requestService.generateRequestId();
@@ -260,6 +263,19 @@ export class GroupDataService extends DataService<Group> {
     this.requestService.configure(deleteRequest);
 
     return this.fetchResponse(requestId);
+  }
+
+  /**
+   * Gets the restResponse from the requestService
+   * @param requestId
+   */
+  protected fetchResponse(requestId: string): Observable<RestResponse> {
+    return this.requestService.getByUUID(requestId).pipe(
+      getResponseFromEntry(),
+      map((response: RestResponse) => {
+        return response;
+      })
+    );
   }
 
   /**

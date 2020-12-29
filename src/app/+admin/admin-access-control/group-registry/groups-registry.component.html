@@ -30,10 +30,10 @@
       </form>
 
       <ds-pagination
-        *ngIf="(groups | async)?.payload?.totalElements > 0"
+        *ngIf="(pageInfoState$ | async)?.totalElements > 0"
         [paginationOptions]="config"
-        [pageInfoState]="(groups | async)?.payload"
-        [collectionSize]="(groups | async)?.payload?.totalElements"
+        [pageInfoState]="pageInfoState$"
+        [collectionSize]="(pageInfoState$ | async)?.totalElements"
         [hideGear]="true"
         [hidePagerWhenSinglePage]="true"
         (pageChange)="onPageChange($event)">
@@ -50,25 +50,25 @@
             </tr>
             </thead>
             <tbody>
-            <tr *ngFor="let group of (groups | async)?.payload?.page">
-              <td>{{group.id}}</td>
-              <td>{{group.name}}</td>
-              <td> 
-                <span *ngIf="isEnabled(group)"  class="badge badge-success">{{messagePrefix + 'badge.enabled' | translate}}</span>
-                <span *ngIf="!isEnabled(group)" class="badge badge-secondary">{{messagePrefix + 'badge.disabled' | translate}}</span>
-                <span *ngIf="group?.permanent" class="badge badge-danger">{{messagePrefix + 'badge.permanent' | translate}}</span>
+            <tr *ngFor="let groupDto of (groupsDto$ | async)?.page">
+              <td>{{groupDto.group.id}}</td>
+              <td>{{groupDto.group.name}}</td>
+              <td>
+                <span *ngIf="isEnabled(groupDto.group)"  class="badge badge-success">{{messagePrefix + 'badge.enabled' | translate}}</span>
+                <span *ngIf="!isEnabled(ggroupDto.grouproup)" class="badge badge-secondary">{{messagePrefix + 'badge.disabled' | translate}}</span>
+                <span *ngIf="groupDto.group?.permanent" class="badge badge-danger">{{messagePrefix + 'badge.permanent' | translate}}</span>
               </td>
               <td><span class="badge badge-info">{{messagePrefix + 'badge.' + getGroupType(group) | translate}}</span></td>
               <td>
                 <div class="btn-group edit-field">
-                  <button [routerLink]="groupService.getGroupEditPageRouterLink(group)"
+                  <button [routerLink]="groupService.getGroupEditPageRouterLink(groupDto.group)"
                           class="btn btn-outline-primary btn-sm"
-                          title="{{messagePrefix + 'table.edit.buttons.edit' | translate: {name: group.name} }}">
+                          title="{{messagePrefix + 'table.edit.buttons.edit' | translate: {name: groupDto.group.name} }}">
                     <i class="fas fa-edit fa-fw"></i>
                   </button>
-                  <button *ngIf="!group?.permanent" (click)="deleteGroup(group)"
-                          class="btn btn-outline-danger btn-sm"
-                          title="{{messagePrefix + 'table.edit.buttons.remove' | translate: {name: group.name} }}">
+                  <button *ngIf="!groupDto.group?.permanent && groupDto.ableToDelete"
+                          (click)="deleteGroup(groupDto.group)" class="btn btn-outline-danger btn-sm"
+                          title="{{messagePrefix + 'table.edit.buttons.remove' | translate: {name: groupDto.group.name} }}">
                     <i class="fas fa-trash-alt fa-fw"></i>
                   </button>
                 </div>
@@ -79,7 +79,7 @@
         </div>
       </ds-pagination>
 
-      <div *ngIf="(groups | async)?.payload?.totalElements == 0" class="alert alert-info w-100 mb-2" role="alert">
+      <div *ngIf="(pageInfoState$ | async)?.totalElements == 0" class="alert alert-info w-100 mb-2" role="alert">
         {{messagePrefix + 'no-items' | translate}}
       </div>
 
