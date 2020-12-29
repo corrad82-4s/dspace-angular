@@ -199,6 +199,31 @@ export class SubmissionService {
   }
 
   /**
+   * Perform a REST call to create a new workspaceitem by item and return response
+   *
+   * @return Observable<SubmissionObject>
+   *    observable of SubmissionObject
+   */
+  createSubmissionByItem(itemId: string, relationshipName?: string): Observable<SubmissionObject> {
+
+    const paramsObj = Object.create({});
+
+    if (isNotEmpty(itemId)) {
+      paramsObj.item = itemId;
+    }
+    if (isNotEmpty(relationshipName)) {
+      paramsObj.relationship = relationshipName;
+    }
+
+    const params = new HttpParams({fromObject: paramsObj});
+    const options: HttpOptions = Object.create({});
+    options.params = params;
+
+    return this.restService.postToEndpoint('workspaceitems', {}, null, options).pipe(
+      map((workspaceitem: SubmissionObject[]) => workspaceitem[0]))
+  }
+
+  /**
    * Dispatch a new [InitSubmissionFormAction]
    *
    * @param collectionId
