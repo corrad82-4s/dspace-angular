@@ -428,7 +428,6 @@ export const models =
     VocabularyEntry,
     VocabularyEntryDetail,
     ConfigurationProperty,
-    UsageReport,
     SearchComponent,
     ResearcherProfile,
     ItemExportFormat,
