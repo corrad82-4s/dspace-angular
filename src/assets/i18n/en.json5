@@ -1723,6 +1723,20 @@
 
   "info.privacy.title": "Privacy Statement",
 
+  "institutionequipment.listelement.badge": "Equipment",
+
+  "institutionfunding.listelement.badge": "Funding",
+
+  "institutionorgunit.listelement.badge": "Organizational Unit",
+
+  "institutionpatent.listelement.badge": "Patent",
+
+  "institutionperson.listelement.badge": "Person",
+
+  "institutionproject.listelement.badge": "Project",
+
+  "institutionpublication.listelement.badge": "Publication",
+
 
 
   "item.edit.authorizations.heading": "With this editor you can view and alter the policies of an item, plus alter policies of individual item components: bundles and bitstreams. Briefly, an item is a container of bundles, and bundles are containers of bitstreams. Containers usually have ADD/REMOVE/READ/WRITE policies, while bitstreams only have READ/WRITE policies.",
