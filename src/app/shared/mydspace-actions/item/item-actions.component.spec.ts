@@ -16,6 +16,9 @@ import { RequestService } from '../../../core/data/request.service';
 import { getMockSearchService } from '../../mocks/search-service.mock';
 import { getMockRequestService } from '../../mocks/request.service.mock';
 import { SearchService } from '../../../core/shared/search/search.service';
+import { AuthorizationDataService } from '../../../core/data/feature-authorization/authorization-data.service';
+import { RelationshipService } from '../../../core/data/relationship.service';
+import { SubmissionService } from '../../../submission/submission.service';
 
 let component: ItemActionsComponent;
 let fixture: ComponentFixture<ItemActionsComponent>;
@@ -58,8 +61,17 @@ const searchService = getMockSearchService()
 
 const requestServce = getMockRequestService();
 
+let authorizationService;
+let relationshipService;
+let submissionService;
+
 describe('ItemActionsComponent', () => {
   beforeEach(async(() => {
+
+    authorizationService = new AuthorizationDataService(null, null, null, null, null, null, null, null, null, null);
+    relationshipService = new RelationshipService(null, null, null, null, null, null, null, null, null, null);
+    submissionService = new SubmissionService(null, null, null, null, null, null, null, null, null);
+
     TestBed.configureTestingModule({
       imports: [
         TranslateModule.forRoot({
@@ -75,6 +87,9 @@ describe('ItemActionsComponent', () => {
         { provide: Router, useValue: new RouterStub() },
         { provide: ItemDataService, useValue: mockDataService },
         { provide: NotificationsService, useValue: new NotificationsServiceStub() },
+        { provide: AuthorizationDataService, useValue: authorizationService },
+        { provide: RelationshipService, useValue: relationshipService },
+        { provide: SubmissionService, userValue: SubmissionService },
         { provide: SearchService, useValue: searchService },
         { provide: RequestService, useValue: requestServce }
       ],
@@ -88,6 +103,7 @@ describe('ItemActionsComponent', () => {
     fixture = TestBed.createComponent(ItemActionsComponent);
     component = fixture.componentInstance;
     component.object = mockObject;
+    component.canUpdate = false;
     fixture.detectChanges();
   });
 
