@@ -3793,6 +3793,22 @@
 
   "submission.import-external.title.Funding": "Import fund from an external source",
 
+  "submission.import-external.title.InstitutionEquipment": "Import equipment from an external source",
+
+  "submission.import-external.title.InstitutionEvent": "Import event from an external source",
+
+  "submission.import-external.title.InstitutionFunding": "Import fund from an external source",
+
+  "submission.import-external.title.InstitutionOrgUnit": "Import publisher from an external source",
+
+  "submission.import-external.title.InstitutionPatent": "Import patent from an external source",
+
+  "submission.import-external.title.InstitutionPerson": "Import person from an external source",
+
+  "submission.import-external.title.InstitutionProject": "Import project from an external source",
+
+  "submission.import-external.title.InstitutionPublication": "Import publication from an external source",
+
   "submission.import-external.title.Journal": "Import journal from an external source",
 
   "submission.import-external.title.OrgUnit": "Import publisher from an external source",
