@@ -907,6 +907,8 @@
 
   "collection.edit.tabs.source.external": "This collection harvests its content from an external source",
 
+  "collection.edit.tabs.source.form.adminEmail": "Admin's email",
+
   "collection.edit.tabs.source.form.errors.oaiSource.required": "You must provide a set id of the target collection.",
 
   "collection.edit.tabs.source.form.harvestType": "Content being harvested",
@@ -924,6 +926,10 @@
   "collection.edit.tabs.source.form.options.harvestType.METADATA_AND_REF": "Harvest metadata and references to bitstreams (requires ORE support)",
 
   "collection.edit.tabs.source.form.options.harvestType.METADATA_ONLY": "Harvest metadata only",
+
+  "collection.edit.tabs.source.form.preTransform": "Pre transformation name",
+
+  "collection.edit.tabs.source.form.postTransform": "Post transformation name",
 
   "collection.edit.tabs.source.head": "Content Source",
 
@@ -1723,6 +1729,20 @@
 
   "info.privacy.title": "Privacy Statement",
 
+  "institutionequipment.listelement.badge": "Institution Equipment",
+
+  "institutionfunding.listelement.badge": "Institution Funding",
+
+  "institutionorgunit.listelement.badge": "Institution Organizational Unit",
+
+  "institutionpatent.listelement.badge": "Institution Patent",
+
+  "institutionperson.listelement.badge": "Institution Person",
+
+  "institutionproject.listelement.badge": "Institution Project",
+
+  "institutionpublication.listelement.badge": "InstitutionPublication",
+
 
 
   "item.edit.authorizations.heading": "With this editor you can view and alter the policies of an item, plus alter policies of individual item components: bundles and bitstreams. Briefly, an item is a container of bundles, and bundles are containers of bitstreams. Containers usually have ADD/REMOVE/READ/WRITE policies, while bitstreams only have READ/WRITE policies.",
@@ -2134,6 +2154,26 @@
   "item.page.link.full": "Full item page",
 
   "item.page.link.simple": "Simple item page",
+
+  "item.page.metric.deltaPeriod1": "Last Week",
+
+  "item.page.metric.deltaPeriod2": "Last Month",
+
+  "item.page.metric.label.scopusCitation": "Scopus citations",
+
+  "item.page.metric.label.scopus-author-h-index": "H-index",
+
+  "item.page.metric.label.scopus-author-coauthor-count": "Coauthor",
+
+  "item.page.metric.label.scopus-author-cited-count": "Cited By",
+
+  "item.page.metric.label.scopus-author-citation-count": "Author Citations",
+
+  "item.page.metric.label.scopus-author-document-count": "Author Documents",
+
+  "item.page.metric.label.wosCitation": "WOS citations",
+
+  "item.page.metric.label.wosPersonCitation": "WOS citations",
 
   "item.page.person.search.title": "Articles by this author",
 
@@ -2667,6 +2707,10 @@
   "mydspace.upload.upload-successful": "New workspace item created. Click {{here}} for edit it.",
 
   "mydspace.view-btn": "View",
+
+  "mydspace.update-btn": "Update",
+
+  "mydspace.update-btn.help": "Submit a correction request",
 
 
 
@@ -3733,6 +3777,8 @@
   "submission.general.save": "Save",
 
   "submission.general.save-later": "Save for later",
+
+  "submission.general.save-later.edit-item": "Save and return",
 
 
   "submission.import-external.page.title": "Import metadata from an external source",
