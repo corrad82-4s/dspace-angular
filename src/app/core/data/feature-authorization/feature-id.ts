@@ -10,4 +10,5 @@ export enum FeatureID {
   ReinstateItem = 'reinstateItem',
   EPersonRegistration = 'epersonRegistration',
   CanClaimItem = 'canClaimItem',
+  CanCorrectItem = 'canCorrectItem'
 }

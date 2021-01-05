@@ -3,3 +3,9 @@
             [routerLink]="['/items/' + object.id]">
   <i class="fa fa-info-circle"></i> {{"submission.workflow.generic.view" | translate}}
 </button>
+
+<button
+  ngbTooltip="{{'mydspace.update-btn.help' | translate}}"
+  *ngIf="(canBeCorrected() | async)" class="btn btn-primary mt-1 mb-3" (click)="update()">
+  {{ 'mydspace.update-btn' | translate }}
+</button>
