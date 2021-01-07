@@ -17,7 +17,7 @@ describe('protractor SearchPage', () => {
       });
   });
 
-  it('should have right scope selected when navigating to page with scope parameter', () => {
+  xit('should have right scope selected when navigating to page with scope parameter', () => {
     page.navigateToSearch()
       .then(() => page.getRandomScopeOption())
       .then((scopeString: string) => {
@@ -30,7 +30,7 @@ describe('protractor SearchPage', () => {
       });
   });
 
-  it('should redirect to the correct url when scope was set and submit button was triggered', () => {
+  xit('should redirect to the correct url when scope was set and submit button was triggered', () => {
     page.navigateToSearch()
       .then(() => page.getRandomScopeOption())
       .then((scopeString: string) => {
