@@ -1,7 +1,7 @@
 import { ProtractorPage } from './search-page.po';
 import { browser } from 'protractor';
 
-describe('protractor SearchPage', () => {
+xdescribe('protractor SearchPage', () => {
   let page: ProtractorPage;
 
   beforeEach(() => {
@@ -17,7 +17,7 @@ describe('protractor SearchPage', () => {
       });
   });
 
-  xit('should have right scope selected when navigating to page with scope parameter', () => {
+  it('should have right scope selected when navigating to page with scope parameter', () => {
     page.navigateToSearch()
       .then(() => page.getRandomScopeOption())
       .then((scopeString: string) => {
@@ -30,7 +30,7 @@ describe('protractor SearchPage', () => {
       });
   });
 
-  xit('should redirect to the correct url when scope was set and submit button was triggered', () => {
+  it('should redirect to the correct url when scope was set and submit button was triggered', () => {
     page.navigateToSearch()
       .then(() => page.getRandomScopeOption())
       .then((scopeString: string) => {
