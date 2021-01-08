@@ -4292,6 +4292,8 @@
 
   "submission.workflow.tasks.claimed.assign.user.info": "Select the user to assign the current item review",
 
+  "submission.workflow.tasks.claimed.assign.user.no-member": "No other group's members found for the selected task",
+
   "submission.workflow.tasks.claimed.assign.user.title": "Assign to another user",
 
   "submission.workflow.tasks.claimed.assign.user.submit": "Assign",

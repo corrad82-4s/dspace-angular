@@ -1,9 +1,9 @@
-import { autoserialize, deserialize, inheritSerialization } from "cerialize";
-import { typedObject } from "../../cache/builders/build-decorators";
-import { CacheableObject } from "../../cache/object-cache.reducer";
-import { DSpaceObject } from "../../shared/dspace-object.model";
-import { HALLink } from "../../shared/hal-link.model";
-import { ResourceType } from "../../shared/resource-type";
+import { autoserialize, deserialize, inheritSerialization } from 'cerialize';
+import { typedObject } from '../../cache/builders/build-decorators';
+import { CacheableObject } from '../../cache/object-cache.reducer';
+import { DSpaceObject } from '../../shared/dspace-object.model';
+import { HALLink } from '../../shared/hal-link.model';
+import { ResourceType } from '../../shared/resource-type';
 
 /**
  * A model class for a WorkflowStep.
@@ -13,10 +13,10 @@ import { ResourceType } from "../../shared/resource-type";
 export class WorkflowStep extends DSpaceObject implements CacheableObject {
 
   static type = new ResourceType('workflowstep');
-  
+
   @deserialize
-  _links: { 
-    self: HALLink; 
+  _links: {
+    self: HALLink;
     workflowactions: HALLink;
   };
 

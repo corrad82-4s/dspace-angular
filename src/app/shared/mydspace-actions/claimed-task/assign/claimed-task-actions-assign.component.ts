@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
+import { TranslateService } from '@ngx-translate/core';
 import { combineLatest, Observable, of } from 'rxjs';
-import { flatMap, map, tap } from 'rxjs/operators';
+import { flatMap, map } from 'rxjs/operators';
 import { AuthService } from 'src/app/core/auth/auth.service';
 import { CollectionDataService } from 'src/app/core/data/collection-data.service';
-import { RemoteData } from 'src/app/core/data/remote-data';
 import { EPersonDataService } from 'src/app/core/eperson/eperson-data.service';
 import { GroupDataService } from 'src/app/core/eperson/group-data.service';
 import { EPerson } from 'src/app/core/eperson/models/eperson.model';
@@ -14,6 +14,7 @@ import { Collection } from 'src/app/core/shared/collection.model';
 import { getFirstSucceededRemoteDataPayload, getFirstSucceededRemoteListPayload } from 'src/app/core/shared/operators';
 import { WorkflowItemDataService } from 'src/app/core/submission/workflowitem-data.service';
 import { WorkflowStepDataService } from 'src/app/core/submission/workflowstep-data.service';
+import { NotificationsService } from 'src/app/shared/notifications/notifications.service';
 import { ClaimedTaskDataService } from '../../../../core/tasks/claimed-task-data.service';
 import { ClaimedTaskActionsAbstractComponent } from '../abstract/claimed-task-actions-abstract.component';
 import { rendersWorkflowTaskOption } from '../switcher/claimed-task-actions-decorator';
@@ -47,8 +48,8 @@ export class ClaimedTaskActionsAssignComponent extends ClaimedTaskActionsAbstrac
    * Reference to NgbModal
    */
   public modalRef: NgbModalRef;
-  
-  /**
+
+ /**
   * Initialize instance variables
   *
   * @param {FormBuilder} formBuilder
@@ -63,19 +64,19 @@ export class ClaimedTaskActionsAssignComponent extends ClaimedTaskActionsAbstrac
              private workflowStepService: WorkflowStepDataService,
              private groupService: GroupDataService,
              private ePersonService: EPersonDataService,
-             private authService: AuthService) {
+             private authService: AuthService,
+             private notificationService: NotificationsService,
+             private translateService: TranslateService) {
    super(claimedTaskService);
  }
 
- /**
+  /**
    * Initialize form
    */
   ngOnInit() {
     this.assignForm = this.formBuilder.group({
       user: ['', Validators.required]
     });
-
-
   }
 
   /**
@@ -102,32 +103,39 @@ export class ClaimedTaskActionsAssignComponent extends ClaimedTaskActionsAbstrac
    */
   openAssignModal(content: any) {
     this.assignForm.reset();
-
     combineLatest(
       this.workflowItemService.findByHref(this.object._links.workflowitem.href).pipe(
         getFirstSucceededRemoteDataPayload(),
         flatMap((workflowItem) => this.collectionService.findByHref(workflowItem._links.collection.href)),
         getFirstSucceededRemoteDataPayload(),
         flatMap((collection) => this.getCurrentWorkflowGroup(collection)),
-        getFirstSucceededRemoteDataPayload(),
         flatMap((group) => this.ePersonService.findAllByHref(group._links.allMembers.href)),
         getFirstSucceededRemoteListPayload()
-      ), 
+      ),
       this.authService.getAuthenticatedUserFromStore()
     ).subscribe((([members, currentUser]) => {
-      this.members$ = of(members.filter(member => member.id !== currentUser.uuid));
-      this.modalRef = this.modalService.open(content);
-      })
-    );
+      members = members.filter((member) => member.id !== currentUser.uuid);
+      if (members.length === 0) {
+        this.notificationService.warning((this.translateService.get('submission.workflow.tasks.claimed.assign.user.no-member')));
+      } else {
+        this.members$ = of(members);
+        this.modalRef = this.modalService.open(content);
+      }
+    }));
   }
 
-  private getCurrentWorkflowGroup(collection: Collection) : Observable<RemoteData<Group>> {
+  private getCurrentWorkflowGroup(collection: Collection): Observable<Group> {
     return this.workflowStepService.findByHref(this.object._links.step.href).pipe(
       getFirstSucceededRemoteDataPayload(),
-      map((step) => collection._links.workflowGroups.find((link) => link.name === step.roleId)),
-      flatMap((groupLink) => this.groupService.findByHref(groupLink.href)),
+      flatMap((step) => this.groupService.searchBy('byWorkflowRole', {
+        searchParams: [
+          { fieldName: 'workflowRole', fieldValue: step.roleId },
+          { fieldName: 'collection', fieldValue: collection.uuid }
+        ]}
+      )),
+      getFirstSucceededRemoteListPayload(),
+      map((groups) => groups[0])
     );
-  } 
-  
+  }
 
 }
