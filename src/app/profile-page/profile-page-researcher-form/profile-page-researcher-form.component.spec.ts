@@ -140,7 +140,7 @@ describe('ProfilePageResearcherFormComponent', () => {
 
     });
 
-    //FIXME : fix component injection
+    // FIXME : fix component injection
     xdescribe('claimProfile', () => {
         it('should open modal', () => {
             component.claim();

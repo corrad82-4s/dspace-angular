@@ -2159,6 +2159,10 @@
 
   "item.page.metric.deltaPeriod2": "Last Month",
 
+  "item.page.metric.label.altmetrics": "Altmetrics",
+
+  "item.page.metric.label.google-scholar": "Google Scholar",
+
   "item.page.metric.label.scopusCitation": "Scopus citations",
 
   "item.page.metric.label.scopus-author-h-index": "H-index",
@@ -2205,9 +2209,17 @@
 
   "item.preview.dc.identifier.doi" : "DOI",
 
+  "item.preview.dc.identifier.issn" : "ISSN",
+
+  "item.preview.dc.identifier.scopus" : "Scopus id",
+
   "item.preview.dc.publisher" : "Publisher",
 
+  "item.preview.dc.relation.grantno" : "Grant no.",
+
   "item.preview.dc.relation.ispartof" : "Journal or Serie",
+
+  "item.preview.dc.relation.ispartofseries" : "Serie",
 
   "item.preview.dc.subject.ocde" : "OCDE",
 
@@ -2263,11 +2275,15 @@
 
   "item.preview.oaire.citation.volume" : "Volume",
 
+  "item.preview.oairecerif.affiliation.orgunit": "Affiliation",
+
   "item.preview.person.familyName": "Surname:",
 
   "item.preview.person.givenName": "Name:",
 
   "item.preview.person.identifier.orcid": "ORCID:",
+
+  "item.preview.person.identifier.scopus-author-id": "Scopus Author Id",
 
   "item.preview.renati.advisor.dni" : "Renati Advisor DNI",
 
@@ -3792,6 +3808,22 @@
   "submission.import-external.title.Event": "Import event from an external source",
 
   "submission.import-external.title.Funding": "Import fund from an external source",
+
+  "submission.import-external.title.InstitutionEquipment": "Import equipment from an external source",
+
+  "submission.import-external.title.InstitutionEvent": "Import event from an external source",
+
+  "submission.import-external.title.InstitutionFunding": "Import fund from an external source",
+
+  "submission.import-external.title.InstitutionOrgUnit": "Import publisher from an external source",
+
+  "submission.import-external.title.InstitutionPatent": "Import patent from an external source",
+
+  "submission.import-external.title.InstitutionPerson": "Import person from an external source",
+
+  "submission.import-external.title.InstitutionProject": "Import project from an external source",
+
+  "submission.import-external.title.InstitutionPublication": "Import publication from an external source",
 
   "submission.import-external.title.Journal": "Import journal from an external source",
 
