@@ -1,7 +1,7 @@
 import { ProtractorPage } from './search-page.po';
 import { browser } from 'protractor';
 
-describe('protractor SearchPage', () => {
+xdescribe('protractor SearchPage', () => {
   let page: ProtractorPage;
 
   beforeEach(() => {
