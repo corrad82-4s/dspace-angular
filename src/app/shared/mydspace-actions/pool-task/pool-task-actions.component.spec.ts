@@ -16,11 +16,13 @@ import { PoolTaskDataService } from '../../../core/tasks/pool-task-data.service'
 import { PoolTaskActionsComponent } from './pool-task-actions.component';
 import { PoolTask } from '../../../core/tasks/models/pool-task-object.model';
 import { WorkflowItem } from '../../../core/submission/models/workflowitem.model';
-import { createSuccessfulRemoteDataObject } from '../../remote-data.utils';
+import { createSuccessfulRemoteDataObject, createSuccessfulRemoteDataObject$ } from '../../remote-data.utils';
 import { getMockRequestService } from '../../mocks/request.service.mock';
 import { RequestService } from '../../../core/data/request.service';
 import { getMockSearchService } from '../../mocks/search-service.mock';
 import { SearchService } from '../../../core/shared/search/search.service';
+import { WorkflowStep } from 'src/app/core/submission/models/workflowstep.model';
+import { WorkflowStepDataService } from 'src/app/core/submission/workflowstep-data.service';
 
 let component: PoolTaskActionsComponent;
 let fixture: ComponentFixture<PoolTaskActionsComponent>;
@@ -36,6 +38,10 @@ const mockDataService = jasmine.createSpyObj('PoolTaskDataService', {
 const searchService = getMockSearchService();
 
 const requestServce = getMockRequestService();
+
+const mockWorkflowStepDataService = jasmine.createSpyObj('WorkflowStepDataService', {
+  findByHref: createSuccessfulRemoteDataObject$(new WorkflowStep())
+});
 
 const item = Object.assign(new Item(), {
   bundles: observableOf({}),
@@ -69,7 +75,13 @@ const item = Object.assign(new Item(), {
 const rdItem = createSuccessfulRemoteDataObject(item);
 const workflowitem = Object.assign(new WorkflowItem(), { item: observableOf(rdItem) });
 const rdWorkflowitem = createSuccessfulRemoteDataObject(workflowitem);
-mockObject = Object.assign(new PoolTask(), { workflowitem: observableOf(rdWorkflowitem), id: '1234' });
+mockObject = Object.assign(new PoolTask(), {
+  workflowitem: observableOf(rdWorkflowitem),
+  id: '1234',
+  _links: {
+    step: { href: 'step-href'}
+  }
+});
 
 describe('PoolTaskActionsComponent', () => {
   beforeEach(async(() => {
@@ -89,7 +101,8 @@ describe('PoolTaskActionsComponent', () => {
         { provide: Router, useValue: new RouterStub() },
         { provide: PoolTaskDataService, useValue: mockDataService },
         { provide: SearchService, useValue: searchService },
-        { provide: RequestService, useValue: requestServce }
+        { provide: RequestService, useValue: requestServce },
+        { provide: WorkflowStepDataService, useValue: mockWorkflowStepDataService }
       ],
       schemas: [NO_ERRORS_SCHEMA]
     }).overrideComponent(PoolTaskActionsComponent, {
