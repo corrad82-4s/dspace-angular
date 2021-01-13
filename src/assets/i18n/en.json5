@@ -1064,8 +1064,6 @@
 
   "collection.page.bulk-import": "Import items into this collection",
 
-  "collection.page.edit": "Edit this collection",
-
   "collection.page.export": "Export items from this collection",
 
   "collection.page.handle": "Permanent URI for this collection",
@@ -1253,6 +1251,37 @@
 
   "community.sub-community-list.head": "Communities of this Community",
 
+  "context-menu.actions": "Actions",
+
+  "context-menu.actions.audit-item.btn": "Audit",
+
+  "context-menu.actions.bulk-import.btn": "Import items into collection",
+
+  "context-menu.actions.export-item.btn": "Export",
+
+  "context-menu.actions.label": "Options",
+
+  "context-menu.actions.edit-item.btn.FULL": "Edit item",
+
+  "context-menu.actions.request-correction.btn": "Request correction",
+
+  "context-menu.actions.request-correction.confirm.cancel": "Cancel",
+
+  "context-menu.actions.request-correction.confirm.submit": "Yes, I'm sure",
+
+  "context-menu.actions.request-correction.error.403": "A request for correction has already been sent, impossible to proceed with the operation.",
+
+  "context-menu.actions.request-correction.error.generic": "There was an issue when requesting a correction for the item, please try again later.",
+
+  "context-menu.actions.request-correction.info": "Are you sure you want to proceed with this operation?",
+
+  "context-menu.actions.request-correction.title": "Request correction",
+
+  "context-menu.actions.dso-page-edit.COMMUNITY.btn": "Administer",
+
+  "context-menu.actions.dso-page-edit.COLLECTION.btn": "Administer",
+
+  "context-menu.actions.dso-page-edit.ITEM.btn": "Administer",
 
   "datafile.listelement.badge": "Data File",
 
@@ -2334,9 +2363,9 @@
 
   "item.preview.dc.relation.ispartof" : "Journal or Serie",
 
-  "item.preview.dc.relation.ispartofseries" : "Serie",
-
   "item.preview.dc.subject.ocde" : "OCDE",
+
+  "item.preview.dc.relation.ispartofseries" : "Serie",
 
   "item.preview.dc.identifier.isbn" : "ISBN",
 
@@ -3624,6 +3653,14 @@
 
   "search.filters.applied.charts.chart.pie.itemtype_filter.tab" : "Item Type",
 
+  "search.filters.applied.charts.graphitemtype.tab" : "Visualization by Type",
+
+  "search.filters.applied.charts.graphpubldate.tab" : "Visualization by Date",
+
+  "search.filters.applied.charts.graphpubldateltr.tab" : "Visualization Demo LTR",
+
+  "search.filters.applied.charts.graphpubldatetrl.tab" : "Visualization Demo RTL",
+
   "search.filters.applied.charts.default.title": "Search Output",
 
   "search.filters.applied.charts.RELATION.Person.researchoutputs.title": "Research Output",
@@ -3990,7 +4027,11 @@
 
   "submission.import-external.search.source.hint": "Pick an external source",
 
+  "submission.import-external.source.ads": "Ads",
+
   "submission.import-external.source.arxiv": "arXiv",
+
+  "submission.import-external.source.cinii": "Cinii",
 
   "submission.import-external.source.crossref": "CrossRef",
 
@@ -4004,7 +4045,7 @@
 
   "submission.import-external.source.pubmed": "Pubmed",
 
-  "submission.import-external.source.scopus": "Scopus",
+  "submission.import-external.source.pubmedeu": "Pubmed EU",
 
   "submission.import-external.source.alicia": "Alicia",
 

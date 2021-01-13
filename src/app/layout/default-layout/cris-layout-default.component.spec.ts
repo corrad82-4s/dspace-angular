@@ -163,11 +163,11 @@ describe('CrisLayoutDefaultComponent', () => {
       scheduler.schedule(() => component.ngOnInit());
       scheduler.flush();
 
-      expect(component.getTabs()).toBeObservable(hot('-(a|)', {
+      expect(component.getTabs()).toBeObservable(hot('(a|)', {
         a: tabs
       }));
 
-      expect(component.hasSidebar()).toBeObservable(hot('--(a|)', {
+      expect(component.hasSidebar()).toBeObservable(hot('(a|)', {
         a: true
       }));
 
@@ -198,7 +198,7 @@ describe('CrisLayoutDefaultComponent', () => {
       scheduler.schedule(() => component.ngOnInit());
       scheduler.flush();
       const sidebarControl$ = component.isSideBarHidden();
-      expect(sidebarControl$).toBeObservable(hot('-a', {
+      expect(sidebarControl$).toBeObservable(hot('a', {
         a: false
       }));
 
@@ -220,11 +220,11 @@ describe('CrisLayoutDefaultComponent', () => {
       scheduler.schedule(() => component.ngOnInit());
       scheduler.flush();
       const sidebarControl$ = component.isSideBarHidden();
-      expect(sidebarControl$).toBeObservable(hot('-a', {
+      expect(sidebarControl$).toBeObservable(hot('a', {
         a: true
       }));
 
-      expect(component.hasSidebar()).toBeObservable(hot('--(a|)', {
+      expect(component.hasSidebar()).toBeObservable(hot('(a|)', {
         a: false
       }));
 
