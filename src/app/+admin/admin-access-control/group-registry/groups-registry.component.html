@@ -55,10 +55,10 @@
               <td>{{groupDto.group.name}}</td>
               <td>
                 <span *ngIf="isEnabled(groupDto.group)"  class="badge badge-success">{{messagePrefix + 'badge.enabled' | translate}}</span>
-                <span *ngIf="!isEnabled(ggroupDto.grouproup)" class="badge badge-secondary">{{messagePrefix + 'badge.disabled' | translate}}</span>
+                <span *ngIf="!isEnabled(groupDto.group)" class="badge badge-secondary">{{messagePrefix + 'badge.disabled' | translate}}</span>
                 <span *ngIf="groupDto.group?.permanent" class="badge badge-danger">{{messagePrefix + 'badge.permanent' | translate}}</span>
               </td>
-              <td><span class="badge badge-info">{{messagePrefix + 'badge.' + getGroupType(group) | translate}}</span></td>
+              <td><span class="badge badge-info">{{messagePrefix + 'badge.' + getGroupType(groupDto.group) | translate}}</span></td>
               <td>
                 <div class="btn-group edit-field">
                   <button [routerLink]="groupService.getGroupEditPageRouterLink(groupDto.group)"
