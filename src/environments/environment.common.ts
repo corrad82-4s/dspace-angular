@@ -223,7 +223,16 @@ export const environment: GlobalConfig = {
         type: BrowseByType.Title,
       },
       {
+        id: 'insttitle',
+        type: BrowseByType.Title,
+      },
+      {
         id: 'dateissued',
+        type: BrowseByType.Date,
+        metadataField: 'dc.date.issued'
+      },
+      {
+        id: 'instdateissued',
         type: BrowseByType.Date,
         metadataField: 'dc.date.issued'
       },
@@ -232,7 +241,15 @@ export const environment: GlobalConfig = {
         type: BrowseByType.Metadata
       },
       {
+        id: 'instauthor',
+        type: BrowseByType.Metadata
+      },
+      {
         id: 'subject',
+        type: BrowseByType.Metadata
+      },
+      {
+        id: 'instsubject',
         type: BrowseByType.Metadata
       },
       {
@@ -240,7 +257,15 @@ export const environment: GlobalConfig = {
         type: BrowseByType.Metadata
       },
       {
+        id: 'instrodept',
+        type: BrowseByType.Metadata
+      },
+      {
         id: 'type',
+        type: BrowseByType.Metadata
+      },
+      {
+        id: 'insttype',
         type: BrowseByType.Metadata
       },
       {
@@ -248,7 +273,15 @@ export const environment: GlobalConfig = {
         type: BrowseByType.Title
       },
       {
+        id: 'instrpname',
+        type: BrowseByType.Title
+      },
+      {
         id: 'rpdept',
+        type: BrowseByType.Metadata
+      },
+      {
+        id: 'instrpdept',
         type: BrowseByType.Metadata
       },
       {
@@ -256,7 +289,15 @@ export const environment: GlobalConfig = {
         type: BrowseByType.Title
       },
       {
+        id: 'instouname',
+        type: BrowseByType.Title
+      },
+      {
         id: 'pjtitle',
+        type: BrowseByType.Title
+      },
+      {
+        id: 'instpjtitle',
         type: BrowseByType.Title
       },
       {

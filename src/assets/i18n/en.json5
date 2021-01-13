@@ -657,23 +657,43 @@
 
   "browse.comcol.by.author": "By Author",
 
+  "browse.comcol.by.instauthor": "By Author",
+
   "browse.comcol.by.dateissued": "By Issue Date",
+
+  "browse.comcol.by.instdateissued": "By Issue Date",
+
+  "browse.comcol.by.insttitle": "By Title",
 
   "browse.comcol.by.ouname": "By Name",
 
+  "browse.comcol.by.instouname": "By Name",
+
   "browse.comcol.by.pjtitle": "By Title",
+
+  "browse.comcol.by.instpjtitle": "By Title",
 
   "browse.comcol.by.rodept": "By Department",
 
+  "browse.comcol.by.instrodept": "By Department",
+
   "browse.comcol.by.rpdept": "By Department",
+
+  "browse.comcol.by.instrpdept": "By Department",
 
   "browse.comcol.by.rpname": "By Name",
 
+  "browse.comcol.by.instrpname": "By Name",
+
   "browse.comcol.by.subject": "By Subject",
+
+  "browse.comcol.by.instsubject": "By Subject",
 
   "browse.comcol.by.title": "By Title",
 
   "browse.comcol.by.type": "By Type",
+
+  "browse.comcol.by.insttype": "By Type",
 
 
   "browse.comcol.head": "Browse",
@@ -693,6 +713,26 @@
   "browse.metadata.ouname" : "Name",
 
   "browse.metadata.pjtitle" : "Title",
+  
+  "browse.metadata.instauthor": "Author",
+
+  "browse.metadata.instdateissued": "Issue Date",
+
+  "browse.metadata.instrodept": "Department",
+
+  "browse.metadata.instsubject": "Subject",
+
+  "browse.metadata.insttitle": "Title",
+
+  "browse.metadata.insttype": "Type",
+
+  "browse.metadata.instpjtitle": "Title",
+
+  "browse.metadata.instrpdept": "Department",
+  
+  "browse.metadata.instrpname": "Name",
+
+  "browse.metadata.instouname": "Name",
 
   "browse.metadata.oudatecreated": "Creation Date",
 
@@ -732,7 +772,11 @@
 
   "browse.metadata.author.breadcrumbs": "Browse by Author",
 
+  "browse.metadata.instauthor.breadcrumbs": "Browse by Author",
+
   "browse.metadata.dateissued.breadcrumbs": "Browse by Date",
+
+  "browse.metadata.instdateissued.breadcrumbs": "Browse by Date",
 
   "browse.metadata.eqdatecreated.breadcrumbs": "Browse by Creation Date",
 
@@ -740,7 +784,11 @@
 
   "browse.metadata.eqtitle.breadcrumbs": "Browse by Title",
 
+  "browse.metadata.insttitle.breadcrumbs": "Browse by Title",
+
   "browse.metadata.ouname.breadcrumbs" : "Browse by Name",
+
+  "browse.metadata.instouname.breadcrumbs" : "Browse by Name",
 
   "browse.metadata.oudatecreated.breadcrumbs" : "Browse by Creation Date",
 
@@ -758,6 +806,10 @@
 
   "browse.metadata.pjtitle.breadcrumbs" : "Browse by Title",
 
+  "browse.metadata.instpjtitle.breadcrumbs" : "Browse by Title",
+
+  "browse.metadata.instrodept.breadcrumbs": "Browse by Department",
+
   "browse.metadata.rodept.breadcrumbs": "Browse by Department",
 
   "browse.metadata.rotitle.breadcrumbs": "Browse by Title",
@@ -774,13 +826,23 @@
 
   "browse.metadata.rpdept.breadcrumbs" : "Browse by Department",
 
+  "browse.metadata.instrpdept.breadcrumbs" : "Browse by Department",
+
   "browse.metadata.rpname.breadcrumbs": "Browse by Name",
+
+  "browse.metadata.instrpname.breadcrumbs": "Browse by Name",
 
   "browse.metadata.subject.breadcrumbs": "Browse by Subject",
 
+  "browse.metadata.instsubject.breadcrumbs": "Browse by Subject",
+
   "browse.metadata.type.breadcrumbs": "Browse by Type",
 
+  "browse.metadata.insttype.breadcrumbs": "Browse by Type",
+
   "browse.metadata.title.breadcrumbs": "Browse by Title",
+
+  "browse.metadata.insttitle.breadcrumbs": "Browse by Title",
 
   "browse.startsWith.choose_start": "(Choose start)",
 
