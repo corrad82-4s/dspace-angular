@@ -4498,6 +4498,18 @@
 
   "submission.workflow.tasks.claimed.approve_help": "If you have reviewed the item and it is suitable for inclusion in the collection, select \"Approve\".",
 
+  "submission.workflow.tasks.claimed.assign": "Assign",
+
+  "submission.workflow.tasks.claimed.assign_help": "Assign the review to another user",
+
+  "submission.workflow.tasks.claimed.assign.user.info": "Select the user to assign the current item review",
+
+  "submission.workflow.tasks.claimed.assign.user.no-member": "No other group's members found for the selected task",
+
+  "submission.workflow.tasks.claimed.assign.user.title": "Assign to another user",
+
+  "submission.workflow.tasks.claimed.assign.user.submit": "Assign",
+
   "submission.workflow.tasks.claimed.edit": "Edit",
 
   "submission.workflow.tasks.claimed.edit_help": "Select this option to change the item's metadata.",

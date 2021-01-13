@@ -233,6 +233,7 @@ import { SearchChartFilterWrapperComponent } from './search/search-charts/search
 import { SearchChartComponent } from './search/search-charts/search-chart/search-chart.component';
 import { ChartsModule } from '../charts/charts.module';
 import { ClaimItemSelectorComponent } from './dso-selector/modal-wrappers/claim-item-selector/claim-item-selector.component';
+import { ClaimedTaskActionsAssignComponent } from './mydspace-actions/claimed-task/assign/claimed-task-actions-assign.component';
 import { SearchChartFilterComponent } from './search/search-charts/search-chart/search-chart-filter/search-chart-filter.component';
 
 const MODULES = [
@@ -343,6 +344,7 @@ const COMPONENTS = [
   ItemDetailPreviewFieldComponent,
   ClaimedTaskActionsComponent,
   ClaimedTaskActionsApproveComponent,
+  ClaimedTaskActionsAssignComponent,
   ClaimedTaskActionsRejectComponent,
   ClaimedTaskActionsReturnToPoolComponent,
   ClaimedTaskActionsEditMetadataComponent,
@@ -520,6 +522,7 @@ const ENTRY_COMPONENTS = [
   BundleListElementComponent,
   ItemVersionsNoticeComponent,
   ClaimedTaskActionsApproveComponent,
+  ClaimedTaskActionsAssignComponent,
   ClaimedTaskActionsRejectComponent,
   ClaimedTaskActionsReturnToPoolComponent,
   ClaimedTaskActionsEditMetadataComponent,

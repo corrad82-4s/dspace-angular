@@ -44,6 +44,7 @@ export class TaskObject extends DSpaceObject implements CacheableObject {
     self: HALLink;
     owner: HALLink;
     group: HALLink;
+    step: HALLink;
     workflowitem: HALLink;
     action: HALLink;
   };

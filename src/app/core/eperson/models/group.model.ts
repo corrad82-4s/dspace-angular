@@ -43,6 +43,7 @@ export class Group extends DSpaceObject {
     subgroups: HALLink;
     epersons: HALLink;
     object: HALLink;
+    allMembers: HALLink;
   };
 
   /**
