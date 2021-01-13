@@ -199,10 +199,11 @@ import { Audit } from './audit/model/audit.model';
 import { ItemExportFormatService } from './itemexportformat/item-export.service';
 import { ItemExportFormat } from './itemexportformat/model/item-export-format.model';
 import { ProfileClaimService } from '../profile-page/profile-claim/profile-claim.service';
-import { MetricsComponentsDataService } from './layout/metrics-components-data.service'
+import { MetricsComponentsDataService } from './layout/metrics-components-data.service';
 import { MetricsComponent } from './layout/models/metrics-component.model';
 import { Metric } from './shared/metric.model';
 import { MetricService } from './data/metric.service';
+import { WorkflowStepDataService } from './submission/workflowstep-data.service';
 
 /**
  * When not in production, endpoint responses can be mocked for testing purposes
@@ -284,6 +285,7 @@ const PROVIDERS = [
   NotificationsService,
   WorkspaceitemDataService,
   WorkflowItemDataService,
+  WorkflowStepDataService,
   UploaderService,
   FileService,
   DSpaceObjectDataService,

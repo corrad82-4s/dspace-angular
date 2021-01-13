@@ -223,6 +223,7 @@ import { ChartsModule } from '../charts/charts.module';
 import { ItemExportComponent } from './item-export/item-export/item-export.component';
 import { ItemExportModalWrapperComponent } from './item-export/item-export-modal-wrapper/item-export-modal-wrapper.component';
 import { ClaimItemSelectorComponent } from './dso-selector/modal-wrappers/claim-item-selector/claim-item-selector.component';
+import { ClaimedTaskActionsAssignComponent } from './mydspace-actions/claimed-task/assign/claimed-task-actions-assign.component';
 
 const MODULES = [
   // Do NOT include UniversalModule, HttpModule, or JsonpModule here
@@ -332,6 +333,7 @@ const COMPONENTS = [
   ItemDetailPreviewFieldComponent,
   ClaimedTaskActionsComponent,
   ClaimedTaskActionsApproveComponent,
+  ClaimedTaskActionsAssignComponent,
   ClaimedTaskActionsRejectComponent,
   ClaimedTaskActionsReturnToPoolComponent,
   ClaimedTaskActionsEditMetadataComponent,
@@ -505,6 +507,7 @@ const ENTRY_COMPONENTS = [
   BundleListElementComponent,
   ItemVersionsNoticeComponent,
   ClaimedTaskActionsApproveComponent,
+  ClaimedTaskActionsAssignComponent,
   ClaimedTaskActionsRejectComponent,
   ClaimedTaskActionsReturnToPoolComponent,
   ClaimedTaskActionsEditMetadataComponent,

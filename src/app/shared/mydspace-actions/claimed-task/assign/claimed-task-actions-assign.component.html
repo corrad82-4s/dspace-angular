@@ -1,0 +1,39 @@
+<button type="button"
+        [className]="'btn btn-info'"
+        ngbTooltip="{{'submission.workflow.tasks.claimed.assign_help' | translate}}"
+        [disabled]="processing$ | async"
+        (click)="openAssignModal(assignModal)">
+  <span *ngIf="processing$ | async"><i class='fas fa-circle-notch fa-spin'></i> {{'submission.workflow.tasks.generic.processing' | translate}}</span>
+  <span *ngIf="!(processing$ | async)"><i class="fa fa-user"></i> {{'submission.workflow.tasks.claimed.assign' | translate}}</span>
+</button>
+
+<ng-template #assignModal let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4 class="modal-title">{{'submission.workflow.tasks.claimed.assign.user.title' | translate}}</h4>
+    <button type="button"
+            class="close"
+            aria-label="Close"
+            (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div class="alert alert-info" role="alert">
+      {{'submission.workflow.tasks.claimed.assign.user.info' | translate}}
+    </div>
+    <form (ngSubmit)="submitTask();" [formGroup]="assignForm" >
+      <select id="user" class="form-control" formControlName="user">
+        <option *ngFor="let member of (members$ | async) " [value]="member.uuid" >
+          {{member.name}}
+        </option>
+      </select>
+      <button id="btn-chat"
+              class="btn btn-info btn-lg btn-block mt-3"
+              [disabled]="!assignForm.valid || (processing$ | async)"
+              type="submit">
+        <span *ngIf="processing$ | async"><i class='fas fa-circle-notch fa-spin'></i> {{'submission.workflow.tasks.generic.processing' | translate}}</span>
+        <span *ngIf="!(processing$ | async)">{{'submission.workflow.tasks.claimed.assign.user.submit' | translate}}</span>
+      </button>
+    </form>
+  </div>
+</ng-template>
