@@ -11,7 +11,7 @@ import { getCrisLayoutTab } from '../decorators/cris-layout-tab.decorator';
 import { CrisLayoutPage } from '../decorators/cris-layout-page.decorator';
 import { CrisLayoutPage as CrisLayoutPageObj } from '../models/cris-layout-page.model';
 import { LayoutPage } from '../enums/layout-page.enum';
-import { isNotEmpty } from '../../shared/empty.util';
+import { isNotEmpty, isNotUndefined } from '../../shared/empty.util';
 import { AuthService } from '../../core/auth/auth.service';
 import {
   getAllSucceededRemoteDataPayload,
