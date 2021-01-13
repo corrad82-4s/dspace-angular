@@ -7,6 +7,8 @@ import { TranslateService } from '@ngx-translate/core';
 
 import { WorkflowItem } from '../../../core/submission/models/workflowitem.model';
 import { ProcessTaskResponse } from '../../../core/tasks/models/process-task-response';
+import { getSucceededRemoteData } from 'src/app/core/shared/operators';
+import { WorkflowStepDataService } from 'src/app/core/submission/workflowstep-data.service';
 import { RemoteData } from '../../../core/data/remote-data';
 import { PoolTask } from '../../../core/tasks/models/pool-task-object.model';
 import { PoolTaskDataService } from '../../../core/tasks/pool-task-data.service';
@@ -51,13 +53,15 @@ export class PoolTaskActionsComponent extends MyDSpaceActionsComponent<PoolTask,
    * @param {TranslateService} translate
    * @param {SearchService} searchService
    * @param {RequestService} requestService
+   * @param {WorkflowStepDataService} workflowStepService
    */
   constructor(protected injector: Injector,
               protected router: Router,
               protected notificationsService: NotificationsService,
               protected translate: TranslateService,
               protected searchService: SearchService,
-              protected requestService: RequestService) {
+              protected requestService: RequestService,
+              protected workflowStepService: WorkflowStepDataService) {
     super(PoolTask.type, injector, router, notificationsService, translate, searchService, requestService);
   }
 
@@ -90,5 +94,12 @@ export class PoolTaskActionsComponent extends MyDSpaceActionsComponent<PoolTask,
         this.handleActionResponse(res.hasSucceeded);
         this.processingClaim$.next(false);
       });
+  }
+
+  isInstitutionRejectionTask(): Observable<boolean> {
+    return this.workflowStepService.findByHref(this.object._links.step.href).pipe(
+      getSucceededRemoteData(),
+      map((workflowStep) => workflowStep.payload && workflowStep.payload.id === 'waitForConcytecStep')
+    );
   }
 }

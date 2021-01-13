@@ -4533,6 +4533,11 @@
 
   "submission.workflow.tasks.pool.claim_help": "Assign this task to yourself.",
 
+  "submission.workflow.tasks.pool.reject": "Reject",
+
+  "submission.workflow.tasks.pool.reject_help": "If you have reviewed the item and found it is <strong>not</strong> suitable for inclusion in the collection, select \"Reject\".",
+
+
   "submission.workflow.tasks.pool.hide-detail": "Hide detail",
 
   "submission.workflow.tasks.pool.show-detail": "Show detail",
