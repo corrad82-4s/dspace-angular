@@ -666,7 +666,7 @@
   "browse.metadata.ouname" : "Name",
 
   "browse.metadata.pjtitle" : "Title",
-  
+
   "browse.metadata.instauthor": "Author",
 
   "browse.metadata.instdateissued": "Issue Date",
@@ -682,7 +682,7 @@
   "browse.metadata.instpjtitle": "Title",
 
   "browse.metadata.instrpdept": "Department",
-  
+
   "browse.metadata.instrpname": "Name",
 
   "browse.metadata.instouname": "Name",
@@ -3934,6 +3934,8 @@
   "submission.import-external.source.lcname": "Library of Congress Names",
 
   "submission.import-external.source.scopus": "Scopus",
+
+  "submission.import-external.source.wos": "Web of Science",
 
   "submission.import-external.source.openaire": "OpenAIRE",
 
