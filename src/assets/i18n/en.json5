@@ -713,26 +713,6 @@
   "browse.metadata.ouname" : "Name",
 
   "browse.metadata.pjtitle" : "Title",
-  
-  "browse.metadata.instauthor": "Author",
-
-  "browse.metadata.instdateissued": "Issue Date",
-
-  "browse.metadata.instrodept": "Department",
-
-  "browse.metadata.instsubject": "Subject",
-
-  "browse.metadata.insttitle": "Title",
-
-  "browse.metadata.insttype": "Type",
-
-  "browse.metadata.instpjtitle": "Title",
-
-  "browse.metadata.instrpdept": "Department",
-  
-  "browse.metadata.instrpname": "Name",
-
-  "browse.metadata.instouname": "Name",
 
   "browse.metadata.instauthor": "Author",
 
@@ -803,8 +783,6 @@
   "browse.metadata.eqdatemodified.breadcrumbs": "Browse by Modification Date",
 
   "browse.metadata.eqtitle.breadcrumbs": "Browse by Title",
-
-  "browse.metadata.insttitle.breadcrumbs": "Browse by Title",
 
   "browse.metadata.ouname.breadcrumbs" : "Browse by Name",
 
