@@ -1,29 +1,25 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { BehaviorSubject, of as observableOf, Observable, Subject } from 'rxjs';
-import { filter, flatMap, map, startWith, switchMap, take, tap } from 'rxjs/operators';
+
+import { BehaviorSubject, Observable, Subject } from 'rxjs';
+import { filter, flatMap, map, startWith, switchMap, take } from 'rxjs/operators';
+
 import { PaginatedSearchOptions } from '../shared/search/paginated-search-options.model';
 import { SearchService } from '../core/shared/search/search.service';
 import { SortDirection, SortOptions } from '../core/cache/models/sort-options.model';
 import { CollectionDataService } from '../core/data/collection-data.service';
 import { PaginatedList } from '../core/data/paginated-list';
 import { RemoteData } from '../core/data/remote-data';
-
 import { MetadataService } from '../core/metadata/metadata.service';
 import { Bitstream } from '../core/shared/bitstream.model';
-
 import { Collection } from '../core/shared/collection.model';
 import { DSpaceObjectType } from '../core/shared/dspace-object-type.model';
 import { Item } from '../core/shared/item.model';
-import {
-  getSucceededRemoteData,
-  redirectToPageNotFoundOn404,
-  toDSpaceObjectListRD
-} from '../core/shared/operators';
-
+import { getSucceededRemoteData, redirectOn4xx, toDSpaceObjectListRD } from '../core/shared/operators';
 import { fadeIn, fadeInOut } from '../shared/animations/fade';
-import { hasNoValue, hasValue, isNotEmpty } from '../shared/empty.util';
+import { hasValue, isNotEmpty } from '../shared/empty.util';
 import { PaginationComponentOptions } from '../shared/pagination/pagination-component-options.model';
+import { AuthService } from '../core/auth/auth.service';
 import { getBulkImportRoute } from '../app-routing-paths';
 import { AuthorizationDataService } from '../core/data/feature-authorization/authorization-data.service';
 import { FeatureID } from '../core/data/feature-authorization/feature-id';
@@ -62,6 +58,7 @@ export class CollectionPageComponent implements OnInit {
     private metadata: MetadataService,
     private route: ActivatedRoute,
     private router: Router,
+    private authService: AuthService,
     private authorizationService: AuthorizationDataService,
     private scriptService: ScriptDataService,
     private translationService: TranslateService,
@@ -78,7 +75,7 @@ export class CollectionPageComponent implements OnInit {
   ngOnInit(): void {
     this.collectionRD$ = this.route.data.pipe(
       map((data) => data.dso as RemoteData<Collection>),
-      redirectToPageNotFoundOn404(this.router),
+      redirectOn4xx(this.router, this.authService),
       take(1)
     );
     this.logoRD$ = this.collectionRD$.pipe(

@@ -3,27 +3,27 @@ import { Component, ComponentFactoryResolver, ComponentRef, OnDestroy, OnInit, V
 import { BehaviorSubject, Observable } from 'rxjs';
 import { map, mergeMap, startWith, take } from 'rxjs/operators';
 
-import {Tab} from '../../core/layout/models/tab.model';
-import {CrisLayoutLoaderDirective} from '../directives/cris-layout-loader.directive';
-import {TabDataService} from '../../core/layout/tab-data.service';
+import { Tab } from '../../core/layout/models/tab.model';
+import { CrisLayoutLoaderDirective } from '../directives/cris-layout-loader.directive';
+import { TabDataService } from '../../core/layout/tab-data.service';
+import { GenericConstructor } from '../../core/shared/generic-constructor';
+import { getCrisLayoutTab } from '../decorators/cris-layout-tab.decorator';
+import { CrisLayoutPage } from '../decorators/cris-layout-page.decorator';
+import { CrisLayoutPage as CrisLayoutPageObj } from '../models/cris-layout-page.model';
+import { LayoutPage } from '../enums/layout-page.enum';
+import { isNotEmpty, isNotUndefined } from '../../shared/empty.util';
+import { AuthService } from '../../core/auth/auth.service';
 import {
   getAllSucceededRemoteDataPayload,
   getFirstSucceededRemoteListPayload,
   getSucceededRemoteData
 } from '../../core/shared/operators';
-import {GenericConstructor} from '../../core/shared/generic-constructor';
-import {getCrisLayoutTab} from '../decorators/cris-layout-tab.decorator';
-import {CrisLayoutPage} from '../decorators/cris-layout-page.decorator';
-import {CrisLayoutPage as CrisLayoutPageObj} from '../models/cris-layout-page.model';
-import {LayoutPage} from '../enums/layout-page.enum';
-import {isNotEmpty, isNotUndefined} from '../../shared/empty.util';
 import {EditItemDataService} from '../../core/submission/edititem-data.service';
 import {EditItem} from '../../core/submission/models/edititem.model';
 import {followLink} from '../../shared/utils/follow-link-config.model';
 import {EditItemMode} from '../../core/submission/models/edititem-mode.model';
 import {AuthorizationDataService} from 'src/app/core/data/feature-authorization/authorization-data.service';
 import {FeatureID} from 'src/app/core/data/feature-authorization/feature-id';
-import {AuthService} from '../../core/auth/auth.service';
 import {ResearcherProfileService} from '../../core/profile/researcher-profile.service';
 import {ResearcherProfile} from '../../core/profile/model/researcher-profile.model';
 import {RemoteData} from '../../core/data/remote-data';

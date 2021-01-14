@@ -18,6 +18,10 @@ import { JournalIssueSearchResultListElementComponent } from './item-list-elemen
 import { JournalVolumeSearchResultListElementComponent } from './item-list-elements/search-result-list-elements/journal-volume/journal-volume-search-result-list-element.component';
 import { JournalIssueSearchResultGridElementComponent } from './item-grid-elements/search-result-grid-elements/journal-issue/journal-issue-search-result-grid-element.component';
 import { JournalVolumeSearchResultGridElementComponent } from './item-grid-elements/search-result-grid-elements/journal-volume/journal-volume-search-result-grid-element.component';
+import { JournalVolumeSidebarSearchListElementComponent } from './item-list-elements/sidebar-search-list-elements/journal-volume/journal-volume-sidebar-search-list-element.component';
+import { JournalIssueSidebarSearchListElementComponent } from './item-list-elements/sidebar-search-list-elements/journal-issue/journal-issue-sidebar-search-list-element.component';
+import { JournalSidebarSearchListElementComponent } from './item-list-elements/sidebar-search-list-elements/journal/journal-sidebar-search-list-element.component';
+import { ContextMenuModule } from '../../shared/context-menu/context-menu.module';
 
 const ENTRY_COMPONENTS = [
   JournalComponent,
@@ -34,7 +38,10 @@ const ENTRY_COMPONENTS = [
   JournalVolumeSearchResultListElementComponent,
   JournalIssueSearchResultGridElementComponent,
   JournalVolumeSearchResultGridElementComponent,
-  JournalSearchResultGridElementComponent
+  JournalSearchResultGridElementComponent,
+  JournalVolumeSidebarSearchListElementComponent,
+  JournalIssueSidebarSearchListElementComponent,
+  JournalSidebarSearchListElementComponent,
 ];
 
 @NgModule({
@@ -42,7 +49,8 @@ const ENTRY_COMPONENTS = [
     CommonModule,
     SharedModule,
     TooltipModule.forRoot(),
-    ItemPageModule
+    ItemPageModule,
+    ContextMenuModule
   ],
   declarations: [
     ...ENTRY_COMPONENTS
