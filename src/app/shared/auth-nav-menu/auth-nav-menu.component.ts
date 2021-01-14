@@ -1,19 +1,20 @@
 import { AuthMethod } from './../../core/auth/models/auth.method';
 import { Observable, of as observableOf, Subscription } from 'rxjs';
 
-import { filter, map, take } from 'rxjs/operators';
-import { Component, OnInit } from '@angular/core';
+import { filter, map, mergeMap, take } from 'rxjs/operators';
+import { Component, Inject, OnInit } from '@angular/core';
 import { RouterReducerState } from '@ngrx/router-store';
 import { select, Store } from '@ngrx/store';
 
 import { fadeInOut, fadeOut } from '../animations/fade';
 import { HostWindowService } from '../host-window.service';
 import { AppState, routerStateSelector } from '../../app.reducer';
-import { isNotUndefined } from '../empty.util';
+import { isNotNull, isNotUndefined } from '../empty.util';
 import { getAuthenticationMethods, isAuthenticated, isAuthenticationLoading } from '../../core/auth/selectors';
 import { EPerson } from '../../core/eperson/models/eperson.model';
 import { AuthService, LOGIN_ROUTE, LOGOUT_ROUTE } from '../../core/auth/auth.service';
 import { AuthMethodType } from 'src/app/core/auth/models/auth.method-type';
+import { NativeWindowRef, NativeWindowService } from 'src/app/core/services/window.service';
 
 @Component({
   selector: 'ds-auth-nav-menu',
@@ -46,7 +47,8 @@ export class AuthNavMenuComponent implements OnInit {
 
   constructor(private store: Store<AppState>,
               private windowService: HostWindowService,
-              private authService: AuthService
+              private authService: AuthService,
+              @Inject(NativeWindowService) protected _window: NativeWindowRef,
   ) {
     this.isXsOrSm$ = this.windowService.isXsOrSm();
   }
@@ -74,5 +76,31 @@ export class AuthNavMenuComponent implements OnInit {
         return (m.length === 1 && m[0].authMethodType === AuthMethodType.Oidc)
       })
     )
+  }
+
+  redirectToOidc() {
+    this.store.pipe(
+      select(getAuthenticationMethods),
+      mergeMap((methods: AuthMethod[]) => {
+        return methods.filter((m: AuthMethod) => m.authMethodType === AuthMethodType.Oidc)
+      }))
+      .subscribe((m: AuthMethod) => {
+        let newLocationUrl = m.location;
+
+        const currentUrl = this._window.nativeWindow.location.href;
+        const myRegexp = /\?redirectUrl=(.*)/g;
+        const match = myRegexp.exec(newLocationUrl);
+        const redirectUrl = (match && match[1]) ? match[1] : null;
+
+        // Check whether the current page is different from the redirect url received from rest
+        if (isNotNull(redirectUrl) && redirectUrl !== currentUrl) {
+          // change the redirect url with the current page url
+          const newRedirectUrl = `?redirectUrl=${currentUrl}`;
+          newLocationUrl = newLocationUrl.replace(/\?redirectUrl=(.*)/g, newRedirectUrl);
+        }
+         // redirect to oidc authentication url
+        this._window.nativeWindow.location.href = newLocationUrl;
+
+      })
   }
 }
