@@ -1,3 +1,5 @@
+import { AuthMethodType } from 'src/app/core/auth/models/auth.method-type';
+import { AuthMethod } from './../../core/auth/models/auth.method';
 import { CUSTOM_ELEMENTS_SCHEMA, DebugElement } from '@angular/core';
 import { async, ComponentFixture, inject, TestBed } from '@angular/core/testing';
 
@@ -15,6 +17,8 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { AuthTokenInfo } from '../../core/auth/models/auth-token-info.model';
 import { AuthService } from '../../core/auth/auth.service';
 import { of } from 'rxjs/internal/observable/of';
+import { NativeWindowService } from 'src/app/core/services/window.service';
+import { NativeWindowMockFactory } from '../mocks/mock-native-window-ref';
 
 describe('AuthNavMenuComponent', () => {
 
@@ -78,7 +82,8 @@ describe('AuthNavMenuComponent', () => {
         ],
         providers: [
           { provide: HostWindowService, useValue: window },
-          { provide: AuthService, useValue: authService }
+          { provide: AuthService, useValue: authService },
+          { provide: NativeWindowService, useFactory: NativeWindowMockFactory }
         ],
         schemas: [
           CUSTOM_ELEMENTS_SCHEMA
@@ -210,6 +215,55 @@ describe('AuthNavMenuComponent', () => {
         });
       });
 
+      describe('when user is not authenticated and only oidc login is available', () => {
+
+        beforeEach(inject([Store], (store: Store<AppState>) => {
+          notAuthState = {
+            authenticated: false,
+            loaded: false,
+            blocking: false,
+            loading: false,
+            authMethods: [
+              new AuthMethod(AuthMethodType.Oidc, 'https://oidc.url/')
+            ]
+          };
+          routerState = {
+            url: '/home'
+          };
+          store
+            .subscribe((state) => {
+              (state as any).router = Object.create({});
+              (state as any).router.state = routerState;
+              (state as any).core = Object.create({});
+              (state as any).core.auth = notAuthState;
+            });
+
+          // create component and test fixture
+          fixture = TestBed.createComponent(AuthNavMenuComponent);
+
+          // get test component from the fixture
+          component = fixture.componentInstance;
+
+          fixture.detectChanges();
+
+          const navMenuSelector = '.navbar-nav';
+          deNavMenu = fixture.debugElement.query(By.css(navMenuSelector));
+
+          const navMenuItemSelector = 'li';
+          deNavMenuItem = deNavMenu.query(By.css(navMenuItemSelector));
+        }));
+
+        afterEach(() => {
+          fixture.destroy();
+          component = null;
+        });
+
+        it('should render login odic link', () => {
+          const loginOidcLink = deNavMenuItem.query(By.css('a[id=loginOidcLink]'));
+          expect(loginOidcLink.nativeElement).toBeDefined();
+        });
+      });
+
       describe('when user is authenticated', () => {
         beforeEach(inject([Store], (store: Store<AppState>) => {
           routerState = {
@@ -272,7 +326,8 @@ describe('AuthNavMenuComponent', () => {
         ],
         providers: [
           { provide: HostWindowService, useValue: window },
-          { provide: AuthService, useValue: authService }
+          { provide: AuthService, useValue: authService },
+          { provide: NativeWindowService, useFactory: NativeWindowMockFactory }
         ],
         schemas: [
           CUSTOM_ELEMENTS_SCHEMA
