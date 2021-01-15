@@ -75,7 +75,8 @@ describe('LogInComponent', () => {
         { provide: HardRedirectService, useValue: hardRedirectService },
         { provide: AuthorizationDataService, useValue: authorizationService },
         provideMockStore({ initialState }),
-        LogInComponent
+        LogInComponent,
+        { provide: NativeWindowService, useFactory: NativeWindowMockFactory }
       ],
       schemas: [
         CUSTOM_ELEMENTS_SCHEMA

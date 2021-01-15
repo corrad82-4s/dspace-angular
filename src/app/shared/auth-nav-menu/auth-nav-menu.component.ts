@@ -1,17 +1,20 @@
+import { AuthMethod } from './../../core/auth/models/auth.method';
 import { Observable, of as observableOf, Subscription } from 'rxjs';
 
-import { filter, map } from 'rxjs/operators';
-import { Component, OnInit } from '@angular/core';
+import { filter, map, mergeMap, take } from 'rxjs/operators';
+import { Component, Inject, OnInit } from '@angular/core';
 import { RouterReducerState } from '@ngrx/router-store';
 import { select, Store } from '@ngrx/store';
 
 import { fadeInOut, fadeOut } from '../animations/fade';
 import { HostWindowService } from '../host-window.service';
 import { AppState, routerStateSelector } from '../../app.reducer';
-import { isNotUndefined } from '../empty.util';
-import { isAuthenticated, isAuthenticationLoading } from '../../core/auth/selectors';
+import { isNotNull, isNotUndefined } from '../empty.util';
+import { getAuthenticationMethods, isAuthenticated, isAuthenticationLoading } from '../../core/auth/selectors';
 import { EPerson } from '../../core/eperson/models/eperson.model';
 import { AuthService, LOGIN_ROUTE, LOGOUT_ROUTE } from '../../core/auth/auth.service';
+import { AuthMethodType } from 'src/app/core/auth/models/auth.method-type';
+import { NativeWindowRef, NativeWindowService } from 'src/app/core/services/window.service';
 
 @Component({
   selector: 'ds-auth-nav-menu',
@@ -40,9 +43,12 @@ export class AuthNavMenuComponent implements OnInit {
 
   public sub: Subscription;
 
+  public onlyOidc: Observable<boolean>
+
   constructor(private store: Store<AppState>,
               private windowService: HostWindowService,
-              private authService: AuthService
+              private authService: AuthService,
+              @Inject(NativeWindowService) private _window: NativeWindowRef,
   ) {
     this.isXsOrSm$ = this.windowService.isXsOrSm();
   }
@@ -63,5 +69,23 @@ export class AuthNavMenuComponent implements OnInit {
         && !router.state.url.startsWith(LOGOUT_ROUTE))
       )
     );
+
+    this.onlyOidc = this.store.pipe(
+      select(getAuthenticationMethods),
+      map((m: AuthMethod[]) => {
+        return (m.length === 1 && m[0].authMethodType === AuthMethodType.Oidc)
+      })
+    )
+  }
+
+  redirectToOidc() {
+    this.store.pipe(
+      select(getAuthenticationMethods),
+      mergeMap((methods: AuthMethod[]) => {
+        return methods.filter((m: AuthMethod) => m.authMethodType === AuthMethodType.Oidc)
+      }))
+      .subscribe((m: AuthMethod) => {
+        this._window.nativeWindow.location.href = m.location;
+      })
   }
 }
