@@ -20,7 +20,7 @@ import { of } from 'rxjs/internal/observable/of';
 import { NativeWindowService } from 'src/app/core/services/window.service';
 import { NativeWindowMockFactory } from '../mocks/mock-native-window-ref';
 
-fdescribe('AuthNavMenuComponent', () => {
+describe('AuthNavMenuComponent', () => {
 
   let component: AuthNavMenuComponent;
   let deNavMenu: DebugElement;

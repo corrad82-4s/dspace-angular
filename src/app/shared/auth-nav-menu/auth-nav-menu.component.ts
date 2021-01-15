@@ -85,22 +85,7 @@ export class AuthNavMenuComponent implements OnInit {
         return methods.filter((m: AuthMethod) => m.authMethodType === AuthMethodType.Oidc)
       }))
       .subscribe((m: AuthMethod) => {
-        let newLocationUrl = m.location;
-
-        const currentUrl = this._window.nativeWindow.location.href;
-        const myRegexp = /\?redirectUrl=(.*)/g;
-        const match = myRegexp.exec(newLocationUrl);
-        const redirectUrl = (match && match[1]) ? match[1] : null;
-
-        // Check whether the current page is different from the redirect url received from rest
-        if (isNotNull(redirectUrl) && redirectUrl !== currentUrl) {
-          // change the redirect url with the current page url
-          const newRedirectUrl = `?redirectUrl=${currentUrl}`;
-          newLocationUrl = newLocationUrl.replace(/\?redirectUrl=(.*)/g, newRedirectUrl);
-        }
-         // redirect to oidc authentication url
-        this._window.nativeWindow.location.href = newLocationUrl;
-
+        this._window.nativeWindow.location.href = m.location;
       })
   }
 }
