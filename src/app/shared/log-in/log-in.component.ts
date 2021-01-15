@@ -117,6 +117,12 @@ export class LogInComponent implements OnInit {
   }
 
   private redirectToOidc(location: string) {
-    this._window.nativeWindow.location.href = location;
+    this.isAuthenticated.subscribe(
+      (authenticated: boolean) => {
+        if (!authenticated) {
+          this._window.nativeWindow.location.href = location;
+        }
+      }
+    )
   }
 }
