@@ -1,3 +1,5 @@
+import { AuthMethodType } from 'src/app/core/auth/models/auth.method-type';
+import { AuthMethod } from './../../core/auth/models/auth.method';
 import { CUSTOM_ELEMENTS_SCHEMA, DebugElement } from '@angular/core';
 import { async, ComponentFixture, inject, TestBed } from '@angular/core/testing';
 
@@ -210,6 +212,55 @@ fdescribe('AuthNavMenuComponent', () => {
         it('should render login dropdown menu', () => {
           const loginDropdownMenu = deNavMenuItem.query(By.css('div[id=loginDropdownMenu]'));
           expect(loginDropdownMenu.nativeElement).toBeDefined();
+        });
+      });
+
+      describe('when user is not authenticated and only oidc login is available', () => {
+
+        beforeEach(inject([Store], (store: Store<AppState>) => {
+          notAuthState = {
+            authenticated: false,
+            loaded: false,
+            blocking: false,
+            loading: false,
+            authMethods: [
+              new AuthMethod(AuthMethodType.Oidc, 'https://oidc.url/')
+            ]
+          };
+          routerState = {
+            url: '/home'
+          };
+          store
+            .subscribe((state) => {
+              (state as any).router = Object.create({});
+              (state as any).router.state = routerState;
+              (state as any).core = Object.create({});
+              (state as any).core.auth = notAuthState;
+            });
+
+          // create component and test fixture
+          fixture = TestBed.createComponent(AuthNavMenuComponent);
+
+          // get test component from the fixture
+          component = fixture.componentInstance;
+
+          fixture.detectChanges();
+
+          const navMenuSelector = '.navbar-nav';
+          deNavMenu = fixture.debugElement.query(By.css(navMenuSelector));
+
+          const navMenuItemSelector = 'li';
+          deNavMenuItem = deNavMenu.query(By.css(navMenuItemSelector));
+        }));
+
+        afterEach(() => {
+          fixture.destroy();
+          component = null;
+        });
+
+        it('should render login odic link', () => {
+          const loginOidcLink = deNavMenuItem.query(By.css('a[id=loginOidcLink]'));
+          expect(loginOidcLink.nativeElement).toBeDefined();
         });
       });
 
