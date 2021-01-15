@@ -15,8 +15,10 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { AuthTokenInfo } from '../../core/auth/models/auth-token-info.model';
 import { AuthService } from '../../core/auth/auth.service';
 import { of } from 'rxjs/internal/observable/of';
+import { NativeWindowService } from 'src/app/core/services/window.service';
+import { NativeWindowMockFactory } from '../mocks/mock-native-window-ref';
 
-describe('AuthNavMenuComponent', () => {
+fdescribe('AuthNavMenuComponent', () => {
 
   let component: AuthNavMenuComponent;
   let deNavMenu: DebugElement;
@@ -78,7 +80,8 @@ describe('AuthNavMenuComponent', () => {
         ],
         providers: [
           { provide: HostWindowService, useValue: window },
-          { provide: AuthService, useValue: authService }
+          { provide: AuthService, useValue: authService },
+          { provide: NativeWindowService, useFactory: NativeWindowMockFactory }
         ],
         schemas: [
           CUSTOM_ELEMENTS_SCHEMA
@@ -272,7 +275,8 @@ describe('AuthNavMenuComponent', () => {
         ],
         providers: [
           { provide: HostWindowService, useValue: window },
-          { provide: AuthService, useValue: authService }
+          { provide: AuthService, useValue: authService },
+          { provide: NativeWindowService, useFactory: NativeWindowMockFactory }
         ],
         schemas: [
           CUSTOM_ELEMENTS_SCHEMA
