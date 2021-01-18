@@ -10,7 +10,7 @@ import {
 import { TranslateService } from '@ngx-translate/core';
 import { combineLatest, of, Subscription } from 'rxjs';
 import { Observable } from 'rxjs/internal/Observable';
-import { flatMap, map, reduce, take, tap } from 'rxjs/operators';
+import { flatMap, map, reduce, switchMap, take, tap } from 'rxjs/operators';
 import { AuthService } from '../../../../core/auth/auth.service';
 import { RestResponse } from '../../../../core/cache/response.models';
 import { PaginatedList } from '../../../../core/data/paginated-list';
@@ -25,6 +25,11 @@ import { FormBuilderService } from '../../../../shared/form/builder/form-builder
 import { NotificationsService } from '../../../../shared/notifications/notifications.service';
 import { PaginationComponentOptions } from '../../../../shared/pagination/pagination-component-options.model';
 import { EpersonRegistrationService } from 'src/app/core/data/eperson-registration.service';
+import { ConfirmationModalComponent } from 'src/app/shared/confirmation-modal/confirmation-modal.component';
+import { FeatureID } from 'src/app/core/data/feature-authorization/feature-id';
+import { AuthorizationDataService } from 'src/app/core/data/feature-authorization/authorization-data.service';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { RequestService } from 'src/app/core/data/request.service';
 
 @Component({
   selector: 'ds-eperson-form',
@@ -169,6 +174,9 @@ export class EPersonFormComponent implements OnInit, OnDestroy {
               private translateService: TranslateService,
               private notificationsService: NotificationsService,
               private authService: AuthService,
+              private authorizationService: AuthorizationDataService,
+              private modalService: NgbModal,
+              public requestService: RequestService,
               private epersonRegistrationService: EpersonRegistrationService,
               private changeDetectorRef: ChangeDetectorRef) {
     this.subs.push(this.epersonService.getActiveEPerson().subscribe((eperson: EPerson) => {
@@ -180,6 +188,10 @@ export class EPersonFormComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
+    this.initialisePage();
+  }
+
+  private initialisePage() {
     combineLatest(
       this.translateService.get(`${this.messagePrefix}.firstName`),
       this.translateService.get(`${this.messagePrefix}.lastName`),
@@ -292,6 +304,13 @@ export class EPersonFormComponent implements OnInit, OnDestroy {
           }
         }
       }
+
+      this.canImpersonate$ = this.epersonService.getActiveEPerson().pipe(
+        switchMap((eperson) => this.authorizationService.isAuthorized(FeatureID.LoginOnBehalfOf, hasValue(eperson) ? eperson.self : undefined))
+    );
+      this.canDelete$ = this.epersonService.getActiveEPerson().pipe(
+        switchMap((eperson) => this.authorizationService.isAuthorized(FeatureID.CanDelete, hasValue(eperson) ? eperson.self : undefined))
+    );
 
     });
   }
@@ -482,6 +501,35 @@ export class EPersonFormComponent implements OnInit, OnDestroy {
     this.isImpersonated = true;
   }
 
+ /**
+  * Deletes the EPerson from the Repository. The EPerson will be the only that this form is showing.
+  * It'll either show a success or error message depending on whether the delete was successful or not.
+  */
+  delete() {
+    this.epersonService.getActiveEPerson().pipe(take(1)).subscribe((eperson: EPerson) => {
+      const modalRef = this.modalService.open(ConfirmationModalComponent);
+      modalRef.componentInstance.dso = eperson;
+      modalRef.componentInstance.headerLabel = 'confirmation-modal.delete-eperson.header';
+      modalRef.componentInstance.infoLabel = 'confirmation-modal.delete-eperson.info';
+      modalRef.componentInstance.cancelLabel = 'confirmation-modal.delete-eperson.cancel';
+      modalRef.componentInstance.confirmLabel = 'confirmation-modal.delete-eperson.confirm';
+      modalRef.componentInstance.response.pipe(take(1)).subscribe((confirm: boolean) => {
+        if (confirm) {
+          if (hasValue(eperson.id)) {
+            this.epersonService.deleteEPerson(eperson).pipe(take(1)).subscribe((restResponse: RemoteData<NoContent>) => {
+              if (restResponse.hasSucceeded) {
+                this.notificationsService.success(this.translateService.get(this.labelPrefix + 'notification.deleted.success', { name: eperson.name }));
+                this.reset();
+              } else {
+                this.notificationsService.error('Error occured when trying to delete EPerson with id: ' + eperson.id + ' with code: ' + restResponse.statusCode + ' and message: ' + restResponse.errorMessage);
+              }
+              this.cancelForm.emit();
+            })
+          }}
+      });
+  })
+}
+
   /**
    * Stop impersonating the EPerson
    */
@@ -515,6 +563,16 @@ export class EPersonFormComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.onCancel();
     this.subs.filter((sub) => hasValue(sub)).forEach((sub) => sub.unsubscribe());
+  }
+
+  /**
+   * This method will ensure that the page gets reset and that the cache is cleared
+   */
+  reset() {
+    this.epersonService.getActiveEPerson().pipe(take(1)).subscribe((eperson: EPerson) => {
+      this.requestService.removeByHrefSubstring(eperson.self);
+    });
+    this.initialisePage();
   }
 
   private findInstitutionalScopedRoles(institutionalRole: Group): Observable<{name: string, scopes: Group[]}> {
