@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { ReplaceOperation } from 'fast-json-patch';
 import { Observable, of as observableOf } from 'rxjs';
-import {catchError, distinctUntilChanged, filter, find, flatMap, map, switchMap, take, tap} from 'rxjs/operators';
+import { catchError, distinctUntilChanged, filter, find, flatMap, map, switchMap, take, tap} from 'rxjs/operators';
 
 import { NotificationsService } from 'src/app/shared/notifications/notifications.service';
 import { dataService } from '../cache/builders/build-decorators';
@@ -16,15 +16,21 @@ import { DefaultChangeAnalyzer } from '../data/default-change-analyzer.service';
 import { ItemDataService } from '../data/item-data.service';
 import { RequestService } from '../data/request.service';
 import { HALEndpointService } from '../shared/hal-endpoint.service';
-import {getFirstSucceededRemoteDataPayload, getFinishedRemoteData, getResponseFromEntry} from '../shared/operators';
+import {
+    getFirstSucceededRemoteDataPayload,
+    getFinishedRemoteData,
+    getFirstCompletedRemoteData,
+    getResponseFromEntry
+} from '../shared/operators';
 import { ResearcherProfile } from './model/researcher-profile.model';
 import { RESEARCHER_PROFILE } from './model/researcher-profile.resource-type';
 import { RestResponse } from '../cache/response.models';
-import {HttpOptions} from '../dspace-rest-v2/dspace-rest-v2.service';
-import {hasValue, isNotEmpty} from '../../shared/empty.util';
-import {PostRequest, SubmissionPostRequest} from '../data/request.models';
-import {RemoteData} from '../data/remote-data';
-import {RequestEntry} from '../data/request.reducer';
+import { HttpOptions} from '../dspace-rest-v2/dspace-rest-v2.service';
+import { hasValue, isNotEmpty} from '../../shared/empty.util';
+import { PostRequest, SubmissionPostRequest} from '../data/request.models';
+import { RemoteData} from '../data/remote-data';
+import { RequestEntry} from '../data/request.reducer';
+import { NoContent } from '../shared/NoContent.model';
 
 /* tslint:disable:max-classes-per-file */
 
@@ -136,13 +142,13 @@ export class ResearcherProfileService {
      */
     delete(researcherProfile: ResearcherProfile): Observable<boolean> {
       return this.dataService.delete(researcherProfile.id).pipe(
-        take(1),
-        tap((response: RestResponse) => {
-          if (response.isSuccessful) {
-            this.requestService.removeByHrefSubstring(researcherProfile._links.self.href);
+        getFirstCompletedRemoteData(),
+        tap((response: RemoteData<NoContent>) => {
+          if (response.isSuccess) {
+            this.requestService.setStaleByHrefSubstring(researcherProfile._links.self.href);
           }
         }),
-        map((response: RestResponse) => response.isSuccessful)
+        map((response: RemoteData<NoContent>) => response.isSuccess)
       );
     }
 

@@ -16,7 +16,7 @@ import { EPerson } from '../eperson/models/eperson.model';
 import { HALEndpointService } from '../shared/hal-endpoint.service';
 import { DataService } from '../data/data.service';
 import { DefaultChangeAnalyzer } from '../data/default-change-analyzer.service';
-import { PaginatedList } from '../data/paginated-list';
+import { PaginatedList } from '../data/paginated-list.model';
 import { RemoteData } from '../data/remote-data';
 import { FindListOptions } from '../data/request.models';
 import { RequestService } from '../data/request.service';
@@ -88,15 +88,15 @@ export class AuditDataService {
     const optionsWithObject = Object.assign(new FindListOptions(), options, {
       searchParams: [new RequestParam('object', objectId)]
     });
-    return this.dataService.searchBy(searchMethod, optionsWithObject, followLink('eperson'));
+    return this.dataService.searchBy(searchMethod, optionsWithObject, true, followLink('eperson'));
   }
 
-  findById(id: string): Observable<RemoteData<Audit>> {
-    return this.dataService.findById(id, followLink('eperson'));
+  findById(id: string, ...linksToFollow: Array<FollowLinkConfig<Audit>>): Observable<RemoteData<Audit>> {
+    return this.dataService.findById(id, true, ...linksToFollow);
   }
 
-  findAll(options: FindListOptions = {}): Observable<RemoteData<PaginatedList<Audit>>> {
-    return this.dataService.findAll(options, followLink('eperson'));
+  findAll(options: FindListOptions = {}, ...linksToFollow: Array<FollowLinkConfig<Audit>>): Observable<RemoteData<PaginatedList<Audit>>> {
+    return this.dataService.findAll(options, true, ...linksToFollow);
   }
 
   /**
