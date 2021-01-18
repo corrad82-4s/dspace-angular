@@ -1,3 +1,4 @@
+import { getFirstSucceededRemoteData, getFirstSucceededRemoteDataPayload } from './../../core/shared/operators';
 import {Injectable} from '@angular/core';
 import {SearchService} from '../../core/shared/search/search.service';
 import {EPerson} from '../../core/eperson/models/eperson.model';
@@ -6,10 +7,9 @@ import {PaginatedSearchOptions} from '../../shared/search/paginated-search-optio
 import {mergeMap, take} from 'rxjs/operators';
 import {Observable, of} from 'rxjs';
 import {RemoteData} from '../../core/data/remote-data';
-import {PaginatedList} from '../../core/data/paginated-list';
+import {PaginatedList} from '../../core/data/paginated-list.model';
 import {SearchResult} from '../../shared/search/search-result.model';
 import {DSpaceObject} from '../../core/shared/dspace-object.model';
-import {getSucceededRemoteData} from '../../core/shared/operators';
 
 @Injectable()
 export class ProfileClaimService {
@@ -46,7 +46,7 @@ export class ProfileClaimService {
       query: query
     }))
     .pipe(
-      getSucceededRemoteData(),
+      getFirstSucceededRemoteData(),
       take(1));
   }
 

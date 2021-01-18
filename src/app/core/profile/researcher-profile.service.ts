@@ -1,3 +1,4 @@
+import { hasCompleted, isSuccess } from './../data/request.reducer';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
@@ -25,12 +26,12 @@ import {
 import { ResearcherProfile } from './model/researcher-profile.model';
 import { RESEARCHER_PROFILE } from './model/researcher-profile.resource-type';
 import { RestResponse } from '../cache/response.models';
-import { HttpOptions} from '../dspace-rest-v2/dspace-rest-v2.service';
 import { hasValue, isNotEmpty} from '../../shared/empty.util';
 import { PostRequest, SubmissionPostRequest} from '../data/request.models';
 import { RemoteData} from '../data/remote-data';
 import { RequestEntry} from '../data/request.reducer';
 import { NoContent } from '../shared/NoContent.model';
+import { HttpOptions} from '../dspace-rest/dspace-rest.service';
 
 /* tslint:disable:max-classes-per-file */
 
@@ -124,7 +125,7 @@ export class ResearcherProfileService {
     ).subscribe();
 
     return this.requestService.getByUUID(requestId).pipe(
-      find((request: RequestEntry) => request.completed),
+      find((request: RequestEntry) => hasCompleted(request.state)),
       getResponseFromEntry(),
       map((response: any) => {
         if (isNotEmpty(response.resourceSelfLinks)) {

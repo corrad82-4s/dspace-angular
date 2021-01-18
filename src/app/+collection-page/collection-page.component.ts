@@ -1,3 +1,4 @@
+import { hasSucceeded } from './../core/data/request.reducer';
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
@@ -30,6 +31,7 @@ import { ProcessParameter } from '../process-page/processes/process-parameter.mo
 import { TranslateService } from '@ngx-translate/core';
 import { RequestService } from '../core/data/request.service';
 import { getCollectionEditRoute } from './collection-page-routing-paths';
+import { Process } from '../process-page/processes/process.model';
 
 @Component({
   selector: 'ds-collection-page',
@@ -137,8 +139,8 @@ export class CollectionPageComponent implements OnInit {
 
     this.scriptService.invoke('collection-export', stringParameters, [])
       .pipe(take(1))
-      .subscribe((requestEntry: RequestEntry) => {
-        if (requestEntry.response.isSuccessful) {
+      .subscribe((requestEntry: RemoteData<Process>) => {
+        if (requestEntry.isSuccess) {
           this.notificationsService.success(this.translationService.get('collection-export.success'));
           this.navigateToProcesses();
         } else {

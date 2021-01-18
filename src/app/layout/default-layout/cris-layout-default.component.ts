@@ -1,3 +1,4 @@
+import { getFirstSucceededRemoteData, getFirstSucceededRemoteDataPayload } from './../../core/shared/operators';
 import { Component, ComponentFactoryResolver, ComponentRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
 
 import { BehaviorSubject, Observable } from 'rxjs';
@@ -16,7 +17,6 @@ import { AuthService } from '../../core/auth/auth.service';
 import {
   getAllSucceededRemoteDataPayload,
   getFirstSucceededRemoteListPayload,
-  getSucceededRemoteData
 } from '../../core/shared/operators';
 import {EditItemDataService} from '../../core/submission/edititem-data.service';
 import {EditItem} from '../../core/submission/models/edititem.model';
@@ -104,7 +104,7 @@ export class CrisLayoutDefaultComponent extends CrisLayoutPageObj implements OnI
     });
 
     // Retrieve edit modes
-    this.editItemService.findById(this.item.id + ':none', followLink('modes')).pipe(
+    this.editItemService.findById(this.item.id + ':none', true, followLink('modes')).pipe(
       getAllSucceededRemoteDataPayload(),
       mergeMap((editItem: EditItem) => editItem.modes.pipe(
         getFirstSucceededRemoteListPayload())
@@ -209,8 +209,7 @@ export class CrisLayoutDefaultComponent extends CrisLayoutPageObj implements OnI
 
     this.researcherProfileService.createFromExternalSource(this.item._links.self.href)
       .pipe(
-        getSucceededRemoteData(),
-        take(1),
+        getFirstSucceededRemoteData(),
         mergeMap((rd: RemoteData<ResearcherProfile>) => {
           return this.researcherProfileService.findRelatedItemId(rd.payload)
         }))

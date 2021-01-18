@@ -38,7 +38,7 @@ export class FacetSectionComponent implements OnInit {
         .subscribe((facetConfigs) => {
           for (const config of facetConfigs) {
             if (config._embedded.values.length > 0 &&
-              chartTypes.every((e) => e !== config.type)) {
+              chartTypes.every((e) => e !== config.filterType)) {
               this.facets.push(config);
               this.facets$.next(this.facets);
             }

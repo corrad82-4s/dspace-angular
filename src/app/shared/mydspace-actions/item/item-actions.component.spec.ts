@@ -70,7 +70,7 @@ describe('ItemActionsComponent', () => {
 
     authorizationService = new AuthorizationDataService(null, null, null, null, null, null, null, null, null, null);
     relationshipService = new RelationshipService(null, null, null, null, null, null, null, null, null, null);
-    submissionService = new SubmissionService(null, null, null, null, null, null, null, null, null);
+    submissionService = new SubmissionService(null, null, null, null, null, null, null, null, null, null);
 
     TestBed.configureTestingModule({
       imports: [

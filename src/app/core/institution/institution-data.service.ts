@@ -8,11 +8,11 @@ import { createFailedRemoteDataObject$ } from 'src/app/shared/remote-data.utils'
 import { ErrorResponse, RestResponse } from '../cache/response.models';
 import { CommunityDataService } from '../data/community-data.service';
 import { ConfigurationDataService } from '../data/configuration-data.service';
-import { PaginatedList } from '../data/paginated-list';
+import { PaginatedList } from '../data/paginated-list.model';
 import { RemoteData } from '../data/remote-data';
 import { FindListOptions, PostRequest } from '../data/request.models';
 import { RequestService } from '../data/request.service';
-import { HttpOptions } from '../dspace-rest-v2/dspace-rest-v2.service';
+import { HttpOptions } from '../dspace-rest/dspace-rest.service';
 import { Community } from '../shared/community.model';
 import { configureRequest, getFinishedRemoteData, getFirstSucceededRemoteDataPayload, getRemoteDataPayload, getResponseFromEntry } from '../shared/operators';
 

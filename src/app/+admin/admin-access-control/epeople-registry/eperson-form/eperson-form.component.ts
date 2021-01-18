@@ -10,35 +10,27 @@ import {
 import { TranslateService } from '@ngx-translate/core';
 import { combineLatest, of, Subscription } from 'rxjs';
 import { Observable } from 'rxjs/internal/Observable';
-import { switchMap, take } from 'rxjs/operators';
-import { PaginatedList } from '../../../../core/data/paginated-list.model';
 import { flatMap, map, reduce, switchMap, take, tap } from 'rxjs/operators';
-import { AuthService } from '../../../../core/auth/auth.service';
-import { RestResponse } from '../../../../core/cache/response.models';
-import { PaginatedList } from '../../../../core/data/paginated-list';
+import { PaginatedList } from '../../../../core/data/paginated-list.model';
 import { RemoteData } from '../../../../core/data/remote-data';
 import { EPersonDataService } from '../../../../core/eperson/eperson-data.service';
 import { GroupDataService } from '../../../../core/eperson/group-data.service';
 import { EPerson } from '../../../../core/eperson/models/eperson.model';
 import { Group } from '../../../../core/eperson/models/group.model';
 import {
-  getRemoteDataPayload,
   getFirstSucceededRemoteData,
-  getFirstCompletedRemoteData
+  getFirstCompletedRemoteData,
+  getFirstSucceededRemoteDataPayload,
+  getFirstSucceededRemoteListPayload,
+  getPaginatedListPayload,
+  getRemoteDataPayload
 } from '../../../../core/shared/operators';
-import { getFirstSucceededRemoteDataPayload, getFirstSucceededRemoteListPayload, getPaginatedListPayload, getRemoteDataPayload, getSucceededRemoteData } from '../../../../core/shared/operators';
 import { hasValue } from '../../../../shared/empty.util';
 import { FormBuilderService } from '../../../../shared/form/builder/form-builder.service';
 import { NotificationsService } from '../../../../shared/notifications/notifications.service';
 import { PaginationComponentOptions } from '../../../../shared/pagination/pagination-component-options.model';
 import { AuthService } from '../../../../core/auth/auth.service';
-import { AuthorizationDataService } from '../../../../core/data/feature-authorization/authorization-data.service';
-import { FeatureID } from '../../../../core/data/feature-authorization/feature-id';
-import { ConfirmationModalComponent } from '../../../../shared/confirmation-modal/confirmation-modal.component';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { RequestService } from '../../../../core/data/request.service';
 import { NoContent } from '../../../../core/shared/NoContent.model';
-import { EpersonRegistrationService } from '../../../../core/data/eperson-registration.service';
 import { Registration } from '../../../../core/shared/registration.model';
 import { EpersonRegistrationService } from 'src/app/core/data/eperson-registration.service';
 import { ConfirmationModalComponent } from 'src/app/shared/confirmation-modal/confirmation-modal.component';

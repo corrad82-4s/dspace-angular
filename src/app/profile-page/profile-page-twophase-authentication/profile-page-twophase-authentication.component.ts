@@ -1,3 +1,5 @@
+import { hasSucceeded } from './../../core/data/request.reducer';
+import { RemoteData } from './../../core/data/remote-data';
 import { Component, Input, OnInit } from '@angular/core';
 import { EPerson } from '../../core/eperson/models/eperson.model';
 import { TranslateService } from '@ngx-translate/core';
@@ -98,8 +100,8 @@ export class ProfilePageTwophaseAuthenticationComponent implements OnInit {
     ];
     this.epersonService.patch(this.user, operations).pipe(
       take(1)
-    ).subscribe((response: RestResponse) => {
-      if (response.isSuccessful) {
+    ).subscribe((response: RemoteData<EPerson>) => {
+      if (response.hasSucceeded) {
         this.processing$.next(false);
       } else {
         this.notificationsService.error(null, this.translate.get('profile.twofactor.notification.error'));

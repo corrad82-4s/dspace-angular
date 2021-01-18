@@ -17,7 +17,6 @@ import { AuthorizationDataService } from '../../../core/data/feature-authorizati
 import { FeatureID } from '../../../core/data/feature-authorization/feature-id';
 import { PaginatedList, buildPaginatedList } from '../../../core/data/paginated-list.model';
 
-import { PaginatedList } from '../../../core/data/paginated-list';
 import { RemoteData } from '../../../core/data/remote-data';
 import { RequestService } from '../../../core/data/request.service';
 import { EPersonDataService } from '../../../core/eperson/eperson-data.service';

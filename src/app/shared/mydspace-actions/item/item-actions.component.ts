@@ -15,7 +15,7 @@ import { FeatureID } from '../../../core/data/feature-authorization/feature-id';
 import { map, switchMap, take } from 'rxjs/operators';
 import { Relationship } from '../../../core/shared/item-relationships/relationship.model';
 import { RelationshipService } from '../../../core/data/relationship.service';
-import { PaginatedList } from '../../../core/data/paginated-list';
+import { PaginatedList } from '../../../core/data/paginated-list.model';
 import { getFirstSucceededRemoteDataPayload } from '../../../core/shared/operators';
 import { Observable } from 'rxjs/internal/Observable';
 import { of } from 'rxjs/internal/observable/of';

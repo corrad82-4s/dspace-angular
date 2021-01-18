@@ -1,3 +1,4 @@
+import { hasSucceeded } from './../../core/data/request.reducer';
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 
 import { BehaviorSubject, Observable, Subscription } from 'rxjs';
@@ -16,6 +17,7 @@ import { hasValue, isNotEmpty } from '../../shared/empty.util';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { NotificationsService } from '../../shared/notifications/notifications.service';
 import { TranslateService } from '@ngx-translate/core';
+import { RemoteData } from 'src/app/core/data/remote-data';
 
 export const EPERSON_GRANTED_METADATA = 'perucris.oidc.granted';
 export const EPERSON_REJECT_METADATA = 'perucris.oidc.reject';
@@ -176,8 +178,8 @@ export class ProfilePageGrantedApplicationsComponent implements OnInit, OnDestro
 
     this.epersonService.patch(this.user, operations).pipe(
       take(1)
-    ).subscribe((response: RestResponse) => {
-      if (response.isSuccessful) {
+    ).subscribe((response: RemoteData<EPerson>) => {
+      if (response.hasSucceeded) {
         const newMetadataList = this.grantedMetadataValues$.value
           .filter((metadata: MetadataValue) => metadata.place !== place);
         this.grantedMetadataValues$.next(newMetadataList);

@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { ChangeDetectorRef, NO_ERRORS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, inject, TestBed } from '@angular/core/testing';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, By } from '@angular/platform-browser';
 import { RouterTestingModule } from '@angular/router/testing';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { Store } from '@ngrx/store';
@@ -16,10 +16,8 @@ import { InstitutionalRoleGroupMock, InstitutionalScopedRoleGroupMock, Instituti
 import { AuthService } from '../../../../core/auth/auth.service';
 import { RemoteDataBuildService } from '../../../../core/cache/builders/remote-data-build.service';
 import { ObjectCacheService } from '../../../../core/cache/object-cache.service';
-import { RestResponse } from '../../../../core/cache/response.models';
 import { DSOChangeAnalyzer } from '../../../../core/data/dso-change-analyzer.service';
 import { AuthorizationDataService } from '../../../../core/data/feature-authorization/authorization-data.service';
-import { PaginatedList } from '../../../../core/data/paginated-list';
 import { PaginatedList, buildPaginatedList } from '../../../../core/data/paginated-list.model';
 import { RemoteData } from '../../../../core/data/remote-data';
 import { FindListOptions } from '../../../../core/data/request.models';
@@ -115,13 +113,13 @@ describe('EPersonFormComponent', () => {
     groupDataServiceStub = {
       searchGroups(query: string): Observable<RemoteData<PaginatedList<Group>>> {
         if (query === 'ROLE:') {
-          return createSuccessfulRemoteDataObject$(new PaginatedList(new PageInfo(), [RoleGroupMock, RoleGroupMock2]));
+          return createSuccessfulRemoteDataObject$(buildPaginatedList(new PageInfo(), [RoleGroupMock, RoleGroupMock2]));
         } else {
-          return createSuccessfulRemoteDataObject$(new PaginatedList(new PageInfo(), [InstitutionalRoleGroupMock]));
+          return createSuccessfulRemoteDataObject$(buildPaginatedList(new PageInfo(), [InstitutionalRoleGroupMock]));
         }
       },
       findAllByHref(href: string): Observable<RemoteData<PaginatedList<Group>>> {
-        return createSuccessfulRemoteDataObject$(new PaginatedList(new PageInfo(), [InstitutionalScopedRoleGroupMock, InstitutionalScopedRoleGroupMock2]));
+        return createSuccessfulRemoteDataObject$(buildPaginatedList(new PageInfo(), [InstitutionalScopedRoleGroupMock, InstitutionalScopedRoleGroupMock2]));
       },
       getGroupRegistryRouterLink(): string {
         return '';
