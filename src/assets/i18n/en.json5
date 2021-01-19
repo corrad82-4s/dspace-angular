@@ -1315,6 +1315,8 @@
 
   "context-menu.actions.bulk-import.btn": "Import items into collection",
 
+  "context-menu.actions.claim.btn": "Claim this profile",
+
   "context-menu.actions.export-item.btn": "Export",
 
   "context-menu.actions.label": "Options",
