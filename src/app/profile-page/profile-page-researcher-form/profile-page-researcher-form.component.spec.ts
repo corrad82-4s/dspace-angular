@@ -14,8 +14,6 @@ import { RouterStub } from 'src/app/shared/testing/router.stub';
 import { VarDirective } from 'src/app/shared/utils/var.directive';
 import { ProfileClaimService } from '../profile-claim/profile-claim.service';
 import { ProfilePageResearcherFormComponent } from './profile-page-researcher-form.component';
-import { ClaimItemSelectorComponent } from 'src/app/shared/dso-selector/modal-wrappers/claim-item-selector/claim-item-selector.component';
-import { NgModule } from '@angular/core';
 
 describe('ProfilePageResearcherFormComponent', () => {
 
@@ -32,13 +30,6 @@ describe('ProfilePageResearcherFormComponent', () => {
 
     let modalService: NgbModal;
 
-//     @NgModule({
-//         declarations: [ClaimItemSelectorComponent],
-//         entryComponents: [
-//             ClaimItemSelectorComponent,
-//         ]
-//       })
-//       class TestModule {}
 
     function init() {
         router = new RouterStub();
@@ -66,7 +57,7 @@ describe('ProfilePageResearcherFormComponent', () => {
         });
 
         modalService = jasmine.createSpyObj('NgbModal', {
-            open: null
+            open: {componentInstance: {}}
         })
 
     }
@@ -79,11 +70,12 @@ describe('ProfilePageResearcherFormComponent', () => {
           providers: [
             { provide: ResearcherProfileService, useValue: researcherProfileService },
             { provide: Router, useValue: router},
-            { provide: ProfileClaimService, useValue: profileClaimService}
+            { provide: ProfileClaimService, useValue: profileClaimService},
+            { provide: NgbModal, useValue: modalService}
           ],
           schemas: [NO_ERRORS_SCHEMA]
-        }).compileComponents();
-      }));
+        })
+    }));
 
     beforeEach(() => {
         fixture = TestBed.createComponent(ProfilePageResearcherFormComponent);
@@ -140,8 +132,7 @@ describe('ProfilePageResearcherFormComponent', () => {
 
     });
 
-    // FIXME : fix component injection
-    xdescribe('claimProfile', () => {
+    describe('claimProfile', () => {
         it('should open modal', () => {
             component.claim();
             expect(modalService.open).toHaveBeenCalledTimes(1);
