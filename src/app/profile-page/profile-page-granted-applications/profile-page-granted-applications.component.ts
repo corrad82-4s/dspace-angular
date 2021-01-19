@@ -1,3 +1,4 @@
+import { getFirstCompletedRemoteData, getFirstSucceededRemoteData } from './../../core/shared/operators';
 import { hasSucceeded } from './../../core/data/request.reducer';
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 
@@ -177,7 +178,7 @@ export class ProfilePageGrantedApplicationsComponent implements OnInit, OnDestro
     ];
 
     this.epersonService.patch(this.user, operations).pipe(
-      take(1)
+      getFirstCompletedRemoteData(),
     ).subscribe((response: RemoteData<EPerson>) => {
       if (response.hasSucceeded) {
         const newMetadataList = this.grantedMetadataValues$.value

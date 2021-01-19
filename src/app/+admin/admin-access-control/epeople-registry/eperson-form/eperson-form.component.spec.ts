@@ -123,6 +123,9 @@ describe('EPersonFormComponent', () => {
       },
       getGroupRegistryRouterLink(): string {
         return '';
+      },
+      getGroupEditPageRouterLink(): string {
+        return '';
       }
     };
 

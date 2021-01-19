@@ -124,16 +124,7 @@ export class ResearcherProfileService {
       })
     ).subscribe();
 
-    return this.requestService.getByUUID(requestId).pipe(
-      find((request: RequestEntry) => hasCompleted(request.state)),
-      getResponseFromEntry(),
-      map((response: any) => {
-        if (isNotEmpty(response.resourceSelfLinks)) {
-          return response.resourceSelfLinks[0];
-        }
-      }),
-      switchMap((selfLink: string) => this.dataService.findByHref(selfLink))
-    );
+    return this.rdbService.buildFromRequestUUID(requestId);
   }
 
     /**

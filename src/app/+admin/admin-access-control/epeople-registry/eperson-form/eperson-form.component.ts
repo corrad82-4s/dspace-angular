@@ -271,14 +271,44 @@ export class EPersonFormComponent implements OnInit, OnDestroy {
             name: 'requireCertificate',
             value: (this.epersonInitial != null ? this.epersonInitial.requireCertificate : false)
           });
+      this.institutionalScopedRoles = [];
+
+      for (const institutionalRole of institutionalRoles) {
+        const checkboxGroupModel = new DynamicCheckboxGroupModel({
+          id: institutionalRole.name,
+          label: institutionalRole.name,
+          name: institutionalRole.name,
+          group: this.initDynamicCheckboxModels(institutionalRole.scopes, rolesNoAvailable)
+        });
+
+        this.institutionalScopedRoles.push( checkboxGroupModel );
+        this.formLayout[institutionalRole.name] = { grid: { host: 'row' } };
+
+        if (eperson != null) {
+          const epersonRoles = eperson.allMetadata('perucris.eperson.institutional-scoped-role');
+          for (const checkboxModel of checkboxGroupModel.group) {
+            for (const epersonRole of epersonRoles) {
+              if ( checkboxModel.id === epersonRole.authority ) {
+                checkboxModel.value = true;
+              }
+            }
+          }
+        }
+      }
+
       this.formModel = [
         this.firstName,
         this.lastName,
         this.email,
+        this.roles,
+        ...this.institutionalScopedRoles,
         this.canLogIn,
         this.requireCertificate,
       ];
       this.formGroup = this.formBuilderService.createFormGroup(this.formModel);
+      if (!(this.changeDetectorRef as ViewRef).destroyed) {
+        this.changeDetectorRef.detectChanges();
+      }
       this.subs.push(this.epersonService.getActiveEPerson().subscribe((eperson: EPerson) => {
         if (eperson != null) {
           this.groups = this.groupsDataService.findAllByHref(eperson._links.groups.href, {
@@ -290,10 +320,28 @@ export class EPersonFormComponent implements OnInit, OnDestroy {
           firstName: eperson != null ? eperson.firstMetadataValue('eperson.firstname') : '',
           lastName: eperson != null ? eperson.firstMetadataValue('eperson.lastname') : '',
           email: eperson != null ? eperson.email : '',
+          roles: eperson != null ? this.initRoleValues(eperson, 'perucris.eperson.role') : {},
           canLogIn: eperson != null ? eperson.canLogIn : true,
           requireCertificate: eperson != null ? eperson.requireCertificate : false
         });
       }));
+
+      if (eperson != null) {
+        this.groups = this.groupsDataService.findAllByHref(eperson._links.groups.href, {
+          currentPage: 1,
+          elementsPerPage: this.config.pageSize
+        });
+
+        const epersonRoles = eperson.allMetadata('perucris.eperson.role');
+        for (const checkboxModel of this.roles.group) {
+          for (const epersonRole of epersonRoles) {
+            if ( checkboxModel.id === epersonRole.authority ) {
+              checkboxModel.value = true;
+            }
+          }
+        }
+      }
+
       this.canImpersonate$ = this.epersonService.getActiveEPerson().pipe(
           switchMap((eperson) => this.authorizationService.isAuthorized(FeatureID.LoginOnBehalfOf, hasValue(eperson) ? eperson.self : undefined))
       );

@@ -1,7 +1,7 @@
 import { DSpaceObject } from 'src/app/core/shared/dspace-object.model';
 import { SearchResult } from 'src/app/shared/search/search-result.model';
 import { createPaginatedList } from 'src/app/shared/testing/utils.test';
-import { PaginatedList } from 'src/app/core/data/paginated-list';
+import { PaginatedList } from 'src/app/core/data/paginated-list.model';
 import { getRemoteDataPayload } from './../../core/shared/operators';
 import { getAllSucceededRemoteDataPayload } from 'src/app/core/shared/operators';
 import { EPerson } from 'src/app/core/eperson/models/eperson.model';
@@ -51,39 +51,34 @@ xdescribe('ProfileClaimService', () => {
             })
         });
 
-        it('when identifier matches profile can be claimed', () => {
-        
-            const person = Object.assign(new SearchResult(), {uuid: 'test-uuid'})
-            const obj = new PaginatedList(new PageInfo(), [person]);
-            spyOn(searchService, 'search').and.returnValue(createSuccessfulRemoteDataObject$(obj))
-            
-            const canClaim$ = service.canClaimProfiles(ePerson);
-            canClaim$.subscribe((claimable: boolean) => expect(claimable).toBe(true));
-            
-            expect(searchService.search).toHaveBeenCalled();
-        })
+        // it('when identifier matches profile can be claimed', () => {
+
+            // const person = Object.assign(new SearchResult(), {uuid: 'test-uuid'})
+            // const obj = createPaginatedList([person]);
+            // spyOn(searchService, 'search').and.returnValue(createSuccessfulRemoteDataObject$(obj))
+
+            // const canClaim$ = service.canClaimProfiles(ePerson);
+            // canClaim$.subscribe((claimable: boolean) => expect(claimable).toBe(true));
+
+            // expect(searchService.search).toHaveBeenCalled();
+        // })
 
         describe('when identifier does not match', () => {
 
-            it('profile cannot be claimed', () => {
+            // it('profile cannot be claimed', () => {
 
-            })
+            // })
         })
     })
 
     describe('when person does not have an identifier', () => {
 
-        it('cannot claim profile', () => {
+        // it('cannot claim profile', () => {
 
-        })
+        // })
 
-        it('search is not performed', () => {
+        // it('search is not performed', () => {
 
-        })
+        // })
     })
-
-    it('foo', () => {
-        service.canClaimProfiles(eperson);
-    })
-});
 });

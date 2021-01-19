@@ -1,3 +1,5 @@
+import { NotificationsService } from 'src/app/shared/notifications/notifications.service';
+import { ResearcherProfileService } from './../core/profile/researcher-profile.service';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -42,7 +44,8 @@ const mockItem = Object.assign(new Item(), {
         value: testType
       }
     ]
-  }
+  },
+  _links: { self: { href: 'item-selflink' } }
 });
 
 const tabDataServiceMock: any = jasmine.createSpyObj('TabDataService', {
@@ -87,7 +90,9 @@ describe('CrisPageLoaderComponent', () => {
         { provide: Router, useValue: {} },
         { provide: ActivatedRoute, useValue: {} },
         { provide: ComponentFactoryResolver, useValue: {} },
-        { provide: ChangeDetectorRef, useValue: {} }
+        { provide: ChangeDetectorRef, useValue: {} },
+        { provide: ResearcherProfileService, useValue: {} },
+        { provide: NotificationsService, useValue: {} }
       ],
       schemas: [NO_ERRORS_SCHEMA]
     }).overrideComponent(CrisPageLoaderComponent, {

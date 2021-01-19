@@ -215,6 +215,16 @@ describe('GroupFormComponent', () => {
                 value: groupDescription
               }
             ],
+            'perucris.group.type': [
+              {
+                value: groupType
+              }
+            ],
+            'perucris.group.status': [
+              {
+                value: groupStatus
+              }
+        ]
           },
         });
         fixture.whenStable().then(() => {
