@@ -24,8 +24,6 @@ import { EditItem } from '../../core/submission/models/edititem.model';
 import { AuthorizationDataService } from '../../core/data/feature-authorization/authorization-data.service';
 import { AuthService } from '../../core/auth/auth.service';
 import { BoxDataService } from '../../core/layout/box-data.service';
-import {ResearcherProfileService} from '../../core/profile/researcher-profile.service';
-import {NotificationsService} from '../../shared/notifications/notifications.service';
 
 const testType = LayoutPage.DEFAULT;
 
@@ -73,19 +71,6 @@ const authServiceMock: any = jasmine.createSpyObj('AuthService', {
   isAuthenticated: jasmine.createSpy('isAuthenticated')
 });
 
-const researcherProfileServiceMock: any = jasmine.createSpyObj('ResearcherProfileService', {
-  createFromExternalSource: jasmine.createSpy('createFromExternalSources'),
-  findRelatedItemId: jasmine.createSpy('findRelatedItemId')
-});
-
-const routerMock: any = jasmine.createSpyObj('Router', {
-  navigateByUrl: jasmine.createSpy('navigateByUrl')
-});
-
-const notificationServiceMock: any = jasmine.createSpyObj('NotificationsService', {
-  navigateByUrl: jasmine.createSpy('navigateByUrl')
-});
-
 describe('CrisLayoutDefaultComponent', () => {
   let component: CrisLayoutDefaultComponent;
   let fixture: ComponentFixture<CrisLayoutDefaultComponent>;
@@ -110,9 +95,6 @@ describe('CrisLayoutDefaultComponent', () => {
         { provide: Router, useValue: {} },
         { provide: ActivatedRoute, useValue: {} },
         { provide: ComponentFactoryResolver, useValue: {} },
-        { provide: ResearcherProfileService, useValue: researcherProfileServiceMock },
-        { provide: Router, useValue: routerMock },
-        { provide: NotificationsService, useValue: notificationServiceMock },
         ChangeDetectorRef
       ],
       schemas: [NO_ERRORS_SCHEMA]

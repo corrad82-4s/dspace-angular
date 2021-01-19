@@ -1,12 +1,6 @@
 <div class="container">
   <div class="text-right">
     <ds-context-menu [contextMenuObject]="item" [contextMenuObjectType]="'ITEM'"></ds-context-menu>
-      <div class="btn-group">
-        <!-- FIXME: move this into context menu object  -->
-      <ng-container *ngIf="(isClaimable() | async) as claimable">
-        <button class="btn btn-success" (click)="claim()"><i class="fas fa-check"></i> Claim</button>
-      </ng-container>
-    </div> 
   </div>
   <div class="wrapper" [ngClass]="{'wrapper-close': !(isSideBarHidden() | async)}">
       <ds-cris-layout-default-sidebar
