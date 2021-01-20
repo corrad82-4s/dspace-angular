@@ -30,7 +30,6 @@ describe('ProfilePageResearcherFormComponent', () => {
 
     let modalService: NgbModal;
 
-
     function init() {
         router = new RouterStub();
 

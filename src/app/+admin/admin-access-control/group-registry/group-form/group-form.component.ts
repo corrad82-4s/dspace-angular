@@ -241,16 +241,16 @@ export class GroupFormComponent implements OnInit, OnDestroy {
         observableCombineLatest(
           this.groupDataService.getActiveGroup(),
           this.canEdit$
-        ).subscribe(([activeGroup, canEdit]) => {
-          if (activeGroup != null) {
-            this.groupBeingEdited = activeGroup;
+        ).subscribe(([ag, canEdit]) => {
+          if (ag != null) {
+            this.groupBeingEdited = ag;
             this.formGroup.patchValue({
-              groupName: activeGroup != null ? activeGroup.name : '',
-              groupDescription: activeGroup != null ? activeGroup.firstMetadataValue('dc.description') : '',
-              groupType: activeGroup != null && activeGroup.firstMetadataValue('perucris.group.type') != null ?
-                    activeGroup.firstMetadataValue('perucris.group.type') : 'NORMAL',
-              groupStatus: activeGroup != null && activeGroup.firstMetadataValue('perucris.group.status') != null ?
-                    activeGroup.firstMetadataValue('perucris.group.status') : 'ENABLED'
+              groupName: ag != null ? ag.name : '',
+              groupDescription: ag != null ? ag.firstMetadataValue('dc.description') : '',
+              groupType: ag != null && ag.firstMetadataValue('perucris.group.type') != null ?
+                    ag.firstMetadataValue('perucris.group.type') : 'NORMAL',
+              groupStatus: ag != null && ag.firstMetadataValue('perucris.group.status') != null ?
+                    ag.firstMetadataValue('perucris.group.status') : 'ENABLED'
             });
 
             if (activeGroup.permanent) {
