@@ -81,23 +81,36 @@ export class ItemActionsComponent extends MyDSpaceActionsComponent<Item, ItemDat
     if (this.canUpdate !== null) {
       return of(this.canUpdate);
     }
-    return this.authorizationService.isAuthorized(FeatureID.CanCorrectItem, this.object.self)
-      .pipe(
-        take(1),
-        switchMap((authorized) => {
-          if (!authorized) {
-            this.canUpdate = false;
-            return of(this.canUpdate);
-          }
-          return this.relationshipService.getItemRelationshipsByLabel(this.object, 'isCorrectionOfItem').pipe(
-            getFirstSucceededRemoteDataPayload(),
-            take(1),
-            map((value: PaginatedList<Relationship>) => {
-             this.canUpdate = value.totalElements === 0;
-             return this.canUpdate;
-            })
-          );
-        }));
+
+    return this.itemHasNotRelation('isWithdrawOfItem').pipe(
+      switchMap((hasNotWithdrawRelation) => {
+
+        if (!hasNotWithdrawRelation) {
+          this.canUpdate = false;
+          return of(this.canUpdate);
+        }
+
+        return this.authorizationService.isAuthorized(FeatureID.CanCorrectItem, this.object.self).pipe(
+          take(1),
+          switchMap((authorized) => {
+
+            if (!authorized) {
+              this.canUpdate = false;
+              return of(this.canUpdate);
+            }
+
+            return this.itemHasNotRelation('isCorrectionOfItem').pipe(
+              map((hasNotRelation: boolean) => {
+                this.canUpdate = hasNotRelation;
+                return this.canUpdate;
+              })
+            );
+
+          })
+        );
+
+      })
+    );
   }
 
   canBeWithdrawn(): Observable<boolean> {
@@ -111,13 +124,33 @@ export class ItemActionsComponent extends MyDSpaceActionsComponent<Item, ItemDat
       return of(this.canWithdraw);
     }
 
-    return this.relationshipService.getItemRelationshipsByLabel(this.object, 'isWithdrawOfItem').pipe(
-      getFirstSucceededRemoteDataPayload(),
-      take(1),
-      map((value: PaginatedList<Relationship>) => {
-        console.log(value);
-        this.canWithdraw = value.totalElements === 0;
-        return this.canWithdraw;
+    return this.itemHasNotRelation('isCorrectionOfItem').pipe(
+      switchMap((hasNotCorrectionRelation) => {
+
+        if (!hasNotCorrectionRelation) {
+          this.canWithdraw = false;
+          return of(this.canWithdraw);
+        }
+
+        return this.authorizationService.isAuthorized(FeatureID.CanWithdrawItem, this.object.self).pipe(
+          take(1),
+          switchMap((authorized) => {
+
+            if (!authorized) {
+              this.canWithdraw = false;
+              return of(this.canWithdraw);
+            }
+
+            return this.itemHasNotRelation('isWithdrawOfItem').pipe(
+              map((hasNotRelation: boolean) => {
+                this.canWithdraw = hasNotRelation;
+                return this.canWithdraw;
+              })
+            );
+
+          })
+        );
+
       })
     );
   }
@@ -136,8 +169,17 @@ export class ItemActionsComponent extends MyDSpaceActionsComponent<Item, ItemDat
     ).subscribe(() => {
       this.processingAction$.next(false);
       this.canWithdraw = false;
+      this.canUpdate = false;
       this.notificationService.success(this.translateService.get('submission.workflow.generic.withdraw.success'))
     })
+  }
+
+  itemHasNotRelation(relationship: string): Observable<boolean> {
+    return this.relationshipService.getItemRelationshipsByLabel(this.object, relationship).pipe(
+      getFirstSucceededRemoteDataPayload(),
+      take(1),
+      map((value: PaginatedList<Relationship>) => value.totalElements === 0 )
+    );
   }
 
 }
