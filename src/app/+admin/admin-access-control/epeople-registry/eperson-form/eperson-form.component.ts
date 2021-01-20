@@ -309,9 +309,9 @@ export class EPersonFormComponent implements OnInit, OnDestroy {
       if (!(this.changeDetectorRef as ViewRef).destroyed) {
         this.changeDetectorRef.detectChanges();
       }
-      this.subs.push(this.epersonService.getActiveEPerson().subscribe((eperson: EPerson) => {
-        if (eperson != null) {
-          this.groups = this.groupsDataService.findAllByHref(eperson._links.groups.href, {
+      this.subs.push(this.epersonService.getActiveEPerson().subscribe((ep: EPerson) => {
+        if (ep != null) {
+          this.groups = this.groupsDataService.findAllByHref(ep._links.groups.href, {
             currentPage: 1,
             elementsPerPage: this.config.pageSize
           });
