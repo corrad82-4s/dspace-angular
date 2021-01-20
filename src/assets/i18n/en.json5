@@ -2483,7 +2483,11 @@
 
   "item.preview.dc.relation.issn" : "ISSN",
 
+  "item.preview.oaire.citation.endPage" : "Citation end page",
+
   "item.preview.oaire.citation.issue" : "Issue",
+  
+  "item.preview.oaire.citation.startPage" : "Citation start page",
 
   "item.preview.oaire.citation.volume" : "Volume",
 
@@ -4059,6 +4063,8 @@
 
   "submission.import-external.source.loading": "Loading ...",
 
+  "submission.import-external.source.scielo": "Scielo",
+
   "submission.import-external.source.sherpaJournal": "SHERPA Journals",
 
   "submission.import-external.source.sherpaPublisher": "SHERPA Publishers",
@@ -4380,6 +4386,10 @@
   "submission.sections.describe.relationship-lookup.selection-tab.title.epo": "Search Results",
 
   "submission.sections.describe.relationship-lookup.selection-tab.title.scopus": "Search Results",
+
+  "submission.sections.describe.relationship-lookup.selection-tab.title.scielo": "Search Results",
+
+  "submission.sections.describe.relationship-lookup.selection-tab.title.wos": "Search Results",
 
   "submission.sections.describe.relationship-lookup.selection-tab.title.alicia": "Search Results",
 
