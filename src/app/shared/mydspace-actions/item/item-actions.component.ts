@@ -155,77 +155,11 @@ export class ItemActionsComponent extends MyDSpaceActionsComponent<Item, ItemDat
     );
   }
 
-  canBeWithdrawn(): Observable<boolean> {
-
-    if (this.canWithdraw !== null) {
-      return of(this.canWithdraw);
-    }
-
-    if (this.object.isWithdrawn) {
-      this.canWithdraw = false;
-      return of(this.canWithdraw);
-    }
-
-    return this.relationshipService.getItemRelationshipsByLabel(this.object, 'isWithdrawOfItem').pipe(
-      getFirstSucceededRemoteDataPayload(),
-      take(1),
-      map((value: PaginatedList<Relationship>) => {
-        console.log(value);
-        this.canWithdraw = value.totalElements === 0;
-        return this.canWithdraw;
-      })
-    );
-  }
-
-  canBeWithdrawn(): Observable<boolean> {
-
-    if (this.canWithdraw !== null) {
-      return of(this.canWithdraw);
-    }
-
-    if (this.object.isWithdrawn) {
-      this.canWithdraw = false;
-      return of(this.canWithdraw);
-    }
-
-    return this.relationshipService.getItemRelationshipsByLabel(this.object, 'isWithdrawOfItem').pipe(
-      getFirstSucceededRemoteDataPayload(),
-      take(1),
-      map((value: PaginatedList<Relationship>) => {
-        console.log(value);
-        this.canWithdraw = value.totalElements === 0;
-        return this.canWithdraw;
-      })
-    );
-  }
-
-  canBeWithdrawn(): Observable<boolean> {
-
-    if (this.canWithdraw !== null) {
-      return of(this.canWithdraw);
-    }
-
-    if (this.object.isWithdrawn) {
-      this.canWithdraw = false;
-      return of(this.canWithdraw);
-    }
-
-    return this.relationshipService.getItemRelationshipsByLabel(this.object, 'isWithdrawOfItem').pipe(
-      getFirstSucceededRemoteDataPayload(),
-      take(1),
-      map((value: PaginatedList<Relationship>) => {
-        console.log(value);
-        this.canWithdraw = value.totalElements === 0;
-        return this.canWithdraw;
-      })
-    );
-  }
-
   update() {
     this.submissionService.createSubmissionByItem(this.object.uuid, 'isCorrectionOfItem')
       .subscribe((submissionObject) => {
         this.router.navigate(['/workspaceitems/' + submissionObject.id + '/edit']);
-    });
+    })
   }
 
   withdraw() {
@@ -236,8 +170,8 @@ export class ItemActionsComponent extends MyDSpaceActionsComponent<Item, ItemDat
       this.processingAction$.next(false);
       this.canWithdraw = false;
       this.canUpdate = false;
-      this.notificationService.success(this.translateService.get('submission.workflow.generic.withdraw.success'));
-    });
+      this.notificationService.success(this.translateService.get('submission.workflow.generic.withdraw.success'))
+    })
   }
 
   itemHasNotRelation(relationship: string): Observable<boolean> {
@@ -246,39 +180,6 @@ export class ItemActionsComponent extends MyDSpaceActionsComponent<Item, ItemDat
       take(1),
       map((value: PaginatedList<Relationship>) => value.totalElements === 0 )
     );
-  }
-
-  withdraw() {
-    this.processingAction$.next(true);
-    this.submissionService.createSubmissionByItem(this.object.uuid, 'isWithdrawOfItem').pipe(
-      flatMap((submissionObject) => this.submissionService.depositSubmission(submissionObject._links.self.href))
-    ).subscribe(() => {
-      this.processingAction$.next(false);
-      this.canWithdraw = false;
-      this.notificationService.success(this.translateService.get('submission.workflow.generic.withdraw.success'))
-    })
-  }
-
-  withdraw() {
-    this.processingAction$.next(true);
-    this.submissionService.createSubmissionByItem(this.object.uuid, 'isWithdrawOfItem').pipe(
-      flatMap((submissionObject) => this.submissionService.depositSubmission(submissionObject._links.self.href))
-    ).subscribe(() => {
-      this.processingAction$.next(false);
-      this.canWithdraw = false;
-      this.notificationService.success(this.translateService.get('submission.workflow.generic.withdraw.success'))
-    })
-  }
-
-  withdraw() {
-    this.processingAction$.next(true);
-    this.submissionService.createSubmissionByItem(this.object.uuid, 'isWithdrawOfItem').pipe(
-      flatMap((submissionObject) => this.submissionService.depositSubmission(submissionObject._links.self.href))
-    ).subscribe(() => {
-      this.processingAction$.next(false);
-      this.canWithdraw = false;
-      this.notificationService.success(this.translateService.get('submission.workflow.generic.withdraw.success'))
-    })
   }
 
 }
