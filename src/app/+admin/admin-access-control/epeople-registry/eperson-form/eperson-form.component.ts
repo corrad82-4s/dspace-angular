@@ -449,7 +449,7 @@ export class EPersonFormComponent implements OnInit, OnDestroy {
     });
 
     const response = this.epersonService.updateEPerson(editedEperson);
-    response.pipe(take(1)).subscribe((rd: RemoteData<EPerson>) => {
+    response.pipe(getFirstSucceededRemoteData()).subscribe((rd: RemoteData<EPerson>) => {
       if (rd.hasSucceeded) {
         this.notificationsService.success(this.translateService.get(this.labelPrefix + 'notification.edited.success', { name: editedEperson.name }));
         this.submitForm.emit(editedEperson);

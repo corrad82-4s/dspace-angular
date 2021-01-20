@@ -19,7 +19,7 @@ import { RemoteData } from '../../../core/data/remote-data';
 import { PageInfo } from '../../../core/shared/page-info.model';
 import { createSuccessfulRemoteDataObject } from '../../../shared/remote-data.utils';
 import { FindListOptions } from '../../../core/data/request.models';
-import { getFirstSucceededRemoteDataPayload } from '../../../core/shared/operators';
+import { getFirstSucceededRemoteData, getFirstSucceededRemoteDataPayload } from '../../../core/shared/operators';
 import { HostWindowService } from '../../../shared/host-window.service';
 import { hasValue } from '../../../shared/empty.util';
 
@@ -174,7 +174,8 @@ export class SubmissionImportExternalSearchbarComponent implements OnInit, OnDes
           const paginatedListRD = createSuccessfulRemoteDataObject(paginatedList);
           return observableOf(paginatedListRD);
         }),
-        tap(() => this.sourceListLoading = false)
+        tap(() => this.sourceListLoading = false),
+        getFirstSucceededRemoteData()
       ).subscribe((externalSource: RemoteData<PaginatedList<ExternalSource>>) => {
         externalSource.payload.page.forEach((element) => {
           this.sourceList.push({ id: element.id, name: element.name });

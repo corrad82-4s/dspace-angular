@@ -1,3 +1,4 @@
+import { getFirstSucceededRemoteDataPayload } from './../../../core/shared/operators';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -143,7 +144,7 @@ export class EPeopleRegistryComponent implements OnInit, OnDestroy {
     this.subs.push(this.epersonService.searchByScope(this.currentSearchScope, this.currentSearchQuery, {
       currentPage: this.config.currentPage,
       elementsPerPage: this.config.pageSize
-    }).subscribe((peopleRD) => {
+    }).pipe(getFirstCompletedRemoteData()).subscribe((peopleRD) => {
         this.ePeople$.next(peopleRD);
         this.pageInfoState$.next(peopleRD.payload.pageInfo);
       }
