@@ -104,6 +104,7 @@ describe('ItemActionsComponent', () => {
     component = fixture.componentInstance;
     component.object = mockObject;
     component.canUpdate = false;
+    component.canWithdraw = false;
     fixture.detectChanges();
   });
 

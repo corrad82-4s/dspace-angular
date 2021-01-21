@@ -6,6 +6,17 @@
 
 <button
   ngbTooltip="{{'mydspace.update-btn.help' | translate}}"
-  *ngIf="(canBeCorrected() | async)" class="btn btn-primary mt-1 mb-3" (click)="update()">
+  *ngIf="(canBeCorrected() | async)" class="btn btn-primary mt-1 mb-3" (click)="update()"
+  [disabled]="(processingAction$ | async)">
   {{ 'mydspace.update-btn' | translate }}
+</button>
+
+<button
+  *ngIf="(canBeWithdrawn() | async)" 
+  class="btn btn-danger mt-1 mb-3" 
+  ngbTooltip="{{'submission.workflow.generic.withdraw-help' | translate}}" 
+  [disabled]="(processingAction$ | async)"
+  (click)="withdraw()">
+  <span *ngIf="(processingAction$ | async)"><i class='fas fa-circle-notch fa-spin'></i> {{'submission.workflow.generic.processing' | translate}}</span>
+  <span *ngIf="!(processingAction$ | async)"><i class="fa fa-trash"></i> {{"submission.workflow.generic.withdraw" | translate}}</span>
 </button>
