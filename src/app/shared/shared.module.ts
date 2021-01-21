@@ -240,6 +240,7 @@ import { ChartsModule } from '../charts/charts.module';
 import { ClaimItemSelectorComponent } from './dso-selector/modal-wrappers/claim-item-selector/claim-item-selector.component';
 import { ClaimedTaskActionsAssignComponent } from './mydspace-actions/claimed-task/assign/claimed-task-actions-assign.component';
 import { SearchChartFilterComponent } from './search/search-charts/search-chart/search-chart-filter/search-chart-filter.component';
+import { VocabularyExternalSourceComponent } from './vocabulary-external-source/vocabulary-external-source.component';
 
 /**
  * Declaration needed to make sure all decorator functions are called in time
@@ -462,7 +463,8 @@ const COMPONENTS = [
   SearchChartLineComponent,
   SearchChartFilterWrapperComponent,
   SearchChartComponent,
-  SearchChartFilterComponent
+  SearchChartFilterComponent,
+  VocabularyExternalSourceComponent
 ];
 
 const ENTRY_COMPONENTS = [
@@ -560,7 +562,8 @@ const ENTRY_COMPONENTS = [
   SearchChartLineComponent,
   SearchChartFilterWrapperComponent,
   SearchChartComponent,
-  SearchChartFilterComponent
+  SearchChartFilterComponent,
+  VocabularyExternalSourceComponent
 ];
 
 const SHARED_ITEM_PAGE_COMPONENTS = [

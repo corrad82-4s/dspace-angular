@@ -3,7 +3,7 @@ import { FormGroup } from '@angular/forms';
 
 import { Observable, of as observableOf } from 'rxjs';
 import { catchError, distinctUntilChanged, map, tap } from 'rxjs/operators';
-import { NgbDropdown } from '@ng-bootstrap/ng-bootstrap';
+import { NgbDropdown, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { DynamicFormLayoutService, DynamicFormValidationService } from '@ng-dynamic-forms/core';
 
 import { VocabularyEntry } from '../../../../../../core/submission/vocabularies/models/vocabulary-entry.model';
@@ -19,6 +19,7 @@ import {
 import { DsDynamicVocabularyComponent } from '../dynamic-vocabulary.component';
 import { FormFieldMetadataValueObject } from '../../../models/form-field-metadata-value.model';
 import { FormBuilderService } from '../../../form-builder.service';
+import { SubmissionService } from '../../../../../../submission/submission.service';
 
 /**
  * Component representing a dropdown input field
@@ -46,9 +47,11 @@ export class DsDynamicScrollableDropdownComponent extends DsDynamicVocabularyCom
               protected cdr: ChangeDetectorRef,
               protected layoutService: DynamicFormLayoutService,
               protected validationService: DynamicFormValidationService,
-              protected formBuilderService: FormBuilderService
+              protected formBuilderService: FormBuilderService,
+              protected modalService: NgbModal,
+              protected submissionService: SubmissionService
   ) {
-    super(vocabularyService, layoutService, validationService, formBuilderService);
+    super(vocabularyService, layoutService, validationService, formBuilderService, modalService, submissionService);
   }
 
   /**
