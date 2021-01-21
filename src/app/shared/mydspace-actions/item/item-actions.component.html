@@ -8,7 +8,8 @@
   ngbTooltip="{{'mydspace.update-btn.help' | translate}}"
   *ngIf="(canBeCorrected() | async)" class="btn btn-primary mt-1 mb-3" (click)="update()"
   [disabled]="(processingAction$ | async)">
-  {{ 'mydspace.update-btn' | translate }}
+  <span *ngIf="(processingUpdate$ | async)"><i class='fas fa-circle-notch fa-spin'></i> {{'submission.workflow.generic.processing' | translate}}</span>
+  <span *ngIf="!(processingUpdate$ | async)"><i class="fa fa-edit"></i> {{ 'mydspace.update-btn' | translate }}</span>
 </button>
 
 <button
@@ -17,6 +18,16 @@
   ngbTooltip="{{'submission.workflow.generic.withdraw-help' | translate}}" 
   [disabled]="(processingAction$ | async)"
   (click)="withdraw()">
-  <span *ngIf="(processingAction$ | async)"><i class='fas fa-circle-notch fa-spin'></i> {{'submission.workflow.generic.processing' | translate}}</span>
-  <span *ngIf="!(processingAction$ | async)"><i class="fa fa-trash"></i> {{"submission.workflow.generic.withdraw" | translate}}</span>
+  <span *ngIf="(processingWithdraw$ | async)"><i class='fas fa-circle-notch fa-spin'></i> {{'submission.workflow.generic.processing' | translate}}</span>
+  <span *ngIf="!(processingWithdraw$ | async)"><i class="fa fa-trash"></i> {{"submission.workflow.generic.withdraw" | translate}}</span>
+</button>
+
+<button
+  *ngIf="(canBeReinstate() | async)" 
+  class="btn btn-success mt-1 mb-3" 
+  ngbTooltip="{{'submission.workflow.generic.reinstate-help' | translate}}" 
+  [disabled]="(processingAction$ | async)"
+  (click)="reinstate()">
+  <span *ngIf="(processingReinstate$ | async)"><i class='fas fa-circle-notch fa-spin'></i> {{'submission.workflow.generic.processing' | translate}}</span>
+  <span *ngIf="!(processingReinstate$ | async)"><i class="fa fa-trash-restore"></i> {{"submission.workflow.generic.reinstate" | translate}}</span>
 </button>

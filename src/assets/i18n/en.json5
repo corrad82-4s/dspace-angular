@@ -4569,6 +4569,12 @@
 
   "submission.workflow.generic.processing": "Processing",
 
+  "submission.workflow.generic.reinstate": "Reinstate",
+
+  "submission.workflow.generic.reinstate-help": "Select this option to request the item reinstatement.",
+
+  "submission.workflow.generic.reinstate.success": "Reinstate request made successfully",
+
   "submission.workflow.generic.view": "View",
 
   "submission.workflow.generic.view-help": "Select this option to view the item's metadata.",

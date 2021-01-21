@@ -41,7 +41,15 @@ export class ItemActionsComponent extends MyDSpaceActionsComponent<Item, ItemDat
 
   canWithdraw: boolean = null;
 
+  canReinstate: boolean = null;
+
   public processingAction$ = new BehaviorSubject<boolean>(false);
+
+  public processingUpdate$ = new BehaviorSubject<boolean>(false);
+
+  public processingWithdraw$ = new BehaviorSubject<boolean>(false);
+
+  public processingReinstate$ = new BehaviorSubject<boolean>(false);
 
   /**
    * Initialize instance variables
@@ -82,10 +90,9 @@ export class ItemActionsComponent extends MyDSpaceActionsComponent<Item, ItemDat
       return of(this.canUpdate);
     }
 
-    return this.itemHasNotRelation('isWithdrawOfItem').pipe(
-      switchMap((hasNotWithdrawRelation) => {
-
-        if (!hasNotWithdrawRelation) {
+    return this.itemHasPendingRequest().pipe(
+      switchMap((hasPendingRequest) => {
+        if (hasPendingRequest) {
           this.canUpdate = false;
           return of(this.canUpdate);
         }
@@ -93,19 +100,8 @@ export class ItemActionsComponent extends MyDSpaceActionsComponent<Item, ItemDat
         return this.authorizationService.isAuthorized(FeatureID.CanCorrectItem, this.object.self).pipe(
           take(1),
           switchMap((authorized) => {
-
-            if (!authorized) {
-              this.canUpdate = false;
-              return of(this.canUpdate);
-            }
-
-            return this.itemHasNotRelation('isCorrectionOfItem').pipe(
-              map((hasNotRelation: boolean) => {
-                this.canUpdate = hasNotRelation;
-                return this.canUpdate;
-              })
-            );
-
+            this.canUpdate = authorized
+            return of(this.canUpdate);
           })
         );
 
@@ -124,10 +120,10 @@ export class ItemActionsComponent extends MyDSpaceActionsComponent<Item, ItemDat
       return of(this.canWithdraw);
     }
 
-    return this.itemHasNotRelation('isCorrectionOfItem').pipe(
-      switchMap((hasNotCorrectionRelation) => {
+    return this.itemHasPendingRequest().pipe(
+      switchMap((hasPendingRequest) => {
 
-        if (!hasNotCorrectionRelation) {
+        if (hasPendingRequest) {
           this.canWithdraw = false;
           return of(this.canWithdraw);
         }
@@ -135,19 +131,39 @@ export class ItemActionsComponent extends MyDSpaceActionsComponent<Item, ItemDat
         return this.authorizationService.isAuthorized(FeatureID.CanWithdrawItem, this.object.self).pipe(
           take(1),
           switchMap((authorized) => {
+            this.canWithdraw = authorized
+            return of(this.canWithdraw);
+          })
+        );
 
-            if (!authorized) {
-              this.canWithdraw = false;
-              return of(this.canWithdraw);
-            }
+      })
+    );
+  }
 
-            return this.itemHasNotRelation('isWithdrawOfItem').pipe(
-              map((hasNotRelation: boolean) => {
-                this.canWithdraw = hasNotRelation;
-                return this.canWithdraw;
-              })
-            );
+  canBeReinstate(): Observable<boolean> {
 
+    if (this.canReinstate !== null) {
+      return of(this.canReinstate);
+    }
+
+    if (!this.object.isWithdrawn) {
+      this.canReinstate = false;
+      return of(this.canReinstate);
+    }
+
+    return this.itemHasPendingRequest().pipe(
+      switchMap((hasPendingRequest) => {
+
+        if (hasPendingRequest) {
+          this.canReinstate = false;
+          return of(this.canReinstate);
+        }
+
+        return this.authorizationService.isAuthorized(FeatureID.CanReinstateItem, this.object.self).pipe(
+          take(1),
+          switchMap((authorized) => {
+            this.canReinstate = authorized
+            return of(this.canReinstate);
           })
         );
 
@@ -156,29 +172,74 @@ export class ItemActionsComponent extends MyDSpaceActionsComponent<Item, ItemDat
   }
 
   update() {
+    this.processingUpdate$.next(true);
+    this.processingAction$.next(true);
     this.submissionService.createSubmissionByItem(this.object.uuid, 'isCorrectionOfItem')
       .subscribe((submissionObject) => {
+        this.processingUpdate$.next(false);
+        this.processingAction$.next(false);
+        this.canWithdraw = false;
+        this.canUpdate = false;
+        this.canReinstate = false;
         this.router.navigate(['/workspaceitems/' + submissionObject.id + '/edit']);
     })
   }
 
   withdraw() {
+    this.processingWithdraw$.next(true);
     this.processingAction$.next(true);
     this.submissionService.createSubmissionByItem(this.object.uuid, 'isWithdrawOfItem').pipe(
       flatMap((submissionObject) => this.submissionService.depositSubmission(submissionObject._links.self.href))
     ).subscribe(() => {
+      this.processingWithdraw$.next(false);
       this.processingAction$.next(false);
       this.canWithdraw = false;
       this.canUpdate = false;
+      this.canReinstate = false;
       this.notificationService.success(this.translateService.get('submission.workflow.generic.withdraw.success'))
     })
   }
 
-  itemHasNotRelation(relationship: string): Observable<boolean> {
+  reinstate() {
+    this.processingReinstate$.next(true);
+    this.processingAction$.next(true);
+    this.submissionService.createSubmissionByItem(this.object.uuid, 'isReinstatementOfItem').pipe(
+      flatMap((submissionObject) => this.submissionService.depositSubmission(submissionObject._links.self.href))
+    ).subscribe(() => {
+      this.processingReinstate$.next(false);
+      this.processingAction$.next(false);
+      this.canWithdraw = false;
+      this.canUpdate = false;
+      this.canReinstate = false;
+      this.notificationService.success(this.translateService.get('submission.workflow.generic.reinstate.success'))
+    })
+  }
+
+  itemHasPendingRequest(): Observable<boolean> {
+    return this.itemHasRelation('isCorrectionOfItem').pipe(
+      switchMap((hasCorrectionRelation) => {
+        if (hasCorrectionRelation) {
+          return of(true);
+        }
+
+        return this.itemHasRelation('isWithdrawOfItem').pipe(
+          switchMap((hasWithdrawRelation) => {
+            if (hasWithdrawRelation) {
+              return of(true);
+            }
+
+            return this.itemHasRelation('isReinstatementOfItem');
+          })
+        )
+      })
+    );
+  }
+
+  itemHasRelation(relationship: string): Observable<boolean> {
     return this.relationshipService.getItemRelationshipsByLabel(this.object, relationship).pipe(
       getFirstSucceededRemoteDataPayload(),
       take(1),
-      map((value: PaginatedList<Relationship>) => value.totalElements === 0 )
+      map((value: PaginatedList<Relationship>) => value.totalElements !== 0 )
     );
   }
 
