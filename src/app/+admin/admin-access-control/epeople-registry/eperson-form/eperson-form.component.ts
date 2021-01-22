@@ -285,16 +285,16 @@ export class EPersonFormComponent implements OnInit, OnDestroy {
         this.institutionalScopedRoles.push( checkboxGroupModel );
         this.formLayout[institutionalRole.name] = { grid: { host: 'row' } };
 
-//         if (eperson != null) {
-//           const epersonRoles = eperson.allMetadata('perucris.eperson.institutional-scoped-role');
-//           for (const checkboxModel of checkboxGroupModel.group) {
-//             for (const epersonRole of epersonRoles) {
-//               if ( checkboxModel.id === epersonRole.authority ) {
-//                 checkboxModel.value = true;
-//               }
-//             }
-//           }
-//         }
+         if (eperson != null) {
+           const epersonRoles = eperson.allMetadata('perucris.eperson.institutional-scoped-role');
+           for (const checkboxModel of checkboxGroupModel.group) {
+             for (const epersonRole of epersonRoles) {
+               if ( checkboxModel.id === epersonRole.authority ) {
+                 checkboxModel.value = true;
+               }
+             }
+           }
+         }
       }
 
       this.formModel = [
@@ -316,15 +316,6 @@ export class EPersonFormComponent implements OnInit, OnDestroy {
             currentPage: 1,
             elementsPerPage: this.config.pageSize
           });
-
-          const institutionalRoles = ep.allMetadata('perucris.eperson.institutional-scoped-role');
-          for (const checkboxModel of checkboxGroupModel.group) {
-            for (const epersonRole of institutionalRoles) {
-              if ( checkboxModel.id === epersonRole.authority ) {
-                checkboxModel.value = true;
-              }
-            }
-          }
 
           const epersonRoles = ep.allMetadata('perucris.eperson.role');
           for (const checkboxModel of this.roles.group) {
@@ -601,13 +592,13 @@ export class EPersonFormComponent implements OnInit, OnDestroy {
         }
       }),
       map( (groups) => {
-        return { name: institutionalRole.name, scopes: groups }
+        return { name: institutionalRole.name, scopes: groups };
       })
-    )
+    );
   }
 
   private initRoleValues(eperson: EPerson, roleMetadata: string) {
-    const roleValues = {}
+    const roleValues = {};
     eperson.allMetadata(roleMetadata)
       .forEach((metadata) => roleValues[metadata.authority] = true);
     return roleValues;

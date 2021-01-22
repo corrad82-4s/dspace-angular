@@ -145,7 +145,7 @@ export class CollectionPageComponent implements OnInit {
         } else {
           this.notificationsService.error(this.translationService.get('collection-export.error'));
         }
-      })
+      });
   }
 
   private navigateToProcesses() {

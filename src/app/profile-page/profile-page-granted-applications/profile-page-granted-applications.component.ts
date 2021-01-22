@@ -135,7 +135,7 @@ export class ProfilePageGrantedApplicationsComponent implements OnInit, OnDestro
    */
   ngOnDestroy(): void {
     if (hasValue(this.sub)) {
-      this.sub.unsubscribe()
+      this.sub.unsubscribe();
     }
   }
 
@@ -157,7 +157,7 @@ export class ProfilePageGrantedApplicationsComponent implements OnInit, OnDestro
         expireAt: parsedObj.expireAt,
         encodedValue: metadata.value,
         place: metadata.place
-      }
+      };
     });
 
     this.applicationList$.next(list);

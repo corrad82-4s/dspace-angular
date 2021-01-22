@@ -192,7 +192,7 @@ describe('ProfilePageGrantedApplicationsComponent', () => {
       encodedValue: '{\"id\":\"8071b18c-ad45-4172-b5f7-92589721e252\",\"clientName\":\"ClientName\",\"scopes\":\"pgc-role, email, openid, profile\",\"clientId\":\"3\"}',
       place: 4
     }
-  ]
+  ];
   const metadataList = Metadata.all(mockEPerson.metadata, EPERSON_GRANTED_METADATA);
 
   beforeEach(async(() => {
@@ -292,5 +292,5 @@ describe('ProfilePageGrantedApplicationsComponent', () => {
 
       expect(componentAsAny.notificationsService.error).toHaveBeenCalled();
     });
-  })
+  });
 });

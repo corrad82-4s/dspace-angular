@@ -26,7 +26,7 @@ xdescribe('ProfileClaimService', () => {
                 ProfileClaimService
             ],
         });
-        service = TestBed.get(ProfileClaimService);
+        service = TestBed.inject(ProfileClaimService);
 
         searchService = (service as any).searchService;
     });
@@ -48,7 +48,7 @@ xdescribe('ProfileClaimService', () => {
                         }
                     ]
                 }
-            })
+            });
         });
 
         // it('when identifier matches profile can be claimed', () => {
@@ -68,8 +68,8 @@ xdescribe('ProfileClaimService', () => {
             // it('profile cannot be claimed', () => {
 
             // })
-        })
-    })
+        });
+    });
 
     describe('when person does not have an identifier', () => {
 
@@ -80,5 +80,5 @@ xdescribe('ProfileClaimService', () => {
         // it('search is not performed', () => {
 
         // })
-    })
+    });
 });

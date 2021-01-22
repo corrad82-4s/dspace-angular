@@ -159,7 +159,7 @@ export class ItemActionsComponent extends MyDSpaceActionsComponent<Item, ItemDat
     this.submissionService.createSubmissionByItem(this.object.uuid, 'isCorrectionOfItem')
       .subscribe((submissionObject) => {
         this.router.navigate(['/workspaceitems/' + submissionObject.id + '/edit']);
-    })
+    });
   }
 
   withdraw() {
@@ -170,8 +170,8 @@ export class ItemActionsComponent extends MyDSpaceActionsComponent<Item, ItemDat
       this.processingAction$.next(false);
       this.canWithdraw = false;
       this.canUpdate = false;
-      this.notificationService.success(this.translateService.get('submission.workflow.generic.withdraw.success'))
-    })
+      this.notificationService.success(this.translateService.get('submission.workflow.generic.withdraw.success'));
+    });
   }
 
   itemHasNotRelation(relationship: string): Observable<boolean> {

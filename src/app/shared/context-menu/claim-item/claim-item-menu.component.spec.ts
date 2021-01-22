@@ -39,7 +39,7 @@ describe('ClaimItemMenuComponent', () => {
     });
     researcherProfileService = jasmine.createSpyObj('researcherProfileService', {
       createFromExternalSource: jasmine.createSpy('createFromExternalSource')
-    })
+    });
     TestBed.configureTestingModule({
       declarations: [ ClaimItemMenuComponent ],
       imports: [

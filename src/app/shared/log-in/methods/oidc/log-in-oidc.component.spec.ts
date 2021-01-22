@@ -1,6 +1,6 @@
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { async, ComponentFixture, inject, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, inject, TestBed, waitForAsync } from '@angular/core/testing';
 import { Store, StoreModule } from '@ngrx/store';
 import { TranslateModule } from '@ngx-translate/core';
 
@@ -43,7 +43,7 @@ describe('LogInOidcComponent', () => {
     };
   });
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     // refine the test module by declaring the test component
     TestBed.configureTestingModule({
       imports: [
@@ -99,7 +99,7 @@ describe('LogInOidcComponent', () => {
 
     component.redirectToOidc();
 
-    expect(setHrefSpy).toHaveBeenCalledWith(oidcBaseUrl + currentUrl)
+    expect(setHrefSpy).toHaveBeenCalledWith(oidcBaseUrl + currentUrl);
 
   });
 
@@ -114,7 +114,7 @@ describe('LogInOidcComponent', () => {
 
     component.redirectToOidc();
 
-    expect(setHrefSpy).toHaveBeenCalledWith(oidcBaseUrl + currentUrl)
+    expect(setHrefSpy).toHaveBeenCalledWith(oidcBaseUrl + currentUrl);
 
   });
 

@@ -3,6 +3,6 @@ export interface GrantedApplication {
   clientName: string;
   clientId: string;
   scopes: string[];
-  encodedValue: string,
-  place: number
+  encodedValue: string;
+  place: number;
 }

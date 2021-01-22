@@ -160,7 +160,7 @@ describe('ClaimedTaskActionsAssignComponent', () => {
       fixture.detectChanges();
       expect(component.assignForm.reset).toHaveBeenCalled();
       expect(component.modalRef).toBeDefined();
-      component.modalRef.close()
+      component.modalRef.close();
     });
 
   }));

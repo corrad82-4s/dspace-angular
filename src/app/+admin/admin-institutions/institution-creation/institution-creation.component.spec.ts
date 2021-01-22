@@ -73,7 +73,7 @@ describe('InstitutionCreationComponent', () => {
       expect(institutionService.createInstitution).toHaveBeenCalledWith('Institution Name');
       expect(notificationsService.success).toHaveBeenCalled();
       expect(router.navigateByUrl).toHaveBeenCalledWith('/admin/institutions/explore');
-    }))
+    }));
 
     it('should show an error notification if some errors occurs', fakeAsync(() => {
       jasmine.getEnv().allowRespy(true);
@@ -84,7 +84,7 @@ describe('InstitutionCreationComponent', () => {
       fixture.detectChanges();
       expect(institutionService.createInstitution).toHaveBeenCalledWith('Institution Name');
       expect(notificationsService.error).toHaveBeenCalled();
-    }))
+    }));
   });
 
 });

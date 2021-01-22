@@ -43,7 +43,7 @@ export class AuthNavMenuComponent implements OnInit {
 
   public sub: Subscription;
 
-  public onlyOidc: Observable<boolean>
+  public onlyOidc: Observable<boolean>;
 
   constructor(private store: Store<AppState>,
               private windowService: HostWindowService,
@@ -73,19 +73,19 @@ export class AuthNavMenuComponent implements OnInit {
     this.onlyOidc = this.store.pipe(
       select(getAuthenticationMethods),
       map((m: AuthMethod[]) => {
-        return (m.length === 1 && m[0].authMethodType === AuthMethodType.Oidc)
+        return (m.length === 1 && m[0].authMethodType === AuthMethodType.Oidc);
       })
-    )
+    );
   }
 
   redirectToOidc() {
     this.store.pipe(
       select(getAuthenticationMethods),
       mergeMap((methods: AuthMethod[]) => {
-        return methods.filter((m: AuthMethod) => m.authMethodType === AuthMethodType.Oidc)
+        return methods.filter((m: AuthMethod) => m.authMethodType === AuthMethodType.Oidc);
       }))
       .subscribe((m: AuthMethod) => {
         this._window.nativeWindow.location.href = m.location;
-      })
+      });
   }
 }

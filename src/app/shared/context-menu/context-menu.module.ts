@@ -33,7 +33,7 @@ const ENTRY_COMPONENTS = [
   ExportItemMenuComponent,
   ExportCollectionMenuComponent,
   ClaimItemMenuComponent
-]
+];
 
 const MODULE = [
   CommonModule,

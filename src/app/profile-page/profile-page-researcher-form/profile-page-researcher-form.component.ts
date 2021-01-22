@@ -40,7 +40,7 @@ export class ProfilePageResearcherFormComponent implements OnInit {
      */
     processingCreate$: BehaviorSubject<boolean>  = new BehaviorSubject<boolean>(false);
 
-    canClaim$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false)
+    canClaim$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
     constructor( protected researcherProfileService: ResearcherProfileService,
                  protected router: Router, private claimService: ProfileClaimService,
@@ -71,7 +71,7 @@ export class ProfilePageResearcherFormComponent implements OnInit {
         )
         .subscribe((canClaim: boolean) => {
             this.canClaim$.next(canClaim);
-        })
+        });
     }
 
     /**

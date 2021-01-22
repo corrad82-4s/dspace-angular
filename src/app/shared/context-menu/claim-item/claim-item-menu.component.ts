@@ -47,7 +47,7 @@ export class ClaimItemMenuComponent extends ContextMenuEntryComponent {
       .pipe(
         getFirstSucceededRemoteData(),
         mergeMap((rd: RemoteData<ResearcherProfile>) => {
-          return this.researcherProfileService.findRelatedItemId(rd.payload)
+          return this.researcherProfileService.findRelatedItemId(rd.payload);
         }))
       .subscribe((id: string) => {
         if (isNotUndefined(id)) {
@@ -55,11 +55,11 @@ export class ClaimItemMenuComponent extends ContextMenuEntryComponent {
         } else {
           this.notificationsService.error('researcherprofile.error.claim.title', 'researcherprofile.error.claim.body');
         }
-        })
+        });
   }
 
   isClaimable(): Observable<boolean> {
-    return this.authorizationService.isAuthorized(FeatureID.CanClaimItem, this.contextMenuObject.self)
+    return this.authorizationService.isAuthorized(FeatureID.CanClaimItem, this.contextMenuObject.self);
   }
 
 }

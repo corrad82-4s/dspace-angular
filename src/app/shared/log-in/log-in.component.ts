@@ -123,6 +123,6 @@ export class LogInComponent implements OnInit {
           this._window.nativeWindow.location.href = location;
         }
       }
-    )
+    );
   }
 }

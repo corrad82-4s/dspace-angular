@@ -39,7 +39,7 @@ export class ProfileClaimService {
 
   private lookup(query: string): Observable<RemoteData<PaginatedList<SearchResult<DSpaceObject>>>> {
     if (!hasValue(query)) {
-      return of(null)
+      return of(null);
     }
     return this.searchService.search(new PaginatedSearchOptions({
       configuration: 'eperson_claims',

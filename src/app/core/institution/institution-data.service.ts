@@ -48,11 +48,11 @@ export class InstitutionDataService {
     const href$ = this.communityDataService.getEndpoint();
     combineLatest([template$, href$, parentCommunity$]).pipe(
       map(([template, href, parentCommunity]: [Community, string, Community]) => {
-        const hrefWithParentAndName = `${href}?parent=${parentCommunity.id}&name=${name}`
+        const hrefWithParentAndName = `${href}?parent=${parentCommunity.id}&name=${name}`;
         return new PostRequest(requestId, hrefWithParentAndName, template.self, options);
       }),
       configureRequest(this.requestService)
-    ).subscribe()
+    ).subscribe();
 
     return this.fetchCreateResponse(requestId).pipe(
       getFinishedRemoteData(),
@@ -87,7 +87,7 @@ export class InstitutionDataService {
 
     return selfLink$.pipe(
       switchMap((selfLink: string) => this.communityDataService.findByHref(selfLink)),
-    )
+    );
   }
 
   /**

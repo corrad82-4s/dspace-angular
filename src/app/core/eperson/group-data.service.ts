@@ -348,7 +348,7 @@ export class GroupDataService extends DataService<Group> {
       return activeGroup != null && (activeGroup.firstMetadataValue('perucris.group.type') === 'ROLE' ||
         activeGroup.firstMetadataValue('perucris.group.type') === 'INSTITUTIONAL' ||
         activeGroup.firstMetadataValue('perucris.group.type') === 'SCOPED');
-    }))
+    }));
   }
 
   /**
@@ -357,6 +357,6 @@ export class GroupDataService extends DataService<Group> {
   public isActiveGroupEnabled(): Observable<boolean> {
     return this.getActiveGroup().pipe (map( (activeGroup) => {
       return activeGroup != null && ( !activeGroup.hasMetadata('perucris.group.status') || activeGroup.firstMetadataValue('perucris.group.status') === 'ENABLED');
-    }))
+    }));
   }
 }

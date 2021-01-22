@@ -1,6 +1,6 @@
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { Router } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
 import { TranslateModule } from '@ngx-translate/core';
@@ -57,11 +57,11 @@ describe('ProfilePageResearcherFormComponent', () => {
 
         modalService = jasmine.createSpyObj('NgbModal', {
             open: {componentInstance: {}}
-        })
+        });
 
     }
 
-    beforeEach(async(() => {
+    beforeEach(waitForAsync(() => {
         init();
         TestBed.configureTestingModule({
           declarations: [ProfilePageResearcherFormComponent, VarDirective],
@@ -73,7 +73,7 @@ describe('ProfilePageResearcherFormComponent', () => {
             { provide: NgbModal, useValue: modalService}
           ],
           schemas: [NO_ERRORS_SCHEMA]
-        })
+        });
     }));
 
     beforeEach(() => {
@@ -136,6 +136,6 @@ describe('ProfilePageResearcherFormComponent', () => {
             component.claim();
             expect(modalService.open).toHaveBeenCalledTimes(1);
         });
-    })
+    });
 
 });

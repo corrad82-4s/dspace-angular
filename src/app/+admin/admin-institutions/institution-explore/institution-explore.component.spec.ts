@@ -121,7 +121,7 @@ describe('InstitutionExploreComponent', () => {
     expect(firstInstitutionLink.nativeElement.textContent.trim()).toEqual('First Institution');
     const secondInstitutionLink = institutionList.children[2].children[0];
     expect(secondInstitutionLink.nativeElement.textContent.trim()).toEqual('Second Institution');
-  }))
+  }));
 
   describe('when clicking on one instituion', () => {
 
@@ -169,6 +169,6 @@ describe('InstitutionExploreComponent', () => {
       expect(secondRoleLink.nativeElement.href).toContain('/admin/access-control/groups/5453362');
     }));
 
-  })
+  });
 
 });
