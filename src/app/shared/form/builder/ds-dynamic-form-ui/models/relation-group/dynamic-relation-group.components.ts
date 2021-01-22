@@ -2,7 +2,7 @@ import { ChangeDetectorRef, Component, EventEmitter, Input, OnDestroy, OnInit, O
 import { FormGroup } from '@angular/forms';
 
 import { combineLatest, Observable, of as observableOf, Subscription } from 'rxjs';
-import { distinctUntilChanged, filter, flatMap, map, mergeMap, scan, take } from 'rxjs/operators';
+import { distinctUntilChanged, filter, map, mergeMap, scan, take } from 'rxjs/operators';
 import {
   DynamicFormControlComponent,
   DynamicFormControlModel,
@@ -70,7 +70,7 @@ export class DsDynamicRelationGroupComponent extends DynamicFormControlComponent
   private selectedChipItemIndex: number;
   private subs: Subscription[] = [];
 
-  @ViewChild('formRef', { static: false }) private formRef: FormComponent;
+  @ViewChild('formRef') private formRef: FormComponent;
 
   constructor(private vocabularyService: VocabularyService,
               private formBuilderService: FormBuilderService,
@@ -89,7 +89,7 @@ export class DsDynamicRelationGroupComponent extends DynamicFormControlComponent
     if (!this.model.isEmpty()) {
       this.formCollapsed = observableOf(true);
     }
-    this.model.valueUpdates.subscribe((value: any[]) => {
+    this.model.valueChanges.subscribe((value: any[]) => {
       if ((isNotEmpty(value) && !(value.length === 1 && hasOnlyEmptyProperties(value[0])))) {
         this.collapseForm();
       } else {
@@ -146,7 +146,7 @@ export class DsDynamicRelationGroupComponent extends DynamicFormControlComponent
 
         const nextValue = (this.formBuilderService.isInputModel(model) && isNotNull(value) && (typeof value !== 'string')) ?
           value.value : value;
-        model.valueUpdates.next(nextValue);
+        model.value = nextValue;
 
       });
     });
@@ -198,7 +198,7 @@ export class DsDynamicRelationGroupComponent extends DynamicFormControlComponent
       return this.vocabulary$.pipe(
         filter((vocabulary: Vocabulary) => isNotEmpty(vocabulary)),
         map((vocabulary: Vocabulary) => isNotEmpty(vocabulary.entity) && isNotEmpty(vocabulary.getExternalSourceByMetadata(this.model.mandatoryField)))
-      )
+      );
     } else {
       return observableOf(false);
     }
@@ -241,7 +241,7 @@ export class DsDynamicRelationGroupComponent extends DynamicFormControlComponent
     const currentValue: string = (model.value instanceof FormFieldMetadataValueObject
       || model.value instanceof VocabularyEntry) ? model.value.value : model.value;
     const valueWithAuthority: any = new FormFieldMetadataValueObject(currentValue, null, authority);
-    model.valueUpdates.next(valueWithAuthority);
+    model.value = valueWithAuthority;
     this.modifyChip();
     setTimeout(() => {
       this.submissionService.dispatchSave(this.model.submissionId);
@@ -315,12 +315,12 @@ export class DsDynamicRelationGroupComponent extends DynamicFormControlComponent
     if (this.model.isEmpty()) {
       this.initChips([]);
     } else {
-      initChipsValue$ = observableOf(this.model.value);
+      initChipsValue$ = observableOf(this.model.value as any[]);
 
       // If authority
       this.subs.push(initChipsValue$.pipe(
-        flatMap((valueModel) => {
-          const returnList: Array<Observable<any>> = [];
+        mergeMap((valueModel) => {
+          const returnList: Observable<any>[] = [];
           valueModel.forEach((valueObj) => {
             const returnObj = Object.keys(valueObj).map((fieldName) => {
               let return$: Observable<any>;
@@ -357,7 +357,7 @@ export class DsDynamicRelationGroupComponent extends DynamicFormControlComponent
                 )
               })
             )
-          )
+          );
         }),
         scan((acc: any[], valueObj: any) => {
           if (acc.length === 0) {
@@ -367,9 +367,9 @@ export class DsDynamicRelationGroupComponent extends DynamicFormControlComponent
           }
           return acc;
         }, []),
-        filter((modelValues: any[]) => this.model.value.length === modelValues.length)
+        filter((modelValues: any[]) => (this.model.value as any[]).length === modelValues.length)
       ).subscribe((modelValue) => {
-        this.model.valueUpdates.next(modelValue);
+        this.model.value = modelValue;
         this.initChips(modelValue);
         this.cdr.markForCheck();
       }));
@@ -389,7 +389,7 @@ export class DsDynamicRelationGroupComponent extends DynamicFormControlComponent
           // Does not emit change if model value is equal to the current value
           if (!isEqual(items, this.model.value)) {
             if (!(isEmpty(items) && this.model.isEmpty())) {
-              this.model.valueUpdates.next(items);
+              this.model.value = items;
               this.change.emit();
             }
           }

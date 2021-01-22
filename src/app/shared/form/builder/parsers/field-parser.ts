@@ -119,7 +119,7 @@ export abstract class FieldParser {
         this.configData.selectableMetadata[0].metadata,
         scope,
         this.configData.selectableMetadata[0].closed
-      )
+      );
     }
   }
 
@@ -230,7 +230,7 @@ export abstract class FieldParser {
       });
       fieldCount = counter;
     }
-    return (fieldCount === 0) ? 1 : fieldCount + 1
+    return (fieldCount === 0) ? 1 : fieldCount + 1;
   }
 
   protected getFieldId(): string {
@@ -280,7 +280,7 @@ export abstract class FieldParser {
     // Set label
     this.setLabel(controlModel, label);
     if (hint) {
-      controlModel.hint = this.configData.hints || '&nbsp;'
+      controlModel.hint = this.configData.hints || '&nbsp;';
     }
     controlModel.placeholder = this.configData.label;
 
@@ -303,7 +303,7 @@ export abstract class FieldParser {
         bindValues.push({
           id: 'dc_type',
           value: value
-        })
+        });
       });
       (controlModel as DsDynamicInputModel).typeBindRelations = [{
         match: MATCH_VISIBLE,

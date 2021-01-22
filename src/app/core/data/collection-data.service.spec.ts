@@ -17,10 +17,10 @@ import {
   createFailedRemoteDataObject$,
   createSuccessfulRemoteDataObject,
   createSuccessfulRemoteDataObject$
-} from 'src/app/shared/remote-data.utils';
+} from '../../shared/remote-data.utils';
 import { cold, getTestScheduler, hot } from 'jasmine-marbles';
 import { TestScheduler } from 'rxjs/testing';
-import { Observable } from 'rxjs/internal/Observable';
+import { Observable } from 'rxjs';
 import { RemoteData } from './remote-data';
 import { hasNoValue } from '../../shared/empty.util';
 
@@ -213,7 +213,7 @@ describe('CollectionDataService', () => {
     notificationsService = new NotificationsServiceStub();
     translate = getMockTranslateService();
 
-    service = new CollectionDataService(requestService, rdbService, null, null, objectCache, halService, notificationsService, null, null,null, translate);
+    service = new CollectionDataService(requestService, rdbService, null, null, objectCache, halService, notificationsService, null, null, null, translate);
   }
 
 });

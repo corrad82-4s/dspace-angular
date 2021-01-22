@@ -79,6 +79,7 @@ export class SubmissionService {
    * @param {TranslateService} translate
    * @param {SearchService} searchService
    * @param {RequestService} requestService
+   * @param {SubmissionJsonPatchOperationsService} jsonPatchOperationService
    */
   constructor(protected notificationsService: NotificationsService,
               protected restService: SubmissionRestService,
@@ -126,7 +127,7 @@ export class SubmissionService {
     options.params = params;
     return this.restService.postToEndpoint(this.workspaceLinkPath, {}, null, options, collectionId).pipe(
       map((workspaceitem: SubmissionObject[]) => workspaceitem[0] as SubmissionObject),
-      catchError(() => observableOf({} as SubmissionObject)))
+      catchError(() => observableOf({} as SubmissionObject)));
   }
 
   /**
@@ -150,7 +151,7 @@ export class SubmissionService {
 
     return this.restService.postToEndpoint(this.workspaceLinkPath, {}, null, options).pipe(
       map((workspaceitem: SubmissionObject[]) => workspaceitem[0] as SubmissionObject),
-      catchError(() => observableOf({} as SubmissionObject)))
+      catchError(() => observableOf({} as SubmissionObject)));
   }
 
   /**
@@ -284,7 +285,7 @@ export class SubmissionService {
       find((isPending: boolean) => !isPending)
     ).subscribe(() => {
       this.store.dispatch(new SaveSubmissionFormAction(submissionId, manual));
-    })
+    });
   }
 
   /**
@@ -661,7 +662,7 @@ export class SubmissionService {
       map((submissionObjects: SubmissionObject[]) => createSuccessfulRemoteDataObject(
         submissionObjects[0])),
       catchError((errorResponse: ErrorResponse) => {
-        return createFailedRemoteDataObject$<SubmissionObject>(errorResponse.errorMessage, errorResponse.statusCode)
+        return createFailedRemoteDataObject$<SubmissionObject>(errorResponse.errorMessage, errorResponse.statusCode);
       })
     );
   }

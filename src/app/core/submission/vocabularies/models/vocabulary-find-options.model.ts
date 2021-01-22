@@ -22,22 +22,22 @@ export class VocabularyFindOptions extends FindListOptions {
 
     const searchParams = [];
     if (isNotEmpty(metadata)) {
-      searchParams.push(new RequestParam('metadata', metadata))
+      searchParams.push(new RequestParam('metadata', metadata));
     }
     if (isNotEmpty(collection)) {
-      searchParams.push(new RequestParam('collection', collection))
+      searchParams.push(new RequestParam('collection', collection));
     }
     if (isNotEmpty(query)) {
-      searchParams.push(new RequestParam('query', query))
+      searchParams.push(new RequestParam('query', query));
     }
     if (isNotEmpty(filter)) {
-      searchParams.push(new RequestParam('filter', filter))
+      searchParams.push(new RequestParam('filter', filter));
     }
     if (isNotEmpty(exact)) {
-      searchParams.push(new RequestParam('exact', exact.toString()))
+      searchParams.push(new RequestParam('exact', exact.toString()));
     }
     if (isNotEmpty(entryID)) {
-      searchParams.push(new RequestParam('entryID', entryID))
+      searchParams.push(new RequestParam('entryID', entryID));
     }
     this.searchParams = searchParams;
   }

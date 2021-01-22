@@ -1,4 +1,4 @@
-import { EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 
 import {
@@ -26,9 +26,12 @@ import { SubmissionService } from '../../../../../submission/submission.service'
 /**
  * An abstract class to be extended by form components that handle vocabulary
  */
+@Component({
+  selector: 'ds-dynamic-vocabulary',
+  template: ''
+})
 export abstract class DsDynamicVocabularyComponent extends DynamicFormControlComponent {
 
-  @Input() abstract bindId = true;
   @Input() abstract group: FormGroup;
   @Input() abstract model: DsDynamicInputModel;
 
@@ -71,9 +74,9 @@ export abstract class DsDynamicVocabularyComponent extends DynamicFormControlCom
     if (isNotEmpty(this.model.value) && (this.model.value instanceof FormFieldMetadataValueObject)) {
       let initEntry$: Observable<VocabularyEntry>;
       if (this.model.value.hasAuthority()) {
-        initEntry$ = this.vocabularyService.getVocabularyEntryByID(this.model.value.authority, this.model.vocabularyOptions)
+        initEntry$ = this.vocabularyService.getVocabularyEntryByID(this.model.value.authority, this.model.vocabularyOptions);
       } else {
-        initEntry$ = this.vocabularyService.getVocabularyEntryByValue(this.model.value.value, this.model.vocabularyOptions)
+        initEntry$ = this.vocabularyService.getVocabularyEntryByValue(this.model.value.value, this.model.vocabularyOptions);
       }
       initValue$ = initEntry$.pipe(map((initEntry: VocabularyEntry) => {
         if (isNotEmpty(initEntry)) {
@@ -157,7 +160,7 @@ export abstract class DsDynamicVocabularyComponent extends DynamicFormControlCom
     this.vocabulary$ = this.vocabularyService.findVocabularyById(this.model.vocabularyOptions.name).pipe(
       getFirstSucceededRemoteDataPayload(),
       distinctUntilChanged(),
-    )
+    );
   }
 
   /**
@@ -181,7 +184,7 @@ export abstract class DsDynamicVocabularyComponent extends DynamicFormControlCom
    * @param updateValue
    */
   dispatchUpdate(updateValue: any) {
-    this.model.valueUpdates.next(updateValue);
+    this.model.value = updateValue;
     this.change.emit(updateValue);
     this.updateOtherInformation(updateValue);
   }
@@ -194,7 +197,7 @@ export abstract class DsDynamicVocabularyComponent extends DynamicFormControlCom
     const currentValue: string = (this.model.value instanceof FormFieldMetadataValueObject
       || this.model.value instanceof VocabularyEntry) ? this.model.value.value : this.model.value;
     const valueWithAuthority: any = new FormFieldMetadataValueObject(currentValue, null, authority);
-    this.model.valueUpdates.next(valueWithAuthority);
+    this.model.value = valueWithAuthority;
     this.change.emit(valueWithAuthority);
     setTimeout(() => {
       this.submissionService.dispatchSave(this.model.submissionId);

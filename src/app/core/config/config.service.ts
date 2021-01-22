@@ -54,7 +54,7 @@ export abstract class ConfigService {
     this.dataService = new DataServiceImpl(requestService, rdbService, null, objectCache, halService, notificationsService, http, comparator, this.linkPath);
   }
 
-  public findByHref(href: string, reRequestOnStale = true, ...linksToFollow: Array<FollowLinkConfig<ConfigObject>>): Observable<RemoteData<ConfigObject>> {
+  public findByHref(href: string, reRequestOnStale = true, ...linksToFollow: FollowLinkConfig<ConfigObject>[]): Observable<RemoteData<ConfigObject>> {
     return this.dataService.findByHref(href, reRequestOnStale, ...linksToFollow).pipe(
       getFirstCompletedRemoteData(),
       map((rd: RemoteData<ConfigObject>) => {
@@ -67,11 +67,11 @@ export abstract class ConfigService {
     );
   }
 
-  findAll(options: FindListOptions = {}, reRequestOnStale = true, ...linksToFollow: Array<FollowLinkConfig<ConfigObject>>): Observable<RemoteData<PaginatedList<ConfigObject>>> {
+  findAll(options: FindListOptions = {}, reRequestOnStale = true, ...linksToFollow: FollowLinkConfig<ConfigObject>[]): Observable<RemoteData<PaginatedList<ConfigObject>>> {
     return this.dataService.findAll(options, reRequestOnStale, ...linksToFollow);
   }
 
-  findByName(name: string, reRequestOnStale = true, ...linksToFollow: Array<FollowLinkConfig<ConfigObject>>): Observable<RemoteData<ConfigObject>> {
+  findByName(name: string, reRequestOnStale = true, ...linksToFollow: FollowLinkConfig<ConfigObject>[]): Observable<RemoteData<ConfigObject>> {
     return this.dataService.findById(name, reRequestOnStale, ...linksToFollow);
   }
 

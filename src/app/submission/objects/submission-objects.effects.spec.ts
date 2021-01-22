@@ -30,13 +30,14 @@ import {
   mockSectionsData,
   mockSectionsDataTwo,
   mockSectionsErrors,
+  mockSectionsErrorsTwo,
   mockSubmissionCollectionId,
   mockSubmissionDefinition,
   mockSubmissionDefinitionResponse,
   mockSubmissionId,
+  mockSubmissionRestResponse,
   mockSubmissionSelfUrl,
-  mockSubmissionState,
-  mockSubmissionRestResponse, mockSectionsErrorsTwo
+  mockSubmissionState
 } from '../../shared/mocks/submission.mock';
 import { SubmissionSectionModel } from '../../core/config/models/config-submission-section.model';
 import { NotificationsServiceStub } from '../../shared/testing/notifications-service.stub';
@@ -55,7 +56,7 @@ import { Item } from '../../core/shared/item.model';
 import { WorkspaceitemDataService } from '../../core/submission/workspaceitem-data.service';
 import { WorkflowItemDataService } from '../../core/submission/workflowitem-data.service';
 import { HALEndpointService } from '../../core/shared/hal-endpoint.service';
-import { EditItemDataService } from 'src/app/core/submission/edititem-data.service';
+import { EditItemDataService } from '../../core/submission/edititem-data.service';
 import { SubmissionScopeType } from '../../core/submission/submission-scope-type';
 
 describe('SubmissionObjectEffects test suite', () => {
@@ -105,8 +106,8 @@ describe('SubmissionObjectEffects test suite', () => {
       ],
     });
 
-    submissionObjectEffects = TestBed.get(SubmissionObjectEffects);
-    store = TestBed.get(Store);
+    submissionObjectEffects = TestBed.inject(SubmissionObjectEffects);
+    store = TestBed.inject(Store as any);
   });
 
   describe('loadForm$', () => {
@@ -144,7 +145,7 @@ describe('SubmissionObjectEffects test suite', () => {
             sectionDefinition.visibility,
             enabled,
             sectionData,
-            sectionErrors))
+            sectionErrors));
         });
       mappedActions.push(new CompleteInitSubmissionFormAction(submissionId));
 
@@ -700,7 +701,6 @@ describe('SubmissionObjectEffects test suite', () => {
       });
 
       const errorsList = parseSectionErrors(mockSectionsErrors);
-      console.log(errorsList);
       const expected = cold('--(bcd)-', {
         b: new UpdateSectionDataAction(
           submissionId,

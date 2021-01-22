@@ -34,6 +34,26 @@ import { MetricDimensionsComponent } from './default-layout/boxes/components/met
 import { MetricDspacecrisComponent } from './default-layout/boxes/components/metric/metric-dspacecris/metric-dspacecris.component';
 import { MetricGooglescholarComponent } from './default-layout/boxes/components/metric/metric-googlescholar/metric-googlescholar.component';
 
+const ENTRY_COMPONENTS = [
+  // put only entry components that use custom decorator
+  CrisLayoutDefaultComponent,
+  CrisLayoutDefaultTabComponent,
+  CrisLayoutMetadataBoxComponent,
+  CrisLayoutMetricsBoxComponent,
+  CrisLayoutSearchBoxComponent,
+  TextComponent,
+  HeadingComponent,
+  LongtextComponent,
+  DateComponent,
+  LinkComponent,
+  IdentifierComponent,
+  CrisrefComponent,
+  ThumbnailComponent,
+  AttachmentComponent,
+  OrcidSyncSettingsComponent,
+  OrcidSyncQueueComponent,
+  OrcidAuthorizationsComponent
+];
 @NgModule({
   declarations: [
     CrisLayoutLoaderDirective,
@@ -72,29 +92,6 @@ import { MetricGooglescholarComponent } from './default-layout/boxes/components/
     MyDSpacePageModule,
     ContextMenuModule
   ],
-  entryComponents: [
-    CrisLayoutDefaultComponent,
-    CrisLayoutDefaultTabComponent,
-    CrisLayoutMetadataBoxComponent,
-    CrisLayoutMetricsBoxComponent,
-    CrisLayoutSearchBoxComponent,
-    TextComponent,
-    HeadingComponent,
-    LongtextComponent,
-    DateComponent,
-    LinkComponent,
-    IdentifierComponent,
-    CrisrefComponent,
-    ThumbnailComponent,
-    AttachmentComponent,
-    OrcidSyncSettingsComponent,
-    OrcidSyncQueueComponent,
-    OrcidAuthorizationsComponent,
-    MetricDspacecrisComponent,
-    MetricAltmetricComponent,
-    MetricDimensionsComponent,
-    MetricGooglescholarComponent
-  ],
   exports: [
     CrisPageLoaderComponent,
     CrisLayoutDefaultComponent,
@@ -102,4 +99,15 @@ import { MetricGooglescholarComponent } from './default-layout/boxes/components/
     CrisLayoutMetadataBoxComponent
   ]
 })
-export class LayoutModule { }
+export class LayoutModule {
+  /**
+   * NOTE: this method allows to resolve issue with components that using a custom decorator
+   * which are not loaded during CSR otherwise
+   */
+  static withEntryComponents() {
+    return {
+      ngModule: LayoutModule,
+      providers: ENTRY_COMPONENTS.map((component) => ({provide: component}))
+    };
+  }
+}

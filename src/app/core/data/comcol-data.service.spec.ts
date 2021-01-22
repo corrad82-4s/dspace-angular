@@ -162,11 +162,12 @@ describe('ComColDataService', () => {
     });
 
     describe('if the scope Community can\'t be found', () => {
-      it('should throw an error', () => {
+      it('should throw an error', (done) => {
         const result = service.getBrowseEndpoint(options);
         const expected = cold('--#-', undefined, new Error(`The Community with scope ${scopeID} couldn't be retrieved`));
 
         expect(result).toBeObservable(expected);
+        done();
       });
     });
 
@@ -207,12 +208,12 @@ describe('ComColDataService', () => {
         it('top level community cache refreshed', () => {
           scheduler.schedule(() => (service as any).refreshCache(data));
           scheduler.flush();
-          expect(requestService.removeByHrefSubstring).toHaveBeenCalledWith('https://rest.api/core/communities/search/top');
+          expect(requestService.setStaleByHrefSubstring).toHaveBeenCalledWith('https://rest.api/core/communities/search/top');
         });
         it('top level community without parent link, cache not refreshed', () => {
           scheduler.schedule(() => (service as any).refreshCache(communityWithoutParentHref));
           scheduler.flush();
-          expect(requestService.removeByHrefSubstring).not.toHaveBeenCalled();
+          expect(requestService.setStaleByHrefSubstring).not.toHaveBeenCalled();
         });
       });
 
@@ -245,7 +246,7 @@ describe('ComColDataService', () => {
         it('child level community cache refreshed', () => {
           scheduler.schedule(() => (service as any).refreshCache(data));
           scheduler.flush();
-          expect(requestService.removeByHrefSubstring).toHaveBeenCalledWith('a20da287-e174-466a-9926-f66as300d399');
+          expect(requestService.setStaleByHrefSubstring).toHaveBeenCalledWith('a20da287-e174-466a-9926-f66as300d399');
         });
       });
     });

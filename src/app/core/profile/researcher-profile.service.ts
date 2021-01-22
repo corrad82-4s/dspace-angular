@@ -7,7 +7,7 @@ import { ReplaceOperation } from 'fast-json-patch';
 import { Observable, of as observableOf } from 'rxjs';
 import { catchError, distinctUntilChanged, filter, find, flatMap, map, switchMap, take, tap} from 'rxjs/operators';
 
-import { NotificationsService } from 'src/app/shared/notifications/notifications.service';
+import { NotificationsService } from '../../shared/notifications/notifications.service';
 import { dataService } from '../cache/builders/build-decorators';
 import { RemoteDataBuildService } from '../cache/builders/remote-data-build.service';
 import { ObjectCacheService } from '../cache/object-cache.service';

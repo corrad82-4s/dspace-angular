@@ -40,7 +40,7 @@ const MODULE = [
   NgbDropdownModule,
   RouterModule,
   TranslateModule
-]
+];
 @NgModule({
   imports: [
     MODULE

@@ -20,10 +20,10 @@ import { VocabularyEntry } from '../../../../../../core/submission/vocabularies/
 import { PageInfo } from '../../../../../../core/shared/page-info.model';
 
 export interface ListItem {
-  id: string,
-  label: string,
-  value: boolean,
-  index: number
+  id: string;
+  label: string;
+  value: boolean;
+  index: number;
 }
 
 /**
@@ -35,7 +35,7 @@ export interface ListItem {
   templateUrl: './dynamic-list.component.html'
 })
 export class DsDynamicListComponent extends DynamicFormControlComponent implements OnInit {
-  @Input() bindId = true;
+
   @Input() group: FormGroup;
   @Input() model: any;
 
@@ -90,16 +90,16 @@ export class DsDynamicListComponent extends DynamicFormControlComponent implemen
       // Target tabindex coincide with the array index of the value into the authority list
       const entry: VocabularyEntry = this.optionsList[target.tabIndex];
       if (target.checked) {
-        this.model.valueUpdates.next(entry);
+        this.model.valueChanges.next(entry);
       } else {
         const newValue = [];
         this.model.value
           .filter((item) => item.value !== entry.value)
           .forEach((item) => newValue.push(item));
-        this.model.valueUpdates.next(newValue);
+        this.model.valueChanges.next(newValue);
       }
     } else {
-      (this.model as DynamicListRadioGroupModel).valueUpdates.next(this.optionsList[target.value]);
+      (this.model as DynamicListRadioGroupModel).value = this.optionsList[target.value];
     }
     this.change.emit(event);
   }
