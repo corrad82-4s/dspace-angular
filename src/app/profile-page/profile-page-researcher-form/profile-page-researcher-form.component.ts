@@ -1,12 +1,13 @@
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { BehaviorSubject, Observable, of, mergeMap, take } from 'rxjs';
+import { BehaviorSubject, Observable, of } from 'rxjs';
 import { EPerson } from '../../core/eperson/models/eperson.model';
 import { ResearcherProfile } from '../../core/profile/model/researcher-profile.model';
 import { ResearcherProfileService } from '../../core/profile/researcher-profile.service';
 import { ProfileClaimService } from '../profile-claim/profile-claim.service';
 import { ClaimItemSelectorComponent } from '../../shared/dso-selector/modal-wrappers/claim-item-selector/claim-item-selector.component';
+import { mergeMap, take } from 'rxjs/operators';
 
 @Component({
     selector: 'ds-profile-page-researcher-form',

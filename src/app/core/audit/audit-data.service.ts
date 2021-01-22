@@ -4,7 +4,7 @@ import { Store } from '@ngrx/store';
 import { Observable, of } from 'rxjs';
 import { Audit } from './model/audit.model';
 import { AUDIT } from './model/audit.resource-type';
-import { map } from 'rxjs/operators';
+import { map, startWith } from 'rxjs/operators';
 import { NotificationsService } from '../../shared/notifications/notifications.service';
 import { dataService } from '../cache/builders/build-decorators';
 import { RemoteDataBuildService } from '../cache/builders/remote-data-build.service';
@@ -25,8 +25,8 @@ import {
   getFirstSucceededRemoteDataWithNotEmptyPayload,
 } from '../shared/operators';
 
-import {DSONameService} from '../breadcrumbs/dso-name.service';
-import {followLink, FollowLinkConfig} from '../../shared/utils/follow-link-config.model';
+import { DSONameService } from '../breadcrumbs/dso-name.service';
+import { followLink, FollowLinkConfig } from '../../shared/utils/follow-link-config.model';
 
 /* tslint:disable:max-classes-per-file */
 
