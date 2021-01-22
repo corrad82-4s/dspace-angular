@@ -8,8 +8,7 @@ import {
   DynamicInputModel
 } from '@ng-dynamic-forms/core';
 import { TranslateService } from '@ngx-translate/core';
-import { combineLatest, Observable, Subscription, flatMap, map, reduce, switchMap, take, tap } from 'rxjs';
-import { switchMap, take } from 'rxjs/operators';
+import { combineLatest, Observable, Subscription } from 'rxjs';
 import { PaginatedList } from '../../../../core/data/paginated-list.model';
 import { RemoteData } from '../../../../core/data/remote-data';
 import { EPersonDataService } from '../../../../core/eperson/eperson-data.service';
@@ -17,7 +16,6 @@ import { GroupDataService } from '../../../../core/eperson/group-data.service';
 import { EPerson } from '../../../../core/eperson/models/eperson.model';
 import { Group } from '../../../../core/eperson/models/group.model';
 import {
-  getFirstCompletedRemoteData,
   getFirstSucceededRemoteData,
   getFirstCompletedRemoteData,
   getFirstSucceededRemoteDataPayload,
@@ -32,13 +30,13 @@ import { PaginationComponentOptions } from '../../../../shared/pagination/pagina
 import { AuthService } from '../../../../core/auth/auth.service';
 import { AuthorizationDataService } from '../../../../core/data/feature-authorization/authorization-data.service';
 import { FeatureID } from '../../../../core/data/feature-authorization/feature-id';
-import { ConfirmationModalComponent } from '../../../../shared/confirmation-modal/confirmation-modal.component';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { RequestService } from '../../../../core/data/request.service';
 import { NoContent } from '../../../../core/shared/NoContent.model';
 import { EpersonRegistrationService } from '../../../../core/data/eperson-registration.service';
 import { Registration } from '../../../../core/shared/registration.model';
 import { ConfirmationModalComponent } from 'src/app/shared/confirmation-modal/confirmation-modal.component';
+import { reduce, switchMap, take, tap, map } from 'rxjs/operators';
 
 @Component({
   selector: 'ds-eperson-form',
@@ -215,8 +213,8 @@ export class EPersonFormComponent implements OnInit, OnDestroy {
       this.groupsDataService.searchGroups('ROLE:').pipe(getFirstSucceededRemoteListPayload()),
       this.groupsDataService.searchGroups('INSTITUTIONAL:').pipe(
         getFirstSucceededRemoteListPayload(),
-        flatMap((institutionalRoleGroups) => institutionalRoleGroups),
-        flatMap( (institutionalRoleGroup) => this.findInstitutionalScopedRoles(institutionalRoleGroup)),
+        switchMap((institutionalRoleGroups) => institutionalRoleGroups),
+        switchMap( (institutionalRoleGroup) => this.findInstitutionalScopedRoles(institutionalRoleGroup)),
         reduce((acc: any, value: any) => [...acc, ...value], [])
       ),
       this.epersonService.getActiveEPerson()
