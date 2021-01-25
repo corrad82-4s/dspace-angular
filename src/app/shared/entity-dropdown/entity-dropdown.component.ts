@@ -143,7 +143,7 @@ export class EntityDropdownComponent implements OnInit, OnDestroy {
     this.isLoadingList.next(true);
     // Set the pagination info
     const findOptions: FindListOptions = {
-      elementsPerPage: 10,
+      elementsPerPage: 25,
       currentPage: page
     };
     let searchListEntity$;
