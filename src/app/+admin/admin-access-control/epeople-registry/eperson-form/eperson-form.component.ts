@@ -35,7 +35,7 @@ import { RequestService } from '../../../../core/data/request.service';
 import { NoContent } from '../../../../core/shared/NoContent.model';
 import { EpersonRegistrationService } from '../../../../core/data/eperson-registration.service';
 import { Registration } from '../../../../core/shared/registration.model';
-import { ConfirmationModalComponent } from 'src/app/shared/confirmation-modal/confirmation-modal.component';
+import { ConfirmationModalComponent } from '../../../../shared/confirmation-modal/confirmation-modal.component';
 import { reduce, switchMap, take, tap, map } from 'rxjs/operators';
 
 @Component({

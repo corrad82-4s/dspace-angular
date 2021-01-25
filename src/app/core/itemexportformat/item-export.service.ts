@@ -27,7 +27,7 @@ import {
   ScriptDataService
 } from '../data/processes/script-data.service';
 import { RequestEntry } from '../data/request.reducer';
-import { isNotEmpty } from 'src/app/shared/empty.util';
+import { isNotEmpty } from '../../shared/empty.util';
 import { TranslateService } from '@ngx-translate/core';
 import { SearchOptions } from '../../shared/search/search-options.model';
 import { PaginatedSearchOptions } from '../../shared/search/paginated-search-options.model';

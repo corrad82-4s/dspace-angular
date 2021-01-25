@@ -8,7 +8,7 @@ import { TranslateService } from '@ngx-translate/core';
 
 import { WorkflowItem } from '../../../core/submission/models/workflowitem.model';
 import { ProcessTaskResponse } from '../../../core/tasks/models/process-task-response';
-import { WorkflowStepDataService } from 'src/app/core/submission/workflowstep-data.service';
+import { WorkflowStepDataService } from '../../../core/submission/workflowstep-data.service';
 import { RemoteData } from '../../../core/data/remote-data';
 import { PoolTask } from '../../../core/tasks/models/pool-task-object.model';
 import { PoolTaskDataService } from '../../../core/tasks/pool-task-data.service';
