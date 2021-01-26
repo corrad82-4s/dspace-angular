@@ -83,7 +83,7 @@ export class EntityTypeService extends DataService<ItemType> {
    */
   hasMoreThanOneAuthorized(): Observable<boolean> {
     const findListOptions: FindListOptions = {
-      elementsPerPage: 2,
+      elementsPerPage: 25,
       currentPage: 1
     };
     return this.getAllAuthorizedRelationshipType(findListOptions).pipe(
