@@ -83,7 +83,7 @@ export class EntityTypeService extends DataService<ItemType> {
    */
   hasMoreThanOneAuthorized(): Observable<boolean> {
     const findListOptions: FindListOptions = {
-      elementsPerPage: 25,
+      elementsPerPage: 2,
       currentPage: 1
     };
     return this.getAllAuthorizedRelationshipType(findListOptions).pipe(
@@ -115,7 +115,7 @@ export class EntityTypeService extends DataService<ItemType> {
    */
   hasMoreThanOneAuthorizedImport(): Observable<boolean> {
     const findListOptions: FindListOptions = {
-      elementsPerPage: 25,
+      elementsPerPage: 2,
       currentPage: 1
     };
     return this.getAllAuthorizedRelationshipTypeImport(findListOptions).pipe(
