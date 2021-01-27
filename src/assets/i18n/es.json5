@@ -2673,6 +2673,11 @@
   // TODO New key - Add a translation
   "explore.researcherprofiles.breadcrumbs": "People",
 
+  "explore.text-section.directorios.title": "Bienvenido a los Directorios de la Plataforma #PerúCRIS",
+
+  "explore.text-section.directorios.description": "La Plataforma #PerúCRIS brinda el soporte informático a la Red Nacional de Información en Ciencia, Tecnología e Innovación (CTI). Aquí encontrarás información sobre el talento humano, organizaciones, publicaciones científicas, fuentes de financiamientos y proyectos en CTI del Perú.",
+
+
   // "explore.title": "Explore section",
   // TODO New key - Add a translation
   "explore.title": "Explore section",
