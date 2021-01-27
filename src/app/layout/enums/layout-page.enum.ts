@@ -6,10 +6,11 @@
 
 export enum LayoutPage {
   DEFAULT = 'defaultLayout',
+  DEFAULT_PERU = 'peru',
   PERSON = 'Person'
 }
 
 /**
  * The default page is always applied by the component resolver as a fallback value;
  */
-export const DEFAULT_LAYOUT_PAGE = LayoutPage.DEFAULT;
+export const DEFAULT_LAYOUT_PAGE = LayoutPage.DEFAULT_PERU;

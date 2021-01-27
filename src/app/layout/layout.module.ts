@@ -33,6 +33,15 @@ import { MetricAltmetricComponent } from './default-layout/boxes/components/metr
 import { MetricDimensionsComponent } from './default-layout/boxes/components/metric/metric-dimensions/metric-dimensions.component';
 import { MetricDspacecrisComponent } from './default-layout/boxes/components/metric/metric-dspacecris/metric-dspacecris.component';
 import { MetricGooglescholarComponent } from './default-layout/boxes/components/metric/metric-googlescholar/metric-googlescholar.component';
+import { PeruLayoutComponent } from './peru-layout/peru-layout.component';
+import { PeruTabComponent } from './peru-layout/peru-tab/peru-tab.component';
+import { PeruMetadataBoxComponent } from './peru-layout/boxes/peru-metadata-box/peru-metadata-box.component';
+import { PeruSearchBoxComponent } from './peru-layout/boxes/search/peru-search-box.component';
+import { PeruMetricsBoxComponent } from './peru-layout/boxes/metrics/peru-metrics-box.component';
+import { PendingCorrectionComponent } from './peru-layout/pending-correction/pending-correction.component';
+import { PendingCorrectionDetailsComponent } from './peru-layout/pending-correction/pending-correction-details/pending-correction-details.component';
+import { ShadowCopiesComponent } from './peru-layout/shadow-copies/shadow-copies.component';
+import { PeruSidebarComponent } from './peru-layout/peru-sidebar/peru-sidebar.component';
 
 const ENTRY_COMPONENTS = [
   // put only entry components that use custom decorator
@@ -52,7 +61,12 @@ const ENTRY_COMPONENTS = [
   AttachmentComponent,
   OrcidSyncSettingsComponent,
   OrcidSyncQueueComponent,
-  OrcidAuthorizationsComponent
+  OrcidAuthorizationsComponent,
+  PeruLayoutComponent,
+  PeruTabComponent,
+  PeruMetadataBoxComponent,
+  PeruSearchBoxComponent,
+  PeruMetricsBoxComponent
 ];
 @NgModule({
   declarations: [
@@ -83,7 +97,16 @@ const ENTRY_COMPONENTS = [
     MetricAltmetricComponent,
     MetricDimensionsComponent,
     MetricDspacecrisComponent,
-    MetricGooglescholarComponent
+    MetricGooglescholarComponent,
+    PendingCorrectionComponent,
+    PeruLayoutComponent,
+    PeruTabComponent,
+    PeruMetadataBoxComponent,
+    PeruSearchBoxComponent,
+    PeruMetricsBoxComponent,
+    PendingCorrectionDetailsComponent,
+    ShadowCopiesComponent,
+    PeruSidebarComponent
   ],
   imports: [
     CommonModule,

@@ -1,0 +1,16 @@
+<ng-container *ngIf="shadowCopies">
+    <hr>
+    <div  class="d-flex mt-2">
+        <div class="flex-grow-1">
+            <em><small>{{ 'peru-layout.shadow-copies' | translate }}</small></em><br>
+            <ul>
+                <li class="cursor-pointer"
+                    *ngFor="let shadowCopy of shadowCopies"
+                    [ngClass]="{'text-info': shadowCopy === selectedShadowCopy}"
+                    (click)="onSelectShadowCopy(shadowCopy)">
+                    <em><small> {{ shadowCopy.uuid }}</small></em><br>
+                </li>
+            </ul>
+        </div>
+    </div>
+</ng-container>
