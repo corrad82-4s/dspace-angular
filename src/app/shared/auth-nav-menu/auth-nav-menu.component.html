@@ -9,8 +9,7 @@
         <ds-log-in
           [isStandalonePage]="false"></ds-log-in>
       </div>
-      <a *ngIf="(onlyOidc | async)" id="loginOidcLink" (click)="$event.preventDefault();redirectToOidc()" href="#" routerLinkActive="active" class="px-1">{{ 'nav.login' | translate }}<span
-          class="sr-only">(current)</span></a>
+      <a *ngIf="(onlyOidc | async)" id="loginOidcLink" (click)="$event.preventDefault();redirectToOidc()" href="#" routerLinkActive="active" class="px-1" style="white-space: nowrap;">{{ 'nav.login' | translate }}</a>
     </div>
   </li>
   <li *ngIf="!(isAuthenticated | async) && (isXsOrSm$ | async)" class="nav-item">
