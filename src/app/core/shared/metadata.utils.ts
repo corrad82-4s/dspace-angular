@@ -250,10 +250,10 @@ export class Metadata {
     // 1. check differences
     const differences = differenceWith(sortedMetadata1, sortedMetadata2, Metadata.valueMatches);
     if (differences.length > 0) {
-      return true;
+      return false;
     }
 
     // arrays appear to be equal ...
-    return false;
+    return true;
   }
 }

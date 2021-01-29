@@ -1,6 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { ShadowCopiesComponent } from './shadow-copies-details.component';
+import { ShadowCopiesComponent } from './shadow-copies.component';
 
 describe('ShadowCopiesDetailsComponent', () => {
   let component: ShadowCopiesComponent;

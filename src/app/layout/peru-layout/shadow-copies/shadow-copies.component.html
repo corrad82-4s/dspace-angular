@@ -2,15 +2,13 @@
     <hr>
     <div  class="d-flex mt-2">
         <div class="flex-grow-1">
-            <em><small>{{ 'peru-layout.shadow-copies' | translate }}</small></em><br>
-            <ul>
-                <li class="cursor-pointer"
+            <em class="mr-2"><small>{{ 'peru-layout.shadow-copies' | translate }}</small></em>
+            <span class="cursor-pointer mr-2"
                     *ngFor="let shadowCopy of shadowCopies"
-                    [ngClass]="{'text-info': shadowCopy === selectedShadowCopy}"
-                    (click)="onSelectShadowCopy(shadowCopy)">
-                    <em><small> {{ shadowCopy.uuid }}</small></em><br>
-                </li>
-            </ul>
+                    [ngClass]="{'text-info': shadowCopy.shadowCopy === selectedShadowCopy}"
+                    (click)="onSelectShadowCopy(shadowCopy.shadowCopy)">
+                    <em><small> {{ shadowCopy.label }}</small></em>
+            </span>
         </div>
     </div>
 </ng-container>

@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Item } from '../../../../core/shared/item.model';
-import { MetadataCorrection } from '../pending-correction.component';
+import { MetadataCorrection } from '../pending-correction.service';
 
 @Component({
   selector: 'ds-pending-correction-details',

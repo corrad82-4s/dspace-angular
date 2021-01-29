@@ -1,9 +1,7 @@
-import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input, ChangeDetectorRef } from '@angular/core';
 import { Item } from '../../../core/shared/item.model';
-import { RelationshipService } from '../../../core/data/relationship.service';
-import { AuthorizationDataService } from '../../../core/data/feature-authorization/authorization-data.service';
-import { FeatureID } from '../../../core/data/feature-authorization/feature-id';
 import { take } from 'rxjs/operators';
+import { ShadowCopiesService, ShadowCopy } from './shadow-copies.service';
 
 
 @Component({
@@ -17,23 +15,20 @@ export class ShadowCopiesComponent implements OnInit {
 
   @Output() selectShadowCopy = new EventEmitter<Item>();
 
-  shadowCopies: Item[];
+  shadowCopies: ShadowCopy[];
 
   selectedShadowCopy: Item;
 
-  constructor(protected authorizationService: AuthorizationDataService, protected relationshipService: RelationshipService) { }
+  constructor(protected shadowCopiesService: ShadowCopiesService, protected _cd: ChangeDetectorRef) { }
 
   /**
    * If the user is authorized fetch the related shadow copies.
    */
   ngOnInit(): void {
-    this.authorizationService.isAuthorized(FeatureID.AdministratorOf).pipe(take(1)).subscribe((isAuthorized) => {
-      if (!isAuthorized) {
-        return;
-      }
-      this.relationshipService.getShadowCopies(this.item).subscribe((items) => {
-        this.shadowCopies = items;
-      });
+    this.shadowCopiesService.getShadowCopies(this.item).pipe(take(1)).subscribe((shadowCopies: ShadowCopy[]) => {
+      this.selectedShadowCopy = shadowCopies[0].shadowCopy;
+      this.shadowCopies = shadowCopies;
+      this._cd.detectChanges();
     });
   }
 
@@ -42,14 +37,7 @@ export class ShadowCopiesComponent implements OnInit {
    * @param shadowCopy
    */
   onSelectShadowCopy(shadowCopy: Item) {
-    if (this.selectedShadowCopy === shadowCopy) {
-      // deselect
-      this.selectedShadowCopy = null;
-    } else {
-      // new selection
-      this.selectedShadowCopy = shadowCopy;
-    }
-    // emit
+    this.selectedShadowCopy = shadowCopy;
     this.selectShadowCopy.emit(this.selectedShadowCopy);
   }
 
