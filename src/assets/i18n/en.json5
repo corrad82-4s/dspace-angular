@@ -4794,6 +4794,18 @@
 
   "relation.rp.projects.search.results.head": "Related Projects",
 
-  "layout.i18n.link.default": "link"
+  "layout.i18n.link.default": "link",
+
+  "peru-layout.corrections": "There are pending corrections.",
+
+  "peru-layout.corrections.see": "See",
+
+  "peru-layout.corrections.hide": "Hide",
+
+  "peru-layout.corrections.edit": "Edit",
+
+  "peru-layout.corrections.back": "Back",
+
+  "peru-layout.shadow-copies": "Sources of information: "
 }
 
