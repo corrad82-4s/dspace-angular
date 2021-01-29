@@ -1,0 +1,16 @@
+<div>
+    <ul class="list-group">
+        <li class="list-group-item"
+            *ngFor="let correction of corrections">
+            <div [ngClass]="{'text-success': correction.type === 'ADDED', 'text-danger': correction.type === 'REMOVED', 'text-info': correction.type === 'CHANGED'}">
+                <span *ngIf="correction.type === 'ADDED'"><i class="fa fa-plus"></i></span>
+                <span *ngIf="correction.type === 'REMOVED'"><i class="fa fa-trash"></i></span>
+                <span *ngIf="correction.type === 'CHANGED'"><i class="fa fa-edit"></i></span>
+                <strong>{{ correction.key | translate }}</strong>
+            </div>
+            <div *ngFor="let metadata of correction.newValues">
+                <div class="mt-2">{{metadata.value}}</div>
+            </div>
+        </li>
+    </ul>
+</div>
