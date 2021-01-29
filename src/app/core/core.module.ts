@@ -248,7 +248,6 @@ const PROVIDERS = [
   EndpointMapResponseParsingService,
   FacetValueResponseParsingService,
   FacetConfigResponseParsingService,
-  SearchConfigResponseParsingService,
   DebugResponseParsingService,
   SearchResponseParsingService,
   MyDSpaceResponseParsingService,
