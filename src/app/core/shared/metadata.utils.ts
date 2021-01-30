@@ -241,7 +241,7 @@ export class Metadata {
    */
   public static multiEquals(metadata1: MetadataValue[], metadata2: MetadataValue[]): boolean {
     if (metadata1.length !== metadata2.length) {
-      return true;
+      return false;
     }
 
     // 0. sort array by value
