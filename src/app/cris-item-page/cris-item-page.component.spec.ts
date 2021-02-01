@@ -3,8 +3,6 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { CrisItemPageComponent } from './cris-item-page.component';
 import { Item } from '../core/shared/item.model';
 import { createSuccessfulRemoteDataObject$, createSuccessfulRemoteDataObject, createPendingRemoteDataObject$ } from '../shared/remote-data.utils';
-import { PaginatedList } from '../core/data/paginated-list';
-import { PageInfo } from '../core/shared/page-info.model';
 import { createRelationshipsObservable } from '../+item-page/simple/item-types/shared/item.component.spec';
 import { ActivatedRouteStub } from '../shared/testing/active-router.stub';
 import { of } from 'rxjs';
@@ -16,11 +14,18 @@ import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateLoaderMock } from '../shared/mocks/translate-loader.mock';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { VarDirective } from '../shared/utils/var.directive';
+import { AuthService } from '../core/auth/auth.service';
+import { createPaginatedList } from '../shared/testing/utils.test';
 
 const mockItem: Item = Object.assign(new Item(), {
-  bundles: createSuccessfulRemoteDataObject$(new PaginatedList(new PageInfo(), [])),
+  bundles: createSuccessfulRemoteDataObject$(createPaginatedList([])),
   metadata: [],
   relationships: createRelationshipsObservable()
+});
+
+const authService = jasmine.createSpyObj('authService', {
+  isAuthenticated: of(true),
+  setRedirectUrl: {}
 });
 
 describe('CrisItemPageComponent', () => {
@@ -28,7 +33,7 @@ describe('CrisItemPageComponent', () => {
   let fixture: ComponentFixture<CrisItemPageComponent>;
 
   const mockRoute = Object.assign(new ActivatedRouteStub(), {
-    data: of({ item: createSuccessfulRemoteDataObject(mockItem) })
+    data: of({ dso: createSuccessfulRemoteDataObject(mockItem) })
   });
 
   beforeEach(async(() => {
@@ -43,7 +48,8 @@ describe('CrisItemPageComponent', () => {
       providers: [
         {provide: ActivatedRoute, useValue: mockRoute},
         {provide: ItemDataService, useValue: {}},
-        {provide: Router, useValue: {}}
+        {provide: Router, useValue: {}},
+        { provide: AuthService, useValue: authService },
       ],
       schemas: [NO_ERRORS_SCHEMA]
     })

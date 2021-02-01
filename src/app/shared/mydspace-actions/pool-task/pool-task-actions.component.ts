@@ -1,3 +1,4 @@
+import { getFirstSucceededRemoteData, getFirstSucceededRemoteDataPayload } from './../../../core/shared/operators';
 import { Component, Injector, Input } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -7,8 +8,7 @@ import { TranslateService } from '@ngx-translate/core';
 
 import { WorkflowItem } from '../../../core/submission/models/workflowitem.model';
 import { ProcessTaskResponse } from '../../../core/tasks/models/process-task-response';
-import { getSucceededRemoteData } from 'src/app/core/shared/operators';
-import { WorkflowStepDataService } from 'src/app/core/submission/workflowstep-data.service';
+import { WorkflowStepDataService } from '../../../core/submission/workflowstep-data.service';
 import { RemoteData } from '../../../core/data/remote-data';
 import { PoolTask } from '../../../core/tasks/models/pool-task-object.model';
 import { PoolTaskDataService } from '../../../core/tasks/pool-task-data.service';
@@ -98,7 +98,7 @@ export class PoolTaskActionsComponent extends MyDSpaceActionsComponent<PoolTask,
 
   isInstitutionRejectionTask(): Observable<boolean> {
     return this.workflowStepService.findByHref(this.object._links.step.href).pipe(
-      getSucceededRemoteData(),
+      getFirstSucceededRemoteData(),
       map((workflowStep) => workflowStep.payload && workflowStep.payload.id === 'waitForConcytecStep')
     );
   }

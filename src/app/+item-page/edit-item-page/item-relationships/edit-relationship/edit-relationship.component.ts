@@ -1,12 +1,15 @@
-import { Component, Input, OnChanges, OnInit } from '@angular/core';
-import { combineLatest as observableCombineLatest, Observable } from 'rxjs';
-import { filter, map, switchMap, take, tap } from 'rxjs/operators';
+import { Component, Input, OnChanges } from '@angular/core';
+import { combineLatest as observableCombineLatest, Observable, of } from 'rxjs';
+import { filter, map, switchMap, take } from 'rxjs/operators';
 import { FieldChangeType } from '../../../../core/data/object-updates/object-updates.actions';
-import { DeleteRelationship, FieldUpdate } from '../../../../core/data/object-updates/object-updates.reducer';
+import {
+  DeleteRelationship,
+  FieldUpdate,
+  RelationshipIdentifiable
+} from '../../../../core/data/object-updates/object-updates.reducer';
 import { ObjectUpdatesService } from '../../../../core/data/object-updates/object-updates.service';
-import { Relationship } from '../../../../core/shared/item-relationships/relationship.model';
 import { Item } from '../../../../core/shared/item.model';
-import { getRemoteDataPayload, getSucceededRemoteData } from '../../../../core/shared/operators';
+import { getFirstSucceededRemoteData, getRemoteDataPayload } from '../../../../core/shared/operators';
 import { ViewMode } from '../../../../core/shared/view-mode.model';
 import { hasValue, isNotEmpty } from '../../../../shared/empty.util';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
@@ -36,8 +39,16 @@ export class EditRelationshipComponent implements OnChanges {
   /**
    * The relationship being edited
    */
-  get relationship(): Relationship {
-    return this.fieldUpdate.field as Relationship;
+  get relationship() {
+    return this.update.relationship;
+  }
+
+  get update() {
+    return this.fieldUpdate.field as RelationshipIdentifiable;
+  }
+
+  get nameVariant() {
+    return this.update.nameVariant;
   }
 
   public leftItem$: Observable<Item>;
@@ -68,24 +79,28 @@ export class EditRelationshipComponent implements OnChanges {
    * Sets the current relationship based on the fieldUpdate input field
    */
   ngOnChanges(): void {
-    this.leftItem$ = this.relationship.leftItem.pipe(
-      getSucceededRemoteData(),
-      getRemoteDataPayload(),
-      filter((item: Item) => hasValue(item) && isNotEmpty(item.uuid))
-    );
-    this.rightItem$ = this.relationship.rightItem.pipe(
-      getSucceededRemoteData(),
-      getRemoteDataPayload(),
-      filter((item: Item) => hasValue(item) && isNotEmpty(item.uuid))
-    );
-    this.relatedItem$ = observableCombineLatest(
-      this.leftItem$,
-      this.rightItem$,
-    ).pipe(
-      map((items: Item[]) =>
-        items.find((item) => item.uuid !== this.editItem.uuid)
-      )
-    );
+    if (this.relationship) {
+      this.leftItem$ = this.relationship.leftItem.pipe(
+        getFirstSucceededRemoteData(),
+        getRemoteDataPayload(),
+        filter((item: Item) => hasValue(item) && isNotEmpty(item.uuid))
+      );
+      this.rightItem$ = this.relationship.rightItem.pipe(
+        getFirstSucceededRemoteData(),
+        getRemoteDataPayload(),
+        filter((item: Item) => hasValue(item) && isNotEmpty(item.uuid))
+      );
+      this.relatedItem$ = observableCombineLatest(
+        this.leftItem$,
+        this.rightItem$,
+      ).pipe(
+        map((items: Item[]) =>
+          items.find((item) => item.uuid !== this.editItem.uuid)
+        )
+      );
+    } else {
+      this.relatedItem$ = of(this.update.relatedItem);
+    }
   }
 
   /**
@@ -109,7 +124,7 @@ export class EditRelationshipComponent implements OnChanges {
             keepLeftVirtualMetadata: selection[0] === true,
             keepRightVirtualMetadata: selection[1] === true,
           }
-        ) as DeleteRelationship
+        ) as DeleteRelationship;
       }),
       take(1),
     ).subscribe((deleteRelationship: DeleteRelationship) =>
@@ -136,7 +151,8 @@ export class EditRelationshipComponent implements OnChanges {
    * Check if a user should be allowed to remove this field
    */
   canRemove(): boolean {
-    return this.fieldUpdate.changeType !== FieldChangeType.REMOVE;
+    return this.fieldUpdate.changeType !== FieldChangeType.REMOVE
+      && this.fieldUpdate.changeType !== FieldChangeType.ADD;
   }
 
   /**

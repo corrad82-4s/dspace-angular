@@ -1,14 +1,13 @@
 import { Router } from '@angular/router';
-import { of as observableOf } from 'rxjs';
+import { Observable, of as observableOf } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
-import { async, ComponentFixture, fakeAsync, inject, TestBed, tick } from '@angular/core/testing';
+import { ComponentFixture, fakeAsync, TestBed, tick, waitForAsync } from '@angular/core/testing';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule, By } from '@angular/platform-browser';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-translate/core';
-import { Observable } from 'rxjs/internal/Observable';
-import { PaginatedList } from '../../../core/data/paginated-list';
+import { buildPaginatedList, PaginatedList } from '../../../core/data/paginated-list.model';
 import { RemoteData } from '../../../core/data/remote-data';
 import { FindListOptions } from '../../../core/data/request.models';
 import { EPersonDataService } from '../../../core/eperson/eperson-data.service';
@@ -24,6 +23,8 @@ import { getMockTranslateService } from '../../../shared/mocks/translate.service
 import { TranslateLoaderMock } from '../../../shared/mocks/translate-loader.mock';
 import { NotificationsServiceStub } from '../../../shared/testing/notifications-service.stub';
 import { RouterStub } from '../../../shared/testing/router.stub';
+import { AuthorizationDataService } from '../../../core/data/feature-authorization/authorization-data.service';
+import { RequestService } from '../../../core/data/request.service';
 
 describe('EPeopleRegistryComponent', () => {
   let component: EPeopleRegistryComponent;
@@ -33,14 +34,21 @@ describe('EPeopleRegistryComponent', () => {
 
   let mockEPeople;
   let ePersonDataServiceStub: any;
+  let authorizationService: AuthorizationDataService;
+  let modalService;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     mockEPeople = [EPersonMock, EPersonMock2];
     ePersonDataServiceStub = {
       activeEPerson: null,
       allEpeople: mockEPeople,
       getEPeople(): Observable<RemoteData<PaginatedList<EPerson>>> {
-        return createSuccessfulRemoteDataObject$(new PaginatedList(null, this.allEpeople));
+        return createSuccessfulRemoteDataObject$(buildPaginatedList(new PageInfo({
+          elementsPerPage: this.allEpeople.length,
+          totalElements: this.allEpeople.length,
+          totalPages: 1,
+          currentPage: 1
+        }), this.allEpeople));
       },
       getActiveEPerson(): Observable<EPerson> {
         return observableOf(this.activeEPerson);
@@ -48,20 +56,40 @@ describe('EPeopleRegistryComponent', () => {
       searchByScope(scope: string, query: string, options: FindListOptions = {}): Observable<RemoteData<PaginatedList<EPerson>>> {
         if (scope === 'email') {
           const result = this.allEpeople.find((ePerson: EPerson) => {
-            return ePerson.email === query
+            return ePerson.email === query;
           });
-          return createSuccessfulRemoteDataObject$(new PaginatedList(new PageInfo(), [result]));
+          return createSuccessfulRemoteDataObject$(buildPaginatedList(new PageInfo({
+            elementsPerPage: [result].length,
+            totalElements: [result].length,
+            totalPages: 1,
+            currentPage: 1
+          }), [result]));
         }
         if (scope === 'metadata') {
           if (query === '') {
-            return createSuccessfulRemoteDataObject$(new PaginatedList(null, this.allEpeople));
+            return createSuccessfulRemoteDataObject$(buildPaginatedList(new PageInfo({
+              elementsPerPage: this.allEpeople.length,
+              totalElements: this.allEpeople.length,
+              totalPages: 1,
+              currentPage: 1
+            }), this.allEpeople));
           }
           const result = this.allEpeople.find((ePerson: EPerson) => {
-            return (ePerson.name.includes(query) || ePerson.email.includes(query))
+            return (ePerson.name.includes(query) || ePerson.email.includes(query));
           });
-          return createSuccessfulRemoteDataObject$(new PaginatedList(new PageInfo(), [result]));
+          return createSuccessfulRemoteDataObject$(buildPaginatedList(new PageInfo({
+            elementsPerPage: [result].length,
+            totalElements: [result].length,
+            totalPages: 1,
+            currentPage: 1
+          }), [result]));
         }
-        return createSuccessfulRemoteDataObject$(new PaginatedList(null, this.allEpeople));
+        return createSuccessfulRemoteDataObject$(buildPaginatedList(new PageInfo({
+          elementsPerPage: this.allEpeople.length,
+          totalElements: this.allEpeople.length,
+          totalPages: 1,
+          currentPage: 1
+        }), this.allEpeople));
       },
       deleteEPerson(ePerson: EPerson): Observable<boolean> {
         this.allEpeople = this.allEpeople.filter((ePerson2: EPerson) => {
@@ -82,6 +110,9 @@ describe('EPeopleRegistryComponent', () => {
         return '/admin/access-control/epeople';
       }
     };
+    authorizationService = jasmine.createSpyObj('authorizationService', {
+      isAuthorized: observableOf(true)
+    });
     builderService = getMockFormBuilderService();
     translateService = getMockTranslateService();
     TestBed.configureTestingModule({
@@ -94,11 +125,13 @@ describe('EPeopleRegistryComponent', () => {
         }),
       ],
       declarations: [EPeopleRegistryComponent],
-      providers: [EPeopleRegistryComponent,
+      providers: [
         { provide: EPersonDataService, useValue: ePersonDataServiceStub },
         { provide: NotificationsService, useValue: new NotificationsServiceStub() },
+        { provide: AuthorizationDataService, useValue: authorizationService },
         { provide: FormBuilderService, useValue: builderService },
         { provide: Router, useValue: new RouterStub() },
+        { provide: RequestService, useValue: jasmine.createSpyObj('requestService', ['removeByHrefSubstring']) }
       ],
       schemas: [NO_ERRORS_SCHEMA]
     }).compileComponents();
@@ -107,12 +140,14 @@ describe('EPeopleRegistryComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(EPeopleRegistryComponent);
     component = fixture.componentInstance;
+    modalService = (component as any).modalService;
+    spyOn(modalService, 'open').and.returnValue(Object.assign({ componentInstance: Object.assign({ response: observableOf(true) }) }));
     fixture.detectChanges();
   });
 
-  it('should create EPeopleRegistryComponent', inject([EPeopleRegistryComponent], (comp: EPeopleRegistryComponent) => {
-    expect(comp).toBeDefined();
-  }));
+  it('should create EPeopleRegistryComponent', () => {
+    expect(component).toBeDefined();
+  });
 
   it('should display list of ePeople', () => {
     const ePeopleIdsFound = fixture.debugElement.queryAll(By.css('#epeople tr td:first-child'));
@@ -121,7 +156,7 @@ describe('EPeopleRegistryComponent', () => {
       expect(ePeopleIdsFound.find((foundEl) => {
         return (foundEl.nativeElement.textContent.trim() === ePerson.uuid);
       })).toBeTruthy();
-    })
+    });
   });
 
   describe('search', () => {
@@ -181,7 +216,7 @@ describe('EPeopleRegistryComponent', () => {
             expect(component.isEPersonFormShown).toEqual(true);
           }
 
-        })
+        });
       });
 
       it('EPerson search section is hidden', () => {
@@ -215,4 +250,20 @@ describe('EPeopleRegistryComponent', () => {
     });
   });
 
+  describe('delete EPerson button when the isAuthorized returns false', () => {
+    let ePeopleDeleteButton;
+    beforeEach(() => {
+      authorizationService = jasmine.createSpyObj('authorizationService', {
+        isAuthorized: observableOf(false)
+      });
+    });
+
+    it('should be disabled', () => {
+      ePeopleDeleteButton = fixture.debugElement.queryAll(By.css('#epeople tr td div button.delete-button'));
+      ePeopleDeleteButton.forEach((deleteButton) => {
+        expect(deleteButton.nativeElement.disabled).toBe(true);
+      });
+
+    });
+  });
 });

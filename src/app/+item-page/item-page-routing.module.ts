@@ -12,6 +12,8 @@ import { LinkService } from '../core/cache/builders/link.service';
 import { UploadBitstreamComponent } from './bitstreams/upload/upload-bitstream.component';
 import { UPLOAD_BITSTREAM_PATH, ITEM_EDIT_PATH, getItemModuleRoute } from './item-page-routing-paths';
 import { ItemPageAdministratorGuard } from './item-page-administrator.guard';
+import { MenuItemType } from '../shared/menu/initial-menus-state';
+import { LinkMenuItemModel } from '../shared/menu/menu-item/models/link.model';
 import { CrisItemPageTabResolver } from '../cris-item-page/cris-item-page-tab.resolver';
 
 export function getItemPageRoute(itemId: string) {
@@ -19,7 +21,7 @@ export function getItemPageRoute(itemId: string) {
 }
 
 export function getItemEditPath(id: string) {
-  return new URLCombiner(getItemModuleRoute(), id, ITEM_EDIT_PATH).toString()
+  return new URLCombiner(getItemModuleRoute(), id, ITEM_EDIT_PATH).toString();
 }
 
 @NgModule({
@@ -28,7 +30,7 @@ export function getItemEditPath(id: string) {
       {
         path: ':id',
         resolve: {
-          item: ItemPageResolver,
+          dso: ItemPageResolver,
           breadcrumb: ItemBreadcrumbResolver,
           tabs: CrisItemPageTabResolver
         },
@@ -45,7 +47,8 @@ export function getItemEditPath(id: string) {
           },
           {
             path: ITEM_EDIT_PATH,
-            loadChildren: './edit-item-page/edit-item-page.module#EditItemPageModule',
+            loadChildren: () => import('./edit-item-page/edit-item-page.module')
+              .then((m) => m.EditItemPageModule),
             canActivate: [ItemPageAdministratorGuard],
             data: { title: 'submission.edit.title' }
           },
@@ -55,6 +58,20 @@ export function getItemEditPath(id: string) {
             canActivate: [AuthenticatedGuard]
           }
         ],
+        data: {
+          menu: {
+            public: [{
+              id: 'statistics_item_:id',
+              active: true,
+              visible: true,
+              model: {
+                type: MenuItemType.LINK,
+                text: 'menu.section.statistics',
+                link: 'statistics/items/:id/',
+              } as LinkMenuItemModel,
+            }],
+          },
+        },
       }
     ])
   ],

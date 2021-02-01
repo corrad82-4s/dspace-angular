@@ -4,9 +4,9 @@ import { AuthorizationDataService } from '../core/data/feature-authorization/aut
 import { ItemPageResolver } from './item-page.resolver';
 import { Item } from '../core/shared/item.model';
 import { DsoPageFeatureGuard } from '../core/data/feature-authorization/feature-authorization-guard/dso-page-feature.guard';
-import { Observable } from 'rxjs/internal/Observable';
+import { Observable, of as observableOf } from 'rxjs';
 import { FeatureID } from '../core/data/feature-authorization/feature-id';
-import { of as observableOf } from 'rxjs';
+import { AuthService } from '../core/auth/auth.service';
 
 @Injectable({
   providedIn: 'root'
@@ -17,8 +17,9 @@ import { of as observableOf } from 'rxjs';
 export class ItemPageAdministratorGuard extends DsoPageFeatureGuard<Item> {
   constructor(protected resolver: ItemPageResolver,
               protected authorizationService: AuthorizationDataService,
-              protected router: Router) {
-    super(resolver, authorizationService, router);
+              protected router: Router,
+              protected authService: AuthService) {
+    super(resolver, authorizationService, router, authService);
   }
 
   /**

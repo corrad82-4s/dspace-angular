@@ -1,10 +1,10 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { FacetSection } from 'src/app/core/layout/models/section.model';
-import { getFirstSucceededRemoteDataPayload } from 'src/app/core/shared/operators';
-import { SearchService } from 'src/app/core/shared/search/search.service';
-import { SearchFilterConfig } from 'src/app/shared/search/search-filter-config.model';
-import {FilterType} from '../../../shared/search/filter-type.model';
+import { FacetSection } from '../../../core/layout/models/section.model';
+import { getFirstSucceededRemoteDataPayload } from '../../../core/shared/operators';
+import { SearchService } from '../../../core/shared/search/search.service';
+import { SearchFilterConfig } from '../../../shared/search/search-filter-config.model';
+import { FilterType } from '../../../shared/search/filter-type.model';
 
 /**
  * Component representing the Facet component section.
@@ -38,7 +38,7 @@ export class FacetSectionComponent implements OnInit {
         .subscribe((facetConfigs) => {
           for (const config of facetConfigs) {
             if (config._embedded.values.length > 0 &&
-              chartTypes.every((e) => e !== config.type)) {
+              chartTypes.every((e) => e !== config.filterType)) {
               this.facets.push(config);
               this.facets$.next(this.facets);
             }
@@ -57,7 +57,7 @@ export class FacetSectionComponent implements OnInit {
             configuration: this.facetSection.discoveryConfigurationName,
             page: 1
         };
-        if ( facet.type === 'date') {
+        if ( facet.filterType === FilterType.range) {
             const dates = value.split('-');
             if ( dates.length === 2) {
                 queryParams[facet.paramName + '.min'] = dates[0].trim();

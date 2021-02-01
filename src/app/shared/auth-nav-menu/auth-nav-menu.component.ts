@@ -1,3 +1,5 @@
+import { AuthMethodType } from './../../core/auth/models/auth.method-type';
+import { NativeWindowService, NativeWindowRef } from './../../core/services/window.service';
 import { AuthMethod } from './../../core/auth/models/auth.method';
 import { Observable, of as observableOf, Subscription } from 'rxjs';
 
@@ -13,8 +15,6 @@ import { isNotNull, isNotUndefined } from '../empty.util';
 import { getAuthenticationMethods, isAuthenticated, isAuthenticationLoading } from '../../core/auth/selectors';
 import { EPerson } from '../../core/eperson/models/eperson.model';
 import { AuthService, LOGIN_ROUTE, LOGOUT_ROUTE } from '../../core/auth/auth.service';
-import { AuthMethodType } from 'src/app/core/auth/models/auth.method-type';
-import { NativeWindowRef, NativeWindowService } from 'src/app/core/services/window.service';
 
 @Component({
   selector: 'ds-auth-nav-menu',
@@ -43,7 +43,7 @@ export class AuthNavMenuComponent implements OnInit {
 
   public sub: Subscription;
 
-  public onlyOidc: Observable<boolean>
+  public onlyOidc: Observable<boolean>;
 
   constructor(private store: Store<AppState>,
               private windowService: HostWindowService,
@@ -73,19 +73,19 @@ export class AuthNavMenuComponent implements OnInit {
     this.onlyOidc = this.store.pipe(
       select(getAuthenticationMethods),
       map((m: AuthMethod[]) => {
-        return (m.length === 1 && m[0].authMethodType === AuthMethodType.Oidc)
+        return (m.length === 1 && m[0].authMethodType === AuthMethodType.Oidc);
       })
-    )
+    );
   }
 
   redirectToOidc() {
     this.store.pipe(
       select(getAuthenticationMethods),
       mergeMap((methods: AuthMethod[]) => {
-        return methods.filter((m: AuthMethod) => m.authMethodType === AuthMethodType.Oidc)
+        return methods.filter((m: AuthMethod) => m.authMethodType === AuthMethodType.Oidc);
       }))
       .subscribe((m: AuthMethod) => {
         this._window.nativeWindow.location.href = m.location;
-      })
+      });
   }
 }

@@ -1,7 +1,7 @@
-import { AuthMethodType } from 'src/app/core/auth/models/auth.method-type';
+import { AuthMethodType } from './../../core/auth/models/auth.method-type';
 import { AuthMethod } from './../../core/auth/models/auth.method';
 import { CUSTOM_ELEMENTS_SCHEMA, DebugElement } from '@angular/core';
-import { async, ComponentFixture, inject, TestBed } from '@angular/core/testing';
+import { ComponentFixture, inject, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { By } from '@angular/platform-browser';
 import { Store, StoreModule } from '@ngrx/store';
@@ -9,15 +9,15 @@ import { Store, StoreModule } from '@ngrx/store';
 import { authReducer, AuthState } from '../../core/auth/auth.reducer';
 import { EPersonMock } from '../testing/eperson.mock';
 import { TranslateModule } from '@ngx-translate/core';
-import { AppState, storeModuleConfig } from '../../app.reducer';
+import { AppState } from '../../app.reducer';
 import { AuthNavMenuComponent } from './auth-nav-menu.component';
 import { HostWindowServiceStub } from '../testing/host-window-service.stub';
 import { HostWindowService } from '../host-window.service';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { AuthTokenInfo } from '../../core/auth/models/auth-token-info.model';
 import { AuthService } from '../../core/auth/auth.service';
-import { of } from 'rxjs/internal/observable/of';
-import { NativeWindowService } from 'src/app/core/services/window.service';
+import { of } from 'rxjs';
+import { NativeWindowService } from '../../core/services/window.service';
 import { NativeWindowMockFactory } from '../mocks/mock-native-window-ref';
 
 describe('AuthNavMenuComponent', () => {
@@ -59,9 +59,10 @@ describe('AuthNavMenuComponent', () => {
       user: EPersonMock
     };
   }
+
   describe('when is a not mobile view', () => {
 
-    beforeEach(async(() => {
+    beforeEach(waitForAsync(() => {
       const window = new HostWindowServiceStub(800);
       serviceInit();
 
@@ -300,12 +301,12 @@ describe('AuthNavMenuComponent', () => {
           const logoutDropdownMenu = deNavMenuItem.query(By.css('ds-user-menu'));
           expect(logoutDropdownMenu.nativeElement).toBeDefined();
         });
-      })
-    })
+      });
+    });
   });
 
   describe('when is a mobile view', () => {
-    beforeEach(async(() => {
+    beforeEach(waitForAsync(() => {
       const window = new HostWindowServiceStub(300);
       serviceInit();
 
@@ -411,6 +412,6 @@ describe('AuthNavMenuComponent', () => {
         const logoutDropdownMenu = deNavMenuItem.query(By.css('a[id=logoutLink]'));
         expect(logoutDropdownMenu.nativeElement).toBeDefined();
       }));
-    })
-  })
+    });
+  });
 });

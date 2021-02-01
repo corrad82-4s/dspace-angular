@@ -1,6 +1,5 @@
 import { Component, ComponentFactoryResolver, Input, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
 import { Metric } from '../../../../../../core/shared/metric.model';
-import { BaseMetricComponent } from './base-metric.component';
 import { MetricLoaderService } from './metric-loader.service';
 
 @Component({
@@ -27,13 +26,13 @@ export class MetricLoaderComponent implements OnInit {
     }
     this.metricLoaderService.loadMetricTypeComponent(metric.metricType).then((component) => {
       this.instantiateComponent(component, metric);
-    })
+    });
   }
 
   instantiateComponent(component: any, metric: Metric) {
     const factory =    this.componentFactoryResolver.resolveComponentFactory(component);
     const ref = this.container.createComponent(factory);
-    const componentInstance = (ref.instance as BaseMetricComponent);
+    const componentInstance = (ref.instance as any);
     componentInstance.metric = metric;
     ref.changeDetectorRef.detectChanges();
   }

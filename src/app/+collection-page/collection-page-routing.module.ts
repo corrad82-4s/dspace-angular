@@ -20,6 +20,8 @@ import {
   COLLECTION_CREATE_PATH
 } from './collection-page-routing-paths';
 import { CollectionPageAdministratorGuard } from './collection-page-administrator.guard';
+import { MenuItemType } from '../shared/menu/initial-menus-state';
+import { LinkMenuItemModel } from '../shared/menu/menu-item/models/link.model';
 
 @NgModule({
   imports: [
@@ -39,7 +41,8 @@ import { CollectionPageAdministratorGuard } from './collection-page-administrato
         children: [
           {
             path: COLLECTION_EDIT_PATH,
-            loadChildren: './edit-collection-page/edit-collection-page.module#EditCollectionPageModule',
+            loadChildren: () => import('./edit-collection-page/edit-collection-page.module')
+              .then((m) => m.EditCollectionPageModule),
             canActivate: [CollectionPageAdministratorGuard]
           },
           {
@@ -69,7 +72,21 @@ import { CollectionPageAdministratorGuard } from './collection-page-administrato
             pathMatch: 'full',
             canActivate: [AuthenticatedGuard]
           }
-        ]
+        ],
+        data: {
+          menu: {
+            public: [{
+              id: 'statistics_collection_:id',
+              active: true,
+              visible: true,
+              model: {
+                type: MenuItemType.LINK,
+                text: 'menu.section.statistics',
+                link: 'statistics/collections/:id/',
+              } as LinkMenuItemModel,
+            }],
+          },
+        },
       },
     ])
   ],

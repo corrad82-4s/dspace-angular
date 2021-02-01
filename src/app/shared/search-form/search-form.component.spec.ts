@@ -1,4 +1,4 @@
-import { ComponentFixture, TestBed, async, tick, fakeAsync } from '@angular/core/testing';
+import { ComponentFixture, fakeAsync, TestBed, tick, waitForAsync } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 import { SearchFormComponent } from './search-form.component';
@@ -15,7 +15,7 @@ describe('SearchFormComponent', () => {
   let de: DebugElement;
   let el: HTMLElement;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       imports: [FormsModule, RouterTestingModule, TranslateModule.forRoot()],
       providers: [
@@ -109,7 +109,6 @@ describe('SearchFormComponent', () => {
 
 export const objects: DSpaceObject[] = [
   Object.assign(new Community(), {
-    handle: '10673/11',
     logo: {
       self: {
         _isScalar: true,
@@ -162,12 +161,17 @@ export const objects: DSpaceObject[] = [
           language: null,
           value: 'OR2017 - Demonstration'
         }
-      ]
+      ],
+      'dc.identifier.uri': [
+        {
+          language: null,
+          value: 'http://localhost:4000/handle/10673/11'
+        }
+      ],
     }
   }),
   Object.assign(new Community(),
     {
-      handle: '10673/1',
       logo: {
         self: {
           _isScalar: true,
@@ -220,7 +224,13 @@ export const objects: DSpaceObject[] = [
             language: null,
             value: 'Sample Community'
           }
-        ]
+        ],
+        'dc.identifier.uri': [
+          {
+            language: null,
+            value: 'http://localhost:4000/handle/10673/1'
+          }
+        ],
       }
     }
   )

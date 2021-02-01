@@ -15,7 +15,7 @@ import { FeatureID } from '../../../core/data/feature-authorization/feature-id';
 import { flatMap, map, switchMap, take } from 'rxjs/operators';
 import { Relationship } from '../../../core/shared/item-relationships/relationship.model';
 import { RelationshipService } from '../../../core/data/relationship.service';
-import { PaginatedList } from '../../../core/data/paginated-list';
+import { PaginatedList } from '../../../core/data/paginated-list.model';
 import { getFirstSucceededRemoteDataPayload } from '../../../core/shared/operators';
 import { Observable } from 'rxjs/internal/Observable';
 import { of } from 'rxjs/internal/observable/of';
@@ -100,7 +100,7 @@ export class ItemActionsComponent extends MyDSpaceActionsComponent<Item, ItemDat
         return this.authorizationService.isAuthorized(FeatureID.CanCorrectItem, this.object.self).pipe(
           take(1),
           switchMap((authorized) => {
-            this.canUpdate = authorized
+            this.canUpdate = authorized;
             return of(this.canUpdate);
           })
         );
@@ -131,7 +131,7 @@ export class ItemActionsComponent extends MyDSpaceActionsComponent<Item, ItemDat
         return this.authorizationService.isAuthorized(FeatureID.CanWithdrawItem, this.object.self).pipe(
           take(1),
           switchMap((authorized) => {
-            this.canWithdraw = authorized
+            this.canWithdraw = authorized;
             return of(this.canWithdraw);
           })
         );
@@ -162,7 +162,7 @@ export class ItemActionsComponent extends MyDSpaceActionsComponent<Item, ItemDat
         return this.authorizationService.isAuthorized(FeatureID.CanReinstateItem, this.object.self).pipe(
           take(1),
           switchMap((authorized) => {
-            this.canReinstate = authorized
+            this.canReinstate = authorized;
             return of(this.canReinstate);
           })
         );
@@ -182,7 +182,7 @@ export class ItemActionsComponent extends MyDSpaceActionsComponent<Item, ItemDat
         this.canUpdate = false;
         this.canReinstate = false;
         this.router.navigate(['/workspaceitems/' + submissionObject.id + '/edit']);
-    })
+    });
   }
 
   withdraw() {
@@ -196,8 +196,8 @@ export class ItemActionsComponent extends MyDSpaceActionsComponent<Item, ItemDat
       this.canWithdraw = false;
       this.canUpdate = false;
       this.canReinstate = false;
-      this.notificationService.success(this.translateService.get('submission.workflow.generic.withdraw.success'))
-    })
+      this.notificationService.success(this.translateService.get('submission.workflow.generic.withdraw.success'));
+    });
   }
 
   reinstate() {
@@ -211,8 +211,8 @@ export class ItemActionsComponent extends MyDSpaceActionsComponent<Item, ItemDat
       this.canWithdraw = false;
       this.canUpdate = false;
       this.canReinstate = false;
-      this.notificationService.success(this.translateService.get('submission.workflow.generic.reinstate.success'))
-    })
+      this.notificationService.success(this.translateService.get('submission.workflow.generic.reinstate.success'));
+    });
   }
 
   itemHasPendingRequest(): Observable<boolean> {
@@ -230,7 +230,7 @@ export class ItemActionsComponent extends MyDSpaceActionsComponent<Item, ItemDat
 
             return this.itemHasRelation('isReinstatementOfItem');
           })
-        )
+        );
       })
     );
   }

@@ -4,19 +4,18 @@ import { ItemDataService } from '../../../core/data/item-data.service';
 import { ObjectUpdatesService } from '../../../core/data/object-updates/object-updates.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { cloneDeep } from 'lodash';
-import { Observable } from 'rxjs';
-import { Identifiable } from '../../../core/data/object-updates/object-updates.reducer';
-import { first, switchMap, tap } from 'rxjs/operators';
-import { getSucceededRemoteData } from '../../../core/shared/operators';
+import { first, switchMap } from 'rxjs/operators';
+import { getFirstCompletedRemoteData } from '../../../core/shared/operators';
 import { RemoteData } from '../../../core/data/remote-data';
 import { NotificationsService } from '../../../shared/notifications/notifications.service';
 import { TranslateService } from '@ngx-translate/core';
 import { MetadataValue, MetadatumViewModel } from '../../../core/shared/metadata.models';
-import { Metadata } from '../../../core/shared/metadata.utils';
 import { AbstractItemUpdateComponent } from '../abstract-item-update/abstract-item-update.component';
 import { UpdateDataService } from '../../../core/data/update-data.service';
 import { hasNoValue, hasValue } from '../../../shared/empty.util';
 import { AlertType } from '../../../shared/alert/aletr-type';
+import { Operation } from 'fast-json-patch';
+import { MetadataPatchOperationService } from '../../../core/data/object-updates/patch-operation-service/metadata-patch-operation.service';
 
 @Component({
   selector: 'ds-item-metadata',
@@ -87,7 +86,7 @@ export class ItemMetadataComponent extends AbstractItemUpdateComponent {
    * Sends all initial values of this item to the object updates service
    */
   public initializeOriginalFields() {
-    this.objectUpdatesService.initialize(this.url, this.item.metadataAsList, this.item.lastModified);
+    this.objectUpdatesService.initialize(this.url, this.item.metadataAsList, this.item.lastModified, MetadataPatchOperationService);
   }
 
   /**
@@ -97,24 +96,26 @@ export class ItemMetadataComponent extends AbstractItemUpdateComponent {
   public submit() {
     this.isValid().pipe(first()).subscribe((isValid) => {
       if (isValid) {
-        const metadata$: Observable<Identifiable[]> = this.objectUpdatesService.getUpdatedFields(this.url, this.item.metadataAsList) as Observable<MetadatumViewModel[]>;
-        metadata$.pipe(
+        this.objectUpdatesService.createPatch(this.url).pipe(
           first(),
-          switchMap((metadata: MetadatumViewModel[]) => {
-            const updatedItem: Item = Object.assign(cloneDeep(this.item), { metadata: Metadata.toMetadataMap(metadata) });
-            return this.updateService.update(updatedItem);
-          }),
-          tap(() => this.updateService.commitUpdates()),
-          getSucceededRemoteData()
+          switchMap((patch: Operation[]) => {
+            return this.updateService.patch(this.item, patch).pipe(
+              getFirstCompletedRemoteData()
+            );
+          })
         ).subscribe(
           (rd: RemoteData<Item>) => {
-            this.item = rd.payload;
-            this.checkAndFixMetadataUUIDs();
-            this.initializeOriginalFields();
-            this.updates$ = this.objectUpdatesService.getFieldUpdates(this.url, this.item.metadataAsList);
-            this.notificationsService.success(this.getNotificationTitle('saved'), this.getNotificationContent('saved'));
+            if (rd.hasFailed) {
+              this.notificationsService.error(this.getNotificationTitle('error'), rd.errorMessage);
+            } else {
+              this.item = rd.payload;
+              this.checkAndFixMetadataUUIDs();
+              this.initializeOriginalFields();
+              this.updates$ = this.objectUpdatesService.getFieldUpdates(this.url, this.item.metadataAsList);
+              this.notificationsService.success(this.getNotificationTitle('saved'), this.getNotificationContent('saved'));
+            }
           }
-        )
+        );
       } else {
         this.notificationsService.error(this.getNotificationTitle('invalid'), this.getNotificationContent('invalid'));
       }

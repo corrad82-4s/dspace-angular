@@ -8,7 +8,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { of } from 'rxjs';
 import { CollectionDataService } from 'src/app/core/data/collection-data.service';
-import { PaginatedList } from 'src/app/core/data/paginated-list';
+import { buildPaginatedList } from 'src/app/core/data/paginated-list.model';
 import { RequestService } from 'src/app/core/data/request.service';
 import { InstitutionDataService } from 'src/app/core/institution/institution-data.service';
 import { Collection } from 'src/app/core/shared/collection.model';
@@ -74,10 +74,10 @@ describe('InstitutionExploreComponent', () => {
   beforeEach(() => {
     requestService = getMockRequestService();
     collectionService = jasmine.createSpyObj('collectionDataService', {
-      findByParent: createSuccessfulRemoteDataObject$(new PaginatedList(pageInfo, [firstCollection, secondCollection]))
+      findByParent: createSuccessfulRemoteDataObject$(buildPaginatedList(pageInfo, [firstCollection, secondCollection]))
     });
     institutionService = jasmine.createSpyObj('institutionDataService', {
-      findAll: createSuccessfulRemoteDataObject$(new PaginatedList(pageInfo, [firstInstitution, secondInstitution])),
+      findAll: createSuccessfulRemoteDataObject$(buildPaginatedList(pageInfo, [firstInstitution, secondInstitution])),
       getInstitutionTemplate: of(template)
     });
 
@@ -121,7 +121,7 @@ describe('InstitutionExploreComponent', () => {
     expect(firstInstitutionLink.nativeElement.textContent.trim()).toEqual('First Institution');
     const secondInstitutionLink = institutionList.children[2].children[0];
     expect(secondInstitutionLink.nativeElement.textContent.trim()).toEqual('Second Institution');
-  }))
+  }));
 
   describe('when clicking on one instituion', () => {
 
@@ -169,6 +169,6 @@ describe('InstitutionExploreComponent', () => {
       expect(secondRoleLink.nativeElement.href).toContain('/admin/access-control/groups/5453362');
     }));
 
-  })
+  });
 
 });

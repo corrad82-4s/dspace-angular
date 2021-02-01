@@ -1,39 +1,32 @@
-import { Component, ComponentFactoryResolver, ComponentRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import {
+  Component, ComponentFactory,
+  ComponentFactoryResolver,
+  ComponentRef,
+  OnDestroy,
+  OnInit,
+  ViewChild,
+  ViewContainerRef
+} from '@angular/core';
 
 import { BehaviorSubject, Observable } from 'rxjs';
-import { map, mergeMap, startWith, take } from 'rxjs/operators';
+import { map, take } from 'rxjs/operators';
 
-import {Tab} from '../../core/layout/models/tab.model';
-import {CrisLayoutLoaderDirective} from '../directives/cris-layout-loader.directive';
-import {TabDataService} from '../../core/layout/tab-data.service';
-import {
-  getAllSucceededRemoteDataPayload,
-  getFirstSucceededRemoteListPayload,
-  getSucceededRemoteData
-} from '../../core/shared/operators';
-import {GenericConstructor} from '../../core/shared/generic-constructor';
-import {getCrisLayoutTab} from '../decorators/cris-layout-tab.decorator';
-import {CrisLayoutPage} from '../decorators/cris-layout-page.decorator';
-import {CrisLayoutPage as CrisLayoutPageObj} from '../models/cris-layout-page.model';
-import {LayoutPage} from '../enums/layout-page.enum';
-import {isNotEmpty, isNotUndefined} from '../../shared/empty.util';
-import {EditItemDataService} from '../../core/submission/edititem-data.service';
-import {EditItem} from '../../core/submission/models/edititem.model';
-import {followLink} from '../../shared/utils/follow-link-config.model';
-import {EditItemMode} from '../../core/submission/models/edititem-mode.model';
-import {AuthorizationDataService} from 'src/app/core/data/feature-authorization/authorization-data.service';
-import {FeatureID} from 'src/app/core/data/feature-authorization/feature-id';
-import {AuthService} from '../../core/auth/auth.service';
-import {ResearcherProfileService} from '../../core/profile/researcher-profile.service';
-import {ResearcherProfile} from '../../core/profile/model/researcher-profile.model';
-import {RemoteData} from '../../core/data/remote-data';
-import {Router} from '@angular/router';
-import {NotificationsService} from '../../shared/notifications/notifications.service';
+import { Tab } from '../../core/layout/models/tab.model';
+import { CrisLayoutLoaderDirective } from '../directives/cris-layout-loader.directive';
+import { TabDataService } from '../../core/layout/tab-data.service';
+import { getFirstSucceededRemoteListPayload } from '../../core/shared/operators';
+import { GenericConstructor } from '../../core/shared/generic-constructor';
+import { getCrisLayoutTab } from '../decorators/cris-layout-tab.decorator';
+import { CrisLayoutPage } from '../decorators/cris-layout-page.decorator';
+import { CrisLayoutPageModelComponent as CrisLayoutPageObj } from '../models/cris-layout-page.model';
+import { LayoutPage } from '../enums/layout-page.enum';
+import { isNotEmpty } from '../../shared/empty.util';
+import { AuthService } from '../../core/auth/auth.service';
 
 /**
  * This component defines the default layout for all DSpace Items.
  * This component can be overwritten for a specific Item type using
- * CrisLayoutPage decorator
+ * CrisLayoutPageModelComponent decorator
  */
 @Component({
   selector: 'ds-cris-layout-default',
@@ -47,12 +40,6 @@ export class CrisLayoutDefaultComponent extends CrisLayoutPageObj implements OnI
    * Reference of this Component
    */
   componentRef: ComponentRef<Component>;
-
-  /**
-   * List of Edit Modes available on this item
-   * for the current user
-   */
-  private editModes$: BehaviorSubject<EditItemMode[]> = new BehaviorSubject<EditItemMode[]>([]);
 
   /**
    * A boolean representing if to render or not the sidebar menu
@@ -70,19 +57,20 @@ export class CrisLayoutDefaultComponent extends CrisLayoutPageObj implements OnI
   private tabs$: Observable<Tab[]>;
 
   /**
+   * Reference to the selected tab.
+   * @private
+   */
+  protected selectedTab: Tab;
+
+  /**
    * Directive hook used to place the dynamic child component
    */
   @ViewChild(CrisLayoutLoaderDirective, {static: true}) crisLayoutLoader: CrisLayoutLoaderDirective;
 
   constructor(
-    private tabService: TabDataService,
-    private componentFactoryResolver: ComponentFactoryResolver,
-    private editItemService: EditItemDataService,
-    private authService: AuthService,
-    private authorizationService: AuthorizationDataService,
-    private researcherProfileService: ResearcherProfileService,
-    private router: Router,
-    private notificationsService: NotificationsService
+    protected tabService: TabDataService,
+    protected componentFactoryResolver: ComponentFactoryResolver,
+    protected authService: AuthService
   ) {
     super();
   }
@@ -100,18 +88,7 @@ export class CrisLayoutDefaultComponent extends CrisLayoutPageObj implements OnI
 
     // Init the sidebar status
     this.hasSidebar$.pipe(take(1)).subscribe((status) => {
-      this.sidebarStatus$.next(status)
-    });
-
-    // Retrieve edit modes
-    this.editItemService.findById(this.item.id + ':none', followLink('modes')).pipe(
-      getAllSucceededRemoteDataPayload(),
-      mergeMap((editItem: EditItem) => editItem.modes.pipe(
-        getFirstSucceededRemoteListPayload())
-      ),
-      startWith([])
-    ).subscribe((editModes: EditItemMode[]) => {
-      this.editModes$.next(editModes)
+      this.sidebarStatus$.next(status);
     });
   }
 
@@ -126,6 +103,7 @@ export class CrisLayoutDefaultComponent extends CrisLayoutPageObj implements OnI
    * Set dynamic child component
    */
   changeTab(tab: Tab) {
+    this.selectedTab = tab;
     const componentFactory = this.componentFactoryResolver.resolveComponentFactory(this.getComponent(tab.shortname));
     const viewContainerRef = this.crisLayoutLoader.viewContainerRef;
     viewContainerRef.clear();
@@ -133,24 +111,30 @@ export class CrisLayoutDefaultComponent extends CrisLayoutPageObj implements OnI
     if (this.componentRef) {
       this.componentRef.destroy();
     }
-    this.componentRef = viewContainerRef.createComponent(componentFactory);
+    this.componentRef = this.instantiateTab(viewContainerRef, componentFactory, tab);
     (this.componentRef.instance as any).item = this.item;
     (this.componentRef.instance as any).tab = tab;
+  }
+
+  /**
+   * Instantiate the Tab component.
+   * @param viewContainerRef
+   * @param componentFactory
+   * @param tab
+   */
+  instantiateTab(viewContainerRef: ViewContainerRef, componentFactory: ComponentFactory<any>, tab: Tab): ComponentRef<any> {
+    const componentRef = viewContainerRef.createComponent(componentFactory);
+    (componentRef.instance as any).item = this.item;
+    (componentRef.instance as any).tab = tab;
+    return componentRef;
   }
 
   /**
    * Fetch the component depending on the item type and shortname of tab
    * @returns {GenericConstructor<Component>}
    */
-  private getComponent(tabShortname: string): GenericConstructor<Component> {
+  protected getComponent(tabShortname: string): GenericConstructor<Component> {
     return getCrisLayoutTab(this.item, tabShortname);
-  }
-
-  /**
-   * Check if edit mode is available
-   */
-  getEditModes(): Observable<EditItemMode[]> {
-    return this.editModes$;
   }
 
   /**
@@ -158,15 +142,6 @@ export class CrisLayoutDefaultComponent extends CrisLayoutPageObj implements OnI
    */
   getTabs(): Observable<Tab[]> {
     return this.tabs$;
-  }
-
-  /**
-   * Check if edit mode is available
-   */
-  isEditAvailable(): Observable<boolean> {
-    return this.editModes$.asObservable().pipe(
-      map((editModes) => isNotEmpty(editModes) && editModes.length === 1)
-    );
   }
 
   /**
@@ -186,13 +161,6 @@ export class CrisLayoutDefaultComponent extends CrisLayoutPageObj implements OnI
   }
 
   /**
-   * Return if the user is the administrator
-   */
-  isAdministrator() {
-    return this.authorizationService.isAuthorized(FeatureID.AdministratorOf);
-  }
-
-  /**
    * Return if the user is authenticated
    */
   isAuthenticated() {
@@ -205,25 +173,4 @@ export class CrisLayoutDefaultComponent extends CrisLayoutPageObj implements OnI
     }
   }
 
-  claim() {
-
-    this.researcherProfileService.createFromExternalSource(this.item._links.self.href)
-      .pipe(
-        getSucceededRemoteData(),
-        take(1),
-        mergeMap((rd: RemoteData<ResearcherProfile>) => {
-          return this.researcherProfileService.findRelatedItemId(rd.payload)
-        }))
-      .subscribe((id: string) => {
-        if (isNotUndefined(id)) {
-          this.router.navigateByUrl('/items/' + id);
-        } else {
-          this.notificationsService.error('researcherprofile.error.claim.title', 'researcherprofile.error.claim.body');
-        }
-        })
-  }
-
-  isClaimable() {
-    return this.authorizationService.isAuthorized(FeatureID.CanClaimItem, this.item._links.self.href)
-  }
 }

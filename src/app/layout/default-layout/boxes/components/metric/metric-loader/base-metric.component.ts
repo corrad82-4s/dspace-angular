@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core';
 import { Metric } from '../../../../../../core/shared/metric.model';
 
 @Component({
-  template: '',
+  template: ''
 })
 export abstract class BaseMetricComponent {
 

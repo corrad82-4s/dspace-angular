@@ -1,5 +1,5 @@
 import { of as observableOf } from 'rxjs';
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { DebugElement, NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
@@ -14,12 +14,16 @@ import { ConfirmationModalComponent } from '../../../confirmation-modal/confirma
 import { TranslateLoaderMock } from '../../../mocks/translate-loader.mock';
 import { NotificationsService } from '../../../notifications/notifications.service';
 import { NotificationsServiceStub } from '../../../testing/notifications-service.stub';
-import { createSuccessfulRemoteDataObject } from '../../../remote-data.utils';
+import {
+  createFailedRemoteDataObject$,
+  createSuccessfulRemoteDataObject,
+  createSuccessfulRemoteDataObject$
+} from '../../../remote-data.utils';
 import { ExportMetadataSelectorComponent } from './export-metadata-selector.component';
 
 // No way to add entryComponents yet to testbed; alternative implemented; source: https://stackoverflow.com/questions/41689468/how-to-shallow-test-a-component-with-an-entrycomponents
 @NgModule({
-  imports: [ NgbModalModule,
+  imports: [NgbModalModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -32,7 +36,8 @@ import { ExportMetadataSelectorComponent } from './export-metadata-selector.comp
   providers: [],
   entryComponents: [ConfirmationModalComponent],
 })
-class ModelTestModule { }
+class ModelTestModule {
+}
 
 describe('ExportMetadataSelectorComponent', () => {
   let component: ExportMetadataSelectorComponent;
@@ -53,31 +58,39 @@ describe('ExportMetadataSelectorComponent', () => {
   const mockCollection: Collection = Object.assign(new Collection(), {
     id: 'test-collection-1-1',
     name: 'test-collection-1',
-    handle: 'fake/test-collection-1',
+    metadata: {
+      'dc.identifier.uri': [
+        {
+          language: null,
+          value: 'fake/test-collection-1'
+        }
+      ]
+    }
   });
 
   const mockCommunity = Object.assign(new Community(), {
     id: 'test-uuid',
-    handle: 'fake/test-community-1',
+    metadata: {
+      'dc.identifier.uri': [
+        {
+          language: null,
+          value: 'fake/test-community-1'
+        }
+      ]
+    }
   });
 
   const itemRD = createSuccessfulRemoteDataObject(mockItem);
   const modalStub = jasmine.createSpyObj('modalStub', ['close']);
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     notificationService = new NotificationsServiceStub();
     router = jasmine.createSpyObj('router', {
       navigateByUrl: jasmine.createSpy('navigateByUrl')
     });
     scriptService = jasmine.createSpyObj('scriptService',
       {
-        invoke: observableOf({
-          response:
-            {
-              isSuccessful: true,
-              resourceSelfLinks: ['https://localhost:8080/api/core/processes/45']
-            }
-        })
+        invoke: createSuccessfulRemoteDataObject$({ processId: '45' })
       }
     );
     TestBed.configureTestingModule({
@@ -112,7 +125,7 @@ describe('ExportMetadataSelectorComponent', () => {
     fixture = TestBed.createComponent(ExportMetadataSelectorComponent);
     component = fixture.componentInstance;
     debugElement = fixture.debugElement;
-    const modalService = TestBed.get(NgbModal);
+    const modalService = TestBed.inject(NgbModal);
     modalRef = modalService.open(ConfirmationModalComponent);
     modalRef.componentInstance.response = observableOf(true);
     fixture.detectChanges();
@@ -127,7 +140,7 @@ describe('ExportMetadataSelectorComponent', () => {
     beforeEach((done) => {
       component.navigate(mockItem).subscribe((succeeded: boolean) => {
         scriptRequestSucceeded = succeeded;
-        done()
+        done();
       });
     });
     it('should not invoke metadata-export script', () => {
@@ -141,7 +154,7 @@ describe('ExportMetadataSelectorComponent', () => {
       spyOn((component as any).modalService, 'open').and.returnValue(modalRef);
       component.navigate(mockCollection).subscribe((succeeded: boolean) => {
         scriptRequestSucceeded = succeeded;
-        done()
+        done();
       });
     });
     it('metadata-export script is invoked with its -i handle and -f uuid.csv', () => {
@@ -166,7 +179,7 @@ describe('ExportMetadataSelectorComponent', () => {
       spyOn((component as any).modalService, 'open').and.returnValue(modalRef);
       component.navigate(mockCommunity).subscribe((succeeded: boolean) => {
         scriptRequestSucceeded = succeeded;
-        done()
+        done();
       });
     });
     it('metadata-export script is invoked with its -i handle and -f uuid.csv', () => {
@@ -190,15 +203,10 @@ describe('ExportMetadataSelectorComponent', () => {
     beforeEach((done) => {
       spyOn((component as any).modalService, 'open').and.returnValue(modalRef);
       jasmine.getEnv().allowRespy(true);
-      spyOn(scriptService, 'invoke').and.returnValue(observableOf({
-        response:
-          {
-            isSuccessful: false,
-          }
-      }));
+      spyOn(scriptService, 'invoke').and.returnValue(createFailedRemoteDataObject$('Error', 500));
       component.navigate(mockCommunity).subscribe((succeeded: boolean) => {
         scriptRequestSucceeded = succeeded;
-        done()
+        done();
       });
     });
     it('error notification is shown', () => {

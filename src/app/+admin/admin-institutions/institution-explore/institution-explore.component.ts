@@ -75,18 +75,18 @@ export class InstitutionExploreComponent implements OnInit {
       this.institutionService.getInstitutionTemplate()
     ).subscribe(([institutions, template]) => {
 
-      this.requestService.removeByHrefSubstring(institutions.self)
+      this.requestService.removeByHrefSubstring(institutions.self);
       if (!template || this.templateIncludedInInstitutions(institutions.page, template)) {
         this.institutions$.next(institutions.page);
       } else {
         this.institutions$.next([template, ...institutions.page]);
       }
 
-    })
+    });
   }
 
   private templateIncludedInInstitutions(institutions: Community[], template: Community): boolean {
-    return institutions.map((community) => community.id).includes(template.id)
+    return institutions.map((community) => community.id).includes(template.id);
   }
 
   changeCurrentInstitution(institution: Community) {
@@ -126,7 +126,7 @@ export class InstitutionExploreComponent implements OnInit {
       'nav-link' : true,
       'lead' : true,
       'active' : this.currentInstitution && this.currentInstitution.id === institution.id
-    }
+    };
   }
 
 }

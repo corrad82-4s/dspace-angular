@@ -25,8 +25,6 @@ import { CheckAuthenticationTokenAction } from './core/auth/auth.actions';
 
 import { CoreModule } from './core/core.module';
 import { ClientCookieService } from './core/services/client-cookie.service';
-import { JournalEntitiesModule } from './entity-groups/journal-entities/journal-entities.module';
-import { ResearchEntitiesModule } from './entity-groups/research-entities/research-entities.module';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderNavbarWrapperComponent } from './header-nav-wrapper/header-navbar-wrapper.component';
 import { HeaderComponent } from './header/header.component';
@@ -41,13 +39,13 @@ import { SharedModule } from './shared/shared.module';
 import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
 import { environment } from '../environments/environment';
 import { BrowserModule } from '@angular/platform-browser';
-import { UnauthorizedComponent } from './unauthorized/unauthorized.component';
+import { ForbiddenComponent } from './forbidden/forbidden.component';
 
 export function getBase() {
   return environment.ui.nameSpace;
 }
 
-export function getMetaReducers(): Array<MetaReducer<AppState>> {
+export function getMetaReducers(): MetaReducer<AppState>[] {
   return environment.debug ? [...appMetaReducers, ...debugMetaReducers] : appMetaReducers;
 }
 
@@ -64,11 +62,6 @@ const IMPORTS = [
   EffectsModule.forRoot(appEffects),
   StoreModule.forRoot(appReducers, storeModuleConfig),
   StoreRouterConnectingModule.forRoot(),
-];
-
-const ENTITY_IMPORTS = [
-  JournalEntitiesModule,
-  ResearchEntitiesModule
 ];
 
 IMPORTS.push(
@@ -116,6 +109,8 @@ const DECLARATIONS = [
   NotificationComponent,
   NotificationsBoardComponent,
   SearchNavbarComponent,
+  BreadcrumbsComponent,
+  ForbiddenComponent,
 ];
 
 const EXPORTS = [
@@ -125,23 +120,16 @@ const EXPORTS = [
 @NgModule({
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
-    ...IMPORTS,
-    ...ENTITY_IMPORTS
+    ...IMPORTS
   ],
   providers: [
     ...PROVIDERS
   ],
   declarations: [
     ...DECLARATIONS,
-    BreadcrumbsComponent,
-    UnauthorizedComponent,
   ],
   exports: [
     ...EXPORTS
-  ],
-  entryComponents: [
-    AdminSidebarSectionComponent,
-    ExpandableAdminSidebarSectionComponent
   ]
 })
 export class AppModule {

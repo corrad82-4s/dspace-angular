@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Injector, NO_ERRORS_SCHEMA } from '@angular/core';
-import { async, ComponentFixture, fakeAsync, TestBed } from '@angular/core/testing';
+import { ComponentFixture, fakeAsync, TestBed, waitForAsync } from '@angular/core/testing';
 import { Router } from '@angular/router';
 import { By } from '@angular/platform-browser';
 
@@ -84,7 +84,7 @@ mockObject = Object.assign(new PoolTask(), {
 });
 
 describe('PoolTaskActionsComponent', () => {
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       imports: [
         TranslateModule.forRoot({
@@ -114,8 +114,8 @@ describe('PoolTaskActionsComponent', () => {
     fixture = TestBed.createComponent(PoolTaskActionsComponent);
     component = fixture.componentInstance;
     component.object = mockObject;
-    notificationsServiceStub = TestBed.get(NotificationsService);
-    router = TestBed.get(Router);
+    notificationsServiceStub = TestBed.inject(NotificationsService as any);
+    router = TestBed.inject(Router as any);
     fixture.detectChanges();
   });
 
@@ -132,7 +132,7 @@ describe('PoolTaskActionsComponent', () => {
 
     expect(component.workflowitem$).toBeObservable(cold('(b|)', {
       b: rdWorkflowitem.payload
-    }))
+    }));
   });
 
   it('should display claim task button', () => {
@@ -143,7 +143,7 @@ describe('PoolTaskActionsComponent', () => {
 
   it('should call claimTask method on claim', fakeAsync(() => {
     spyOn(component, 'reload');
-    mockDataService.claimTask.and.returnValue(observableOf({hasSucceeded: true}));
+    mockDataService.claimTask.and.returnValue(observableOf({ hasSucceeded: true }));
 
     component.claim();
     fixture.detectChanges();
@@ -154,9 +154,9 @@ describe('PoolTaskActionsComponent', () => {
 
   }));
 
-  it('should display a success notification on claim success', async(() => {
+  it('should display a success notification on claim success', waitForAsync(() => {
     spyOn(component, 'reload');
-    mockDataService.claimTask.and.returnValue(observableOf({hasSucceeded: true}));
+    mockDataService.claimTask.and.returnValue(observableOf({ hasSucceeded: true }));
 
     component.claim();
     fixture.detectChanges();
@@ -166,10 +166,10 @@ describe('PoolTaskActionsComponent', () => {
     });
   }));
 
-  it('should reload page on claim success', async(() => {
+  it('should reload page on claim success', waitForAsync(() => {
     spyOn(router, 'navigateByUrl');
     router.url = 'test.url/test';
-    mockDataService.claimTask.and.returnValue(observableOf({hasSucceeded: true}));
+    mockDataService.claimTask.and.returnValue(observableOf({ hasSucceeded: true }));
 
     component.claim();
     fixture.detectChanges();
@@ -179,8 +179,8 @@ describe('PoolTaskActionsComponent', () => {
     });
   }));
 
-  it('should display an error notification on claim failure', async(() => {
-    mockDataService.claimTask.and.returnValue(observableOf({hasSucceeded: false}));
+  it('should display an error notification on claim failure', waitForAsync(() => {
+    mockDataService.claimTask.and.returnValue(observableOf({ hasSucceeded: false }));
 
     component.claim();
     fixture.detectChanges();
@@ -190,7 +190,7 @@ describe('PoolTaskActionsComponent', () => {
     });
   }));
 
-  it('should clear the object cache by href', async(() => {
+  it('should clear the object cache by href', waitForAsync(() => {
     component.reload();
     fixture.detectChanges();
 

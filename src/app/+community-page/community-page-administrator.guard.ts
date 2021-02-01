@@ -3,10 +3,10 @@ import { ActivatedRouteSnapshot, Router, RouterStateSnapshot } from '@angular/ro
 import { Community } from '../core/shared/community.model';
 import { CommunityPageResolver } from './community-page.resolver';
 import { AuthorizationDataService } from '../core/data/feature-authorization/authorization-data.service';
-import { of as observableOf } from 'rxjs';
+import { Observable, of as observableOf } from 'rxjs';
 import { DsoPageFeatureGuard } from '../core/data/feature-authorization/feature-authorization-guard/dso-page-feature.guard';
-import { Observable } from 'rxjs/internal/Observable';
 import { FeatureID } from '../core/data/feature-authorization/feature-id';
+import { AuthService } from '../core/auth/auth.service';
 
 @Injectable({
   providedIn: 'root'
@@ -17,8 +17,9 @@ import { FeatureID } from '../core/data/feature-authorization/feature-id';
 export class CommunityPageAdministratorGuard extends DsoPageFeatureGuard<Community> {
   constructor(protected resolver: CommunityPageResolver,
               protected authorizationService: AuthorizationDataService,
-              protected router: Router) {
-    super(resolver, authorizationService, router);
+              protected router: Router,
+              protected authService: AuthService) {
+    super(resolver, authorizationService, router, authService);
   }
 
   /**

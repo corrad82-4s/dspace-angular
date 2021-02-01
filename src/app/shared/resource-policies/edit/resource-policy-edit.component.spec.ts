@@ -1,4 +1,4 @@
-import { async, ComponentFixture, inject, TestBed } from '@angular/core/testing';
+import { ComponentFixture, inject, TestBed, waitForAsync } from '@angular/core/testing';
 import { ChangeDetectorRef, Component, Injector, NO_ERRORS_SCHEMA } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
@@ -7,10 +7,7 @@ import { of as observableOf } from 'rxjs';
 import { TestScheduler } from 'rxjs/testing';
 import { TranslateModule } from '@ngx-translate/core';
 
-import {
-  createFailedRemoteDataObject,
-  createSuccessfulRemoteDataObject
-} from '../../remote-data.utils';
+import { createFailedRemoteDataObject, createSuccessfulRemoteDataObject } from '../../remote-data.utils';
 import { createTestComponent } from '../../testing/utils.test';
 import { LinkService } from '../../../core/cache/builders/link.service';
 import { NotificationsService } from '../../notifications/notifications.service';
@@ -72,7 +69,7 @@ describe('ResourcePolicyEditComponent test suite', () => {
     url: `url/edit`
   });
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       imports: [
         TranslateModule.forRoot()
@@ -137,28 +134,32 @@ describe('ResourcePolicyEditComponent test suite', () => {
       fixture.destroy();
     });
 
-    it('should init component properly', () => {
+    it('should init component properly', (done) => {
       fixture.detectChanges();
       expect(compAsAny.resourcePolicy).toEqual(resourcePolicy);
+      done();
     });
 
-    it('should redirect to authorizations page', () => {
+    it('should redirect to authorizations page', (done) => {
       comp.redirectToAuthorizationsPage();
       expect(compAsAny.router.navigate).toHaveBeenCalled();
+      done();
     });
 
-    it('should return true when is Processing', () => {
+    it('should return true when is Processing', (done) => {
       compAsAny.processing$.next(true);
       expect(comp.isProcessing()).toBeObservable(cold('a', {
         a: true
       }));
+      done();
     });
 
-    it('should return false when is not Processing', () => {
+    it('should return false when is not Processing', (done) => {
       compAsAny.processing$.next(false);
       expect(comp.isProcessing()).toBeObservable(cold('a', {
         a: false
       }));
+      done();
     });
 
     describe('', () => {
@@ -196,7 +197,7 @@ describe('ResourcePolicyEditComponent test suite', () => {
       });
 
       it('should notify error when update is not successful', () => {
-        compAsAny.resourcePolicyService.update.and.returnValue(observableOf(createFailedRemoteDataObject({})));
+        compAsAny.resourcePolicyService.update.and.returnValue(observableOf(createFailedRemoteDataObject()));
 
         scheduler = getTestScheduler();
         scheduler.schedule(() => comp.updateResourcePolicy(eventPayload));

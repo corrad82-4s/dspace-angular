@@ -8,7 +8,7 @@ import { CrisLayoutDefaultComponent } from './default-layout/cris-layout-default
 import { CrisLayoutDefaultSidebarComponent } from './default-layout/sidebar/cris-layout-default-sidebar.component';
 import { CrisLayoutDefaultTabComponent } from './default-layout/tab/cris-layout-default-tab.component';
 import { CrisLayoutMetadataBoxComponent } from './default-layout/boxes/metadata/cris-layout-metadata-box.component';
-import { RowComponent } from './default-layout/boxes/components/row/row.component';
+import { RowComponent } from './default-layout/boxes/metadata/row/row.component';
 import { TextComponent } from './default-layout/boxes/components/text/text.component';
 import { HeadingComponent } from './default-layout/boxes/components/heading/heading.component';
 import { CrisLayoutSearchBoxComponent } from './default-layout/boxes/search/cris-layout-search-box.component';
@@ -27,12 +27,47 @@ import { OrcidAuthorizationsComponent } from './custom-layout/orcid-authorizatio
 import { OrcidSyncSettingsComponent } from './custom-layout/orcid-sync-settings/orcid-sync-settings.component';
 import { CrisLayoutMetricsBoxComponent } from './default-layout/boxes/metrics/cris-layout-metrics-box.component';
 import { MetricRowComponent } from './default-layout/boxes/components/metric-row/metric-row.component';
+import { ContextMenuModule } from '../shared/context-menu/context-menu.module';
 import { MetricLoaderComponent } from './default-layout/boxes/components/metric/metric-loader/metric-loader.component';
 import { MetricAltmetricComponent } from './default-layout/boxes/components/metric/metric-altmetric/metric-altmetric.component';
 import { MetricDimensionsComponent } from './default-layout/boxes/components/metric/metric-dimensions/metric-dimensions.component';
 import { MetricDspacecrisComponent } from './default-layout/boxes/components/metric/metric-dspacecris/metric-dspacecris.component';
 import { MetricGooglescholarComponent } from './default-layout/boxes/components/metric/metric-googlescholar/metric-googlescholar.component';
+import { PeruLayoutComponent } from './peru-layout/peru-layout.component';
+import { PeruTabComponent } from './peru-layout/peru-tab/peru-tab.component';
+import { PeruMetadataBoxComponent } from './peru-layout/boxes/peru-metadata-box/peru-metadata-box.component';
+import { PeruSearchBoxComponent } from './peru-layout/boxes/search/peru-search-box.component';
+import { PeruMetricsBoxComponent } from './peru-layout/boxes/metrics/peru-metrics-box.component';
+import { PendingCorrectionComponent } from './peru-layout/pending-correction/pending-correction.component';
+import { PendingCorrectionDetailsComponent } from './peru-layout/pending-correction/pending-correction-details/pending-correction-details.component';
+import { ShadowCopiesComponent } from './peru-layout/shadow-copies/shadow-copies.component';
+import { PeruSidebarComponent } from './peru-layout/peru-sidebar/peru-sidebar.component';
 
+const ENTRY_COMPONENTS = [
+  // put only entry components that use custom decorator
+  CrisLayoutDefaultComponent,
+  CrisLayoutDefaultTabComponent,
+  CrisLayoutMetadataBoxComponent,
+  CrisLayoutMetricsBoxComponent,
+  CrisLayoutSearchBoxComponent,
+  TextComponent,
+  HeadingComponent,
+  LongtextComponent,
+  DateComponent,
+  LinkComponent,
+  IdentifierComponent,
+  CrisrefComponent,
+  ThumbnailComponent,
+  AttachmentComponent,
+  OrcidSyncSettingsComponent,
+  OrcidSyncQueueComponent,
+  OrcidAuthorizationsComponent,
+  PeruLayoutComponent,
+  PeruTabComponent,
+  PeruMetadataBoxComponent,
+  PeruSearchBoxComponent,
+  PeruMetricsBoxComponent
+];
 @NgModule({
   declarations: [
     CrisLayoutLoaderDirective,
@@ -62,36 +97,23 @@ import { MetricGooglescholarComponent } from './default-layout/boxes/components/
     MetricAltmetricComponent,
     MetricDimensionsComponent,
     MetricDspacecrisComponent,
-    MetricGooglescholarComponent
+    MetricGooglescholarComponent,
+    PendingCorrectionComponent,
+    PeruLayoutComponent,
+    PeruTabComponent,
+    PeruMetadataBoxComponent,
+    PeruSearchBoxComponent,
+    PeruMetricsBoxComponent,
+    PendingCorrectionDetailsComponent,
+    ShadowCopiesComponent,
+    PeruSidebarComponent
   ],
   imports: [
     CommonModule,
     SharedModule,
     SearchPageModule,
-    MyDSpacePageModule
-  ],
-  entryComponents: [
-    CrisLayoutDefaultComponent,
-    CrisLayoutDefaultTabComponent,
-    CrisLayoutMetadataBoxComponent,
-    CrisLayoutMetricsBoxComponent,
-    CrisLayoutSearchBoxComponent,
-    TextComponent,
-    HeadingComponent,
-    LongtextComponent,
-    DateComponent,
-    LinkComponent,
-    IdentifierComponent,
-    CrisrefComponent,
-    ThumbnailComponent,
-    AttachmentComponent,
-    OrcidSyncSettingsComponent,
-    OrcidSyncQueueComponent,
-    OrcidAuthorizationsComponent,
-    MetricDspacecrisComponent,
-    MetricAltmetricComponent,
-    MetricDimensionsComponent,
-    MetricGooglescholarComponent
+    MyDSpacePageModule,
+    ContextMenuModule
   ],
   exports: [
     CrisPageLoaderComponent,
@@ -100,4 +122,15 @@ import { MetricGooglescholarComponent } from './default-layout/boxes/components/
     CrisLayoutMetadataBoxComponent
   ]
 })
-export class LayoutModule { }
+export class LayoutModule {
+  /**
+   * NOTE: this method allows to resolve issue with components that using a custom decorator
+   * which are not loaded during CSR otherwise
+   */
+  static withEntryComponents() {
+    return {
+      ngModule: LayoutModule,
+      providers: ENTRY_COMPONENTS.map((component) => ({provide: component}))
+    };
+  }
+}

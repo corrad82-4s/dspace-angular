@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { TranslateModule } from '@ngx-translate/core';
 import { DebugElement, NO_ERRORS_SCHEMA } from '@angular/core';
 import { DSOSelectorComponent } from './dso-selector.component';
@@ -6,10 +6,10 @@ import { SearchService } from '../../../core/shared/search/search.service';
 import { DSpaceObjectType } from '../../../core/shared/dspace-object-type.model';
 import { ItemSearchResult } from '../../object-collection/shared/item-search-result.model';
 import { Item } from '../../../core/shared/item.model';
-import { PaginatedList } from '../../../core/data/paginated-list';
-import { MetadataValue } from '../../../core/shared/metadata.models';
 import { createSuccessfulRemoteDataObject$ } from '../../remote-data.utils';
 import { PaginatedSearchOptions } from '../../search/paginated-search-options.model';
+import { hasValue } from '../../empty.util';
+import { createPaginatedList } from '../../testing/utils.test';
 
 describe('DSOSelectorComponent', () => {
   let component: DSOSelectorComponent;
@@ -18,21 +18,48 @@ describe('DSOSelectorComponent', () => {
 
   const currentDSOId = 'test-uuid-ford-sose';
   const type = DSpaceObjectType.ITEM;
-  const searchResult = new ItemSearchResult();
-  const item = new Item();
-  item.metadata = {
-    'dc.title': [Object.assign(new MetadataValue(), {
-      value: 'Item title',
-      language: undefined
-    })]
-  };
-  searchResult.indexableObject = item;
-  searchResult.hitHighlights = {};
-  const searchService = jasmine.createSpyObj('searchService', {
-    search: createSuccessfulRemoteDataObject$(new PaginatedList(undefined, [searchResult]))
-  });
+  const searchResult = createSearchResult('current');
 
-  beforeEach(async(() => {
+  const firstPageResults = [
+    createSearchResult('1'),
+    createSearchResult('2'),
+    createSearchResult('3'),
+  ];
+
+  const nextPageResults = [
+    createSearchResult('4'),
+    createSearchResult('5'),
+    createSearchResult('6'),
+  ];
+
+  const searchService = {
+    search: (options: PaginatedSearchOptions) => {
+      if (hasValue(options.query) && options.query.startsWith('search.resourceid')) {
+        return createSuccessfulRemoteDataObject$(createPaginatedList([searchResult]));
+      } else if (options.pagination.currentPage === 1) {
+        return createSuccessfulRemoteDataObject$(createPaginatedList(firstPageResults));
+      } else {
+        return createSuccessfulRemoteDataObject$(createPaginatedList(nextPageResults));
+      }
+    }
+  };
+
+  function createSearchResult(name: string): ItemSearchResult {
+    return Object.assign(new ItemSearchResult(), {
+      indexableObject: Object.assign(new Item(), {
+        id: `test-result-${name}`,
+        metadata: {
+          'dc.title': [
+            {
+              value: `test result - ${name}`
+            }
+          ]
+        }
+      })
+    });
+  }
+
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       imports: [TranslateModule.forRoot()],
       declarations: [DSOSelectorComponent],
@@ -58,13 +85,23 @@ describe('DSOSelectorComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should initially call the search method on the SearchService with the given DSO uuid', () => {
-    const searchOptions = new PaginatedSearchOptions({
-      query: currentDSOId,
-      dsoTypes: [type],
-      pagination: (component as any).defaultPagination
+  describe('populating listEntries', () => {
+    it('should not be empty', () => {
+      expect(component.listEntries.length).toBeGreaterThan(0);
     });
 
-    expect(searchService.search).toHaveBeenCalledWith(searchOptions);
+    it('should contain a combination of the current DSO and first page results', () => {
+      expect(component.listEntries).toEqual([searchResult, ...firstPageResults]);
+    });
+
+    describe('when current page increases', () => {
+      beforeEach(() => {
+        component.currentPage$.next(2);
+      });
+
+      it('should contain a combination of the current DSO, as well as first and second page results', () => {
+        expect(component.listEntries).toEqual([searchResult, ...firstPageResults, ...nextPageResults]);
+      });
+    });
   });
 });

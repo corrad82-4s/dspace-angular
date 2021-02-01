@@ -7,8 +7,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
-import { before } from 'lodash';
-import { of } from 'rxjs/internal/observable/of';
+import { of } from 'rxjs';
 import { DSONameService } from '../core/breadcrumbs/dso-name.service';
 import { RestResponse } from '../core/cache/response.models';
 import { ScriptDataService } from '../core/data/processes/script-data.service';
@@ -23,6 +22,7 @@ import { createSuccessfulRemoteDataObject } from '../shared/remote-data.utils';
 import { ActivatedRouteStub } from '../shared/testing/active-router.stub';
 import { NotificationsServiceStub } from '../shared/testing/notifications-service.stub';
 import { BulkImportPageComponent } from './bulk-import-page.component';
+import { AuthService } from '../core/auth/auth.service';
 
 describe('BulkImportPageComponent', () => {
 
@@ -42,9 +42,14 @@ describe('BulkImportPageComponent', () => {
 
   const file: File = new File(['test'], 'test.xls');
 
-  const fileList: FileList = Object.assign({}, {
+  const fileList: any = {
     item: (index: number) => file,
     length: 10
+  };
+
+  const authService = jasmine.createSpyObj('authService', {
+    isAuthenticated: of(true),
+    setRedirectUrl: {}
   });
 
   beforeEach(() => {
@@ -79,7 +84,8 @@ describe('BulkImportPageComponent', () => {
         { provide: ScriptDataService, useValue: scriptDataService },
         { provide: NotificationsService, useValue: notificationsService },
         { provide: ActivatedRoute, useValue: route },
-        { provide: Router, useValue: router }
+        { provide: Router, useValue: router },
+        { provide: AuthService, useValue: authService },
       ],
       schemas: [NO_ERRORS_SCHEMA]
     }).compileComponents();
@@ -103,27 +109,27 @@ describe('BulkImportPageComponent', () => {
       component.form.value.abortOnError = true;
       component.form.value.file = fileList;
       component.submit();
-    })
+    });
 
     it('should invoke the bulk-import script', () => {
       expect(scriptDataService.invoke).toHaveBeenCalledWith('bulk-import', [
         { name: '-c', value: '626b80c5-ef15-4b29-8e69-bda89b0a7acf' },
         { name: '-f', value: 'test.xls' },
         { name: '-e', value: true }
-      ], [file])
-    })
+      ], [file]);
+    });
 
-  })
+  });
 
   describe('when the user click on back button', () => {
 
     beforeEach(() => {
       component.goBack();
-    })
+    });
 
     it('should nagivate to collection page', () => {
-      expect(router.navigateByUrl).toHaveBeenCalledWith('/collections/626b80c5-ef15-4b29-8e69-bda89b0a7acf')
-    })
+      expect(router.navigateByUrl).toHaveBeenCalledWith('/collections/626b80c5-ef15-4b29-8e69-bda89b0a7acf');
+    });
 
   });
 

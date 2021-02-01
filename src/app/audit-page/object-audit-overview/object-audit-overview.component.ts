@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+
 import { Observable } from 'rxjs';
+import { mergeMap } from 'rxjs/operators';
+
 import { RemoteData } from '../../core/data/remote-data';
-import { PaginatedList } from '../../core/data/paginated-list';
 import { PaginationComponentOptions } from '../../shared/pagination/pagination-component-options.model';
 import { FindListOptions } from '../../core/data/request.models';
-import { flatMap, take } from 'rxjs/operators';
 import { AuthorizationDataService } from '../../core/data/feature-authorization/authorization-data.service';
 import { FeatureID } from '../../core/data/feature-authorization/feature-id';
 import { Audit } from '../../core/audit/model/audit.model';
@@ -12,7 +13,9 @@ import { AuditDataService } from '../../core/audit/audit-data.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { SortDirection } from '../../core/cache/models/sort-options.model';
 import { ItemDataService } from '../../core/data/item-data.service';
-import { getSucceededRemoteData, redirectToPageNotFoundOn404 } from '../../core/shared/operators';
+import { getFirstCompletedRemoteData, redirectOn4xx } from '../../core/shared/operators';
+import { AuthService } from '../../core/auth/auth.service';
+import { PaginatedList } from '../../core/data/paginated-list.model';
 
 /**
  * Component displaying a list of all audit about a object in a paginated table
@@ -57,7 +60,8 @@ export class ObjectAuditOverviewComponent implements OnInit {
    */
   dateFormat = 'yyyy-MM-dd HH:mm:ss';
 
-  constructor(protected route: ActivatedRoute,
+  constructor(protected authService: AuthService,
+              protected route: ActivatedRoute,
               protected router: Router,
               protected auditService: AuditDataService,
               protected itemService: ItemDataService,
@@ -67,13 +71,12 @@ export class ObjectAuditOverviewComponent implements OnInit {
   ngOnInit(): void {
     this.route.paramMap.subscribe((paramMap) => {
       this.itemService.findById(paramMap.get('objectId')).pipe(
-        getSucceededRemoteData(),
-        redirectToPageNotFoundOn404(this.router),
-        take(1)
+        getFirstCompletedRemoteData(),
+        redirectOn4xx(this.router, this.authService),
       ).subscribe((rd) => {
         this.object = rd.payload;
         this.setAudits();
-      })
+      });
 
     });
   }
@@ -95,10 +98,10 @@ export class ObjectAuditOverviewComponent implements OnInit {
    */
   setAudits() {
     this.auditsRD$ = this.isCurrentUserAdmin().pipe(
-      flatMap((isAdmin) => {
+      mergeMap((isAdmin) => {
         return this.auditService.findByObject(this.object.id, this.config);
       })
-    )
+    );
   }
 
   isCurrentUserAdmin(): Observable<boolean> {

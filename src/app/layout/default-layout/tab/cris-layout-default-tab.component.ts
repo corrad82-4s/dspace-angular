@@ -1,7 +1,15 @@
-import { Component, OnInit, ViewChild, ChangeDetectorRef, ComponentFactoryResolver, OnDestroy, ComponentRef } from '@angular/core';
+import {
+  ChangeDetectorRef,
+  Component, ComponentFactory,
+  ComponentFactoryResolver,
+  ComponentRef,
+  OnDestroy,
+  OnInit,
+  ViewChild, ViewContainerRef
+} from '@angular/core';
 import { Box } from '../../../core/layout/models/box.model';
 import { CrisLayoutLoaderDirective } from '../../directives/cris-layout-loader.directive';
-import { CrisLayoutTab as CrisLayoutTabObj } from '../../models/cris-layout-tab.model';
+import { CrisLayoutTabModelComponent as CrisLayoutTabObj } from '../../models/cris-layout-tab.model';
 import { LayoutPage } from '../../enums/layout-page.enum';
 import { LayoutTab } from '../../enums/layout-tab.enum';
 import { BoxDataService } from '../../../core/layout/box-data.service';
@@ -16,7 +24,7 @@ import { hasValue } from '../../../shared/empty.util';
 /**
  * This component defines the default layout for all tabs of DSpace Items.
  * This component can be overwritten for a specific Item type using
- * CrisLayoutTab decorator
+ * CrisLayoutTabModelComponent decorator
  */
 @Component({
   selector: 'ds-cris-layout-default-tab',
@@ -34,7 +42,7 @@ export class CrisLayoutDefaultTabComponent extends CrisLayoutTabObj implements O
 
   showLoader: boolean;
 
-  componentRef: Array<ComponentRef<Component>> = [];
+  componentRef: ComponentRef<Component>[] = [];
   /**
    * List of subscriptions
    */
@@ -42,8 +50,8 @@ export class CrisLayoutDefaultTabComponent extends CrisLayoutTabObj implements O
 
   constructor(
     public cd: ChangeDetectorRef,
-    private boxService: BoxDataService,
-    private componentFactoryResolver: ComponentFactoryResolver
+    protected boxService: BoxDataService,
+    protected componentFactoryResolver: ComponentFactoryResolver
   ) {
     super();
   }
@@ -53,7 +61,7 @@ export class CrisLayoutDefaultTabComponent extends CrisLayoutTabObj implements O
     this.subs.push(this.boxService.findByItem(this.item.id, this.tab.id, followLink('configuration'))
       .pipe(getFirstSucceededRemoteListPayload())
       .subscribe({
-        next: (next) => {
+        next: (next: Box[]) => {
           this.boxes = next;
           this.addBoxes(this.boxes);
           this.cd.markForCheck();
@@ -72,14 +80,19 @@ export class CrisLayoutDefaultTabComponent extends CrisLayoutTabObj implements O
       const componentFactory = this.componentFactoryResolver.resolveComponentFactory(
         this.getComponent(box.boxType)
       );
-      const componentRef = viewContainerRef.createComponent(componentFactory);
-      (componentRef.instance as any).item = this.item;
-      (componentRef.instance as any).box = box;
+      const componentRef = this.instantiateBox(viewContainerRef, componentFactory, box);
       this.componentRef.push(componentRef);
     });
   }
 
-  private getComponent(boxType: string): GenericConstructor<Component> {
+  instantiateBox(viewContainerRef: ViewContainerRef, componentFactory: ComponentFactory<any>, box: Box): ComponentRef<any> {
+    const componentRef = viewContainerRef.createComponent(componentFactory);
+    (componentRef.instance as any).item = this.item;
+    (componentRef.instance as any).box = box;
+    return componentRef;
+  }
+
+  protected getComponent(boxType: string): GenericConstructor<Component> {
     return getCrisLayoutBox(this.item, this.tab.shortname, boxType);
   }
 

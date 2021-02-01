@@ -26,7 +26,7 @@ xdescribe('protractor SearchPage', () => {
         page.getCurrentScope()
           .then((s: string) => {
             expect<string>(s).toEqual(scopeString);
-          })
+          });
       });
   });
 
@@ -41,9 +41,9 @@ xdescribe('protractor SearchPage', () => {
             browser.wait(() => {
               return browser.getCurrentUrl().then((url: string) => {
                 return url.indexOf('scope=' + encodeURI(scopeString)) !== -1;
-              })
-            })
-          })
+              });
+            });
+          });
       });
   });
 

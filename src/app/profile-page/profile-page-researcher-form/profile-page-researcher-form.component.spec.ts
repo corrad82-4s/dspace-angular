@@ -1,21 +1,19 @@
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { Router } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
 import { TranslateModule } from '@ngx-translate/core';
 
 import { of as observableOf } from 'rxjs';
 
-import { EPerson } from 'src/app/core/eperson/models/eperson.model';
-import { ResearcherProfile } from 'src/app/core/profile/model/researcher-profile.model';
-import { ResearcherProfileService } from 'src/app/core/profile/researcher-profile.service';
-import { RouterStub } from 'src/app/shared/testing/router.stub';
-import { VarDirective } from 'src/app/shared/utils/var.directive';
+import { EPerson } from '../../core/eperson/models/eperson.model';
+import { ResearcherProfile } from '../../core/profile/model/researcher-profile.model';
+import { ResearcherProfileService } from '../../core/profile/researcher-profile.service';
+import { RouterStub } from '../../shared/testing/router.stub';
+import { VarDirective } from '../../shared/utils/var.directive';
 import { ProfileClaimService } from '../profile-claim/profile-claim.service';
 import { ProfilePageResearcherFormComponent } from './profile-page-researcher-form.component';
-import { ClaimItemSelectorComponent } from 'src/app/shared/dso-selector/modal-wrappers/claim-item-selector/claim-item-selector.component';
-import { NgModule } from '@angular/core';
 
 describe('ProfilePageResearcherFormComponent', () => {
 
@@ -31,14 +29,6 @@ describe('ProfilePageResearcherFormComponent', () => {
     let profileClaimService: ProfileClaimService;
 
     let modalService: NgbModal;
-
-//     @NgModule({
-//         declarations: [ClaimItemSelectorComponent],
-//         entryComponents: [
-//             ClaimItemSelectorComponent,
-//         ]
-//       })
-//       class TestModule {}
 
     function init() {
         router = new RouterStub();
@@ -66,12 +56,12 @@ describe('ProfilePageResearcherFormComponent', () => {
         });
 
         modalService = jasmine.createSpyObj('NgbModal', {
-            open: null
-        })
+            open: {componentInstance: {}}
+        });
 
     }
 
-    beforeEach(async(() => {
+    beforeEach(waitForAsync(() => {
         init();
         TestBed.configureTestingModule({
           declarations: [ProfilePageResearcherFormComponent, VarDirective],
@@ -79,11 +69,12 @@ describe('ProfilePageResearcherFormComponent', () => {
           providers: [
             { provide: ResearcherProfileService, useValue: researcherProfileService },
             { provide: Router, useValue: router},
-            { provide: ProfileClaimService, useValue: profileClaimService}
+            { provide: ProfileClaimService, useValue: profileClaimService},
+            { provide: NgbModal, useValue: modalService}
           ],
           schemas: [NO_ERRORS_SCHEMA]
-        }).compileComponents();
-      }));
+        });
+    }));
 
     beforeEach(() => {
         fixture = TestBed.createComponent(ProfilePageResearcherFormComponent);
@@ -140,12 +131,11 @@ describe('ProfilePageResearcherFormComponent', () => {
 
     });
 
-    // FIXME : fix component injection
-    xdescribe('claimProfile', () => {
+    describe('claimProfile', () => {
         it('should open modal', () => {
             component.claim();
             expect(modalService.open).toHaveBeenCalledTimes(1);
         });
-    })
+    });
 
 });

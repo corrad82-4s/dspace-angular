@@ -1,4 +1,5 @@
-import { isNotEmpty, isNotNull } from 'src/app/shared/empty.util';
+import { AuthMethodType } from './../../core/auth/models/auth.method-type';
+import { NativeWindowService, NativeWindowRef } from './../../core/services/window.service';
 import { Component, Inject, Input, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { select, Store } from '@ngrx/store';
@@ -11,13 +12,11 @@ import {
 } from '../../core/auth/selectors';
 import { CoreState } from '../../core/core.reducers';
 import { getForgotPasswordRoute, getRegisterRoute } from '../../app-routing-paths';
-import { hasValue, isNotUndefined } from '../empty.util';
+import { hasValue, isNotEmpty, isNotUndefined } from '../empty.util';
 import { AuthService } from '../../core/auth/auth.service';
 import { AuthorizationDataService } from '../../core/data/feature-authorization/authorization-data.service';
 import { FeatureID } from '../../core/data/feature-authorization/feature-id';
 import { map } from 'rxjs/operators';
-import { AuthMethodType } from 'src/app/core/auth/models/auth.method-type';
-import { NativeWindowRef, NativeWindowService } from 'src/app/core/services/window.service';
 import { Router } from '@angular/router';
 
 /**
@@ -123,6 +122,6 @@ export class LogInComponent implements OnInit {
           this._window.nativeWindow.location.href = location;
         }
       }
-    )
+    );
   }
 }
