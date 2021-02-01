@@ -3697,7 +3697,61 @@
 
   "search.filters.applied.charts.default.title": "Search Output",
 
+  "search.filters.applied.charts.RELATION.InstitutionOrgUnit.iouorganizations": "OrgUnits",
+
+  "search.filters.applied.charts.RELATION.InstitutionOrgUnit.ioupeople": "People",
+
+  "search.filters.applied.charts.RELATION.InstitutionOrgUnit.iouprojects": "Projects",
+
+  "search.filters.applied.charts.RELATION.InstitutionOrgUnit.ioupublications": "Publications",
+
+  "search.filters.applied.charts.RELATION.InstitutionOrgUnit.iourpprojects": "Researchers PRojects",
+
+  "search.filters.applied.charts.RELATION.InstitutionOrgUnit.ioupublications": "Researchers Publications",
+
+  "search.filters.applied.charts.RELATION.InstitutionPerson.ippatents.title": "Patents",
+
+  "search.filters.applied.charts.RELATION.InstitutionPerson.ipprojects.title": "Projects",
+
+  "search.filters.applied.charts.RELATION.InstitutionPerson.ipresearchoutputs.title": "Research Output",
+  
+  "search.filters.applied.charts.RELATION.InstitutionProject.ipgrants": "Fundings",
+
+  "search.filters.applied.charts.RELATION.InstitutionProject.ippatents": "Patents",
+
+  "search.filters.applied.charts.RELATION.InstitutionProject.ipprojects": "Projects",
+
+  "search.filters.applied.charts.RELATION.InstitutionProject.ipresearchoutputs": "Research Output",
+
+
+
+
+  "search.filters.applied.charts.RELATION.OrgUnit.organizations": "OrgUnits",
+
+  "search.filters.applied.charts.RELATION.OrgUnit.people": "People",
+
+  "search.filters.applied.charts.RELATION.OrgUnit.projects": "Projects",
+
+  "search.filters.applied.charts.RELATION.OrgUnit.publications": "Publications",
+
+  "search.filters.applied.charts.RELATION.OrgUnit.rpprojects": "Researchers PRojects",
+
+  "search.filters.applied.charts.RELATION.OrgUnit.publications": "Researchers Publications",
+
+  "search.filters.applied.charts.RELATION.Person.patents.title": "Patents",
+
+  "search.filters.applied.charts.RELATION.Person.projects.title": "Projects",
+
   "search.filters.applied.charts.RELATION.Person.researchoutputs.title": "Research Output",
+  
+  "search.filters.applied.charts.RELATION.Project.grants": "Fundings",
+
+  "search.filters.applied.charts.RELATION.Project.patents": "Patents",
+
+  "search.filters.applied.charts.RELATION.Project.projects": "Projects",
+
+  "search.filters.applied.charts.RELATION.Project.researchoutputs": "Research Output",
+  
 
   "search.filters.applied.charts.no.data.found": "No data found",
 
