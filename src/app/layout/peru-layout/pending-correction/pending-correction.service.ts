@@ -51,7 +51,7 @@ export class PendingCorrectionService {
       const keyMetadata = item.allMetadata(key);
       const correctionMetadata = correctionItem.allMetadata(key);
       const correction: MetadataCorrection = { key, oldValues: keyMetadata, newValues: correctionMetadata, type: null };
-      if (Metadata.multiEquals(keyMetadata, correctionMetadata)) {
+      if (!Metadata.multiEquals(keyMetadata, correctionMetadata)) {
         // set type of correction
         if (correction.newValues.length === 0) {
           correction.type = 'REMOVED';
