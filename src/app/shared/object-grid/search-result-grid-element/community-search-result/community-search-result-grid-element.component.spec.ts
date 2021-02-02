@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { ChangeDetectionStrategy, NO_ERRORS_SCHEMA } from '@angular/core';
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { Store } from '@ngrx/store';
 import { of as observableOf } from 'rxjs';
@@ -19,6 +19,7 @@ import { TruncatableService } from '../../../truncatable/truncatable.service';
 import { TruncatePipe } from '../../../utils/truncate.pipe';
 import { CommunitySearchResultGridElementComponent } from './community-search-result-grid-element.component';
 import { BitstreamFormatDataService } from '../../../../core/data/bitstream-format-data.service';
+import { LinkService } from '../../../../core/cache/builders/link.service';
 
 let communitySearchResultGridElementComponent: CommunitySearchResultGridElementComponent;
 let fixture: ComponentFixture<CommunitySearchResultGridElementComponent>;
@@ -52,11 +53,14 @@ mockCommunityWithoutAbstract.indexableObject = Object.assign(new Community(), {
     ]
   }
 });
+const linkService = jasmine.createSpyObj('linkService', {
+  resolveLink: mockCommunityWithAbstract
+});
 
 describe('CommunitySearchResultGridElementComponent', () => {
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ CommunitySearchResultGridElementComponent, TruncatePipe ],
+      declarations: [CommunitySearchResultGridElementComponent, TruncatePipe],
       providers: [
         { provide: TruncatableService, useValue: truncatableServiceStub },
         { provide: 'objectElementProvider', useValue: (mockCommunityWithAbstract) },
@@ -72,15 +76,16 @@ describe('CommunitySearchResultGridElementComponent', () => {
         { provide: DSOChangeAnalyzer, useValue: {} },
         { provide: DefaultChangeAnalyzer, useValue: {} },
         { provide: BitstreamFormatDataService, useValue: {} },
+        { provide: LinkService, useValue: linkService }
       ],
 
-      schemas: [ NO_ERRORS_SCHEMA ]
+      schemas: [NO_ERRORS_SCHEMA]
     }).overrideComponent(CommunitySearchResultGridElementComponent, {
       set: { changeDetection: ChangeDetectionStrategy.Default }
     }).compileComponents();
   }));
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     fixture = TestBed.createComponent(CommunitySearchResultGridElementComponent);
     communitySearchResultGridElementComponent = fixture.componentInstance;
   }));

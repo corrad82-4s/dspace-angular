@@ -3,12 +3,13 @@ import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, Resolve, RouterStateSnapshot } from '@angular/router';
 import { DSOBreadcrumbsService } from './dso-breadcrumbs.service';
 import { DataService } from '../data/data.service';
-import { getRemoteDataPayload, getSucceededRemoteData } from '../shared/operators';
+import { getRemoteDataPayload, getFirstCompletedRemoteData } from '../shared/operators';
 import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { DSpaceObject } from '../shared/dspace-object.model';
 import { ChildHALResource } from '../shared/child-hal-resource.model';
 import { FollowLinkConfig } from '../../shared/utils/follow-link-config.model';
+import { hasValue } from '../../shared/empty.util';
 
 /**
  * The class that resolves the BreadcrumbConfig object for a DSpaceObject
@@ -28,13 +29,17 @@ export abstract class DSOBreadcrumbResolver<T extends ChildHALResource & DSpaceO
    */
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<BreadcrumbConfig<T>> {
     const uuid = route.params.id;
-    return this.dataService.findById(uuid, ...this.followLinks).pipe(
-      getSucceededRemoteData(),
+    return this.dataService.findById(uuid, false, ...this.followLinks).pipe(
+      getFirstCompletedRemoteData(),
       getRemoteDataPayload(),
       map((object: T) => {
-        const fullPath = state.url;
-        const url = fullPath.substr(0, fullPath.indexOf(uuid)) + uuid;
-        return { provider: this.breadcrumbService, key: object, url: url };
+        if (hasValue(object)) {
+          const fullPath = state.url;
+          const url = fullPath.substr(0, fullPath.indexOf(uuid)) + uuid;
+          return {provider: this.breadcrumbService, key: object, url: url};
+        } else {
+          return undefined;
+        }
       })
     );
   }
@@ -44,5 +49,5 @@ export abstract class DSOBreadcrumbResolver<T extends ChildHALResource & DSpaceO
    * The self links defined in this list are expected to be requested somewhere in the near future
    * Requesting them as embeds will limit the number of requests
    */
-  abstract get followLinks(): Array<FollowLinkConfig<T>>;
+  abstract get followLinks(): FollowLinkConfig<T>[];
 }

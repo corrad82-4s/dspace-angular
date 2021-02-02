@@ -2,13 +2,14 @@
   <li *ngIf="!(isAuthenticated | async) && !(isXsOrSm$ | async) && (showAuth | async)" class="nav-item"
       (click)="$event.stopPropagation();">
     <div ngbDropdown #loginDrop display="dynamic" placement="bottom-right" class="d-inline-block" @fadeInOut>
-      <a href="#" id="dropdownLogin" (click)="$event.preventDefault()" ngbDropdownToggle
+      <a *ngIf="!(onlyOidc | async)" href="#" id="dropdownLogin" (click)="$event.preventDefault()" ngbDropdownToggle
          class="px-1">{{ 'nav.login' | translate }}</a>
-      <div id="loginDropdownMenu" [ngClass]="{'pl-3 pr-3': (loading | async)}" ngbDropdownMenu
+      <div *ngIf="!(onlyOidc | async)" id="loginDropdownMenu" [ngClass]="{'pl-3 pr-3': (loading | async)}" ngbDropdownMenu
            aria-labelledby="dropdownLogin">
         <ds-log-in
           [isStandalonePage]="false"></ds-log-in>
       </div>
+      <a *ngIf="(onlyOidc | async)" id="loginOidcLink" (click)="$event.preventDefault();redirectToOidc()" href="#" routerLinkActive="active" class="px-1" style="white-space: nowrap;">{{ 'nav.login' | translate }}</a>
     </div>
   </li>
   <li *ngIf="!(isAuthenticated | async) && (isXsOrSm$ | async)" class="nav-item">

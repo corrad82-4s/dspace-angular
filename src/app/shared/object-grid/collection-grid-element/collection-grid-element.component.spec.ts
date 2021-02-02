@@ -1,8 +1,9 @@
 import { CollectionGridElementComponent } from './collection-grid-element.component';
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { ChangeDetectionStrategy, NO_ERRORS_SCHEMA } from '@angular/core';
 import { By } from '@angular/platform-browser';
 import { Collection } from '../../../core/shared/collection.model';
+import { LinkService } from '../../../core/cache/builders/link.service';
 
 let collectionGridElementComponent: CollectionGridElementComponent;
 let fixture: ComponentFixture<CollectionGridElementComponent>;
@@ -29,21 +30,26 @@ const mockCollectionWithoutAbstract: Collection = Object.assign(new Collection()
   }
 });
 
+const linkService = jasmine.createSpyObj('linkService', {
+  resolveLink: mockCollectionWithAbstract
+});
+
 describe('CollectionGridElementComponent', () => {
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ CollectionGridElementComponent ],
+      declarations: [CollectionGridElementComponent],
       providers: [
-        { provide: 'objectElementProvider', useValue: (mockCollectionWithAbstract)}
+        { provide: 'objectElementProvider', useValue: (mockCollectionWithAbstract) },
+        { provide: LinkService, useValue: linkService }
       ],
 
-      schemas: [ NO_ERRORS_SCHEMA ]
+      schemas: [NO_ERRORS_SCHEMA]
     }).overrideComponent(CollectionGridElementComponent, {
       set: { changeDetection: ChangeDetectionStrategy.Default }
     }).compileComponents();
   }));
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     fixture = TestBed.createComponent(CollectionGridElementComponent);
     collectionGridElementComponent = fixture.componentInstance;
   }));

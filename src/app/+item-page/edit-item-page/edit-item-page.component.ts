@@ -47,7 +47,7 @@ export class EditItemPageComponent implements OnInit {
     this.pages = this.route.routeConfig.children
       .map((child: any) => child.path)
       .filter((path: string) => isNotEmpty(path)); // ignore reroutes
-    this.itemRD$ = this.route.data.pipe(map((data) => data.item));
+    this.itemRD$ = this.route.data.pipe(map((data) => data.dso));
   }
 
   /**
@@ -55,6 +55,6 @@ export class EditItemPageComponent implements OnInit {
    * @param item The item for which the url is requested
    */
   getItemPage(item: Item): string {
-    return getItemPageRoute(item.id)
+    return getItemPageRoute(item.id);
   }
 }

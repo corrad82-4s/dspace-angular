@@ -10,7 +10,6 @@ import { Group } from '../../eperson/models/group.model';
 import { GROUP } from '../../eperson/models/group.resource-type';
 import { DSpaceObject } from '../../shared/dspace-object.model';
 import { HALLink } from '../../shared/hal-link.model';
-import { WorkflowItem } from '../../submission/models/workflowitem.model';
 import { TASK_OBJECT } from './task-object.resource-type';
 import { WORKFLOWITEM } from '../../eperson/models/workflowitem.resource-type';
 import { WORKFLOW_ACTION } from './workflow-action-object.resource-type';
@@ -44,6 +43,7 @@ export class TaskObject extends DSpaceObject implements CacheableObject {
     self: HALLink;
     owner: HALLink;
     group: HALLink;
+    step: HALLink;
     workflowitem: HALLink;
     action: HALLink;
   };

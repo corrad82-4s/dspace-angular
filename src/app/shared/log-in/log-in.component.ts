@@ -1,4 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { AuthMethodType } from './../../core/auth/models/auth.method-type';
+import { NativeWindowService, NativeWindowRef } from './../../core/services/window.service';
+import { Component, Inject, Input, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { select, Store } from '@ngrx/store';
 import { AuthMethod } from '../../core/auth/models/auth.method';
@@ -10,10 +12,12 @@ import {
 } from '../../core/auth/selectors';
 import { CoreState } from '../../core/core.reducers';
 import { getForgotPasswordRoute, getRegisterRoute } from '../../app-routing-paths';
-import { hasValue } from '../empty.util';
+import { hasValue, isNotEmpty, isNotUndefined } from '../empty.util';
 import { AuthService } from '../../core/auth/auth.service';
 import { AuthorizationDataService } from '../../core/data/feature-authorization/authorization-data.service';
 import { FeatureID } from '../../core/data/feature-authorization/feature-id';
+import { map } from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 /**
  * /users/sign-in
@@ -57,7 +61,8 @@ export class LogInComponent implements OnInit {
 
   constructor(private store: Store<CoreState>,
               private authService: AuthService,
-              private authorizationService: AuthorizationDataService) {
+              private authorizationService: AuthorizationDataService,
+              @Inject(NativeWindowService) private _window: NativeWindowRef) {
   }
 
   ngOnInit(): void {
@@ -80,6 +85,26 @@ export class LogInComponent implements OnInit {
     });
 
     this.canRegister$ = this.authorizationService.isAuthorized(FeatureID.EPersonRegistration);
+
+    this.authMethods.pipe(
+      map((methods: AuthMethod[]) => {
+        if (methods.length === 1 && methods[0].authMethodType === AuthMethodType.Oidc) {
+          return methods[0];
+        }
+        return undefined;
+      }),
+      map((method: AuthMethod) => {
+        if (isNotUndefined(method)) {
+          return method.location;
+        }
+        return '';
+      })
+    )
+      .subscribe((location: string) => {
+        if (isNotEmpty(location)) {
+          this.redirectToOidc(location);
+        }
+      });
   }
 
   getRegisterRoute() {
@@ -88,5 +113,15 @@ export class LogInComponent implements OnInit {
 
   getForgotRoute() {
     return getForgotPasswordRoute();
+  }
+
+  private redirectToOidc(location: string) {
+    this.isAuthenticated.subscribe(
+      (authenticated: boolean) => {
+        if (!authenticated) {
+          this._window.nativeWindow.location.href = location;
+        }
+      }
+    );
   }
 }

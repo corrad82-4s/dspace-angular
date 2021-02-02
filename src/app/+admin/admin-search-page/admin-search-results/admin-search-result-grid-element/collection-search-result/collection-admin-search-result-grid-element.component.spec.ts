@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { BitstreamDataService } from '../../../../../core/data/bitstream-data.service';
 import { mockTruncatableService } from '../../../../../shared/mocks/mock-trucatable.service';
@@ -13,6 +13,7 @@ import { Collection } from '../../../../../core/shared/collection.model';
 import { By } from '@angular/platform-browser';
 import { RouterTestingModule } from '@angular/router/testing';
 import { getCollectionEditRoute } from '../../../../../+collection-page/collection-page-routing-paths';
+import { LinkService } from '../../../../../core/cache/builders/link.service';
 
 describe('CollectionAdminSearchResultGridElementComponent', () => {
   let component: CollectionAdminSearchResultGridElementComponent;
@@ -26,7 +27,12 @@ describe('CollectionAdminSearchResultGridElementComponent', () => {
     searchResult.indexableObject = new Collection();
     searchResult.indexableObject.uuid = id;
   }
-  beforeEach(async(() => {
+
+  const linkService = jasmine.createSpyObj('linkService', {
+    resolveLink: {}
+  });
+
+  beforeEach(waitForAsync(() => {
     init();
     TestBed.configureTestingModule({
       imports: [
@@ -39,6 +45,7 @@ describe('CollectionAdminSearchResultGridElementComponent', () => {
       providers: [
         { provide: TruncatableService, useValue: mockTruncatableService },
         { provide: BitstreamDataService, useValue: {} },
+        { provide: LinkService, useValue: linkService }
       ]
     })
       .compileComponents();
@@ -62,5 +69,5 @@ describe('CollectionAdminSearchResultGridElementComponent', () => {
     const a = fixture.debugElement.query(By.css('a.edit-link'));
     const link = a.nativeElement.href;
     expect(link).toContain(getCollectionEditRoute(id));
-  })
+  });
 });

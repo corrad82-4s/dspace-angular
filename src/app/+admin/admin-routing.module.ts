@@ -14,15 +14,18 @@ import { ACCESS_CONTROL_MODULE_PATH, REGISTRIES_MODULE_PATH, INSTITUTIONS_MODULE
     RouterModule.forChild([
       {
         path: INSTITUTIONS_MODULE_PATH,
-        loadChildren: './admin-institutions/admin-institutions.module#AdminInstitutionsModule'
+        loadChildren: () => import('./admin-institutions/admin-institutions.module')
+        .then((m) => m.AdminInstitutionsModule),
       },
       {
         path: REGISTRIES_MODULE_PATH,
-        loadChildren: './admin-registries/admin-registries.module#AdminRegistriesModule'
+        loadChildren: () => import('./admin-registries/admin-registries.module')
+          .then((m) => m.AdminRegistriesModule),
       },
       {
         path: ACCESS_CONTROL_MODULE_PATH,
-        loadChildren: './admin-access-control/admin-access-control.module#AdminAccessControlModule'
+        loadChildren: () => import('./admin-access-control/admin-access-control.module')
+          .then((m) => m.AdminAccessControlModule),
       },
       {
         path: 'search',

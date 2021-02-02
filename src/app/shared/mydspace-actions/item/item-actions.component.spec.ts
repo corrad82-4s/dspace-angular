@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Injector, NO_ERRORS_SCHEMA } from '@angular/core';
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { Router } from '@angular/router';
 
 import { of as observableOf } from 'rxjs';
@@ -57,7 +57,7 @@ mockObject = Object.assign(new Item(), {
   }
 });
 
-const searchService = getMockSearchService()
+const searchService = getMockSearchService();
 
 const requestServce = getMockRequestService();
 
@@ -66,11 +66,11 @@ let relationshipService;
 let submissionService;
 
 describe('ItemActionsComponent', () => {
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
 
     authorizationService = new AuthorizationDataService(null, null, null, null, null, null, null, null, null, null);
     relationshipService = new RelationshipService(null, null, null, null, null, null, null, null, null, null);
-    submissionService = new SubmissionService(null, null, null, null, null, null, null, null, null);
+    submissionService = new SubmissionService(null, null, null, null, null, null, null, null, null, null);
 
     TestBed.configureTestingModule({
       imports: [
@@ -104,6 +104,8 @@ describe('ItemActionsComponent', () => {
     component = fixture.componentInstance;
     component.object = mockObject;
     component.canUpdate = false;
+    component.canWithdraw = false;
+    component.canReinstate = false;
     fixture.detectChanges();
   });
 

@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { TranslateModule } from '@ngx-translate/core';
 import { CUSTOM_ELEMENTS_SCHEMA, DebugElement } from '@angular/core';
 import { CollectionCurateComponent } from './collection-curate.component';
@@ -17,10 +17,10 @@ describe('CollectionCurateComponent', () => {
   let dsoNameService;
 
   const collection = Object.assign(new Collection(), {
-    handle: '123456789/1', metadata: {'dc.title': ['Collection Name']}
+    metadata: {'dc.title': ['Collection Name'], 'dc.identifier.uri': [ { value: '123456789/1'}]}
   });
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     routeStub = {
       parent: {
         data: observableOf({

@@ -4,14 +4,7 @@ export const environment = {
    * e.g.
    * rest: {
    *   host: 'rest.api',
-   *   nameSpace: '/rest/api',
+   *   nameSpace: '/rest',
    * }
    */
-  rest: {
-    ssl: false,
-    host: 'localhost',
-    port: 8080,
-    // NOTE: Space is capitalized because 'namespace' is a reserved string in TypeScript
-    nameSpace: '/server/api',
-  },
 };

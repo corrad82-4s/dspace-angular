@@ -3,7 +3,8 @@ import { Injectable } from '@angular/core';
 
 import { createSelector, select, Store } from '@ngrx/store';
 import { Observable, of as observableOf } from 'rxjs';
-import { catchError, filter, find, map, skipWhile, switchMap, take, tap } from 'rxjs/operators';
+import { catchError, filter, map, take } from 'rxjs/operators';
+
 import {
   GroupRegistryCancelGroupAction,
   GroupRegistryEditGroupAction
@@ -16,24 +17,15 @@ import { FollowLinkConfig } from '../../shared/utils/follow-link-config.model';
 import { RemoteDataBuildService } from '../cache/builders/remote-data-build.service';
 import { RequestParam } from '../cache/models/request-param.model';
 import { ObjectCacheService } from '../cache/object-cache.service';
-import { RestResponse } from '../cache/response.models';
 import { DataService } from '../data/data.service';
 import { DSOChangeAnalyzer } from '../data/dso-change-analyzer.service';
-import { PaginatedList } from '../data/paginated-list';
+import { PaginatedList } from '../data/paginated-list.model';
 import { RemoteData } from '../data/remote-data';
-import {
-  CreateRequest,
-  DeleteRequest,
-  FindListOptions,
-  FindListRequest,
-  PatchRequest,
-  PostRequest
-} from '../data/request.models';
-
+import { CreateRequest, DeleteRequest, FindListOptions, FindListRequest, PostRequest } from '../data/request.models';
 import { RequestService } from '../data/request.service';
-import { HttpOptions } from '../dspace-rest-v2/dspace-rest-v2.service';
+import { HttpOptions } from '../dspace-rest/dspace-rest.service';
 import { HALEndpointService } from '../shared/hal-endpoint.service';
-import { getRemoteDataPayload, getResponseFromEntry, getSucceededRemoteData } from '../shared/operators';
+import { getFirstCompletedRemoteData, getRemoteDataPayload } from '../shared/operators';
 import { EPerson } from './models/eperson.model';
 import { Group } from './models/group.model';
 import { dataService } from '../cache/builders/build-decorators';
@@ -41,7 +33,7 @@ import { GROUP } from './models/group.resource-type';
 import { DSONameService } from '../breadcrumbs/dso-name.service';
 import { Community } from '../shared/community.model';
 import { Collection } from '../shared/collection.model';
-import { Operation } from 'fast-json-patch';
+import { NoContent } from '../shared/NoContent.model';
 
 const groupRegistryStateSelector = (state: AppState) => state.groupRegistry;
 const editGroupSelector = createSelector(groupRegistryStateSelector, (groupRegistryState: GroupRegistryState) => groupRegistryState.editGroup);
@@ -54,10 +46,10 @@ const editGroupSelector = createSelector(groupRegistryStateSelector, (groupRegis
 })
 @dataService(GROUP)
 export class GroupDataService extends DataService<Group> {
-  public ePersonsEndpoint = 'epersons';
-  public subgroupsEndpoint = 'subgroups';
   protected linkPath = 'groups';
   protected browseEndpoint = '';
+  public ePersonsEndpoint = 'epersons';
+  public subgroupsEndpoint = 'subgroups';
 
   constructor(
     protected comparator: DSOChangeAnalyzer<Group>,
@@ -77,7 +69,7 @@ export class GroupDataService extends DataService<Group> {
    * Retrieves all groups
    * @param pagination The pagination info used to retrieve the groups
    */
-  public getGroups(options: FindListOptions = {}, ...linksToFollow: Array<FollowLinkConfig<Group>>): Observable<RemoteData<PaginatedList<Group>>> {
+  public getGroups(options: FindListOptions = {}, ...linksToFollow: FollowLinkConfig<Group>[]): Observable<RemoteData<PaginatedList<Group>>> {
     const hrefObs = this.getFindAllHref(options, this.linkPath, ...linksToFollow);
     hrefObs.pipe(
       filter((href: string) => hasValue(href)),
@@ -93,11 +85,14 @@ export class GroupDataService extends DataService<Group> {
   /**
    * Returns a search result list of groups, with certain query (searches in group name and by exact uuid)
    * Endpoint used: /eperson/groups/search/byMetadata?query=<:name>
-   * @param query     search query param
+   * @param query             search query param
    * @param options
-   * @param linksToFollow
+   * @param reRequestOnStale  Whether or not the request should automatically be re-requested after
+   *                          the response becomes stale
+   * @param linksToFollow     List of {@link FollowLinkConfig} that indicate which {@link HALLink}s
+   *                          should be automatically resolved
    */
-  public searchGroups(query: string, options?: FindListOptions, ...linksToFollow: Array<FollowLinkConfig<Group>>): Observable<RemoteData<PaginatedList<Group>>> {
+  public searchGroups(query: string, options?: FindListOptions, reRequestOnStale = true, ...linksToFollow: FollowLinkConfig<Group>[]): Observable<RemoteData<PaginatedList<Group>>> {
     const searchParams = [new RequestParam('query', query)];
     let findListOptions = new FindListOptions();
     if (options) {
@@ -108,7 +103,7 @@ export class GroupDataService extends DataService<Group> {
     } else {
       findListOptions.searchParams = searchParams;
     }
-    return this.searchBy('byMetadata', findListOptions, ...linksToFollow);
+    return this.searchBy('byMetadata', findListOptions, reRequestOnStale, ...linksToFollow);
   }
 
   /**
@@ -132,82 +127,11 @@ export class GroupDataService extends DataService<Group> {
   }
 
   /**
-   * Make a new FindListRequest with given search method
-   *
-   * @param searchMethod The search method for the object
-   * @param options The [[FindListOptions]] object
-   * @param linksToFollow The array of [[FollowLinkConfig]]
-   * @return {Observable<RemoteData<PaginatedList<T>>}
-   *    Return an observable that emits response from the server
-   */
-  searchBy(searchMethod: string, options: FindListOptions = {}, ...linksToFollow: Array<FollowLinkConfig<Group>>): Observable<RemoteData<PaginatedList<Group>>> {
-
-    const hrefObs = this.getSearchByHref(searchMethod, options, ...linksToFollow);
-
-    return hrefObs.pipe(
-      find((href: string) => hasValue(href)),
-      tap((href: string) => {
-          this.requestService.removeByHrefSubstring(href);
-          const request = new FindListRequest(this.requestService.generateRequestId(), href, options);
-          if (hasValue(this.responseMsToLive)) {
-            request.responseMsToLive = this.responseMsToLive;
-          }
-
-          this.requestService.configure(request);
-        }
-      ),
-      switchMap((href) => this.requestService.getByHref(href)),
-      skipWhile((requestEntry) => hasValue(requestEntry) && requestEntry.completed),
-      switchMap((href) =>
-        this.rdbService.buildList<Group>(hrefObs, ...linksToFollow) as Observable<RemoteData<PaginatedList<Group>>>
-      )
-    );
-  }
-
-  /**
-   * Method to delete a group
-   * @param id The group id to delete
-   */
-  public deleteGroup(group: Group): Observable<boolean> {
-    return this.delete(group.id).pipe(map((response: RestResponse) => response.isSuccessful));
-  }
-
-  /**
-   * Create a group
-   * @param group    The group to create
-   */
-  public createGroup(group: Group): Observable<RemoteData<Group>> {
-    return this.create(group, null);
-  }
-
-  /**
-   * Add a new patch to the object cache
-   * The patch is derived from the differences between the given object and its version in the object cache
-   * @param {DSpaceObject} group The given object
-   */
-  updateGroup(group: Group): Observable<RestResponse> {
-    const requestId = this.requestService.generateRequestId();
-    const oldVersion$ = this.findByHref(group._links.self.href);
-    oldVersion$.pipe(
-      getSucceededRemoteData(),
-      getRemoteDataPayload(),
-      map((oldGroup: Group) => {
-        const operations = this.generateOperations(oldGroup, group);
-        const patchRequest = new PatchRequest(requestId, group._links.self.href, operations);
-        return this.requestService.configure(patchRequest);
-      }),
-      take(1)
-    ).subscribe();
-
-    return this.fetchResponse(requestId);
-  }
-
-  /**
    * Adds given subgroup as a subgroup to the given active group
    * @param activeGroup   Group we want to add subgroup to
    * @param subgroup      Group we want to add as subgroup to activeGroup
    */
-  addSubGroupToGroup(activeGroup: Group, subgroup: Group): Observable<RestResponse> {
+  addSubGroupToGroup(activeGroup: Group, subgroup: Group): Observable<RemoteData<Group>> {
     const requestId = this.requestService.generateRequestId();
     const options: HttpOptions = Object.create({});
     let headers = new HttpHeaders();
@@ -216,7 +140,7 @@ export class GroupDataService extends DataService<Group> {
     const postRequest = new PostRequest(requestId, activeGroup.self + '/' + this.subgroupsEndpoint, subgroup.self, options);
     this.requestService.configure(postRequest);
 
-    return this.fetchResponse(requestId);
+    return this.rdbService.buildFromRequestUUID(requestId);
   }
 
   /**
@@ -224,12 +148,12 @@ export class GroupDataService extends DataService<Group> {
    * @param activeGroup   Group we want to delete subgroup from
    * @param subgroup      Subgroup we want to delete from activeGroup
    */
-  deleteSubGroupFromGroup(activeGroup: Group, subgroup: Group): Observable<RestResponse> {
+  deleteSubGroupFromGroup(activeGroup: Group, subgroup: Group): Observable<RemoteData<Group>> {
     const requestId = this.requestService.generateRequestId();
     const deleteRequest = new DeleteRequest(requestId, activeGroup.self + '/' + this.subgroupsEndpoint + '/' + subgroup.id);
     this.requestService.configure(deleteRequest);
 
-    return this.fetchResponse(requestId);
+    return this.rdbService.buildFromRequestUUID(requestId);
   }
 
   /**
@@ -237,7 +161,7 @@ export class GroupDataService extends DataService<Group> {
    * @param activeGroup   Group we want to add member to
    * @param ePerson       EPerson we want to add as member to given activeGroup
    */
-  addMemberToGroup(activeGroup: Group, ePerson: EPerson): Observable<RestResponse> {
+  addMemberToGroup(activeGroup: Group, ePerson: EPerson): Observable<RemoteData<Group>> {
     const requestId = this.requestService.generateRequestId();
     const options: HttpOptions = Object.create({});
     let headers = new HttpHeaders();
@@ -246,7 +170,7 @@ export class GroupDataService extends DataService<Group> {
     const postRequest = new PostRequest(requestId, activeGroup.self + '/' + this.ePersonsEndpoint, ePerson.self, options);
     this.requestService.configure(postRequest);
 
-    return this.fetchResponse(requestId);
+    return this.rdbService.buildFromRequestUUID(requestId);
   }
 
   /**
@@ -254,19 +178,19 @@ export class GroupDataService extends DataService<Group> {
    * @param activeGroup   Group we want to delete member from
    * @param ePerson       EPerson we want to delete from members of given activeGroup
    */
-  deleteMemberFromGroup(activeGroup: Group, ePerson: EPerson): Observable<RestResponse> {
+  deleteMemberFromGroup(activeGroup: Group, ePerson: EPerson): Observable<RemoteData<Group>> {
     const requestId = this.requestService.generateRequestId();
     const deleteRequest = new DeleteRequest(requestId, activeGroup.self + '/' + this.ePersonsEndpoint + '/' + ePerson.id);
     this.requestService.configure(deleteRequest);
 
-    return this.fetchResponse(requestId);
+    return this.rdbService.buildFromRequestUUID(requestId);
   }
 
   /**
    * Method to retrieve the group that is currently being edited
    */
   public getActiveGroup(): Observable<Group> {
-    return this.store.pipe(select(editGroupSelector))
+    return this.store.pipe(select(editGroupSelector));
   }
 
   /**
@@ -311,12 +235,12 @@ export class GroupDataService extends DataService<Group> {
   public startEditingNewGroup(newGroup: Group): string {
     this.getActiveGroup().pipe(take(1)).subscribe((activeGroup: Group) => {
       if (newGroup === activeGroup) {
-        this.cancelEditGroup()
+        this.cancelEditGroup();
       } else {
-        this.editGroup(newGroup)
+        this.editGroup(newGroup);
       }
     });
-    return this.getGroupEditPageRouterLinkWithID(newGroup.id)
+    return this.getGroupEditPageRouterLinkWithID(newGroup.id);
   }
 
   /**
@@ -355,7 +279,7 @@ export class GroupDataService extends DataService<Group> {
    * @param role        The name of the role for which to create a group
    * @param link        The REST endpoint to create the group
    */
-  createComcolGroup(dso: Community|Collection, role: string, link: string): Observable<RestResponse> {
+  createComcolGroup(dso: Community|Collection, role: string, link: string): Observable<RemoteData<Group>> {
 
     const requestId = this.requestService.generateRequestId();
     const group = Object.assign(new Group(), {
@@ -375,10 +299,17 @@ export class GroupDataService extends DataService<Group> {
         JSON.stringify(group),
       ));
 
-    return this.requestService.getByUUID(requestId).pipe(
-      getResponseFromEntry(),
-      tap(() => this.requestService.removeByHrefSubstring(link)),
+    const responseRD$ = this.rdbService.buildFromRequestUUID<Group>(requestId).pipe(
+      getFirstCompletedRemoteData(),
     );
+
+    responseRD$.subscribe((responseRD: RemoteData<Group>) => {
+      if (responseRD.hasSucceeded) {
+        this.requestService.removeByHrefSubstring(link);
+      }
+    });
+
+    return responseRD$;
   }
 
   /**
@@ -386,7 +317,7 @@ export class GroupDataService extends DataService<Group> {
    *
    * @param link        The REST endpoint to delete the group
    */
-  deleteComcolGroup(link: string): Observable<RestResponse> {
+  deleteComcolGroup(link: string): Observable<RemoteData<NoContent>> {
 
     const requestId = this.requestService.generateRequestId();
 
@@ -396,23 +327,17 @@ export class GroupDataService extends DataService<Group> {
         link,
       ));
 
-    return this.requestService.getByUUID(requestId).pipe(
-      getResponseFromEntry(),
-      tap(() => this.requestService.removeByHrefSubstring(link)),
+    const responseRD$ = this.rdbService.buildFromRequestUUID(requestId).pipe(
+      getFirstCompletedRemoteData(),
     );
-  }
 
-  /**
-   * Gets the restResponse from the requestService
-   * @param requestId
-   */
-  protected fetchResponse(requestId: string): Observable<RestResponse> {
-    return this.requestService.getByUUID(requestId).pipe(
-      getResponseFromEntry(),
-      map((response: RestResponse) => {
-        return response;
-      })
-    );
+    responseRD$.subscribe((responseRD: RemoteData<NoContent>) => {
+      if (responseRD.hasSucceeded) {
+        this.requestService.removeByHrefSubstring(link);
+      }
+    });
+
+    return responseRD$;
   }
 
   /**
@@ -423,7 +348,7 @@ export class GroupDataService extends DataService<Group> {
       return activeGroup != null && (activeGroup.firstMetadataValue('perucris.group.type') === 'ROLE' ||
         activeGroup.firstMetadataValue('perucris.group.type') === 'INSTITUTIONAL' ||
         activeGroup.firstMetadataValue('perucris.group.type') === 'SCOPED');
-    }))
+    }));
   }
 
   /**
@@ -432,24 +357,6 @@ export class GroupDataService extends DataService<Group> {
   public isActiveGroupEnabled(): Observable<boolean> {
     return this.getActiveGroup().pipe (map( (activeGroup) => {
       return activeGroup != null && ( !activeGroup.hasMetadata('perucris.group.status') || activeGroup.firstMetadataValue('perucris.group.status') === 'ENABLED');
-    }))
-  }
-
-  /**
-   * Metadata operations are generated by the difference between old and new Group
-   * Custom replace operations for the other Group values
-   * The operations generated by this method are based only on the values of the metadata
-   * and on the name of the group
-   * @param oldGroup
-   * @param newGroup
-   */
-  private generateOperations(oldGroup: Group, newGroup: Group): Operation[] {
-    let operations = this.comparator.diff(oldGroup, newGroup);
-    if (hasValue(oldGroup.name) && oldGroup.name !== newGroup.name) {
-      operations = [...operations, {
-        op: 'replace', path: '/name', value: newGroup.name
-      }];
-    }
-    return operations;
+    }));
   }
 }

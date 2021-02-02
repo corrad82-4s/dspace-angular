@@ -12,6 +12,8 @@ import { DSOBreadcrumbsService } from '../core/breadcrumbs/dso-breadcrumbs.servi
 import { LinkService } from '../core/cache/builders/link.service';
 import { COMMUNITY_EDIT_PATH, COMMUNITY_CREATE_PATH } from './community-page-routing-paths';
 import { CommunityPageAdministratorGuard } from './community-page-administrator.guard';
+import { MenuItemType } from '../shared/menu/initial-menus-state';
+import { LinkMenuItemModel } from '../shared/menu/menu-item/models/link.model';
 
 @NgModule({
   imports: [
@@ -31,7 +33,8 @@ import { CommunityPageAdministratorGuard } from './community-page-administrator.
         children: [
           {
             path: COMMUNITY_EDIT_PATH,
-            loadChildren: './edit-community-page/edit-community-page.module#EditCommunityPageModule',
+            loadChildren: () => import('./edit-community-page/edit-community-page.module')
+              .then((m) => m.EditCommunityPageModule),
             canActivate: [CommunityPageAdministratorGuard]
           },
           {
@@ -45,7 +48,21 @@ import { CommunityPageAdministratorGuard } from './community-page-administrator.
             component: CommunityPageComponent,
             pathMatch: 'full',
           }
-        ]
+        ],
+        data: {
+          menu: {
+            public: [{
+              id: 'statistics_community_:id',
+              active: true,
+              visible: true,
+              model: {
+                type: MenuItemType.LINK,
+                text: 'menu.section.statistics',
+                link: 'statistics/communities/:id/',
+              } as LinkMenuItemModel,
+            }],
+          },
+        },
       },
     ])
   ],

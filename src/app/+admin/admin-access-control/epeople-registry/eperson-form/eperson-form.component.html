@@ -8,8 +8,7 @@
   <h4>{{messagePrefix + '.edit' | translate}}</h4>
 </ng-template>
 
-<ds-form *ngIf = "formGroup" 
-         [formId]="formId"
+<ds-form [formId]="formId"
          [formModel]="formModel"
          [formGroup]="formGroup"
          [formLayout]="formLayout"
@@ -18,7 +17,7 @@
   <button class="btn btn-light" (click)="resetPassword()">
     <i class="fa fa-key"></i> {{'admin.access-control.epeople.actions.reset' | translate}}
   </button>
-  <button class="btn btn-light" [disabled]="!(canDelete$ | async)">
+  <button class="btn btn-light delete-button" [disabled]="!(canDelete$ | async)" (click)="delete()">
     <i class="fa fa-trash"></i> {{'admin.access-control.epeople.actions.delete' | translate}}
   </button>
   <button *ngIf="!isImpersonated" class="btn btn-light" [ngClass]="{'d-none' : !(canImpersonate$ | async)}" (click)="impersonate()">

@@ -1,3 +1,4 @@
+import { createFailedRemoteDataObject$, createSuccessfulRemoteDataObject, createSuccessfulRemoteDataObject$ } from 'src/app/shared/remote-data.utils';
 import { ActivatedRoute, Router } from '@angular/router';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
@@ -191,7 +192,7 @@ describe('ProfilePageGrantedApplicationsComponent', () => {
       encodedValue: '{\"id\":\"8071b18c-ad45-4172-b5f7-92589721e252\",\"clientName\":\"ClientName\",\"scopes\":\"pgc-role, email, openid, profile\",\"clientId\":\"3\"}',
       place: 4
     }
-  ]
+  ];
   const metadataList = Metadata.all(mockEPerson.metadata, EPERSON_GRANTED_METADATA);
 
   beforeEach(async(() => {
@@ -274,7 +275,8 @@ describe('ProfilePageGrantedApplicationsComponent', () => {
     });
 
     it('should revoke a permission properly when patch successful', () => {
-      ePersonDataService.patch.and.returnValue(observableOf(new RestResponse(true, 200, 'OK')));
+      // ePersonDataService.patch.and.returnValue(observableOf(new RestResponse(true, 200, 'OK')));
+      ePersonDataService.patch.and.returnValue(createSuccessfulRemoteDataObject$(Object.assign(new EPerson(), {})));
       const newMetadataList = metadataList
         .filter((metadata: MetadataValue) => metadata.place !== 2);
       scheduler.schedule(() => componentAsAny.revokePermission(2, '{\"id\":\"ffba24b8-89ed-46c0-af76-c50990070757\",\"clientName\":\"ClientName\",\"scopes\":\"pgc-role, email, openid, profile\",\"clientId\":\"3\"}'));
@@ -284,11 +286,11 @@ describe('ProfilePageGrantedApplicationsComponent', () => {
     });
 
     it('should not revoke a permission properly when patch failed', () => {
-      ePersonDataService.patch.and.returnValue(observableOf(new RestResponse(false, 403, 'FORBIDDEN')));
+      ePersonDataService.patch.and.returnValue(createFailedRemoteDataObject$());
       scheduler.schedule(() => componentAsAny.revokePermission(2, '{\"id\":\"ffba24b8-89ed-46c0-af76-c50990070757\",\"clientName\":\"ClientName\",\"scopes\":\"pgc-role, email, openid, profile\",\"clientId\":\"3\"}'));
       scheduler.flush();
 
       expect(componentAsAny.notificationsService.error).toHaveBeenCalled();
     });
-  })
+  });
 });

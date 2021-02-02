@@ -13,7 +13,11 @@ import {
   SelectVirtualMetadataAction,
 } from './object-updates.actions';
 import { hasNoValue, hasValue } from '../../../shared/empty.util';
-import {Relationship} from '../../shared/item-relationships/relationship.model';
+import { Relationship } from '../../shared/item-relationships/relationship.model';
+import { PatchOperationService } from './patch-operation-service/patch-operation.service';
+import { Item } from '../../shared/item.model';
+import { RelationshipType } from '../../shared/item-relationships/relationship-type.model';
+import { GenericConstructor } from '../../shared/generic-constructor';
 
 /**
  * Path where discarded objects are saved
@@ -24,9 +28,9 @@ export const OBJECT_UPDATES_TRASH_PATH = '/trash';
  * The state for a single field
  */
 export interface FieldState {
-  editable: boolean,
-  isNew: boolean,
-  isValid: boolean
+  editable: boolean;
+  isNew: boolean;
+  isValid: boolean;
 }
 
 /**
@@ -40,15 +44,15 @@ export interface FieldStates {
  * Represents every object that has a UUID
  */
 export interface Identifiable {
-  uuid: string
+  uuid: string;
 }
 
 /**
  * The state of a single field update
  */
 export interface FieldUpdate {
-  field: Identifiable,
-  changeType: FieldChangeType
+  field: Identifiable;
+  changeType: FieldChangeType;
 }
 
 /**
@@ -62,23 +66,30 @@ export interface FieldUpdates {
  * The states of all virtual metadata selections available for a single page, mapped by the relationship uuid
  */
 export interface VirtualMetadataSources {
-  [source: string]: VirtualMetadataSource
+  [source: string]: VirtualMetadataSource;
 }
 
 /**
  * The selection of virtual metadata for a relationship, mapped by the uuid of either the item or the relationship type
  */
 export interface VirtualMetadataSource {
-  [uuid: string]: boolean,
+  [uuid: string]: boolean;
+}
+
+export interface RelationshipIdentifiable extends Identifiable {
+  nameVariant?: string;
+  relatedItem: Item;
+  relationship: Relationship;
+  type: RelationshipType;
 }
 
 /**
  * A fieldupdate interface which represents a relationship selected to be deleted,
  * along with a selection of the virtual metadata to keep
  */
-export interface DeleteRelationship extends Relationship {
-  keepLeftVirtualMetadata: boolean,
-  keepRightVirtualMetadata: boolean,
+export interface DeleteRelationship extends RelationshipIdentifiable {
+  keepLeftVirtualMetadata: boolean;
+  keepRightVirtualMetadata: boolean;
 }
 
 /**
@@ -89,6 +100,7 @@ export interface ObjectUpdatesEntry {
   fieldUpdates: FieldUpdates;
   virtualMetadataSources: VirtualMetadataSources;
   lastModified: Date;
+  patchOperationService?: GenericConstructor<PatchOperationService>;
 }
 
 /**
@@ -163,6 +175,7 @@ function initializeFieldsUpdate(state: any, action: InitializeFieldsAction) {
   const url: string = action.payload.url;
   const fields: Identifiable[] = action.payload.fields;
   const lastModifiedServer: Date = action.payload.lastModified;
+  const patchOperationService: GenericConstructor<PatchOperationService> = action.payload.patchOperationService;
   const fieldStates = createInitialFieldStates(fields);
   const newPageState = Object.assign(
     {},
@@ -170,7 +183,8 @@ function initializeFieldsUpdate(state: any, action: InitializeFieldsAction) {
     { fieldStates: fieldStates },
     { fieldUpdates: {} },
     { virtualMetadataSources: {} },
-    { lastModified: lastModifiedServer }
+    { lastModified: lastModifiedServer },
+    { patchOperationService }
   );
   return Object.assign({}, state, { [url]: newPageState });
 }
@@ -184,11 +198,11 @@ function addFieldUpdate(state: any, action: AddFieldUpdateAction) {
   const url: string = action.payload.url;
   const field: Identifiable = action.payload.field;
   const changeType: FieldChangeType = action.payload.changeType;
-  const pageState: ObjectUpdatesEntry = state[url] || {};
+  const pageState: ObjectUpdatesEntry = state[url] || {fieldUpdates: {}};
 
   let states = pageState.fieldStates;
   if (changeType === FieldChangeType.ADD) {
-    states = Object.assign({}, { [field.uuid]: initialNewFieldState }, pageState.fieldStates)
+    states = Object.assign({}, { [field.uuid]: initialNewFieldState }, pageState.fieldStates);
   }
 
   let fieldUpdate: any = pageState.fieldUpdates[field.uuid] || {};

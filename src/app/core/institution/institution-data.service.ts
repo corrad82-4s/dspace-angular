@@ -2,17 +2,17 @@ import { HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { combineLatest, Observable } from 'rxjs';
 import { catchError, distinctUntilChanged, flatMap, map, switchMap } from 'rxjs/operators';
-import { isNotEmpty } from 'src/app/shared/empty.util';
-import { NotificationsService } from 'src/app/shared/notifications/notifications.service';
-import { createFailedRemoteDataObject$ } from 'src/app/shared/remote-data.utils';
+import { isNotEmpty } from '../../shared/empty.util';
+import { NotificationsService } from '../../shared/notifications/notifications.service';
+import { createFailedRemoteDataObject$ } from '../../shared/remote-data.utils';
 import { ErrorResponse, RestResponse } from '../cache/response.models';
 import { CommunityDataService } from '../data/community-data.service';
 import { ConfigurationDataService } from '../data/configuration-data.service';
-import { PaginatedList } from '../data/paginated-list';
+import { PaginatedList } from '../data/paginated-list.model';
 import { RemoteData } from '../data/remote-data';
 import { FindListOptions, PostRequest } from '../data/request.models';
 import { RequestService } from '../data/request.service';
-import { HttpOptions } from '../dspace-rest-v2/dspace-rest-v2.service';
+import { HttpOptions } from '../dspace-rest/dspace-rest.service';
 import { Community } from '../shared/community.model';
 import { configureRequest, getFinishedRemoteData, getFirstSucceededRemoteDataPayload, getRemoteDataPayload, getResponseFromEntry } from '../shared/operators';
 
@@ -48,11 +48,11 @@ export class InstitutionDataService {
     const href$ = this.communityDataService.getEndpoint();
     combineLatest([template$, href$, parentCommunity$]).pipe(
       map(([template, href, parentCommunity]: [Community, string, Community]) => {
-        const hrefWithParentAndName = `${href}?parent=${parentCommunity.id}&name=${name}`
+        const hrefWithParentAndName = `${href}?parent=${parentCommunity.id}&name=${name}`;
         return new PostRequest(requestId, hrefWithParentAndName, template.self, options);
       }),
       configureRequest(this.requestService)
-    ).subscribe()
+    ).subscribe();
 
     return this.fetchCreateResponse(requestId).pipe(
       getFinishedRemoteData(),
@@ -87,7 +87,7 @@ export class InstitutionDataService {
 
     return selfLink$.pipe(
       switchMap((selfLink: string) => this.communityDataService.findByHref(selfLink)),
-    )
+    );
   }
 
   /**

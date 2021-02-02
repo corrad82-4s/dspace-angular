@@ -51,7 +51,7 @@ export abstract class Reorderable {
    * differs from the newIndex
    */
   get hasMoved(): boolean {
-    return this.oldIndex !== this.newIndex
+    return this.oldIndex !== this.newIndex;
   }
 }
 
@@ -123,9 +123,9 @@ export class ReorderableRelationship extends Reorderable {
    */
   getPlace(): number {
     if (this.useLeftItem) {
-      return this.relationship.rightPlace
+      return this.relationship.rightPlace;
     } else {
-      return this.relationship.leftPlace
+      return this.relationship.leftPlace;
     }
   }
 }
@@ -138,7 +138,7 @@ export class ReorderableRelationship extends Reorderable {
   templateUrl: './existing-metadata-list-element.component.html',
   styleUrls: ['./existing-metadata-list-element.component.scss']
 })
-export class ExistingMetadataListElementComponent implements OnInit, OnChanges, OnDestroy {
+export class ExistingMetadataListElementComponent implements OnInit, OnChanges, OnDestroy   {
   @Input() listId: string;
   @Input() submissionItem: Item;
   @Input() reoRel: ReorderableRelationship;

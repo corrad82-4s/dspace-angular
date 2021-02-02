@@ -1,18 +1,17 @@
 import { Component, Inject, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { Observable } from 'rxjs';
-import { map, switchMap, tap } from 'rxjs/operators';
+import { map, switchMap } from 'rxjs/operators';
 
 import { SearchService } from '../../../core/shared/search/search.service';
 import { RemoteData } from '../../../core/data/remote-data';
 import { SearchFilterConfig } from '../search-filter-config.model';
 import { SearchConfigurationService } from '../../../core/shared/search/search-configuration.service';
 import { SearchFilterService } from '../../../core/shared/search/search-filter.service';
-import { getSucceededRemoteData } from '../../../core/shared/operators';
+import { getFirstSucceededRemoteData } from '../../../core/shared/operators';
 import { SEARCH_CONFIG_SERVICE } from '../../../+my-dspace-page/my-dspace-page.component';
 import { currentPath } from '../../utils/route.utils';
-import { Router } from '@angular/router';
-import { FilterType } from '../filter-type.model';
 
 @Component({
   selector: 'ds-search-filters',
@@ -46,9 +45,15 @@ export class SearchFiltersComponent implements OnInit {
   searchLink: string;
 
   /**
+   * For chart regular expression
+   */
+  chartReg = new RegExp(/^chart./, 'i');
+
+  /**
    * Initialize instance variables
    * @param {SearchService} searchService
    * @param {SearchConfigurationService} searchConfigService
+   * @param {Router} router
    * @param {SearchFilterService} filterService
    */
   constructor(
@@ -64,25 +69,13 @@ export class SearchFiltersComponent implements OnInit {
         switchMap((options) =>
           this.searchService
             .getConfig(options.scope, options.configuration)
-            .pipe(getSucceededRemoteData())
-        )
-      )
-      .pipe(
-        map((item) => ({
-          isLoading: item.isLoading,
-          hasFailed: item.hasFailed,
-          isRequestPending: item.isRequestPending,
-          isResponsePending: item.isResponsePending,
-          state: item.state,
-          hasSucceeded: item.hasSucceeded,
-          hasNoContent: item.hasNoContent,
-          payload: item.payload.filter(
-            (i) =>
-              i.type !== FilterType['chart.bar'] &&
-              i.type !== FilterType['chart.line'] &&
-              i.type !== FilterType['chart.pie']
-          ),
-        }))
+            .pipe(getFirstSucceededRemoteData())
+        ),
+        map((rd: RemoteData<SearchFilterConfig[]>) => Object.assign(rd, {
+          payload: rd.payload.filter((filter: SearchFilterConfig) =>
+            !this.chartReg.test(filter.filterType)
+          )})
+        ),
       );
 
     this.clearParams = this.searchConfigService.getCurrentFrontendFilters().pipe(map((filters) => {

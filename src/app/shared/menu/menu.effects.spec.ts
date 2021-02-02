@@ -4,9 +4,8 @@ import { LinkMenuItemModel } from './menu-item/models/link.model';
 import { TestBed } from '@angular/core/testing';
 import { MenuService } from './menu.service';
 import { ActivatedRoute } from '@angular/router';
-import { Observable } from 'rxjs/internal/Observable';
+import { Observable, of as observableOf } from 'rxjs';
 import { provideMockActions } from '@ngrx/effects/testing';
-import { of as observableOf } from 'rxjs';
 import { cold, hot } from 'jasmine-marbles';
 import { ROUTER_NAVIGATED } from '@ngrx/router-store';
 import { MenuEffects } from './menu.effects';
@@ -14,6 +13,7 @@ import { MenuEffects } from './menu.effects';
 describe('MenuEffects', () => {
   let menuEffects: MenuEffects;
   let routeDataMenuSection: MenuSection;
+  let routeDataMenuSectionResolved: MenuSection;
   let routeDataMenuChildSection: MenuSection;
   let toBeRemovedMenuSection: MenuSection;
   let alreadyPresentMenuSection: MenuSection;
@@ -23,13 +23,23 @@ describe('MenuEffects', () => {
 
   function init() {
     routeDataMenuSection = {
-      id: 'mockSection',
+      id: 'mockSection_:idparam',
       active: false,
       visible: true,
       model: {
         type: MenuItemType.LINK,
         text: 'menu.section.mockSection',
-        link: ''
+        link: 'path/:linkparam'
+      } as LinkMenuItemModel
+    };
+    routeDataMenuSectionResolved = {
+      id: 'mockSection_id_param_resolved',
+      active: false,
+      visible: true,
+      model: {
+        type: MenuItemType.LINK,
+        text: 'menu.section.mockSection',
+        link: 'path/link_param_resolved'
       } as LinkMenuItemModel
     };
     routeDataMenuChildSection = {
@@ -70,6 +80,10 @@ describe('MenuEffects', () => {
             menu: {
               [MenuID.PUBLIC]: [routeDataMenuSection, alreadyPresentMenuSection]
             }
+          },
+          params: {
+            idparam: 'id_param_resolved',
+            linkparam: 'link_param_resolved',
           }
         },
         firstChild: {
@@ -102,7 +116,7 @@ describe('MenuEffects', () => {
       ]
     });
 
-    menuEffects = TestBed.get(MenuEffects);
+    menuEffects = TestBed.inject(MenuEffects);
   });
 
   describe('buildRouteMenuSections$', () => {
@@ -120,7 +134,7 @@ describe('MenuEffects', () => {
       });
 
       expect(menuEffects.buildRouteMenuSections$).toBeObservable(expected);
-      expect(menuService.addSection).toHaveBeenCalledWith(MenuID.PUBLIC, routeDataMenuSection);
+      expect(menuService.addSection).toHaveBeenCalledWith(MenuID.PUBLIC, routeDataMenuSectionResolved);
       expect(menuService.addSection).toHaveBeenCalledWith(MenuID.PUBLIC, routeDataMenuChildSection);
       expect(menuService.addSection).not.toHaveBeenCalledWith(MenuID.PUBLIC, alreadyPresentMenuSection);
       expect(menuService.removeSection).toHaveBeenCalledWith(MenuID.PUBLIC, toBeRemovedMenuSection.id);

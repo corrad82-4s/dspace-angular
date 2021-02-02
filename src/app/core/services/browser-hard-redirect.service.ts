@@ -10,12 +10,13 @@ export function locationProvider(): Location {
 /**
  * Service for performing hard redirects within the browser app module
  */
-@Injectable()
-export class BrowserHardRedirectService implements HardRedirectService {
+@Injectable({providedIn: 'root'})
+export class BrowserHardRedirectService extends HardRedirectService {
 
   constructor(
     @Inject(LocationToken) protected location: Location,
   ) {
+    super();
   }
 
   /**
@@ -31,5 +32,12 @@ export class BrowserHardRedirectService implements HardRedirectService {
    */
   getCurrentRoute() {
     return this.location.pathname + this.location.search;
+  }
+
+  /**
+   * Get the hostname of the request
+   */
+  getRequestOrigin() {
+    return this.location.origin;
   }
 }
