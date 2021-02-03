@@ -1,10 +1,11 @@
-<ng-template #rejectTipContent><p [innerHTML]="'submission.workflow.tasks.claimed.reject_help' | translate"></p></ng-template>
-<button [className]="'btn btn-danger'"
+<ng-template #rejectTipContent><p [innerHTML]="(getHelpLabelPrefix() | async) | translate"></p></ng-template>
+<button *ngIf="(hasNotDuplications() | async)"
+        [className]="'btn btn-danger'"
         [ngbTooltip]="rejectTipContent"
         [disabled]="processing$ | async"
-        (click)="openRejectModal(rejectModal)" >
+        (click)="reject(rejectModal)" >
   <span *ngIf="processing$ | async"><i class='fas fa-circle-notch fa-spin'></i> {{'submission.workflow.tasks.generic.processing' | translate}}</span>
-  <span *ngIf="!(processing$ | async)"><i class="fa fa-trash"></i> {{'submission.workflow.tasks.claimed.reject.submit' | translate}}</span>
+  <span *ngIf="!(processing$ | async)"> <i class="fa fa-trash"></i> {{(getLabelPrefix() | async) | translate}} </span>
 </button>
 
 <ng-template #rejectModal let-c="close" let-d="dismiss">
