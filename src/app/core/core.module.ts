@@ -194,6 +194,11 @@ import { Metric } from './shared/metric.model';
 import { MetricService } from './data/metric.service';
 import { Root } from './data/root.model';
 import { WorkflowStepDataService } from './submission/workflowstep-data.service';
+import { OpenaireBrokerTopicObject } from './openaire/broker/models/openaire-broker-topic.model';
+import { OpenaireBrokerEventObject } from './openaire/broker/models/openaire-broker-event.model';
+import { OpenaireSuggestionTarget } from './openaire/reciter-suggestions/models/openaire-suggestion-target.model';
+import { OpenaireSuggestion } from './openaire/reciter-suggestions/models/openaire-suggestion.model';
+import { OpenaireSuggestionSource } from './openaire/reciter-suggestions/models/openaire-suggestion-source.model';
 
 /**
  * When not in production, endpoint responses can be mocked for testing purposes
@@ -418,7 +423,12 @@ export const models =
     OrcidHistory,
     Section,
     EditItem,
-    EditItemMode
+    EditItemMode,
+    OpenaireBrokerTopicObject,
+    OpenaireBrokerEventObject,
+    OpenaireSuggestion,
+    OpenaireSuggestionTarget,
+    OpenaireSuggestionSource
   ];
 
 @NgModule({
