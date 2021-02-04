@@ -7,7 +7,7 @@ import { TranslateService } from '@ngx-translate/core';
 
 import { ClaimedTaskDataService } from '../../../core/tasks/claimed-task-data.service';
 import { ClaimedTask } from '../../../core/tasks/models/claimed-task-object.model';
-import { isNotUndefined } from '../../empty.util';
+import { isEmpty, isNotUndefined } from '../../empty.util';
 import { WorkflowItem } from '../../../core/submission/models/workflowitem.model';
 import { RemoteData } from '../../../core/data/remote-data';
 import { MyDSpaceActionsComponent } from '../mydspace-actions';
@@ -17,6 +17,8 @@ import { SearchService } from '../../../core/shared/search/search.service';
 import { WorkflowAction } from '../../../core/tasks/models/workflow-action-object.model';
 import { WorkflowActionDataService } from '../../../core/data/workflow-action-data.service';
 import { WORKFLOW_TASK_OPTION_RETURN_TO_POOL } from './return-to-pool/claimed-task-actions-return-to-pool.component';
+import { WorkflowItemDataService } from 'src/app/core/submission/workflowitem-data.service';
+import { getFirstSucceededRemoteDataPayload } from 'src/app/core/shared/operators';
 
 /**
  * This component represents actions related to ClaimedTask object.
@@ -66,7 +68,8 @@ export class ClaimedTaskActionsComponent extends MyDSpaceActionsComponent<Claime
               protected translate: TranslateService,
               protected searchService: SearchService,
               protected requestService: RequestService,
-              protected workflowActionService: WorkflowActionDataService) {
+              protected workflowActionService: WorkflowActionDataService,
+              protected workflowItemDataService: WorkflowItemDataService) {
     super(ClaimedTask.type, injector, router, notificationsService, translate, searchService, requestService);
   }
 
@@ -97,6 +100,19 @@ export class ClaimedTaskActionsComponent extends MyDSpaceActionsComponent<Claime
    */
   initAction(object: ClaimedTask) {
     this.actionRD$ = object.action;
+  }
+
+  hasDuplications(): Observable<boolean> {
+    return this.workflowitem$.pipe(
+      map((workflowitem) => this.workflowItemDataService.hasDuplications(workflowitem))
+    );
+  }
+
+  hasDuplicationVerified(): Observable<boolean> {
+    return this.workflowItemDataService.findByHref(this.object._links.workflowitem.href).pipe(
+      getFirstSucceededRemoteDataPayload(),
+      map((workflowitem) => this.workflowItemDataService.hasDuplicationVerified(workflowitem))
+    );
   }
 
 }
