@@ -438,17 +438,17 @@ export class AdminSidebarComponent extends MenuComponent implements OnInit {
     this.authorizationService.isAuthorized(FeatureID.AdministratorOf).subscribe((authorized) => {
       const menuList = [
         /* Notifications */
-        {
-          id: 'notifications',
-          active: false,
-          visible: authorized,
-          model: {
-            type: MenuItemType.TEXT,
-            text: 'menu.section.notifications'
-          } as TextMenuItemModel,
-          icon: 'bell',
-          index: 4
-        },
+        // {
+        //   id: 'notifications',
+        //   active: false,
+        //   visible: authorized,
+        //   model: {
+        //     type: MenuItemType.TEXT,
+        //     text: 'menu.section.notifications'
+        //   } as TextMenuItemModel,
+        //   icon: 'bell',
+        //   index: 4
+        // },
         {
           id: 'notifications_openair_broker',
           parentID: 'notifications',
