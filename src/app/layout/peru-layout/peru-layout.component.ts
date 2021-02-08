@@ -28,6 +28,10 @@ export class PeruLayoutComponent extends CrisLayoutDefaultComponent {
     super(tabService, componentFactoryResolver, authService);
   }
 
+  ngOnInit() {
+    super.ngOnInit();
+  }
+
   /**
    * Overridden in order to pass the shadowCopy to the tab component.
    * @param viewContainerRef

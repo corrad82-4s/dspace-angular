@@ -31,7 +31,7 @@ class TestItem {
 }
 
 // tslint:disable-next-line: max-classes-per-file
-class MetadataComponentsDataServiceMock {
+export class MetadataComponentsDataServiceMock {
   findById(boxShortname: string): Observable<RemoteData<MetadataComponent>> {
     return of(
       createSuccessfulRemoteDataObject(medataComponent)

@@ -88,7 +88,6 @@ describe('CrisPageLoaderComponent', () => {
         { provide: AuthService, useValue: authServiceMock },
         { provide: Router, useValue: {} },
         { provide: ActivatedRoute, useValue: {} },
-        { provide: ComponentFactoryResolver, useValue: {} },
         { provide: ChangeDetectorRef, useValue: {} },
         { provide: ResearcherProfileService, useValue: {} },
         { provide: NotificationsService, useValue: {} }
@@ -115,12 +114,13 @@ describe('CrisPageLoaderComponent', () => {
     }));
     authorizationDataServiceMock.isAuthorized.and.returnValue(observableOf(true));
     authServiceMock.isAuthenticated.and.returnValue(observableOf(true));
+    spyOn((component as any), 'getComponent').and.returnValue(CrisLayoutDefaultComponent);
     fixture.detectChanges();
   });
 
   describe('When the component is rendered', () => {
     it('should call the getCrisLayoutPage function with the right types', (done) => {
-      expect(component).toBeDefined();
+      expect(component.getComponent).toHaveBeenCalledWith(mockItem);
       done();
     });
   });

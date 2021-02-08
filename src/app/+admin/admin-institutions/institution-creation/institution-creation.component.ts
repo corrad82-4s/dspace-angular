@@ -3,10 +3,9 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { BehaviorSubject, Observable, Subscription } from 'rxjs';
-import { getCommunityPageRoute } from 'src/app/+community-page/community-page-routing-paths';
-import { InstitutionDataService } from 'src/app/core/institution/institution-data.service';
-import { NotificationsService } from 'src/app/shared/notifications/notifications.service';
-import { getInstitutionExploreRoute } from '../admin-institutions-routing.module';
+import { InstitutionDataService } from '../../../core/institution/institution-data.service';
+import { NotificationsService } from '../../../shared/notifications/notifications.service';
+import { getInstitutionExploreRoute } from '../admin-institutions-routing-paths';
 
 /**
  * A component to create a new institution starting from the configured institution template.

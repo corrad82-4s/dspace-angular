@@ -89,7 +89,7 @@ describe('ItemActionsComponent', () => {
         { provide: NotificationsService, useValue: new NotificationsServiceStub() },
         { provide: AuthorizationDataService, useValue: authorizationService },
         { provide: RelationshipService, useValue: relationshipService },
-        { provide: SubmissionService, userValue: SubmissionService },
+        { provide: SubmissionService, useValue: submissionService },
         { provide: SearchService, useValue: searchService },
         { provide: RequestService, useValue: requestServce }
       ],

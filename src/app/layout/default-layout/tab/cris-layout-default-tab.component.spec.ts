@@ -31,7 +31,7 @@ class TestItem {
 }
 
 // tslint:disable-next-line: max-classes-per-file
-class BoxDataServiceMock {
+export class BoxDataServiceMock {
   findByItem(itemUuid: string, tabId: number): Observable<RemoteData<PaginatedList<Box>>> {
     return cold('a|', {
       a: createSuccessfulRemoteDataObject(createPaginatedList([boxMetadata]))
@@ -40,7 +40,7 @@ class BoxDataServiceMock {
 }
 
 // tslint:disable-next-line: max-classes-per-file
-class MetadataComponentsDataServiceMock {
+export class MetadataComponentsDataServiceMock {
   findById(boxShortname: string): Observable<RemoteData<MetadataComponent>> {
     return cold('a|', {
       a: createSuccessfulRemoteDataObject({})
