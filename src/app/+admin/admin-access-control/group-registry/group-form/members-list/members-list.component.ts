@@ -11,9 +11,9 @@ import { GroupDataService } from '../../../../../core/eperson/group-data.service
 import { EPerson } from '../../../../../core/eperson/models/eperson.model';
 import { Group } from '../../../../../core/eperson/models/group.model';
 import {
-  getRemoteDataPayload,
+  getFirstCompletedRemoteData,
   getFirstSucceededRemoteData,
-  getFirstCompletedRemoteData
+  getRemoteDataPayload
 } from '../../../../../core/shared/operators';
 import { hasValue } from '../../../../../shared/empty.util';
 import { NotificationsService } from '../../../../../shared/notifications/notifications.service';
