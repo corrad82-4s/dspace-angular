@@ -4433,6 +4433,20 @@
 
   "submission.import-external.preview.title.Funding": "Funding Preview",
 
+  "submission.import-external.preview.title.InstitutionEquipment": "Equipment Preview",
+
+  "submission.import-external.preview.title.InstitutionFunding": "Funding Preview",
+
+  "submission.import-external.preview.title.InstitutionOrgUnit": "Publisher Preview",
+
+  "submission.import-external.preview.title.InstitutionPatent": "Patent Preview",
+
+  "submission.import-external.preview.title.InstitutionPerson": "Person Preview",
+
+  "submission.import-external.preview.title.InstitutionProject": "Project Preview",
+
+  "submission.import-external.preview.title.InstitutionPublication": "Publication Preview",
+
   "submission.import-external.preview.title.Journal": "Journal Preview",
 
   "submission.import-external.preview.title.OrgUnit": "Publisher Preview",
