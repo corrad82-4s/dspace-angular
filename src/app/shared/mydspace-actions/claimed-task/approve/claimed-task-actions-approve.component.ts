@@ -2,10 +2,10 @@ import { Component } from '@angular/core';
 import { ClaimedTaskActionsAbstractComponent } from '../abstract/claimed-task-actions-abstract.component';
 import { rendersWorkflowTaskOption } from '../switcher/claimed-task-actions-decorator';
 import { ClaimedTaskDataService } from '../../../../core/tasks/claimed-task-data.service';
-import { map } from 'rxjs/internal/operators/map';
-import { Observable } from 'rxjs/internal/Observable';
-import { WorkflowItemDataService } from 'src/app/core/submission/workflowitem-data.service';
-import { getFirstSucceededRemoteDataPayload } from 'src/app/core/shared/operators';
+import { map } from 'rxjs/operators';
+import { Observable } from 'rxjs';
+import { WorkflowItemDataService } from '../../../../core/submission/workflowitem-data.service';
+import { getFirstSucceededRemoteDataPayload } from '../../../../core/shared/operators';
 
 export const WORKFLOW_TASK_OPTION_APPROVE = 'submit_approve';
 

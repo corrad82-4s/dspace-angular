@@ -1,19 +1,17 @@
+import { PaginationComponentOptions } from '../../../shared/pagination/pagination-component-options.model';
 import { Component, OnInit } from '@angular/core';
 import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
-import { getCollectionPageRoute } from 'src/app/+collection-page/collection-page-routing-paths';
-import { getCommunityPageRoute } from 'src/app/+community-page/community-page-routing-paths';
-import { getAdminModuleRoute } from 'src/app/app-routing-paths';
-import { SortDirection, SortOptions } from 'src/app/core/cache/models/sort-options.model';
-import { CollectionDataService } from 'src/app/core/data/collection-data.service';
-import { RequestService } from 'src/app/core/data/request.service';
-import { InstitutionDataService } from 'src/app/core/institution/institution-data.service';
-import { Collection } from 'src/app/core/shared/collection.model';
-import { Community } from 'src/app/core/shared/community.model';
-import { DSpaceObject } from 'src/app/core/shared/dspace-object.model';
-import { MetadataValue } from 'src/app/core/shared/metadata.models';
-import { getFirstSucceededRemoteDataWithNotEmptyPayload, getFirstSucceededRemoteListPayload } from 'src/app/core/shared/operators';
-import { PaginationComponentOptions } from 'src/app/shared/pagination/pagination-component-options.model';
+import { getCollectionPageRoute } from '../../../+collection-page/collection-page-routing-paths';
+import { getCommunityPageRoute } from '../../../+community-page/community-page-routing-paths';
+import { SortDirection, SortOptions } from '../../../core/cache/models/sort-options.model';
+import { CollectionDataService } from '../../../core/data/collection-data.service';
+import { RequestService } from '../../../core/data/request.service';
+import { InstitutionDataService } from '../../../core/institution/institution-data.service';
+import { Collection } from '../../../core/shared/collection.model';
+import { Community } from '../../../core/shared/community.model';
+import { DSpaceObject } from '../../../core/shared/dspace-object.model';
+import { MetadataValue } from '../../../core/shared/metadata.models';
+import { getFirstSucceededRemoteDataWithNotEmptyPayload, getFirstSucceededRemoteListPayload } from '../../../core/shared/operators';
 import { getGroupEditRoute } from '../../admin-access-control/admin-access-control-routing-paths';
 
 /**

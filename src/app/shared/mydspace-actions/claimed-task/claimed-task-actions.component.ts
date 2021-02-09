@@ -17,8 +17,8 @@ import { SearchService } from '../../../core/shared/search/search.service';
 import { WorkflowAction } from '../../../core/tasks/models/workflow-action-object.model';
 import { WorkflowActionDataService } from '../../../core/data/workflow-action-data.service';
 import { WORKFLOW_TASK_OPTION_RETURN_TO_POOL } from './return-to-pool/claimed-task-actions-return-to-pool.component';
-import { WorkflowItemDataService } from 'src/app/core/submission/workflowitem-data.service';
-import { getFirstSucceededRemoteDataPayload } from 'src/app/core/shared/operators';
+import { WorkflowItemDataService } from '../../../core/submission/workflowitem-data.service';
+import { getFirstSucceededRemoteDataPayload } from '../../../core/shared/operators';
 
 /**
  * This component represents actions related to ClaimedTask object.
