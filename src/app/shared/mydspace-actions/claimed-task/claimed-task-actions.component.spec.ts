@@ -85,7 +85,7 @@ function init() {
   rdItem = createSuccessfulRemoteDataObject(item);
   workflowitem = Object.assign(new WorkflowItem(), { item: observableOf(rdItem) });
   rdWorkflowitem = createSuccessfulRemoteDataObject(workflowitem);
-  mockObject = Object.assign(new ClaimedTask(), { workflowitem: observableOf(rdWorkflowitem), id: '1234', 
+  mockObject = Object.assign(new ClaimedTask(), { workflowitem: observableOf(rdWorkflowitem), id: '1234',
   _links: { workflowitem: { href: 'workflowitem'}} });
   workflowAction = Object.assign(new WorkflowAction(), { id: 'action-1', options: ['option-1', 'option-2'] });
 
