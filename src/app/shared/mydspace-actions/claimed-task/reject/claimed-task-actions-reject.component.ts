@@ -7,8 +7,8 @@ import { ClaimedTaskDataService } from '../../../../core/tasks/claimed-task-data
 import { rendersWorkflowTaskOption } from '../switcher/claimed-task-actions-decorator';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { getFirstSucceededRemoteDataPayload } from 'src/app/core/shared/operators';
-import { WorkflowItemDataService } from 'src/app/core/submission/workflowitem-data.service';
+import { getFirstSucceededRemoteDataPayload } from '../../../../core/shared/operators';
+import { WorkflowItemDataService } from '../../../../core/submission/workflowitem-data.service';
 
 export const WORKFLOW_TASK_OPTION_REJECT = 'submit_reject';
 

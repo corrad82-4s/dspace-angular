@@ -1,3 +1,5 @@
+import { createSuccessfulRemoteDataObject$ } from '../../../../shared/remote-data.utils';
+import { WorkflowItemDataService } from '../../../../core/submission/workflowitem-data.service';
 import { ChangeDetectionStrategy, NO_ERRORS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
@@ -19,9 +21,17 @@ let formBuilder: FormBuilder;
 let modalService: NgbModal;
 
 describe('ClaimedTaskActionsRejectComponent', () => {
-  const object = Object.assign(new ClaimedTask(), { id: 'claimed-task-1' });
+  const object = Object.assign(new ClaimedTask(), { id: 'claimed-task-1',
+  _links: {
+    workflowitem: { href: 'workflowitem'}
+  } });
   const claimedTaskService = jasmine.createSpyObj('claimedTaskService', {
     submitTask: observableOf(new ProcessTaskResponse(true))
+  });
+  const workflowItemDataService = jasmine.createSpyObj('workflowItemService', {
+    findByHref: createSuccessfulRemoteDataObject$({}),
+    hasDuplications: false,
+    hasDuplicationVerified: false
   });
 
   beforeEach(waitForAsync(() => {
@@ -40,7 +50,8 @@ describe('ClaimedTaskActionsRejectComponent', () => {
       providers: [
         { provide: ClaimedTaskDataService, useValue: claimedTaskService },
         FormBuilder,
-        NgbModal
+        NgbModal,
+        { provide: WorkflowItemDataService, useValue: workflowItemDataService },
       ],
       schemas: [NO_ERRORS_SCHEMA]
     }).overrideComponent(ClaimedTaskActionsRejectComponent, {

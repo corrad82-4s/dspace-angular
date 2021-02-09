@@ -1,3 +1,5 @@
+import { createSuccessfulRemoteDataObject, createSuccessfulRemoteDataObject$ } from '../../../../shared/remote-data.utils';
+import { WorkflowItemDataService } from '../../../../core/submission/workflowitem-data.service';
 import { ChangeDetectionStrategy, NO_ERRORS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
@@ -14,9 +16,17 @@ let component: ClaimedTaskActionsApproveComponent;
 let fixture: ComponentFixture<ClaimedTaskActionsApproveComponent>;
 
 describe('ClaimedTaskActionsApproveComponent', () => {
-  const object = Object.assign(new ClaimedTask(), { id: 'claimed-task-1' });
+  const object = Object.assign(new ClaimedTask(), { id: 'claimed-task-1',
+  _links: {
+    workflowitem: { href: 'workflowitem'}
+  } });
   const claimedTaskService = jasmine.createSpyObj('claimedTaskService', {
     submitTask: observableOf(new ProcessTaskResponse(true))
+  });
+  const workflowItemService = jasmine.createSpyObj('workflowItemService', {
+    findByHref: createSuccessfulRemoteDataObject$({}),
+    hasDuplications: false,
+    hasDuplicationVerified: false
   });
 
   beforeEach(waitForAsync(() => {
@@ -30,7 +40,8 @@ describe('ClaimedTaskActionsApproveComponent', () => {
         })
       ],
       providers: [
-        { provide: ClaimedTaskDataService, useValue: claimedTaskService }
+        { provide: ClaimedTaskDataService, useValue: claimedTaskService },
+        { provide: WorkflowItemDataService, useValue: workflowItemService }
       ],
       declarations: [ClaimedTaskActionsApproveComponent],
       schemas: [NO_ERRORS_SCHEMA]

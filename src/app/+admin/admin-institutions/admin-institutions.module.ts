@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
-import { SharedModule } from 'src/app/shared/shared.module';
+import { SharedModule } from '../../shared/shared.module';
 import { BitstreamFormatsModule } from '../admin-registries/bitstream-formats/bitstream-formats.module';
 import { AdminInstitutionsRoutingModule } from './admin-institutions-routing.module';
 import { InstitutionCreationComponent } from './institution-creation/institution-creation.component';
