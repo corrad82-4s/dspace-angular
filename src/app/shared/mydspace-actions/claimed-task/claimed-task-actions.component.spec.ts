@@ -1,3 +1,4 @@
+import { WorkflowItemDataService } from '../../../core/submission/workflowitem-data.service';
 import { ChangeDetectionStrategy, Injector, NO_ERRORS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { Router } from '@angular/router';
@@ -41,6 +42,7 @@ let rdItem;
 let workflowitem;
 let rdWorkflowitem;
 let workflowAction;
+let workflowItemDataService;
 
 function init() {
   mockDataService = jasmine.createSpyObj('ClaimedTaskDataService', {
@@ -83,11 +85,18 @@ function init() {
   rdItem = createSuccessfulRemoteDataObject(item);
   workflowitem = Object.assign(new WorkflowItem(), { item: observableOf(rdItem) });
   rdWorkflowitem = createSuccessfulRemoteDataObject(workflowitem);
-  mockObject = Object.assign(new ClaimedTask(), { workflowitem: observableOf(rdWorkflowitem), id: '1234' });
+  mockObject = Object.assign(new ClaimedTask(), { workflowitem: observableOf(rdWorkflowitem), id: '1234', 
+  _links: { workflowitem: { href: 'workflowitem'}} });
   workflowAction = Object.assign(new WorkflowAction(), { id: 'action-1', options: ['option-1', 'option-2'] });
 
   workflowActionService = jasmine.createSpyObj('workflowActionService', {
     findById: createSuccessfulRemoteDataObject$(workflowAction)
+  });
+
+  workflowItemDataService = jasmine.createSpyObj('workflowItemDataService', {
+    findByHref: createSuccessfulRemoteDataObject$({}),
+    hasDuplications: false,
+    hasDuplicationVerified: false
   });
 }
 
@@ -111,7 +120,8 @@ describe('ClaimedTaskActionsComponent', () => {
         { provide: ClaimedTaskDataService, useValue: mockDataService },
         { provide: SearchService, useValue: searchService },
         { provide: RequestService, useValue: requestServce },
-        { provide: WorkflowActionDataService, useValue: workflowActionService }
+        { provide: WorkflowActionDataService, useValue: workflowActionService },
+        { provide: WorkflowItemDataService, useValue: workflowItemDataService }
       ],
       schemas: [NO_ERRORS_SCHEMA]
     }).overrideComponent(ClaimedTaskActionsComponent, {
@@ -152,6 +162,8 @@ describe('ClaimedTaskActionsComponent', () => {
   }));
 
   it('should display an error notification on process failure', waitForAsync(() => {
+    component.object = null;
+    component.initObjects(mockObject);
     component.handleActionResponse(false);
     fixture.detectChanges();
 
