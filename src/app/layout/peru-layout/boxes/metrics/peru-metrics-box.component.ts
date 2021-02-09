@@ -4,13 +4,8 @@ import { LayoutTab } from '../../../enums/layout-tab.enum';
 import { LayoutBox } from '../../../enums/layout-box.enum';
 import { LayoutPage } from '../../../enums/layout-page.enum';
 import { MetricsComponentsDataService } from '../../../../core/layout/metrics-components-data.service';
-import { Metric } from '../../../../core/shared/metric.model';
 import { ItemDataService } from '../../../../core/data/item-data.service';
 import { CrisLayoutMetricsBoxComponent } from '../../../default-layout/boxes/metrics/cris-layout-metrics-box.component';
-
-export interface MetricRow {
-  metrics: Metric[];
-}
 
 /**
  * This component renders the metadata boxes of items

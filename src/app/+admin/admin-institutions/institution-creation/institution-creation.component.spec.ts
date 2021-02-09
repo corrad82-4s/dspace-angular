@@ -6,15 +6,18 @@ import { BrowserModule } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-translate/core';
-import { InstitutionDataService } from 'src/app/core/institution/institution-data.service';
-import { Community } from 'src/app/core/shared/community.model';
-import { RouterMock } from 'src/app/shared/mocks/router.mock';
-import { TranslateLoaderMock } from 'src/app/shared/mocks/translate-loader.mock';
-import { getMockTranslateService } from 'src/app/shared/mocks/translate.service.mock';
-import { NotificationsService } from 'src/app/shared/notifications/notifications.service';
-import { createFailedRemoteDataObject$, createSuccessfulRemoteDataObject$ } from 'src/app/shared/remote-data.utils';
-import { NotificationsServiceStub } from 'src/app/shared/testing/notifications-service.stub';
+import { TranslateLoaderMock } from '../../../shared/mocks/translate-loader.mock';
+import { getMockTranslateService } from '../../../shared/mocks/translate.service.mock';
+import { NotificationsService } from '../../../shared/notifications/notifications.service';
+import {
+  createFailedRemoteDataObject$,
+  createSuccessfulRemoteDataObject$
+} from '../../../shared/remote-data.utils';
+import { NotificationsServiceStub } from '../../../shared/testing/notifications-service.stub';
 import { InstitutionCreationComponent } from './institution-creation.component';
+import { RouterMock } from '../../../shared/mocks/router.mock';
+import { Community } from '../../../core/shared/community.model';
+import { InstitutionDataService } from '../../../core/institution/institution-data.service';
 
 describe('InstitutionCreationComponent', () => {
 
@@ -43,7 +46,7 @@ describe('InstitutionCreationComponent', () => {
         }),
       ],
       declarations: [InstitutionCreationComponent],
-      providers: [InstitutionCreationComponent,
+      providers: [
         { provide: NotificationsService, useValue: notificationsService },
         { provide: InstitutionDataService, useValue: institutionService },
         { provide: Router, useValue: router },
@@ -59,9 +62,9 @@ describe('InstitutionCreationComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create InstitutionCreationComponent', inject([InstitutionCreationComponent], (comp: InstitutionCreationComponent) => {
-    expect(comp).toBeDefined();
-  }));
+  it('should create InstitutionCreationComponent', () => {
+    expect(component).toBeDefined();
+  });
 
   describe('when submitting the form', () => {
 

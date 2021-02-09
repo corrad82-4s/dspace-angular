@@ -10,8 +10,6 @@ import { LayoutPage } from '../../enums/layout-page.enum';
 import { LayoutTab } from '../../enums/layout-tab.enum';
 import { CrisLayoutDefaultTabComponent } from '../../default-layout/tab/cris-layout-default-tab.component';
 import { BoxDataService } from '../../../core/layout/box-data.service';
-import { GenericConstructor } from '../../../core/shared/generic-constructor';
-import { getCrisLayoutBox } from '../../decorators/cris-layout-box.decorator';
 import { Box } from '../../../core/layout/models/box.model';
 import { Item } from '../../../core/shared/item.model';
 
@@ -34,8 +32,8 @@ export class PeruTabComponent extends CrisLayoutDefaultTabComponent {
 
   }
 
-  protected getComponent(boxType: string): GenericConstructor<Component> {
-    return getCrisLayoutBox(this.item, this.tab.shortname, boxType);
+  ngOnInit() {
+    super.ngOnInit();
   }
 
   /**

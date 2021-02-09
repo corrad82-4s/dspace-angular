@@ -25,11 +25,13 @@ export class ShadowCopiesComponent implements OnInit {
    * If the user is authorized fetch the related shadow copies.
    */
   ngOnInit(): void {
-    this.shadowCopiesService.getShadowCopies(this.item).pipe(take(1)).subscribe((shadowCopies: ShadowCopy[]) => {
-      this.selectedShadowCopy = shadowCopies[0].shadowCopy;
-      this.shadowCopies = shadowCopies;
-      this._cd.detectChanges();
-    });
+    if (this.item) {
+      this.shadowCopiesService.getShadowCopies(this.item).pipe(take(1)).subscribe((shadowCopies: ShadowCopy[]) => {
+        this.selectedShadowCopy = shadowCopies[0].shadowCopy;
+        this.shadowCopies = shadowCopies;
+        this._cd.detectChanges();
+      });
+    }
   }
 
   /**

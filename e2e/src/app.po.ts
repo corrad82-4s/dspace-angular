@@ -1,4 +1,4 @@
-import { browser, element, by, protractor, promise } from 'protractor';
+import { browser, by, element, promise, protractor } from 'protractor';
 
 export class ProtractorPage {
   navigateTo() {

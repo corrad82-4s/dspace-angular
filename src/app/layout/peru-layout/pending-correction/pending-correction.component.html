@@ -1,7 +1,7 @@
 <ng-container *ngIf="correctionItem" >
     <div class="d-flex mt-2">
         <div class="alert alert-info flex-grow-1">
-            <i class="fas fa-info-circle mr-1"></i>{{ 'peru-layout.corrections' | translate }}
+            <i class="fas fa-info-circle mr-1"></i>{{ 'peru-layout.corrections' | translate }} <strong>{{correctionItem.label}}</strong>.
             <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
                 <button type="button" class="btn btn-light" (click)="toggleHide()">
                     <span *ngIf="hide"><i class="fas fa-eye mr-1"></i>{{ 'peru-layout.corrections.see' | translate }}</span>
@@ -15,6 +15,6 @@
     </div>
     <ds-pending-correction-details *ngIf="!hide"
                                    [item]="item"
-                                   [correctionItem]="correctionItem"
-                                   [corrections]="corrections"></ds-pending-correction-details>
+                                   [correctionItem]="correctionItem.correctionItem"
+                                   [corrections]="correctionItem.corrections"></ds-pending-correction-details>
 </ng-container>
