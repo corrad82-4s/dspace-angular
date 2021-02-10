@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { Item } from '../../../../core/shared/item.model';
-import { MetadataCorrection } from '../pending-correction.service';
+import { Item } from '../../../../../core/shared/item.model';
+import { MetadataCorrection } from '../../../services/pending-correction.service';
 
 @Component({
   selector: 'ds-pending-correction-details',
@@ -8,8 +8,6 @@ import { MetadataCorrection } from '../pending-correction.service';
   styleUrls: ['./pending-correction-details.component.scss']
 })
 export class PendingCorrectionDetailsComponent {
-
-  @Input() item: Item;
 
   @Input() correctionItem: Item;
 

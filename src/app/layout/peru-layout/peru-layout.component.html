@@ -2,7 +2,7 @@
     <div class="d-flex justify-content-end">
         <ds-context-menu [contextMenuObject]="item" [contextMenuObjectType]="'ITEM'"></ds-context-menu>
     </div>
-    <ds-pending-correction [item]="item"></ds-pending-correction>
+    <ds-pending-corrections [item]="item"></ds-pending-corrections>
     <div class="wrapper" [ngClass]="{'wrapper-close': !(isSideBarHidden() | async)}">
         <div>
             <ds-peru-sidebar

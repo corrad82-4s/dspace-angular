@@ -1,0 +1,5 @@
+<ng-container *ngIf="correctionItems">
+    <ds-pending-correction *ngFor="let correctionItem of correctionItems"
+                           [correctionItem]="correctionItem">
+    </ds-pending-correction>
+</ng-container>

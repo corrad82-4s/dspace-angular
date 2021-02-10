@@ -3,7 +3,7 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateLoaderMock } from '../../../shared/mocks/translate-loader.mock';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { SourcesOfInformationComponent } from './sources-of-information.component';
-import { SourcesOfInformationService } from './sources-of-information.service';
+import { SourcesOfInformationService } from '../services/sources-of-information.service';
 
 describe('SourcesOfInformationComponent', () => {
   let component: SourcesOfInformationComponent;
@@ -11,7 +11,7 @@ describe('SourcesOfInformationComponent', () => {
   let sourcesOfInformationService: SourcesOfInformationService;
 
   beforeEach(async () => {
-    sourcesOfInformationService = new SourcesOfInformationService(null, null, null, null);
+    sourcesOfInformationService = new SourcesOfInformationService(null, null, null);
     await TestBed.configureTestingModule({
       imports: [TranslateModule.forRoot({
         loader: {

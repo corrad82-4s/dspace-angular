@@ -9,11 +9,7 @@ import { PaginatedList } from '../../../core/data/paginated-list.model';
 import { of } from 'rxjs/internal/observable/of';
 import { combineLatest, forkJoin } from 'rxjs';
 import { hasValue } from '../../../shared/empty.util';
-import { ItemDataService } from '../../../core/data/item-data.service';
-import { followLink } from '../../../shared/utils/follow-link-config.model';
-import { Collection } from '../../../core/shared/collection.model';
-import { Community } from '../../../core/shared/community.model';
-import { CollectionDataService } from '../../../core/data/collection-data.service';
+import { SourcesCorrectionsUtilsService } from './sources-corrections-utils.service';
 
 /**
  * The label of the source of information is:
@@ -31,8 +27,7 @@ export class SourcesOfInformationService {
 
   constructor(protected authorizationService: AuthorizationDataService,
               protected relationshipService: RelationshipService,
-              protected itemService: ItemDataService,
-              protected collectionService: CollectionDataService) { }
+              protected sourcesCorrectionsUtilsService: SourcesCorrectionsUtilsService) { }
 
   /**
    * Get the item's sources of information, with labels.
@@ -77,56 +72,18 @@ export class SourcesOfInformationService {
   }
 
   /**
-   * Get the label of the sourceOfInformation following this path:
-   * sourceOfInformation -> owningCollection -> parentCommunity (dc.title)
-   * In case of error the label is the sourceOfInformation uuid.
+   * Enrich the sourceOfInformation with a label.
    * @param sourceOfInformation
    * @protected
    */
   protected getSourceOfInformationWithLabel(sourceOfInformation: SourceOfInformation): Observable<SourceOfInformation> {
 
-    return this.getOwningCollection(sourceOfInformation.sourceItem)
-      .pipe(
-        switchMap((owningCollection: Collection) => {
-          return this.getParentCommunity(owningCollection).pipe(
-            map((parentCommunity: Community) => {
-              return { ...sourceOfInformation, label: parentCommunity.firstMetadataValue('dc.title') };
-            }),
-            catchError((error) => of(sourceOfInformation))
-          );
-        }),
-        catchError((error) => of(sourceOfInformation))
+    return this.sourcesCorrectionsUtilsService.getItemLabel(sourceOfInformation.sourceItem).pipe(
+      map((label: string) => ({ ...sourceOfInformation, label })),
+      catchError((error) => of(sourceOfInformation))
     );
   }
 
-  /**
-   * Get the item's owningCollection.
-   * @param item
-   * @protected
-   */
-  protected getOwningCollection(item: Item): Observable<Collection> {
-    return this.itemService.findById(item.uuid, true, followLink('owningCollection'))
-      .pipe(
-        getFirstSucceededRemoteDataPayload(),
-        switchMap((fullItem: Item) => {
-        return fullItem.owningCollection.pipe(
-          getFirstSucceededRemoteDataPayload());
-      }));
-  }
 
-  /**
-   * Get the collection's parentCommunity.
-   * @param collection
-   * @protected
-   */
-  protected getParentCommunity(collection: Collection): Observable<Community> {
-    return this.collectionService.findById(collection.uuid, true, followLink('parentCommunity'))
-      .pipe(
-        getFirstSucceededRemoteDataPayload(),
-        switchMap((fullCollection: Collection) => {
-          return fullCollection.parentCommunity.pipe(
-            getFirstSucceededRemoteDataPayload());
-      }));
-  }
 
 }

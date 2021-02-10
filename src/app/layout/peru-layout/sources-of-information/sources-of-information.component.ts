@@ -1,7 +1,7 @@
 import { Component, OnInit, Output, EventEmitter, Input, ChangeDetectorRef } from '@angular/core';
 import { Item } from '../../../core/shared/item.model';
 import { take } from 'rxjs/operators';
-import { SourceOfInformation, SourcesOfInformationService } from './sources-of-information.service';
+import { SourceOfInformation, SourcesOfInformationService } from '../services/sources-of-information.service';
 
 
 @Component({
