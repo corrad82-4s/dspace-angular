@@ -7,7 +7,7 @@ import { Observable } from 'rxjs/internal/Observable';
 import { getFirstSucceededRemoteDataPayload } from '../../../core/shared/operators';
 import { PaginatedList } from '../../../core/data/paginated-list.model';
 import { of } from 'rxjs/internal/observable/of';
-import { forkJoin } from 'rxjs';
+import { combineLatest, forkJoin } from 'rxjs';
 import { hasValue } from '../../../shared/empty.util';
 import { ItemDataService } from '../../../core/data/item-data.service';
 import { followLink } from '../../../shared/utils/follow-link-config.model';
@@ -16,15 +16,18 @@ import { Community } from '../../../core/shared/community.model';
 import { CollectionDataService } from '../../../core/data/collection-data.service';
 
 /**
- * The label of the shadowCopy is the name of the parentCommunity of the shadowCopy's owningCollection.
+ * The label of the source of information is:
+ *  - the name of the parentCommunity of the source of information's owningCollection.
+ *  - the sourceItem.uuid when the owning collection is not available.
  */
-export interface ShadowCopy {
-  shadowCopy: Item;
+export interface SourceOfInformation {
+  kind: 'root' | 'isShadowCopy' | 'isOriginatedFrom';
+  sourceItem: Item;
   label: string;
 }
 
 @Injectable({providedIn: 'root'})
-export class ShadowCopiesService {
+export class SourcesOfInformationService {
 
   constructor(protected authorizationService: AuthorizationDataService,
               protected relationshipService: RelationshipService,
@@ -32,14 +35,19 @@ export class ShadowCopiesService {
               protected collectionService: CollectionDataService) { }
 
   /**
-   * Get the item's shadow copies.
+   * Get the item's sources of information, with labels.
    * @param item
    */
-  public getShadowCopies(item: Item): Observable<ShadowCopy[]> {
+  public getSourcesOfInformation(item: Item): Observable<SourceOfInformation[]> {
 
-    return this.getShadowCopyItems(item).pipe(
-        switchMap((shadowCopies: Item[]) => this.getShadowCopiesWithLabels([item, ...shadowCopies])),
-        filter((shadowCopies: ShadowCopy[]) => hasValue(shadowCopies))
+    return combineLatest([
+        of({ kind: 'root', sourceItem: item, label: item.uuid } as SourceOfInformation),
+        this.getSourcesOfInformationItems(item, 'isShadowCopy'),
+        this.getSourcesOfInformationItems(item, 'isOriginatedFrom')
+    ]).pipe(
+        switchMap(([rootSource, shadowCopies, originatedFrom]) => this.getSourcesOfInformationWithLabels(
+          [ rootSource, ...shadowCopies, ...originatedFrom ])),
+        filter((sourcesOfInformation: SourceOfInformation[]) => hasValue(sourcesOfInformation))
       );
   }
 
@@ -47,47 +55,47 @@ export class ShadowCopiesService {
   // Private
 
   /**
-   * Get the item's shadow copies from existent relationships.
+   * Get the sources of information items from a relevant relationship.
    * @param item
    * @protected
    */
-  protected getShadowCopyItems(item: Item): Observable<Item[]> {
-    return this.relationshipService.getRelatedItemsByLabel(item, 'isShadowCopy').pipe(
+  protected getSourcesOfInformationItems(item: Item, relation: 'isShadowCopy' | 'isOriginatedFrom'): Observable<SourceOfInformation[]> {
+    return this.relationshipService.getRelatedItemsByLabel(item, relation).pipe(
       getFirstSucceededRemoteDataPayload(),
       map((result: PaginatedList<Item>) => {
-        return result.page;
+        return result.page.map((sourceItem: Item) => ({ kind: relation, sourceItem, label: sourceItem.uuid}));
       }));
   }
 
   /**
-   * For each shadowCopy enrich the shadowCopy with a label.
-   * @param shadowCopies
+   * For each sourceOfInformation enrich with a label.
+   * @param sourcesOfInformation
    * @protected
    */
-  protected getShadowCopiesWithLabels(shadowCopies: Item[]): Observable<ShadowCopy[]> {
-    return forkJoin(shadowCopies.map((shadowCopy) => this.getShadowCopyWithLabel(shadowCopy)));
+  protected getSourcesOfInformationWithLabels(sourcesOfInformation: SourceOfInformation[]): Observable<SourceOfInformation[]> {
+    return forkJoin(sourcesOfInformation.map((sourceOfInformation) => this.getSourceOfInformationWithLabel(sourceOfInformation)));
   }
 
   /**
-   * Get the label of the shadowCopy following this path:
-   * shadowCopy -> owningCollection -> parentCommunity (dc.title)
-   * In case of error the label is the shadowCopy uuid.
-   * @param shadowCopy
+   * Get the label of the sourceOfInformation following this path:
+   * sourceOfInformation -> owningCollection -> parentCommunity (dc.title)
+   * In case of error the label is the sourceOfInformation uuid.
+   * @param sourceOfInformation
    * @protected
    */
-  protected getShadowCopyWithLabel(shadowCopy: Item): Observable<ShadowCopy> {
+  protected getSourceOfInformationWithLabel(sourceOfInformation: SourceOfInformation): Observable<SourceOfInformation> {
 
-    return this.getOwningCollection(shadowCopy)
+    return this.getOwningCollection(sourceOfInformation.sourceItem)
       .pipe(
         switchMap((owningCollection: Collection) => {
           return this.getParentCommunity(owningCollection).pipe(
             map((parentCommunity: Community) => {
-              return { shadowCopy, label: parentCommunity.firstMetadataValue('dc.title') };
+              return { ...sourceOfInformation, label: parentCommunity.firstMetadataValue('dc.title') };
             }),
-            catchError((error) => of({ shadowCopy, label: shadowCopy.uuid }))
+            catchError((error) => of(sourceOfInformation))
           );
         }),
-        catchError((error) => of({ shadowCopy, label: shadowCopy.uuid }))
+        catchError((error) => of(sourceOfInformation))
     );
   }
 

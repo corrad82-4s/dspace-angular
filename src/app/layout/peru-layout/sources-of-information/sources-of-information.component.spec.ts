@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { ShadowCopiesComponent } from './shadow-copies.component';
-import { ShadowCopiesService } from './shadow-copies.service';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateLoaderMock } from '../../../shared/mocks/translate-loader.mock';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { SourcesOfInformationComponent } from './sources-of-information.component';
+import { SourcesOfInformationService } from './sources-of-information.service';
 
-describe('ShadowCopiesComponent', () => {
-  let component: ShadowCopiesComponent;
-  let fixture: ComponentFixture<ShadowCopiesComponent>;
-  let shadowCopiesService: ShadowCopiesService;
+describe('SourcesOfInformationComponent', () => {
+  let component: SourcesOfInformationComponent;
+  let fixture: ComponentFixture<SourcesOfInformationComponent>;
+  let sourcesOfInformationService: SourcesOfInformationService;
 
   beforeEach(async () => {
-    shadowCopiesService = new ShadowCopiesService(null, null, null, null);
+    sourcesOfInformationService = new SourcesOfInformationService(null, null, null, null);
     await TestBed.configureTestingModule({
       imports: [TranslateModule.forRoot({
         loader: {
@@ -19,15 +19,15 @@ describe('ShadowCopiesComponent', () => {
           useClass: TranslateLoaderMock
         }
       })],
-      declarations: [ ShadowCopiesComponent ],
-      providers: [ { provide: ShadowCopiesService, useValue: shadowCopiesService }],
+      declarations: [ SourcesOfInformationComponent ],
+      providers: [ { provide: SourcesOfInformationService, useValue: sourcesOfInformationService }],
       schemas: [NO_ERRORS_SCHEMA]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ShadowCopiesComponent);
+    fixture = TestBed.createComponent(SourcesOfInformationComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

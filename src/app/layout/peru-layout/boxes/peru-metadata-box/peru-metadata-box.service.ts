@@ -7,15 +7,15 @@ import { Metadata } from '../../../../core/shared/metadata.utils';
 export class PeruMetadataBoxService {
 
   /**
-   * Clone the immutable metadatacomponents with extra data given a shadowCopy.
+   * Clone the immutable metadatacomponents with extra data given a sourceItem.
    * @param metadatacomponents
    * @param item
-   * @param shadowCopy
+   * @param sourceItem
    */
-  public patchedMetadataComponent(metadatacomponents: MetadataComponent, item: Item, shadowCopy: Item): MetadataComponent {
+  public patchedMetadataComponent(metadatacomponents: MetadataComponent, item: Item, sourceItem: Item): MetadataComponent {
 
-    // records if at least one metadata value match with the shadowCopy.
-    let shadowedContentPresent = false;
+    // records if at least one metadata value match with the sourceItem.
+    let sourceContentPresent = false;
 
     const cloned = {...metadatacomponents};
 
@@ -29,12 +29,12 @@ export class PeruMetadataBoxService {
 
         if (clonedField.metadata) {
           const itemValues = item.allMetadata(clonedField.metadata);
-          const shadowValues = shadowCopy.allMetadata(clonedField.metadata);
-          const equals = Metadata.multiEquals(itemValues, shadowValues);
+          const sourceValues = sourceItem.allMetadata(clonedField.metadata);
+          const equals = Metadata.multiEquals(itemValues, sourceValues);
           if (!equals) {
             clonedField.styleValue = clonedField.styleValue + ' not-shadowed-metadata';
           } else {
-            shadowedContentPresent = true;
+            sourceContentPresent = true;
           }
         }
         return clonedField;

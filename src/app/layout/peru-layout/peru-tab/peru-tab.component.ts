@@ -21,7 +21,7 @@ import { Item } from '../../../core/shared/item.model';
 @CrisLayoutTab(LayoutPage.DEFAULT_PERU, LayoutTab.DEFAULT_PERU)
 export class PeruTabComponent extends CrisLayoutDefaultTabComponent {
 
-  @Input() shadowCopy: Item;
+  @Input() sourceItem: Item;
 
   constructor(
     public cd: ChangeDetectorRef,
@@ -37,7 +37,7 @@ export class PeruTabComponent extends CrisLayoutDefaultTabComponent {
   }
 
   /**
-   * Overridden in order to pass the shadowCopy to the box component.
+   * Overridden in order to pass the sourceItem to the box component.
    * @param viewContainerRef
    * @param componentFactory
    * @param box
@@ -45,7 +45,7 @@ export class PeruTabComponent extends CrisLayoutDefaultTabComponent {
   instantiateBox(viewContainerRef: ViewContainerRef, componentFactory: ComponentFactory<any>, box: Box): ComponentRef<any> {
     const componentRef = viewContainerRef.createComponent(componentFactory);
     (componentRef.instance as any).item = this.item;
-    (componentRef.instance as any).shadowCopy = this.shadowCopy;
+    (componentRef.instance as any).sourceItem = this.sourceItem;
     (componentRef.instance as any).box = box;
     return componentRef;
   }

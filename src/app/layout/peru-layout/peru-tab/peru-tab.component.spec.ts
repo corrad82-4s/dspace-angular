@@ -37,24 +37,24 @@ describe('PeruTabComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('instantiateBox should assign the shadowCopy and other properties', () => {
+  it('instantiateBox should assign the sourceItem and other properties', () => {
 
     // set up test
     const componentRef = { instance: {} };
     const componentFactory: any = 'componentFactory';
     const box: any = 'box';
     const item: any = 'item';
-    const shadowCopy: any = 'shadowCopy';
+    const sourceItem: any = 'sourceItem';
     const viewContainerRef: any = jasmine.createSpyObj('viewContainerRef', ['createComponent']);
     viewContainerRef.createComponent.and.returnValue(componentRef);
     component.item = item;
-    component.shadowCopy = shadowCopy;
+    component.sourceItem = sourceItem;
 
     const componentRefResult = component.instantiateBox(viewContainerRef, componentFactory, box);
 
     expect(viewContainerRef.createComponent).toHaveBeenCalledWith(componentFactory);
     expect((componentRefResult.instance as any).item).toBe(item);
-    expect((componentRefResult.instance as any).shadowCopy).toBe(shadowCopy);
+    expect((componentRefResult.instance as any).sourceItem).toBe(sourceItem);
     expect((componentRefResult.instance as any).box).toBe(box);
   });
 });

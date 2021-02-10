@@ -9,7 +9,7 @@
                     [sidebarActive]="(hasSidebar() | async)"
                     [sidebarStatus]="!(isSideBarHidden() | async)"
                     [tabs]="(getTabs() | async)"
-                    [shadowCopyTabs]="shadowCopyTabs"
+                    [sourceItemTabs]="sourceItemTabs"
                     (selectedTab)="changeTab($event)">
             </ds-peru-sidebar>
 
@@ -29,7 +29,7 @@
                 <ng-template dsCrisLayoutLoader></ng-template>
             </div>
 
-            <ds-shadow-copies [item]="item" (selectShadowCopy)="onSelectShadowCopy($event)"></ds-shadow-copies>
+            <ds-sources-of-information [item]="item" (selectSourceItem)="onSelectSourceOfInformation($event)"></ds-sources-of-information>
         </div>
     </div>
 

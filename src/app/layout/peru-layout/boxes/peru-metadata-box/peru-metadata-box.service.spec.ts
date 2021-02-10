@@ -11,7 +11,7 @@ const item = Object.assign(new Item(), {
   }
 });
 
-const shadowCopy = Object.assign(new Item(), {
+const sourceItem = Object.assign(new Item(), {
   metadata: {
     'dc.contributor.author': [{
       value: 'test item changed'
@@ -35,7 +35,7 @@ describe('PeruMetadataBoxService', () => {
 
   it('should apply styles to patched metadata', () => {
 
-    const patchedMetadataComponent = service.patchedMetadataComponent(metadatacomponents, item, shadowCopy);
+    const patchedMetadataComponent = service.patchedMetadataComponent(metadatacomponents, item, sourceItem);
 
     expect(patchedMetadataComponent.rows[0].fields[0].styleValue.includes('not-shadowed-metadata')).toBeTrue();
   });

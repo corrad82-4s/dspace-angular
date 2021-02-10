@@ -40,8 +40,8 @@ import { PeruSearchBoxComponent } from './peru-layout/boxes/search/peru-search-b
 import { PeruMetricsBoxComponent } from './peru-layout/boxes/metrics/peru-metrics-box.component';
 import { PendingCorrectionComponent } from './peru-layout/pending-correction/pending-correction.component';
 import { PendingCorrectionDetailsComponent } from './peru-layout/pending-correction/pending-correction-details/pending-correction-details.component';
-import { ShadowCopiesComponent } from './peru-layout/shadow-copies/shadow-copies.component';
 import { PeruSidebarComponent } from './peru-layout/peru-sidebar/peru-sidebar.component';
+import { SourcesOfInformationComponent } from './peru-layout/sources-of-information/sources-of-information.component';
 
 const ENTRY_COMPONENTS = [
   // put only entry components that use custom decorator
@@ -105,7 +105,7 @@ const ENTRY_COMPONENTS = [
     PeruSearchBoxComponent,
     PeruMetricsBoxComponent,
     PendingCorrectionDetailsComponent,
-    ShadowCopiesComponent,
+    SourcesOfInformationComponent,
     PeruSidebarComponent
   ],
   imports: [

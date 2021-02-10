@@ -54,7 +54,7 @@ describe('PeruMetadataBoxComponent', () => {
   describe('setMetadataComponents', () => {
 
     const metadatacomponents: any = 'metadatacomponents';
-    const shadowCopy: any = 'shadowCopy';
+    const sourceItem: any = 'sourceItem';
     const item: any = 'item';
     const patchedMetadatacomponents: any = 'patchedMetadatacomponents';
 
@@ -63,17 +63,17 @@ describe('PeruMetadataBoxComponent', () => {
       componentAsAny.item = item;
     });
 
-    it('should patch when shadowCopy is present', () => {
+    it('should patch when sourceItem is present', () => {
 
-      componentAsAny.shadowCopy = shadowCopy;
+      componentAsAny.sourceItem = sourceItem;
 
       componentAsAny.setMetadataComponents(metadatacomponents);
 
-      expect(peruMetadataBoxService.patchedMetadataComponent).toHaveBeenCalledWith(metadatacomponents, item, shadowCopy);
+      expect(peruMetadataBoxService.patchedMetadataComponent).toHaveBeenCalledWith(metadatacomponents, item, sourceItem);
       expect(componentAsAny.metadatacomponents).toBe(patchedMetadatacomponents);
     });
 
-    it('should not patch when shadowCopy is not present', () => {
+    it('should not patch when sourceItem is not present', () => {
 
       componentAsAny.setMetadataComponents(metadatacomponents);
 

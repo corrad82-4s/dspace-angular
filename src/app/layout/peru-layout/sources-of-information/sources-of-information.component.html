@@ -1,0 +1,14 @@
+<ng-container *ngIf="sourcesOfInformation">
+    <hr>
+    <div  class="d-flex mt-2">
+        <div class="flex-grow-1">
+            <em class="mr-2"><small>{{ 'peru-layout.shadow-copies' | translate }}</small></em>
+            <span class="cursor-pointer mr-2"
+                    *ngFor="let sourceOfInformation of sourcesOfInformation"
+                    [ngClass]="{'text-info': sourceOfInformation.sourceItem === selectedSource}"
+                    (click)="onSelectSourceItem(sourceOfInformation.sourceItem)">
+                    <em><small> {{ sourceOfInformation.label }}</small></em>
+            </span>
+        </div>
+    </div>
+</ng-container>
