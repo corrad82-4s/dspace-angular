@@ -3979,6 +3979,8 @@
 
   "search.filters.applied.charts.RELATION.InstitutionOrgUnit.ioupublications": "Researchers Publications",
 
+  "search.filters.applied.charts.RELATION.InstitutionOrgUnit.iourppublications": "Researchers Publications",
+
   "search.filters.applied.charts.RELATION.InstitutionPerson.ippatents.title": "Patents",
 
   "search.filters.applied.charts.RELATION.InstitutionPerson.ipprojects.title": "Projects",
@@ -4807,41 +4809,73 @@
 
   "submission.sections.submit.progressbar.describe.equipment": "Equipment basic information",
 
+  "submission.sections.submit.progressbar.describe.institution-equipment": "Equipment basic information",
+
   "submission.sections.submit.progressbar.describe.event": "Event basic information",
 
   "submission.sections.submit.progressbar.describe.funding": "Funding basic information",
+
+  "submission.sections.submit.progressbar.describe.institution-funding": "Funding basic information",
 
   "submission.sections.submit.progressbar.describe.journal": "Journal basic information",
 
   "submission.sections.submit.progressbar.describe.orgunit": "Org Unit basic information",
 
+  "submission.sections.submit.progressbar.describe.institution-orgunit": "Org Unit basic information",
+
   "submission.sections.submit.progressbar.describe.patent": "Patent basic information",
+
+  "submission.sections.submit.progressbar.describe.institution-patent": "Patent basic information",
 
   "submission.sections.submit.progressbar.describe.patent_indexing": "Patent indexing",
 
+  "submission.sections.submit.progressbar.describe.institution-patent_indexing": "Patent indexing",
+
   "submission.sections.submit.progressbar.describe.patent_references": "Patent references",
 
+  "submission.sections.submit.progressbar.describe.institution-patent_references": "Patent references",
+
   "submission.sections.submit.progressbar.describe.person": "Person basic information",
+
+  "submission.sections.submit.progressbar.describe.institution-person": "Person basic information",
 
   "submission.sections.submit.progressbar.describe.person-cv": "Profile basic information",
 
   "submission.sections.submit.progressbar.describe.product": "Product basic information",
 
+  "submission.sections.submit.progressbar.describe.institution-product": "Product basic information",
+
   "submission.sections.submit.progressbar.describe.product_indexing": "Product indexing",
+
+  "submission.sections.submit.progressbar.describe.institution-product_indexing": "Product indexing",
 
   "submission.sections.submit.progressbar.describe.product_references": "Product references",
 
+  "submission.sections.submit.progressbar.describe.institution-product_references": "Product references",
+
   "submission.sections.submit.progressbar.describe.project": "Project basic information",
+
+  "submission.sections.submit.progressbar.describe.institution-project": "Project basic information",
 
   "submission.sections.submit.progressbar.describe.publication": "Publication basic information",
 
+  "submission.sections.submit.progressbar.describe.institution-publication": "Publication basic information",
+
   "submission.sections.submit.progressbar.describe.publication_bibliographic_details": "Publication bibliographic details",
+
+  "submission.sections.submit.progressbar.describe.institution-publication_bibliographic_details": "Publication bibliographic details",
 
   "submission.sections.submit.progressbar.describe.publication_indexing": "Publication indexing",
 
+  "submission.sections.submit.progressbar.describe.institution-publication_indexing": "Publication indexing",
+
   "submission.sections.submit.progressbar.describe.publication_references": "Publication references",
 
+  "submission.sections.submit.progressbar.describe.institution-publication_references": "Publication references",
+
   "submission.sections.submit.progressbar.describe.publication_thesis": "Publication Thesis",
+
+  "submission.sections.submit.progressbar.describe.institution-publication_thesis": "Publication Thesis",
 
   "submission.sections.submit.progressbar.describe.rp": "Researcher basic information",
 
