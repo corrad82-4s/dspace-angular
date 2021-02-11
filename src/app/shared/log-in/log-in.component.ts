@@ -1,3 +1,4 @@
+import { LocaleService } from './../../core/locale/locale.service';
 import { AuthMethodType } from './../../core/auth/models/auth.method-type';
 import { NativeWindowService, NativeWindowRef } from './../../core/services/window.service';
 import { Component, Inject, Input, OnInit } from '@angular/core';
@@ -62,7 +63,8 @@ export class LogInComponent implements OnInit {
   constructor(private store: Store<CoreState>,
               private authService: AuthService,
               private authorizationService: AuthorizationDataService,
-              @Inject(NativeWindowService) private _window: NativeWindowRef) {
+              @Inject(NativeWindowService) private _window: NativeWindowRef,
+              private localeService: LocaleService) {
   }
 
   ngOnInit(): void {
@@ -119,7 +121,7 @@ export class LogInComponent implements OnInit {
     this.isAuthenticated.subscribe(
       (authenticated: boolean) => {
         if (!authenticated) {
-          this._window.nativeWindow.location.href = location;
+          this._window.nativeWindow.location.href = location + '&locale=' + this.localeService.getCurrentLanguageCode();
         }
       }
     );
