@@ -16,9 +16,9 @@ import { getFirstSucceededRemoteListPayload } from '../../core/shared/operators'
 @CrisLayoutPage(LayoutPage.DEFAULT_PERU)
 export class PeruLayoutComponent extends CrisLayoutDefaultComponent {
 
-  shadowCopy: Item;
+  sourceItem: Item;
 
-  shadowCopyTabs: Tab[];
+  sourceItemTabs: Tab[];
 
   constructor(
     protected tabService: TabDataService,
@@ -33,7 +33,7 @@ export class PeruLayoutComponent extends CrisLayoutDefaultComponent {
   }
 
   /**
-   * Overridden in order to pass the shadowCopy to the tab component.
+   * Overridden in order to pass the sourceItem to the tab component.
    * @param viewContainerRef
    * @param componentFactory
    * @param box
@@ -41,27 +41,27 @@ export class PeruLayoutComponent extends CrisLayoutDefaultComponent {
   instantiateTab(viewContainerRef: ViewContainerRef, componentFactory: ComponentFactory<any>, tab: Tab): ComponentRef<any> {
     const componentRef = viewContainerRef.createComponent(componentFactory);
     (componentRef.instance as any).item = this.item;
-    (componentRef.instance as any).shadowCopy = this.shadowCopy;
+    (componentRef.instance as any).sourceItem = this.sourceItem;
     (componentRef.instance as any).tab = tab;
     return componentRef;
   }
 
   /**
-   * When a shadowCopy is selected his tabs are fetched and the selectedTab updated.
-   * @param shadowCopy
+   * When a sourceItem is selected his tabs are fetched and the selectedTab updated.
+   * @param sourceItem
    */
-  onSelectShadowCopy(shadowCopy: Item) {
+  onSelectSourceOfInformation(sourceItem: Item) {
 
     // Reset previous
-    this.shadowCopy = shadowCopy;
-    this.shadowCopyTabs = null;
+    this.sourceItem = sourceItem;
+    this.sourceItemTabs = null;
 
-    if (this.shadowCopy) {
-      // Retrieve shadowCopy tabs by UUID of item
-      this.tabService.findByItem(this.shadowCopy.id).pipe(
+    if (this.sourceItem) {
+      // Retrieve sourceItem tabs by UUID of item
+      this.tabService.findByItem(this.sourceItem.id).pipe(
         getFirstSucceededRemoteListPayload()
-      ).subscribe((shadowCopyTabs: Tab[]) => {
-        this.shadowCopyTabs = shadowCopyTabs;
+      ).subscribe((sourceItemTabs: Tab[]) => {
+        this.sourceItemTabs = sourceItemTabs;
       });
 
     }

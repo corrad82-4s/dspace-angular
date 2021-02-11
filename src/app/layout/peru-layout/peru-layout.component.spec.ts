@@ -52,54 +52,54 @@ describe('PeruLayoutComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('instantiateTab should assign the shadowCopy and other properties', () => {
+  it('instantiateTab should assign the sourceItem and other properties', () => {
 
     // set up test
     const componentRef = { instance: {} };
     const componentFactory: any = 'componentFactory';
     const tab: any = 'tab';
     const item: any = 'item';
-    const shadowCopy: any = 'shadowCopy';
+    const sourceItem: any = 'sourceItem';
     const viewContainerRef: any = jasmine.createSpyObj('viewContainerRef', ['createComponent']);
     viewContainerRef.createComponent.and.returnValue(componentRef);
     component.item = item;
-    component.shadowCopy = shadowCopy;
+    component.sourceItem = sourceItem;
 
     const componentRefResult = component.instantiateTab(viewContainerRef, componentFactory, tab);
 
     expect(viewContainerRef.createComponent).toHaveBeenCalledWith(componentFactory);
     expect((componentRefResult.instance as any).item).toBe(item);
-    expect((componentRefResult.instance as any).shadowCopy).toBe(shadowCopy);
+    expect((componentRefResult.instance as any).sourceItem).toBe(sourceItem);
     expect((componentRefResult.instance as any).tab).toBe(tab);
   });
 
-  describe('onSelectShadowCopy', () => {
+  describe('onSelectSourceOfInformation', () => {
 
-    const shadowCopy: any = { id: 'id'};
-    const shadowCopyTabs = tabs;
+    const sourceItem: any = { id: 'id'};
+    const sourceItemTabs = tabs;
     const selectedTab: any = 'selectedTab';
 
     beforeEach(() => {
       componentAsAny.selectedTab = selectedTab;
 
-      spyOn(tabDataService, 'findByItem').and.returnValue(of(createSuccessfulRemoteDataObject(createPaginatedList(shadowCopyTabs))));
+      spyOn(tabDataService, 'findByItem').and.returnValue(of(createSuccessfulRemoteDataObject(createPaginatedList(sourceItemTabs))));
       spyOn(component, 'changeTab').and.returnValue(null);
 
-      component.onSelectShadowCopy(shadowCopy);
+      component.onSelectSourceOfInformation(sourceItem);
     });
 
-    it('should assign the shadow copy', () => {
-      expect(component.shadowCopy).toBe(shadowCopy);
+    it('should assign the sourceItem', () => {
+      expect(component.sourceItem).toBe(sourceItem);
     });
 
-    it('should call changeTab with the shadow copy', () => {
+    it('should call changeTab with the sourceItem', () => {
       expect(component.changeTab).toHaveBeenCalledWith(selectedTab);
     });
 
-    it('should find tabs of shadow copy and assign to shadowCopyTabs', fakeAsync(() => {
+    it('should find tabs of sourceItem and assign to sourceItemTabs', fakeAsync(() => {
       tick();
-      expect(tabDataService.findByItem).toHaveBeenCalledWith(shadowCopy.id);
-      expect(component.shadowCopyTabs).toBe(shadowCopyTabs);
+      expect(tabDataService.findByItem).toHaveBeenCalledWith(sourceItem.id);
+      expect(component.sourceItemTabs).toBe(sourceItemTabs);
     }));
   });
 });

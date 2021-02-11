@@ -17,7 +17,7 @@ import { PeruMetadataBoxService } from './peru-metadata-box.service';
 @CrisLayoutBox(LayoutPage.DEFAULT_PERU, LayoutTab.DEFAULT_PERU, LayoutBox.METADATA)
 export class PeruMetadataBoxComponent extends CrisLayoutMetadataBoxComponent {
 
-  @Input() shadowCopy: Item;
+  @Input() sourceItem: Item;
 
   constructor(public cd: ChangeDetectorRef,
               protected metadatacomponentsService: MetadataComponentsDataService,
@@ -30,17 +30,17 @@ export class PeruMetadataBoxComponent extends CrisLayoutMetadataBoxComponent {
   }
 
   /**
-   * When a shadowCopy is present, we can add custom styles patching metadatacomponents.
+   * When a sourceItem is present, we can add custom styles patching metadatacomponents.
    * @param metadatacomponents
    */
   setMetadataComponents(metadatacomponents: MetadataComponent) {
 
-    if (!this.shadowCopy) {
+    if (!this.sourceItem) {
       this.metadatacomponents = metadatacomponents;
       return;
     }
     this.metadatacomponents = this.peruMetadataBoxService
-      .patchedMetadataComponent(metadatacomponents, this.item, this.shadowCopy);
+      .patchedMetadataComponent(metadatacomponents, this.item, this.sourceItem);
   }
 
 
