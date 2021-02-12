@@ -20,7 +20,7 @@ export interface MetricTypeConf {
 
 export const MetricTypesConfig: MetricTypeConf[] = [
   {
-    id: 'altmetric',
+    id: 'altmetrics',
     component: MetricAltmetricComponent,
     script: 'https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js'
   },

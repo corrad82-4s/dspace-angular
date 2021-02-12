@@ -62,8 +62,12 @@ export class CollectionRolesComponent implements OnInit {
           name: 'bitstream_read',
           href: collection._links.bitstreamReadGroup.href,
         },
-        ...collection._links.workflowGroups,
+        ...this.workflowGroups(collection._links.workflowGroups),
       ]),
     );
+  }
+
+  private workflowGroups(workflowGroups): HALLink[] {
+    return Array.isArray(workflowGroups) ? workflowGroups : [ workflowGroups ] as HALLink[];
   }
 }

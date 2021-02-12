@@ -1,0 +1,37 @@
+<div class="container">
+    <div class="d-flex justify-content-end">
+        <ds-context-menu [contextMenuObject]="item" [contextMenuObjectType]="'ITEM'"></ds-context-menu>
+    </div>
+    <ds-pending-corrections [item]="item"></ds-pending-corrections>
+    <div class="wrapper" [ngClass]="{'wrapper-close': !(isSideBarHidden() | async)}">
+        <div>
+            <ds-peru-sidebar
+                    [sidebarActive]="(hasSidebar() | async)"
+                    [sidebarStatus]="!(isSideBarHidden() | async)"
+                    [tabs]="(getTabs() | async)"
+                    [sourceItemTabs]="sourceItemTabs"
+                    (selectedTab)="changeTab($event)">
+            </ds-peru-sidebar>
+
+        </div>
+        <div id="content" class="position-relative pr-0 pt-3 pb-3"
+             [ngClass]="{
+            'p-0': !(hasSidebar() | async),
+            'pl-3': !(isSideBarHidden() | async),
+            'pl-0': (isSideBarHidden() | async)}">
+            <div *ngIf="(hasSidebar() | async)">
+                <button type="button" class="btn btn-link menu-toggle" (click)="toggleSidebar()">
+                    <i class="fa fa-chevron-circle-{{(isSideBarHidden() | async) ? 'right' : 'left'}} fa-2x" aria-hidden="true"></i>
+                </button>
+            </div>
+
+            <div>
+                <ng-template dsCrisLayoutLoader></ng-template>
+            </div>
+
+            <ds-sources-of-information [item]="item" (selectSourceItem)="onSelectSourceOfInformation($event)"></ds-sources-of-information>
+        </div>
+    </div>
+
+</div>
+

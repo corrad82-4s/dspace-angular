@@ -467,4 +467,5 @@ export class RelationshipService extends DataService<Relationship> {
   update(object: Relationship): Observable<RemoteData<Relationship>> {
     return this.put(object);
   }
+
 }

@@ -1,13 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { I18nBreadcrumbResolver } from 'src/app/core/breadcrumbs/i18n-breadcrumb.resolver';
-import { getInstitutionsModuleRoute } from '../admin-routing-paths';
+import { I18nBreadcrumbResolver } from '../../core/breadcrumbs/i18n-breadcrumb.resolver';
 import { InstitutionCreationComponent } from './institution-creation/institution-creation.component';
 import { InstitutionExploreComponent } from './institution-explore/institution-explore.component';
 
-export function getInstitutionExploreRoute() {
-  return getInstitutionsModuleRoute() + '/explore';
-}
 
 @NgModule({
   imports: [

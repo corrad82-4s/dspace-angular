@@ -8,7 +8,7 @@ import { CrisLayoutDefaultComponent } from './default-layout/cris-layout-default
 import { CrisLayoutDefaultSidebarComponent } from './default-layout/sidebar/cris-layout-default-sidebar.component';
 import { CrisLayoutDefaultTabComponent } from './default-layout/tab/cris-layout-default-tab.component';
 import { CrisLayoutMetadataBoxComponent } from './default-layout/boxes/metadata/cris-layout-metadata-box.component';
-import { RowComponent } from './default-layout/boxes/components/row/row.component';
+import { RowComponent } from './default-layout/boxes/metadata/row/row.component';
 import { TextComponent } from './default-layout/boxes/components/text/text.component';
 import { HeadingComponent } from './default-layout/boxes/components/heading/heading.component';
 import { CrisLayoutSearchBoxComponent } from './default-layout/boxes/search/cris-layout-search-box.component';
@@ -33,6 +33,16 @@ import { MetricAltmetricComponent } from './default-layout/boxes/components/metr
 import { MetricDimensionsComponent } from './default-layout/boxes/components/metric/metric-dimensions/metric-dimensions.component';
 import { MetricDspacecrisComponent } from './default-layout/boxes/components/metric/metric-dspacecris/metric-dspacecris.component';
 import { MetricGooglescholarComponent } from './default-layout/boxes/components/metric/metric-googlescholar/metric-googlescholar.component';
+import { PeruLayoutComponent } from './peru-layout/peru-layout.component';
+import { PeruTabComponent } from './peru-layout/peru-tab/peru-tab.component';
+import { PeruMetadataBoxComponent } from './peru-layout/boxes/peru-metadata-box/peru-metadata-box.component';
+import { PeruSearchBoxComponent } from './peru-layout/boxes/search/peru-search-box.component';
+import { PeruMetricsBoxComponent } from './peru-layout/boxes/metrics/peru-metrics-box.component';
+import { PeruSidebarComponent } from './peru-layout/peru-sidebar/peru-sidebar.component';
+import { SourcesOfInformationComponent } from './peru-layout/sources-of-information/sources-of-information.component';
+import { PendingCorrectionComponent } from './peru-layout/pending-corrections/pending-correction/pending-correction.component';
+import { PendingCorrectionsComponent } from './peru-layout/pending-corrections/pending-corrections.component';
+import { PendingCorrectionDetailsComponent } from './peru-layout/pending-corrections/pending-correction/pending-correction-details/pending-correction-details.component';
 
 const ENTRY_COMPONENTS = [
   // put only entry components that use custom decorator
@@ -52,7 +62,12 @@ const ENTRY_COMPONENTS = [
   AttachmentComponent,
   OrcidSyncSettingsComponent,
   OrcidSyncQueueComponent,
-  OrcidAuthorizationsComponent
+  OrcidAuthorizationsComponent,
+  PeruLayoutComponent,
+  PeruTabComponent,
+  PeruMetadataBoxComponent,
+  PeruSearchBoxComponent,
+  PeruMetricsBoxComponent
 ];
 @NgModule({
   declarations: [
@@ -83,7 +98,17 @@ const ENTRY_COMPONENTS = [
     MetricAltmetricComponent,
     MetricDimensionsComponent,
     MetricDspacecrisComponent,
-    MetricGooglescholarComponent
+    MetricGooglescholarComponent,
+    PeruLayoutComponent,
+    PeruTabComponent,
+    PeruMetadataBoxComponent,
+    PeruSearchBoxComponent,
+    PeruMetricsBoxComponent,
+    PendingCorrectionsComponent,
+    PendingCorrectionComponent,
+    PendingCorrectionDetailsComponent,
+    SourcesOfInformationComponent,
+    PeruSidebarComponent,
   ],
   imports: [
     CommonModule,

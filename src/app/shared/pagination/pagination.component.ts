@@ -96,6 +96,11 @@ export class PaginationComponent implements OnDestroy, OnInit {
   @Input() public hideGear = false;
 
   /**
+   * Option for hiding the gear
+   */
+  @Input() public hideSortOptions = false;
+
+  /**
    * Option for hiding the pager when there is less than 2 pages
    */
   @Input() public hidePagerWhenSinglePage = true;
@@ -299,8 +304,8 @@ export class PaginationComponent implements OnDestroy, OnInit {
    * @param sortField
    *    The sort field being navigated to.
    */
-  public doSortFieldChange(field: string) {
-    this.updateParams(Object.assign(this.currentQueryParams,{ pageId: this.id, page: 1, sortField: field }));
+  public doSortFieldChange(sortField: string) {
+    this.updateParams(Object.assign(this.currentQueryParams,{ pageId: this.id, page: 1, sortField: sortField }));
   }
 
   /**
@@ -345,9 +350,9 @@ export class PaginationComponent implements OnDestroy, OnInit {
    * @param sortField
    *    The new sort field.
    */
-  public setSortField(field: string) {
-    this.sortField = field;
-    this.sortFieldChange.emit(field);
+  public setSortField(sortField: string) {
+    this.sortField = sortField;
+    this.sortFieldChange.emit(sortField);
     this.emitPaginationChange();
   }
 
@@ -431,10 +436,8 @@ export class PaginationComponent implements OnDestroy, OnInit {
   /**
    * Method to validate query params
    *
-   * @param page
-   *    The page number to validate
-   * @param pageSize
-   *    The page size to validate
+   * @param params
+   *    The query params to validate
    * @returns valid parameters if initial parameters were invalid
    */
   private validateParams(params: any): any {
@@ -498,7 +501,7 @@ export class PaginationComponent implements OnDestroy, OnInit {
   /**
    * Method to validate the current page size value
    *
-   * @param page size
+   * @param pageSize
    *    The page size to validate
    * @returns returns valid page size value
    */

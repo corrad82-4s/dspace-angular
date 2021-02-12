@@ -5,6 +5,10 @@ import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { ClaimedTaskActionsAbstractComponent } from '../abstract/claimed-task-actions-abstract.component';
 import { ClaimedTaskDataService } from '../../../../core/tasks/claimed-task-data.service';
 import { rendersWorkflowTaskOption } from '../switcher/claimed-task-actions-decorator';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+import { getFirstSucceededRemoteDataPayload } from '../../../../core/shared/operators';
+import { WorkflowItemDataService } from '../../../../core/submission/workflowitem-data.service';
 
 export const WORKFLOW_TASK_OPTION_REJECT = 'submit_reject';
 
@@ -42,7 +46,8 @@ export class ClaimedTaskActionsRejectComponent extends ClaimedTaskActionsAbstrac
    */
   constructor(protected claimedTaskService: ClaimedTaskDataService,
               private formBuilder: FormBuilder,
-              private modalService: NgbModal) {
+              private modalService: NgbModal,
+              private workflowItemService: WorkflowItemDataService) {
     super(claimedTaskService);
   }
 
@@ -73,12 +78,44 @@ export class ClaimedTaskActionsRejectComponent extends ClaimedTaskActionsAbstrac
   }
 
   /**
-   * Open modal
+   * Open modal if no duplication occurs, otherwise submit the task
    *
    * @param content
    */
-  openRejectModal(content: any) {
-    this.rejectForm.reset();
-    this.modalRef = this.modalService.open(content);
+  reject(content: any) {
+    this.hasDuplicationVerified().subscribe((hasDuplicationVerified) => {
+      if (hasDuplicationVerified) {
+        super.submitTask();
+      } else {
+        this.rejectForm.reset();
+        this.modalRef = this.modalService.open(content);
+      }
+    });
+  }
+
+  hasNotDuplications(): Observable<boolean> {
+    return this.workflowItemService.findByHref(this.object._links.workflowitem.href).pipe(
+      getFirstSucceededRemoteDataPayload(),
+      map((workflowitem) => !this.workflowItemService.hasDuplications(workflowitem))
+    );
+  }
+
+  hasDuplicationVerified(): Observable<boolean> {
+    return this.workflowItemService.findByHref(this.object._links.workflowitem.href).pipe(
+      getFirstSucceededRemoteDataPayload(),
+      map((workflowitem) => this.workflowItemService.hasDuplicationVerified(workflowitem))
+    );
+  }
+
+  getLabelPrefix(): Observable<string> {
+    return this.hasDuplicationVerified().pipe(
+      map((hasDuplicationVerified) => 'submission.workflow.tasks.claimed.' + (hasDuplicationVerified ? 'discard' : 'reject'))
+    );
+  }
+
+  getHelpLabelPrefix(): Observable<string> {
+    return this.getLabelPrefix().pipe(
+      map((labelPrefix) => labelPrefix + '_help')
+    );
   }
 }

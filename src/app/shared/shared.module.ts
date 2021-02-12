@@ -248,6 +248,8 @@ import { ClaimItemSelectorComponent } from './dso-selector/modal-wrappers/claim-
 import { ClaimedTaskActionsAssignComponent } from './mydspace-actions/claimed-task/assign/claimed-task-actions-assign.component';
 import { SearchChartFilterComponent } from './search/search-charts/search-chart/search-chart-filter/search-chart-filter.component';
 import { VocabularyExternalSourceComponent } from './vocabulary-external-source/vocabulary-external-source.component';
+import { BulkImportSelectorComponent } from './dso-selector/modal-wrappers/bulk-import-collection-selector/bulk-import-collection-selector.component';
+import { AdministeredCollectionSelectorComponent } from './dso-selector/dso-selector/administered-collection-selector/administered-collection-selector.component';
 
 /**
  * Declaration needed to make sure all decorator functions are called in time
@@ -386,6 +388,7 @@ const COMPONENTS = [
   CreateCommunityParentSelectorComponent,
   CreateCollectionParentSelectorComponent,
   CreateItemParentSelectorComponent,
+  BulkImportSelectorComponent,
   EditCommunitySelectorComponent,
   EditCollectionSelectorComponent,
   ClaimItemSelectorComponent,
@@ -457,6 +460,7 @@ const COMPONENTS = [
   ConfirmationModalComponent,
   VocabularyTreeviewComponent,
   AuthorizedCollectionSelectorComponent,
+  AdministeredCollectionSelectorComponent,
   CurationFormComponent,
   SearchResultListElementComponent,
   SearchResultGridElementComponent,
@@ -514,6 +518,7 @@ const ENTRY_COMPONENTS = [
   CreateCommunityParentSelectorComponent,
   CreateCollectionParentSelectorComponent,
   CreateItemParentSelectorComponent,
+  BulkImportSelectorComponent,
   ClaimItemSelectorComponent,
   EditCommunitySelectorComponent,
   EditCollectionSelectorComponent,

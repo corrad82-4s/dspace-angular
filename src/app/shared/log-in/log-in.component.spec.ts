@@ -1,7 +1,11 @@
+import { AuthMethodType } from './../../core/auth/models/auth.method-type';
+import { AuthMethod } from './../../core/auth/models/auth.method';
+import { AppState } from './../../app.reducer';
+import { LocaleService } from './../../core/locale/locale.service';
 import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { ComponentFixture, inject, TestBed, waitForAsync } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
-import { StoreModule } from '@ngrx/store';
+import { Store, StoreModule } from '@ngrx/store';
 
 import { LogInComponent } from './log-in.component';
 import { authReducer } from '../../core/auth/auth.reducer';
@@ -76,7 +80,8 @@ describe('LogInComponent', () => {
         { provide: AuthorizationDataService, useValue: authorizationService },
         provideMockStore({ initialState }),
         LogInComponent,
-        { provide: NativeWindowService, useFactory: NativeWindowMockFactory }
+        { provide: NativeWindowService, useFactory: NativeWindowMockFactory },
+        { provide: LocaleService, useValue: {} }
       ],
       schemas: [
         CUSTOM_ELEMENTS_SCHEMA
@@ -128,7 +133,96 @@ describe('LogInComponent', () => {
 
     });
   });
+});
 
+describe('LogInComponentOnlyOidc', () => {
+  let component: LogInComponent;
+  let fixture: ComponentFixture<LogInComponent>;
+  const initialState = {
+    core: {
+      auth: {
+        authenticated: false,
+        loaded: false,
+        loading: false,
+        authMethods: [
+          new AuthMethod(AuthMethodType.Oidc, 'https://oidc.url/oidc?param1=value1&param2=value2')
+        ]
+      }
+    }
+  };
+
+  let hardRedirectService: HardRedirectService;
+
+  let authorizationService: AuthorizationDataService;
+
+  const currentLanguageCode = 'en';
+
+  const localeService = jasmine.createSpyObj('LocaleService', {
+    getCurrentLanguageCode: currentLanguageCode
+  });
+
+  beforeEach(waitForAsync(() => {
+    hardRedirectService = jasmine.createSpyObj('hardRedirectService', {
+      redirect: {},
+      getCurrentRoute: {}
+    });
+    authorizationService = jasmine.createSpyObj('authorizationService', {
+      isAuthorized: of(true)
+    });
+
+    // refine the test module by declaring the test component
+    TestBed.configureTestingModule({
+      imports: [
+        FormsModule,
+        ReactiveFormsModule,
+        StoreModule.forRoot(authReducer, {
+          runtimeChecks: {
+            strictStateImmutability: false,
+            strictActionImmutability: false
+          }
+        }),
+        RouterTestingModule,
+        SharedModule,
+        TranslateModule.forRoot()
+      ],
+      declarations: [
+        TestComponent
+      ],
+      providers: [
+        { provide: AuthService, useClass: AuthServiceStub },
+        { provide: NativeWindowService, useFactory: NativeWindowMockFactory },
+        // { provide: Router, useValue: new RouterStub() },
+        { provide: ActivatedRoute, useValue: new ActivatedRouteStub() },
+        { provide: HardRedirectService, useValue: hardRedirectService },
+        { provide: AuthorizationDataService, useValue: authorizationService },
+        provideMockStore({ initialState }),
+        LogInComponent,
+        { provide: NativeWindowService, useFactory: NativeWindowMockFactory },
+        { provide: LocaleService, useValue: localeService }
+      ],
+      schemas: [
+        CUSTOM_ELEMENTS_SCHEMA
+      ]
+    })
+      .compileComponents();
+      fixture = TestBed.createComponent(LogInComponent);
+    component = fixture.componentInstance;
+
+    fixture.detectChanges();
+
+  }));
+
+  afterEach(() => {
+    fixture.destroy();
+    component = null;
+  });
+
+  it('should redirect navigation to oidc login', () => {
+    const componentAsAny = component as any;
+
+    expect(componentAsAny._window.nativeWindow.location.href).toBe('https://oidc.url/oidc?param1=value1&param2=value2&locale=' + currentLanguageCode);
+
+  });
 });
 
 // declare a test component

@@ -14,6 +14,37 @@ import { of } from 'rxjs';
 import { NotificationsService } from '../../shared/notifications/notifications.service';
 import { HttpClient } from '@angular/common/http';
 
+export const MedataComponentMock: MetadataComponent = {
+  id: 'box-shortname-1',
+  type: METADATACOMPONENT,
+  rows: [{
+    fields: [
+      {
+        metadata: 'dc.contributor.author',
+        label: 'Authors',
+        rendering: 'browselink',
+        fieldType: 'metadata',
+        style: null
+      }, {
+        bitstream: {
+          bundle: 'ORIGINAL',
+          metadataField: 'dc.type',
+          metadataValue: 'picture'
+        },
+        label: 'Authors',
+        rendering: 'thumbnail',
+        fieldType: 'bitstream',
+        style: null
+      }
+    ]
+  }],
+  _links: {
+    self: {
+      href: 'https://rest.api/rest/api/metadatacomponent/box-shortname-1'
+    }
+  }
+};
+
 describe('MetadataComponentsDataService', () => {
   let scheduler: TestScheduler;
   let service: MetadataComponentsDataService;
@@ -23,36 +54,7 @@ describe('MetadataComponentsDataService', () => {
   let halService: HALEndpointService;
   let responseCacheEntry: RequestEntry;
 
-  const medataComponent: MetadataComponent = {
-    id: 'box-shortname-1',
-    type: METADATACOMPONENT,
-    rows: [{
-      fields: [
-        {
-          metadata: 'dc.contibutor.author',
-          label: 'Authors',
-          rendering: 'browselink',
-          fieldType: 'metadata',
-          style: null
-        }, {
-          bitstream: {
-            bundle: 'ORIGINAL',
-            metadataField: 'dc.type',
-            metadataValue: 'picture'
-          },
-          label: 'Authors',
-          rendering: 'thumbnail',
-          fieldType: 'bitstream',
-          style: null
-        }
-      ]
-    }],
-    _links: {
-      self: {
-        href: 'https://rest.api/rest/api/metadatacomponent/box-shortname-1'
-      }
-    }
-  };
+  const medataComponent: MetadataComponent = MedataComponentMock;
 
   const endpointURL = `https://rest.api/rest/api/metadatacomponent`;
   const medataComponentRD = createSuccessfulRemoteDataObject(medataComponent);

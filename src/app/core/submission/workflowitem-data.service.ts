@@ -15,10 +15,11 @@ import { ObjectCacheService } from '../cache/object-cache.service';
 import { DSOChangeAnalyzer } from '../data/dso-change-analyzer.service';
 import { Observable } from 'rxjs';
 import { find, map } from 'rxjs/operators';
-import { hasValue } from '../../shared/empty.util';
+import { hasValue, isEmpty } from '../../shared/empty.util';
 import { RemoteData } from '../data/remote-data';
 import { NoContent } from '../shared/NoContent.model';
 import { getFirstCompletedRemoteData } from '../shared/operators';
+import { WorkspaceitemSectionDetectDuplicateObject } from './models/workspaceitem-section-deduplication.model';
 
 /**
  * A service that provides methods to make REST requests with workflow items endpoint.
@@ -86,5 +87,33 @@ export class WorkflowItemDataService extends DataService<WorkflowItem> {
     ).subscribe();
 
     return this.rdbService.buildFromRequestUUID(requestId);
+  }
+
+  hasDuplications(workflowItem: WorkflowItem): boolean {
+    const detectDuplicateSection = workflowItem?.sections['detect-duplicate'] as WorkspaceitemSectionDetectDuplicateObject;
+    if (!detectDuplicateSection || !detectDuplicateSection.matches) {
+      return false;
+    }
+
+    const matches = Object.keys(detectDuplicateSection.matches);
+    if (matches.length === 0) {
+      return false;
+    }
+
+    return matches.filter((key) => isEmpty(detectDuplicateSection.matches[key].workflowDecision)).length !== 0;
+  }
+
+  hasDuplicationVerified(workflowItem: WorkflowItem): boolean {
+    const detectDuplicateSection = workflowItem?.sections['detect-duplicate'] as WorkspaceitemSectionDetectDuplicateObject;
+    if (!detectDuplicateSection || !detectDuplicateSection.matches) {
+      return false;
+    }
+
+    const matches = Object.keys(detectDuplicateSection.matches);
+    if (matches.length === 0) {
+      return false;
+    }
+
+    return matches.filter((key) => detectDuplicateSection.matches[key].workflowDecision === 'verify').length !== 0;
   }
 }

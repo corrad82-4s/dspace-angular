@@ -215,7 +215,7 @@ export class EPersonFormComponent implements OnInit, OnDestroy {
         getFirstSucceededRemoteListPayload(),
         switchMap((institutionalRoleGroups) => institutionalRoleGroups),
         switchMap( (institutionalRoleGroup) => this.findInstitutionalScopedRoles(institutionalRoleGroup)),
-        reduce((acc: any, value: any) => [...acc, ...value], [])
+        reduce((acc: any, value: any) => [...acc, value], [])
       ),
       this.epersonService.getActiveEPerson()
     ).subscribe(([firstName, lastName, email, roles, rolesNoAvailable, canLogIn, requireCertificate,
@@ -305,9 +305,9 @@ export class EPersonFormComponent implements OnInit, OnDestroy {
         this.requireCertificate,
       ];
       this.formGroup = this.formBuilderService.createFormGroup(this.formModel);
-//       if (!(this.changeDetectorRef as ViewRef).destroyed) {
-//         this.changeDetectorRef.detectChanges();
-//       }
+       if (!(this.changeDetectorRef as ViewRef).destroyed) {
+         this.changeDetectorRef.detectChanges();
+       }
       this.subs.push(this.epersonService.getActiveEPerson().subscribe((ep: EPerson) => {
         if (ep != null) {
           this.groups = this.groupsDataService.findAllByHref(ep._links.groups.href, {

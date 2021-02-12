@@ -30,7 +30,7 @@ export class CrisPageLoaderComponent implements OnInit, OnDestroy {
    * Setup the dynamic child component
    */
   ngOnInit() {
-    const componentFactory = this.componentFactoryResolver.resolveComponentFactory(this.getComponent());
+    const componentFactory = this.componentFactoryResolver.resolveComponentFactory(this.getComponent(this.item));
     const viewContainerRef = this.crisLayoutLoader.viewContainerRef;
     viewContainerRef.clear();
 
@@ -42,8 +42,8 @@ export class CrisPageLoaderComponent implements OnInit, OnDestroy {
    * Fetch the component depending on the item
    * @returns {GenericConstructor<Component>}
    */
-  private getComponent(): GenericConstructor<Component> {
-    return getCrisLayoutPage(this.item);
+  public getComponent(item: Item): GenericConstructor<Component> {
+    return getCrisLayoutPage(item);
   }
 
   ngOnDestroy(): void {

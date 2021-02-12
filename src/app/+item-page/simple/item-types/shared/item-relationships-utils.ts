@@ -9,6 +9,7 @@ import {
   getFirstSucceededRemoteData
 } from '../../../../core/shared/operators';
 import { hasValue } from '../../../../shared/empty.util';
+import { of } from 'rxjs/internal/observable/of';
 
 /**
  * Operator for comparing arrays using a mapping function
@@ -76,6 +77,9 @@ export const paginatedRelationsToItems = (thisId: string) =>
     source.pipe(
       getFirstSucceededRemoteData(),
       switchMap((relationshipsRD: RemoteData<PaginatedList<Relationship>>) => {
+        if (relationshipsRD.payload.pageInfo.totalElements === 0) {
+          return of(Object.assign(relationshipsRD, { payload: Object.assign(relationshipsRD.payload, { page: [] as Item[] } )}));
+        }
         return observableCombineLatest(
           relationshipsRD.payload.page.map((rel: Relationship) =>
             observableCombineLatest([
