@@ -3,7 +3,7 @@ import { SearchObjects } from './../../../shared/search/search-objects.model';
 import { getFirstSucceededRemoteDataPayload } from './../../../core/shared/operators';
 import { PaginationComponentOptions } from './../../../shared/pagination/pagination-component-options.model';
 import { SectionComponent } from './../../../core/layout/models/section.model';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, forkJoin, Observable } from 'rxjs';
 import { SearchService } from 'src/app/core/shared/search/search.service';
 import { Component, Input, OnInit } from '@angular/core';
 import { PaginatedSearchOptions } from 'src/app/shared/search/paginated-search-options.model';
@@ -22,7 +22,8 @@ export class CountersSectionComponent implements OnInit {
     countersSection: CountersSection;
 
     counterData: CounterData[] = [];
-    counterData$ = new BehaviorSubject(this.counterData);
+    counterData$: Observable<CounterData[]>;
+    isLoading$ = new BehaviorSubject(true);
 
     pagination: PaginationComponentOptions = Object.assign(new PaginationComponentOptions(), {
       id: 'counters-pagination',
@@ -36,24 +37,24 @@ export class CountersSectionComponent implements OnInit {
    }
 
   ngOnInit() {
-    for (const counter of this.countersSection.counterSettingsList) {
-      this.searchService.search(new PaginatedSearchOptions({
-        configuration: counter.discoveryConfigurationName,
-        pagination: this.pagination
-      }))
-      .pipe(
+    this.counterData$ = forkJoin(
+    this.countersSection.counterSettingsList.map((counterSettings: CountersSettings) =>
+    this.searchService.search(new PaginatedSearchOptions({
+      configuration: counterSettings.discoveryConfigurationName,
+      pagination: this.pagination})).pipe(
         getFirstSucceededRemoteDataPayload(),
-        map((response: SearchObjects<DSpaceObject>) => response.totalElements)
-      ).subscribe((total: number) => {
-        this.counterData.push( {
-          count: total.toString(),
-          label: counter.entityName,
-          icon: counter.icon,
-          link: counter.link
-        });
-        this.counterData$.next(this.counterData);
-      });
-    }
+        map((rs: SearchObjects<DSpaceObject>) => rs.totalElements),
+        map((total: number) => {
+          return {
+            count: total.toString(),
+            label: counterSettings.entityName,
+            icon: counterSettings.icon,
+            link: counterSettings.link
+
+          };
+        })
+    )));
+    this.counterData$.subscribe(() => this.isLoading$.next(false))
   }
 }
 
