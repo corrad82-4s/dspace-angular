@@ -54,7 +54,7 @@ export class CountersSectionComponent implements OnInit {
           };
         })
     )));
-    this.counterData$.subscribe(() => this.isLoading$.next(false))
+    this.counterData$.subscribe(() => this.isLoading$.next(false));
   }
 }
 
