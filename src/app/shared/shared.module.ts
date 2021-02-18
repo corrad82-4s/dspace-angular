@@ -250,6 +250,7 @@ import { SearchChartFilterComponent } from './search/search-charts/search-chart/
 import { VocabularyExternalSourceComponent } from './vocabulary-external-source/vocabulary-external-source.component';
 import { BulkImportSelectorComponent } from './dso-selector/modal-wrappers/bulk-import-collection-selector/bulk-import-collection-selector.component';
 import { AdministeredCollectionSelectorComponent } from './dso-selector/dso-selector/administered-collection-selector/administered-collection-selector.component';
+import { MyDSpaceRequestTypeComponent } from './object-collection/shared/mydspace-request-type/mydspace-request-type.component';
 
 /**
  * Declaration needed to make sure all decorator functions are called in time
@@ -363,6 +364,7 @@ const COMPONENTS = [
   ItemListPreviewComponent,
   MyDSpaceItemStatusComponent,
   ItemSubmitterComponent,
+  MyDSpaceRequestTypeComponent,
   ItemDetailPreviewComponent,
   ItemDetailPreviewFieldComponent,
   ClaimedTaskActionsComponent,

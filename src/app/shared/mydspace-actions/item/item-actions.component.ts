@@ -216,19 +216,19 @@ export class ItemActionsComponent extends MyDSpaceActionsComponent<Item, ItemDat
   }
 
   itemHasPendingRequest(): Observable<boolean> {
-    return this.itemHasRelation('isCorrectionOfItem').pipe(
+    return this.itemHasRelation('isCorrectedByItem').pipe(
       switchMap((hasCorrectionRelation) => {
         if (hasCorrectionRelation) {
           return of(true);
         }
 
-        return this.itemHasRelation('isWithdrawOfItem').pipe(
+        return this.itemHasRelation('isWithdrawnByItem').pipe(
           switchMap((hasWithdrawRelation) => {
             if (hasWithdrawRelation) {
               return of(true);
             }
 
-            return this.itemHasRelation('isReinstatementOfItem');
+            return this.itemHasRelation('isReinstatedByItem');
           })
         );
       })
