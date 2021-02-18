@@ -248,6 +248,8 @@ import { ClaimItemSelectorComponent } from './dso-selector/modal-wrappers/claim-
 import { ClaimedTaskActionsAssignComponent } from './mydspace-actions/claimed-task/assign/claimed-task-actions-assign.component';
 import { SearchChartFilterComponent } from './search/search-charts/search-chart/search-chart-filter/search-chart-filter.component';
 import { VocabularyExternalSourceComponent } from './vocabulary-external-source/vocabulary-external-source.component';
+import { ItemExportAlertComponent } from './item-export/item-export-alert/item-export-alert.component';
+import { ItemExportModalLauncherComponent } from './item-export/item-export-modal-launcher/item-export-modal-launcher.component';
 import { BulkImportSelectorComponent } from './dso-selector/modal-wrappers/bulk-import-collection-selector/bulk-import-collection-selector.component';
 import { AdministeredCollectionSelectorComponent } from './dso-selector/dso-selector/administered-collection-selector/administered-collection-selector.component';
 
@@ -484,7 +486,8 @@ const COMPONENTS = [
   CollectionSidebarSearchListElementComponent,
   CommunitySidebarSearchListElementComponent,
   ItemExportComponent,
-  ItemExportModalWrapperComponent,
+  ItemExportAlertComponent,
+  ItemExportModalLauncherComponent,
   SearchChartsComponent,
   SearchChartBarComponent,
   SearchChartPieComponent,
@@ -614,7 +617,8 @@ const DIRECTIVES = [
     ...COMPONENTS,
     ...DIRECTIVES,
     ...SHARED_ITEM_PAGE_COMPONENTS,
-    ...SHARED_SEARCH_PAGE_COMPONENTS
+    ...SHARED_SEARCH_PAGE_COMPONENTS,
+    ItemExportAlertComponent
   ],
   providers: [
     ...PROVIDERS

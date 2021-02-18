@@ -11,7 +11,6 @@ import { RemoteDataBuildService } from '../cache/builders/remote-data-build.serv
 import { RequestParam } from '../cache/models/request-param.model';
 import { ObjectCacheService } from '../cache/object-cache.service';
 import { CoreState } from '../core.reducers';
-import { EPersonDataService } from '../eperson/eperson-data.service';
 import { EPerson } from '../eperson/models/eperson.model';
 import { HALEndpointService } from '../shared/hal-endpoint.service';
 import { DataService } from '../data/data.service';
@@ -67,7 +66,6 @@ export class AuditDataService {
     protected objectCache: ObjectCacheService,
     protected halService: HALEndpointService,
     protected notificationsService: NotificationsService,
-    protected ePersonService: EPersonDataService,
     protected dsoNameService: DSONameService,
     protected http: HttpClient,
     protected comparator: DefaultChangeAnalyzer<Audit>) {
@@ -130,16 +128,19 @@ export class AuditDataService {
     return of(null);
   }
 
-  getOtherObjectHref(audit: Audit, contextObjectId: string) {
-    if (audit.objectUUID !== null && contextObjectId === audit.objectUUID) {
+  getOtherObjectHref(audit: Audit, contextObjectId: string): string {
+    if (audit.objectUUID === null) {
+      return null;
+    }
+    if (contextObjectId === audit.objectUUID) {
       // other object is on the subject field
       return audit._links.subject.href;
-    }
-    if (audit.objectUUID !== null && contextObjectId === audit.subjectUUID) {
+    } else if (contextObjectId === audit.subjectUUID) {
       // other object is on the object field
       return audit._links.object.href;
+    } else {
+      return null;
     }
-    return null;
   }
 
 }
