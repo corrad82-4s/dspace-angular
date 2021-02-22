@@ -1,0 +1,4 @@
+<span *ngIf="isNewSubmissionRequest() | async" class="badge badge-primary">{{'mydspace.item.new-submission-request' | translate}}</span>
+<span *ngIf="isCorrectionRequest() | async" class="badge badge-secondary">{{'mydspace.item.correction-request' | translate}}</span>
+<span *ngIf="isWithdrawRequest() | async" class="badge badge-danger">{{'mydspace.item.withdrawn-request' | translate}}</span>
+<span *ngIf="isReinstateRequest() | async" class="badge badge-success">{{'mydspace.item.reinstate-request' | translate}}</span>

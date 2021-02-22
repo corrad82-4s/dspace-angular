@@ -251,6 +251,7 @@ import { ItemExportAlertComponent } from './item-export/item-export-alert/item-e
 import { ItemExportModalLauncherComponent } from './item-export/item-export-modal-launcher/item-export-modal-launcher.component';
 import { BulkImportSelectorComponent } from './dso-selector/modal-wrappers/bulk-import-collection-selector/bulk-import-collection-selector.component';
 import { AdministeredCollectionSelectorComponent } from './dso-selector/dso-selector/administered-collection-selector/administered-collection-selector.component';
+import { MyDSpaceRequestTypeComponent } from './object-collection/shared/mydspace-request-type/mydspace-request-type.component';
 
 /**
  * Declaration needed to make sure all decorator functions are called in time
@@ -364,6 +365,7 @@ const COMPONENTS = [
   ItemListPreviewComponent,
   MyDSpaceItemStatusComponent,
   ItemSubmitterComponent,
+  MyDSpaceRequestTypeComponent,
   ItemDetailPreviewComponent,
   ItemDetailPreviewFieldComponent,
   ClaimedTaskActionsComponent,

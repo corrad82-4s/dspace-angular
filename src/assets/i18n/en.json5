@@ -3038,6 +3038,14 @@
 
   "mydspace.notification.suggestion.page": "We found <b>{{count}} publications</b> in the {{source}} that seems to be related to your profile. Please <a href='/suggestions/{{suggestionId}}'>review the suggestions.</a>",
 
+  "mydspace.item.new-submission-request": "New submission",
+
+  "mydspace.item.correction-request": "Correction",
+
+  "mydspace.item.withdrawn-request": "Withdrawal",
+
+  "mydspace.item.reinstate-request": "Reinstatement",
+
   "nav.browse.header": "All of DSpace",
 
   "nav.community-browse.header": "By Community",
