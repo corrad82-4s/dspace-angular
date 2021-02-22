@@ -3388,7 +3388,7 @@
 
   "person.search.title": "DSpace Cris Angular :: Person Search",
 
-  "personcv.listelement.badge": "Profile",
+  "cvperson.listelement.badge": "Profile",
 
 
 
@@ -4882,7 +4882,7 @@
 
   "submission.sections.submit.progressbar.describe.institution-person": "Person basic information",
 
-  "submission.sections.submit.progressbar.describe.person-cv": "Profile basic information",
+  "submission.sections.submit.progressbar.describe.cv-person": "Profile basic information",
 
   "submission.sections.submit.progressbar.describe.product": "Product basic information",
 
