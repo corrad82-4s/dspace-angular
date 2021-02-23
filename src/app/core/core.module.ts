@@ -199,6 +199,7 @@ import { OpenaireBrokerEventObject } from './openaire/broker/models/openaire-bro
 import { OpenaireSuggestionTarget } from './openaire/reciter-suggestions/models/openaire-suggestion-target.model';
 import { OpenaireSuggestion } from './openaire/reciter-suggestions/models/openaire-suggestion.model';
 import { OpenaireSuggestionSource } from './openaire/reciter-suggestions/models/openaire-suggestion-source.model';
+import { ItemSourcesDataService } from './item-sources/item-sources-data.service';
 
 /**
  * When not in production, endpoint responses can be mocked for testing purposes
@@ -306,6 +307,7 @@ const PROVIDERS = [
   VersionHistoryDataService,
   LicenseDataService,
   ItemTypeDataService,
+  ItemSourcesDataService,
   WorkflowActionDataService,
   ProcessDataService,
   AuditDataService,

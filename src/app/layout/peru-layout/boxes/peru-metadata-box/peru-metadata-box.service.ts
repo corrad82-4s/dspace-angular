@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Item } from '../../../../core/shared/item.model';
 import { LayoutField, MetadataComponent, Row } from '../../../../core/layout/models/metadata-component.model';
-import { Metadata } from '../../../../core/shared/metadata.utils';
+import { ItemSource } from '../../../../core/item-sources/model/item-sources.model';
 
 @Injectable({providedIn: 'root'})
 export class PeruMetadataBoxService {
@@ -12,7 +12,7 @@ export class PeruMetadataBoxService {
    * @param item
    * @param sourceItem
    */
-  public patchedMetadataComponent(metadatacomponents: MetadataComponent, item: Item, sourceItem: Item): MetadataComponent {
+  public patchedMetadataComponent(metadatacomponents: MetadataComponent, item: Item, itemSource: ItemSource): MetadataComponent {
 
     // records if at least one metadata value match with the sourceItem.
     let sourceContentPresent = false;
@@ -28,9 +28,7 @@ export class PeruMetadataBoxService {
         }
 
         if (clonedField.metadata) {
-          const itemValues = item.allMetadata(clonedField.metadata);
-          const sourceValues = sourceItem.allMetadata(clonedField.metadata);
-          const equals = Metadata.multiEquals(itemValues, sourceValues);
+          const equals = itemSource.metadata.includes(clonedField.metadata);
           if (!equals) {
             clonedField.styleValue = clonedField.styleValue + ' not-shadowed-metadata';
           } else {

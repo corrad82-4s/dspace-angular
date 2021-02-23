@@ -1,7 +1,7 @@
 <nav *ngIf="sidebarActive" id="sidebar" [ngClass]="{'active': !sidebarStatus}">
     <ul class="list-unstyled components">
         <li *ngFor="let tab of tabs; let i = index;" [ngClass]="{'active' : tab.isActive}">
-            <a [ngClass]="{'not-shadowed-metadata': isSourceItemContentEmpty(tab)}" [routerLink]="" (click)="selectTab(i)">{{tab.header}}</a>
+            <a [ngClass]="{'not-shadowed-metadata': isItemSourceContentEmpty(tab)}" [routerLink]="" (click)="selectTab(i)">{{tab.header}}</a>
         </li>
     </ul>
 </nav>
