@@ -7,7 +7,9 @@ import { ItemSource } from '../../../../core/item-sources/model/item-sources.mod
 export class PeruMetadataBoxService {
 
   /**
-   * Clone the immutable metadatacomponents with extra data given a sourceItem.
+   * Clone the immutable metadatacomponents with extra information computed inspecting an sourceItem.
+   * In particular:
+   * - add to each LayoutField the class 'not-source-metadata' in case its metadata doesn't have any matching in the sourceItem.
    * @param metadatacomponents
    * @param item
    * @param sourceItem
@@ -28,9 +30,8 @@ export class PeruMetadataBoxService {
         }
 
         if (clonedField.metadata) {
-          const equals = itemSource.metadata.includes(clonedField.metadata);
-          if (!equals) {
-            clonedField.styleValue = clonedField.styleValue + ' not-shadowed-metadata';
+          if (!this.isSourceCheck(itemSource.metadata, clonedField.metadata)) {
+            clonedField.styleValue = clonedField.styleValue + ' not-source-metadata';
           } else {
             sourceContentPresent = true;
           }
@@ -40,6 +41,10 @@ export class PeruMetadataBoxService {
       return clonedRow;
     });
     return cloned;
+  }
+
+  private isSourceCheck(sourceMetadata: string[], itemMetadata: string): boolean {
+    return sourceMetadata.map(metadata => metadata.split('/')[0]).includes(itemMetadata);
   }
 
 }

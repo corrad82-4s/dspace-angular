@@ -37,7 +37,7 @@ describe('PeruMetadataBoxService', () => {
 
     const patchedMetadataComponent = service.patchedMetadataComponent(metadatacomponents, item, itemSource);
 
-    expect(patchedMetadataComponent.rows[0].fields[0].styleValue.includes('not-shadowed-metadata')).toBeTrue();
+    expect(patchedMetadataComponent.rows[0].fields[0].styleValue.includes('not-source-metadata')).toBeTrue();
   });
 
 });
