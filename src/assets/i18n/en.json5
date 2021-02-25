@@ -1342,6 +1342,8 @@
 
   "context-menu.actions.edit-item.btn.FULL": "Edit item",
 
+  "context-menu.actions.edit-item.btn.EDUCATION": "Edit education info",
+
   "context-menu.actions.request-correction.btn": "Request correction",
 
   "context-menu.actions.request-correction.confirm.cancel": "Cancel",
@@ -4857,6 +4859,8 @@
 
 
   "submission.sections.submit.progressbar.CClicense": "Creative commons license",
+
+  "submission.sections.submit.progressbar.describe.cv-person-edit-education": "Education information",
 
   "submission.sections.submit.progressbar.describe.equipment": "Equipment basic information",
 
