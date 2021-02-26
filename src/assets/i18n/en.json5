@@ -1340,9 +1340,11 @@
 
   "context-menu.actions.label": "Options",
 
-  "context-menu.actions.edit-item.btn.FULL": "Edit item",
+  "context-menu.actions.edit-item.btn.AFFILIATION": "Edit work experience",
 
   "context-menu.actions.edit-item.btn.EDUCATION": "Edit education info",
+
+  "context-menu.actions.edit-item.btn.FULL": "Edit item",
 
   "context-menu.actions.request-correction.btn": "Request correction",
 
@@ -4859,6 +4861,8 @@
 
 
   "submission.sections.submit.progressbar.CClicense": "Creative commons license",
+
+  "submission.sections.submit.progressbar.describe.cv-person-edit-affiliation": "Affiliation information",
 
   "submission.sections.submit.progressbar.describe.cv-person-edit-education": "Education information",
 
