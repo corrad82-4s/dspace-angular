@@ -1344,6 +1344,8 @@
 
   "context-menu.actions.edit-item.btn.EDUCATION": "Edit education info",
 
+  "context-menu.actions.edit-item.btn.QUALIFICATION": "Edit professional experience",
+
   "context-menu.actions.edit-item.btn.FULL": "Edit item",
 
   "context-menu.actions.request-correction.btn": "Request correction",
@@ -4865,6 +4867,8 @@
   "submission.sections.submit.progressbar.describe.cv-person-edit-affiliation": "Affiliation information",
 
   "submission.sections.submit.progressbar.describe.cv-person-edit-education": "Education information",
+
+  "submission.sections.submit.progressbar.describe.cv-person-edit-qualification": "Qualification information",
 
   "submission.sections.submit.progressbar.describe.equipment": "Equipment basic information",
 
