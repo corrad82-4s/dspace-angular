@@ -14,7 +14,7 @@ export class ItemSource {
 }
 
 /**
- * Object representing an Audit.
+ * Object representing an ItemSource.
  */
 @typedObject
 export class ItemSources implements CacheableObject {
@@ -28,19 +28,19 @@ export class ItemSources implements CacheableObject {
   type: ResourceType;
 
   /**
-   * The identifier for this audit
+   * The identifier for this item
    */
   @autoserialize
   id: string;
 
   /**
-   * The eperson UUID for this audit
+   * The sources list for this item
    */
   @autoserialize
   sources: ItemSource[];
 
   /**
-   * The {@link HALLink}s for this Audit
+   * The {@link HALLink}s for this ItemSource
    */
   @deserialize
   _links: {
