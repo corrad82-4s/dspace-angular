@@ -34,7 +34,6 @@ export class SourcesOfInformationComponent implements OnInit {
       combineLatest([
         this.sourcesOfInformationService.getItemSources(this.item.uuid),
         this.sourcesOfInformationService.getItemLabel(this.item)]).pipe(take(1)).subscribe(([itemSources, label]) => {
-          debugger;
           this.itemSources = itemSources.sources;
           this.itemLabel = label;
       });
