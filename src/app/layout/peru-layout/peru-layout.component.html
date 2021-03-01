@@ -9,7 +9,7 @@
                     [sidebarActive]="(hasSidebar() | async)"
                     [sidebarStatus]="!(isSideBarHidden() | async)"
                     [tabs]="(getTabs() | async)"
-                    [sourceItemTabs]="sourceItemTabs"
+                    [itemSourceTabs]="itemSourceTabs"
                     (selectedTab)="changeTab($event)">
             </ds-peru-sidebar>
 
@@ -29,7 +29,7 @@
                 <ng-template dsCrisLayoutLoader></ng-template>
             </div>
 
-            <ds-sources-of-information [item]="item" (selectSourceItem)="onSelectSourceOfInformation($event)"></ds-sources-of-information>
+            <ds-sources-of-information [item]="item" (selectItemSource)="onSelectItemSource($event)"></ds-sources-of-information>
         </div>
     </div>
 

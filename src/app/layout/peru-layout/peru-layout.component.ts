@@ -4,9 +4,9 @@ import { LayoutPage } from '../enums/layout-page.enum';
 import { TabDataService } from '../../core/layout/tab-data.service';
 import { AuthService } from '../../core/auth/auth.service';
 import { CrisLayoutDefaultComponent } from '../default-layout/cris-layout-default.component';
-import { Item } from '../../core/shared/item.model';
 import { Tab } from '../../core/layout/models/tab.model';
 import { getFirstSucceededRemoteListPayload } from '../../core/shared/operators';
+import { ItemSource } from '../../core/item-sources/model/item-sources.model';
 
 @Component({
   selector: 'ds-peru-layout',
@@ -16,9 +16,9 @@ import { getFirstSucceededRemoteListPayload } from '../../core/shared/operators'
 @CrisLayoutPage(LayoutPage.DEFAULT_PERU)
 export class PeruLayoutComponent extends CrisLayoutDefaultComponent {
 
-  sourceItem: Item;
+  itemSource: ItemSource;
 
-  sourceItemTabs: Tab[];
+  itemSourceTabs: Tab[];
 
   constructor(
     protected tabService: TabDataService,
@@ -41,27 +41,27 @@ export class PeruLayoutComponent extends CrisLayoutDefaultComponent {
   instantiateTab(viewContainerRef: ViewContainerRef, componentFactory: ComponentFactory<any>, tab: Tab): ComponentRef<any> {
     const componentRef = viewContainerRef.createComponent(componentFactory);
     (componentRef.instance as any).item = this.item;
-    (componentRef.instance as any).sourceItem = this.sourceItem;
+    (componentRef.instance as any).itemSource = this.itemSource;
     (componentRef.instance as any).tab = tab;
     return componentRef;
   }
 
   /**
-   * When a sourceItem is selected his tabs are fetched and the selectedTab updated.
-   * @param sourceItem
+   * When an itemSource is selected its tabs are fetched and the selectedTab updated.
+   * @param itemSource
    */
-  onSelectSourceOfInformation(sourceItem: Item) {
+  onSelectItemSource(itemSource: ItemSource) {
 
     // Reset previous
-    this.sourceItem = sourceItem;
-    this.sourceItemTabs = null;
+    this.itemSource = itemSource;
+    this.itemSourceTabs = null;
 
-    if (this.sourceItem) {
+    if (this.itemSource) {
       // Retrieve sourceItem tabs by UUID of item
-      this.tabService.findByItem(this.sourceItem.id).pipe(
+      this.tabService.findByItem(this.itemSource.itemUuid).pipe(
         getFirstSucceededRemoteListPayload()
-      ).subscribe((sourceItemTabs: Tab[]) => {
-        this.sourceItemTabs = sourceItemTabs;
+      ).subscribe((itemSourceTabs: Tab[]) => {
+        this.itemSourceTabs = itemSourceTabs;
       });
 
     }

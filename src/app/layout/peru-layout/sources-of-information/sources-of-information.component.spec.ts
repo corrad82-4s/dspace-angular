@@ -11,7 +11,7 @@ describe('SourcesOfInformationComponent', () => {
   let sourcesOfInformationService: SourcesOfInformationService;
 
   beforeEach(async () => {
-    sourcesOfInformationService = new SourcesOfInformationService(null, null, null);
+    sourcesOfInformationService = new SourcesOfInformationService(null, null, null, null);
     await TestBed.configureTestingModule({
       imports: [TranslateModule.forRoot({
         loader: {
