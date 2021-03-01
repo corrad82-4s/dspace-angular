@@ -1,13 +1,13 @@
 import { Component, Input } from '@angular/core';
 import { combineLatest, Observable, of } from 'rxjs';
 import { map, switchMap, take } from 'rxjs/operators';
-import { ItemDataService } from 'src/app/core/data/item-data.service';
-import { PaginatedList } from 'src/app/core/data/paginated-list.model';
-import { RelationshipService } from 'src/app/core/data/relationship.service';
-import { Relationship } from 'src/app/core/shared/item-relationships/relationship.model';
-import { Item } from 'src/app/core/shared/item.model';
-import { getFirstSucceededRemoteDataPayload } from 'src/app/core/shared/operators';
-import { SubmissionObject } from 'src/app/core/submission/models/submission-object.model';
+import { ItemDataService } from '../../../../core/data/item-data.service';
+import { PaginatedList } from '../../../../core/data/paginated-list.model';
+import { RelationshipService } from '../../../../core/data/relationship.service';
+import { Relationship } from '../../../../core/shared/item-relationships/relationship.model';
+import { Item } from '../../../../core/shared/item.model';
+import { getFirstSucceededRemoteDataPayload } from '../../../../core/shared/operators';
+import { SubmissionObject } from '../../../../core/submission/models/submission-object.model';
 
 
 @Component({

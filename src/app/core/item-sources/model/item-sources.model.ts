@@ -6,7 +6,7 @@ import { ResourceType } from '../../shared/resource-type';
 import { typedObject } from '../../cache/builders/build-decorators';
 import { ITEM_SOURCES } from './item-sources.resource-type';
 
-export class ItemSource {
+export interface ItemSource {
   itemUuid: string;
   relationshipType: string;
   source: string;
