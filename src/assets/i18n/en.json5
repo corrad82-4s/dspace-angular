@@ -3255,6 +3255,8 @@
 
 
 
+  "notification.listelement.badge": "Notification",
+
   "orgunit.listelement.badge": "Organizational Unit",
 
   "orgunit.page.city": "City",
@@ -4881,6 +4883,8 @@
   "submission.sections.submit.progressbar.describe.institution-funding": "Funding basic information",
 
   "submission.sections.submit.progressbar.describe.journal": "Journal basic information",
+
+  "submission.sections.submit.progressbar.describe.notification-form": "Notification",
 
   "submission.sections.submit.progressbar.describe.orgunit": "Org Unit basic information",
 
