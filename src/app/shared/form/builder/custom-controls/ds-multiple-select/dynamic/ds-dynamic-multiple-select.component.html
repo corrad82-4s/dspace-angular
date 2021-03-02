@@ -1,0 +1,11 @@
+<ng-container [formGroup]="group">
+
+    <ds-multiple-select-control [formControlName]="model.id"
+                                [name]="model.name"
+                                [model]="model"
+                                [ngClass]="[getClass('element', 'control'), getClass('grid', 'control')]"
+                                (blur)="blur.emit($event)"
+                                (change)="change.emit($event)"
+                                (focus)="focus.emit($event)"></ds-multiple-select-control>
+
+</ng-container>

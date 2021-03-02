@@ -1,0 +1,17 @@
+<ds-dynamic-form *ngIf="innerFormGroup"
+         [formModel]="innerFormModel"
+         [formGroup]="innerFormGroup"
+         (dfBlur)="blur.emit($event)"
+         (dfFocus)="focus.emit($event)">
+</ds-dynamic-form>
+
+<div *ngIf="indexes.length > 0">
+    <span *ngFor="let index of indexes"
+          class="badge badge-pill badge-info pt-2 pb-2 ml-2 mr-2 mb-2"
+          (click)="removeSelected(index)"
+    > {{ getLabel(index) }} </span>
+</div>
+<div *ngIf="indexes.length === 0">
+    <span class="ml-2"><em>{{ noSelectionHint | translate }}</em></span>
+</div>
+

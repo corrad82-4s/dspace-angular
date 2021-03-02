@@ -120,6 +120,8 @@ import { RelationshipOptions } from '../models/relationship-options.model';
 import { FormBuilderService } from '../form-builder.service';
 import { DYNAMIC_FORM_CONTROL_TYPE_RELATION_GROUP } from './ds-dynamic-form-constants';
 import { FormFieldMetadataValueObject } from '../models/form-field-metadata-value.model';
+import { DS_DYNAMIC_MULTIPLE_SELECT } from '../custom-controls/ds-multiple-select/dynamic/ds-dynamic-multiple-select.model';
+import { DsDynamicMultipleSelectComponent } from '../custom-controls/ds-multiple-select/dynamic/ds-dynamic-multiple-select.component';
 
 export function dsDynamicFormControlMapFn(model: DynamicFormControlModel): Type<DynamicFormControl> | null {
   switch (model.type) {
@@ -181,6 +183,9 @@ export function dsDynamicFormControlMapFn(model: DynamicFormControlModel): Type<
 
     case DYNAMIC_FORM_CONTROL_TYPE_CUSTOM_SWITCH:
       return CustomSwitchComponent;
+
+    case DS_DYNAMIC_MULTIPLE_SELECT:
+      return DsDynamicMultipleSelectComponent;
 
     default:
       return null;
