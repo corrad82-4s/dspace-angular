@@ -1330,6 +1330,8 @@
 
   "context-menu.actions": "Actions",
 
+  "context-menu.actions.add-cv-publication.btn": "Add publication",
+
   "context-menu.actions.audit-item.btn": "Audit",
 
   "context-menu.actions.bulk-import.btn": "Import items into collection",
@@ -3408,6 +3410,10 @@
 
   "cvpersonclone.listelement.badge": "Profile clone",
 
+  "cvpublication.listelement.badge": "CV Publication",
+
+  "cvpublicationclone.listelement.badge": "CV Publication clone",
+
   "process.new.select-parameters": "Parameters",
 
   "process.new.cancel": "Cancel",
@@ -4938,21 +4944,31 @@
 
   "submission.sections.submit.progressbar.describe.institution-publication": "Publication basic information",
 
+  "submission.sections.submit.progressbar.describe.cv-publication": "Publication basic information",
+
   "submission.sections.submit.progressbar.describe.publication_bibliographic_details": "Publication bibliographic details",
 
   "submission.sections.submit.progressbar.describe.institution-publication_bibliographic_details": "Publication bibliographic details",
+
+  "submission.sections.submit.progressbar.describe.cv-publication_bibliographic_details": "Publication bibliographic details",
 
   "submission.sections.submit.progressbar.describe.publication_indexing": "Publication indexing",
 
   "submission.sections.submit.progressbar.describe.institution-publication_indexing": "Publication indexing",
 
+  "submission.sections.submit.progressbar.describe.cv-publication_indexing": "Publication indexing",
+
   "submission.sections.submit.progressbar.describe.publication_references": "Publication references",
 
   "submission.sections.submit.progressbar.describe.institution-publication_references": "Publication references",
 
+  "submission.sections.submit.progressbar.describe.cv-publication_references": "Publication references",
+
   "submission.sections.submit.progressbar.describe.publication_thesis": "Publication Thesis",
 
   "submission.sections.submit.progressbar.describe.institution-publication_thesis": "Publication Thesis",
+
+  "submission.sections.submit.progressbar.describe.cv-publication_thesis": "Publication Thesis",
 
   "submission.sections.submit.progressbar.describe.rp": "Researcher basic information",
 
