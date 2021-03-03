@@ -1,9 +1,9 @@
-<ds-dynamic-form *ngIf="innerFormGroup"
-         [formModel]="innerFormModel"
-         [formGroup]="innerFormGroup"
-         (dfBlur)="blur.emit($event)"
-         (dfFocus)="focus.emit($event)">
-</ds-dynamic-form>
+<form *ngIf="innerFormGroup" [formGroup]="innerFormGroup">
+
+    <dynamic-ng-bootstrap-form-control *ngFor="let controlModel of innerFormModel"
+                                       [group]="innerFormGroup"
+                                       [model]="controlModel"></dynamic-ng-bootstrap-form-control>
+</form>
 
 <div *ngIf="indexes.length > 0">
     <span *ngFor="let index of indexes"

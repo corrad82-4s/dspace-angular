@@ -4,13 +4,16 @@ import { DynamicSelectModelConfig } from '@ng-dynamic-forms/core/lib/model/selec
 
 export const DS_DYNAMIC_MULTIPLE_SELECT = 'DS_DYNAMIC_MULTIPLE_SELECT';
 
+/**
+ * Wrapper for the ds-multiple-select-control.
+ * Use it as a DynamicSelectModel, but allows multiple selections displayed as chips.
+ */
 export class DsDynamicMultipleSelectModel<T> extends DynamicSelectModel<T> {
 
   @serializable() readonly type: string = DS_DYNAMIC_MULTIPLE_SELECT;
 
   public constructor(config: DynamicSelectModelConfig<T>, layout?: DynamicFormControlLayout) {
     super(config, layout);
-    this.multiple = true;
   }
 }
 

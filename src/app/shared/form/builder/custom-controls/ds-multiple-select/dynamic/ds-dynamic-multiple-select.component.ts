@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output, ViewChild } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import {
   DynamicFormControlComponent,
@@ -33,4 +33,5 @@ export class DsDynamicMultipleSelectComponent extends DynamicFormControlComponen
 
     super(layoutService, validationService);
   }
+
 }
