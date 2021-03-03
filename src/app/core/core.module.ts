@@ -200,6 +200,7 @@ import { OpenaireSuggestionTarget } from './openaire/reciter-suggestions/models/
 import { OpenaireSuggestion } from './openaire/reciter-suggestions/models/openaire-suggestion.model';
 import { OpenaireSuggestionSource } from './openaire/reciter-suggestions/models/openaire-suggestion-source.model';
 import { ItemSourcesDataService } from './item-sources/item-sources-data.service';
+import { ItemSources } from './item-sources/model/item-sources.model';
 
 /**
  * When not in production, endpoint responses can be mocked for testing purposes
@@ -394,6 +395,7 @@ export const models =
     Relationship,
     RelationshipType,
     ItemType,
+    ItemSources,
     ExternalSource,
     ExternalSourceEntry,
     Script,
