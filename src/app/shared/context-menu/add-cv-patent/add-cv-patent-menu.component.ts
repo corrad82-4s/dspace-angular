@@ -10,11 +10,11 @@ import { ContextMenuEntryComponent } from '../context-menu-entry.component';
 import { rendersContextMenuEntriesForType } from '../context-menu.decorator';
 
 @Component({
-  selector: 'ds-context-menu-add-cv-publication',
-  templateUrl: './add-cv-publication-menu.component.html'
+  selector: 'ds-context-menu-add-cv-patent',
+  templateUrl: './add-cv-patent-menu.component.html'
 })
 @rendersContextMenuEntriesForType(DSpaceObjectType.ITEM)
-export class AddCvPublicationMenuComponent extends ContextMenuEntryComponent implements OnInit {
+export class AddCvPatentMenuComponent extends ContextMenuEntryComponent implements OnInit {
 
   public modalRef: NgbModalRef;
 
@@ -36,8 +36,8 @@ export class AddCvPublicationMenuComponent extends ContextMenuEntryComponent imp
     return this.isCvProfile$;
   }
 
-  getCvPublicationCollectionId(): Observable<any> {
-    return this.configurationDataService.findByPropertyName('researcher-profile.publication.collection.uuid').pipe(
+  getCvPatentCollectionId(): Observable<any> {
+    return this.configurationDataService.findByPropertyName('researcher-profile.patent.collection.uuid').pipe(
       getFirstSucceededRemoteDataPayload(),
       map((configurationProperty) => { return { 'collection': configurationProperty.values[0] }; })
     );

@@ -11,12 +11,12 @@ import { DSpaceObject } from '../../../core/shared/dspace-object.model';
 import { Item } from '../../../core/shared/item.model';
 import { TranslateLoaderMock } from '../../mocks/translate-loader.mock';
 import { createSuccessfulRemoteDataObject$ } from '../../remote-data.utils';
-import { AddCvPublicationMenuComponent } from './add-cv-publication-menu.component';
+import { AddCvPatentMenuComponent } from './add-cv-patent-menu.component';
 
-describe('AddCvPublicationMenuComponent', () => {
-  let component: AddCvPublicationMenuComponent;
+describe('AddCvPatentMenuComponent', () => {
+  let component: AddCvPatentMenuComponent;
   let componentAsAny: any;
-  let fixture: ComponentFixture<AddCvPublicationMenuComponent>;
+  let fixture: ComponentFixture<AddCvPatentMenuComponent>;
   let scheduler: TestScheduler;
   let configurationDataService: any;
 
@@ -44,7 +44,7 @@ describe('AddCvPublicationMenuComponent', () => {
     });
 
     TestBed.configureTestingModule({
-      declarations: [ AddCvPublicationMenuComponent ],
+      declarations: [ AddCvPatentMenuComponent ],
       imports: [
         RouterTestingModule.withRoutes([]),
         TranslateModule.forRoot({
@@ -64,7 +64,7 @@ describe('AddCvPublicationMenuComponent', () => {
 
   beforeEach(() => {
     scheduler = getTestScheduler();
-    fixture = TestBed.createComponent(AddCvPublicationMenuComponent);
+    fixture = TestBed.createComponent(AddCvPatentMenuComponent);
     component = fixture.componentInstance;
     componentAsAny = fixture.componentInstance;
     component.contextMenuObject = dso;
