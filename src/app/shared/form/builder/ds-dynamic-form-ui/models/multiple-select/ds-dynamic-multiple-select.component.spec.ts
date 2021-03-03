@@ -12,11 +12,11 @@ import { TextMaskModule } from 'angular2-text-mask';
 import { By } from '@angular/platform-browser';
 import { DS_DYNAMIC_MULTIPLE_SELECT, DsDynamicMultipleSelectModel } from './ds-dynamic-multiple-select.model';
 import { DsDynamicMultipleSelectComponent } from './ds-dynamic-multiple-select.component';
-import { DsMultipleSelectControlComponent } from '../ds-multiple-select-control.component';
 import { FormBuilderService } from '../../../form-builder.service';
 import { getMockFormBuilderService } from '../../../../../mocks/form-builder-service.mock';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateLoaderMock } from '../../../../../mocks/translate-loader.mock';
+import { DsMultipleSelectControlComponent } from '../../../custom-controls/multiple-select/ds-multiple-select-control.component';
 
 describe('DsDynamicMultipleSelectComponent', () => {
 

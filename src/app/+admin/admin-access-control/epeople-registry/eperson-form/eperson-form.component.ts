@@ -37,7 +37,7 @@ import { EpersonRegistrationService } from '../../../../core/data/eperson-regist
 import { Registration } from '../../../../core/shared/registration.model';
 import { ConfirmationModalComponent } from '../../../../shared/confirmation-modal/confirmation-modal.component';
 import { reduce, switchMap, take, tap, map } from 'rxjs/operators';
-import { DsDynamicMultipleSelectModel } from '../../../../shared/form/builder/custom-controls/ds-multiple-select/dynamic/ds-dynamic-multiple-select.model';
+import { DsDynamicMultipleSelectModel } from '../../../../shared/form/builder/ds-dynamic-form-ui/models/multiple-select/ds-dynamic-multiple-select.model';
 
 @Component({
   selector: 'ds-eperson-form',
@@ -67,7 +67,7 @@ export class EPersonFormComponent implements OnInit, OnDestroy {
   lastName: DynamicInputModel;
   email: DynamicInputModel;
   /**
-   * Dynamic checkbox group model for the eperson roles.
+   * Dynamic multiple select group model for the eperson roles.
    */
   roles: DynamicCheckboxGroupModel;
   institutionalScopedRoles: DsDynamicMultipleSelectModel<any>[];

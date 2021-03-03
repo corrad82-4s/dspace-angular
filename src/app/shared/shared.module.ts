@@ -252,8 +252,8 @@ import { ItemExportModalLauncherComponent } from './item-export/item-export-moda
 import { BulkImportSelectorComponent } from './dso-selector/modal-wrappers/bulk-import-collection-selector/bulk-import-collection-selector.component';
 import { AdministeredCollectionSelectorComponent } from './dso-selector/dso-selector/administered-collection-selector/administered-collection-selector.component';
 import { MyDSpaceRequestTypeComponent } from './object-collection/shared/mydspace-request-type/mydspace-request-type.component';
-import { DsMultipleSelectControlComponent } from './form/builder/custom-controls/ds-multiple-select/ds-multiple-select-control.component';
-import { DsDynamicMultipleSelectComponent } from './form/builder/custom-controls/ds-multiple-select/dynamic/ds-dynamic-multiple-select.component';
+import { DsMultipleSelectControlComponent } from './form/builder/custom-controls/multiple-select/ds-multiple-select-control.component';
+import { DsDynamicMultipleSelectComponent } from './form/builder/ds-dynamic-form-ui/models/multiple-select/ds-dynamic-multiple-select.component';
 
 /**
  * Declaration needed to make sure all decorator functions are called in time

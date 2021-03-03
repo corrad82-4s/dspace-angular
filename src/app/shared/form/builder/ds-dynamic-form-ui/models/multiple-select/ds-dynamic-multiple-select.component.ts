@@ -7,8 +7,8 @@ import {
   DynamicFormLayoutService,
   DynamicFormValidationService,
 } from '@ng-dynamic-forms/core';
-import { DsMultipleSelectControlComponent } from '../ds-multiple-select-control.component';
 import { DsDynamicMultipleSelectModel } from './ds-dynamic-multiple-select.model';
+import { DsMultipleSelectControlComponent } from '../../../custom-controls/multiple-select/ds-multiple-select-control.component';
 
 @Component({
   selector: 'ds-dynamic-multiple-select',
