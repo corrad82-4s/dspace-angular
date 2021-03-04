@@ -9408,125 +9408,96 @@
   "uploader.queue-length": "Longitud de la cola",
   
   // "virtual-metadata.delete-item.info": "Select the types for which you want to save the virtual metadata as real metadata",
-  // TODO New key - Add a translation
-  "virtual-metadata.delete-item.info": "Select the types for which you want to save the virtual metadata as real metadata",
+  "virtual-metadata.delete-item.info": "Seleccione los tipos para los que desea guardar los metadatos virtuales como metadatos reales",
   
   // "virtual-metadata.delete-item.modal-head": "The virtual metadata of this relation",
-  // TODO New key - Add a translation
-  "virtual-metadata.delete-item.modal-head": "The virtual metadata of this relation",
+  "virtual-metadata.delete-item.modal-head": "Los metadatos virtuales de esta relación",
   
   // "virtual-metadata.delete-relationship.modal-head": "Select the items for which you want to save the virtual metadata as real metadata",
-  // TODO New key - Add a translation
-  "virtual-metadata.delete-relationship.modal-head": "Select the items for which you want to save the virtual metadata as real metadata",
+  "virtual-metadata.delete-relationship.modal-head": "Seleccione los ítems para los que desea guardar los metadatos virtuales como metadatos reales",
   
   
   
   // "workflowAdmin.search.results.head": "Administer Workflow",
-  // TODO New key - Add a translation
-  "workflowAdmin.search.results.head": "Administer Workflow",
+  "workflowAdmin.search.results.head": "Administrar flujo de trabajo",
   
   
   
   // "workflow-item.delete.notification.success.title": "Deleted",
-  // TODO New key - Add a translation
-  "workflow-item.delete.notification.success.title": "Deleted",
+  "workflow-item.delete.notification.success.title": "Eliminado",
   
   // "workflow-item.delete.notification.success.content": "This workflow item was successfully deleted",
-  // TODO New key - Add a translation
-  "workflow-item.delete.notification.success.content": "This workflow item was successfully deleted",
+  "workflow-item.delete.notification.success.content": "Este ítem del flujo de trabajo fue eliminado exitosamente",
   
   // "workflow-item.delete.notification.error.title": "Something went wrong",
-  // TODO New key - Add a translation
-  "workflow-item.delete.notification.error.title": "Something went wrong",
+  "workflow-item.delete.notification.error.title": "Algo salió mal",
   
   // "workflow-item.delete.notification.error.content": "The workflow item could not be deleted",
-  // TODO New key - Add a translation
-  "workflow-item.delete.notification.error.content": "The workflow item could not be deleted",
+  "workflow-item.delete.notification.error.content": "El ítem del flujo de trabajo no pudo ser borrado",
   
   // "workflow-item.delete.title": "Delete workflow item",
-  // TODO New key - Add a translation
-  "workflow-item.delete.title": "Delete workflow item",
+  "workflow-item.delete.title": "Eliminar ítem del flujo de trabajo",
   
   // "workflow-item.delete.header": "Delete workflow item",
-  // TODO New key - Add a translation
-  "workflow-item.delete.header": "Delete workflow item",
+  "workflow-item.delete.header": "Eliminar ítem del flujo de trabajo",
   
   // "workflow-item.delete.button.cancel": "Cancel",
-  // TODO New key - Add a translation
-  "workflow-item.delete.button.cancel": "Cancel",
+  "workflow-item.delete.button.cancel": "Cancelar",
   
   // "workflow-item.delete.button.confirm": "Delete",
-  // TODO New key - Add a translation
-  "workflow-item.delete.button.confirm": "Delete",
+  "workflow-item.delete.button.confirm": "Eliminar",
   
   
   // "workflow-item.send-back.notification.success.title": "Sent back to submitter",
-  // TODO New key - Add a translation
-  "workflow-item.send-back.notification.success.title": "Sent back to submitter",
+  "workflow-item.send-back.notification.success.title": "Devuelto al remitente",
   
   // "workflow-item.send-back.notification.success.content": "This workflow item was successfully sent back to the submitter",
-  // TODO New key - Add a translation
-  "workflow-item.send-back.notification.success.content": "This workflow item was successfully sent back to the submitter",
+  "workflow-item.send-back.notification.success.content": "Este ítem del flujo de trabajo fue devuelto exitosamente al remitente",
   
   // "workflow-item.send-back.notification.error.title": "Something went wrong",
-  // TODO New key - Add a translation
-  "workflow-item.send-back.notification.error.title": "Something went wrong",
+  "workflow-item.send-back.notification.error.title": "Algo salió mal",
   
   // "workflow-item.send-back.notification.error.content": "The workflow item could not be sent back to the submitter",
-  // TODO New key - Add a translation
-  "workflow-item.send-back.notification.error.content": "The workflow item could not be sent back to the submitter",
+  "workflow-item.send-back.notification.error.content": "El ítem del flujo de trabajo no pudo ser devuelto al remitente",
   
   // "workflow-item.send-back.title": "Send workflow item back to submitter",
-  // TODO New key - Add a translation
-  "workflow-item.send-back.title": "Send workflow item back to submitter",
+  "workflow-item.send-back.title": "Devolver el ítem del flujo de trabajo al remitente",
   
   // "workflow-item.send-back.header": "Send workflow item back to submitter",
-  // TODO New key - Add a translation
-  "workflow-item.send-back.header": "Send workflow item back to submitter",
+  "workflow-item.send-back.header": "Devolver el ítem del flujo de trabajo al remitente",
   
   // "workflow-item.send-back.button.cancel": "Cancel",
-  // TODO New key - Add a translation
-  "workflow-item.send-back.button.cancel": "Cancel",
+  "workflow-item.send-back.button.cancel": "Cancelar",
   
   // "workflow-item.send-back.button.confirm": "Send back",
-  // TODO New key - Add a translation
-  "workflow-item.send-back.button.confirm": "Send back",
+  "workflow-item.send-back.button.confirm": "Devolver",
   
   // "relation.rp.researchoutputs.search.results.head": "Related Publications",
-  // TODO New key - Add a translation
-  "relation.rp.researchoutputs.search.results.head": "Related Publications",
+  "relation.rp.researchoutputs.search.results.head": "Publicaciones Relacionadas",
   
   // "relation.rp.projects.search.results.head": "Related Projects",
-  // TODO New key - Add a translation
-  "relation.rp.projects.search.results.head": "Related Projects",
+  "relation.rp.projects.search.results.head": "Proyectos Relacionados",
   
   // "layout.i18n.link.default": "link",
-  // TODO New key - Add a translation
-  "layout.i18n.link.default": "link",
+  "layout.i18n.link.default": "enlace",
   
   // "peru-layout.corrections": "There are pending corrections from ",
-  // TODO New key - Add a translation
-  "peru-layout.corrections": "There are pending corrections from ",
+  "peru-layout.corrections": "Hay correcciones pendientes procedentes de ",
   
   // "peru-layout.corrections.see": "See",
-  // TODO New key - Add a translation
-  "peru-layout.corrections.see": "See",
+  "peru-layout.corrections.see": "Ver",
   
   // "peru-layout.corrections.hide": "Hide",
-  // TODO New key - Add a translation
-  "peru-layout.corrections.hide": "Hide",
+  "peru-layout.corrections.hide": "Ocultar",
   
   // "peru-layout.corrections.edit": "Edit",
-  // TODO New key - Add a translation
-  "peru-layout.corrections.edit": "Edit",
+  "peru-layout.corrections.edit": "Editar",
   
   // "peru-layout.corrections.back": "Back",
-  // TODO New key - Add a translation
-  "peru-layout.corrections.back": "Back",
+  "peru-layout.corrections.back": "Volver",
   
   // "peru-layout.shadow-copies": "Sources of information: "
-  // TODO New key - Add a translation
-  "peru-layout.shadow-copies": "Sources of information: "
+  "peru-layout.shadow-copies": "Fuentes de información: "
   
   
 
