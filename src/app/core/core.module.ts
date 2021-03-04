@@ -185,7 +185,6 @@ import { EditItemMode } from './submission/models/edititem-mode.model';
 import { EditItemModeDataService } from './submission/edititemmode-data.service';
 import { AuditDataService } from './audit/audit-data.service';
 import { Audit } from './audit/model/audit.model';
-import { ItemExportFormatService } from './itemexportformat/item-export.service';
 import { ItemExportFormat } from './itemexportformat/model/item-export-format.model';
 import { ProfileClaimService } from '../profile-page/profile-claim/profile-claim.service';
 import { MetricsComponentsDataService } from './layout/metrics-components-data.service';
@@ -193,12 +192,15 @@ import { MetricsComponent } from './layout/models/metrics-component.model';
 import { Metric } from './shared/metric.model';
 import { MetricService } from './data/metric.service';
 import { Root } from './data/root.model';
+import { ItemExportFormatService } from './itemexportformat/item-export-format.service';
 import { WorkflowStepDataService } from './submission/workflowstep-data.service';
 import { OpenaireBrokerTopicObject } from './openaire/broker/models/openaire-broker-topic.model';
 import { OpenaireBrokerEventObject } from './openaire/broker/models/openaire-broker-event.model';
 import { OpenaireSuggestionTarget } from './openaire/reciter-suggestions/models/openaire-suggestion-target.model';
 import { OpenaireSuggestion } from './openaire/reciter-suggestions/models/openaire-suggestion.model';
 import { OpenaireSuggestionSource } from './openaire/reciter-suggestions/models/openaire-suggestion-source.model';
+import { ItemSourcesDataService } from './item-sources/item-sources-data.service';
+import { ItemSources } from './item-sources/model/item-sources.model';
 
 /**
  * When not in production, endpoint responses can be mocked for testing purposes
@@ -306,6 +308,7 @@ const PROVIDERS = [
   VersionHistoryDataService,
   LicenseDataService,
   ItemTypeDataService,
+  ItemSourcesDataService,
   WorkflowActionDataService,
   ProcessDataService,
   AuditDataService,
@@ -392,6 +395,7 @@ export const models =
     Relationship,
     RelationshipType,
     ItemType,
+    ItemSources,
     ExternalSource,
     ExternalSourceEntry,
     Script,

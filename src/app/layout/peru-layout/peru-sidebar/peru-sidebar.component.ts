@@ -13,14 +13,14 @@ export class PeruSidebarComponent extends CrisLayoutDefaultSidebarComponent {
   /**
    * tabs list
    */
-  @Input() shadowCopyTabs: Tab[];
+  @Input() itemSourceTabs: Tab[];
 
   constructor(protected location: Location) {
     super(location);
   }
 
-  isShadowedContentEmpty(tab: Tab): boolean {
-    return this.shadowCopyTabs && this.shadowCopyTabs.filter((st) => st.shortname === tab.shortname).length === 0;
+  isItemSourceContentEmpty(tab: Tab): boolean {
+    return this.itemSourceTabs && this.itemSourceTabs.filter((st) => st.shortname === tab.shortname).length === 0;
   }
 
 }

@@ -1,3 +1,4 @@
+import { LocaleService } from './../../core/locale/locale.service';
 import { AuthMethodType } from './../../core/auth/models/auth.method-type';
 import { NativeWindowService, NativeWindowRef } from './../../core/services/window.service';
 import { AuthMethod } from './../../core/auth/models/auth.method';
@@ -48,6 +49,7 @@ export class AuthNavMenuComponent implements OnInit {
   constructor(private store: Store<AppState>,
               private windowService: HostWindowService,
               private authService: AuthService,
+              private localeService: LocaleService,
               @Inject(NativeWindowService) private _window: NativeWindowRef,
   ) {
     this.isXsOrSm$ = this.windowService.isXsOrSm();
@@ -85,7 +87,7 @@ export class AuthNavMenuComponent implements OnInit {
         return methods.filter((m: AuthMethod) => m.authMethodType === AuthMethodType.Oidc);
       }))
       .subscribe((m: AuthMethod) => {
-        this._window.nativeWindow.location.href = m.location;
+        this._window.nativeWindow.location.href = m.location + '&locale=' + this.localeService.getCurrentLanguageCode();
       });
   }
 }

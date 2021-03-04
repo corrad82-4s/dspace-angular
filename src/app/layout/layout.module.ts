@@ -38,10 +38,11 @@ import { PeruTabComponent } from './peru-layout/peru-tab/peru-tab.component';
 import { PeruMetadataBoxComponent } from './peru-layout/boxes/peru-metadata-box/peru-metadata-box.component';
 import { PeruSearchBoxComponent } from './peru-layout/boxes/search/peru-search-box.component';
 import { PeruMetricsBoxComponent } from './peru-layout/boxes/metrics/peru-metrics-box.component';
-import { PendingCorrectionComponent } from './peru-layout/pending-correction/pending-correction.component';
-import { PendingCorrectionDetailsComponent } from './peru-layout/pending-correction/pending-correction-details/pending-correction-details.component';
-import { ShadowCopiesComponent } from './peru-layout/shadow-copies/shadow-copies.component';
 import { PeruSidebarComponent } from './peru-layout/peru-sidebar/peru-sidebar.component';
+import { SourcesOfInformationComponent } from './peru-layout/sources-of-information/sources-of-information.component';
+import { PendingCorrectionComponent } from './peru-layout/pending-corrections/pending-correction/pending-correction.component';
+import { PendingCorrectionsComponent } from './peru-layout/pending-corrections/pending-corrections.component';
+import { PendingCorrectionDetailsComponent } from './peru-layout/pending-corrections/pending-correction/pending-correction-details/pending-correction-details.component';
 
 const ENTRY_COMPONENTS = [
   // put only entry components that use custom decorator
@@ -98,15 +99,16 @@ const ENTRY_COMPONENTS = [
     MetricDimensionsComponent,
     MetricDspacecrisComponent,
     MetricGooglescholarComponent,
-    PendingCorrectionComponent,
     PeruLayoutComponent,
     PeruTabComponent,
     PeruMetadataBoxComponent,
     PeruSearchBoxComponent,
     PeruMetricsBoxComponent,
+    PendingCorrectionsComponent,
+    PendingCorrectionComponent,
     PendingCorrectionDetailsComponent,
-    ShadowCopiesComponent,
-    PeruSidebarComponent
+    SourcesOfInformationComponent,
+    PeruSidebarComponent,
   ],
   imports: [
     CommonModule,

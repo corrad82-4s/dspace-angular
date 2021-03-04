@@ -236,7 +236,6 @@ import { LinkMenuItemComponent } from './menu/menu-item/link-menu-item.component
 import { OnClickMenuItemComponent } from './menu/menu-item/onclick-menu-item.component';
 import { TextMenuItemComponent } from './menu/menu-item/text-menu-item.component';
 import { ItemExportComponent } from './item-export/item-export/item-export.component';
-import { ItemExportModalWrapperComponent } from './item-export/item-export-modal-wrapper/item-export-modal-wrapper.component';
 import { SearchChartsComponent } from './search/search-charts/search-charts.component';
 import { SearchChartBarComponent } from './search/search-charts/search-chart/search-chart-bar/search-chart-bar.component';
 import { SearchChartPieComponent } from './search/search-charts/search-chart/search-chart-pie/search-chart-pie.component';
@@ -248,6 +247,11 @@ import { ClaimItemSelectorComponent } from './dso-selector/modal-wrappers/claim-
 import { ClaimedTaskActionsAssignComponent } from './mydspace-actions/claimed-task/assign/claimed-task-actions-assign.component';
 import { SearchChartFilterComponent } from './search/search-charts/search-chart/search-chart-filter/search-chart-filter.component';
 import { VocabularyExternalSourceComponent } from './vocabulary-external-source/vocabulary-external-source.component';
+import { ItemExportAlertComponent } from './item-export/item-export-alert/item-export-alert.component';
+import { ItemExportModalLauncherComponent } from './item-export/item-export-modal-launcher/item-export-modal-launcher.component';
+import { BulkImportSelectorComponent } from './dso-selector/modal-wrappers/bulk-import-collection-selector/bulk-import-collection-selector.component';
+import { AdministeredCollectionSelectorComponent } from './dso-selector/dso-selector/administered-collection-selector/administered-collection-selector.component';
+import { MyDSpaceRequestTypeComponent } from './object-collection/shared/mydspace-request-type/mydspace-request-type.component';
 
 /**
  * Declaration needed to make sure all decorator functions are called in time
@@ -361,6 +365,7 @@ const COMPONENTS = [
   ItemListPreviewComponent,
   MyDSpaceItemStatusComponent,
   ItemSubmitterComponent,
+  MyDSpaceRequestTypeComponent,
   ItemDetailPreviewComponent,
   ItemDetailPreviewFieldComponent,
   ClaimedTaskActionsComponent,
@@ -386,6 +391,7 @@ const COMPONENTS = [
   CreateCommunityParentSelectorComponent,
   CreateCollectionParentSelectorComponent,
   CreateItemParentSelectorComponent,
+  BulkImportSelectorComponent,
   EditCommunitySelectorComponent,
   EditCollectionSelectorComponent,
   ClaimItemSelectorComponent,
@@ -457,6 +463,7 @@ const COMPONENTS = [
   ConfirmationModalComponent,
   VocabularyTreeviewComponent,
   AuthorizedCollectionSelectorComponent,
+  AdministeredCollectionSelectorComponent,
   CurationFormComponent,
   SearchResultListElementComponent,
   SearchResultGridElementComponent,
@@ -480,7 +487,8 @@ const COMPONENTS = [
   CollectionSidebarSearchListElementComponent,
   CommunitySidebarSearchListElementComponent,
   ItemExportComponent,
-  ItemExportModalWrapperComponent,
+  ItemExportAlertComponent,
+  ItemExportModalLauncherComponent,
   SearchChartsComponent,
   SearchChartBarComponent,
   SearchChartPieComponent,
@@ -514,6 +522,7 @@ const ENTRY_COMPONENTS = [
   CreateCommunityParentSelectorComponent,
   CreateCollectionParentSelectorComponent,
   CreateItemParentSelectorComponent,
+  BulkImportSelectorComponent,
   ClaimItemSelectorComponent,
   EditCommunitySelectorComponent,
   EditCollectionSelectorComponent,
@@ -609,7 +618,8 @@ const DIRECTIVES = [
     ...COMPONENTS,
     ...DIRECTIVES,
     ...SHARED_ITEM_PAGE_COMPONENTS,
-    ...SHARED_SEARCH_PAGE_COMPONENTS
+    ...SHARED_SEARCH_PAGE_COMPONENTS,
+    ItemExportAlertComponent
   ],
   providers: [
     ...PROVIDERS

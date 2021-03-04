@@ -915,8 +915,6 @@
 
   "bulk-import.title" : "Bulk import",
 
-  "bulk-import.workflow" : "Use collection workflow",
-
 
 
   "chips.remove": "Remove chip",
@@ -1342,6 +1340,12 @@
 
   "context-menu.actions.label": "Options",
 
+  "context-menu.actions.edit-item.btn.AFFILIATION": "Edit work experience",
+
+  "context-menu.actions.edit-item.btn.EDUCATION": "Edit education info",
+
+  "context-menu.actions.edit-item.btn.QUALIFICATION": "Edit professional experience",
+
   "context-menu.actions.edit-item.btn.FULL": "Edit item",
 
   "context-menu.actions.request-correction.btn": "Request correction",
@@ -1489,6 +1493,10 @@
 
   "dso-selector.export-metadata.dspaceobject.head": "Export metadata from",
 
+  "dso-selector.import-item.item.head": "Import items",
+
+  "dso-selector.import-item.sub-level": "Bulk import items in",
+
   "dso-selector.no-results": "No {{ type }} found",
 
   "dso-selector.placeholder": "Search for a {{ type }}",
@@ -1553,6 +1561,16 @@
 
 
   "explore.browse-section.title" : "Browse",
+
+  "explore.counters-section.infrastructure" : "Equipments",
+
+  "explore.counters-section.project_funding" : "Projects",
+
+  "explore.counters-section.orgunits" : "Institutions",
+
+  "explore.counters-section.publications" : "Publications",
+
+  "explore.counters-section.rprofiles" : "People",
 
   "explore.facet-section.title" : "Discover",
 
@@ -1649,6 +1667,10 @@
 
   "explore.index.itemtype" : "Type",
 
+  "explore.index.lastProjects" : "Last Projects",
+
+  "explore.index.lastPublications" : "Last Publications",
+
   "explore.index.jobTitle" : "Job title",
 
   "explore.index.knowsLanguage" : "Knows languages",
@@ -1722,6 +1744,8 @@
   "explore.index.ubigeo" : "Ubigeo",
 
 
+  "explore.search-section.directorios.title": "",
+
   "explore.search-section.infrastructure.title": "Infrastructure",
 
   "explore.search-section.fundings.title": "Search Projects",
@@ -1740,6 +1764,8 @@
 
   "explore.search-section.reset-button": "Reset",
 
+  "explore.directorios.breadcrumbs": "Directorios",
+
   "explore.infrastructure.breadcrumbs": "Infrastructure",
 
   "explore.fundings.breadcrumbs": "Projects",
@@ -1753,6 +1779,10 @@
   "explore.researchoutputs.breadcrumbs": "Research Outputs",
 
   "explore.researcherprofiles.breadcrumbs": "People",
+
+  "explore.text-section.directorios.title": "Welcome to #PerúCRIS platform Directories",
+
+  "explore.text-section.directorios.description": "La Plataforma #PerúCRIS brinda el soporte informático a la Red Nacional de Información en Ciencia, Tecnología e Innovación (CTI). Aquí encontrarás información sobre el talento humano, organizaciones, publicaciones científicas, fuentes de financiamientos y proyectos en CTI del Perú.",
 
   "explore.title": "Explore section",
 
@@ -2584,6 +2614,25 @@
   "item.version.notice": "This is not the latest version of this item. The latest version can be found <a href='{{destination}}'>here</a>.",
 
 
+  "item-export.modal-launcher.single.btn": "Export",
+
+  "item-export.modal-launcher.multiple.btn": "Bulk Export",
+
+  "item-export.alert.single": "Export item ",
+
+  "item-export.alert.multiple": "Export all items of a particular entity type belonging to the current search.",
+
+  "item-export.form.entityType": "Entity Type",
+
+  "item-export.form.entityType.tip": "Choose the entity type to export",
+
+  "item-export.form.format": "Format",
+
+  "item-export.form.format.tip": "Choose the export format",
+
+  "item-export.form.btn.submit": "Export",
+
+  "item-export.form.btn.cancel": "Cancel",
 
   "journal.listelement.badge": "Journal",
 
@@ -2744,6 +2793,8 @@
   "menu.section.browse_community_by_issue_date": "By Issue Date",
 
   "menu.section.browse_community_by_title": "By Title",
+
+  "menu.section.explore_directorios": "Directorios",
 
   "menu.section.explore_infrastructure": "Infrastructure",
 
@@ -2933,6 +2984,8 @@
 
   "mydspace.new-submission": "New submission",
 
+  "mydspace.new-bulk-import": "New import",
+
   "mydspace.new-submission-external": "Import metadata from external source",
 
   "mydspace.new-submission-external-short": "Import metadata",
@@ -2990,6 +3043,14 @@
   "mydspace.notification.suggestion": "We found <b>{{count}} publications</b><br> in the {{source}} that seems to be related to your profile.<br> Please <a href='/suggestions/{{suggestionId}}'>review the suggestions</a>",
 
   "mydspace.notification.suggestion.page": "We found <b>{{count}} publications</b> in the {{source}} that seems to be related to your profile. Please <a href='/suggestions/{{suggestionId}}'>review the suggestions.</a>",
+
+  "mydspace.item.new-submission-request": "New submission",
+
+  "mydspace.item.correction-request": "Correction",
+
+  "mydspace.item.withdrawn-request": "Withdrawal",
+
+  "mydspace.item.reinstate-request": "Reinstatement",
 
   "nav.browse.header": "All of DSpace",
 
@@ -3194,6 +3255,8 @@
 
 
 
+  "notification.listelement.badge": "Notification",
+
   "orgunit.listelement.badge": "Organizational Unit",
 
   "orgunit.page.city": "City",
@@ -3341,9 +3404,9 @@
 
   "person.search.title": "DSpace Cris Angular :: Person Search",
 
-  "personcv.listelement.badge": "Profile",
+  "cvperson.listelement.badge": "Profile",
 
-
+  "cvpersonclone.listelement.badge": "Profile clone",
 
   "process.new.select-parameters": "Parameters",
 
@@ -3963,6 +4026,14 @@
 
   "search.filters.applied.charts.default.title": "Search Output",
 
+  "search.filters.applied.charts.RELATION.CvPerson.researchoutputs.title": "Research Outputs",
+
+  "search.filters.applied.charts.RELATION.CvPerson.projects.title": "Projects",
+
+  "search.filters.applied.charts.RELATION.CvPerson.patents.title": "Patents",
+
+  "search.filters.applied.charts.RELATION.CvPerson.notifications.title": "Notifications",
+
   "search.filters.applied.charts.RELATION.InstitutionOrgUnit.iouorganizations": "OrgUnits",
 
   "search.filters.applied.charts.RELATION.InstitutionOrgUnit.ioupeople": "People",
@@ -3974,6 +4045,8 @@
   "search.filters.applied.charts.RELATION.InstitutionOrgUnit.iourpprojects": "Researchers PRojects",
 
   "search.filters.applied.charts.RELATION.InstitutionOrgUnit.ioupublications": "Researchers Publications",
+
+  "search.filters.applied.charts.RELATION.InstitutionOrgUnit.iourppublications": "Researchers Publications",
 
   "search.filters.applied.charts.RELATION.InstitutionPerson.ippatents.title": "Patents",
 
@@ -4017,6 +4090,8 @@
   "search.filters.applied.charts.RELATION.Project.projects": "Projects",
 
   "search.filters.applied.charts.RELATION.Project.researchoutputs": "Research Output",
+
+  "search.filters.applied.charts.RELATION.Project.researchoutputs.title": "Research Output",
 
 
   "search.filters.applied.charts.no.data.found": "No data found",
@@ -4801,43 +4876,83 @@
 
   "submission.sections.submit.progressbar.CClicense": "Creative commons license",
 
+  "submission.sections.submit.progressbar.describe.cv-person-edit-affiliation": "Affiliation information",
+
+  "submission.sections.submit.progressbar.describe.cv-person-edit-education": "Education information",
+
+  "submission.sections.submit.progressbar.describe.cv-person-edit-qualification": "Qualification information",
+
   "submission.sections.submit.progressbar.describe.equipment": "Equipment basic information",
+
+  "submission.sections.submit.progressbar.describe.institution-equipment": "Equipment basic information",
 
   "submission.sections.submit.progressbar.describe.event": "Event basic information",
 
   "submission.sections.submit.progressbar.describe.funding": "Funding basic information",
 
+  "submission.sections.submit.progressbar.describe.institution-funding": "Funding basic information",
+
   "submission.sections.submit.progressbar.describe.journal": "Journal basic information",
+
+  "submission.sections.submit.progressbar.describe.notification-form": "Notification",
 
   "submission.sections.submit.progressbar.describe.orgunit": "Org Unit basic information",
 
+  "submission.sections.submit.progressbar.describe.institution-orgunit": "Org Unit basic information",
+
   "submission.sections.submit.progressbar.describe.patent": "Patent basic information",
+
+  "submission.sections.submit.progressbar.describe.institution-patent": "Patent basic information",
 
   "submission.sections.submit.progressbar.describe.patent_indexing": "Patent indexing",
 
+  "submission.sections.submit.progressbar.describe.institution-patent_indexing": "Patent indexing",
+
   "submission.sections.submit.progressbar.describe.patent_references": "Patent references",
+
+  "submission.sections.submit.progressbar.describe.institution-patent_references": "Patent references",
 
   "submission.sections.submit.progressbar.describe.person": "Person basic information",
 
-  "submission.sections.submit.progressbar.describe.person-cv": "Profile basic information",
+  "submission.sections.submit.progressbar.describe.institution-person": "Person basic information",
+
+  "submission.sections.submit.progressbar.describe.cv-person": "Profile basic information",
 
   "submission.sections.submit.progressbar.describe.product": "Product basic information",
 
+  "submission.sections.submit.progressbar.describe.institution-product": "Product basic information",
+
   "submission.sections.submit.progressbar.describe.product_indexing": "Product indexing",
+
+  "submission.sections.submit.progressbar.describe.institution-product_indexing": "Product indexing",
 
   "submission.sections.submit.progressbar.describe.product_references": "Product references",
 
+  "submission.sections.submit.progressbar.describe.institution-product_references": "Product references",
+
   "submission.sections.submit.progressbar.describe.project": "Project basic information",
+
+  "submission.sections.submit.progressbar.describe.institution-project": "Project basic information",
 
   "submission.sections.submit.progressbar.describe.publication": "Publication basic information",
 
+  "submission.sections.submit.progressbar.describe.institution-publication": "Publication basic information",
+
   "submission.sections.submit.progressbar.describe.publication_bibliographic_details": "Publication bibliographic details",
+
+  "submission.sections.submit.progressbar.describe.institution-publication_bibliographic_details": "Publication bibliographic details",
 
   "submission.sections.submit.progressbar.describe.publication_indexing": "Publication indexing",
 
+  "submission.sections.submit.progressbar.describe.institution-publication_indexing": "Publication indexing",
+
   "submission.sections.submit.progressbar.describe.publication_references": "Publication references",
 
+  "submission.sections.submit.progressbar.describe.institution-publication_references": "Publication references",
+
   "submission.sections.submit.progressbar.describe.publication_thesis": "Publication Thesis",
+
+  "submission.sections.submit.progressbar.describe.institution-publication_thesis": "Publication Thesis",
 
   "submission.sections.submit.progressbar.describe.rp": "Researcher basic information",
 

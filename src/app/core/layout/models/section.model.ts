@@ -53,15 +53,23 @@ export interface TopSection extends SectionComponent {
   discoveryConfigurationName: string;
   sortField: string;
   order: string;
+  titleKey: string;
   componentType: 'top';
 }
 
 export interface SearchSection extends SectionComponent {
   discoveryConfigurationName: string;
   componentType: 'search';
+  searchType: string;
 }
 
 export interface FacetSection extends SectionComponent {
   discoveryConfigurationName: string;
   componentType: 'facet';
+}
+
+export interface TextRowSection extends SectionComponent {
+  content: string;
+  contentType: string;
+  componentType: 'text-row';
 }

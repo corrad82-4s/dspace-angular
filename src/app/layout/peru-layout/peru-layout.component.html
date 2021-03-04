@@ -2,14 +2,14 @@
     <div class="d-flex justify-content-end">
         <ds-context-menu [contextMenuObject]="item" [contextMenuObjectType]="'ITEM'"></ds-context-menu>
     </div>
-    <ds-pending-correction [item]="item"></ds-pending-correction>
+    <ds-pending-corrections [item]="item"></ds-pending-corrections>
     <div class="wrapper" [ngClass]="{'wrapper-close': !(isSideBarHidden() | async)}">
         <div>
             <ds-peru-sidebar
                     [sidebarActive]="(hasSidebar() | async)"
                     [sidebarStatus]="!(isSideBarHidden() | async)"
                     [tabs]="(getTabs() | async)"
-                    [shadowCopyTabs]="shadowCopyTabs"
+                    [itemSourceTabs]="itemSourceTabs"
                     (selectedTab)="changeTab($event)">
             </ds-peru-sidebar>
 
@@ -29,7 +29,7 @@
                 <ng-template dsCrisLayoutLoader></ng-template>
             </div>
 
-            <ds-shadow-copies [item]="item" (selectShadowCopy)="onSelectShadowCopy($event)"></ds-shadow-copies>
+            <ds-sources-of-information [item]="item" (selectItemSource)="onSelectItemSource($event)"></ds-sources-of-information>
         </div>
     </div>
 

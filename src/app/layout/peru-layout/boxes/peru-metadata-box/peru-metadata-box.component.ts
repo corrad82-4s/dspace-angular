@@ -6,8 +6,8 @@ import { LayoutPage } from '../../../enums/layout-page.enum';
 import { LayoutTab } from '../../../enums/layout-tab.enum';
 import { LayoutBox } from '../../../enums/layout-box.enum';
 import { MetadataComponent } from '../../../../core/layout/models/metadata-component.model';
-import { Item } from '../../../../core/shared/item.model';
 import { PeruMetadataBoxService } from './peru-metadata-box.service';
+import { ItemSource } from '../../../../core/item-sources/model/item-sources.model';
 
 @Component({
   selector: 'ds-peru-metadata-box',
@@ -17,7 +17,7 @@ import { PeruMetadataBoxService } from './peru-metadata-box.service';
 @CrisLayoutBox(LayoutPage.DEFAULT_PERU, LayoutTab.DEFAULT_PERU, LayoutBox.METADATA)
 export class PeruMetadataBoxComponent extends CrisLayoutMetadataBoxComponent {
 
-  @Input() shadowCopy: Item;
+  @Input() itemSource: ItemSource;
 
   constructor(public cd: ChangeDetectorRef,
               protected metadatacomponentsService: MetadataComponentsDataService,
@@ -30,17 +30,17 @@ export class PeruMetadataBoxComponent extends CrisLayoutMetadataBoxComponent {
   }
 
   /**
-   * When a shadowCopy is present, we can add custom styles patching metadatacomponents.
+   * When a sourceItem is present, we can add custom styles patching metadatacomponents.
    * @param metadatacomponents
    */
   setMetadataComponents(metadatacomponents: MetadataComponent) {
 
-    if (!this.shadowCopy) {
+    if (!this.itemSource) {
       this.metadatacomponents = metadatacomponents;
       return;
     }
     this.metadatacomponents = this.peruMetadataBoxService
-      .patchedMetadataComponent(metadatacomponents, this.item, this.shadowCopy);
+      .patchedMetadataComponent(metadatacomponents, this.item, this.itemSource);
   }
 
 

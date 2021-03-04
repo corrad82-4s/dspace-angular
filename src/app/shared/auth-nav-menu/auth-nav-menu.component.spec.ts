@@ -1,3 +1,4 @@
+import { LocaleService } from './../../core/locale/locale.service';
 import { AuthMethodType } from './../../core/auth/models/auth.method-type';
 import { AuthMethod } from './../../core/auth/models/auth.method';
 import { CUSTOM_ELEMENTS_SCHEMA, DebugElement } from '@angular/core';
@@ -32,6 +33,8 @@ describe('AuthNavMenuComponent', () => {
 
   let authService: AuthService;
 
+  let localeService: LocaleService;
+
   let routerState = {
     url: '/home'
   };
@@ -58,6 +61,9 @@ describe('AuthNavMenuComponent', () => {
       authToken: new AuthTokenInfo('test_token'),
       user: EPersonMock
     };
+    localeService = jasmine.createSpyObj('LocaleService', {
+      getCurrentLanguageCode: 'en'
+    });
   }
 
   describe('when is a not mobile view', () => {
@@ -84,7 +90,8 @@ describe('AuthNavMenuComponent', () => {
         providers: [
           { provide: HostWindowService, useValue: window },
           { provide: AuthService, useValue: authService },
-          { provide: NativeWindowService, useFactory: NativeWindowMockFactory }
+          { provide: NativeWindowService, useFactory: NativeWindowMockFactory },
+          { provide: LocaleService, useValue: localeService }
         ],
         schemas: [
           CUSTOM_ELEMENTS_SCHEMA
@@ -225,7 +232,7 @@ describe('AuthNavMenuComponent', () => {
             blocking: false,
             loading: false,
             authMethods: [
-              new AuthMethod(AuthMethodType.Oidc, 'https://oidc.url/')
+              new AuthMethod(AuthMethodType.Oidc, 'https://oidc.url/oidc?param1=value1&param2=value2')
             ]
           };
           routerState = {
@@ -262,6 +269,13 @@ describe('AuthNavMenuComponent', () => {
         it('should render login odic link', () => {
           const loginOidcLink = deNavMenuItem.query(By.css('a[id=loginOidcLink]'));
           expect(loginOidcLink.nativeElement).toBeDefined();
+        });
+
+        it('should open oidc login url', () => {
+          const componentAsAny = component as any;
+          componentAsAny._window.nativeWindow.location.href = 'https://current.url/';
+          component.redirectToOidc();
+          expect(componentAsAny._window.nativeWindow.location.href).toBe('https://oidc.url/oidc?param1=value1&param2=value2&locale=en');
         });
       });
 
@@ -328,7 +342,8 @@ describe('AuthNavMenuComponent', () => {
         providers: [
           { provide: HostWindowService, useValue: window },
           { provide: AuthService, useValue: authService },
-          { provide: NativeWindowService, useFactory: NativeWindowMockFactory }
+          { provide: NativeWindowService, useFactory: NativeWindowMockFactory },
+          { provide: LocaleService, useValue: localeService }
         ],
         schemas: [
           CUSTOM_ELEMENTS_SCHEMA
