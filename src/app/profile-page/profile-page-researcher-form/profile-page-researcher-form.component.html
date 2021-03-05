@@ -10,7 +10,7 @@
     <div *ngIf="!researcherProfile">
         <p>{{'researcher.profile.not.associated' | translate}}</p>
     </div>
-    <button class="btn btn-primary" [disabled]="researcherProfile || (isProcessingCreate() | async)" (click)="createProfile()">
+    <button class="btn" [ngClass]="(canClaim() | async) ? 'btn-outline-primary' : 'btn-primary'" [disabled]="researcherProfile || (isProcessingCreate() | async)" (click)="createProfile()">
         <span *ngIf="(isProcessingCreate() | async)">
             <i class='fas fa-circle-notch fa-spin'></i> {{'researcher.profile.action.processing' | translate}}
         </span>
@@ -20,7 +20,7 @@
     </button>
     <button *ngIf="!researcherProfile && (canClaim() | async)" class="btn btn-primary" (click)="claim()">
       <span *ngIf="!(isProcessingCreate() | async)">
-              <i class="fas fa-plus"></i> &nbsp;{{'researcher.profile.create.fromEpersonData' | translate}}
+              &nbsp;{{'researcher.profile.create.fromEpersonData' | translate}}
           </span>
     </button>
     <ng-container *ngIf="researcherProfile">
