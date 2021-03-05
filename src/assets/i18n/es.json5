@@ -6893,9 +6893,9 @@
   // TODO New key - Add a translation
   "researcher.profile.create.new": "Create new",
   
-  // "researcher.profile.create.fromEpersonData": "Claim Profile",
+  // "researcher.profile.create.fromEpersonData": "See matching profiles",
   // TODO New key - Add a translation
-  "researcher.profile.create.fromEpersonData": "Claim Profile",
+  "researcher.profile.create.fromEpersonData": "See matching profiles",
   
   // "researcher.profile.delete": "Delete",
   // TODO New key - Add a translation
