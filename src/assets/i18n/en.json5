@@ -4054,17 +4054,31 @@
 
   "search.filters.applied.charts.RELATION.InstitutionOrgUnit.iouorganizations": "OrgUnits",
 
+  "search.filters.applied.charts.RELATION.InstitutionOrgUnit.iouorganizations.title": "OrgUnits",
+
   "search.filters.applied.charts.RELATION.InstitutionOrgUnit.ioupeople": "People",
+
+  "search.filters.applied.charts.RELATION.InstitutionOrgUnit.ioupeople.title": "People",
 
   "search.filters.applied.charts.RELATION.InstitutionOrgUnit.iouprojects": "Projects",
 
+  "search.filters.applied.charts.RELATION.InstitutionOrgUnit.iouprojects.title": "Projects",
+
   "search.filters.applied.charts.RELATION.InstitutionOrgUnit.ioupublications": "Publications",
+
+  "search.filters.applied.charts.RELATION.InstitutionOrgUnit.ioupublications.title": "Publications",
 
   "search.filters.applied.charts.RELATION.InstitutionOrgUnit.iourpprojects": "Researchers PRojects",
 
+  "search.filters.applied.charts.RELATION.InstitutionOrgUnit.iourpprojects.title": "Researchers PRojects",
+
   "search.filters.applied.charts.RELATION.InstitutionOrgUnit.ioupublications": "Researchers Publications",
 
+  "search.filters.applied.charts.RELATION.InstitutionOrgUnit.ioupublications.title": "Researchers Publications",
+
   "search.filters.applied.charts.RELATION.InstitutionOrgUnit.iourppublications": "Researchers Publications",
+
+  "search.filters.applied.charts.RELATION.InstitutionOrgUnit.iourppublications.title": "Researchers Publications",
 
   "search.filters.applied.charts.RELATION.InstitutionPerson.ippatents.title": "Patents",
 
@@ -4074,24 +4088,44 @@
 
   "search.filters.applied.charts.RELATION.InstitutionProject.ipgrants": "Fundings",
 
+  "search.filters.applied.charts.RELATION.InstitutionProject.ipgrants.title": "Fundings",
+
   "search.filters.applied.charts.RELATION.InstitutionProject.ippatents": "Patents",
+
+  "search.filters.applied.charts.RELATION.InstitutionProject.ippatents.title": "Patents",
 
   "search.filters.applied.charts.RELATION.InstitutionProject.ipprojects": "Projects",
 
+  "search.filters.applied.charts.RELATION.InstitutionProject.ipprojects.title": "Projects",
+
   "search.filters.applied.charts.RELATION.InstitutionProject.ipresearchoutputs": "Research Output",
+
+  "search.filters.applied.charts.RELATION.InstitutionProject.ipresearchoutputs.title": "Research Output",
 
 
 
 
   "search.filters.applied.charts.RELATION.OrgUnit.organizations": "OrgUnits",
 
+  "search.filters.applied.charts.RELATION.OrgUnit.organizations.title": "OrgUnits",
+
+  "search.filters.applied.charts.RELATION.OrgUnit.publications.title": "Research Output",
+
   "search.filters.applied.charts.RELATION.OrgUnit.people": "People",
+
+  "search.filters.applied.charts.RELATION.OrgUnit.people.title": "People",
 
   "search.filters.applied.charts.RELATION.OrgUnit.projects": "Projects",
 
+  "search.filters.applied.charts.RELATION.OrgUnit.projects.title": "Projects",
+
   "search.filters.applied.charts.RELATION.OrgUnit.publications": "Publications",
 
-  "search.filters.applied.charts.RELATION.OrgUnit.rpprojects": "Researchers PRojects",
+  "search.filters.applied.charts.RELATION.OrgUnit.publications.title": "Publications",
+
+  "search.filters.applied.charts.RELATION.OrgUnit.rpprojects": "Researchers Projects",
+
+  "search.filters.applied.charts.RELATION.OrgUnit.rpprojects.title": "Researchers Projects",
 
   "search.filters.applied.charts.RELATION.OrgUnit.publications": "Researchers Publications",
 
@@ -4103,9 +4137,15 @@
 
   "search.filters.applied.charts.RELATION.Project.grants": "Fundings",
 
+  "search.filters.applied.charts.RELATION.Project.grants.title": "Fundings",
+
   "search.filters.applied.charts.RELATION.Project.patents": "Patents",
 
+  "search.filters.applied.charts.RELATION.Project.patents.title": "Patents",
+
   "search.filters.applied.charts.RELATION.Project.projects": "Projects",
+
+  "search.filters.applied.charts.RELATION.Project.projects.title": "Projects",
 
   "search.filters.applied.charts.RELATION.Project.researchoutputs": "Research Output",
 
