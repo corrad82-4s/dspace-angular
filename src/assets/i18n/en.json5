@@ -1330,6 +1330,12 @@
 
   "context-menu.actions": "Actions",
 
+  "context-menu.actions.add-cv-patent.btn": "Add patent",
+
+  "context-menu.actions.add-cv-project.btn": "Add project",
+
+  "context-menu.actions.add-cv-publication.btn": "Add publication",
+
   "context-menu.actions.audit-item.btn": "Audit",
 
   "context-menu.actions.bulk-import.btn": "Import items into collection",
@@ -3408,6 +3414,18 @@
 
   "cvpersonclone.listelement.badge": "Profile clone",
 
+  "cvpatent.listelement.badge": "CV Patent",
+
+  "cvpatentclone.listelement.badge": "CV Patent clone",
+
+  "cvproject.listelement.badge": "CV Project",
+
+  "cvprojectclone.listelement.badge": "CV Project clone",
+
+  "cvpublication.listelement.badge": "CV Publication",
+
+  "cvpublicationclone.listelement.badge": "CV Publication clone",
+
   "process.new.select-parameters": "Parameters",
 
   "process.new.cancel": "Cancel",
@@ -4092,6 +4110,8 @@
   "search.filters.applied.charts.RELATION.Project.researchoutputs": "Research Output",
 
   "search.filters.applied.charts.RELATION.Project.researchoutputs.title": "Research Output",
+
+  "search.filters.applied.charts.RELATION.CvProject.ipresearchoutputs.title": "Research Output",
 
 
   "search.filters.applied.charts.no.data.found": "No data found",
@@ -4904,13 +4924,19 @@
 
   "submission.sections.submit.progressbar.describe.institution-patent": "Patent basic information",
 
+  "submission.sections.submit.progressbar.describe.cv-patent": "Patent basic information",
+
   "submission.sections.submit.progressbar.describe.patent_indexing": "Patent indexing",
 
   "submission.sections.submit.progressbar.describe.institution-patent_indexing": "Patent indexing",
 
+  "submission.sections.submit.progressbar.describe.cv-patent_indexing": "Patent indexing",
+
   "submission.sections.submit.progressbar.describe.patent_references": "Patent references",
 
   "submission.sections.submit.progressbar.describe.institution-patent_references": "Patent references",
+
+  "submission.sections.submit.progressbar.describe.cv-patent_references": "Patent references",
 
   "submission.sections.submit.progressbar.describe.person": "Person basic information",
 
@@ -4934,25 +4960,37 @@
 
   "submission.sections.submit.progressbar.describe.institution-project": "Project basic information",
 
+  "submission.sections.submit.progressbar.describe.cv-project": "Project basic information",
+
   "submission.sections.submit.progressbar.describe.publication": "Publication basic information",
 
   "submission.sections.submit.progressbar.describe.institution-publication": "Publication basic information",
+
+  "submission.sections.submit.progressbar.describe.cv-publication": "Publication basic information",
 
   "submission.sections.submit.progressbar.describe.publication_bibliographic_details": "Publication bibliographic details",
 
   "submission.sections.submit.progressbar.describe.institution-publication_bibliographic_details": "Publication bibliographic details",
 
+  "submission.sections.submit.progressbar.describe.cv-publication_bibliographic_details": "Publication bibliographic details",
+
   "submission.sections.submit.progressbar.describe.publication_indexing": "Publication indexing",
 
   "submission.sections.submit.progressbar.describe.institution-publication_indexing": "Publication indexing",
+
+  "submission.sections.submit.progressbar.describe.cv-publication_indexing": "Publication indexing",
 
   "submission.sections.submit.progressbar.describe.publication_references": "Publication references",
 
   "submission.sections.submit.progressbar.describe.institution-publication_references": "Publication references",
 
+  "submission.sections.submit.progressbar.describe.cv-publication_references": "Publication references",
+
   "submission.sections.submit.progressbar.describe.publication_thesis": "Publication Thesis",
 
   "submission.sections.submit.progressbar.describe.institution-publication_thesis": "Publication Thesis",
+
+  "submission.sections.submit.progressbar.describe.cv-publication_thesis": "Publication Thesis",
 
   "submission.sections.submit.progressbar.describe.rp": "Researcher basic information",
 
