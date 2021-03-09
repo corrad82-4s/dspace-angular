@@ -5,14 +5,16 @@ import { CollectionElementLinkType } from './../../../../shared/object-collectio
 import { ViewMode } from './../../../../core/shared/view-mode.model';
 import { DSpaceObject } from './../../../../core/shared/dspace-object.model';
 import { Component, OnInit } from '@angular/core';
-import { DSOSelectorModalWrapperComponent, SelectorActionType } from '../dso-selector-modal-wrapper.component';
+import { DSOSelectorModalWrapperComponent } from '../dso-selector-modal-wrapper.component';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Observable } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 import { RemoteData } from '../../../../core/data/remote-data';
 import { PaginatedList } from '../../../../core/data/paginated-list.model';
 import { SearchResult } from '../../../search/search-result.model';
 import { Input } from '@angular/core';
+import { getFirstSucceededRemoteDataPayload } from '../../../../core/shared/operators';
+import { switchMap } from 'rxjs/operators';
 
 
 
@@ -24,7 +26,7 @@ export class ClaimItemSelectorComponent extends DSOSelectorModalWrapperComponent
 
   @Input() dso: DSpaceObject;
 
-  listEntries$: Observable<RemoteData<PaginatedList<SearchResult<DSpaceObject>>>>;
+  listEntries$: BehaviorSubject<RemoteData<PaginatedList<SearchResult<DSpaceObject>>>> =  new BehaviorSubject(null);
 
   viewMode = ViewMode.ListElement;
 
@@ -37,7 +39,9 @@ export class ClaimItemSelectorComponent extends DSOSelectorModalWrapperComponent
   }
 
   ngOnInit(): void {
-    this.listEntries$ = this.profileClaimService.search(this.dso as EPerson);
+    this.profileClaimService.search(this.dso as EPerson).subscribe(
+      (result) => this.listEntries$.next(result)
+    );
   }
 
   // triggered when an item is selected
@@ -48,6 +52,20 @@ export class ClaimItemSelectorComponent extends DSOSelectorModalWrapperComponent
 
   navigate(dso: DSpaceObject) {
     this.router.navigate([getItemPageRoute(dso.uuid)]);
+  }
+
+  rejectAssociation(selectedDso: DSpaceObject): void {
+    this.profileClaimService.rejectAssociation(this.dso as EPerson, selectedDso).pipe(
+      getFirstSucceededRemoteDataPayload(),
+      switchMap((eperson) => this.profileClaimService.search(eperson))
+    ).subscribe(
+      (result) => {
+        this.listEntries$.next(result);
+        if (result.payload.totalElements === 0) {
+          this.close();
+        }
+      }
+    );
   }
 
 }
