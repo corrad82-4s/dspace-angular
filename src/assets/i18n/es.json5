@@ -2398,6 +2398,18 @@
   // TODO New key - Add a translation
   "context-menu.actions": "Actions",
   
+  // "context-menu.actions.add-cv-patent.btn": "Add patent",
+  // TODO New key - Add a translation
+  "context-menu.actions.add-cv-patent.btn": "Add patent",
+  
+  // "context-menu.actions.add-cv-project.btn": "Add project",
+  // TODO New key - Add a translation
+  "context-menu.actions.add-cv-project.btn": "Add project",
+  
+  // "context-menu.actions.add-cv-publication.btn": "Add publication",
+  // TODO New key - Add a translation
+  "context-menu.actions.add-cv-publication.btn": "Add publication",
+  
   // "context-menu.actions.audit-item.btn": "Audit",
   // TODO New key - Add a translation
   "context-menu.actions.audit-item.btn": "Audit",
@@ -3459,6 +3471,10 @@
   // "form.lookup-help": "Click here to look up an existing relation",
   // TODO New key - Add a translation
   "form.lookup-help": "Click here to look up an existing relation",
+  
+  // "form.multiple-selection.no-selection": "No selection",
+  // TODO New key - Add a translation
+  "form.multiple-selection.no-selection": "No selection",
   
   // "form.no-results": "No results found",
   "form.no-results": "No se han encontrado resultados",
@@ -6054,6 +6070,30 @@
   // TODO New key - Add a translation
   "cvpersonclone.listelement.badge": "Profile clone",
   
+  // "cvpatent.listelement.badge": "CV Patent",
+  // TODO New key - Add a translation
+  "cvpatent.listelement.badge": "CV Patent",
+  
+  // "cvpatentclone.listelement.badge": "CV Patent clone",
+  // TODO New key - Add a translation
+  "cvpatentclone.listelement.badge": "CV Patent clone",
+  
+  // "cvproject.listelement.badge": "CV Project",
+  // TODO New key - Add a translation
+  "cvproject.listelement.badge": "CV Project",
+  
+  // "cvprojectclone.listelement.badge": "CV Project clone",
+  // TODO New key - Add a translation
+  "cvprojectclone.listelement.badge": "CV Project clone",
+  
+  // "cvpublication.listelement.badge": "CV Publication",
+  // TODO New key - Add a translation
+  "cvpublication.listelement.badge": "CV Publication",
+  
+  // "cvpublicationclone.listelement.badge": "CV Publication clone",
+  // TODO New key - Add a translation
+  "cvpublicationclone.listelement.badge": "CV Publication clone",
+  
   // "process.new.select-parameters": "Parameters",
   // TODO New key - Add a translation
   "process.new.select-parameters": "Parameters",
@@ -7248,29 +7288,57 @@
   // TODO New key - Add a translation
   "search.filters.applied.charts.RELATION.InstitutionOrgUnit.iouorganizations": "OrgUnits",
   
+  // "search.filters.applied.charts.RELATION.InstitutionOrgUnit.iouorganizations.title": "OrgUnits",
+  // TODO New key - Add a translation
+  "search.filters.applied.charts.RELATION.InstitutionOrgUnit.iouorganizations.title": "OrgUnits",
+  
   // "search.filters.applied.charts.RELATION.InstitutionOrgUnit.ioupeople": "People",
   // TODO New key - Add a translation
   "search.filters.applied.charts.RELATION.InstitutionOrgUnit.ioupeople": "People",
+  
+  // "search.filters.applied.charts.RELATION.InstitutionOrgUnit.ioupeople.title": "People",
+  // TODO New key - Add a translation
+  "search.filters.applied.charts.RELATION.InstitutionOrgUnit.ioupeople.title": "People",
   
   // "search.filters.applied.charts.RELATION.InstitutionOrgUnit.iouprojects": "Projects",
   // TODO New key - Add a translation
   "search.filters.applied.charts.RELATION.InstitutionOrgUnit.iouprojects": "Projects",
   
+  // "search.filters.applied.charts.RELATION.InstitutionOrgUnit.iouprojects.title": "Projects",
+  // TODO New key - Add a translation
+  "search.filters.applied.charts.RELATION.InstitutionOrgUnit.iouprojects.title": "Projects",
+  
   // "search.filters.applied.charts.RELATION.InstitutionOrgUnit.ioupublications": "Publications",
   // TODO New key - Add a translation
   "search.filters.applied.charts.RELATION.InstitutionOrgUnit.ioupublications": "Publications",
+  
+  // "search.filters.applied.charts.RELATION.InstitutionOrgUnit.ioupublications.title": "Publications",
+  // TODO New key - Add a translation
+  "search.filters.applied.charts.RELATION.InstitutionOrgUnit.ioupublications.title": "Publications",
   
   // "search.filters.applied.charts.RELATION.InstitutionOrgUnit.iourpprojects": "Researchers PRojects",
   // TODO New key - Add a translation
   "search.filters.applied.charts.RELATION.InstitutionOrgUnit.iourpprojects": "Researchers PRojects",
   
+  // "search.filters.applied.charts.RELATION.InstitutionOrgUnit.iourpprojects.title": "Researchers PRojects",
+  // TODO New key - Add a translation
+  "search.filters.applied.charts.RELATION.InstitutionOrgUnit.iourpprojects.title": "Researchers PRojects",
+  
   // "search.filters.applied.charts.RELATION.InstitutionOrgUnit.ioupublications": "Researchers Publications",
   // TODO New key - Add a translation
   "search.filters.applied.charts.RELATION.InstitutionOrgUnit.ioupublications": "Researchers Publications",
   
+  // "search.filters.applied.charts.RELATION.InstitutionOrgUnit.ioupublications.title": "Researchers Publications",
+  // TODO New key - Add a translation
+  "search.filters.applied.charts.RELATION.InstitutionOrgUnit.ioupublications.title": "Researchers Publications",
+  
   // "search.filters.applied.charts.RELATION.InstitutionOrgUnit.iourppublications": "Researchers Publications",
   // TODO New key - Add a translation
   "search.filters.applied.charts.RELATION.InstitutionOrgUnit.iourppublications": "Researchers Publications",
+  
+  // "search.filters.applied.charts.RELATION.InstitutionOrgUnit.iourppublications.title": "Researchers Publications",
+  // TODO New key - Add a translation
+  "search.filters.applied.charts.RELATION.InstitutionOrgUnit.iourppublications.title": "Researchers Publications",
   
   // "search.filters.applied.charts.RELATION.InstitutionPerson.ippatents.title": "Patents",
   // TODO New key - Add a translation
@@ -7288,17 +7356,33 @@
   // TODO New key - Add a translation
   "search.filters.applied.charts.RELATION.InstitutionProject.ipgrants": "Fundings",
   
+  // "search.filters.applied.charts.RELATION.InstitutionProject.ipgrants.title": "Fundings",
+  // TODO New key - Add a translation
+  "search.filters.applied.charts.RELATION.InstitutionProject.ipgrants.title": "Fundings",
+  
   // "search.filters.applied.charts.RELATION.InstitutionProject.ippatents": "Patents",
   // TODO New key - Add a translation
   "search.filters.applied.charts.RELATION.InstitutionProject.ippatents": "Patents",
+  
+  // "search.filters.applied.charts.RELATION.InstitutionProject.ippatents.title": "Patents",
+  // TODO New key - Add a translation
+  "search.filters.applied.charts.RELATION.InstitutionProject.ippatents.title": "Patents",
   
   // "search.filters.applied.charts.RELATION.InstitutionProject.ipprojects": "Projects",
   // TODO New key - Add a translation
   "search.filters.applied.charts.RELATION.InstitutionProject.ipprojects": "Projects",
   
+  // "search.filters.applied.charts.RELATION.InstitutionProject.ipprojects.title": "Projects",
+  // TODO New key - Add a translation
+  "search.filters.applied.charts.RELATION.InstitutionProject.ipprojects.title": "Projects",
+  
   // "search.filters.applied.charts.RELATION.InstitutionProject.ipresearchoutputs": "Research Output",
   // TODO New key - Add a translation
   "search.filters.applied.charts.RELATION.InstitutionProject.ipresearchoutputs": "Research Output",
+  
+  // "search.filters.applied.charts.RELATION.InstitutionProject.ipresearchoutputs.title": "Research Output",
+  // TODO New key - Add a translation
+  "search.filters.applied.charts.RELATION.InstitutionProject.ipresearchoutputs.title": "Research Output",
   
   
   
@@ -7307,21 +7391,45 @@
   // TODO New key - Add a translation
   "search.filters.applied.charts.RELATION.OrgUnit.organizations": "OrgUnits",
   
+  // "search.filters.applied.charts.RELATION.OrgUnit.organizations.title": "OrgUnits",
+  // TODO New key - Add a translation
+  "search.filters.applied.charts.RELATION.OrgUnit.organizations.title": "OrgUnits",
+  
+  // "search.filters.applied.charts.RELATION.OrgUnit.publications.title": "Research Output",
+  // TODO New key - Add a translation
+  "search.filters.applied.charts.RELATION.OrgUnit.publications.title": "Research Output",
+  
   // "search.filters.applied.charts.RELATION.OrgUnit.people": "People",
   // TODO New key - Add a translation
   "search.filters.applied.charts.RELATION.OrgUnit.people": "People",
+  
+  // "search.filters.applied.charts.RELATION.OrgUnit.people.title": "People",
+  // TODO New key - Add a translation
+  "search.filters.applied.charts.RELATION.OrgUnit.people.title": "People",
   
   // "search.filters.applied.charts.RELATION.OrgUnit.projects": "Projects",
   // TODO New key - Add a translation
   "search.filters.applied.charts.RELATION.OrgUnit.projects": "Projects",
   
+  // "search.filters.applied.charts.RELATION.OrgUnit.projects.title": "Projects",
+  // TODO New key - Add a translation
+  "search.filters.applied.charts.RELATION.OrgUnit.projects.title": "Projects",
+  
   // "search.filters.applied.charts.RELATION.OrgUnit.publications": "Publications",
   // TODO New key - Add a translation
   "search.filters.applied.charts.RELATION.OrgUnit.publications": "Publications",
   
-  // "search.filters.applied.charts.RELATION.OrgUnit.rpprojects": "Researchers PRojects",
+  // "search.filters.applied.charts.RELATION.OrgUnit.publications.title": "Publications",
   // TODO New key - Add a translation
-  "search.filters.applied.charts.RELATION.OrgUnit.rpprojects": "Researchers PRojects",
+  "search.filters.applied.charts.RELATION.OrgUnit.publications.title": "Publications",
+  
+  // "search.filters.applied.charts.RELATION.OrgUnit.rpprojects": "Researchers Projects",
+  // TODO New key - Add a translation
+  "search.filters.applied.charts.RELATION.OrgUnit.rpprojects": "Researchers Projects",
+  
+  // "search.filters.applied.charts.RELATION.OrgUnit.rpprojects.title": "Researchers Projects",
+  // TODO New key - Add a translation
+  "search.filters.applied.charts.RELATION.OrgUnit.rpprojects.title": "Researchers Projects",
   
   // "search.filters.applied.charts.RELATION.OrgUnit.publications": "Researchers Publications",
   // TODO New key - Add a translation
@@ -7343,13 +7451,25 @@
   // TODO New key - Add a translation
   "search.filters.applied.charts.RELATION.Project.grants": "Fundings",
   
+  // "search.filters.applied.charts.RELATION.Project.grants.title": "Fundings",
+  // TODO New key - Add a translation
+  "search.filters.applied.charts.RELATION.Project.grants.title": "Fundings",
+  
   // "search.filters.applied.charts.RELATION.Project.patents": "Patents",
   // TODO New key - Add a translation
   "search.filters.applied.charts.RELATION.Project.patents": "Patents",
   
+  // "search.filters.applied.charts.RELATION.Project.patents.title": "Patents",
+  // TODO New key - Add a translation
+  "search.filters.applied.charts.RELATION.Project.patents.title": "Patents",
+  
   // "search.filters.applied.charts.RELATION.Project.projects": "Projects",
   // TODO New key - Add a translation
   "search.filters.applied.charts.RELATION.Project.projects": "Projects",
+  
+  // "search.filters.applied.charts.RELATION.Project.projects.title": "Projects",
+  // TODO New key - Add a translation
+  "search.filters.applied.charts.RELATION.Project.projects.title": "Projects",
   
   // "search.filters.applied.charts.RELATION.Project.researchoutputs": "Research Output",
   // TODO New key - Add a translation
@@ -7358,6 +7478,10 @@
   // "search.filters.applied.charts.RELATION.Project.researchoutputs.title": "Research Output",
   // TODO New key - Add a translation
   "search.filters.applied.charts.RELATION.Project.researchoutputs.title": "Research Output",
+  
+  // "search.filters.applied.charts.RELATION.CvProject.ipresearchoutputs.title": "Research Output",
+  // TODO New key - Add a translation
+  "search.filters.applied.charts.RELATION.CvProject.ipresearchoutputs.title": "Research Output",
   
   
   // "search.filters.applied.charts.no.data.found": "No data found",
@@ -7729,6 +7853,7 @@
   
   // "search.form.search_mydspace": "Search MyDSpace",
   "search.form.search_mydspace": "Buscar MyDSpace",
+  
   
   
   
@@ -8872,6 +8997,10 @@
   // TODO New key - Add a translation
   "submission.sections.submit.progressbar.describe.institution-patent": "Patent basic information",
   
+  // "submission.sections.submit.progressbar.describe.cv-patent": "Patent basic information",
+  // TODO New key - Add a translation
+  "submission.sections.submit.progressbar.describe.cv-patent": "Patent basic information",
+  
   // "submission.sections.submit.progressbar.describe.patent_indexing": "Patent indexing",
   // TODO New key - Add a translation
   "submission.sections.submit.progressbar.describe.patent_indexing": "Patent indexing",
@@ -8880,6 +9009,10 @@
   // TODO New key - Add a translation
   "submission.sections.submit.progressbar.describe.institution-patent_indexing": "Patent indexing",
   
+  // "submission.sections.submit.progressbar.describe.cv-patent_indexing": "Patent indexing",
+  // TODO New key - Add a translation
+  "submission.sections.submit.progressbar.describe.cv-patent_indexing": "Patent indexing",
+  
   // "submission.sections.submit.progressbar.describe.patent_references": "Patent references",
   // TODO New key - Add a translation
   "submission.sections.submit.progressbar.describe.patent_references": "Patent references",
@@ -8887,6 +9020,10 @@
   // "submission.sections.submit.progressbar.describe.institution-patent_references": "Patent references",
   // TODO New key - Add a translation
   "submission.sections.submit.progressbar.describe.institution-patent_references": "Patent references",
+  
+  // "submission.sections.submit.progressbar.describe.cv-patent_references": "Patent references",
+  // TODO New key - Add a translation
+  "submission.sections.submit.progressbar.describe.cv-patent_references": "Patent references",
   
   // "submission.sections.submit.progressbar.describe.person": "Person basic information",
   // TODO New key - Add a translation
@@ -8932,6 +9069,10 @@
   // TODO New key - Add a translation
   "submission.sections.submit.progressbar.describe.institution-project": "Project basic information",
   
+  // "submission.sections.submit.progressbar.describe.cv-project": "Project basic information",
+  // TODO New key - Add a translation
+  "submission.sections.submit.progressbar.describe.cv-project": "Project basic information",
+  
   // "submission.sections.submit.progressbar.describe.publication": "Publication basic information",
   // TODO New key - Add a translation
   "submission.sections.submit.progressbar.describe.publication": "Publication basic information",
@@ -8939,6 +9080,10 @@
   // "submission.sections.submit.progressbar.describe.institution-publication": "Publication basic information",
   // TODO New key - Add a translation
   "submission.sections.submit.progressbar.describe.institution-publication": "Publication basic information",
+  
+  // "submission.sections.submit.progressbar.describe.cv-publication": "Publication basic information",
+  // TODO New key - Add a translation
+  "submission.sections.submit.progressbar.describe.cv-publication": "Publication basic information",
   
   // "submission.sections.submit.progressbar.describe.publication_bibliographic_details": "Publication bibliographic details",
   // TODO New key - Add a translation
@@ -8948,6 +9093,10 @@
   // TODO New key - Add a translation
   "submission.sections.submit.progressbar.describe.institution-publication_bibliographic_details": "Publication bibliographic details",
   
+  // "submission.sections.submit.progressbar.describe.cv-publication_bibliographic_details": "Publication bibliographic details",
+  // TODO New key - Add a translation
+  "submission.sections.submit.progressbar.describe.cv-publication_bibliographic_details": "Publication bibliographic details",
+  
   // "submission.sections.submit.progressbar.describe.publication_indexing": "Publication indexing",
   // TODO New key - Add a translation
   "submission.sections.submit.progressbar.describe.publication_indexing": "Publication indexing",
@@ -8955,6 +9104,10 @@
   // "submission.sections.submit.progressbar.describe.institution-publication_indexing": "Publication indexing",
   // TODO New key - Add a translation
   "submission.sections.submit.progressbar.describe.institution-publication_indexing": "Publication indexing",
+  
+  // "submission.sections.submit.progressbar.describe.cv-publication_indexing": "Publication indexing",
+  // TODO New key - Add a translation
+  "submission.sections.submit.progressbar.describe.cv-publication_indexing": "Publication indexing",
   
   // "submission.sections.submit.progressbar.describe.publication_references": "Publication references",
   // TODO New key - Add a translation
@@ -8964,6 +9117,10 @@
   // TODO New key - Add a translation
   "submission.sections.submit.progressbar.describe.institution-publication_references": "Publication references",
   
+  // "submission.sections.submit.progressbar.describe.cv-publication_references": "Publication references",
+  // TODO New key - Add a translation
+  "submission.sections.submit.progressbar.describe.cv-publication_references": "Publication references",
+  
   // "submission.sections.submit.progressbar.describe.publication_thesis": "Publication Thesis",
   // TODO New key - Add a translation
   "submission.sections.submit.progressbar.describe.publication_thesis": "Publication Thesis",
@@ -8971,6 +9128,10 @@
   // "submission.sections.submit.progressbar.describe.institution-publication_thesis": "Publication Thesis",
   // TODO New key - Add a translation
   "submission.sections.submit.progressbar.describe.institution-publication_thesis": "Publication Thesis",
+  
+  // "submission.sections.submit.progressbar.describe.cv-publication_thesis": "Publication Thesis",
+  // TODO New key - Add a translation
+  "submission.sections.submit.progressbar.describe.cv-publication_thesis": "Publication Thesis",
   
   // "submission.sections.submit.progressbar.describe.rp": "Researcher basic information",
   // TODO New key - Add a translation
