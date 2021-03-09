@@ -4,7 +4,7 @@ import {
   DynamicCheckboxGroupModel,
   DynamicCheckboxModel,
   DynamicFormControlModel,
-  DynamicFormLayout,
+  DynamicFormLayout, DynamicFormOption,
   DynamicInputModel
 } from '@ng-dynamic-forms/core';
 import { TranslateService } from '@ngx-translate/core';
@@ -37,6 +37,7 @@ import { EpersonRegistrationService } from '../../../../core/data/eperson-regist
 import { Registration } from '../../../../core/shared/registration.model';
 import { ConfirmationModalComponent } from '../../../../shared/confirmation-modal/confirmation-modal.component';
 import { reduce, switchMap, take, tap, map } from 'rxjs/operators';
+import { DsDynamicMultipleSelectModel } from '../../../../shared/form/builder/ds-dynamic-form-ui/models/multiple-select/ds-dynamic-multiple-select.model';
 
 @Component({
   selector: 'ds-eperson-form',
@@ -66,10 +67,11 @@ export class EPersonFormComponent implements OnInit, OnDestroy {
   lastName: DynamicInputModel;
   email: DynamicInputModel;
   /**
-   * Dynamic checkbox group model for the eperson roles.
+   * Dynamic multiple select group model for the eperson roles.
    */
   roles: DynamicCheckboxGroupModel;
-  institutionalScopedRoles: DynamicCheckboxGroupModel[];
+  institutionalScopedRoles: DsDynamicMultipleSelectModel<any>[];
+
   // booleans
   canLogIn: DynamicCheckboxModel;
   requireCertificate: DynamicCheckboxModel;
@@ -273,26 +275,7 @@ export class EPersonFormComponent implements OnInit, OnDestroy {
       this.institutionalScopedRoles = [];
 
       for (const institutionalRole of institutionalRoles) {
-        const checkboxGroupModel = new DynamicCheckboxGroupModel({
-          id: institutionalRole.name,
-          label: institutionalRole.name,
-          name: institutionalRole.name,
-          group: this.initDynamicCheckboxModels(institutionalRole.scopes, rolesNoAvailable)
-        });
-
-        this.institutionalScopedRoles.push( checkboxGroupModel );
-        this.formLayout[institutionalRole.name] = { grid: { host: 'row' } };
-
-         if (eperson != null) {
-           const epersonRoles = eperson.allMetadata('perucris.eperson.institutional-scoped-role');
-           for (const checkboxModel of checkboxGroupModel.group) {
-             for (const epersonRole of epersonRoles) {
-               if ( checkboxModel.id === epersonRole.authority ) {
-                 checkboxModel.value = true;
-               }
-             }
-           }
-         }
+         this.initializedInstitutionalScopedRole(institutionalRole, rolesNoAvailable, eperson);
       }
 
       this.formModel = [
@@ -359,6 +342,7 @@ export class EPersonFormComponent implements OnInit, OnDestroy {
   onSubmit() {
     this.epersonService.getActiveEPerson().pipe(take(1)).subscribe(
       (ePerson: EPerson) => {
+
         const values = {
           metadata: {
             'eperson.firstname': [
@@ -605,15 +589,15 @@ export class EPersonFormComponent implements OnInit, OnDestroy {
   private initDynamicCheckboxModels(groups: Group[], rolesNoAvailable): DynamicCheckboxModel[] {
     const roleCheckboxModels = groups.map( (group) =>
       new DynamicCheckboxModel({
-        id: group.id,
-        label: group.name,
-        value: false
-      },
-      {
-        element: {
-          control: 'btn-outline-info'
-      }
-      })
+          id: group.id,
+          label: group.name,
+          value: false
+        },
+        {
+          element: {
+            control: 'btn-outline-info'
+          }
+        })
     );
     if ( roleCheckboxModels.length === 0) {
       roleCheckboxModels.push(new DynamicCheckboxModel({
@@ -624,6 +608,23 @@ export class EPersonFormComponent implements OnInit, OnDestroy {
       }));
     }
     return roleCheckboxModels;
+  }
+
+  private initDynamicFormOptions(groups: Group[], rolesNoAvailable): DynamicFormOption<any>[] {
+    const options = groups.map( (group) =>
+      new DynamicFormOption({
+        label: group.name,
+        value: { id: group.id, name: group.name}
+      })
+    );
+    if (options.length === 0) {
+      options.push(new DynamicFormOption({
+        label: rolesNoAvailable,
+        value: null,
+        disabled: true
+      }));
+    }
+    return options;
   }
 
   private getSelectedRoles() {
@@ -639,20 +640,21 @@ export class EPersonFormComponent implements OnInit, OnDestroy {
   private getSelectedInstitutionalRoles() {
     const roles = [];
     const institutionalRoleIds = [];
-    for (const institutionalScopedRole of this.institutionalScopedRoles) {
-      roles.push(...institutionalScopedRole.group
-        .filter((model) => model.value === true)
-        .map((model) => this.institutionalRoleMap.get(model.name))
+    for (const institutionalScopedRole2 of this.institutionalScopedRoles) {
+      roles.push(...institutionalScopedRole2.value
+        .map((value) => this.institutionalRoleMap.get(value.id))
         .filter((institutionalRole) => {
           const includes = institutionalRoleIds.includes(institutionalRole.id);
           institutionalRoleIds.push(institutionalRole.id);
           return !includes;
         })
-        .map((institutionalRole) => new Object({
-            value: institutionalRole.name,
-            authority: institutionalRole.id,
-            confidence: 600
-          })
+        .map((institutionalRole) => {
+            return new Object({
+              value: institutionalRole.name,
+              authority: institutionalRole.id,
+              confidence: 600
+            });
+          }
         ));
     }
     return roles;
@@ -660,16 +662,45 @@ export class EPersonFormComponent implements OnInit, OnDestroy {
 
   private getSelectedInstitutionalScopedRoles() {
     const roles = [];
-    for (const institutionalScopedRole of this.institutionalScopedRoles) {
-      roles.push(...institutionalScopedRole.group
-        .filter((model) => model.value === true)
-        .map((model) => new Object({
-          value: model.label,
-          authority: model.name,
+    for (const institutionalScopedRole2 of this.institutionalScopedRoles) {
+      roles.push(...institutionalScopedRole2.value
+        .map((value) => new Object({
+          value: value.name,
+          authority: value.id,
           confidence: 600
         })));
     }
     return roles;
+  }
+
+
+
+  initializedInstitutionalScopedRole(institutionalRole, rolesNoAvailable, eperson) {
+
+    const options = this.initDynamicFormOptions(institutionalRole.scopes, rolesNoAvailable);
+    const value = [];
+    if (eperson != null) {
+      const epersonRoles = eperson.allMetadata('perucris.eperson.institutional-scoped-role');
+      for (const option of options) {
+        for (const epersonRole of epersonRoles) {
+          if ( option.value.id === epersonRole.authority ) {
+            value.push(option.value);
+          }
+        }
+      }
+    }
+
+    const multipleSelectModel = new DsDynamicMultipleSelectModel({
+      id: institutionalRole.name,
+      label: institutionalRole.name,
+      name: institutionalRole.name,
+      options,
+      value,
+    });
+
+    this.institutionalScopedRoles.push( multipleSelectModel );
+    this.formLayout[institutionalRole.name] = { grid: { host: 'row' } };
+
   }
 
 }

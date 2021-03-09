@@ -103,4 +103,19 @@ describe('CrisrefComponent', () => {
     });
   });
 
+  describe('hasReferencedAuthority', () => {
+    beforeEach(() => {
+      fixture = TestBed.createComponent(CrisrefComponent);
+      component = fixture.componentInstance;
+    });
+
+    it('should exclude an authority starting with prefixes defined inside the deny list', () => {
+
+      expect(component.hasReferencedAuthority('will be referenced:')).toBeFalse();
+      expect(component.hasReferencedAuthority('uuid')).toBeTrue();
+
+    });
+
+  });
+
 });

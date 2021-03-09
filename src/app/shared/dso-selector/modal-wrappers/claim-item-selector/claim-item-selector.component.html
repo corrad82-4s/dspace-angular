@@ -7,15 +7,20 @@
   <div class="modal-body">
     {{'dso-selector.claim.item.body' | translate}}
     <div class="dropdown-divider"></div>
-    <div class="scrollable-menu list-group">
-
-     <button *ngFor="let listEntry of (listEntries$ | async)?.payload.page"
-             class="list-group-item list-group-item-action border-0 list-entry"
-             title="{{ listEntry.indexableObject.name }}"
-              (click)="selectItem(listEntry.indexableObject)" #listEntryElement>
-        <ds-listable-object-component-loader [object]="listEntry" [viewMode]="viewMode" 
-                                              [linkType]=linkTypes.None></ds-listable-object-component-loader>
-      </button>
+    <div class="scrollable-menu list-group container">
+      <div *ngFor="let listEntry of (listEntries$ | async)?.payload.page" class="row">
+        <button class="list-group-item list-group-item-action border-0 list-entry col-10"
+                title="{{ listEntry.indexableObject.name }}"
+                (click)="selectItem(listEntry.indexableObject)" #listEntryElement>
+          <ds-listable-object-component-loader [object]="listEntry" [viewMode]="viewMode" 
+                                               [linkType]=linkTypes.None></ds-listable-object-component-loader>
+        </button>
+        <div class="col-2 align-self-center text-center">
+          <button class="btn btn-danger" (click)="rejectAssociation(listEntry.indexableObject)">
+            <i class="fa fa-trash"></i>
+          </button>
+        </div>
+      </div>
     </div>
   </div>
 </div>
