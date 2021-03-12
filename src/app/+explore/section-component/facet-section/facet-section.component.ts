@@ -71,4 +71,9 @@ export class FacetSectionComponent implements OnInit {
         return queryParams;
     }
 
+    getFacetsBoxCol() {
+        const facetsPerRow = this.facetSection.facetsPerRow ? this.facetSection.facetsPerRow : 4;
+        return 12 / facetsPerRow;
+    }
+
 }
