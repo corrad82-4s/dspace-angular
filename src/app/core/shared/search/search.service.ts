@@ -37,6 +37,7 @@ import { ListableObject } from '../../../shared/object-collection/shared/listabl
 import { getSearchResultFor } from '../../../shared/search/search-result-element-decorator';
 import { FacetConfigResponse } from '../../../shared/search/facet-config-response.model';
 import { FacetValues } from '../../../shared/search/facet-values.model';
+import { FilterConfigResponseParsingService } from '../../data/filter-config-response-parsing.service';
 
 /**
  * Service that performs all general actions that have to do with the search page
@@ -237,6 +238,10 @@ export class SearchService implements OnDestroy {
     return this.getFilterConfigByLink(this.facetLinkPathPrefix, scope, configurationName);
   }
 
+  getSearchConfig(scope?: string, configurationName?: string): Observable<RemoteData<SearchFilterConfig[]>> {
+    return this.getSimpleFilterConfigByLink(this.configurationLinkPath, scope, configurationName);
+  }
+
   /**
    * Request the filter configuration for a given scope or the whole repository by a link name
    * @param {link}   link the link to use for the request
@@ -293,6 +298,64 @@ export class SearchService implements OnDestroy {
       })
     );
   }
+
+/**
+ * Request the filter configuration for a given scope or the whole repository by a link name without calling facets endpoint
+ * @param {link}   link the link to use for the request
+ * @param {string} scope UUID of the object for which config the filter config is requested, when no scope is provided the configuration for the whole repository is loaded
+ * @param {string} configurationName the name of the configuration
+ * @returns {Observable<RemoteData<SimpleSearchFilterConfig[]>>} The found filter configuration
+ */
+  private getSimpleFilterConfigByLink(link: string, scope?: string, configurationName?: string): Observable<RemoteData<SearchFilterConfig[]>> {
+    const href$ = this.halService.getEndpoint(link).pipe(
+      map((url: string) => {
+        const args: string[] = [];
+
+        if (isNotEmpty(scope)) {
+          args.push(`scope=${scope}`);
+        }
+
+        if (isNotEmpty(configurationName)) {
+          args.push(`configuration=${configurationName}`);
+        }
+
+        if (isNotEmpty(args)) {
+          url = new URLCombiner(url, `?${args.join('&')}`).toString();
+        }
+
+        return url;
+      }),
+    );
+
+    href$.pipe(take(1)).subscribe((url: string) => {
+      let request = new this.request(this.requestService.generateRequestId(), url);
+      request = Object.assign(request, {
+        getResponseParser(): GenericConstructor<ResponseParsingService> {
+          return FilterConfigResponseParsingService;
+        }
+      });
+      this.requestService.configure(request);
+    });
+
+    return this.rdb.buildFromHref(href$).pipe(
+      map((rd: RemoteData<FacetConfigResponse>) => {
+        if (rd.hasSucceeded) {
+          return new RemoteData(
+            rd.timeCompleted,
+            rd.msToLive,
+            rd.lastUpdated,
+            rd.state,
+            rd.errorMessage,
+            rd.payload.filters,
+            rd.statusCode,
+          );
+        } else {
+          return rd as any as RemoteData<SearchFilterConfig[]>;
+        }
+      })
+    );
+  }
+
   /**
    * Method to request a single page of filter values for a given value
    * @param {SearchFilterConfig} filterConfig The filter config for which we want to request filter values
