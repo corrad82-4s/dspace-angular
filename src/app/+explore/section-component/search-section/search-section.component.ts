@@ -1,8 +1,9 @@
+import { SimpleSearchFilterConfig } from './../../../shared/search/simple-search-filter-config.model';
 import { Component, Input, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { map, filter } from 'rxjs/operators';
 import { SearchSection } from '../../../core/layout/models/section.model';
 import { getFirstSucceededRemoteDataPayload } from '../../../core/shared/operators';
 import { SearchService } from '../../../core/shared/search/search.service';
@@ -44,10 +45,11 @@ export class SearchSectionComponent implements OnInit {
 
   ngOnInit() {
 
-    this.filters = this.searchService.getConfig(null, this.searchSection.discoveryConfigurationName).pipe(
+    this.filters = this.searchService.getSearchConfig(null, this.searchSection.discoveryConfigurationName).pipe(
       getFirstSucceededRemoteDataPayload(),
-      map((searchFilterConfig: SearchFilterConfig[]) => {
-        return [this.allFilter].concat(searchFilterConfig.map((filterConfig) => filterConfig.name));
+      map((searchFilterConfig: SimpleSearchFilterConfig[]) => {
+        const filtered = searchFilterConfig.filter((filterConfig) => !filterConfig.filterType.startsWith('chart'))
+        return [this.allFilter].concat(filtered.map((filterConfig) => filterConfig.name));
       })
     );
 
@@ -55,9 +57,10 @@ export class SearchSectionComponent implements OnInit {
       queryArray: this.formBuilder.array([])
     }));
 
-    this.addQueryStatement();
-    this.addQueryStatement();
-    this.addQueryStatement();
+    const statements = this.searchSection.initialStatements ? this.searchSection.initialStatements : 3;
+    for (let i = 0; i < statements; i++) {
+      this.addQueryStatement();
+    }
   }
 
   /**
