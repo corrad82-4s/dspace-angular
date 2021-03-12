@@ -1,3 +1,4 @@
+import { FilterConfigResponseParsingService } from './data/filter-config-response-parsing.service';
 import { CommonModule } from '@angular/common';
 import { HTTP_INTERCEPTORS, HttpClient } from '@angular/common/http';
 import { ModuleWithProviders, NgModule, Optional, SkipSelf } from '@angular/core';
@@ -252,6 +253,7 @@ const PROVIDERS = [
   EndpointMapResponseParsingService,
   FacetValueResponseParsingService,
   FacetConfigResponseParsingService,
+  FilterConfigResponseParsingService,
   DebugResponseParsingService,
   SearchResponseParsingService,
   MyDSpaceResponseParsingService,
