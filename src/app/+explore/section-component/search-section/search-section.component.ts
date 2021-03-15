@@ -48,7 +48,7 @@ export class SearchSectionComponent implements OnInit {
     this.filters = this.searchService.getSearchConfig(null, this.searchSection.discoveryConfigurationName).pipe(
       getFirstSucceededRemoteDataPayload(),
       map((searchFilterConfig: SimpleSearchFilterConfig[]) => {
-        const filtered = searchFilterConfig.filter((filterConfig) => !filterConfig.filterType.startsWith('chart'))
+        const filtered = searchFilterConfig.filter((filterConfig) => !filterConfig.filterType.startsWith('chart'));
         return [this.allFilter].concat(filtered.map((filterConfig) => filterConfig.name));
       })
     );
@@ -84,9 +84,10 @@ export class SearchSectionComponent implements OnInit {
    */
   onReset() {
     this.queryArray.controls.splice(0, this.queryArray.controls.length);
-    this.addQueryStatement();
-    this.addQueryStatement();
-    this.addQueryStatement();
+    const statements = this.searchSection.initialStatements ? this.searchSection.initialStatements : 3;
+    for (let i = 0; i < statements; i++) {
+      this.addQueryStatement();
+    }
   }
 
   /**
@@ -114,8 +115,8 @@ export class SearchSectionComponent implements OnInit {
 
     for (const statement of statements) {
       if (statement.query !== '') {
-        const filter = statement.filter !== this.allFilter ? statement.filter + ':' : '';
-        query = query + ' ' + filter + '(' + statement.query + ') ' + statement.operation;
+        const statementFilter = statement.filter !== this.allFilter ? statement.filter + ':' : '';
+        query = query + ' ' + statementFilter + '(' + statement.query + ') ' + statement.operation;
       }
     }
 
