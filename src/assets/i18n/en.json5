@@ -1575,7 +1575,7 @@
   "explore.counters-section.orgunits" : "Institutions",
 
 
-  "explore.counters-section.orgunit.investigation_innovation_unities" : "Investigation and Innovation Unities",
+  "explore.counters-section.orgunit.investigation_innovation_unities" : "Investigation and Innovation Units",
 
   "explore.counters-section.orgunit.investigation_groups" : "Investigation Groups",
 
@@ -1605,7 +1605,17 @@
 
   "explore.index.birthDate" : "Birthday",
 
+  "explore.index.descriptionAbstract" : "Description",
+
   "explore.index.name" : "Name",
+
+  "explore.index.organizationIdentifier" : "Identifier",
+
+  "explore.index.organizationNameOrAcronym" : "Name or Acronym",
+
+  "explore.index.parentOrganization" : "Parent Organization",
+
+  "explore.index.perucrisKeywords" : "Keyword(s)",
 
   "explore.index.region" : "Region",
 
@@ -1664,6 +1674,8 @@
 
   "explore.index.investigators" : "Researchers",
 
+  "explore.index.institutionalOcde" : "Ocde Institutional Sector",
+
   "explore.index.isAuthorOfPublication" : "Publication's author",
 
   "explore.index.isJournalOfPublication" : "Publication's journal",
@@ -1704,13 +1716,13 @@
 
   "explore.index.knowsLanguage" : "Knows languages",
 
-  "explore.index.ocde" : "OCDE Subject",
+  "explore.index.ocde" : "OCDE Knowledge Area",
 
   "explore.index.organization" : "Organization",
 
-  "explore.index.organizationAddressCountry" : "Organization address country",
+  "explore.index.organizationAddressCountry" : "Country",
 
-  "explore.index.organizationAddressLocality" : "Organization address locality",
+  "explore.index.organizationAddressLocality" : "City",
 
   "explore.index.organizationFoundingDate" : "Organization founding date",
 
@@ -1734,9 +1746,9 @@
 
   "explore.index.personOrgUnits" : "Organizations",
 
-  "explore.index.peruCrisCiuu" : "Industrial Classification",
+  "explore.index.peruCrisCiuu" : "CIUU",
 
-  "explore.index.peruCrisClassification" : "Classification",
+  "explore.index.peruCrisClassification" : "Type",
 
   "explore.index.peruCrisSector" : "Sector",
 
@@ -1754,6 +1766,8 @@
 
   "explore.index.projectinvestigators" : "Project investigators",
 
+  "explore.index.renacytClassification" : "Authorized Centre Cathegory",
+
   "explore.index.rodept" : "Department",
 
   "explore.index.rotitle" : "Title",
@@ -1764,16 +1778,16 @@
 
   "explore.index.subject" : "Subject",
 
-  "explore.index.suneduClassification" : "Sunedu Classification",
+  "explore.index.suneduClassification" : "Superior Education",
 
   "explore.index.title" : "Title",
 
   "explore.index.type" : "Type",
 
-  "explore.index.ubigeo" : "Ubigeo",
+  "explore.index.ubigeo" : "Region",
 
 
-  "explore.search-section.directorios.title": "",
+  "explore.search-section.directorios.title": "Search Directories",
 
   "explore.search-section.infrastructure.title": "Infrastructure",
 
@@ -4061,7 +4075,13 @@
 
   "search.filters.applied.charts.chart.pie.itemtype_filter.tab" : "Item Type",
 
+  "search.filters.applied.charts.graphiteminstitutionalSector.tab" : "OCDE Institutional Sector",
+
   "search.filters.applied.charts.graphitemtype.tab" : "Visualization by Type",
+
+  "search.filters.applied.charts.graphitemtypeOcdeArea.tab" : "OCDE Knowledge Area",
+
+  "search.filters.applied.charts.graphitemubigeo.tab" : "Region",
 
   "search.filters.applied.charts.graphpubldate.tab" : "Visualization by Date",
 
