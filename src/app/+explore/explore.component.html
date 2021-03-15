@@ -1,5 +1,5 @@
 <div class="container">
-  <div *ngFor="let sectionComponents of ( sectionComponentRows | async )" class="row mb-3">
+  <div *ngFor="let sectionComponents of ( sectionComponentRows | async )" class="row mb-3 d-flex justify-content-center">
     <div *ngFor="let sectionComponent of sectionComponents" [ngSwitch]="sectionComponent.componentType"
          [ngClass]="sectionComponent.style">
       <ds-top-section *ngSwitchCase="'top'"
