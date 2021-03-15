@@ -1,18 +1,20 @@
 import { Injectable } from '@angular/core';
 import { Item } from '../../../../core/shared/item.model';
 import { LayoutField, MetadataComponent, Row } from '../../../../core/layout/models/metadata-component.model';
-import { Metadata } from '../../../../core/shared/metadata.utils';
+import { ItemSource } from '../../../../core/item-sources/model/item-sources.model';
 
 @Injectable({providedIn: 'root'})
 export class PeruMetadataBoxService {
 
   /**
-   * Clone the immutable metadatacomponents with extra data given a sourceItem.
+   * Clone the immutable metadatacomponents with extra information computed inspecting an sourceItem.
+   * In particular:
+   * - add to each LayoutField the class 'not-source-metadata' in case its metadata doesn't have any matching in the sourceItem.
    * @param metadatacomponents
    * @param item
    * @param sourceItem
    */
-  public patchedMetadataComponent(metadatacomponents: MetadataComponent, item: Item, sourceItem: Item): MetadataComponent {
+  public patchedMetadataComponent(metadatacomponents: MetadataComponent, item: Item, itemSource: ItemSource): MetadataComponent {
 
     // records if at least one metadata value match with the sourceItem.
     let sourceContentPresent = false;
@@ -28,11 +30,8 @@ export class PeruMetadataBoxService {
         }
 
         if (clonedField.metadata) {
-          const itemValues = item.allMetadata(clonedField.metadata);
-          const sourceValues = sourceItem.allMetadata(clonedField.metadata);
-          const equals = Metadata.multiEquals(itemValues, sourceValues);
-          if (!equals) {
-            clonedField.styleValue = clonedField.styleValue + ' not-shadowed-metadata';
+          if (!this.isSourceCheck(itemSource.metadata, clonedField.metadata)) {
+            clonedField.styleValue = clonedField.styleValue + ' not-source-metadata';
           } else {
             sourceContentPresent = true;
           }
@@ -42,6 +41,10 @@ export class PeruMetadataBoxService {
       return clonedRow;
     });
     return cloned;
+  }
+
+  private isSourceCheck(sourceMetadata: string[], itemMetadata: string): boolean {
+    return sourceMetadata.map(metadata => metadata.split('/')[0]).includes(itemMetadata);
   }
 
 }

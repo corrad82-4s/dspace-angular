@@ -1,6 +1,7 @@
 <ng-container *ngVar="(actionRD$ | async)?.payload as workflowAction">
   <span *ngIf="hasDuplications() | async" class="badge badge-danger">{{'submission.workflow.tasks.claimed.duplication-detected' | translate}}</span>
   <span *ngIf="hasDuplicationVerified() | async" class="badge badge-info">{{'submission.workflow.tasks.claimed.duplication-verified' | translate}}</span>
+  <ds-mydspace-request-type [submissionObject]="workflowitem$ | async"></ds-mydspace-request-type>
   <div class="mt-1 mb-3">
     <ds-claimed-task-actions-loader *ngFor="let option of workflowAction?.options"
                                     [option]="option"

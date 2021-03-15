@@ -1,7 +1,9 @@
 import { Component, OnInit, Output, EventEmitter, Input, ChangeDetectorRef } from '@angular/core';
 import { Item } from '../../../core/shared/item.model';
 import { take } from 'rxjs/operators';
-import { SourceOfInformation, SourcesOfInformationService } from '../services/sources-of-information.service';
+import { SourcesOfInformationService } from '../services/sources-of-information.service';
+import { ItemSource } from '../../../core/item-sources/model/item-sources.model';
+import { combineLatest } from 'rxjs';
 
 
 @Component({
@@ -13,11 +15,13 @@ export class SourcesOfInformationComponent implements OnInit {
 
   @Input() item: Item;
 
-  @Output() selectSourceItem = new EventEmitter<Item>();
+  @Output() selectItemSource = new EventEmitter<ItemSource>();
 
-  sourcesOfInformation: SourceOfInformation[];
+  itemLabel: string;
 
-  selectedSource: Item;
+  itemSources: ItemSource[];
+
+  selectedSource: ItemSource = null;
 
   constructor(protected sourcesOfInformationService: SourcesOfInformationService, protected _cd: ChangeDetectorRef) { }
 
@@ -26,21 +30,24 @@ export class SourcesOfInformationComponent implements OnInit {
    */
   ngOnInit(): void {
     if (this.item) {
-      this.sourcesOfInformationService.getSourcesOfInformation(this.item).pipe(take(1)).subscribe((sourcesOfInformation: SourceOfInformation[]) => {
-        this.selectedSource = sourcesOfInformation[0].sourceItem;
-        this.sourcesOfInformation = sourcesOfInformation;
-        this._cd.detectChanges();
+
+      combineLatest([
+        this.sourcesOfInformationService.getItemSources(this.item.uuid),
+        this.sourcesOfInformationService.getItemLabel(this.item)]).pipe(take(1)).subscribe(([itemSources, label]) => {
+          this.itemSources = itemSources.sources;
+          this.itemLabel = label;
       });
+
     }
   }
 
   /**
-   * Keep track of the selected source item and emit the new value.
-   * @param sourceItem
+   * Keep track of the selected item source and emit the new value.
+   * @param itemSource
    */
-  onSelectSourceItem(sourceItem: Item) {
-    this.selectedSource = sourceItem;
-    this.selectSourceItem.emit(this.selectedSource);
+  onSelectSourceItem(itemSource: ItemSource) {
+    this.selectedSource = itemSource;
+    this.selectItemSource.emit(this.selectedSource);
   }
 
 }
