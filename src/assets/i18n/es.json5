@@ -43,139 +43,108 @@
   
   
   // "admin.curation-tasks.breadcrumbs": "System curation tasks",
-  // TODO New key - Add a translation
-  "admin.curation-tasks.breadcrumbs": "System curation tasks",
+  "admin.curation-tasks.breadcrumbs": "Tareas de conservación del sistema",
   
   // "admin.curation-tasks.title": "System curation tasks",
-  // TODO New key - Add a translation
-  "admin.curation-tasks.title": "System curation tasks",
+  "admin.curation-tasks.title": "Tareas de conservación del sistema",
   
   // "admin.curation-tasks.header": "System curation tasks",
-  // TODO New key - Add a translation
-  "admin.curation-tasks.header": "System curation tasks",
+  "admin.curation-tasks.header": "Tareas de conservación del sistema",
   
   
   
   // "admin.edit-user-agreement.breadcrumbs": "Edit User Agreement",
-  // TODO New key - Add a translation
-  "admin.edit-user-agreement.breadcrumbs": "Edit User Agreement",
+  "admin.edit-user-agreement.breadcrumbs": "Editar Acuerdo de Usuario",
   
   // "admin.edit-user-agreement.confirm.title": "Force acceptance",
-  // TODO New key - Add a translation
-  "admin.edit-user-agreement.confirm.title": "Force acceptance",
+  "admin.edit-user-agreement.confirm.title": "Forzar aceptación",
   
   // "admin.edit-user-agreement.confirm.info":"Do you want to force all users to accept the new user agreement?",
-  // TODO New key - Add a translation
-  "admin.edit-user-agreement.confirm.info":"Do you want to force all users to accept the new user agreement?",
+  "admin.edit-user-agreement.confirm.info":"¿Quiere obligar a todos los usuarios a aceptar el nuevo acuerdo de usuario?",
   
   // "admin.edit-user-agreement.confirm.cancel":"Cancel",
-  // TODO New key - Add a translation
-  "admin.edit-user-agreement.confirm.cancel":"Cancel",
+  "admin.edit-user-agreement.confirm.cancel":"Cancelar",
   
   // "admin.edit-user-agreement.confirm.no":"No, update only",
-  // TODO New key - Add a translation
-  "admin.edit-user-agreement.confirm.no":"No, update only",
+  "admin.edit-user-agreement.confirm.no":"No, solo actualizar",
   
   // "admin.edit-user-agreement.confirm.yes":"Yes, update and force",
-  // TODO New key - Add a translation
-  "admin.edit-user-agreement.confirm.yes":"Yes, update and force",
+  "admin.edit-user-agreement.confirm.yes":"Sí, actualizar y forzar",
   
   // "admin.edit-user-agreement.save-button": "Save",
-  // TODO New key - Add a translation
-  "admin.edit-user-agreement.save-button": "Save",
+  "admin.edit-user-agreement.save-button": "Guardar",
   
   // "admin.edit-user-agreement.header": "Edit User Agreement",
-  // TODO New key - Add a translation
-  "admin.edit-user-agreement.header": "Edit User Agreement",
+  "admin.edit-user-agreement.header": "Editar Acuerdo de Usuario",
   
   // "admin.edit-user-agreement.success": "User agreement successfully updated",
-  // TODO New key - Add a translation
-  "admin.edit-user-agreement.success": "User agreement successfully updated",
+    "admin.edit-user-agreement.success": "Acuerdo de usuario actualizado con éxito",
   
   // "admin.edit-user-agreement.error": "An error occurred while updating the user agreement",
-  // TODO New key - Add a translation
-  "admin.edit-user-agreement.error": "An error occurred while updating the user agreement",
+  "admin.edit-user-agreement.error": "Se ha producido un error al actualizar el acuerdo de usuario",
   
   // "admin.edit-user-agreement.title": "Edit User Agreement",
-  // TODO New key - Add a translation
-  "admin.edit-user-agreement.title": "Edit User Agreement",
+  "admin.edit-user-agreement.title": "Editar Acuerdo de Usuario",
   
   
   
   // "admin.institution.new.breadcrumbs": "Create Institution",
-  // TODO New key - Add a translation
-  "admin.institution.new.breadcrumbs": "Create Institution",
+  "admin.institution.new.breadcrumbs": "Crear institución",
   
   // "admin.institution.new.error": "An error occurred while creating the new institution. Check if the template institution is defined and if an institution with the same name already exists.",
-  // TODO New key - Add a translation
-  "admin.institution.new.error": "An error occurred while creating the new institution. Check if the template institution is defined and if an institution with the same name already exists.",
+  "admin.institution.new.error": "Se ha producido un error al crear la nueva institución. Compruebe si la plantilla institución está definida y si ya existe una institución con el mismo nombre",
   
   // "admin.institution.new.header": "Create Institution",
-  // TODO New key - Add a translation
-  "admin.institution.new.header": "Create Institution",
+  "admin.institution.new.header": "Crear Institución",
   
   // "admin.institution.new.name": "Name",
-  // TODO New key - Add a translation
-  "admin.institution.new.name": "Name",
+  "admin.institution.new.name": "Nombre",
   
   // "admin.institution.new.processing": "Loading",
-  // TODO New key - Add a translation
-  "admin.institution.new.processing": "Loading",
+  "admin.institution.new.processing": "Cargando",
   
   // "admin.institution.new.submit": "Submit",
-  // TODO New key - Add a translation
-  "admin.institution.new.submit": "Submit",
+  "admin.institution.new.submit": "Enviar",
   
   // "admin.institution.new.success": "The new institution was successfully created",
-  // TODO New key - Add a translation
-  "admin.institution.new.success": "The new institution was successfully created",
+  "admin.institution.new.success": "La nueva institución se creó con éxito",
   
   // "admin.institution.new.title": "Create Institution",
-  // TODO New key - Add a translation
-  "admin.institution.new.title": "Create Institution",
+  "admin.institution.new.title": "Crear Institución",
   
   
   // "admin.institution.explore.breadcrumbs": "Explore Institutions",
-  // TODO New key - Add a translation
-  "admin.institution.explore.breadcrumbs": "Explore Institutions",
+  "admin.institution.explore.breadcrumbs": "Explorar Instituciones",
   
   // "admin.institution.explore.header": "Explore Institutions",
-  // TODO New key - Add a translation
-  "admin.institution.explore.header": "Explore Institutions",
+  "admin.institution.explore.header": "Explorar Instituciones",
   
   // "admin.institution.explore.entities": "Entities",
-  // TODO New key - Add a translation
-  "admin.institution.explore.entities": "Entities",
+  "admin.institution.explore.entities": "Entidades",
   
   // "admin.institution.explore.name": "Institution name",
   // TODO New key - Add a translation
-  "admin.institution.explore.name": "Institution name",
+  "admin.institution.explore.name": "Nombre de la institución",
   
   // "admin.institution.explore.no-entities": "No available entities",
-  // TODO New key - Add a translation
-  "admin.institution.explore.no-entities": "No available entities",
+  "admin.institution.explore.no-entities": "No hay entidades disponibles",
   
   // "admin.institution.explore.no-roles": "No available roles",
-  // TODO New key - Add a translation
-  "admin.institution.explore.no-roles": "No available roles",
+  "admin.institution.explore.no-roles": "No hay roles disponibles",
   
   // "admin.institution.explore.roles": "Institutional Scoped Roles",
-  // TODO New key - Add a translation
-  "admin.institution.explore.roles": "Institutional Scoped Roles",
+  "admin.institution.explore.roles": "Roles de alcance institucional",
   
   // "admin.institution.explore.title": "Explore Institutions",
-  // TODO New key - Add a translation
-  "admin.institution.explore.title": "Explore Institutions",
+  "admin.institution.explore.title": "Explorar Instituciones",
   
   
   
   // "admin.registries.bitstream-formats.breadcrumbs": "Format registry",
-  // TODO New key - Add a translation
-  "admin.registries.bitstream-formats.breadcrumbs": "Format registry",
+  "admin.registries.bitstream-formats.breadcrumbs": "Registro de formato de archivo",
   
   // "admin.registries.bitstream-formats.create.breadcrumbs": "Bitstream format",
-  // TODO New key - Add a translation
-  "admin.registries.bitstream-formats.create.breadcrumbs": "Bitstream format",
+  "admin.registries.bitstream-formats.create.breadcrumbs": "Formato Bitstream",
   
   // "admin.registries.bitstream-formats.create.failure.content": "An error occurred while creating the new bitstream format.",
   "admin.registries.bitstream-formats.create.failure.content": "Ha ocurrido un error mientras se creaba el nuevo formato del archivo.",
@@ -211,8 +180,7 @@
   "admin.registries.bitstream-formats.description": "Este listado de formatos de archivos provee información acerca de formatos conocidos y su nivel de soporte.",
   
   // "admin.registries.bitstream-formats.edit.breadcrumbs": "Bitstream format",
-  // TODO New key - Add a translation
-  "admin.registries.bitstream-formats.edit.breadcrumbs": "Bitstream format",
+  "admin.registries.bitstream-formats.edit.breadcrumbs": "Formato Bitstream",
   
   // "admin.registries.bitstream-formats.edit.description.hint": "",
   "admin.registries.bitstream-formats.edit.description.hint": "",
@@ -308,13 +276,12 @@
   
   // "admin.registries.bitstream-formats.title": "DSpace Cris Angular :: Bitstream Format Registry",
   // TODO New key - Add a translation
-  "admin.registries.bitstream-formats.title": "DSpace Cris Angular :: Bitstream Format Registry",
+  "admin.registries.bitstream-formats.title": "DSpace Cris Angular :: Formato de registro de Bitstream",
   
   
   
   // "admin.registries.metadata.breadcrumbs": "Metadata registry",
-  // TODO New key - Add a translation
-  "admin.registries.metadata.breadcrumbs": "Metadata registry",
+  "admin.registries.metadata.breadcrumbs": "Registro de metadatos",
   
   // "admin.registries.metadata.description": "The metadata registry maintains a list of all metadata fields available in the repository. These fields may be divided amongst multiple schemas. However, DSpace requires the qualified Dublin Core schema.",
   "admin.registries.metadata.description": "El registro de metadatos mantiene una lista de todos los campos de metadatos disponibles en el repositorio.  Estos campos pueden dividirse entre múltiples esquemas. Sin embargo, DSpace requiere el esquema calificado de Dublin Core.",
@@ -351,13 +318,12 @@
   
   // "admin.registries.metadata.title": "DSpace Cris Angular :: Metadata Registry",
   // TODO New key - Add a translation
-  "admin.registries.metadata.title": "DSpace Cris Angular :: Metadata Registry",
+  "admin.registries.metadata.title": "DSpace Cris Angular :: Registro de metadatos",
   
   
   
   // "admin.registries.schema.breadcrumbs": "Metadata schema",
-  // TODO New key - Add a translation
-  "admin.registries.schema.breadcrumbs": "Metadata schema",
+  "admin.registries.schema.breadcrumbs": "Esquema de metadatos",
   
   // "admin.registries.schema.description": "This is the metadata schema for \"{{namespace}}\".",
   "admin.registries.schema.description": "Este es el esquema de metadatos para \"{{namespace}}\".",
@@ -429,126 +395,99 @@
   "admin.registries.schema.return": "Regreso",
   
   // "admin.registries.schema.title": "DSpace Cris Angular :: Metadata Schema Registry",
-  // TODO New key - Add a translation
-  "admin.registries.schema.title": "DSpace Cris Angular :: Metadata Schema Registry",
+  "admin.registries.schema.title": "DSpace Cris Angular :: Registro de Esquemas de Metadatos",
   
   
   
   // "admin.access-control.epeople.actions.delete": "Delete EPerson",
-  // TODO New key - Add a translation
-  "admin.access-control.epeople.actions.delete": "Delete EPerson",
+  "admin.access-control.epeople.actions.delete": "Borrar Usuario",
   
   // "admin.access-control.epeople.actions.impersonate": "Impersonate EPerson",
-  // TODO New key - Add a translation
-  "admin.access-control.epeople.actions.impersonate": "Impersonate EPerson",
+  "admin.access-control.epeople.actions.impersonate": "Suplantar Usuario",
   
   // "admin.access-control.epeople.actions.reset": "Reset password",
-  // TODO New key - Add a translation
-  "admin.access-control.epeople.actions.reset": "Reset password",
+  "admin.access-control.epeople.actions.reset": "Restablecer contraseña",
   
   // "admin.access-control.epeople.actions.stop-impersonating": "Stop impersonating EPerson",
-  // TODO New key - Add a translation
-  "admin.access-control.epeople.actions.stop-impersonating": "Stop impersonating EPerson",
+  "admin.access-control.epeople.actions.stop-impersonating": "Detener suplantación de usuario",
   
   // "admin.access-control.epeople.title": "DSpace Angular :: EPeople",
   // TODO New key - Add a translation
-  "admin.access-control.epeople.title": "DSpace Angular :: EPeople",
+  "admin.access-control.epeople.title": "DSpace Angular :: Usuarios",
   
   // "admin.access-control.epeople.head": "EPeople",
   // TODO New key - Add a translation
-  "admin.access-control.epeople.head": "EPeople",
+  "admin.access-control.epeople.head": "Usuarios",
   
   // "admin.access-control.epeople.search.head": "Search",
-  // TODO New key - Add a translation
-  "admin.access-control.epeople.search.head": "Search",
+  "admin.access-control.epeople.search.head": "Búsqueda",
   
   // "admin.access-control.epeople.button.see-all": "Browse All",
-  // TODO New key - Add a translation
-  "admin.access-control.epeople.button.see-all": "Browse All",
+  "admin.access-control.epeople.button.see-all": "Ver todo",
   
   // "admin.access-control.epeople.search.scope.metadata": "Metadata",
-  // TODO New key - Add a translation
-  "admin.access-control.epeople.search.scope.metadata": "Metadata",
+  "admin.access-control.epeople.search.scope.metadata": "Metadatos",
   
   // "admin.access-control.epeople.search.scope.email": "E-mail (exact)",
-  // TODO New key - Add a translation
-  "admin.access-control.epeople.search.scope.email": "E-mail (exact)",
+  "admin.access-control.epeople.search.scope.email": "E-mail (exacto)",
   
   // "admin.access-control.epeople.search.button": "Search",
-  // TODO New key - Add a translation
-  "admin.access-control.epeople.search.button": "Search",
+  "admin.access-control.epeople.search.button": "Búsqueda",
   
   // "admin.access-control.epeople.button.add": "Add EPerson",
-  // TODO New key - Add a translation
-  "admin.access-control.epeople.button.add": "Add EPerson",
+  "admin.access-control.epeople.button.add": "Añadir Usuario",
   
   // "admin.access-control.epeople.table.id": "ID",
-  // TODO New key - Add a translation
   "admin.access-control.epeople.table.id": "ID",
   
   // "admin.access-control.epeople.table.name": "Name",
-  // TODO New key - Add a translation
-  "admin.access-control.epeople.table.name": "Name",
+  "admin.access-control.epeople.table.name": "Nombre",
   
   // "admin.access-control.epeople.table.email": "E-mail (exact)",
-  // TODO New key - Add a translation
-  "admin.access-control.epeople.table.email": "E-mail (exact)",
+  "admin.access-control.epeople.table.email": "E-mail (exacto)",
   
   // "admin.access-control.epeople.table.edit": "Edit",
-  // TODO New key - Add a translation
-  "admin.access-control.epeople.table.edit": "Edit",
+  "admin.access-control.epeople.table.edit": "Editar",
   
   // "admin.access-control.epeople.table.edit.buttons.edit": "Edit \"{{name}}\"",
-  // TODO New key - Add a translation
-  "admin.access-control.epeople.table.edit.buttons.edit": "Edit \"{{name}}\"",
+  "admin.access-control.epeople.table.edit.buttons.edit": "Editar \"{{name}}\"",
   
   // "admin.access-control.epeople.table.edit.buttons.remove": "Delete \"{{name}}\"",
   // TODO New key - Add a translation
-  "admin.access-control.epeople.table.edit.buttons.remove": "Delete \"{{name}}\"",
+  "admin.access-control.epeople.table.edit.buttons.remove": "Eliminar \"{{name}}\"",
   
   // "admin.access-control.epeople.no-items": "No EPeople to show.",
-  // TODO New key - Add a translation
-  "admin.access-control.epeople.no-items": "No EPeople to show.",
+  "admin.access-control.epeople.no-items": "No hay usuarios para mostrar.",
   
   // "admin.access-control.epeople.form.create": "Create EPerson",
-  // TODO New key - Add a translation
-  "admin.access-control.epeople.form.create": "Create EPerson",
+  "admin.access-control.epeople.form.create": "Crear Usuario",
   
   // "admin.access-control.epeople.form.edit": "Edit EPerson",
-  // TODO New key - Add a translation
-  "admin.access-control.epeople.form.edit": "Edit EPerson",
+  "admin.access-control.epeople.form.edit": "Editar Usuario",
   
   // "admin.access-control.epeople.form.firstName": "First name",
-  // TODO New key - Add a translation
-  "admin.access-control.epeople.form.firstName": "First name",
+  "admin.access-control.epeople.form.firstName": "Nombre",
   
   // "admin.access-control.epeople.form.lastName": "Last name",
-  // TODO New key - Add a translation
-  "admin.access-control.epeople.form.lastName": "Last name",
+  "admin.access-control.epeople.form.lastName": "Apellidos",
   
   // "admin.access-control.epeople.form.email": "E-mail",
-  // TODO New key - Add a translation
   "admin.access-control.epeople.form.email": "E-mail",
   
   // "admin.access-control.epeople.form.emailHint": "Must be valid e-mail address",
-  // TODO New key - Add a translation
-  "admin.access-control.epeople.form.emailHint": "Must be valid e-mail address",
+  "admin.access-control.epeople.form.emailHint": "Debe ser un e-mail válido",
   
   // "admin.access-control.epeople.form.canLogIn": "Can log in",
-  // TODO New key - Add a translation
-  "admin.access-control.epeople.form.canLogIn": "Can log in",
+  "admin.access-control.epeople.form.canLogIn": "Puede conectarse",
   
   // "admin.access-control.epeople.form.requireCertificate": "Requires certificate",
-  // TODO New key - Add a translation
-  "admin.access-control.epeople.form.requireCertificate": "Requires certificate",
+  "admin.access-control.epeople.form.requireCertificate": "Requiere certificado",
   
   // "admin.access-control.epeople.form.notification.created.success": "Successfully created EPerson \"{{name}}\"",
-  // TODO New key - Add a translation
-  "admin.access-control.epeople.form.notification.created.success": "Successfully created EPerson \"{{name}}\"",
+  "admin.access-control.epeople.form.notification.created.success": "Creación exitosa de usuario \"{{name}}\"",
   
   // "admin.access-control.epeople.form.notification.created.failure": "Failed to create EPerson \"{{name}}\"",
-  // TODO New key - Add a translation
-  "admin.access-control.epeople.form.notification.created.failure": "Failed to create EPerson \"{{name}}\"",
+  "admin.access-control.epeople.form.notification.created.failure": "Fallo en la creación del usuario \"{{name}}\"",
   
   // "admin.access-control.epeople.form.notification.created.failure.emailInUse": "Failed to create EPerson \"{{name}}\", email \"{{email}}\" already in use.",
   // TODO New key - Add a translation
