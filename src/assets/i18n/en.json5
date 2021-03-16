@@ -1354,6 +1354,8 @@
 
   "context-menu.actions.edit-item.btn.FULL": "Edit item",
 
+  "context-menu.actions.modify-for-profile.btn": "Modify for own profile",
+
   "context-menu.actions.request-correction.btn": "Request correction",
 
   "context-menu.actions.request-correction.confirm.cancel": "Cancel",
