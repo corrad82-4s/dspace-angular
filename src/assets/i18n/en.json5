@@ -4316,6 +4316,19 @@
 
   "search.filters.filter.suneduClassification.placeholder" : "Sunedu Classification",
 
+  "search.filters.filter.institutionalOcde.head" : "Ocde Institutional Sector",
+
+  "search.filters.filter.institutionalOcde.placeholder" : "Ocde Institutional Sector",
+
+  "search.filters.filter.renacytClassification.head" : "Authorized Centre Cathegory",
+
+  "search.filters.filter.renacytClassification.placeholder" : "Authorized Centre Cathegory",
+
+  "search.filters.filter.descriptionAbstract.head" : "Description",
+
+  "search.filters.filter.descriptionAbstract.placeholder" : "Description",
+
+
 
   "search.filters.filter.peruCrisCiuu.head" : "Industrial Classification",
 
