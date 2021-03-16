@@ -4328,11 +4328,15 @@
 
   "search.filters.filter.descriptionAbstract.placeholder" : "Description",
 
+  "search.filters.filter.organizationIdentifier.head" : "Identifier",
+
+  "search.filters.filter.organizationIdentifier.placeholder" : "Identifier",
 
 
-  "search.filters.filter.peruCrisCiuu.head" : "Industrial Classification",
 
-  "search.filters.filter.peruCrisCiuu.placeholder" : "Industrial Classification",
+  "search.filters.filter.peruCrisCiuu.head" : "CIIU",
+
+  "search.filters.filter.peruCrisCiuu.placeholder" : "CIIU",
 
 
   "search.filters.filter.peruCrisSector.head" : "Sector",
