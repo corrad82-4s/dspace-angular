@@ -487,120 +487,96 @@
   "admin.access-control.epeople.form.notification.created.success": "Creación exitosa de usuario \"{{name}}\"",
   
   // "admin.access-control.epeople.form.notification.created.failure": "Failed to create EPerson \"{{name}}\"",
-  "admin.access-control.epeople.form.notification.created.failure": "Fallo en la creación del usuario \"{{name}}\"",
+  "admin.access-control.epeople.form.notification.created.failure": "Fallo al crear usuario \"{{name}}\"",
   
   // "admin.access-control.epeople.form.notification.created.failure.emailInUse": "Failed to create EPerson \"{{name}}\", email \"{{email}}\" already in use.",
-  // TODO New key - Add a translation
-  "admin.access-control.epeople.form.notification.created.failure.emailInUse": "Failed to create EPerson \"{{name}}\", email \"{{email}}\" already in use.",
+  "admin.access-control.epeople.form.notification.created.failure.emailInUse": "Fallo al crear usuario \"{{name}}\", email \"{{email}}\" ya en uso.",
   
   // "admin.access-control.epeople.form.notification.edited.failure.emailInUse": "Failed to edit EPerson \"{{name}}\", email \"{{email}}\" already in use.",
-  // TODO New key - Add a translation
-  "admin.access-control.epeople.form.notification.edited.failure.emailInUse": "Failed to edit EPerson \"{{name}}\", email \"{{email}}\" already in use.",
+  "admin.access-control.epeople.form.notification.edited.failure.emailInUse": "Fallo al editar usuario \"{{name}}\", email \"{{email}}\" ya en uso.",
   
   // "admin.access-control.epeople.form.notification.edited.success": "Successfully edited EPerson \"{{name}}\"",
-  // TODO New key - Add a translation
-  "admin.access-control.epeople.form.notification.edited.success": "Successfully edited EPerson \"{{name}}\"",
+  "admin.access-control.epeople.form.notification.edited.success": "Usuario editado con éxito \"{{name}}\"",
   
   // "admin.access-control.epeople.form.notification.edited.failure": "Failed to edit EPerson \"{{name}}\"",
-  // TODO New key - Add a translation
-  "admin.access-control.epeople.form.notification.edited.failure": "Failed to edit EPerson \"{{name}}\"",
+  "admin.access-control.epeople.form.notification.edited.failure": "Fallo al editar usuario \"{{name}}\"",
   
   // "admin.access-control.epeople.form.notification.deleted.success": "Successfully deleted EPerson \"{{name}}\"",
-  // TODO New key - Add a translation
-  "admin.access-control.epeople.form.notification.deleted.success": "Successfully deleted EPerson \"{{name}}\"",
+  "admin.access-control.epeople.form.notification.deleted.success": "Usuario eliminado con éxito \"{{name}}\"",
   
   // "admin.access-control.epeople.form.notification.deleted.failure": "Failed to delete EPerson \"{{name}}\"",
-  // TODO New key - Add a translation
-  "admin.access-control.epeople.form.notification.deleted.failure": "Failed to delete EPerson \"{{name}}\"",
+  "admin.access-control.epeople.form.notification.deleted.failure": "Fallo en la eliminación del usuario \"{{name}}\"",
   
   // "admin.access-control.epeople.form.groupsEPersonIsMemberOf": "Member of these groups:",
-  // TODO New key - Add a translation
-  "admin.access-control.epeople.form.groupsEPersonIsMemberOf": "Member of these groups:",
+  "admin.access-control.epeople.form.groupsEPersonIsMemberOf": "Miembro de estos grupos:",
   
   // "admin.access-control.epeople.form.roles": "Roles",
-  // TODO New key - Add a translation
   "admin.access-control.epeople.form.roles": "Roles",
   
   // "admin.access-control.epeople.form.rolesNoAvailable": "No roles available",
-  // TODO New key - Add a translation
-  "admin.access-control.epeople.form.rolesNoAvailable": "No roles available",
+  "admin.access-control.epeople.form.rolesNoAvailable": "No hay roles disponibles",
   
   // "admin.access-control.epeople.form.table.id": "ID",
   // TODO New key - Add a translation
   "admin.access-control.epeople.form.table.id": "ID",
   
   // "admin.access-control.epeople.form.table.name": "Name",
-  // TODO New key - Add a translation
-  "admin.access-control.epeople.form.table.name": "Name",
+  "admin.access-control.epeople.form.table.name": "Nombre",
   
   // "admin.access-control.epeople.form.memberOfNoGroups": "This EPerson is not a member of any groups",
-  // TODO New key - Add a translation
-  "admin.access-control.epeople.form.memberOfNoGroups": "This EPerson is not a member of any groups",
+  "admin.access-control.epeople.form.memberOfNoGroups": "Este usuario no es miembro de ningún grupo",
   
   // "admin.access-control.epeople.form.goToGroups": "Add to groups",
-  // TODO New key - Add a translation
-  "admin.access-control.epeople.form.goToGroups": "Add to groups",
+  "admin.access-control.epeople.form.goToGroups": "Añadir a los grupos",
   
   // "admin.access-control.epeople.notification.deleted.failure": "Failed to delete EPerson: \"{{name}}\"",
-  // TODO New key - Add a translation
-  "admin.access-control.epeople.notification.deleted.failure": "Failed to delete EPerson: \"{{name}}\"",
+  "admin.access-control.epeople.notification.deleted.failure": "Fallo al eliminar el usuario: \"{{name}}\"",
   
   // "admin.access-control.epeople.notification.deleted.success": "Successfully deleted EPerson: \"{{name}}\"",
-  // TODO New key - Add a translation
-  "admin.access-control.epeople.notification.deleted.success": "Successfully deleted EPerson: \"{{name}}\"",
+  "admin.access-control.epeople.notification.deleted.success": "Usuario eliminado con éxito: \"{{name}}\"",
   
   
   // "admin.access-control.groups.badge.disabled": "Disabled",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.badge.disabled": "Disabled",
+  "admin.access-control.groups.badge.disabled": "Desactivado",
   
   // "admin.access-control.groups.badge.enabled": "Enabled",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.badge.enabled": "Enabled",
+  "admin.access-control.groups.badge.enabled": "Activado",
   
   // "admin.access-control.groups.badge.permanent": "Permanent",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.badge.permanent": "Permanent",
+  "admin.access-control.groups.badge.permanent": "Permanente",
   
   // "admin.access-control.groups.badge.institutional": "Institutional Role",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.badge.institutional": "Institutional Role",
+  "admin.access-control.groups.badge.institutional": "Rol Institucional",
   
   // "admin.access-control.groups.badge.normal": "Normal",
-  // TODO New key - Add a translation
   "admin.access-control.groups.badge.normal": "Normal",
   
   // "admin.access-control.groups.badge.role": "Role",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.badge.role": "Role",
+  "admin.access-control.groups.badge.role": "Rol",
   
   // "admin.access-control.groups.badge.scoped": "Institutional Scoped Role",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.badge.scoped": "Institutional Scoped Role",
+  "admin.access-control.groups.badge.scoped": "Rol de alcance institucional",
   
   // "admin.access-control.groups.title": "DSpace Angular :: Groups",
   // TODO New key - Add a translation
-  "admin.access-control.groups.title": "DSpace Angular :: Groups",
+  "admin.access-control.groups.title": "DSpace Angular :: Grupos",
   
   // "admin.access-control.groups.title.singleGroup": "DSpace Angular :: Edit Group",
   // TODO New key - Add a translation
-  "admin.access-control.groups.title.singleGroup": "DSpace Angular :: Edit Group",
+  "admin.access-control.groups.title.singleGroup": "DSpace Angular :: Editar Grupo",
   
   // "admin.access-control.groups.title.addGroup": "DSpace Angular :: New Group",
   // TODO New key - Add a translation
-  "admin.access-control.groups.title.addGroup": "DSpace Angular :: New Group",
+  "admin.access-control.groups.title.addGroup": "DSpace Angular :: Nuevo Grupo",
   
   // "admin.access-control.groups.head": "Groups/Roles",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.head": "Groups/Roles",
+  "admin.access-control.groups.head": "Grupos/Roles",
   
   // "admin.access-control.groups.button.add": "Add group",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.button.add": "Add group",
+  "admin.access-control.groups.button.add": "Añadir grupo",
   
   // "admin.access-control.groups.search.head": "Search groups",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.search.head": "Search groups",
+  "admin.access-control.groups.search.head": "Buscar grupos",
   
   // "admin.access-control.groups.button.see-all": "Browse all",
   // TODO New key - Add a translation
@@ -9073,8 +9049,7 @@
   "submission.sections.submit.progressbar.describe.cv-publication_thesis": "Publication Thesis",
   
   // "submission.sections.submit.progressbar.describe.rp": "Researcher basic information",
-  // TODO New key - Add a translation
-  "submission.sections.submit.progressbar.describe.rp": "Researcher basic information",
+  "submission.sections.submit.progressbar.describe.rp": "Información básica del investigador",
   
   // "submission.sections.submit.progressbar.describe.recycle": "Recycle",
   "submission.sections.submit.progressbar.describe.recycle": "Reciclar",
@@ -9124,7 +9099,6 @@
   "submission.sections.upload.form.date-required": "La fecha es requerida.",
   
   // "submission.sections.upload.form.from-label": "Grant access from",
-  // TODO Source message changed - Revise the translation
   "submission.sections.upload.form.from-label": "Concesión de acceso desde",
   
   // "submission.sections.upload.form.from-placeholder": "From",
@@ -9137,7 +9111,6 @@
   "submission.sections.upload.form.group-required": "El Grupo es requerido.",
   
   // "submission.sections.upload.form.until-label": "Grant access until",
-  // TODO Source message changed - Revise the translation
   "submission.sections.upload.form.until-label": "Concesión de acceso hasta",
   
   // "submission.sections.upload.form.until-placeholder": "Until",
@@ -9190,20 +9163,16 @@
   "submission.workflow.generic.edit-help": "Seleccione la opción para cambiar los metadatos del ítem.",
   
   // "submission.workflow.generic.processing": "Processing",
-  // TODO New key - Add a translation
-  "submission.workflow.generic.processing": "Processing",
+  "submission.workflow.generic.processing": "Procesando",
   
   // "submission.workflow.generic.reinstate": "Reinstate",
-  // TODO New key - Add a translation
-  "submission.workflow.generic.reinstate": "Reinstate",
+  "submission.workflow.generic.reinstate": "Restablecer",
   
   // "submission.workflow.generic.reinstate-help": "Select this option to request the item reinstatement.",
-  // TODO New key - Add a translation
-  "submission.workflow.generic.reinstate-help": "Select this option to request the item reinstatement.",
+  "submission.workflow.generic.reinstate-help": "Seleccione esta opción para solicitar el restablecimiento del ítem.",
   
   // "submission.workflow.generic.reinstate.success": "Reinstate request made successfully",
-  // TODO New key - Add a translation
-  "submission.workflow.generic.reinstate.success": "Reinstate request made successfully",
+  "submission.workflow.generic.reinstate.success": "Solicitud de restablecimiento realizada con éxito",
   
   // "submission.workflow.generic.view": "View",
   "submission.workflow.generic.view": "Ver",
@@ -9212,16 +9181,14 @@
   "submission.workflow.generic.view-help": "Seleccion esta opción para visualizar los metadatos del ítem.",
   
   // "submission.workflow.generic.withdraw": "Withdraw",
-  // TODO New key - Add a translation
-  "submission.workflow.generic.withdraw": "Withdraw",
+  "submission.workflow.generic.withdraw": "Retirar",
   
   // "submission.workflow.generic.withdraw-help": "Select this option to request the item withdrawn.",
   // TODO New key - Add a translation
-  "submission.workflow.generic.withdraw-help": "Select this option to request the item withdrawn.",
+  "submission.workflow.generic.withdraw-help": "Seleccione esta opción para solicitar la retirada del ítem.",
   
   // "submission.workflow.generic.withdraw.success": "Withdrawal request made successfully",
-  // TODO New key - Add a translation
-  "submission.workflow.generic.withdraw.success": "Withdrawal request made successfully",
+  "submission.workflow.generic.withdraw.success": "Solicitud de retirada realizada con éxito",
   
   
   
@@ -9232,52 +9199,40 @@
   "submission.workflow.tasks.claimed.approve_help": "Si ha revisado el ítem y es adecuado para su inclusión en la colección., seleccione \"Aprobar\".",
   
   // "submission.workflow.tasks.claimed.assign": "Assign",
-  // TODO New key - Add a translation
-  "submission.workflow.tasks.claimed.assign": "Assign",
+  "submission.workflow.tasks.claimed.assign": "Asignar",
   
   // "submission.workflow.tasks.claimed.assign_help": "Assign the review to another user",
-  // TODO New key - Add a translation
-  "submission.workflow.tasks.claimed.assign_help": "Assign the review to another user",
+  "submission.workflow.tasks.claimed.assign_help": "Asignar la revisión a otro usuario",
   
   // "submission.workflow.tasks.claimed.assign.user.info": "Select the user to assign the current item review",
-  // TODO New key - Add a translation
-  "submission.workflow.tasks.claimed.assign.user.info": "Select the user to assign the current item review",
+  "submission.workflow.tasks.claimed.assign.user.info": "Seleccione el usuario al que asignar la revisión del ítem actual",
   
   // "submission.workflow.tasks.claimed.assign.user.no-member": "No other group's members found for the selected task",
-  // TODO New key - Add a translation
-  "submission.workflow.tasks.claimed.assign.user.no-member": "No other group's members found for the selected task",
+  "submission.workflow.tasks.claimed.assign.user.no-member": "No se han encontrado otros miembros del grupo para la tarea seleccionada",
   
   // "submission.workflow.tasks.claimed.assign.user.title": "Assign to another user",
-  // TODO New key - Add a translation
-  "submission.workflow.tasks.claimed.assign.user.title": "Assign to another user",
+  "submission.workflow.tasks.claimed.assign.user.title": "Asignar a otro usuario",
   
   // "submission.workflow.tasks.claimed.assign.user.submit": "Assign",
-  // TODO New key - Add a translation
-  "submission.workflow.tasks.claimed.assign.user.submit": "Assign",
+  "submission.workflow.tasks.claimed.assign.user.submit": "Asignar",
   
   // "submission.workflow.tasks.claimed.choose_as_target": "Choose as target",
-  // TODO New key - Add a translation
-  "submission.workflow.tasks.claimed.choose_as_target": "Choose as target",
+  "submission.workflow.tasks.claimed.choose_as_target": "Elegir como objetivo",
   
   // "submission.workflow.tasks.claimed.choose_as_target_help": "Select this option to choose this item as target and merge the other one with it",
-  // TODO New key - Add a translation
-  "submission.workflow.tasks.claimed.choose_as_target_help": "Select this option to choose this item as target and merge the other one with it",
+  "submission.workflow.tasks.claimed.choose_as_target_help": "Seleccione esta opción para elegir este ítem como objetivo y fusionar el otro con él",
   
   // "submission.workflow.tasks.claimed.discard": "Discard",
-  // TODO New key - Add a translation
-  "submission.workflow.tasks.claimed.discard": "Discard",
+  "submission.workflow.tasks.claimed.discard": "Descartar",
   
   // "submission.workflow.tasks.claimed.discard_help": "Select this option to merge this item into the other detected duplication",
-  // TODO New key - Add a translation
-  "submission.workflow.tasks.claimed.discard_help": "Select this option to merge this item into the other detected duplication",
+  "submission.workflow.tasks.claimed.discard_help": "Seleccione esta opción para fusionar este ítem con el otro duplicado detectado",
   
   // "submission.workflow.tasks.claimed.duplication-detected": "Duplications detected",
-  // TODO New key - Add a translation
-  "submission.workflow.tasks.claimed.duplication-detected": "Duplications detected",
+  "submission.workflow.tasks.claimed.duplication-detected": "Duplicados detectados",
   
   // "submission.workflow.tasks.claimed.duplication-verified": "Duplication verified",
-  // TODO New key - Add a translation
-  "submission.workflow.tasks.claimed.duplication-verified": "Duplication verified",
+  "submission.workflow.tasks.claimed.duplication-verified": "Duplicado verificado",
   
   // "submission.workflow.tasks.claimed.edit": "Edit",
   "submission.workflow.tasks.claimed.edit": "Editar",
@@ -9286,16 +9241,16 @@
   "submission.workflow.tasks.claimed.edit_help": "Seleccione esta opción para cambiar los metadatos del ítem.",
   
   // "submission.workflow.tasks.claimed.reject.reason.info": "Please enter your reason for rejecting the submission into the box below, indicating whether the submitter may fix a problem and resubmit.",
-  "submission.workflow.tasks.claimed.reject.reason.info": "Favor ingrese abajo su motivo para rechazar el envío, indicando si el remitente puede solucionar un problema y volver a enviar.",
+  "submission.workflow.tasks.claimed.reject.reason.info": "Por favor, introduzca el motivo por el que rechaza el envío en la siguiente casilla, indicando si el remitente puede solucionar un problema y volver a enviar.",
   
   // "submission.workflow.tasks.claimed.reject.reason.placeholder": "Describe the reason of reject",
   "submission.workflow.tasks.claimed.reject.reason.placeholder": "Describe el motivo del rechazo",
   
   // "submission.workflow.tasks.claimed.reject.reason.submit": "Reject item",
-  "submission.workflow.tasks.claimed.reject.reason.submit": "Rechazar el 'item",
+  "submission.workflow.tasks.claimed.reject.reason.submit": "Rechazar el ítem",
   
   // "submission.workflow.tasks.claimed.reject.reason.title": "Reason",
-  "submission.workflow.tasks.claimed.reject.reason.title": "Razón",
+  "submission.workflow.tasks.claimed.reject.reason.title": "Motivo",
   
   // "submission.workflow.tasks.claimed.reject": "Reject",
   // TODO New key - Add a translation
@@ -9333,12 +9288,10 @@
   "submission.workflow.tasks.pool.claim_help": "Asígnese esta tarea a usted mismo.",
   
   // "submission.workflow.tasks.pool.reject": "Reject",
-  // TODO New key - Add a translation
-  "submission.workflow.tasks.pool.reject": "Reject",
+  "submission.workflow.tasks.pool.reject": "Rechazar",
   
   // "submission.workflow.tasks.pool.reject_help": "If you have reviewed the item and found it is <strong>not</strong> suitable for inclusion in the collection, select \"Reject\".",
-  // TODO New key - Add a translation
-  "submission.workflow.tasks.pool.reject_help": "If you have reviewed the item and found it is <strong>not</strong> suitable for inclusion in the collection, select \"Reject\".",
+  "submission.workflow.tasks.pool.reject_help": "Si ha revisado el ítem y encuentra que <strong>no</strong> es adecuado para su inclusión en la colección, select \"Reject\".",
   
   
   // "submission.workflow.tasks.pool.hide-detail": "Hide detail",
@@ -9356,138 +9309,108 @@
   
   
   // "tree.description.srsc": "Research Subject Categories",
-  // TODO New key - Add a translation
-  "tree.description.srsc": "Research Subject Categories",
+  "tree.description.srsc": "Categorías de materias de investigación",
   
   
   
   // "treeview.header": "Hierarchical tree view",
-  // TODO New key - Add a translation
-  "treeview.header": "Hierarchical tree view",
+  "treeview.header": "Vista de árbol jerárquico",
   
   
   
   // "treeview.search.form.reset": "Reset",
-  // TODO New key - Add a translation
-  "treeview.search.form.reset": "Reset",
+  "treeview.search.form.reset": "Reiniciar",
   
   // "treeview.search.form.search": "Search",
   // TODO New key - Add a translation
-  "treeview.search.form.search": "Search",
+  "treeview.search.form.search": "Buscar",
   
   // "treeview.search.no-result": "There were no items to show",
-  // TODO New key - Add a translation
-  "treeview.search.no-result": "There were no items to show",
+  "treeview.search.no-result": "No había elementos que mostrar",
   
   
   
   // "treeview.load-more": "Load more",
-  // TODO New key - Add a translation
-  "treeview.load-more": "Load more",
+  "treeview.load-more": "Cargar más",
   
   
   
   // "vocabulary.import-external.preview.title.Dataset": "Dataset Preview",
-  // TODO New key - Add a translation
-  "vocabulary.import-external.preview.title.Dataset": "Dataset Preview",
+  "vocabulary.import-external.preview.title.Dataset": "Vista previa del dataset",
   
   // "vocabulary.import-external.preview.title.Equipment": "Equipment Preview",
-  // TODO New key - Add a translation
-  "vocabulary.import-external.preview.title.Equipment": "Equipment Preview",
+  "vocabulary.import-external.preview.title.Equipment": "Vista previa del equipamiento",
   
   // "vocabulary.import-external.preview.title.Event": "Event Preview",
-  // TODO New key - Add a translation
-  "vocabulary.import-external.preview.title.Event": "Event Preview",
+  "vocabulary.import-external.preview.title.Event": "Vista previa del evento",
   
   // "vocabulary.import-external.preview.title.Funding": "Funding Preview",
-  // TODO New key - Add a translation
-  "vocabulary.import-external.preview.title.Funding": "Funding Preview",
+  "vocabulary.import-external.preview.title.Funding": "Vista previa del financiamiento",
   
   // "vocabulary.import-external.preview.title.Journal": "Journal Preview",
-  // TODO New key - Add a translation
-  "vocabulary.import-external.preview.title.Journal": "Journal Preview",
+  "vocabulary.import-external.preview.title.Journal": "Vista previa de la revista",
   
   // "vocabulary.import-external.preview.title.Mainwork": "Mainwork Preview",
-  // TODO New key - Add a translation
-  "vocabulary.import-external.preview.title.Mainwork": "Mainwork Preview",
+  "vocabulary.import-external.preview.title.Mainwork": "Vista previa del trabajo principal",
   
   // "vocabulary.import-external.preview.title.OrgUnit": "Publisher Preview",
-  // TODO New key - Add a translation
-  "vocabulary.import-external.preview.title.OrgUnit": "Publisher Preview",
+  "vocabulary.import-external.preview.title.OrgUnit": "Vista previa de la editorial",
   
   // "vocabulary.import-external.preview.title.Patent": "Patent Preview",
-  // TODO New key - Add a translation
-  "vocabulary.import-external.preview.title.Patent": "Patent Preview",
+  "vocabulary.import-external.preview.title.Patent": "Vista previa de la patente",
   
   // "vocabulary.import-external.preview.title.Person": "Person Preview",
-  // TODO New key - Add a translation
-  "vocabulary.import-external.preview.title.Person": "Person Preview",
+  "vocabulary.import-external.preview.title.Person": "Vista previa de la persona",
   
   // "vocabulary.import-external.preview.title.Project": "Project Preview",
-  // TODO New key - Add a translation
-  "vocabulary.import-external.preview.title.Project": "Project Preview",
+  "vocabulary.import-external.preview.title.Project": "Vista previa del proyecto",
   
   // "vocabulary.import-external.preview.title.Publication": "Publication Preview",
-  // TODO New key - Add a translation
-  "vocabulary.import-external.preview.title.Publication": "Publication Preview",
+  "vocabulary.import-external.preview.title.Publication": "Vista previa de la publicación",
   
   // "vocabulary.import-external.preview.subtitle": "The metadata below will be used to create the new entity.",
-  // TODO New key - Add a translation
-  "vocabulary.import-external.preview.subtitle": "The metadata below will be used to create the new entity.",
+  "vocabulary.import-external.preview.subtitle": "Los siguientes metadatos se utilizarán para crear la nueva entidad.",
   
   // "vocabulary.import-external.preview.button.import": "Create entity",
-  // TODO New key - Add a translation
-  "vocabulary.import-external.preview.button.import": "Create entity",
+  "vocabulary.import-external.preview.button.import": "Crear entidad",
   
   // "vocabulary.import-external.preview.not-found": "It's not possible to create an entity from given source.",
-  // TODO New key - Add a translation
-  "vocabulary.import-external.preview.not-found": "It's not possible to create an entity from given source.",
+  "vocabulary.import-external.preview.not-found": "No es posible crear una entidad a partir de la fuente indicada.",
   
   // "vocabulary.import-external.preview.import.error": "An error occurs during the creation process.",
-  // TODO New key - Add a translation
-  "vocabulary.import-external.preview.import.error": "An error occurs during the creation process.",
+  "vocabulary.import-external.preview.import.error": "Se ha producido un error durante el proceso de creación.",
   
   // "vocabulary.import-external.preview.import.success": "Entity created successfully.",
-  // TODO New key - Add a translation
-  "vocabulary.import-external.preview.import.success": "Entity created successfully.",
+  "vocabulary.import-external.preview.import.success": "Entidad creada con éxito.",
   
   // "vocabulary-treeview.header": "Hierarchical tree view",
-  // TODO New key - Add a translation
-  "vocabulary-treeview.header": "Hierarchical tree view",
+  "vocabulary-treeview.header": "Vista de árbol jerárquico",
   
   // "vocabulary-treeview.load-more": "Load more",
-  // TODO New key - Add a translation
-  "vocabulary-treeview.load-more": "Load more",
+  "vocabulary-treeview.load-more": "Cargar más",
   
   // "vocabulary-treeview.search.form.reset": "Reset",
-  // TODO New key - Add a translation
-  "vocabulary-treeview.search.form.reset": "Reset",
+  "vocabulary-treeview.search.form.reset": "Reiniciar",
   
   // "vocabulary-treeview.search.form.search": "Search",
-  // TODO New key - Add a translation
-  "vocabulary-treeview.search.form.search": "Search",
+  "vocabulary-treeview.search.form.search": "Buscar",
   
   // "vocabulary-treeview.search.no-result": "There were no items to show",
-  // TODO New key - Add a translation
-  "vocabulary-treeview.search.no-result": "There were no items to show",
+  "vocabulary-treeview.search.no-result": "No había elementos que mostrar",
   
   // "vocabulary-treeview.tree.description.nsi": "The Norwegian Science Index",
-  // TODO New key - Add a translation
   "vocabulary-treeview.tree.description.nsi": "The Norwegian Science Index",
   
   // "vocabulary-treeview.tree.description.srsc": "Research Subject Categories",
-  // TODO New key - Add a translation
-  "vocabulary-treeview.tree.description.srsc": "Research Subject Categories",
+  "vocabulary-treeview.tree.description.srsc": "Categorías de materias de investigación",
   
   
   
   // "administrativeView.search.results.head": "Administrative Search",
-  // TODO New key - Add a translation
-  "administrativeView.search.results.head": "Administrative Search",
+  "administrativeView.search.results.head": "Búsqueda administrativa",
   
   // "menu.section.admin_search": "Admin Search",
-  // TODO New key - Add a translation
-  "menu.section.admin_search": "Admin Search",
+  "menu.section.admin_search": "Búsqueda administrativa",
   
   
   
