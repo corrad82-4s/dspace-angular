@@ -4402,8 +4402,6 @@
   "search.filters.filter.ubigeo.placeholder": "Ubigeo",
 
 
-
-
   "search.filters.entityType.JournalIssue": "Journal Issue",
 
   "search.filters.entityType.JournalVolume": "Journal Volume",
@@ -5419,6 +5417,457 @@
 
   "peru-layout.corrections.back": "Back",
 
-  "peru-layout.shadow-copies": "Sources of information: "
+  "peru-layout.shadow-copies": "Sources of information: ",
+  
+  "cris.tab.label.profile": "Profile",
+
+  "cris.tab.label.publications": "Publications",
+
+  "cris.tab.label.projects": "Projects",
+
+  "cris.tab.label.patents": "Patents",
+
+  "cris.tab.label.orgunits": "OrgUnits",
+
+  "cris.tab.label.orcid": "ORCID",
+
+  "cris.tab.label.other": "Other",
+
+  "cris.tab.label.indicators": "Indicators",
+
+  "cris.tab.label.securedtab": "Secured Tab",
+
+  "cris.tab.label.qualifications": "Qualifications",
+
+  "cris.tab.label.equipments": "Equipments",
+
+  "cris.tab.label.notifications": "Notifications",
+
+  "cris.tab.label.informations": "Informations",
+
+  "cris.tab.label.researcherspublications": "Researchers publications",
+
+  "cris.tab.label.researchersprojects": "Researchers projects",
+
+  "cris.tab.label.people": "People",
+
+  "cris.tab.label.details": "Details",
+
+  "cris.tab.label.internaldata": "Internal Data",
+
+  "cris.tab.label.fundings": "Fundings",
+
+  "cris.tab.label.notification": "Notification",
+
+  "cris.box.label.projects": "Projects",
+
+  "cris.box.label.publications": "Publications",
+
+  "cris.box.label.patents": "Patents",
+
+  "cris.box.label.orgunits": "OrgUnits",
+
+  "cris.box.label.professionalqualifications": "Professional Qualifications",
+
+  "cris.box.label.mediacontactdirectory": "Media Contact Directory",
+
+  "cris.box.label.orcidregistryqueue": "ORCID Registry Queue",
+
+  "cris.box.label.namecard": "Name Card",
+
+  "cris.box.label.orcidsynchronizationsettings": "ORCID Synchronization settings",
+
+  "cris.box.label.profile": "Profile",
+
+  "cris.box.label.orcidauthorizations": "ORCID Authorizations",
+
+  "cris.box.label.securedbox": "Secured box",
+
+  "cris.box.label.sunedudata": "Sunedu Data",
+
+  "cris.box.label.reniecdata": "Reniec Data",
+
+  "cris.box.label.bibliometrics": "Bibliometrics",
+
+  "cris.box.label.projects": "Projects ",
+
+  "cris.box.label.equipments": "Equipments",
+
+  "cris.box.label.notifications": "Notifications",
+
+  "cris.box.label.orgunit'sresearchersprojects": "OrgUnit's Researchers projects",
+
+  "cris.box.label.orgunit'spublications": "OrgUnit's Publications",
+
+  "cris.box.label.orgunit'sresearcherspublications": "OrgUnit's Researchers publications",
+
+  "cris.box.label.orgunit'sresearchers": "OrgUnit's Researchers",
+
+  "cris.box.label.orgunitfundedprojects": "OrgUnit funded Projects",
+
+  "cris.box.label.description": "Description",
+
+  "cris.box.label.suborgunits": "SubOrgUnits",
+
+  "cris.box.label.details": "Details",
+
+  "cris.box.label.rucnumber": "Ruc Number",
+
+  "cris.box.label.identifiers": "Identifiers",
+
+  "cris.box.label.card": "Card",
+
+  "cris.box.label.fundings": "Fundings",
+
+  "cris.box.label.status": "Status",
+
+  "cris.box.label.internal": "Internal",
+
+  "cris.box.label.projectcard": "Project Card",
+
+  "cris.box.label.primarydata": "Primary Data",
+
+  "cris.box.label.journaldescription": "Journal description",
+
+  "cris.box.label.equipmentdescription": "Equipment description",
+
+  "cris.box.label.data": "Data",
+
+  "cris.box.label.basicinformation": "Basic Information",
+
+  "cris.box.label.idinformation": "Id information",
+
+  "cris.box.label.notification": "Notification",
+
+  "cris.boxmetadata.label.country": "Country",
+
+  "cris.boxmetadata.label.city": "City",
+
+  "cris.boxmetadata.label.description": "Description",
+
+  "cris.boxmetadata.label.organisationname": "Organisation Name",
+
+  "cris.boxmetadata.label.legalname": "Legal name",
+
+  "cris.boxmetadata.label.acronym": "Acronym",
+
+  "cris.boxmetadata.label.director": "Director",
+
+  "cris.boxmetadata.label.parentorganisation": "Parent Organisation",
+
+  "cris.boxmetadata.label.foundingdate": "Founding Date",
+
+  "cris.boxmetadata.label.boards": "Boards",
+
+  "cris.boxmetadata.label.website": "Web Site",
+
+  "cris.boxmetadata.label.ubigeo": "UbiGeo",
+
+  "cris.boxmetadata.label.sectorinstitutional": "Sector Institutional",
+
+  "cris.boxmetadata.label.perucrisclassification": "PeruCRIS Classification",
+
+  "cris.boxmetadata.label.suneduclassification": "Sunedu Classification",
+
+  "cris.boxmetadata.label.industrialclassification": "Industrial Classification",
+
+  "cris.boxmetadata.label.juridicalnature": "Juridical Nature",
+
+  "cris.boxmetadata.label.keywords": "Keyword(s)",
+
+  "cris.boxmetadata.label.subjectocde": "Subject OCDE",
+
+  "cris.boxmetadata.label.type": "Type",
+
+  "cris.boxmetadata.label.rucnumber": "RUC Number",
+
+  "cris.boxmetadata.label.crossreffunderid": "CrossRef Funder ID",
+
+  "cris.boxmetadata.label.researchorganizationregistry": "Research Organization Registry",
+
+  "cris.boxmetadata.label.internationalstandardnameidentifier": "International Standard Name Identifier",
+
+  "cris.boxmetadata.label.ringgoldidentifier": "Ringgold identifier",
+
+  "cris.boxmetadata.label.scopusaffid": "Scopus AffId",
+
+  "cris.boxmetadata.label.renacytregistration": "Renacyt Registration",
+
+  "cris.boxmetadata.label.renacytdateofqualification": "Renacyt Date Of Qualification",
+
+  "cris.boxmetadata.label.renacytregistrationnumber": "Renacyt Registration Number",
+
+  "cris.boxmetadata.label.renacytvalidityofregistration": "Renacyt Validity Of Registration",
+
+  "cris.boxmetadata.label.renacytlevelorclassification": "Renacyt Level or Classification",
+
+  "cris.boxmetadata.label.keywords": "Keywords",
+
+  "cris.boxmetadata.label.uses": "Uses",
+
+  "cris.boxmetadata.label.openaireid": "OpenAIRE ID",
+
+  "cris.boxmetadata.label.projecttitle": "Project Title",
+
+  "cris.boxmetadata.label.consortiumcoordinator": "Consortium Coordinator",
+
+  "cris.boxmetadata.label.partnerorganisations": "Partner Organisations",
+
+  "cris.boxmetadata.label.ocdesubjects": "OCDE Subject(s)",
+
+  "cris.boxmetadata.label.organisations": "Organisations",
+
+  "cris.boxmetadata.label.principalinvestigator": "Principal Investigator",
+
+  "cris.boxmetadata.label.investigators": "Investigators",
+
+  "cris.boxmetadata.label.projectwebsite": "Project Web Site",
+
+  "cris.boxmetadata.label.startdate": "Start Date",
+
+  "cris.boxmetadata.label.enddate": "End Date",
+
+  "cris.boxmetadata.label.awardurl": "Award URL",
+
+  "cris.boxmetadata.label.funding": "Funding",
+
+  "cris.boxmetadata.label.internalid": "Internal ID",
+
+  "cris.boxmetadata.label.status": "Status",
+
+  "cris.boxmetadata.label.internalnote": "Internal Note",
+
+  "cris.boxmetadata.label.fundingtitle": "Funding title",
+
+  "cris.boxmetadata.label.project": "Project",
+
+  "cris.boxmetadata.label.funder": "Funder",
+
+  "cris.boxmetadata.label.duration": "Duration",
+
+  "cris.boxmetadata.label.fundingprogram": "Funding Program",
+
+  "cris.boxmetadata.label.amount": "Amount",
+
+  "cris.boxmetadata.label.currency": "Currency",
+
+  "cris.boxmetadata.label.oamandate": "OA Mandate",
+
+  "cris.boxmetadata.label.fundingcode": "Funding code",
+
+  "cris.boxmetadata.label.researchinterests": "Research Interests",
+
+  "cris.boxmetadata.label.knowslanguage": "Knows Language",
+
+  "cris.boxmetadata.label.qualification": "Qualification",
+
+  "cris.boxmetadata.label.qualificationgroup": "Qualification Group",
+
+  "cris.boxmetadata.label.validfrom": "Valid From",
+
+  "cris.boxmetadata.label.validto": "Valid To",
+
+  "cris.boxmetadata.label.fullname": "Full name",
+
+  "cris.boxmetadata.label.translatedname": "Translated Name",
+
+  "cris.boxmetadata.label.mainaffiliation": "Main Affiliation",
+
+  "cris.boxmetadata.label.affiliations": "Affiliation(s)",
+
+  "cris.boxmetadata.label.affiliation’sroles": "Affiliation’s Role(s)",
+
+  "cris.boxmetadata.label.affiliation’sstartdates": "Affiliation’s Start Date(s)",
+
+  "cris.boxmetadata.label.affiliation’senddates": "Affiliation’s End Date(s)",
+
+  "cris.boxmetadata.label.preferredname": "Preferred name",
+
+  "cris.boxmetadata.label.officialname": "Official Name",
+
+  "cris.boxmetadata.label.alternativename": "Alternative Name",
+
+  "cris.boxmetadata.label.email": "Email",
+
+  "cris.boxmetadata.label.orcid": "ORCID",
+
+  "cris.boxmetadata.label.scopusauthorid": "Scopus Author ID",
+
+  "cris.boxmetadata.label.researcherid": "Researcher ID",
+
+  "cris.boxmetadata.label.biography": "Biography",
+
+  "cris.boxmetadata.label.affiliation": "Affiliation",
+
+  "cris.boxmetadata.label.education": "Education",
+
+  "cris.boxmetadata.label.dni": "DNI",
+
+  "cris.boxmetadata.label.passport": "Passport",
+
+  "cris.boxmetadata.label.immigrationcard": "Immigration Card",
+
+  "cris.boxmetadata.label.dina": "DINA",
+
+  "cris.boxmetadata.label.renacytid": "Renacyt ID",
+
+  "cris.boxmetadata.label.role": "Role",
+
+  "cris.boxmetadata.label.educationcountry": "Education Country",
+
+  "cris.boxmetadata.label.educationgrantor": "Education Grantor",
+
+  "cris.boxmetadata.label.apellidopaterno": "Apellido Paterno",
+
+  "cris.boxmetadata.label.apellidomaterno": "Apellido Materno",
+
+  "cris.boxmetadata.label.apellidocasada": "Apellido Casada",
+
+  "cris.boxmetadata.label.givenname": "Given Name",
+
+  "cris.boxmetadata.label.domicilioubigeo": "Domicilio UBIGEO",
+
+  "cris.boxmetadata.label.region": "Region",
+
+  "cris.boxmetadata.label.province": "Province",
+
+  "cris.boxmetadata.label.district": "District",
+
+  "cris.boxmetadata.label.direccion": "Direccion",
+
+  "cris.boxmetadata.label.birthubigeo": "Birth UBIGEO",
+
+  "cris.boxmetadata.label.birthregion": "Birth Region",
+
+  "cris.boxmetadata.label.birthprovince": "Birth Province",
+
+  "cris.boxmetadata.label.birthdistrict": "Birth District",
+
+  "cris.boxmetadata.label.gender": "Gender",
+
+  "cris.boxmetadata.label.birthdate": "Birth Date",
+
+  "cris.boxmetadata.label.journaltitle": "Journal Title",
+
+  "cris.boxmetadata.label.issn": "ISSN",
+
+  "cris.boxmetadata.label.title": "Title",
+
+  "cris.boxmetadata.label.location": "Location",
+
+  "cris.boxmetadata.label.organizer": "Organizer",
+
+  "cris.boxmetadata.label.sponsor": "Sponsor",
+
+  "cris.boxmetadata.label.partnerorganisation": "Partner Organisation",
+
+  "cris.boxmetadata.label.partnerproject": "Partner Project",
+
+  "cris.boxmetadata.label.abstract": "Abstract",
+
+  "cris.boxmetadata.label.name": "Name",
+
+  "cris.boxmetadata.label.owningorganization": "Owning Organization",
+
+  "cris.boxmetadata.label.owningperson": "Owning Person",
+
+  "cris.boxmetadata.label.usage": "Usage",
+
+  "cris.boxmetadata.label.researchline": "Research Line",
+
+  "cris.boxmetadata.label.manufacturingcountry": "Manufacturing Country",
+
+  "cris.boxmetadata.label.acquisitiondate": "Acquisition Date",
+
+  "cris.boxmetadata.label.manufacturingdate": "Manufacturing Date",
+
+  "cris.boxmetadata.label.grantno.": "Grant no.",
+
+  "cris.boxmetadata.label.journal": "Journal",
+
+  "cris.boxmetadata.label.dateissued": "Date Issued",
+
+  "cris.boxmetadata.label.volume": "Volume",
+
+  "cris.boxmetadata.label.issue": "Issue",
+
+  "cris.boxmetadata.label.authors": "Author(s)",
+
+  "cris.boxmetadata.label.author’sorcid": "Author’s ORCID",
+
+  "cris.boxmetadata.label.author’sdni": "Author’s DNI",
+
+  "cris.boxmetadata.label.editors": "Editor(s)",
+
+  "cris.boxmetadata.label.editor’sorcid": "Editor’s ORCID",
+
+  "cris.boxmetadata.label.editor’sdni": "Editor’s DNI",
+
+  "cris.boxmetadata.label.doi": "DOI",
+
+  "cris.boxmetadata.label.projects": "Project(s)",
+
+  "cris.boxmetadata.label.fundings": "Funding(s)",
+
+  "cris.boxmetadata.label.subjects": "Subjects",
+
+  "cris.boxmetadata.label.ddcsubjects": "DDC Subject(s)",
+
+  "cris.boxmetadata.label.locsubjects": "LOC Subject(s)",
+
+  "cris.boxmetadata.label.meshkeywords": "Mesh Keyword(s)",
+
+  "cris.boxmetadata.label.advisor": "Advisor",
+
+  "cris.boxmetadata.label.advisor’sorcid": "Advisor’s ORCID",
+
+  "cris.boxmetadata.label.advisor’sdni": "Advisor’s DNI",
+
+  "cris.boxmetadata.label.renatitype": "Renati Type",
+
+  "cris.boxmetadata.label.degreename": "Degree Name",
+
+  "cris.boxmetadata.label.level": "Level",
+
+  "cris.boxmetadata.label.degreedisciplines": "Degree Discipline(s)",
+
+  "cris.boxmetadata.label.disciplines": "Discipline(s)",
+
+  "cris.boxmetadata.label.juror": "Juror",
+
+  "cris.boxmetadata.label.grantor": "Grantor",
+
+  "cris.boxmetadata.label.issuer": "Issuer",
+
+  "cris.boxmetadata.label.applicationdate": "Application Date",
+
+  "cris.boxmetadata.label.publicationdate": "Publication Date",
+
+  "cris.boxmetadata.label.patentcountry": "Patent Country",
+
+  "cris.boxmetadata.label.patentholdercountry": "Patent Holder Country",
+
+  "cris.boxmetadata.label.inventors": "Inventor(s)",
+
+  "cris.boxmetadata.label.holder": "Holder",
+
+  "cris.boxmetadata.label.patentnumber": "Patent Number",
+
+  "cris.boxmetadata.label.url": "URL",
+
+  "cris.boxmetadata.label.language": "Language",
+
+  "cris.boxmetadata.label.cipsubjects": "CIP Subject(s)",
+
+  "cris.boxmetadata.label.projects": "Projects",
+
+  "cris.boxmetadata.label.predecessor": "Predecessor",
+
+  "cris.boxmetadata.label.references": "References",
+
+  "cris.boxmetadata.label.recipient": "Recipient",
+
+  "cris.boxmetadata.label.message": "Message"
+
 }
 
