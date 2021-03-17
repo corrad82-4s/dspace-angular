@@ -26,7 +26,7 @@ import { AuthMethod } from './models/auth.method';
 import { AuthMethodType } from './models/auth.method-type';
 import { hasAuthMethodRendering } from '../../shared/log-in/methods/log-in.methods-decorator';
 
-export const CAS_LOGOUT_HEADER = 'Cas-Logout';
+export const CAS_LOGOUT_HEADER = 'Oidc-Logout';
 
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
