@@ -325,7 +325,9 @@ export class AuthInterceptor implements HttpInterceptor {
   private casLogoutHandler(response: HttpResponse<any>) {
     if (response.headers && response.headers.get(CAS_LOGOUT_HEADER)) {
       const customLocation = response.headers.get(CAS_LOGOUT_HEADER);
-      window.location.href = customLocation;
+      setTimeout(() => {
+          window.location.href = customLocation;
+        }, 100);
     }
   }
 
