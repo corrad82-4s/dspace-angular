@@ -2,8 +2,9 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { SubmissionService } from 'src/app/submission/submission.service';
-import { ConfigurationDataService } from '../../../core/data/configuration-data.service';
+import { AuthorizationDataService } from '../../../core/data/feature-authorization/authorization-data.service';
+import { FeatureID } from '../../../core/data/feature-authorization/feature-id';
+import { CvEntityService } from '../../../core/profile/cv-entity.service';
 import { DSpaceObjectType } from '../../../core/shared/dspace-object-type.model';
 import { DSpaceObject } from '../../../core/shared/dspace-object.model';
 import { ContextMenuEntryComponent } from '../context-menu-entry.component';
@@ -23,15 +24,18 @@ export class ModifyForProfileMenuComponent extends ContextMenuEntryComponent imp
   constructor(
     @Inject('contextMenuObjectProvider') protected injectedContextMenuObject: DSpaceObject,
     @Inject('contextMenuObjectTypeProvider') protected injectedContextMenuObjectType: DSpaceObjectType,
-    protected configurationDataService: ConfigurationDataService,
-    protected submissionService: SubmissionService,
+    protected cvEntityService: CvEntityService,
+    protected authorizationService: AuthorizationDataService,
     protected router: Router
   ) {
     super(injectedContextMenuObject, injectedContextMenuObjectType);
   }
 
   ngOnInit(): void {
-    this.isProfileRelatedEntityChangeEnabled$.next(true);
+    this.authorizationService.isAuthorized(FeatureID.CanChangeProfileRelatedEntity, this.contextMenuObject.self, undefined)
+      .subscribe( (isAuthorized) => {
+        this.isProfileRelatedEntityChangeEnabled$.next(isAuthorized);
+      });
   }
 
   isProfileRelatedEntityChangeEnabled(): Observable<boolean> {
@@ -39,7 +43,10 @@ export class ModifyForProfileMenuComponent extends ContextMenuEntryComponent imp
   }
 
   modify(): void {
-
+    this.cvEntityService.create(this.contextMenuObject.id)
+      .subscribe(
+        (cvEntity) => this.router.navigateByUrl('items/' + cvEntity.id)
+      );
   }
 
 }
