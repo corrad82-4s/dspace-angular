@@ -4,30 +4,24 @@
   "Biography": "Spanish Biography",
   
   // "401.help": "You're not authorized to access this page. You can use the button below to get back to the home page.",
-  // TODO New key - Add a translation
-  "401.help": "You're not authorized to access this page. You can use the button below to get back to the home page.",
+  "401.help": "No está autorizado a acceder a esta página. Puede utilizar el siguiente botón para volver a la página de inicio.",
   
   // "401.link.home-page": "Take me to the home page",
-  // TODO New key - Add a translation
-  "401.link.home-page": "Take me to the home page",
+  "401.link.home-page": "Llévame a la página de inicio",
   
   // "401.unauthorized": "unauthorized",
-  // TODO New key - Add a translation
-  "401.unauthorized": "unauthorized",
+  "401.unauthorized": "no autorizado",
   
   
   
   // "403.help": "You don't have permission to access this page. You can use the button below to get back to the home page.",
-  // TODO New key - Add a translation
-  "403.help": "You don't have permission to access this page. You can use the button below to get back to the home page.",
+  "403.help": "No tiene permiso para acceder a esta página. Puede utilizar el siguiente botón para volver a la página de inicio.",
   
   // "403.link.home-page": "Take me to the home page",
-  // TODO New key - Add a translation
-  "403.link.home-page": "Take me to the home page",
+  "403.link.home-page": "Llévame a la página de inicio",
   
   // "403.forbidden": "forbidden",
-  // TODO New key - Add a translation
-  "403.forbidden": "forbidden",
+  "403.forbidden": "prohibido",
   
   
   
@@ -392,7 +386,7 @@
   "admin.registries.schema.notification.success": "Éxito",
   
   // "admin.registries.schema.return": "Return",
-  "admin.registries.schema.return": "Regreso",
+  "admin.registries.schema.return": "Regresar",
   
   // "admin.registries.schema.title": "DSpace Cris Angular :: Metadata Schema Registry",
   "admin.registries.schema.title": "DSpace Cris Angular :: Registro de Esquemas de Metadatos",
@@ -579,342 +573,258 @@
   "admin.access-control.groups.search.head": "Buscar grupos",
   
   // "admin.access-control.groups.button.see-all": "Browse all",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.button.see-all": "Browse all",
+  "admin.access-control.groups.button.see-all": "Ver todo",
   
   // "admin.access-control.groups.search.button": "Search",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.search.button": "Search",
+  "admin.access-control.groups.search.button": "Buscar",
   
   // "admin.access-control.groups.table.id": "ID",
-  // TODO New key - Add a translation
   "admin.access-control.groups.table.id": "ID",
   
   // "admin.access-control.groups.table.name": "Name",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.table.name": "Name",
+  "admin.access-control.groups.table.name": "Nombre",
   
   // "admin.access-control.groups.table.members": "Members",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.table.members": "Members",
+  "admin.access-control.groups.table.members": "Miembros",
   
   // "admin.access-control.groups.table.comcol": "Community / Collection",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.table.comcol": "Community / Collection",
+  "admin.access-control.groups.table.comcol": "Comunidad / Colección",
   
   // "admin.access-control.groups.table.edit": "Edit",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.table.edit": "Edit",
+  "admin.access-control.groups.table.edit": "Editar",
   
   // "admin.access-control.groups.table.edit.buttons.disable": "Disable \"{{name}}\"",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.table.edit.buttons.disable": "Disable \"{{name}}\"",
+  "admin.access-control.groups.table.edit.buttons.disable": "Desactivar \"{{name}}\"",
   
   // "admin.access-control.groups.table.edit.buttons.edit": "Edit \"{{name}}\"",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.table.edit.buttons.edit": "Edit \"{{name}}\"",
+  "admin.access-control.groups.table.edit.buttons.edit": "Editar \"{{name}}\"",
   
   // "admin.access-control.groups.table.type": "Type",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.table.type": "Type",
+  "admin.access-control.groups.table.type": "Tipo",
   
   // "admin.access-control.groups.table.status": "Status",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.table.status": "Status",
+  "admin.access-control.groups.table.status": "Estado",
   
   // "admin.access-control.groups.no-items": "No groups found with this in their name or this as UUID",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.no-items": "No groups found with this in their name or this as UUID",
+  "admin.access-control.groups.no-items": "No se han encontrado grupos con este término en su nombre o como UUID",
   
   // "admin.access-control.groups.notification.deleted.success": "Successfully deleted group \"{{name}}\"",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.notification.deleted.success": "Successfully deleted group \"{{name}}\"",
+  "admin.access-control.groups.notification.deleted.success": "Grupo eliminado con éxito \"{{name}}\"",
   
   // "admin.access-control.groups.notification.deleted.failure.title": "Failed to delete group \"{{name}}\"",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.notification.deleted.failure.title": "Failed to delete group \"{{name}}\"",
+  "admin.access-control.groups.notification.deleted.failure.title": "Fallo en la eliminación del grupo \"{{name}}\"",
   
   // "admin.access-control.groups.notification.deleted.failure.content": "Cause: \"{{cause}}\"",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.notification.deleted.failure.content": "Cause: \"{{cause}}\"",
+  "admin.access-control.groups.notification.deleted.failure.content": "Causa: \"{{cause}}\"",
   
   // "admin.access-control.groups.notification.edit.success": "Successfully edited group \"{{name}}\"",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.notification.edit.success": "Successfully edited group \"{{name}}\"",
+  "admin.access-control.groups.notification.edit.success": "Grupo editado con éxito \"{{name}}\"",
   
   // "admin.access-control.groups.notification.edit.failure": "Failed to edit group \"{{name}}\"",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.notification.edit.failure": "Failed to edit group \"{{name}}\"",
+  "admin.access-control.groups.notification.edit.failure": "Fallo en la edición del grupo \"{{name}}\"",
   
   
   
   // "admin.access-control.groups.form.alert.permanent": "This group is permanent, so it can't be edited or deleted. You can still add and remove group members using this page.",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.form.alert.permanent": "This group is permanent, so it can't be edited or deleted. You can still add and remove group members using this page.",
+  "admin.access-control.groups.form.alert.permanent": "Este grupo es permanente, por lo que no se puede editar ni eliminar. Sin embargo, puedes añadir y eliminar miembros del grupo a través de esta página.",
   
   // "admin.access-control.groups.form.alert.workflowGroup": "This group can’t be modified or deleted because it corresponds to a role in the submission and workflow process in the \"{{name}}\" {{comcol}}. You can delete it from the <a href='{{comcolEditRolesRoute}}'>\"assign roles\"</a> tab on the edit {{comcol}} page. You can still add and remove group members using this page.",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.form.alert.workflowGroup": "This group can’t be modified or deleted because it corresponds to a role in the submission and workflow process in the \"{{name}}\" {{comcol}}. You can delete it from the <a href='{{comcolEditRolesRoute}}'>\"assign roles\"</a> tab on the edit {{comcol}} page. You can still add and remove group members using this page.",
+  "admin.access-control.groups.form.alert.workflowGroup": "Este grupo no puede ser modificado o eliminado porque corresponde a un rol en el proceso de presentación y flujo de trabajo en el \"{{name}}\" {{comcol}}. Puede eliminarlo desde <a href='{{comcolEditRolesRoute}}'>\"assign roles\"</a> pestaña en la página de edición {{comcol}}. Puedes seguir añadiendo y eliminando miembros del grupo a través de esta página.",
   
   // "admin.access-control.groups.form.head.create": "Create group",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.form.head.create": "Create group",
+  "admin.access-control.groups.form.head.create": "Crear grupo",
   
   // "admin.access-control.groups.form.head.edit": "Edit group",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.form.head.edit": "Edit group",
+  "admin.access-control.groups.form.head.edit": "Editar grupo",
   
   // "admin.access-control.groups.form.groupName": "Group name",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.form.groupName": "Group name",
+  "admin.access-control.groups.form.groupName": "Nombre del grupo",
   
   // "admin.access-control.groups.form.groupDescription": "Description",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.form.groupDescription": "Description",
+  "admin.access-control.groups.form.groupDescription": "Descripción",
   
   // "admin.access-control.groups.form.groupStatus": "Status",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.form.groupStatus": "Status",
+  "admin.access-control.groups.form.groupStatus": "Estado",
   
   // "admin.access-control.groups.form.groupStatus.enabled": "Enabled",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.form.groupStatus.enabled": "Enabled",
+  "admin.access-control.groups.form.groupStatus.enabled": "Activado",
   
   // "admin.access-control.groups.form.groupStatus.disabled": "Disabled",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.form.groupStatus.disabled": "Disabled",
+  "admin.access-control.groups.form.groupStatus.disabled": "Desactivado",
   
   // "admin.access-control.groups.form.groupType": "Type",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.form.groupType": "Type",
+  "admin.access-control.groups.form.groupType": "Tipo",
   
   // "admin.access-control.groups.form.groupType.institutional": "Institutional Role type",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.form.groupType.institutional": "Institutional Role type",
+  "admin.access-control.groups.form.groupType.institutional": "Rol de tipo institucional",
   
   // "admin.access-control.groups.form.groupType.normal": "Normal type",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.form.groupType.normal": "Normal type",
+  "admin.access-control.groups.form.groupType.normal": "Tipo normal",
   
   // "admin.access-control.groups.form.groupType.role": "Role type",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.form.groupType.role": "Role type",
+  "admin.access-control.groups.form.groupType.role": "Tipo rol",
   
   // "admin.access-control.groups.form.groupType.scoped": "Institutional Scoped Role type",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.form.groupType.scoped": "Institutional Scoped Role type",
+  "admin.access-control.groups.form.groupType.scoped": "Tipo rol de alcance institucional",
   
   // "admin.access-control.groups.form.notification.created.success": "Successfully created Group \"{{name}}\"",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.form.notification.created.success": "Successfully created Group \"{{name}}\"",
+  "admin.access-control.groups.form.notification.created.success": "Grupo creado con éxito \"{{name}}\"",
   
   // "admin.access-control.groups.form.notification.created.failure": "Failed to create Group \"{{name}}\"",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.form.notification.created.failure": "Failed to create Group \"{{name}}\"",
+  "admin.access-control.groups.form.notification.created.failure": "Fallo en la creación del grupo \"{{name}}\"",
   
   // "admin.access-control.groups.form.notification.created.failure.groupNameInUse": "Failed to create Group with name: \"{{name}}\", make sure the name is not already in use.",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.form.notification.created.failure.groupNameInUse": "Failed to create Group with name: \"{{name}}\", make sure the name is not already in use.",
+  "admin.access-control.groups.form.notification.created.failure.groupNameInUse": "No se ha podido crear el grupo con el nombre: \"{{name}}\", make sure the name is not already in use.",
   
   // "admin.access-control.groups.form.notification.edited.failure": "Failed to edit Group \"{{name}}\"",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.form.notification.edited.failure": "Failed to edit Group \"{{name}}\"",
+  "admin.access-control.groups.form.notification.edited.failure": "Fallo en la edición del Grupo \"{{name}}\"",
   
   // "admin.access-control.groups.form.notification.edited.failure.groupNameInUse": "Name \"{{name}}\" already in use!",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.form.notification.edited.failure.groupNameInUse": "Name \"{{name}}\" already in use!",
+  "admin.access-control.groups.form.notification.edited.failure.groupNameInUse": "¡Nombre \"{{name}}\" ya en uso!",
   
   // "admin.access-control.groups.form.notification.edited.success": "Successfully edited Group \"{{name}}\"",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.form.notification.edited.success": "Successfully edited Group \"{{name}}\"",
+  "admin.access-control.groups.form.notification.edited.success": "Grupo editado con éxito \"{{name}}\"",
   
   // "admin.access-control.groups.form.actions.delete": "Delete Group",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.form.actions.delete": "Delete Group",
+  "admin.access-control.groups.form.actions.delete": "Eliminar Grupo",
   
   // "admin.access-control.groups.form.delete-group.modal.header": "Delete Group \"{{ dsoName }}\"",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.form.delete-group.modal.header": "Delete Group \"{{ dsoName }}\"",
+  "admin.access-control.groups.form.delete-group.modal.header": "Eliminar Grupo \"{{ dsoName }}\"",
   
   // "admin.access-control.groups.form.delete-group.modal.info": "Are you sure you want to delete Group \"{{ dsoName }}\"",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.form.delete-group.modal.info": "Are you sure you want to delete Group \"{{ dsoName }}\"",
+  "admin.access-control.groups.form.delete-group.modal.info": "¿Está seguro de que desea eliminar el Grupo \"{{ dsoName }}\"?",
   
   // "admin.access-control.groups.form.delete-group.modal.cancel": "Cancel",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.form.delete-group.modal.cancel": "Cancel",
+  "admin.access-control.groups.form.delete-group.modal.cancel": "Cancelar",
   
   // "admin.access-control.groups.form.delete-group.modal.confirm": "Delete",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.form.delete-group.modal.confirm": "Delete",
+  "admin.access-control.groups.form.delete-group.modal.confirm": "Eliminar",
   
   // "admin.access-control.groups.form.notification.deleted.success": "Successfully deleted group \"{{ name }}\"",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.form.notification.deleted.success": "Successfully deleted group \"{{ name }}\"",
+  "admin.access-control.groups.form.notification.deleted.success": "Grupo eliminado con éxito \"{{ name }}\"",
   
   // "admin.access-control.groups.form.notification.deleted.failure.title": "Failed to delete group \"{{ name }}\"",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.form.notification.deleted.failure.title": "Failed to delete group \"{{ name }}\"",
+  "admin.access-control.groups.form.notification.deleted.failure.title": "Fallo en la eliminación del grupo \"{{ name }}\"",
   
   // "admin.access-control.groups.form.notification.deleted.failure.content": "Cause: \"{{ cause }}\"",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.form.notification.deleted.failure.content": "Cause: \"{{ cause }}\"",
+  "admin.access-control.groups.form.notification.deleted.failure.content": "Causa: \"{{ cause }}\"",
   
   // "admin.access-control.groups.form.members-list.head": "EPeople",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.form.members-list.head": "EPeople",
+  "admin.access-control.groups.form.members-list.head": "Usuarios",
   
   // "admin.access-control.groups.form.members-list.search.head": "Add EPeople",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.form.members-list.search.head": "Add EPeople",
+  "admin.access-control.groups.form.members-list.search.head": "Añadir Usuarios",
   
   // "admin.access-control.groups.form.members-list.button.see-all": "Browse All",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.form.members-list.button.see-all": "Browse All",
+  "admin.access-control.groups.form.members-list.button.see-all": "Ver Todo",
   
   // "admin.access-control.groups.form.members-list.headMembers": "Current Members",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.form.members-list.headMembers": "Current Members",
+  "admin.access-control.groups.form.members-list.headMembers": "Miembros Actuales",
   
   // "admin.access-control.groups.form.members-list.search.scope.metadata": "Metadata",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.form.members-list.search.scope.metadata": "Metadata",
+  "admin.access-control.groups.form.members-list.search.scope.metadata": "Metadatos",
   
   // "admin.access-control.groups.form.members-list.search.scope.email": "E-mail (exact)",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.form.members-list.search.scope.email": "E-mail (exact)",
+  "admin.access-control.groups.form.members-list.search.scope.email": "E-mail (exacto)",
   
   // "admin.access-control.groups.form.members-list.search.button": "Search",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.form.members-list.search.button": "Search",
+  "admin.access-control.groups.form.members-list.search.button": "Buscar",
   
   // "admin.access-control.groups.form.members-list.table.id": "ID",
-  // TODO New key - Add a translation
   "admin.access-control.groups.form.members-list.table.id": "ID",
   
   // "admin.access-control.groups.form.members-list.table.name": "Name",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.form.members-list.table.name": "Name",
+  "admin.access-control.groups.form.members-list.table.name": "Nombre",
   
   // "admin.access-control.groups.form.members-list.table.edit": "Remove / Add",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.form.members-list.table.edit": "Remove / Add",
+  "admin.access-control.groups.form.members-list.table.edit": "Eliminar / Añadir",
   
   // "admin.access-control.groups.form.members-list.table.edit.buttons.remove": "Remove member with name \"{{name}}\"",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.form.members-list.table.edit.buttons.remove": "Remove member with name \"{{name}}\"",
+  "admin.access-control.groups.form.members-list.table.edit.buttons.remove": "Eliminar el miembro con nombre \"{{name}}\"",
   
   // "admin.access-control.groups.form.members-list.notification.success.addMember": "Successfully added member: \"{{name}}\"",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.form.members-list.notification.success.addMember": "Successfully added member: \"{{name}}\"",
+  "admin.access-control.groups.form.members-list.notification.success.addMember": "Miembro añadido con éxito: \"{{name}}\"",
   
   // "admin.access-control.groups.form.members-list.notification.failure.addMember": "Failed to add member: \"{{name}}\"",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.form.members-list.notification.failure.addMember": "Failed to add member: \"{{name}}\"",
+  "admin.access-control.groups.form.members-list.notification.failure.addMember": "Fallo al añadir un miembro: \"{{name}}\"",
   
   // "admin.access-control.groups.form.members-list.notification.success.deleteMember": "Successfully deleted member: \"{{name}}\"",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.form.members-list.notification.success.deleteMember": "Successfully deleted member: \"{{name}}\"",
+  "admin.access-control.groups.form.members-list.notification.success.deleteMember": "Miembro eliminado con éxito: \"{{name}}\"",
   
   // "admin.access-control.groups.form.members-list.notification.failure.deleteMember": "Failed to delete member: \"{{name}}\"",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.form.members-list.notification.failure.deleteMember": "Failed to delete member: \"{{name}}\"",
+  "admin.access-control.groups.form.members-list.notification.failure.deleteMember": "Fallo en la eliminación del miembro: \"{{name}}\"",
   
   // "admin.access-control.groups.form.members-list.table.edit.buttons.add": "Add member with name \"{{name}}\"",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.form.members-list.table.edit.buttons.add": "Add member with name \"{{name}}\"",
+  "admin.access-control.groups.form.members-list.table.edit.buttons.add": "Añadir miembro con nombre \"{{name}}\"",
   
   // "admin.access-control.groups.form.members-list.notification.failure.noActiveGroup": "No current active group, submit a name first.",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.form.members-list.notification.failure.noActiveGroup": "No current active group, submit a name first.",
+  "admin.access-control.groups.form.members-list.notification.failure.noActiveGroup": "o hay ningún grupo activo actualmente, introduzca primero un nombre.",
   
   // "admin.access-control.groups.form.members-list.no-members-yet": "No members in group yet, search and add.",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.form.members-list.no-members-yet": "No members in group yet, search and add.",
+  "admin.access-control.groups.form.members-list.no-members-yet": "Todavía no hay miembros en el grupo, busca y añade.",
   
   // "admin.access-control.groups.form.members-list.no-items": "No EPeople found in that search",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.form.members-list.no-items": "No EPeople found in that search",
+  "admin.access-control.groups.form.members-list.no-items": "No se ha encontrado ningún usuario en la búsqueda.",
   
   // "admin.access-control.groups.form.subgroups-list.head": "Groups",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.form.subgroups-list.head": "Groups",
+  "admin.access-control.groups.form.subgroups-list.head": "Grupos",
   
   // "admin.access-control.groups.form.subgroups-list.search.head": "Add Subgroup",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.form.subgroups-list.search.head": "Add Subgroup",
+  "admin.access-control.groups.form.subgroups-list.search.head": "Añadir Subgrupo",
   
   // "admin.access-control.groups.form.subgroups-list.button.see-all": "Browse All",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.form.subgroups-list.button.see-all": "Browse All",
+  "admin.access-control.groups.form.subgroups-list.button.see-all": "Ver todo",
   
   // "admin.access-control.groups.form.subgroups-list.headSubgroups": "Current Subgroups",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.form.subgroups-list.headSubgroups": "Current Subgroups",
+  "admin.access-control.groups.form.subgroups-list.headSubgroups": "Subgrupos Actuales",
   
   // "admin.access-control.groups.form.subgroups-list.search.button": "Search",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.form.subgroups-list.search.button": "Search",
+  "admin.access-control.groups.form.subgroups-list.search.button": "Buscar",
   
   // "admin.access-control.groups.form.subgroups-list.table.id": "ID",
-  // TODO New key - Add a translation
   "admin.access-control.groups.form.subgroups-list.table.id": "ID",
   
   // "admin.access-control.groups.form.subgroups-list.table.name": "Name",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.form.subgroups-list.table.name": "Name",
+  "admin.access-control.groups.form.subgroups-list.table.name": "Nombre",
   
   // "admin.access-control.groups.form.subgroups-list.table.edit": "Remove / Add",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.form.subgroups-list.table.edit": "Remove / Add",
+  "admin.access-control.groups.form.subgroups-list.table.edit": "Quitar / Añadir",
   
   // "admin.access-control.groups.form.subgroups-list.table.edit.buttons.remove": "Remove subgroup with name \"{{name}}\"",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.form.subgroups-list.table.edit.buttons.remove": "Remove subgroup with name \"{{name}}\"",
+  "admin.access-control.groups.form.subgroups-list.table.edit.buttons.remove": "Quitar el subgrupo con nombre \"{{name}}\"",
   
   // "admin.access-control.groups.form.subgroups-list.table.edit.buttons.add": "Add subgroup with name \"{{name}}\"",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.form.subgroups-list.table.edit.buttons.add": "Add subgroup with name \"{{name}}\"",
+  "admin.access-control.groups.form.subgroups-list.table.edit.buttons.add": "Añadir subgrupo con nombre \"{{name}}\"",
   
   // "admin.access-control.groups.form.subgroups-list.table.edit.currentGroup": "Current group",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.form.subgroups-list.table.edit.currentGroup": "Current group",
+  "admin.access-control.groups.form.subgroups-list.table.edit.currentGroup": "Grupo actual",
   
   // "admin.access-control.groups.form.subgroups-list.notification.success.addSubgroup": "Successfully added subgroup: \"{{name}}\"",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.form.subgroups-list.notification.success.addSubgroup": "Successfully added subgroup: \"{{name}}\"",
+  "admin.access-control.groups.form.subgroups-list.notification.success.addSubgroup": "Subgrupo añadido con éxito: \"{{name}}\"",
   
   // "admin.access-control.groups.form.subgroups-list.notification.failure.addSubgroup": "Failed to add subgroup: \"{{name}}\"",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.form.subgroups-list.notification.failure.addSubgroup": "Failed to add subgroup: \"{{name}}\"",
+  "admin.access-control.groups.form.subgroups-list.notification.failure.addSubgroup": "Fallo al añadir un subgrupo: \"{{name}}\"",
   
   // "admin.access-control.groups.form.subgroups-list.notification.success.deleteSubgroup": "Successfully deleted subgroup: \"{{name}}\"",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.form.subgroups-list.notification.success.deleteSubgroup": "Successfully deleted subgroup: \"{{name}}\"",
+  "admin.access-control.groups.form.subgroups-list.notification.success.deleteSubgroup": "Subgrupo eliminado con éxito: \"{{name}}\"",
   
   // "admin.access-control.groups.form.subgroups-list.notification.failure.deleteSubgroup": "Failed to delete subgroup: \"{{name}}\"",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.form.subgroups-list.notification.failure.deleteSubgroup": "Failed to delete subgroup: \"{{name}}\"",
+  "admin.access-control.groups.form.subgroups-list.notification.failure.deleteSubgroup": "Fallo en la eliminación del subgrupo: \"{{name}}\"",
   
   // "admin.access-control.groups.form.subgroups-list.notification.failure.noActiveGroup": "No current active group, submit a name first.",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.form.subgroups-list.notification.failure.noActiveGroup": "No current active group, submit a name first.",
+  "admin.access-control.groups.form.subgroups-list.notification.failure.noActiveGroup": "No hay ningún grupo activo actualmente, introduzca primero un nombre.",
   
   // "admin.access-control.groups.form.subgroups-list.notification.failure.subgroupToAddIsActiveGroup": "This is the current group, can't be added.",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.form.subgroups-list.notification.failure.subgroupToAddIsActiveGroup": "This is the current group, can't be added.",
+  "admin.access-control.groups.form.subgroups-list.notification.failure.subgroupToAddIsActiveGroup": "Este es el grupo actual, no se puede añadir.",
   
   // "admin.access-control.groups.form.subgroups-list.no-items": "No groups found with this in their name or this as UUID",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.form.subgroups-list.no-items": "No groups found with this in their name or this as UUID",
+  "admin.access-control.groups.form.subgroups-list.no-items": "No se han encontrado grupos con este término en su nombre o como UUID",
   
   // "admin.access-control.groups.form.subgroups-list.no-subgroups-yet": "No subgroups in group yet.",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.form.subgroups-list.no-subgroups-yet": "No subgroups in group yet.",
+  "admin.access-control.groups.form.subgroups-list.no-subgroups-yet": "Todavía no hay subgrupos en el grupo.",
   
   // "admin.access-control.groups.form.return": "Return to groups",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.form.return": "Return to groups",
+  "admin.access-control.groups.form.return": "Regresar a los grupos",
   
   
   
@@ -927,126 +837,98 @@
   "admin.notifications.openairebroker.page.title": "OpenAIRE Broker",
   
   // "admin.notifications.openaireevent.breadcrumbs": "OpenAIRE Broker Suggestions",
-  // TODO New key - Add a translation
-  "admin.notifications.openaireevent.breadcrumbs": "OpenAIRE Broker Suggestions",
+  "admin.notifications.openaireevent.breadcrumbs": "Sugerencias OpenAIRE Broker",
   
   // "admin.notifications.openaireevent.page.title": "OpenAIRE Broker Suggestions",
-  // TODO New key - Add a translation
-  "admin.notifications.openaireevent.page.title": "OpenAIRE Broker Suggestions",
+  "admin.notifications.openaireevent.page.title": "Sugerencias OpenAIRE Broker",
   
   // "admin.notifications.recitersuggestion.breadcrumbs": "Suggestions",
-  // TODO New key - Add a translation
-  "admin.notifications.recitersuggestion.breadcrumbs": "Suggestions",
+  "admin.notifications.recitersuggestion.breadcrumbs": "Sugerencias",
   
   // "admin.notifications.recitersuggestion.page.title": "Suggestions",
-  // TODO New key - Add a translation
-  "admin.notifications.recitersuggestion.page.title": "Suggestions",
+  "admin.notifications.recitersuggestion.page.title": "Sugerencias",
   
   
   // "admin.search.breadcrumbs": "Administrative Search",
-  // TODO New key - Add a translation
-  "admin.search.breadcrumbs": "Administrative Search",
+  "admin.search.breadcrumbs": "Búsqueda Administrativa",
   
   // "admin.search.collection.edit": "Edit",
-  // TODO New key - Add a translation
-  "admin.search.collection.edit": "Edit",
+  "admin.search.collection.edit": "Editar",
   
   // "admin.search.community.edit": "Edit",
-  // TODO New key - Add a translation
-  "admin.search.community.edit": "Edit",
+  "admin.search.community.edit": "Editar",
   
   // "admin.search.item.delete": "Delete",
-  // TODO New key - Add a translation
-  "admin.search.item.delete": "Delete",
+  "admin.search.item.delete": "Eliminar",
   
   // "admin.search.item.edit": "Edit",
-  // TODO New key - Add a translation
-  "admin.search.item.edit": "Edit",
+  "admin.search.item.edit": "Editar",
   
   // "admin.search.item.make-private": "Make Private",
-  // TODO New key - Add a translation
-  "admin.search.item.make-private": "Make Private",
+  "admin.search.item.make-private": "Hacer Privado",
   
   // "admin.search.item.make-public": "Make Public",
-  // TODO New key - Add a translation
-  "admin.search.item.make-public": "Make Public",
+  "admin.search.item.make-public": "Hacer Público",
   
   // "admin.search.item.move": "Move",
-  // TODO New key - Add a translation
-  "admin.search.item.move": "Move",
+  "admin.search.item.move": "Mover",
   
   // "admin.search.item.reinstate": "Reinstate",
-  // TODO New key - Add a translation
-  "admin.search.item.reinstate": "Reinstate",
+  "admin.search.item.reinstate": "Restablecer",
   
   // "admin.search.item.withdraw": "Withdraw",
-  // TODO New key - Add a translation
-  "admin.search.item.withdraw": "Withdraw",
+  "admin.search.item.withdraw": "Retirar",
   
   // "admin.search.title": "Administrative Search",
-  // TODO New key - Add a translation
-  "admin.search.title": "Administrative Search",
+  "admin.search.title": "Búsqueda Administrativa",
   
   
   
   
   // "admin.workflow.breadcrumbs": "Administer Workflow",
-  // TODO New key - Add a translation
-  "admin.workflow.breadcrumbs": "Administer Workflow",
+  "admin.workflow.breadcrumbs": "Administrar Flujo de Trabajo",
   
   // "admin.workflow.title": "Administer Workflow",
-  // TODO New key - Add a translation
-  "admin.workflow.title": "Administer Workflow",
+  "admin.workflow.title": "Administrar Flujo de Trabajo",
   
   // "admin.workflow.item.workflow": "Workflow",
-  // TODO New key - Add a translation
-  "admin.workflow.item.workflow": "Workflow",
+  "admin.workflow.item.workflow": "Flujo de Trabajo",
   
   // "admin.workflow.item.delete": "Delete",
   // TODO New key - Add a translation
   "admin.workflow.item.delete": "Delete",
   
   // "admin.workflow.item.send-back": "Send back",
-  // TODO New key - Add a translation
-  "admin.workflow.item.send-back": "Send back",
+  "admin.workflow.item.send-back": "Devolver",
   
   
   
   // "admin.metadata-import.breadcrumbs": "Import Metadata",
-  // TODO New key - Add a translation
-  "admin.metadata-import.breadcrumbs": "Import Metadata",
+  "admin.metadata-import.breadcrumbs": "Importar Metadatos",
   
   // "admin.metadata-import.title": "Import Metadata",
-  // TODO New key - Add a translation
-  "admin.metadata-import.title": "Import Metadata",
+  "admin.metadata-import.title": "Importar Metadatos",
   
   // "admin.metadata-import.page.header": "Import Metadata",
-  // TODO New key - Add a translation
-  "admin.metadata-import.page.header": "Import Metadata",
+  "admin.metadata-import.page.header": "Importar Metadatos",
   
   // "admin.metadata-import.page.help": "You can drop or browse CSV files that contain batch metadata operations on files here",
-  // TODO New key - Add a translation
-  "admin.metadata-import.page.help": "You can drop or browse CSV files that contain batch metadata operations on files here",
+  "admin.metadata-import.page.help": "Aquí puede soltar o buscar archivos CSV que contengan operaciones de metadatos por lotes en archivos",
   
   // "admin.metadata-import.page.dropMsg": "Drop a metadata CSV to import",
-  // TODO New key - Add a translation
-  "admin.metadata-import.page.dropMsg": "Drop a metadata CSV to import",
+  "admin.metadata-import.page.dropMsg": "Suelte un CSV de metadatos para importar",
   
   // "admin.metadata-import.page.dropMsgReplace": "Drop to replace the metadata CSV to import",
-  // TODO New key - Add a translation
-  "admin.metadata-import.page.dropMsgReplace": "Drop to replace the metadata CSV to import",
+  "admin.metadata-import.page.dropMsgReplace": "Soltar para sustituir el CSV de metadatos a importar",
   
   // "admin.metadata-import.page.button.return": "Return",
-  // TODO New key - Add a translation
-  "admin.metadata-import.page.button.return": "Return",
+  "admin.metadata-import.page.button.return": "Volver",
   
   // "admin.metadata-import.page.button.proceed": "Proceed",
-  // TODO New key - Add a translation
-  "admin.metadata-import.page.button.proceed": "Proceed",
+  "admin.metadata-import.page.button.proceed": "Proceder",
   
   // "admin.metadata-import.page.error.addFile": "Select file first!",
-  // TODO New key - Add a translation
-  "admin.metadata-import.page.error.addFile": "Select file first!",
+  "admin.metadata-import.page.error.addFile": "Seleccione primero el archivo",
   
   
   
@@ -1064,152 +946,120 @@
   "bitstream.edit.bitstream": "Bitstream: ",
   
   // "bitstream.edit.form.description.hint": "Optionally, provide a brief description of the file, for example \"<i>Main article</i>\" or \"<i>Experiment data readings</i>\".",
-  // TODO New key - Add a translation
-  "bitstream.edit.form.description.hint": "Optionally, provide a brief description of the file, for example \"<i>Main article</i>\" or \"<i>Experiment data readings</i>\".",
+  "bitstream.edit.form.description.hint": "Opcionalmente, proporcione una breve descripción del archivo, por ejemplo \"<i>Main article</i>\" o \"<i>Experiment data readings</i>\".",
   
   // "bitstream.edit.form.description.label": "Description",
-  // TODO New key - Add a translation
-  "bitstream.edit.form.description.label": "Description",
+  "bitstream.edit.form.description.label": "Descripción",
   
   // "bitstream.edit.form.embargo.hint": "The first day from which access is allowed. <b>This date cannot be modified on this form.</b> To set an embargo date for a bitstream, go to the <i>Item Status</i> tab, click <i>Authorizations...</i>, create or edit the bitstream's <i>READ</i> policy, and set the <i>Start Date</i> as desired.",
-  // TODO New key - Add a translation
-  "bitstream.edit.form.embargo.hint": "The first day from which access is allowed. <b>This date cannot be modified on this form.</b> To set an embargo date for a bitstream, go to the <i>Item Status</i> tab, click <i>Authorizations...</i>, create or edit the bitstream's <i>READ</i> policy, and set the <i>Start Date</i> as desired.",
+  "bitstream.edit.form.embargo.hint": "El primer día a partir del cual se permite el acceso. <b>Esta fecha no puede modificarse en este formulario.</b> Para establecer una fecha de embargo para un bitstream, vaya a la pestaña <i>Item Status</i>, haga clic en <i>Autorizations...</i>, cree o edite la política de <i>READ</i> del bitstream y establezca la <i>Start Date</i> que desee.",
   
   // "bitstream.edit.form.embargo.label": "Embargo until specific date",
-  // TODO New key - Add a translation
-  "bitstream.edit.form.embargo.label": "Embargo until specific date",
+  "bitstream.edit.form.embargo.label": "Embargo hasta fecha específica",
   
   // "bitstream.edit.form.fileName.hint": "Change the filename for the bitstream. Note that this will change the display bitstream URL, but old links will still resolve as long as the sequence ID does not change.",
-  // TODO New key - Add a translation
-  "bitstream.edit.form.fileName.hint": "Change the filename for the bitstream. Note that this will change the display bitstream URL, but old links will still resolve as long as the sequence ID does not change.",
+  "bitstream.edit.form.fileName.hint": "Cambia el nombre del archivo bitstream. Tenga en cuenta que esto cambiará la URL del bitstream que se muestra, pero los enlaces antiguos seguirán resolviéndose siempre que el ID de la secuencia no cambie.",
   
   // "bitstream.edit.form.fileName.label": "Filename",
-  // TODO New key - Add a translation
-  "bitstream.edit.form.fileName.label": "Filename",
+  "bitstream.edit.form.fileName.label": "Nombre del archivo",
   
   // "bitstream.edit.form.newFormat.label": "Describe new format",
-  // TODO New key - Add a translation
-  "bitstream.edit.form.newFormat.label": "Describe new format",
+  "bitstream.edit.form.newFormat.label": "Describir nuevo formato",
   
   // "bitstream.edit.form.newFormat.hint": "The application you used to create the file, and the version number (for example, \"<i>ACMESoft SuperApp version 1.5</i>\").",
-  // TODO New key - Add a translation
-  "bitstream.edit.form.newFormat.hint": "The application you used to create the file, and the version number (for example, \"<i>ACMESoft SuperApp version 1.5</i>\").",
+  "bitstream.edit.form.newFormat.hint": "La aplicación que utilizó para crear el archivo, y el número de versión (por ejemplo, \"<i>ACMESoft SuperApp version 1.5</i>\").",
   
   // "bitstream.edit.form.primaryBitstream.label": "Primary bitstream",
-  // TODO New key - Add a translation
-  "bitstream.edit.form.primaryBitstream.label": "Primary bitstream",
+  "bitstream.edit.form.primaryBitstream.label": "Bitstream primario",
   
   // "bitstream.edit.form.selectedFormat.hint": "If the format is not in the above list, <b>select \"format not in list\" above</b> and describe it under \"Describe new format\".",
-  // TODO New key - Add a translation
-  "bitstream.edit.form.selectedFormat.hint": "If the format is not in the above list, <b>select \"format not in list\" above</b> and describe it under \"Describe new format\".",
+  "bitstream.edit.form.selectedFormat.hint": "Si el formato no está en la lista anterior, <b>seleccione \"format not in list\" arriba</b> y descríbalo en \"Describe new format\".",
   
   // "bitstream.edit.form.selectedFormat.label": "Selected Format",
-  // TODO New key - Add a translation
-  "bitstream.edit.form.selectedFormat.label": "Selected Format",
+  "bitstream.edit.form.selectedFormat.label": "Formato seleccionado",
   
   // "bitstream.edit.form.selectedFormat.unknown": "Format not in list",
-  // TODO New key - Add a translation
-  "bitstream.edit.form.selectedFormat.unknown": "Format not in list",
+  "bitstream.edit.form.selectedFormat.unknown": "Formato no en la lista",
   
   // "bitstream.edit.notifications.error.format.title": "An error occurred saving the bitstream's format",
-  // TODO New key - Add a translation
-  "bitstream.edit.notifications.error.format.title": "An error occurred saving the bitstream's format",
+  "bitstream.edit.notifications.error.format.title": "Se ha producido un error al guardar el formato del bitstream",
   
   // "bitstream.edit.notifications.saved.content": "Your changes to this bitstream were saved.",
-  // TODO New key - Add a translation
-  "bitstream.edit.notifications.saved.content": "Your changes to this bitstream were saved.",
+  "bitstream.edit.notifications.saved.content": "Tus cambios en este bitstream se han guardado.",
   
   // "bitstream.edit.notifications.saved.title": "Bitstream saved",
-  // TODO New key - Add a translation
-  "bitstream.edit.notifications.saved.title": "Bitstream saved",
+  "bitstream.edit.notifications.saved.title": "Bitstream guardado",
   
   // "bitstream.edit.title": "Edit bitstream",
-  // TODO New key - Add a translation
-  "bitstream.edit.title": "Edit bitstream",
+  "bitstream.edit.title": "Editar bitstream",
   
   
   // "browse.comcol.by.author": "By Author",
   "browse.comcol.by.author": "Por Autor",
   
   // "browse.comcol.by.instauthor": "By Author",
-  // TODO New key - Add a translation
-  "browse.comcol.by.instauthor": "By Author",
+  "browse.comcol.by.instauthor": "Por Autor",
   
   // "browse.comcol.by.dateissued": "By Issue Date",
   "browse.comcol.by.dateissued": "Por Fecha de Publicación",
   
   // "browse.comcol.by.instdateissued": "By Issue Date",
-  // TODO New key - Add a translation
-  "browse.comcol.by.instdateissued": "By Issue Date",
+  "browse.comcol.by.instdateissued": "Por Fecha de Emisión",
   
   // "browse.comcol.by.insttitle": "By Title",
-  // TODO New key - Add a translation
-  "browse.comcol.by.insttitle": "By Title",
+  "browse.comcol.by.insttitle": "Por Título",
   
   // "browse.comcol.by.ouname": "By Name",
-  // TODO New key - Add a translation
-  "browse.comcol.by.ouname": "By Name",
+  "browse.comcol.by.ouname": "Por Nombre",
   
   // "browse.comcol.by.instouname": "By Name",
-  // TODO New key - Add a translation
-  "browse.comcol.by.instouname": "By Name",
+  "browse.comcol.by.instouname": "Por Nombre",
   
   // "browse.comcol.by.pjtitle": "By Title",
-  // TODO New key - Add a translation
-  "browse.comcol.by.pjtitle": "By Title",
+  "browse.comcol.by.pjtitle": "Por Título",
   
   // "browse.comcol.by.instpjtitle": "By Title",
-  // TODO New key - Add a translation
   "browse.comcol.by.instpjtitle": "By Title",
   
   // "browse.comcol.by.rodept": "By Department",
-  // TODO New key - Add a translation
-  "browse.comcol.by.rodept": "By Department",
+  "browse.comcol.by.rodept": "Por Departamento",
   
   // "browse.comcol.by.instrodept": "By Department",
-  // TODO New key - Add a translation
-  "browse.comcol.by.instrodept": "By Department",
+  "browse.comcol.by.instrodept": "Por Departamento",
   
   // "browse.comcol.by.rpdept": "By Department",
-  // TODO New key - Add a translation
-  "browse.comcol.by.rpdept": "By Department",
+  "browse.comcol.by.rpdept": "Por Departamento",
   
   // "browse.comcol.by.instrpdept": "By Department",
-  // TODO New key - Add a translation
-  "browse.comcol.by.instrpdept": "By Department",
+  "browse.comcol.by.instrpdept": "Por Departamento",
   
   // "browse.comcol.by.rpname": "By Name",
-  // TODO New key - Add a translation
-  "browse.comcol.by.rpname": "By Name",
+  "browse.comcol.by.rpname": "Por Nombre",
   
   // "browse.comcol.by.instrpname": "By Name",
-  // TODO New key - Add a translation
-  "browse.comcol.by.instrpname": "By Name",
+  "browse.comcol.by.instrpname": "Por Nombre",
   
   // "browse.comcol.by.subject": "By Subject",
   "browse.comcol.by.subject": "Por Materia",
   
   // "browse.comcol.by.instsubject": "By Subject",
-  // TODO New key - Add a translation
-  "browse.comcol.by.instsubject": "By Subject",
+  "browse.comcol.by.instsubject": "Por Materia",
   
   // "browse.comcol.by.title": "By Title",
   "browse.comcol.by.title": "Por Título",
   
   // "browse.comcol.by.type": "By Type",
-  // TODO New key - Add a translation
-  "browse.comcol.by.type": "By Type",
+  "browse.comcol.by.type": "Por Tipo",
   
   // "browse.comcol.by.insttype": "By Type",
-  // TODO New key - Add a translation
-  "browse.comcol.by.insttype": "By Type",
+  "browse.comcol.by.insttype": "Por Tipo",
   
   
   // "browse.comcol.head": "Browse",
   "browse.comcol.head": "Navegar",
   
   // "browse.empty": "No items to show.",
-  "browse.empty": "No ítemes para mostrar.",
+  "browse.empty": "No hay ítems para mostrar.",
   
   // "browse.metadata.author": "Author",
   "browse.metadata.author": "Autor",
@@ -1219,75 +1069,73 @@
   
   // "browse.metadata.eqdatecreated": "Date Created",
   // TODO New key - Add a translation
-  "browse.metadata.eqdatecreated": "Date Created",
+  "browse.metadata.eqdatecreated": "Fecha de Creación",
   
   // "browse.metadata.eqdatemodified": "Date Modified",
-  // TODO New key - Add a translation
-  "browse.metadata.eqdatemodified": "Date Modified",
+  "browse.metadata.eqdatemodified": "Fecha de Modificación",
   
   // "browse.metadata.eqtitle": "Title",
-  // TODO New key - Add a translation
-  "browse.metadata.eqtitle": "Title",
+  "browse.metadata.eqtitle": "Título",
   
   // "browse.metadata.ouname" : "Name",
   // TODO New key - Add a translation
-  "browse.metadata.ouname" : "Name",
+  "browse.metadata.ouname" : "Nombre",
   
   // "browse.metadata.pjtitle" : "Title",
   // TODO New key - Add a translation
-  "browse.metadata.pjtitle" : "Title",
+  "browse.metadata.pjtitle" : "Título",
   
   // "browse.metadata.instauthor": "Author",
   // TODO New key - Add a translation
-  "browse.metadata.instauthor": "Author",
+  "browse.metadata.instauthor": "Autor",
   
   // "browse.metadata.instdateissued": "Issue Date",
   // TODO New key - Add a translation
-  "browse.metadata.instdateissued": "Issue Date",
+  "browse.metadata.instdateissued": "Fecha de publicación",
   
   // "browse.metadata.instrodept": "Department",
   // TODO New key - Add a translation
-  "browse.metadata.instrodept": "Department",
+  "browse.metadata.instrodept": "Departamento",
   
   // "browse.metadata.instsubject": "Subject",
   // TODO New key - Add a translation
-  "browse.metadata.instsubject": "Subject",
+  "browse.metadata.instsubject": "Materia",
   
   // "browse.metadata.insttitle": "Title",
   // TODO New key - Add a translation
-  "browse.metadata.insttitle": "Title",
+  "browse.metadata.insttitle": "Título",
   
   // "browse.metadata.insttype": "Type",
   // TODO New key - Add a translation
-  "browse.metadata.insttype": "Type",
+  "browse.metadata.insttype": "Tipo",
   
   // "browse.metadata.instpjtitle": "Title",
   // TODO New key - Add a translation
-  "browse.metadata.instpjtitle": "Title",
+  "browse.metadata.instpjtitle": "Título",
   
   // "browse.metadata.instrpdept": "Department",
   // TODO New key - Add a translation
-  "browse.metadata.instrpdept": "Department",
+  "browse.metadata.instrpdept": "Departamento",
   
   // "browse.metadata.instrpname": "Name",
   // TODO New key - Add a translation
-  "browse.metadata.instrpname": "Name",
+  "browse.metadata.instrpname": "Nombre",
   
   // "browse.metadata.instouname": "Name",
   // TODO New key - Add a translation
-  "browse.metadata.instouname": "Name",
+  "browse.metadata.instouname": "Nombre",
   
   // "browse.metadata.oudatecreated": "Creation Date",
   // TODO New key - Add a translation
-  "browse.metadata.oudatecreated": "Creation Date",
+  "browse.metadata.oudatecreated": "Fecha de Creación",
   
   // "browse.metadata.oudatemodified": "Modification Date",
   // TODO New key - Add a translation
-  "browse.metadata.oudatemodified": "Modification Date",
+  "browse.metadata.oudatemodified": "Fecha de Modificación",
   
   // "browse.metadata.pfdatecreated": "Creation Date",
   // TODO New key - Add a translation
-  "browse.metadata.pfdatecreated": "Creation Date",
+  "browse.metadata.pfdatecreated": "Fecha de Creación",
   
   // "browse.metadata.pfdatemodified": "Modification Date",
   // TODO New key - Add a translation
@@ -1295,19 +1143,19 @@
   
   // "browse.metadata.pfdatestart": "Start Date",
   // TODO New key - Add a translation
-  "browse.metadata.pfdatestart": "Start Date",
+  "browse.metadata.pfdatestart": "Fecha Inicio",
   
   // "browse.metadata.pfdateend": "End Date",
   // TODO New key - Add a translation
-  "browse.metadata.pfdateend": "End Date",
+  "browse.metadata.pfdateend": "Fecha Fin",
   
   // "browse.metadata.rodept": "Department",
   // TODO New key - Add a translation
-  "browse.metadata.rodept": "Department",
+  "browse.metadata.rodept": "Departamento",
   
   // "browse.metadata.rotitle": "Title",
   // TODO New key - Add a translation
-  "browse.metadata.rotitle": "Title",
+  "browse.metadata.rotitle": "Título",
   
   // "browse.metadata.rodateissued": "Date Issued",
   // TODO New key - Add a translation
