@@ -1,0 +1,53 @@
+
+<div class="container">
+    <h2>{{ 'register-page.registration.header'| translate }}</h2>
+    <p>{{ 'register-page.registration.info' | translate }}</p>
+    <ds-register-navbar></ds-register-navbar>
+</div>
+<div class="container">
+
+    <form [class]="'ng-invalid'" [formGroup]="form" (ngSubmit)="verifyDni()">
+
+        <div class="form-group">
+            <div class="row">
+                <div class="col-12 mb-3">
+                    <label class="font-weight-bold"
+                           for="dni">{{'register-page.dni.form.dni' | translate}}</label>
+                    <input [className]="(dni.invalid) && (dni.dirty || dni.touched) ? 'form-control is-invalid' :'form-control'"
+                           type="text" id="dni" formControlName="dni"/>
+                    <div *ngIf="dni.invalid && (dni.dirty || dni.touched)" class="invalid-feedback show-feedback">
+                        <span *ngIf="dni.errors && dni.errors.required">
+                            {{'register-page.dni.form.dni.error.required' | translate }}
+                        </span>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <label class="font-weight-bold" for="dob">{{'register-page.dni.form.dob' | translate}}</label>
+                    <div class="input-group">
+                        <input [className]="(dob.invalid) && (dob.dirty || dob.touched) ? 'form-control is-invalid' :'form-control'" placeholder="yyyy-mm-dd"
+                               id="dob" name="dp" formControlName="dob" ngbDatepicker #d="ngbDatepicker">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"><i class="fas fa-calendar-alt"></i></button>
+                        </div>
+
+                        <div *ngIf="dob.invalid && (dob.dirty || dob.touched)" class="invalid-feedback show-feedback">
+                            <span *ngIf="dob.errors && dob.errors.required">
+                              {{'register-page.dni.form.dob.error.required' | translate }}
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <ds-loading *ngIf="dniLoading"></ds-loading>
+        <div class="alert alert-warning" *ngIf="dniValidationError">
+            <i class="fas fa-exclamation-triangle"></i> {{ 'register-page.dni.validation.' + dniValidationError | translate }}
+        </div>
+
+    </form>
+
+    <button class="btn btn-primary"
+            [disabled]="form.invalid"
+            (click)="verifyDni()">{{'register-page.dni.submit'| translate}}</button>
+</div>

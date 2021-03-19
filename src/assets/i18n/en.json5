@@ -3831,6 +3831,46 @@
   "register-page.registration.error.content": "An error occured when registering the following email address: {{ email }}",
 
 
+  "register-page.navbar.email" : "Email Registration",
+
+  "register-page.navbar.dni" : "DNI Registration",
+
+
+  "register-page.dni": "register-page.dni",
+
+  "register-page.dni.form.dni": "Dni",
+
+  "register-page.dni.form.dni.error.required": "Please fill in a Dni",
+
+  "register-page.dni.form.dob": "Date of Birth",
+
+  "register-page.dni.form.dob.error.required": "Please fill in a Date of Birth",
+
+  "register-page.dni.validation.bad-request": "register-page.dni.validation.bad-request",
+
+  "register-page.dni.validation.dni-already-present": "An account associated to the provided Dni already exists.",
+
+  "register-page.dni.validation.service-unavailable": "The validation service is temporary unavailable.",
+
+  "register-page.dni.validation.dni-not-found": "Dni not found.",
+
+  "register-page.dni.validation.not-matching": "The Date of Birth doesn't match with the provided Dni.",
+
+  "register-page.dni.submit": "Register",
+
+
+  "register-page.create-profile-dni.header": "Complete Dni Registration",
+
+  "register-page.create-profile-dni.info": "register-page.create-profile-dni.info",
+
+  "register-page.create-profile-dni.dni": "Dni",
+
+  "register-page.create-profile-dni.date": "Date of Birth",
+
+  "register-page.create-profile-dni.validation.success": "Dni and Date of Birth are valid for registration.",
+
+
+
 
   "relationships.isAuthorOf": "Authors",
 

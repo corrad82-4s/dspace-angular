@@ -5,6 +5,8 @@ import { CreateProfileComponent } from './create-profile/create-profile.componen
 import { ItemPageResolver } from '../+item-page/item-page.resolver';
 import { RegistrationResolver } from '../register-email-form/registration.resolver';
 import { EndUserAgreementCookieGuard } from '../core/end-user-agreement/end-user-agreement-cookie.guard';
+import { RegisterDniComponent } from './register-dni/register-dni.component';
+import { RegisterDniProfileComponent } from './register-dni/register-dni-profile/register-dni-profile.component';
 
 @NgModule({
   imports: [
@@ -13,6 +15,16 @@ import { EndUserAgreementCookieGuard } from '../core/end-user-agreement/end-user
         path: '',
         component: RegisterEmailComponent,
         data: {title: 'register-email.title'},
+      },
+      {
+        path: 'dni',
+        component: RegisterDniComponent
+      }
+      ,
+      {
+        path: 'dni/:dni/:date',
+        component: RegisterDniProfileComponent,
+        canActivate: [EndUserAgreementCookieGuard]
       },
       {
         path: ':token',
