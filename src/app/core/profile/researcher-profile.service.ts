@@ -3,7 +3,7 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 import { Store } from '@ngrx/store';
-import { ReplaceOperation } from 'fast-json-patch';
+import { AddOperation, ReplaceOperation } from 'fast-json-patch';
 import { Observable, of as observableOf } from 'rxjs';
 import { catchError, distinctUntilChanged, filter, find, flatMap, map, switchMap, take, tap} from 'rxjs/operators';
 
@@ -175,5 +175,22 @@ export class ResearcherProfileService {
 
         return this.dataService.patch(researcherProfile, [replaceOperation])
             .pipe (flatMap( (response ) => this.findById(researcherProfile.id)));
+    }
+
+    /**
+     * Claims the item with the specified id and binds it to the researcher profile
+     *
+     * @param researcherProfile the profile to update
+     * @param itemId the id of the item to claim
+     */
+    claim(researcherProfile: ResearcherProfile, itemId: string): Observable<RemoteData<ResearcherProfile>> {
+
+        const replaceOperation: AddOperation<string> = {
+            path: '/claim',
+            op: 'add',
+            value: itemId
+        };
+
+        return this.dataService.patch(researcherProfile, [replaceOperation]);
     }
 }

@@ -201,6 +201,8 @@ import { OpenaireSuggestion } from './openaire/reciter-suggestions/models/openai
 import { OpenaireSuggestionSource } from './openaire/reciter-suggestions/models/openaire-suggestion-source.model';
 import { ItemSourcesDataService } from './item-sources/item-sources-data.service';
 import { ItemSources } from './item-sources/model/item-sources.model';
+import { CvEntity } from './profile/model/cv-entity.model';
+import { CvEntityService } from './profile/cv-entity.service';
 
 /**
  * When not in production, endpoint responses can be mocked for testing purposes
@@ -349,6 +351,7 @@ const PROVIDERS = [
   SearchcomponentService,
   ProfileClaimService,
   ResearcherProfileService,
+  CvEntityService,
   ItemExportFormatService,
   SectionDataService,
   InstitutionDataService,
@@ -422,6 +425,7 @@ export const models =
     UsageReport,
     SearchComponent,
     ResearcherProfile,
+    CvEntity,
     ItemExportFormat,
     OrcidQueue,
     OrcidHistory,

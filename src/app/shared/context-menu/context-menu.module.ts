@@ -16,6 +16,7 @@ import { ClaimItemMenuComponent } from './claim-item/claim-item-menu.component';
 import { AddCvPublicationMenuComponent } from './add-cv-publication/add-cv-publication-menu.component';
 import { AddCvPatentMenuComponent } from './add-cv-patent/add-cv-patent-menu.component';
 import { AddCvProjectMenuComponent } from './add-cv-project/add-cv-project-menu.component';
+import { ModifyForProfileMenuComponent } from './modify-for-profile/modify-for-profile-menu.component';
 
 const COMPONENTS = [
   BulkImportMenuComponent,
@@ -28,7 +29,8 @@ const COMPONENTS = [
   ClaimItemMenuComponent,
   AddCvPublicationMenuComponent,
   AddCvProjectMenuComponent,
-  AddCvPatentMenuComponent
+  AddCvPatentMenuComponent,
+  ModifyForProfileMenuComponent
 ];
 
 const ENTRY_COMPONENTS = [
@@ -41,7 +43,8 @@ const ENTRY_COMPONENTS = [
   ClaimItemMenuComponent,
   AddCvPublicationMenuComponent,
   AddCvProjectMenuComponent,
-  AddCvPatentMenuComponent
+  AddCvPatentMenuComponent,
+  ModifyForProfileMenuComponent
 ];
 
 const MODULE = [
