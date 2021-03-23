@@ -1,0 +1,5 @@
+<ng-container *ngIf="(isProfileRelatedEntityChangeEnabled() | async)">
+  <button ngbDropdownItem (click)="modify()">
+    {{'context-menu.actions.modify-for-profile.btn' | translate}}
+  </button>
+</ng-container>
