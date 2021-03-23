@@ -56,18 +56,16 @@ export class ClaimItemMenuComponent extends ContextMenuEntryComponent {
       }),
       getFirstSucceededRemoteData(),
       mergeMap((rd: RemoteData<ResearcherProfile>) => {
-        console.log('1', rd);
         return this.researcherProfileService.findRelatedItemId(rd.payload);
       })
     ).subscribe((id: string) => {
-      console.log('2', id);
       if (isNotUndefined(id)) {
         this.router.navigateByUrl('/items/' + id);
       } else {
         this.notificationsService.error('researcherprofile.error.claim.title', 'researcherprofile.error.claim.body');
       }
     });
-      
+
   }
 
   isClaimable(): Observable<boolean> {
