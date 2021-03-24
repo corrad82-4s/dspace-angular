@@ -4372,7 +4372,7 @@
   "search.form.search_dspace": "Search DSpace",
 
   "search.form.search_mydspace": "Search MyDSpace",
-  
+
 
 
 
@@ -5358,7 +5358,7 @@
   "peru-layout.corrections.back": "Back",
 
   "peru-layout.shadow-copies": "Sources of information: ",
-  
+
   "cris.tab.label.profile": "Profile",
 
   "cris.tab.label.publications": "Publications",
@@ -5398,6 +5398,8 @@
   "cris.tab.label.fundings": "Fundings",
 
   "cris.tab.label.notification": "Notification",
+
+  "cris.box.label.cvprofiles": "CTIVitae Profiles",
 
   "cris.box.label.projects": "Projects",
 
