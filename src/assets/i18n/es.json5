@@ -4998,16 +4998,14 @@
   "menu.section.edit_user_agreement":"Edit User Agreement",
 
   // "menu.section.workflow": "Administer Workflow",
-  // TODO New key - Add a translation
-  "menu.section.workflow": "Administer Workflow",
+  "menu.section.workflow": "Gestión del flujo de trabajo",
 
 
   // "mydspace.description": "",
   "mydspace.description": "",
 
   // "mydspace.general.text-here": "here",
-  // TODO Source message changed - Revise the translation
-  "mydspace.general.text-here": "AQUÍ",
+  "mydspace.general.text-here": "aquí",
 
   // "mydspace.messages.controller-help": "Select this option to send a message to item's submitter.",
   "mydspace.messages.controller-help": "Seleccione esta opción para enviar un mensaje al remitente del ítem.",
@@ -5052,16 +5050,13 @@
   "mydspace.new-submission": "Nuevo envío",
 
   // "mydspace.new-bulk-import": "New import",
-  // TODO New key - Add a translation
-  "mydspace.new-bulk-import": "New import",
+  "mydspace.new-bulk-import": "Nueva importación",
 
   // "mydspace.new-submission-external": "Import metadata from external source",
-  // TODO New key - Add a translation
-  "mydspace.new-submission-external": "Import metadata from external source",
+  "mydspace.new-submission-external": "Importar metadatos desde una fuente externa",
 
   // "mydspace.new-submission-external-short": "Import metadata",
-  // TODO New key - Add a translation
-  "mydspace.new-submission-external-short": "Import metadata",
+  "mydspace.new-submission-external-short": "Importar metadatos",
 
   // "mydspace.results.head": "Your submissions",
   "mydspace.results.head": "Sus envíos",
@@ -5082,7 +5077,7 @@
   "mydspace.results.no-files": "Sin Archivos",
 
   // "mydspace.results.no-results": "There were no items to show",
-  "mydspace.results.no-results": "No hay ítemes para mostrar",
+  "mydspace.results.no-results": "No hay ítems para mostrar",
 
   // "mydspace.results.no-title": "No title",
   "mydspace.results.no-title": "Sin título",
@@ -5103,7 +5098,7 @@
   "mydspace.status.validation": "Validación",
 
   // "mydspace.status.waiting-for-controller": "Waiting for controller",
-  "mydspace.status.waiting-for-controller": "Esperando controlador",
+  "mydspace.status.waiting-for-controller": "Esperando al controlador",
 
   // "mydspace.status.workflow": "Workflow",
   "mydspace.status.workflow": "Flujo de trabajo",
@@ -5115,56 +5110,48 @@
   "mydspace.title": "MiDSpace",
 
   // "mydspace.upload.upload-failed": "Error creating new workspace. Please verify the content uploaded before retry.",
-  "mydspace.upload.upload-failed": "Error al crear nuevo Workspace. Verifique el contenido cargado antes de intentar.",
+  "mydspace.upload.upload-failed": "Error al crear nuevo Workspace. Verifique el contenido cargado antes de intentarlo de nuevo.",
 
   // "mydspace.upload.upload-failed-manyentries": "Unprocessable file. Detected too many entries but allowed only one for file.",
-  // TODO New key - Add a translation
-  "mydspace.upload.upload-failed-manyentries": "Unprocessable file. Detected too many entries but allowed only one for file.",
+  "mydspace.upload.upload-failed-manyentries": "Archivo no procesable. Se han detectado demasiadas entradas, pero sólo se permite una para el archivo.",
 
   // "mydspace.upload.upload-failed-moreonefile": "Unprocessable request. Only one file is allowed.",
   // TODO New key - Add a translation
-  "mydspace.upload.upload-failed-moreonefile": "Unprocessable request. Only one file is allowed.",
+  "mydspace.upload.upload-failed-moreonefile": "Solicitud no procesable. Sólo se permite un archivo.",
 
   // "mydspace.upload.upload-multiple-successful": "{{qty}} new workspace items created.",
-  "mydspace.upload.upload-multiple-successful": "{{qty}} Nuevos ítemes de workspace creados.",
+  "mydspace.upload.upload-multiple-successful": "{{qty}} Nuevos ítems de workspace creados.",
 
   // "mydspace.upload.upload-successful": "New workspace item created. Click {{here}} for edit it.",
-  "mydspace.upload.upload-successful": "Nuevos ítemes de workspace creados. Clic {{here}} para editar.",
+  "mydspace.upload.upload-successful": "Nuevos ítems de workspace creados. Clic {{here}} para editar.",
 
   // "mydspace.view-btn": "View",
   "mydspace.view-btn": "Ver",
 
   // "mydspace.update-btn": "Update",
-  // TODO New key - Add a translation
-  "mydspace.update-btn": "Update",
+  "mydspace.update-btn": "Actualizar",
 
   // "mydspace.update-btn.help": "Submit a correction request",
-  // TODO New key - Add a translation
-  "mydspace.update-btn.help": "Submit a correction request",
+  "mydspace.update-btn.help": "Enviar una solicitud de corrección",
 
   // "mydspace.notification.suggestion": "We found <b>{{count}} publications</b><br> in the {{source}} that seems to be related to your profile.<br> Please <a href='/suggestions/{{suggestionId}}'>review the suggestions</a>",
-  // TODO New key - Add a translation
-  "mydspace.notification.suggestion": "We found <b>{{count}} publications</b><br> in the {{source}} that seems to be related to your profile.<br> Please <a href='/suggestions/{{suggestionId}}'>review the suggestions</a>",
+  "mydspace.notification.suggestion": "Hemos encontrado <b>{{count}} publicaciones </b><br> en la {{source}} que parecen estar relacionadas con su perfil.<br> Por favor <a href='/suggestions/{{suggestionId}}'>revise las sugerencias</a>",
 
   // "mydspace.notification.suggestion.page": "We found <b>{{count}} publications</b> in the {{source}} that seems to be related to your profile. Please <a href='/suggestions/{{suggestionId}}'>review the suggestions.</a>",
-  // TODO New key - Add a translation
-  "mydspace.notification.suggestion.page": "We found <b>{{count}} publications</b> in the {{source}} that seems to be related to your profile. Please <a href='/suggestions/{{suggestionId}}'>review the suggestions.</a>",
+  "mydspace.notification.suggestion.page": "Hemos encontrado <b>{{count}} publicaciones</b> en la {{source}} que parecen estar relacionadas con su perfil. Por favor <a href='/suggestions/{{suggestionId}}'>revise las sugerencias.</a>",
 
   // "mydspace.item.new-submission-request": "New submission",
-  // TODO New key - Add a translation
-  "mydspace.item.new-submission-request": "New submission",
+  "mydspace.item.new-submission-request": "Nuevo envío",
 
   // "mydspace.item.correction-request": "Correction",
-  // TODO New key - Add a translation
-  "mydspace.item.correction-request": "Correction",
+  "mydspace.item.correction-request": "Corrección",
 
   // "mydspace.item.withdrawn-request": "Withdrawal",
-  // TODO New key - Add a translation
-  "mydspace.item.withdrawn-request": "Withdrawal",
+  "mydspace.item.withdrawn-request": "Retiro",
 
   // "mydspace.item.reinstate-request": "Reinstatement",
   // TODO New key - Add a translation
-  "mydspace.item.reinstate-request": "Reinstatement",
+  "mydspace.item.reinstate-request": "Reintegro",
 
   // "nav.browse.header": "All of DSpace",
   "nav.browse.header": "Todo DSpace",
@@ -5185,8 +5172,7 @@
   "nav.mydspace": "Mi DSpace",
 
   // "nav.profile": "Profile",
-  // TODO New key - Add a translation
-  "nav.profile": "Profile",
+  "nav.profile": "Perfil",
 
   // "nav.search": "Search",
   "nav.search": "Buscar",
@@ -5195,8 +5181,7 @@
   "nav.statistics.header": "Estadísticas",
 
   // "nav.stop-impersonating": "Stop impersonating EPerson",
-  // TODO New key - Add a translation
-  "nav.stop-impersonating": "Stop impersonating EPerson",
+  "nav.stop-impersonating": "Dejar de suplantar al usuario",
 
 
 
@@ -5205,92 +5190,73 @@
   "openaire.broker.title": "OpenAIRE Broker",
 
   // "openaire.broker.topics.description": "Below you can see all the topics received from the subscriptions to OpenAIRE.",
-  // TODO New key - Add a translation
-  "openaire.broker.topics.description": "Below you can see all the topics received from the subscriptions to OpenAIRE.",
+  "openaire.broker.topics.description": "A continuación puede ver todos los temas recibidos de las suscripciones a OpenAIRE.",
 
   // "openaire.broker.topics": "Current Topics",
-  // TODO New key - Add a translation
-  "openaire.broker.topics": "Current Topics",
+  "openaire.broker.topics": "Temas de actualidad",
 
   // "openaire.broker.table.topic": "Topic",
-  // TODO New key - Add a translation
-  "openaire.broker.table.topic": "Topic",
+  "openaire.broker.table.topic": "Tema",
 
   // "openaire.broker.table.last-event": "Last Event",
-  // TODO New key - Add a translation
-  "openaire.broker.table.last-event": "Last Event",
+  "openaire.broker.table.last-event": "Último evento",
 
   // "openaire.broker.table.actions": "Actions",
-  // TODO New key - Add a translation
-  "openaire.broker.table.actions": "Actions",
+  "openaire.broker.table.actions": "Acciones",
 
   // "openaire.broker.button.detail": "Show details",
-  // TODO New key - Add a translation
-  "openaire.broker.button.detail": "Show details",
+  "openaire.broker.button.detail": "Mostrar detalles",
 
   // "openaire.broker.noTopics": "No topics found.",
-  // TODO New key - Add a translation
-  "openaire.broker.noTopics": "No topics found.",
+  "openaire.broker.noTopics": "No se han encontrado temas.",
 
   // "openaire.broker.topic.error.service.retrieve": "An error occurred while loading the OpenAIRE Broker topics",
   // TODO New key - Add a translation
   "openaire.broker.topic.error.service.retrieve": "An error occurred while loading the OpenAIRE Broker topics",
 
   // "openaire.broker.loading": "Loading ...",
-  // TODO New key - Add a translation
-  "openaire.broker.loading": "Loading ...",
+  "openaire.broker.loading": "Cargando ...",
 
   // "openaire.events.title": "OpenAIRE Broker Suggestions",
   // TODO New key - Add a translation
   "openaire.events.title": "OpenAIRE Broker Suggestions",
 
   // "openaire.broker.events.description": "Below the list of all the suggestions, received from OpenAIRE, for the selected topic.",
-  // TODO New key - Add a translation
-  "openaire.broker.events.description": "Below the list of all the suggestions, received from OpenAIRE, for the selected topic.",
+  "openaire.broker.events.description": "A continuación la lista de todas las sugerencias, obtenidas de OpenAIRE, sobre el tema seleccionado.",
 
   // "openaire.broker.events.topic": "Topic:",
-  // TODO New key - Add a translation
-  "openaire.broker.events.topic": "Topic:",
+  "openaire.broker.events.topic": "Tema:",
 
   // "openaire.broker.noEvents": "No suggestions found.",
-  // TODO New key - Add a translation
-  "openaire.broker.noEvents": "No suggestions found.",
+  "openaire.broker.noEvents": "No se han encontrado sugerencias.",
 
   // "openaire.broker.event.table.trust": "Trust",
-  // TODO New key - Add a translation
-  "openaire.broker.event.table.trust": "Trust",
+  "openaire.broker.event.table.trust": "Confiar",
 
   // "openaire.broker.event.table.publication": "Publication",
-  // TODO New key - Add a translation
-  "openaire.broker.event.table.publication": "Publication",
+  "openaire.broker.event.table.publication": "Publicación",
 
   // "openaire.broker.event.table.details": "Details",
-  // TODO New key - Add a translation
-  "openaire.broker.event.table.details": "Details",
+  "openaire.broker.event.table.details": "Detalles",
 
   // "openaire.broker.event.table.project-details": "Project details",
-  // TODO New key - Add a translation
-  "openaire.broker.event.table.project-details": "Project details",
+  "openaire.broker.event.table.project-details": "Detalles del proyecto",
 
   // "openaire.broker.event.table.actions": "Actions",
-  // TODO New key - Add a translation
-  "openaire.broker.event.table.actions": "Actions",
+  "openaire.broker.event.table.actions": "Acciones",
 
   // "openaire.broker.event.action.accept": "Accept suggestion",
-  // TODO New key - Add a translation
-  "openaire.broker.event.action.accept": "Accept suggestion",
+
+  "openaire.broker.event.action.accept": "Aceptar sugerencia",
 
   // "openaire.broker.event.action.ignore": "Ignore suggestion",
-  // TODO New key - Add a translation
-  "openaire.broker.event.action.ignore": "Ignore suggestion",
+  "openaire.broker.event.action.ignore": "Ignorar sugerencia",
 
   // "openaire.broker.event.action.reject": "Reject suggestion",
-  // TODO New key - Add a translation
-  "openaire.broker.event.action.reject": "Reject suggestion",
+  "openaire.broker.event.action.reject": "Rechazar sugerencia",
 
   // "openaire.broker.event.action.import": "Import project and accept suggestion",
-  // TODO New key - Add a translation
-  "openaire.broker.event.action.import": "Import project and accept suggestion",
+  "openaire.broker.event.action.import": "Importar el proyecto y aceptar la sugerencia",
 
   // "openaire.broker.event.table.pidtype": "PID Type:",
   // TODO New key - Add a translation
@@ -5301,48 +5267,37 @@
   "openaire.broker.event.table.pidvalue": "PID Value:",
 
   // "openaire.broker.event.table.subjectValue": "Subject Value:",
-  // TODO New key - Add a translation
-  "openaire.broker.event.table.subjectValue": "Subject Value:",
+  "openaire.broker.event.table.subjectValue": "Valor de la materia:",
 
   // "openaire.broker.event.table.abstract": "Abstract:",
-  // TODO New key - Add a translation
-  "openaire.broker.event.table.abstract": "Abstract:",
+  "openaire.broker.event.table.abstract": "Resumen:",
 
   // "openaire.broker.event.table.suggestedProject": "OpenAIRE Suggested Project data",
-  // TODO New key - Add a translation
-  "openaire.broker.event.table.suggestedProject": "OpenAIRE Suggested Project data",
+  "openaire.broker.event.table.suggestedProject": "Datos de proyectos sugeridos por OpenAIRE",
 
   // "openaire.broker.event.table.project": "Project title:",
-  // TODO New key - Add a translation
-  "openaire.broker.event.table.project": "Project title:",
+  "openaire.broker.event.table.project": "Título del proyecto:",
 
   // "openaire.broker.event.table.acronym": "Acronym:",
-  // TODO New key - Add a translation
-  "openaire.broker.event.table.acronym": "Acronym:",
+  "openaire.broker.event.table.acronym": "Acrónimo:",
 
   // "openaire.broker.event.table.code": "Code:",
-  // TODO New key - Add a translation
-  "openaire.broker.event.table.code": "Code:",
+  "openaire.broker.event.table.code": "Código:",
 
   // "openaire.broker.event.table.funder": "Funder:",
-  // TODO New key - Add a translation
-  "openaire.broker.event.table.funder": "Funder:",
+  "openaire.broker.event.table.funder": "Financiador:",
 
   // "openaire.broker.event.table.fundingProgram": "Funding program:",
-  // TODO New key - Add a translation
-  "openaire.broker.event.table.fundingProgram": "Funding program:",
+  "openaire.broker.event.table.fundingProgram": "Programa de financiación:",
 
   // "openaire.broker.event.table.jurisdiction": "Jurisdiction:",
-  // TODO New key - Add a translation
-  "openaire.broker.event.table.jurisdiction": "Jurisdiction:",
+  "openaire.broker.event.table.jurisdiction": "Jurisdicción:",
 
   // "openaire.broker.events.back": "Back to topics",
-  // TODO New key - Add a translation
-  "openaire.broker.events.back": "Back to topics",
+  "openaire.broker.events.back": "Volver a los temas",
 
   // "openaire.broker.event.table.less": "Show less",
-  // TODO New key - Add a translation
-  "openaire.broker.event.table.less": "Show less",
+  "openaire.broker.event.table.less": "Mostrar menos",
 
   // "openaire.broker.event.table.more": "Show more",
   // TODO New key - Add a translation
