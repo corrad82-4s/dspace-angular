@@ -503,12 +503,34 @@ export class SearchService implements OnDestroy {
       }),
     );
 
+    // FIXME: this temporary solution must be replaced by incoming method from dspace-cris-7 at next codebase alignment 
     href$.pipe(take(1)).subscribe((url: string) => {
-      const request = new this.request(this.requestService.generateRequestId(), url);
-      this.requestService.send(request);
+      let request = new this.request(this.requestService.generateRequestId(), url);
+      request = Object.assign(request, {
+        getResponseParser(): GenericConstructor<ResponseParsingService> {
+          return FilterConfigResponseParsingService;
+        }
+      });
+      this.requestService.configure(request);
     });
 
-    return this.rdb.buildFromHref(href$);
+    return this.rdb.buildFromHref(href$).pipe(
+      map((rd: RemoteData<SearchConfig>) => {
+        if (rd.hasSucceeded) {
+          return new RemoteData(
+            rd.timeCompleted,
+            rd.msToLive,
+            rd.lastUpdated,
+            rd.state,
+            rd.errorMessage,
+            rd.payload.filters,
+            rd.statusCode,
+          );
+        } else {
+          return rd as any;
+        }
+      })
+    );
   }
 
   /**

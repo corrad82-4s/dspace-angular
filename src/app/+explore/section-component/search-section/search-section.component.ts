@@ -47,14 +47,11 @@ export class SearchSectionComponent implements OnInit {
 
     this.filters = this.searchService.getSearchConfigurationFor(null, this.searchSection.discoveryConfigurationName).pipe(
       getFirstSucceededRemoteDataPayload(),
-      map((searchFilterConfig: SearchConfig) => {
-        return [this.allFilter].concat(searchFilterConfig.filters.map((filterConfig) => filterConfig.filter));
-
-      // FIXME::: check
-      map((searchFilterConfig: SimpleSearchFilterConfig[]) => {
+      // FIXME: at dspace-cris-7 merge replace this logic with usage of SearchConfig object
+      map((searchFilterConfig: any) => {
         const filtered = searchFilterConfig.filter((filterConfig) => !filterConfig.filterType.startsWith('chart'));
         return [this.allFilter].concat(filtered.map((filterConfig) => filterConfig.name));
-      })
+       })
     );
 
     this.searchForm = this.formBuilder.group(({
