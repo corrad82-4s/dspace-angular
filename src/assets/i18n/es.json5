@@ -9371,6 +9371,10 @@
   // TODO New key - Add a translation
   "cris.box.label.projects": "Projects",
 
+  // "cris.box.label.cvprofiles": "CTIVitae Profiles",
+  // TODO New key - Add a translation
+  "cris.box.label.cvprofiles": "CTIVitae Profiles",
+
   // "cris.box.label.publications": "Publications",
   // TODO New key - Add a translation
   "cris.box.label.publications": "Publications",
