@@ -4029,44 +4029,34 @@
 
 
   // "item.listelement.badge": "Item",
-  // TODO New key - Add a translation
   "item.listelement.badge": "Item",
 
-  // "item.page.description": "Description",
-  // TODO New key - Add a translation
-  "item.page.description": "Description",
+  // "item.page.description": "Description",  
+  "item.page.description": "Descripción",
 
-  // "item.page.edit": "Edit this item",
-  // TODO New key - Add a translation
-  "item.page.edit": "Edit this item",
+  // "item.page.edit": "Edit this item", 
+  "item.page.edit": "Editar este ítem",
 
-  // "item.page.journal-issn": "Journal ISSN",
-  // TODO New key - Add a translation
-  "item.page.journal-issn": "Journal ISSN",
+  // "item.page.journal-issn": "Journal ISSN",  
+  "item.page.journal-issn": "ISSN Revista",
 
   // "item.page.journal-title": "Journal Title",
-  // TODO New key - Add a translation
-  "item.page.journal-title": "Journal Title",
+  "item.page.journal-title": "Título Revista",
 
   // "item.page.publisher": "Publisher",
-  // TODO New key - Add a translation
-  "item.page.publisher": "Publisher",
+  "item.page.publisher": "Editorial",
 
   // "item.page.titleprefix": "Item: ",
-  // TODO New key - Add a translation
   "item.page.titleprefix": "Item: ",
 
   // "item.page.volume-title": "Volume Title",
-  // TODO New key - Add a translation
-  "item.page.volume-title": "Volume Title",
+  "item.page.volume-title": "Título Volumen",
 
   // "item.search.results.head": "Item Search Results",
-  // TODO New key - Add a translation
-  "item.search.results.head": "Item Search Results",
+  "item.search.results.head": "Resultados de la búsqueda de ítems",
 
   // "item.search.title": "DSpace Angular :: Item Search",
-  // TODO New key - Add a translation
-  "item.search.title": "DSpace Angular :: Item Search",
+  "item.search.title": "PerúCRIS :: Búsqueda de Items",
 
   // "item.page.abstract": "Abstract",
   "item.page.abstract": "Resumen",
@@ -4084,8 +4074,7 @@
   "item.page.date": "Fecha",
 
   // "item.page.edit": "Edit this item",
-  // TODO New key - Add a translation
-  "item.page.edit": "Edit this item",
+  "item.page.edit": "Editar este ítem",
 
   // "item.page.files": "Files",
   "item.page.files": "Archivos",
@@ -4115,309 +4104,235 @@
   "item.page.link.simple": "Página simple del ítem",
 
   // "item.page.metric.deltaPeriod1": "Last Week",
-  // TODO New key - Add a translation
-  "item.page.metric.deltaPeriod1": "Last Week",
+  "item.page.metric.deltaPeriod1": "Última Semana",
 
   // "item.page.metric.deltaPeriod2": "Last Month",
-  // TODO New key - Add a translation
-  "item.page.metric.deltaPeriod2": "Last Month",
+  "item.page.metric.deltaPeriod2": "Último Mes",
 
   // "item.page.metric.label.altmetrics": "Altmetrics",
-  // TODO New key - Add a translation
   "item.page.metric.label.altmetrics": "Altmetrics",
 
   // "item.page.metric.label.google-scholar": "Google Scholar",
-  // TODO New key - Add a translation
   "item.page.metric.label.google-scholar": "Google Scholar",
 
   // "item.page.metric.label.scopusCitation": "Scopus citations",
-  // TODO New key - Add a translation
-  "item.page.metric.label.scopusCitation": "Scopus citations",
+  "item.page.metric.label.scopusCitation": "Citas en Scopus",
 
   // "item.page.metric.label.scopus-author-h-index": "H-index",
-  // TODO New key - Add a translation
-  "item.page.metric.label.scopus-author-h-index": "H-index",
+  "item.page.metric.label.scopus-author-h-index": "Índice H",
 
   // "item.page.metric.label.scopus-author-coauthor-count": "Coauthor",
-  // TODO New key - Add a translation
-  "item.page.metric.label.scopus-author-coauthor-count": "Coauthor",
+  "item.page.metric.label.scopus-author-coauthor-count": "Coautor",
 
   // "item.page.metric.label.scopus-author-cited-count": "Cited By",
-  // TODO New key - Add a translation
-  "item.page.metric.label.scopus-author-cited-count": "Cited By",
+  "item.page.metric.label.scopus-author-cited-count": "Citado por",
 
   // "item.page.metric.label.scopus-author-citation-count": "Author Citations",
-  // TODO New key - Add a translation
-  "item.page.metric.label.scopus-author-citation-count": "Author Citations",
+  "item.page.metric.label.scopus-author-citation-count": "Citas del Autor",
 
   // "item.page.metric.label.scopus-author-document-count": "Author Documents",
-  // TODO New key - Add a translation
-  "item.page.metric.label.scopus-author-document-count": "Author Documents",
+  "item.page.metric.label.scopus-author-document-count": "Documentos del Autor",
 
   // "item.page.metric.label.wosCitation": "WOS citations",
-  // TODO New key - Add a translation
-  "item.page.metric.label.wosCitation": "WOS citations",
+  "item.page.metric.label.wosCitation": "Citas en WOS",
 
   // "item.page.metric.label.wosPersonCitation": "WOS citations",
-  // TODO New key - Add a translation
-  "item.page.metric.label.wosPersonCitation": "WOS citations",
+  "item.page.metric.label.wosPersonCitation": "Citas en WOS",
 
   // "item.page.person.search.title": "Articles by this author",
   "item.page.person.search.title": "Artículos por este autor",
 
   // "item.page.related-items.view-more": "Show {{ amount }} more",
-  // TODO Source message changed - Revise the translation
-  "item.page.related-items.view-more": "Ver más",
+  "item.page.related-items.view-more": "Mostrar {{ amount }} más",
 
   // "item.page.related-items.view-less": "Hide last {{ amount }}",
-  // TODO Source message changed - Revise the translation
-  "item.page.related-items.view-less": "View menos",
+  "item.page.related-items.view-less": "Ver últimas {{ amount }}",
 
   // "item.page.relationships.isAuthorOfPublication": "Publications",
-  // TODO New key - Add a translation
-  "item.page.relationships.isAuthorOfPublication": "Publications",
+  "item.page.relationships.isAuthorOfPublication": "Publicaciones",
 
   // "item.page.relationships.isJournalOfPublication": "Publications",
-  // TODO New key - Add a translation
-  "item.page.relationships.isJournalOfPublication": "Publications",
+  "item.page.relationships.isJournalOfPublication": "Publicaciones",
 
   // "item.page.relationships.isOrgUnitOfPerson": "Authors",
-  // TODO New key - Add a translation
-  "item.page.relationships.isOrgUnitOfPerson": "Authors",
+  "item.page.relationships.isOrgUnitOfPerson": "Autores",
 
   // "item.page.relationships.isOrgUnitOfProject": "Research Projects",
-  // TODO New key - Add a translation
-  "item.page.relationships.isOrgUnitOfProject": "Research Projects",
+  "item.page.relationships.isOrgUnitOfProject": "Proyectos de investigación",
 
   // "item.page.subject": "Keywords",
-  "item.page.subject": "Claves",
+  "item.page.subject": "Palabras Clave",
 
   // "item.page.uri": "URI",
   "item.page.uri": "URI",
 
   // "item.page.bitstreams.view-more": "Show more",
-  // TODO New key - Add a translation
-  "item.page.bitstreams.view-more": "Show more",
+  "item.page.bitstreams.view-more": "Mostrar más",
 
   // "item.page.bitstreams.collapse": "Collapse",
-  // TODO New key - Add a translation
-  "item.page.bitstreams.collapse": "Collapse",
+  "item.page.bitstreams.collapse": "Colapsar",
 
   // "item.page.filesection.original.bundle" : "Original bundle",
-  // TODO New key - Add a translation
-  "item.page.filesection.original.bundle" : "Original bundle",
+  "item.page.filesection.original.bundle" : "Bundle original",
 
   // "item.page.filesection.license.bundle" : "License bundle",
-  // TODO New key - Add a translation
-  "item.page.filesection.license.bundle" : "License bundle",
+  "item.page.filesection.license.bundle" : "Bundle Licencia",
 
   // "item.preview.dc.description.tableOfContents" : "Table of Contents",
-  // TODO New key - Add a translation
-  "item.preview.dc.description.tableOfContents" : "Table of Contents",
+  "item.preview.dc.description.tableOfContents" : "Índice de contenidos",
 
   // "item.preview.dc.identifier.doi" : "DOI",
-  // TODO New key - Add a translation
   "item.preview.dc.identifier.doi" : "DOI",
 
   // "item.preview.dc.identifier.issn" : "ISSN",
-  // TODO New key - Add a translation
   "item.preview.dc.identifier.issn" : "ISSN",
 
   // "item.preview.dc.identifier.scopus" : "Scopus id",
-  // TODO New key - Add a translation
   "item.preview.dc.identifier.scopus" : "Scopus id",
 
   // "item.preview.dc.publisher" : "Publisher",
-  // TODO New key - Add a translation
-  "item.preview.dc.publisher" : "Publisher",
+  "item.preview.dc.publisher" : "Editorial",
 
   // "item.preview.dc.relation.grantno" : "Grant no.",
-  // TODO New key - Add a translation
-  "item.preview.dc.relation.grantno" : "Grant no.",
+  "item.preview.dc.relation.grantno" : "Nº Concesión.",
 
   // "item.preview.dc.relation.ispartof" : "Journal or Serie",
-  // TODO New key - Add a translation
-  "item.preview.dc.relation.ispartof" : "Journal or Serie",
+  "item.preview.dc.relation.ispartof" : "Revista o Serie",
 
   // "item.preview.dc.subject.ocde" : "OCDE",
-  // TODO New key - Add a translation
   "item.preview.dc.subject.ocde" : "OCDE",
 
   // "item.preview.dc.relation.ispartofseries" : "Serie",
-  // TODO New key - Add a translation
   "item.preview.dc.relation.ispartofseries" : "Serie",
 
   // "item.preview.dc.identifier.isbn" : "ISBN",
-  // TODO New key - Add a translation
   "item.preview.dc.identifier.isbn" : "ISBN",
 
   // "item.preview.dc.identifier.uri": "Identifier:",
-  // TODO New key - Add a translation
-  "item.preview.dc.identifier.uri": "Identifier:",
+  "item.preview.dc.identifier.uri": "Identificador:",
 
   // "item.preview.dc.contributor.advisor" : "Advisor",
-  // TODO New key - Add a translation
-  "item.preview.dc.contributor.advisor" : "Advisor",
+  "item.preview.dc.contributor.advisor" : "Asesor",
 
   // "item.preview.dc.contributor.author": "Authors:",
-  // TODO New key - Add a translation
-  "item.preview.dc.contributor.author": "Authors:",
+  "item.preview.dc.contributor.author": "Autores:",
 
   // "item.preview.dc.contributor.editor": "Editors:",
-  // TODO New key - Add a translation
-  "item.preview.dc.contributor.editor": "Editors:",
+  "item.preview.dc.contributor.editor": "Editores:",
 
   // "item.preview.dc.date.embargoEnd" : "Embargo End",
-  // TODO New key - Add a translation
-  "item.preview.dc.date.embargoEnd" : "Embargo End",
+  "item.preview.dc.date.embargoEnd" : "Fin Embargo",
 
   // "item.preview.dc.date.issued": "Published date:",
-  // TODO New key - Add a translation
-  "item.preview.dc.date.issued": "Published date:",
+  "item.preview.dc.date.issued": "Fecha publicación:",
 
   // "item.preview.dc.description.abstract": "Abstract:",
-  // TODO New key - Add a translation
-  "item.preview.dc.description.abstract": "Abstract:",
+  "item.preview.dc.description.abstract": "Resumen:",
 
   // "item.preview.dc.description.sponsorship" : "Sponsorship",
-  // TODO New key - Add a translation
-  "item.preview.dc.description.sponsorship" : "Sponsorship",
+  "item.preview.dc.description.sponsorship" : "Patrocinio",
 
   // "item.preview.dc.identifier.other": "Other identifier:",
-  // TODO New key - Add a translation
-  "item.preview.dc.identifier.other": "Other identifier:",
+  "item.preview.dc.identifier.other": "Otro identificador:",
 
   // "item.preview.dc.identifier.pmid" : "Pubmed Id",
-  // TODO New key - Add a translation
   "item.preview.dc.identifier.pmid" : "Pubmed Id",
 
   // "item.preview.dc.language.iso": "Language:",
-  // TODO New key - Add a translation
-  "item.preview.dc.language.iso": "Language:",
+  "item.preview.dc.language.iso": "Idioma:",
 
   // "item.preview.dc.relation.uri" : "Relation URI",
-  // TODO New key - Add a translation
-  "item.preview.dc.relation.uri" : "Relation URI",
+  "item.preview.dc.relation.uri" : "Relación URI",
 
   // "item.preview.dc.rights" : "Rights",
-  // TODO New key - Add a translation
-  "item.preview.dc.rights" : "Rights",
+  "item.preview.dc.rights" : "Derechos",
 
   // "item.preview.dc.rights.uri" : "Rights URI",
-  // TODO New key - Add a translation
-  "item.preview.dc.rights.uri" : "Rights URI",
+  "item.preview.dc.rights.uri" : "Derechos URI",
 
   // "item.preview.dc.subject": "Subjects:",
-  // TODO New key - Add a translation
-  "item.preview.dc.subject": "Subjects:",
+  "item.preview.dc.subject": "Materias:",
 
   // "item.preview.dc.title": "Title:",
-  // TODO New key - Add a translation
-  "item.preview.dc.title": "Title:",
+  "item.preview.dc.title": "Título:",
 
   // "item.preview.dc.title.alternative" : "Alternative Title",
-  // TODO New key - Add a translation
-  "item.preview.dc.title.alternative" : "Alternative Title",
+  "item.preview.dc.title.alternative" : "Título Alternativo",
 
   // "item.preview.dc.type": "Type:",
-  // TODO New key - Add a translation
-  "item.preview.dc.type": "Type:",
+  "item.preview.dc.type": "Tipo:",
 
   // "item.preview.dc.type.version" : "Version",
-  // TODO New key - Add a translation
   "item.preview.dc.type.version" : "Version",
 
   // "item.preview.dc.identifier": "Identifier:",
-  // TODO New key - Add a translation
-  "item.preview.dc.identifier": "Identifier:",
+  "item.preview.dc.identifier": "Identificador:",
 
   // "item.preview.dc.source": "Source:",
-  // TODO New key - Add a translation
-  "item.preview.dc.source": "Source:",
+  "item.preview.dc.source": "Fuente:",
 
   // "item.preview.dc.relation.isbn" : "ISBN",
-  // TODO New key - Add a translation
   "item.preview.dc.relation.isbn" : "ISBN",
 
   // "item.preview.dc.relation.issn" : "ISSN",
-  // TODO New key - Add a translation
   "item.preview.dc.relation.issn" : "ISSN",
 
   // "item.preview.oaire.citation.endPage" : "Citation end page",
-  // TODO New key - Add a translation
-  "item.preview.oaire.citation.endPage" : "Citation end page",
+  "item.preview.oaire.citation.endPage" : "Cita final de página",
 
   // "item.preview.oaire.citation.issue" : "Issue",
-  // TODO New key - Add a translation
-  "item.preview.oaire.citation.issue" : "Issue",
+  "item.preview.oaire.citation.issue" : "Número",
 
   // "item.preview.oaire.citation.startPage" : "Citation start page",
-  // TODO New key - Add a translation
-  "item.preview.oaire.citation.startPage" : "Citation start page",
+  "item.preview.oaire.citation.startPage" : "Página de inicio cita",
 
   // "item.preview.oaire.citation.volume" : "Volume",
-  // TODO New key - Add a translation
-  "item.preview.oaire.citation.volume" : "Volume",
+  "item.preview.oaire.citation.volume" : "Volúmen",
 
   // "item.preview.oairecerif.affiliation.orgunit": "Affiliation",
-  // TODO New key - Add a translation
-  "item.preview.oairecerif.affiliation.orgunit": "Affiliation",
+  "item.preview.oairecerif.affiliation.orgunit": "Filiación",
 
   // "item.preview.person.familyName": "Surname:",
-  // TODO New key - Add a translation
-  "item.preview.person.familyName": "Surname:",
+  "item.preview.person.familyName": "Apellido:",
 
   // "item.preview.person.givenName": "Name:",
-  // TODO New key - Add a translation
-  "item.preview.person.givenName": "Name:",
+  "item.preview.person.givenName": "Nombre:",
 
   // "item.preview.person.identifier.orcid": "ORCID:",
-  // TODO New key - Add a translation
   "item.preview.person.identifier.orcid": "ORCID:",
 
   // "item.preview.person.identifier.scopus-author-id": "Scopus Author Id",
-  // TODO New key - Add a translation
   "item.preview.person.identifier.scopus-author-id": "Scopus Author Id",
 
   // "item.preview.renati.advisor.dni" : "Renati Advisor DNI",
-  // TODO New key - Add a translation
-  "item.preview.renati.advisor.dni" : "Renati Advisor DNI",
+  "item.preview.renati.advisor.dni" : "DNI Asesor Renati",
 
   // "item.preview.renati.advisor.orcid" : "Renati Author ORCID",
-  // TODO New key - Add a translation
-  "item.preview.renati.advisor.orcid" : "Renati Author ORCID",
+  "item.preview.renati.advisor.orcid" : "ORCID Autor Renati ",
 
   // "item.preview.renati.author.dni" : "Renati Author DNI",
-  // TODO New key - Add a translation
-  "item.preview.renati.author.dni" : "Renati Author DNI",
+  "item.preview.renati.author.dni" : "DNI Autor Renati",
 
   // "item.preview.renati.discipline" : "Renati Advisor ORCID",
-  // TODO New key - Add a translation
-  "item.preview.renati.discipline" : "Renati Advisor ORCID",
+  "item.preview.renati.discipline" : "ORCID Asesor Renati",
 
   // "item.preview.renati.juror" : "Renati Juror",
-  // TODO New key - Add a translation
-  "item.preview.renati.juror" : "Renati Juror",
+  "item.preview.renati.juror" : "Jurado Renati",
 
   // "item.preview.renati.level" : "Renati Level",
-  // TODO New key - Add a translation
-  "item.preview.renati.level" : "Renati Level",
+  "item.preview.renati.level" : "Nivel Renati",
 
   // "item.preview.renati.type" : "Renati Type",
-  // TODO New key - Add a translation
-  "item.preview.renati.type" : "Renati Type",
+  "item.preview.renati.type" : "Tipo Renati",
 
   // "item.preview.thesis.degree.name" : "Degree",
-  // TODO New key - Add a translation
-  "item.preview.thesis.degree.name" : "Degree",
+  "item.preview.thesis.degree.name" : "Título/Grado",
 
   // "item.preview.thesis.degree.discipline" : "Discipline",
-  // TODO New key - Add a translation
-  "item.preview.thesis.degree.discipline" : "Discipline",
+  "item.preview.thesis.degree.discipline" : "Disciplina",
 
   // "item.preview.thesis.degree.grantor" : "Grantor",
-  // TODO New key - Add a translation
-  "item.preview.thesis.degree.grantor" : "Grantor",
+  "item.preview.thesis.degree.grantor" : "Concedente",
 
 
 
@@ -4425,7 +4340,7 @@
   "item.select.confirm": "Confirmar lo seleccionado",
 
   // "item.select.empty": "No items to show",
-  "item.select.empty": "No ítemes para mostrar",
+  "item.select.empty": "No ítems para mostrar",
 
   // "item.select.table.author": "Author",
   "item.select.table.author": "Autor",
@@ -4438,67 +4353,52 @@
 
 
   // "item.version.history.empty": "There are no other versions for this item yet.",
-  // TODO New key - Add a translation
-  "item.version.history.empty": "There are no other versions for this item yet.",
+  "item.version.history.empty": "Todavía no hay otras versiones para este ítem.",
 
   // "item.version.history.head": "Version History",
-  // TODO New key - Add a translation
-  "item.version.history.head": "Version History",
+  "item.version.history.head": "Historial de versiones",
 
   // "item.version.history.return": "Return",
-  // TODO New key - Add a translation
-  "item.version.history.return": "Return",
+  "item.version.history.return": "Volver",
 
   // "item.version.history.selected": "Selected version",
-  // TODO New key - Add a translation
-  "item.version.history.selected": "Selected version",
+  "item.version.history.selected": "Versión seleccionada",
 
   // "item.version.history.table.version": "Version",
-  // TODO New key - Add a translation
-  "item.version.history.table.version": "Version",
+  "item.version.history.table.version": "Versión",
 
   // "item.version.history.table.item": "Item",
-  // TODO New key - Add a translation
   "item.version.history.table.item": "Item",
 
   // "item.version.history.table.editor": "Editor",
-  // TODO New key - Add a translation
   "item.version.history.table.editor": "Editor",
 
   // "item.version.history.table.date": "Date",
-  // TODO New key - Add a translation
-  "item.version.history.table.date": "Date",
+  "item.version.history.table.date": "Fecha",
 
   // "item.version.history.table.summary": "Summary",
-  // TODO New key - Add a translation
-  "item.version.history.table.summary": "Summary",
+  "item.version.history.table.summary": "Resumen",
 
 
 
   // "item.version.notice": "This is not the latest version of this item. The latest version can be found <a href='{{destination}}'>here</a>.",
-  // TODO New key - Add a translation
-  "item.version.notice": "This is not the latest version of this item. The latest version can be found <a href='{{destination}}'>here</a>.",
+  "item.version.notice": "Esta no es la última versión de este ítem. La última versión se puede encontrar <a href='{{destination}}'>aquí</a>.",
 
 
   // "item-export.modal-launcher.single.btn": "Export",
-  // TODO New key - Add a translation
-  "item-export.modal-launcher.single.btn": "Export",
+  "item-export.modal-launcher.single.btn": "Exportar",
 
   // "item-export.modal-launcher.multiple.btn": "Bulk Export",
-  // TODO New key - Add a translation
-  "item-export.modal-launcher.multiple.btn": "Bulk Export",
+  "item-export.modal-launcher.multiple.btn": "Exportación Masiva",
 
   // "item-export.alert.single": "Export item ",
-  // TODO New key - Add a translation
-  "item-export.alert.single": "Export item ",
+  "item-export.alert.single": "Exportar item ",
 
   // "item-export.alert.multiple": "Export all items of a particular entity type belonging to the current search.",
-  // TODO New key - Add a translation
-  "item-export.alert.multiple": "Export all items of a particular entity type belonging to the current search.",
+  "item-export.alert.multiple": "Exportar todos los ítems de un determinado tipo de entidad pertenecientes a la búsqueda actual.",
 
   // "item-export.form.entityType": "Entity Type",
-  // TODO New key - Add a translation
-  "item-export.form.entityType": "Entity Type",
+  "item-export.form.entityType": "Tipo Entidad",
 
   // "item-export.form.entityType.tip": "Choose the entity type to export",
   "item-export.form.entityType.tip": "Elija el tipo de entidad a exportar",
