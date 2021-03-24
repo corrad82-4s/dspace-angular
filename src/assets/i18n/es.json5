@@ -5300,164 +5300,124 @@
   "openaire.broker.event.table.less": "Mostrar menos",
 
   // "openaire.broker.event.table.more": "Show more",
-  // TODO New key - Add a translation
-  "openaire.broker.event.table.more": "Show more",
+  "openaire.broker.event.table.more": "Mostrar más",
 
   // "openaire.broker.event.project.found": "Bound to the local record:",
-  // TODO New key - Add a translation
-  "openaire.broker.event.project.found": "Bound to the local record:",
+  "openaire.broker.event.project.found": "Vinculado al registro local:",
 
   // "openaire.broker.event.project.notFound": "No local record found",
-  // TODO New key - Add a translation
-  "openaire.broker.event.project.notFound": "No local record found",
+  "openaire.broker.event.project.notFound": "No se ha encontrado ningún registro local",
 
   // "openaire.broker.event.sure": "Are you sure?",
-  // TODO New key - Add a translation
-  "openaire.broker.event.sure": "Are you sure?",
+  "openaire.broker.event.sure": "¿Está seguro?",
 
   // "openaire.broker.event.ignore.description": "This operation can't be undone. Ignore this suggestion?",
-  // TODO New key - Add a translation
-  "openaire.broker.event.ignore.description": "This operation can't be undone. Ignore this suggestion?",
+  "openaire.broker.event.ignore.description": "Esta operación no se puede deshacer ¿Ignorar esta sugerencia?",
 
   // "openaire.broker.event.reject.description": "This operation can't be undone. Reject this suggestion?",
-  // TODO New key - Add a translation
-  "openaire.broker.event.reject.description": "This operation can't be undone. Reject this suggestion?",
+  "openaire.broker.event.reject.description": "Esta operación no se puede deshacer ¿Rechazar esta sugerencia?",
 
   // "openaire.broker.event.accept.description": "No DSpace project selected. A new project will be created based on the suggestion data.",
-  // TODO New key - Add a translation
-  "openaire.broker.event.accept.description": "No DSpace project selected. A new project will be created based on the suggestion data.",
+  "openaire.broker.event.accept.description": "No se ha seleccionado ningún proyecto DSpace. Se creará un nuevo proyecto basado en los datos de la sugerencia.",
 
   // "openaire.broker.event.action.cancel": "Cancel",
-  // TODO New key - Add a translation
-  "openaire.broker.event.action.cancel": "Cancel",
+  "openaire.broker.event.action.cancel": "Cancelar",
 
   // "openaire.broker.event.action.saved": "Your decision has been saved successfully.",
-  // TODO New key - Add a translation
-  "openaire.broker.event.action.saved": "Your decision has been saved successfully.",
+  "openaire.broker.event.action.saved": "Su decisión se ha guardado con éxito.",
 
   // "openaire.broker.event.action.error": "An error has occurred. Your decision has not been saved.",
-  // TODO New key - Add a translation
-  "openaire.broker.event.action.error": "An error has occurred. Your decision has not been saved.",
+    "openaire.broker.event.action.error": "Se ha producido un error. Su decisión no se ha guardado.",
 
   // "openaire.broker.event.modal.project.title": "Choose a project to bound",
-  // TODO New key - Add a translation
-  "openaire.broker.event.modal.project.title": "Choose a project to bound",
+  "openaire.broker.event.modal.project.title": "Elija un proyecto para vincular",
 
   // "openaire.broker.event.modal.project.publication": "Publication:",
-  // TODO New key - Add a translation
-  "openaire.broker.event.modal.project.publication": "Publication:",
+  "openaire.broker.event.modal.project.publication": "Publicación:",
 
   // "openaire.broker.event.modal.project.bountToLocal": "Bound to the local record:",
-  // TODO New key - Add a translation
-  "openaire.broker.event.modal.project.bountToLocal": "Bound to the local record:",
+  "openaire.broker.event.modal.project.bountToLocal": "Vinculado al registro local:",
 
   // "openaire.broker.event.modal.project.select": "Project search",
-  // TODO New key - Add a translation
-  "openaire.broker.event.modal.project.select": "Project search",
+  "openaire.broker.event.modal.project.select": "Búsqueda de proyecto",
 
   // "openaire.broker.event.modal.project.search": "Search",
-  // TODO New key - Add a translation
-  "openaire.broker.event.modal.project.search": "Search",
+    "openaire.broker.event.modal.project.search": "Búsqueda",
 
   // "openaire.broker.event.modal.project.clear": "Clear",
-  // TODO New key - Add a translation
-  "openaire.broker.event.modal.project.clear": "Clear",
+  "openaire.broker.event.modal.project.clear": "Quitar",
 
   // "openaire.broker.event.modal.project.cancel": "Cancel",
-  // TODO New key - Add a translation
-  "openaire.broker.event.modal.project.cancel": "Cancel",
+    "openaire.broker.event.modal.project.cancel": "Cancelar",
 
   // "openaire.broker.event.modal.project.bound": "Bound project",
-  // TODO New key - Add a translation
-  "openaire.broker.event.modal.project.bound": "Bound project",
+  "openaire.broker.event.modal.project.bound": "Vincular proyecto",
 
   // "openaire.broker.event.modal.project.placeholder": "Enter a project name",
-  // TODO New key - Add a translation
-  "openaire.broker.event.modal.project.placeholder": "Enter a project name",
+    "openaire.broker.event.modal.project.placeholder": "Ingrese el nombre del proyecto",
 
   // "openaire.broker.event.modal.project.notFound": "No project found.",
-  // TODO New key - Add a translation
-  "openaire.broker.event.modal.project.notFound": "No project found.",
+  "openaire.broker.event.modal.project.notFound": "No se ha encontrado ningún proyecto.",
 
   // "openaire.broker.event.project.bounded": "The project has been linked successfully.",
-  // TODO New key - Add a translation
-  "openaire.broker.event.project.bounded": "The project has been linked successfully.",
+  "openaire.broker.event.project.bounded": "El proyecto se ha vinculado con éxito.",
 
   // "openaire.broker.event.project.removed": "The project has been successfully unlinked.",
-  // TODO New key - Add a translation
-  "openaire.broker.event.project.removed": "The project has been successfully unlinked.",
+  "openaire.broker.event.project.removed": "El proyecto se ha desvinculado con éxito.",
 
   // "openaire.broker.event.project.error": "An error has occurred. No operation performed.",
-  // TODO New key - Add a translation
-  "openaire.broker.event.project.error": "An error has occurred. No operation performed.",
+  "openaire.broker.event.project.error": "Se ha producido un error. No se ha realizado ninguna operación.",
 
   // "openaire.broker.event.reason": "Reason",
-  // TODO New key - Add a translation
-  "openaire.broker.event.reason": "Reason",
+  "openaire.broker.event.reason": "Motivo",
 
   // "reciter.suggestion.loading": "Loading ...",
-  // TODO New key - Add a translation
-  "reciter.suggestion.loading": "Loading ...",
+  "reciter.suggestion.loading": "Cargando ...",
 
   // "reciter.suggestion.title": "Suggestions",
-  // TODO New key - Add a translation
-  "reciter.suggestion.title": "Suggestions",
+  "reciter.suggestion.title": "Sugerencias",
 
   // "reciter.suggestion.targets.description": "Below you can see all the suggestions ",
-  // TODO New key - Add a translation
-  "reciter.suggestion.targets.description": "Below you can see all the suggestions ",
+  "reciter.suggestion.targets.description": "A continuación puede ver todas las sugerencias ",
 
   // "reciter.suggestion.targets": "Current Suggestions",
-  // TODO New key - Add a translation
-  "reciter.suggestion.targets": "Current Suggestions",
+  "reciter.suggestion.targets": "Sugerencias actuales",
 
   // "reciter.suggestion.table.name": "Researcher Name",
-  // TODO New key - Add a translation
-  "reciter.suggestion.table.name": "Researcher Name",
+  "reciter.suggestion.table.name": "Nombre del investigador",
 
   // "reciter.suggestion.table.actions": "Actions",
-  // TODO New key - Add a translation
-  "reciter.suggestion.table.actions": "Actions",
+  "reciter.suggestion.table.actions": "Acciones",
 
   // "reciter.suggestion.button.review": "Review {{ total }} suggestion(s)",
-  // TODO New key - Add a translation
-  "reciter.suggestion.button.review": "Review {{ total }} suggestion(s)",
+  "reciter.suggestion.button.review": "Revise {{ total }} sugerencia(s)",
 
   // "reciter.suggestion.noTargets": "No target found.",
-  // TODO New key - Add a translation
-  "reciter.suggestion.noTargets": "No target found.",
+  "reciter.suggestion.noTargets": "No se ha encontrado ningún objetivo.",
 
   // "reciter.suggestion.target.error.service.retrieve": "An error occurred while loading the Suggestion targets",
-  // TODO New key - Add a translation
-  "reciter.suggestion.target.error.service.retrieve": "An error occurred while loading the Suggestion targets",
+  "reciter.suggestion.target.error.service.retrieve": "Se ha producido un error al cargar los objetivos de las sugerencias",
 
   // "reciter.suggestion.evidence.type": "Type",
-  // TODO New key - Add a translation
-  "reciter.suggestion.evidence.type": "Type",
+  "reciter.suggestion.evidence.type": "Tipo",
 
   // "reciter.suggestion.evidence.score": "Score",
-  // TODO New key - Add a translation
-  "reciter.suggestion.evidence.score": "Score",
+  "reciter.suggestion.evidence.score": "Puntuación",
 
   // "reciter.suggestion.evidence.notes": "Notes",
-  // TODO New key - Add a translation
-  "reciter.suggestion.evidence.notes": "Notes",
+  "reciter.suggestion.evidence.notes": "Notas",
 
   // "reciter.suggestion.approveAndImport": "Approve & import",
-  // TODO New key - Add a translation
-  "reciter.suggestion.approveAndImport": "Approve & import",
+  "reciter.suggestion.approveAndImport": "Aprobar e importar",
 
   // "reciter.suggestion.approveAndImport.success": "The suggestion has been imported successfully",
-  // TODO New key - Add a translation
-  "reciter.suggestion.approveAndImport.success": "The suggestion has been imported successfully",
+  "reciter.suggestion.approveAndImport.success": "La sugerencia se ha importado con éxito",
 
   // "reciter.suggestion.approveAndImport.bulk": "Approve & import Selected",
-  // TODO New key - Add a translation
-  "reciter.suggestion.approveAndImport.bulk": "Approve & import Selected",
+  "reciter.suggestion.approveAndImport.bulk": "Aprobar e importar lo seleccionado",
 
   // "reciter.suggestion.approveAndImport.bulk.success": "{{ count }} suggestions have been imported successfully ",
-  // TODO New key - Add a translation
-  "reciter.suggestion.approveAndImport.bulk.success": "{{ count }} suggestions have been imported successfully ",
+  "reciter.suggestion.approveAndImport.bulk.success": "{{ count }} las sugerencias se han importado con éxito ",
 
   // "reciter.suggestion.approveAndImport.bulk.error": "{{ count }} suggestions haven't been imported due to unexpected server errors",
   // TODO New key - Add a translation
