@@ -4501,24 +4501,19 @@
   "item-export.form.entityType": "Entity Type",
 
   // "item-export.form.entityType.tip": "Choose the entity type to export",
-  // TODO New key - Add a translation
-  "item-export.form.entityType.tip": "Choose the entity type to export",
+  "item-export.form.entityType.tip": "Elija el tipo de entidad a exportar",
 
   // "item-export.form.format": "Format",
-  // TODO New key - Add a translation
-  "item-export.form.format": "Format",
+  "item-export.form.format": "Formato",
 
   // "item-export.form.format.tip": "Choose the export format",
-  // TODO New key - Add a translation
-  "item-export.form.format.tip": "Choose the export format",
+  "item-export.form.format.tip": "Elija el formato de exportación",
 
   // "item-export.form.btn.submit": "Export",
-  // TODO New key - Add a translation
-  "item-export.form.btn.submit": "Export",
+  "item-export.form.btn.submit": "Exportar",
 
   // "item-export.form.btn.cancel": "Cancel",
-  // TODO New key - Add a translation
-  "item-export.form.btn.cancel": "Cancel",
+  "item-export.form.btn.cancel": "Cancelar",
 
   // "journal.listelement.badge": "Journal",
   "journal.listelement.badge": "Revista",
@@ -4527,8 +4522,7 @@
   "journal.page.description": "Descripción",
 
   // "journal.page.edit": "Edit this item",
-  // TODO New key - Add a translation
-  "journal.page.edit": "Edit this item",
+  "journal.page.edit": "Editar este ítem",
 
   // "journal.page.editor": "Editor-in-Chief",
   "journal.page.editor": "Editor-en-Jefe",
@@ -4546,8 +4540,7 @@
   "journal.search.results.head": "Resultados de búsqueda de revistas",
 
   // "journal.search.title": "DSpace Cris Angular :: Journal Search",
-  // TODO New key - Add a translation
-  "journal.search.title": "DSpace Cris Angular :: Journal Search",
+  "journal.search.title": "PerúCRIS :: Búsqueda de revistas",
 
 
 
@@ -4558,8 +4551,7 @@
   "journalissue.page.description": "Descripción",
 
   // "journalissue.page.edit": "Edit this item",
-  // TODO New key - Add a translation
-  "journalissue.page.edit": "Edit this item",
+  "journalissue.page.edit": "Editar este item",
 
   // "journalissue.page.issuedate": "Issue Date",
   "journalissue.page.issuedate": "Fecha de Publicación",
@@ -4588,8 +4580,8 @@
   "journalvolume.page.description": "Descripción",
 
   // "journalvolume.page.edit": "Edit this item",
-  // TODO New key - Add a translation
-  "journalvolume.page.edit": "Edit this item",
+  
+  "journalvolume.page.edit": "Editar este item",
 
   // "journalvolume.page.issuedate": "Issue Date",
   "journalvolume.page.issuedate": "Fecha de Publicación",
@@ -4603,15 +4595,13 @@
 
 
   // "loading.bitstream": "Loading bitstream...",
-  // TODO New key - Add a translation
-  "loading.bitstream": "Loading bitstream...",
+  "loading.bitstream": "Cargando bitstream...",
 
   // "loading.bitstreams": "Loading bitstreams...",
-  // TODO New key - Add a translation
-  "loading.bitstreams": "Loading bitstreams...",
+  "loading.bitstreams": "Cargando bitstreams...",
 
   // "loading.browse-by": "Loading items...",
-  "loading.browse-by": "Cargando ítemes...",
+  "loading.browse-by": "Cargando ítems...",
 
   // "loading.browse-by-page": "Loading page...",
   "loading.browse-by-page": "Cargando página...",
@@ -4623,8 +4613,7 @@
   "loading.collections": "Cargando colecciones...",
 
   // "loading.content-source": "Loading content source...",
-  // TODO New key - Add a translation
-  "loading.content-source": "Loading content source...",
+  "loading.content-source": "Cargando content source...",
 
   // "loading.community": "Loading community...",
   "loading.community": "Cargando comunidad...",
@@ -4636,10 +4625,10 @@
   "loading.item": "Cargando ítem...",
 
   // "loading.items": "Loading items...",
-  "loading.items": "Cargando ítemes...",
+  "loading.items": "Cargando ítems...",
 
   // "loading.mydspace-results": "Loading items...",
-  "loading.mydspace-results": "Cargando ítemes...",
+  "loading.mydspace-results": "Cargando ítems...",
 
   // "loading.objects": "Loading...",
   "loading.objects": "Cargando...",
@@ -4668,25 +4657,22 @@
   "login.form.forgot-password": "¿Ha olvidado su contraseña?",
 
   // "login.form.header": "Please log in to DSpace",
-  "login.form.header": "Favor inicie sesión en DSpace",
+  "login.form.header": "Por favor, inicie sesión en DSpace",
 
   // "login.form.new-user": "New user? Click here to register.",
   "login.form.new-user": "¿Usuario nuevo? Clic aquí para registrarse.",
 
   // "login.form.or-divider": "or",
-  // TODO New key - Add a translation
-  "login.form.or-divider": "or",
+  "login.form.or-divider": "o",
 
   // "login.form.password": "Password",
-  "login.form.password": "Clave",
+  "login.form.password": "Contraseña",
 
   // "login.form.shibboleth": "Log in with Shibboleth",
-  // TODO New key - Add a translation
-  "login.form.shibboleth": "Log in with Shibboleth",
+  "login.form.shibboleth": "Inicie sesión con Shibboleth",
 
   // "login.form.oidc": "Log in with OpenID",
-  // TODO New key - Add a translation
-  "login.form.oidc": "Log in with OpenID",
+  "login.form.oidc": "Inicie sesión con OpenID",
 
   // "login.form.submit": "Log in",
   "login.form.submit": "Iniciar sesión",
@@ -4695,8 +4681,7 @@
   "login.title": "Iniciar sesión",
 
   // "login.breadcrumbs": "Login",
-  // TODO New key - Add a translation
-  "login.breadcrumbs": "Login",
+  "login.breadcrumbs": "Inicio de sesión",
 
 
 
@@ -4720,16 +4705,13 @@
 
 
   // "menu.section.notifications": "Notifications",
-  // TODO New key - Add a translation
-  "menu.section.notifications": "Notifications",
+  "menu.section.notifications": "Notificaciones",
 
   // "menu.section.notifications_openaire_broker": "OpenAIRE Broker",
-  // TODO New key - Add a translation
   "menu.section.notifications_openaire_broker": "OpenAIRE Broker",
-
+  
   // "menu.section.notifications_reciter": "Publication Claim",
-  // TODO New key - Add a translation
-  "menu.section.notifications_reciter": "Publication Claim",
+  "menu.section.notifications_reciter": "Reclamación publicación",
 
 
 
@@ -4765,19 +4747,16 @@
   "menu.section.browse_community_by_title": "Por Título",
 
   // "menu.section.explore_directorios": "Directorios",
-  // TODO New key - Add a translation
   "menu.section.explore_directorios": "Directorios",
 
   // "menu.section.explore_infrastructure": "Infrastructure",
-  // TODO New key - Add a translation
-  "menu.section.explore_infrastructure": "Infrastructure",
+  "menu.section.explore_infrastructure": "Infrastructura",
 
   // "menu.section.explore_publications": "Research Outputs",
   "menu.section.explore_publications": "Resultados de la investigación",
 
   // "menu.section.explore_researchoutputs": "Research Outputs",
-  // TODO New key - Add a translation
-  "menu.section.explore_researchoutputs": "Research Outputs",
+  "menu.section.explore_researchoutputs": "Resultados de la investigación",
 
   // "menu.section.explore_researcherprofiles": "People",
   "menu.section.explore_researcherprofiles": "Personas",
@@ -4789,8 +4768,7 @@
   "menu.section.explore_fundings": "Proyectos",
 
   // "menu.section.explore_fundings_and_projects": "Projects",
-  // TODO New key - Add a translation
-  "menu.section.explore_fundings_and_projects": "Projects",
+  "menu.section.explore_fundings_and_projects": "Proyectos",
 
   // "menu.section.communities_and_collections": "Communities & Collections",
   "menu.section.communities_and_collections": "Comunidades & Colecciones",
@@ -4801,7 +4779,7 @@
   "menu.section.control_panel": "Panel de Control",
 
   // "menu.section.curation_task": "Curation Task",
-  "menu.section.curation_task": "Tarea de Curación",
+  "menu.section.curation_task": "Tarea de conservación",
 
 
 
@@ -4840,40 +4818,37 @@
   "menu.section.icon.access_control": "Sección del menú de Control de Acceso",
 
   // "menu.section.icon.admin_search": "Admin search menu section",
-  // TODO New key - Add a translation
-  "menu.section.icon.admin_search": "Admin search menu section",
+  "menu.section.icon.admin_search": "Sección de menú Búsqueda del administrador",
 
   // "menu.section.icon.control_panel": "Control Panel menu section",
-  "menu.section.icon.control_panel": "Sección del menú de Panel Control",
+  "menu.section.icon.control_panel": "Sección de menú Panel Control",
 
   // "menu.section.icon.curation_task": "Curation Task menu section",
-  "menu.section.icon.curation_task": "Sección del menú de Tarea de Curación",
+  "menu.section.icon.curation_task": "Sección de menú Tarea de Conservación",
 
   // "menu.section.icon.edit": "Edit menu section",
-  "menu.section.icon.edit": "Sección del Menú Editar",
+  "menu.section.icon.edit": "Sección de menú Editar",
 
   // "menu.section.icon.export": "Export menu section",
-  "menu.section.icon.export": "Sección del Menú Exportar",
+  "menu.section.icon.export": "Sección de menú Exportar",
 
-  // "menu.section.icon.notifications": "Notifictions menu section",
-  // TODO New key - Add a translation
-  "menu.section.icon.notifications": "Notifictions menu section",
+  // "menu.section.icon.notifications": "Notifications menu section",
+  "menu.section.icon.notifications": "Sección de menú Notificaciones",
 
   // "menu.section.icon.find": "Find menu section",
-  "menu.section.icon.find": "Sección del Menú Encontrar",
+  "menu.section.icon.find": "Sección de menú Encontrar",
 
   // "menu.section.icon.import": "Import menu section",
-  "menu.section.icon.import": "Sección del Menú Importar",
+  "menu.section.icon.import": "Sección de menú Importar",
 
   // "menu.section.icon.new": "New menu section",
-  "menu.section.icon.new": "Sección del Menú Nuevo",
+  "menu.section.icon.new": "Sección de menú Nuevo",
 
   // "menu.section.icon.pin": "Pin sidebar",
-  "menu.section.icon.pin": "Pin sidebar",
+  "menu.section.icon.pin": "Fijar barra lateral",
 
   // "menu.section.icon.processes": "Processes menu section",
-  // TODO New key - Add a translation
-  "menu.section.icon.processes": "Processes menu section",
+  "menu.section.icon.processes": "Sección de menú Procesos",
 
   // "menu.section.icon.registries": "Registries menu section",
   "menu.section.icon.registries": "Sección del Menú Registros",
@@ -4882,7 +4857,7 @@
   "menu.section.icon.statistics_task": "Sección del Menú Tarea de Estadísticas",
 
   // "menu.section.icon.unpin": "Unpin sidebar",
-  "menu.section.icon.unpin": "Unpin sidebar",
+  "menu.section.icon.unpin": "Desanclar barra lateral",
 
 
 
@@ -4897,16 +4872,13 @@
 
 
   // "menu.section.institutions": "Institutions",
-  // TODO New key - Add a translation
-  "menu.section.institutions": "Institutions",
+  "menu.section.institutions": "Instituciones",
 
   // "menu.section.institutions_new": "New",
-  // TODO New key - Add a translation
-  "menu.section.institutions_new": "New",
+  "menu.section.institutions_new": "Nueva",
 
   // "menu.section.institutions_explore": "Explore",
-  // TODO New key - Add a translation
-  "menu.section.institutions_explore": "Explore",
+  "menu.section.institutions_explore": "Explorar",
 
 
 
@@ -4926,16 +4898,15 @@
   "menu.section.new_item_version": "Version del Ítem",
 
   // "menu.section.new_process": "Process",
-  // TODO New key - Add a translation
-  "menu.section.new_process": "Process",
+  "menu.section.new_process": "Proceso",
 
 
 
   // "menu.section.pin": "Pin sidebar",
-  "menu.section.pin": "Pin sidebar",
+  "menu.section.pin": "Fijar barra lateral",
 
   // "menu.section.unpin": "Unpin sidebar",
-  "menu.section.unpin": "Unpin sidebar",
+  "menu.section.unpin": "Desanclar barra lateral",
 
 
 
@@ -4994,7 +4965,6 @@
   "menu.section.toggle.statistics_task": "Alternar la sección de Tareas de Estadísticas",
 
   // "menu.section.edit_user_agreement":"Edit User Agreement",
-  // TODO New key - Add a translation
   "menu.section.edit_user_agreement":"Edit User Agreement",
 
   // "menu.section.workflow": "Administer Workflow",
