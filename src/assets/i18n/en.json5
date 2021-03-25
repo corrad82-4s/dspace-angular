@@ -1576,17 +1576,50 @@
 
   "explore.counters-section.orgunits" : "Institutions",
 
+
+  "explore.counters-section.orgunit.investigation_innovation_unities" : "Investigation and Innovation Units",
+
+  "explore.counters-section.orgunit.investigation_groups" : "Investigation Groups",
+
+  "explore.counters-section.orgunit.investigation_lines" : "Investigation Lines",
+
+  "explore.counters-section.orgunit.enterprises" : "Enterprises",
+
+  "explore.counters-section.orgunit.cti_funders" : "CTI Funders",
+
+  "explore.counters-section.orgunit.renacyt_centres" : "Renacyt centres",
+
+  "explore.counters-section.orgunit.ipis" : "IPIS",
+
+  "explore.counters-section.orgunit.universities" : "Universities",
+
   "explore.counters-section.publications" : "Publications",
 
   "explore.counters-section.rprofiles" : "People",
 
   "explore.facet-section.title" : "Discover",
 
+  "explore.index.acronym" : "Acronym",
+
   "explore.index.all" : "All",
 
   "explore.index.author" : "Author",
 
   "explore.index.birthDate" : "Birthday",
+
+  "explore.index.descriptionAbstract" : "Description",
+
+  "explore.index.name" : "Name",
+
+  "explore.index.organizationIdentifier" : "Identifier",
+
+  "explore.index.organizationNameOrAcronym" : "Name or Acronym",
+
+  "explore.index.parentOrganization" : "Parent Organization",
+
+  "explore.index.perucrisKeywords" : "Keyword(s)",
+
+  "explore.index.region" : "Region",
 
   "explore.index.rodatecreated" : "Date created",
 
@@ -1643,6 +1676,8 @@
 
   "explore.index.investigators" : "Researchers",
 
+  "explore.index.institutionalOcde" : "Ocde Institutional Sector",
+
   "explore.index.isAuthorOfPublication" : "Publication's author",
 
   "explore.index.isJournalOfPublication" : "Publication's journal",
@@ -1683,13 +1718,13 @@
 
   "explore.index.knowsLanguage" : "Knows languages",
 
-  "explore.index.ocde" : "OCDE Subject",
+  "explore.index.ocde" : "OCDE Knowledge Area",
 
   "explore.index.organization" : "Organization",
 
-  "explore.index.organizationAddressCountry" : "Organization address country",
+  "explore.index.organizationAddressCountry" : "Country",
 
-  "explore.index.organizationAddressLocality" : "Organization address locality",
+  "explore.index.organizationAddressLocality" : "City",
 
   "explore.index.organizationFoundingDate" : "Organization founding date",
 
@@ -1713,9 +1748,9 @@
 
   "explore.index.personOrgUnits" : "Organizations",
 
-  "explore.index.peruCrisCiuu" : "Industrial Classification",
+  "explore.index.peruCrisCiuu" : "CIUU",
 
-  "explore.index.peruCrisClassification" : "Classification",
+  "explore.index.peruCrisClassification" : "Type",
 
   "explore.index.peruCrisSector" : "Sector",
 
@@ -1733,6 +1768,8 @@
 
   "explore.index.projectinvestigators" : "Project investigators",
 
+  "explore.index.renacytClassification" : "Authorized Centre Cathegory",
+
   "explore.index.rodept" : "Department",
 
   "explore.index.rotitle" : "Title",
@@ -1743,16 +1780,16 @@
 
   "explore.index.subject" : "Subject",
 
-  "explore.index.suneduClassification" : "Sunedu Classification",
+  "explore.index.suneduClassification" : "Superior Education",
 
   "explore.index.title" : "Title",
 
   "explore.index.type" : "Type",
 
-  "explore.index.ubigeo" : "Ubigeo",
+  "explore.index.ubigeo" : "Region",
 
 
-  "explore.search-section.directorios.title": "",
+  "explore.search-section.directorios.title": "Search Directories",
 
   "explore.search-section.infrastructure.title": "Infrastructure",
 
@@ -1789,6 +1826,8 @@
   "explore.researcherprofiles.breadcrumbs": "People",
 
   "explore.text-section.directorios.title": "Welcome to #PerúCRIS platform Directories",
+
+  "explore.text-section.orgunits.title": "Institutions Directory",
 
   "explore.text-section.directorios.description": "La Plataforma #PerúCRIS brinda el soporte informático a la Red Nacional de Información en Ciencia, Tecnología e Innovación (CTI). Aquí encontrarás información sobre el talento humano, organizaciones, publicaciones científicas, fuentes de financiamientos y proyectos en CTI del Perú.",
 
@@ -4038,7 +4077,13 @@
 
   "search.filters.applied.charts.chart.pie.itemtype_filter.tab" : "Item Type",
 
+  "search.filters.applied.charts.graphiteminstitutionalSector.tab" : "OCDE Institutional Sector",
+
   "search.filters.applied.charts.graphitemtype.tab" : "Visualization by Type",
+
+  "search.filters.applied.charts.graphitemtypeOcdeArea.tab" : "OCDE Knowledge Area",
+
+  "search.filters.applied.charts.graphitemubigeo.tab" : "Region",
 
   "search.filters.applied.charts.graphpubldate.tab" : "Visualization by Date",
 
@@ -4273,10 +4318,27 @@
 
   "search.filters.filter.suneduClassification.placeholder" : "Sunedu Classification",
 
+  "search.filters.filter.institutionalOcde.head" : "Ocde Institutional Sector",
 
-  "search.filters.filter.peruCrisCiuu.head" : "Industrial Classification",
+  "search.filters.filter.institutionalOcde.placeholder" : "Ocde Institutional Sector",
 
-  "search.filters.filter.peruCrisCiuu.placeholder" : "Industrial Classification",
+  "search.filters.filter.renacytClassification.head" : "Authorized Centre Cathegory",
+
+  "search.filters.filter.renacytClassification.placeholder" : "Authorized Centre Cathegory",
+
+  "search.filters.filter.descriptionAbstract.head" : "Description",
+
+  "search.filters.filter.descriptionAbstract.placeholder" : "Description",
+
+  "search.filters.filter.organizationIdentifier.head" : "Identifier",
+
+  "search.filters.filter.organizationIdentifier.placeholder" : "Identifier",
+
+
+
+  "search.filters.filter.peruCrisCiuu.head" : "CIIU",
+
+  "search.filters.filter.peruCrisCiuu.placeholder" : "CIIU",
 
 
   "search.filters.filter.peruCrisSector.head" : "Sector",
