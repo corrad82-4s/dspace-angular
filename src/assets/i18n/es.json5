@@ -5420,185 +5420,141 @@
   "person.page.orcid": "ORCID",
 
   // "person.page.orcid.create": "Create an ORCID ID",
-  // TODO New key - Add a translation
-  "person.page.orcid.create": "Create an ORCID ID",
+  "person.page.orcid.create": "Crear un ORCID ID",
 
   // "person.page.orcid.granted-authorizations": "Granted authorizations",
-  // TODO New key - Add a translation
-  "person.page.orcid.granted-authorizations": "Granted authorizations",
+  "person.page.orcid.granted-authorizations": "Autorizaciones concedidas",
 
   // "person.page.orcid.link": "Connect to ORCID ID",
-  // TODO New key - Add a translation
-  "person.page.orcid.link": "Connect to ORCID ID",
+  "person.page.orcid.link": "Conectar con ORCID ID",
 
   // "person.page.orcid.missing-authorizations": "Missing authorizations",
-  // TODO New key - Add a translation
-  "person.page.orcid.missing-authorizations": "Missing authorizations",
+  "person.page.orcid.missing-authorizations": "Faltan autorizaciones",
 
   // "person.page.orcid.missing-authorizations-message": "The following authorizations are missing:",
-  // TODO New key - Add a translation
-  "person.page.orcid.missing-authorizations-message": "The following authorizations are missing:",
+  "person.page.orcid.missing-authorizations-message": "Faltan las siguientes autorizaciones:",
 
   // "person.page.orcid.no-missing-authorizations-message": "Great! This box is empty, so you have granted all access rights to use all functions offers by your institution.",
-  // TODO New key - Add a translation
-  "person.page.orcid.no-missing-authorizations-message": "Great! This box is empty, so you have granted all access rights to use all functions offers by your institution.",
+  "person.page.orcid.no-missing-authorizations-message": "¡Muy bien! Esta casilla está vacía, por lo que ha concedido todos los derechos de acceso para utilizar todas las funciones que ofrece su institución.",
 
   // "person.page.orcid.no-orcid-message": "No ORCID iD associated yet",
-  // TODO New key - Add a translation
-  "person.page.orcid.no-orcid-message": "No ORCID iD associated yet",
+  "person.page.orcid.no-orcid-message": "Todavía no hay ningún ORCID iD asociado",
 
   // "person.page.orcid.profile-preferences": "Profile preferences",
-  // TODO New key - Add a translation
-  "person.page.orcid.profile-preferences": "Profile preferences",
+  "person.page.orcid.profile-preferences": "Preferencias del perfil",
 
   // "person.page.orcid.project-preferences": "Project preferences",
-  // TODO New key - Add a translation
-  "person.page.orcid.project-preferences": "Project preferences",
+  "person.page.orcid.project-preferences": "Preferencias del proyecto",
 
   // "person.page.orcid.publications-preferences": "Publication preferences",
-  // TODO New key - Add a translation
-  "person.page.orcid.publications-preferences": "Publication preferences",
+  "person.page.orcid.publications-preferences": "Preferencias de la publicación",
 
   // "person.page.orcid.remove-orcid-message": "If you need to remove your ORCID, please contact the repository administrator",
-  // TODO New key - Add a translation
-  "person.page.orcid.remove-orcid-message": "If you need to remove your ORCID, please contact the repository administrator",
+  "person.page.orcid.remove-orcid-message": "Si necesita eliminar su ORCID, póngase en contacto con el administrador del repositorio",
 
   // "person.page.orcid.save.preference.changes": "Save changes",
-  // TODO New key - Add a translation
-  "person.page.orcid.save.preference.changes": "Save changes",
+  "person.page.orcid.save.preference.changes": "Guardar cambios",
 
   // "person.page.orcid.sync-profile.affiliation" : "Affiliation",
-  // TODO New key - Add a translation
-  "person.page.orcid.sync-profile.affiliation" : "Affiliation",
+  "person.page.orcid.sync-profile.affiliation" : "Afiliación",
 
   // "person.page.orcid.sync-profile.bibliographic" : "Bibliographic data",
-  // TODO New key - Add a translation
-  "person.page.orcid.sync-profile.bibliographic" : "Bibliographic data",
+  "person.page.orcid.sync-profile.bibliographic" : "Datos bibliográficos",
 
   // "person.page.orcid.sync-profile.education" : "Education",
-  // TODO New key - Add a translation
-  "person.page.orcid.sync-profile.education" : "Education",
+  "person.page.orcid.sync-profile.education" : "Educación",
 
   // "person.page.orcid.sync-profile.identifiers" : "Identifiers",
-  // TODO New key - Add a translation
-  "person.page.orcid.sync-profile.identifiers" : "Identifiers",
+  "person.page.orcid.sync-profile.identifiers" : "Identificadores",
 
   // "person.page.orcid.sync-projects.all" : "All projects",
-  // TODO New key - Add a translation
-  "person.page.orcid.sync-projects.all" : "All projects",
+  "person.page.orcid.sync-projects.all" : "Todos los proyectos",
 
   // "person.page.orcid.sync-projects.mine" : "My projects",
-  // TODO New key - Add a translation
-  "person.page.orcid.sync-projects.mine" : "My projects",
+  "person.page.orcid.sync-projects.mine" : "Mis proyectos",
 
   // "person.page.orcid.sync-projects.my-selected" : "Selected projects",
-  // TODO New key - Add a translation
-  "person.page.orcid.sync-projects.my-selected" : "Selected projects",
+  "person.page.orcid.sync-projects.my-selected" : "Proyectos seleccionados",
 
   // "person.page.orcid.sync-projects.disabled" : "Disabled",
-  // TODO New key - Add a translation
-  "person.page.orcid.sync-projects.disabled" : "Disabled",
+  "person.page.orcid.sync-projects.disabled" : "Deshabilitado",
 
   // "person.page.orcid.sync-publications.all" : "All publications",
-  // TODO New key - Add a translation
-  "person.page.orcid.sync-publications.all" : "All publications",
+  "person.page.orcid.sync-publications.all" : "Todas las publicaciones",
 
   // "person.page.orcid.sync-publications.mine" : "My publications",
-  // TODO New key - Add a translation
-  "person.page.orcid.sync-publications.mine" : "My publications",
+  "person.page.orcid.sync-publications.mine" : "Mis publicaciones",
 
   // "person.page.orcid.sync-publications.my-selected" : "Selected publications",
-  // TODO New key - Add a translation
-  "person.page.orcid.sync-publications.my-selected" : "Selected publications",
+  "person.page.orcid.sync-publications.my-selected" : "Publicaciones seleccionadas",
 
   // "person.page.orcid.sync-publications.disabled" : "Disabled",
-  // TODO New key - Add a translation
-  "person.page.orcid.sync-publications.disabled" : "Disabled",
+  "person.page.orcid.sync-publications.disabled" : "Deshabilitado",
 
   // "person.page.orcid.sync-queue.delete" : "Delete",
-  // TODO New key - Add a translation
-  "person.page.orcid.sync-queue.delete" : "Delete",
+  "person.page.orcid.sync-queue.delete" : "Eliminar",
 
   // "person.page.orcid.sync-queue.delete.error": "The deletion of the ORCID queue record failed",
-  // TODO New key - Add a translation
-  "person.page.orcid.sync-queue.delete.error": "The deletion of the ORCID queue record failed",
+  "person.page.orcid.sync-queue.delete.error": "Ha fallado la eliminación del registro de espera de ORCID",
 
   // "person.page.orcid.sync-queue.delete.success": "The ORCID queue record have been deleted successfully",
-  // TODO New key - Add a translation
-  "person.page.orcid.sync-queue.delete.success": "The ORCID queue record have been deleted successfully",
+  "person.page.orcid.sync-queue.delete.success": "El registro de espera de ORCID ha sido eliminado con éxito",
 
   // "person.page.orcid.sync-queue.empty-message": "The ORCID queue registry is empty",
-  // TODO New key - Add a translation
-  "person.page.orcid.sync-queue.empty-message": "The ORCID queue registry is empty",
+  "person.page.orcid.sync-queue.empty-message": "El registro de espera de ORCID está vacío",
 
   // "person.page.orcid.sync-queue.entity-name" : "Name",
-  // TODO New key - Add a translation
-  "person.page.orcid.sync-queue.entity-name" : "Name",
+  "person.page.orcid.sync-queue.entity-name" : "Nombre",
 
   // "person.page.orcid.sync-queue.send" : "Send",
-  // TODO New key - Add a translation
-  "person.page.orcid.sync-queue.send" : "Send",
+  "person.page.orcid.sync-queue.send" : "Enviar",
 
   // "person.page.orcid.sync-queue.send.error": "The submission to ORCID failed",
-  // TODO New key - Add a translation
-  "person.page.orcid.sync-queue.send.error": "The submission to ORCID failed",
+  "person.page.orcid.sync-queue.send.error": "El envío a ORCID falló",
 
   // "person.page.orcid.sync-queue.send.conflict-error": "The submission to ORCID failed because the resource is already present on the ORCID registry",
-  // TODO New key - Add a translation
-  "person.page.orcid.sync-queue.send.conflict-error": "The submission to ORCID failed because the resource is already present on the ORCID registry",
+  "person.page.orcid.sync-queue.send.conflict-error": "El envío a ORCID ha fallado porque el recurso ya está presente en el registro de ORCID",
 
   // "person.page.orcid.sync-queue.send.not-found-error": "The submission to ORCID failed because the expected resource to be update does not exists anymore on the ORCID registry.",
-  // TODO New key - Add a translation
-  "person.page.orcid.sync-queue.send.not-found-error": "The submission to ORCID failed because the expected resource to be update does not exists anymore on the ORCID registry.",
+  "person.page.orcid.sync-queue.send.not-found-error": "El envío a ORCID ha fallado porque el recurso que se esperaba actualizar ya no existe en el registro de ORCID.",
 
   // "person.page.orcid.sync-queue.send.success": "The submission to ORCID was completed successfully",
-  // TODO New key - Add a translation
-  "person.page.orcid.sync-queue.send.success": "The submission to ORCID was completed successfully",
+  "person.page.orcid.sync-queue.send.success": "El envío a ORCID se completó con éxito",
 
   // "person.page.orcid.synchronization-mode": "Synchronization mode",
-  // TODO New key - Add a translation
-  "person.page.orcid.synchronization-mode": "Synchronization mode",
+  "person.page.orcid.synchronization-mode": "Modo de sincronización",
 
   // "person.page.orcid.synchronization-mode.batch": "Batch",
-  // TODO New key - Add a translation
-  "person.page.orcid.synchronization-mode.batch": "Batch",
+  "person.page.orcid.synchronization-mode.batch": "Lote",
 
   // "person.page.orcid.synchronization-mode.label": "Synchronization mode",
-  // TODO New key - Add a translation
-  "person.page.orcid.synchronization-mode.label": "Synchronization mode",
+  "person.page.orcid.synchronization-mode.label": "Modo de sincronización",
 
   // "person.page.orcid.synchronization-mode-message": "Enable 'Manual' Synchronization mode to disable batch synchronization, so you must send your data to ORCID Registry manually",
-  // TODO New key - Add a translation
-  "person.page.orcid.synchronization-mode-message": "Enable 'Manual' Synchronization mode to disable batch synchronization, so you must send your data to ORCID Registry manually",
+  "person.page.orcid.synchronization-mode-message": "Active el modo de sincronización 'Manual' para desactivar la sincronización por lotes, por lo que deberá enviar sus datos al registro ORCID manualmente",
 
   // "person.page.orcid.synchronization-settings-update.success": "The synchronization settings have been updated successfully",
-  // TODO New key - Add a translation
-  "person.page.orcid.synchronization-settings-update.success": "The synchronization settings have been updated successfully",
+  "person.page.orcid.synchronization-settings-update.success": "Los ajustes de sincronización se han actualizado con éxito",
 
   // "person.page.orcid.synchronization-settings-update.error": "The update of the synchronization settings failed",
-  // TODO New key - Add a translation
-  "person.page.orcid.synchronization-settings-update.error": "The update of the synchronization settings failed",
+  "person.page.orcid.synchronization-settings-update.error": "La actualización de los ajustes de sincronización ha fallado",
 
 
   // "person.page.orcid.synchronization-mode.manual": "Manual",
-  // TODO New key - Add a translation
   "person.page.orcid.synchronization-mode.manual": "Manual",
 
   // "person.page.orcid.scope.authenticate": "Get your ORCID iD",
-  // TODO New key - Add a translation
-  "person.page.orcid.scope.authenticate": "Get your ORCID iD",
+  "person.page.orcid.scope.authenticate": "Obtenga su ORCID iD",
 
   // "person.page.orcid.scope.read-limited": "Read your information with visibility set to Trusted Parties",
   // TODO New key - Add a translation
   "person.page.orcid.scope.read-limited": "Read your information with visibility set to Trusted Parties",
 
   // "person.page.orcid.scope.activities-update": "Add/update your research activities",
-  // TODO New key - Add a translation
-  "person.page.orcid.scope.activities-update": "Add/update your research activities",
+  "person.page.orcid.scope.activities-update": "Añadir/actualizar sus actividades de investigación",
 
   // "person.page.orcid.scope.person-update": "Add/update other information about you",
-  // TODO New key - Add a translation
-  "person.page.orcid.scope.person-update": "Add/update other information about you",
+  "person.page.orcid.scope.person-update": "Añadir/actualizar otra información sobre usted",
 
   // "person.page.staffid": "Staff ID",
   "person.page.staffid": "Identificación del personal",
@@ -5610,88 +5566,67 @@
   "person.search.results.head": "Resultados de búsqueda de personas",
 
   // "person.search.title": "DSpace Cris Angular :: Person Search",
-  // TODO New key - Add a translation
-  "person.search.title": "DSpace Cris Angular :: Person Search",
+  "person.search.title": "DSpace Cris Angular :: Búsqueda de personas",
 
   // "cvperson.listelement.badge": "Profile",
-  // TODO New key - Add a translation
-  "cvperson.listelement.badge": "Profile",
+  "cvperson.listelement.badge": "Perfil",
 
   // "cvpersonclone.listelement.badge": "Profile clone",
-  // TODO New key - Add a translation
-  "cvpersonclone.listelement.badge": "Profile clone",
+  "cvpersonclone.listelement.badge": "Clon de perfil",
 
   // "cvpatent.listelement.badge": "CV Patent",
-  // TODO New key - Add a translation
-  "cvpatent.listelement.badge": "CV Patent",
+  "cvpatent.listelement.badge": "Patente de CV",
 
   // "cvpatentclone.listelement.badge": "CV Patent clone",
-  // TODO New key - Add a translation
-  "cvpatentclone.listelement.badge": "CV Patent clone",
+  "cvpatentclone.listelement.badge": "Clon de patente de CV",
 
   // "cvproject.listelement.badge": "CV Project",
-  // TODO New key - Add a translation
-  "cvproject.listelement.badge": "CV Project",
+  "cvproject.listelement.badge": "Proyecto de CV",
 
   // "cvprojectclone.listelement.badge": "CV Project clone",
-  // TODO New key - Add a translation
-  "cvprojectclone.listelement.badge": "CV Project clone",
+  "cvprojectclone.listelement.badge": "Clon de proyecto de CV",
 
   // "cvpublication.listelement.badge": "CV Publication",
-  // TODO New key - Add a translation
-  "cvpublication.listelement.badge": "CV Publication",
+  "cvpublication.listelement.badge": "Publicación de CV",
 
   // "cvpublicationclone.listelement.badge": "CV Publication clone",
-  // TODO New key - Add a translation
-  "cvpublicationclone.listelement.badge": "CV Publication clone",
+  "cvpublicationclone.listelement.badge": "Clon de publicación de CV",
 
   // "process.new.select-parameters": "Parameters",
-  // TODO New key - Add a translation
-  "process.new.select-parameters": "Parameters",
+  "process.new.select-parameters": "Parámetros",
 
   // "process.new.cancel": "Cancel",
-  // TODO New key - Add a translation
-  "process.new.cancel": "Cancel",
+  "process.new.cancel": "Cancelar",
 
   // "process.new.submit": "Submit",
-  // TODO New key - Add a translation
-  "process.new.submit": "Submit",
+  "process.new.submit": "Enviar",
 
   // "process.new.select-script": "Script",
-  // TODO New key - Add a translation
   "process.new.select-script": "Script",
 
   // "process.new.select-script.placeholder": "Choose a script...",
-  // TODO New key - Add a translation
-  "process.new.select-script.placeholder": "Choose a script...",
+  "process.new.select-script.placeholder": "Seleccione un script...",
 
   // "process.new.select-script.required": "Script is required",
-  // TODO New key - Add a translation
-  "process.new.select-script.required": "Script is required",
+  "process.new.select-script.required": "Se requiere un script",
 
   // "process.new.parameter.file.upload-button": "Select file...",
-  // TODO New key - Add a translation
-  "process.new.parameter.file.upload-button": "Select file...",
+  "process.new.parameter.file.upload-button": "Seleccione un archivo...",
 
   // "process.new.parameter.file.required": "Please select a file",
-  // TODO New key - Add a translation
-  "process.new.parameter.file.required": "Please select a file",
+  "process.new.parameter.file.required": "Seleccione un archivo por favor",
 
   // "process.new.parameter.string.required": "Parameter value is required",
-  // TODO New key - Add a translation
-  "process.new.parameter.string.required": "Parameter value is required",
+  "process.new.parameter.string.required": "Se requiere el valor del parámetro",
 
   // "process.new.parameter.type.value": "value",
-  // TODO New key - Add a translation
-  "process.new.parameter.type.value": "value",
+  "process.new.parameter.type.value": "valor",
 
   // "process.new.parameter.type.file": "file",
-  // TODO New key - Add a translation
-  "process.new.parameter.type.file": "file",
+  "process.new.parameter.type.file": "archivo",
 
   // "process.new.parameter.required.missing": "The following parameters are required but still missing:",
-  // TODO New key - Add a translation
-  "process.new.parameter.required.missing": "The following parameters are required but still missing:",
+  "process.new.parameter.required.missing": "Los siguientes parámetros son necesarios pero aún faltan:",
 
   // "process.new.notification.success.title": "Success",
   // TODO New key - Add a translation
