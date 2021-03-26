@@ -5629,528 +5629,400 @@
   "process.new.parameter.required.missing": "Los siguientes parámetros son necesarios pero aún faltan:",
 
   // "process.new.notification.success.title": "Success",
-  // TODO New key - Add a translation
-  "process.new.notification.success.title": "Success",
+  "process.new.notification.success.title": "Éxito",
 
   // "process.new.notification.success.content": "The process was successfully created",
-  // TODO New key - Add a translation
-  "process.new.notification.success.content": "The process was successfully created",
+  "process.new.notification.success.content": "El proceso se creó con éxito",
 
   // "process.new.notification.error.title": "Error",
-  // TODO New key - Add a translation
   "process.new.notification.error.title": "Error",
 
   // "process.new.notification.error.content": "An error occurred while creating this process",
-  // TODO New key - Add a translation
-  "process.new.notification.error.content": "An error occurred while creating this process",
+  "process.new.notification.error.content": "Se ha producido un error al crear este proceso",
 
   // "process.new.header": "Create a new process",
-  // TODO New key - Add a translation
-  "process.new.header": "Create a new process",
+  "process.new.header": "Crear un nuevo proceso",
 
   // "process.new.title": "Create a new process",
-  // TODO New key - Add a translation
-  "process.new.title": "Create a new process",
+  "process.new.title": "Crear un nuevo proceso",
 
   // "process.new.breadcrumbs": "Create a new process",
-  // TODO New key - Add a translation
-  "process.new.breadcrumbs": "Create a new process",
+  "process.new.breadcrumbs": "Crear un nuevo proceso",
 
 
 
   // "process.detail.arguments" : "Arguments",
-  // TODO New key - Add a translation
-  "process.detail.arguments" : "Arguments",
+  "process.detail.arguments" : "Argumentos",
 
   // "process.detail.arguments.empty" : "This process doesn't contain any arguments",
-  // TODO New key - Add a translation
-  "process.detail.arguments.empty" : "This process doesn't contain any arguments",
+  "process.detail.arguments.empty" : "Este proceso no contiene ningún argumento",
 
   // "process.detail.back" : "Back",
-  // TODO New key - Add a translation
-  "process.detail.back" : "Back",
+  "process.detail.back" : "Atrás",
 
   // "process.detail.output" : "Process Output",
-  // TODO New key - Add a translation
-  "process.detail.output" : "Process Output",
+  "process.detail.output" : "Proceso de salida",
 
   // "process.detail.logs.button": "Retrieve process output",
-  // TODO New key - Add a translation
-  "process.detail.logs.button": "Retrieve process output",
+  "process.detail.logs.button": "Recuperar la salida del proceso",
 
   // "process.detail.logs.loading": "Retrieving",
-  // TODO New key - Add a translation
-  "process.detail.logs.loading": "Retrieving",
+  "process.detail.logs.loading": "Recuperando",
 
   // "process.detail.logs.none": "This process has no output",
-  // TODO New key - Add a translation
-  "process.detail.logs.none": "This process has no output",
+  "process.detail.logs.none": "Este proceso no tiene salida",
 
   // "process.detail.output-files" : "Output Files",
-  // TODO New key - Add a translation
-  "process.detail.output-files" : "Output Files",
+  "process.detail.output-files" : "Archivos de salida",
 
   // "process.detail.output-files.empty" : "This process doesn't contain any output files",
-  // TODO New key - Add a translation
-  "process.detail.output-files.empty" : "This process doesn't contain any output files",
+  "process.detail.output-files.empty" : "Este proceso no contiene ningún archivo de salida",
 
   // "process.detail.script" : "Script",
-  // TODO New key - Add a translation
   "process.detail.script" : "Script",
 
   // "process.detail.title" : "Process: {{ id }} - {{ name }}",
-  // TODO New key - Add a translation
-  "process.detail.title" : "Process: {{ id }} - {{ name }}",
+  "process.detail.title" : "Proceso: {{ id }} - {{ name }}",
 
   // "process.detail.start-time" : "Start time",
-  // TODO New key - Add a translation
-  "process.detail.start-time" : "Start time",
+  "process.detail.start-time" : "Hora de inicio",
 
   // "process.detail.end-time" : "Finish time",
-  // TODO New key - Add a translation
-  "process.detail.end-time" : "Finish time",
+  "process.detail.end-time" : "Hora de finalización",
 
   // "process.detail.status" : "Status",
-  // TODO New key - Add a translation
-  "process.detail.status" : "Status",
+  "process.detail.status" : "Estado",
 
   // "process.detail.create" : "Create similar process",
-  // TODO New key - Add a translation
-  "process.detail.create" : "Create similar process",
+  "process.detail.create" : "Crear un proceso similar",
 
 
 
   // "process.overview.table.finish" : "Finish time",
-  // TODO New key - Add a translation
-  "process.overview.table.finish" : "Finish time",
+  "process.overview.table.finish" : "Hora de finalización",
 
   // "process.overview.table.id" : "Process ID",
-  // TODO New key - Add a translation
-  "process.overview.table.id" : "Process ID",
+  "process.overview.table.id" : "ID del proceso",
 
   // "process.overview.table.name" : "Name",
-  // TODO New key - Add a translation
-  "process.overview.table.name" : "Name",
+  "process.overview.table.name" : "Nombre",
 
   // "process.overview.table.start" : "Start time",
-  // TODO New key - Add a translation
-  "process.overview.table.start" : "Start time",
+  "process.overview.table.start" : "Hora de inicio",
 
   // "process.overview.table.status" : "Status",
-  // TODO New key - Add a translation
-  "process.overview.table.status" : "Status",
+  "process.overview.table.status" : "Estado",
 
   // "process.overview.table.user" : "User",
-  // TODO New key - Add a translation
-  "process.overview.table.user" : "User",
+  "process.overview.table.user" : "Usuario",
 
   // "process.overview.title": "Processes Overview",
-  // TODO New key - Add a translation
-  "process.overview.title": "Processes Overview",
+  "process.overview.title": "Resumen de los procesos",
 
   // "process.overview.breadcrumbs": "Processes Overview",
-  // TODO New key - Add a translation
-  "process.overview.breadcrumbs": "Processes Overview",
+  "process.overview.breadcrumbs": "Resumen de los procesos",
 
   // "process.overview.new": "New",
-  // TODO New key - Add a translation
-  "process.overview.new": "New",
+  "process.overview.new": "Nuevo",
 
 
   // "audit.overview.title": "Audit Logs Overview",
-  // TODO New key - Add a translation
-  "audit.overview.title": "Audit Logs Overview",
+  "audit.overview.title": "Resumen de los registros de auditoría",
 
   // "audit.overview.table.id" : "Audit ID",
-  // TODO New key - Add a translation
-  "audit.overview.table.id" : "Audit ID",
+  "audit.overview.table.id" : "ID de la auditoría",
 
   // "audit.overview.table.objectUUID" : "Object ID",
-  // TODO New key - Add a translation
-  "audit.overview.table.objectUUID" : "Object ID",
+  "audit.overview.table.objectUUID" : "ID del objeto",
 
   // "audit.overview.table.objectType" : "Object Type",
-  // TODO New key - Add a translation
-  "audit.overview.table.objectType" : "Object Type",
+  "audit.overview.table.objectType" : "Tipo de objeto",
 
   // "audit.overview.table.subjectUUID" : "Subject ID",
-  // TODO New key - Add a translation
-  "audit.overview.table.subjectUUID" : "Subject ID",
+  "audit.overview.table.subjectUUID" : "ID de la materia",
 
   // "audit.overview.table.subjectType" : "Subject Type",
-  // TODO New key - Add a translation
-  "audit.overview.table.subjectType" : "Subject Type",
+  "audit.overview.table.subjectType" : "Tipo de materia",
 
   // "audit.overview.table.entityType" : "Audit Type",
-  // TODO New key - Add a translation
-  "audit.overview.table.entityType" : "Audit Type",
+  "audit.overview.table.entityType" : "Tipo de auditoría",
 
   // "audit.overview.table.eperson" : "EPerson",
-  // TODO New key - Add a translation
-  "audit.overview.table.eperson" : "EPerson",
+  "audit.overview.table.eperson" : "Usuario",
 
   // "audit.overview.table.timestamp" : "Time",
-  // TODO New key - Add a translation
-  "audit.overview.table.timestamp" : "Time",
+  "audit.overview.table.timestamp" : "Hora",
 
   // "audit.overview.breadcrumbs": "Audit Logs Overview",
-  // TODO New key - Add a translation
-  "audit.overview.breadcrumbs": "Audit Logs Overview",
+  "audit.overview.breadcrumbs": "Resumen de los registros de auditoría",
 
   // "audit.object.overview.title": "Subject Audit Logs Overview",
-  // TODO New key - Add a translation
-  "audit.object.overview.title": "Subject Audit Logs Overview",
+  "audit.object.overview.title": "Resumen de los registros de auditoría de las materias",
 
 
   // "audit.detail.title" : "Audit Detail",
-  // TODO New key - Add a translation
-  "audit.detail.title" : "Audit Detail",
+  "audit.detail.title" : "Detalle de la auditoría",
 
   // "audit.detail.id" : "Audit Id",
-  // TODO New key - Add a translation
-  "audit.detail.id" : "Audit Id",
+  "audit.detail.id" : "Id de auditoría",
 
   // "audit.detail.subjectUUID" : "Subject ID",
-  // TODO New key - Add a translation
-  "audit.detail.subjectUUID" : "Subject ID",
+  "audit.detail.subjectUUID" : "ID de la materia",
 
   // "audit.detail.subjectType" : "Subject Type",
-  // TODO New key - Add a translation
-  "audit.detail.subjectType" : "Subject Type",
+  "audit.detail.subjectType" : "Tipo de materia",
 
   // "audit.detail.eventType" : "Audit Type",
-  // TODO New key - Add a translation
-  "audit.detail.eventType" : "Audit Type",
+  "audit.detail.eventType" : "Tipo de auditoría",
 
   // "audit.detail.eperson" : "EPerson",
-  // TODO New key - Add a translation
-  "audit.detail.eperson" : "EPerson",
+  "audit.detail.eperson" : "Usuario",
 
   // "audit.detail.timeStamp" : "Time",
-  // TODO New key - Add a translation
-  "audit.detail.timeStamp" : "Time",
+  "audit.detail.timeStamp" : "Hora",
 
   // "audit.detail.back" : "All Audit Logs",
-  // TODO New key - Add a translation
-  "audit.detail.back" : "All Audit Logs",
+  "audit.detail.back" : "Todos los registros de la auditoría",
 
   // "audit.detail.back.subject": "Subject Audit Logs",
-  // TODO New key - Add a translation
-  "audit.detail.back.subject": "Subject Audit Logs",
+  "audit.detail.back.subject": "Registros de auditoría de materias",
 
   // "patent.listelement.badge": "Patent",
-  // TODO New key - Add a translation
-  "patent.listelement.badge": "Patent",
+  "patent.listelement.badge": "Patente",
 
   // "profile.breadcrumbs": "Update Profile",
-  // TODO New key - Add a translation
-  "profile.breadcrumbs": "Update Profile",
+  "profile.breadcrumbs": "Actualizar perfil",
 
   // "profile.card.identify": "Identify",
-  // TODO New key - Add a translation
-  "profile.card.identify": "Identify",
+  "profile.card.identify": "Identificar",
 
   // "profile.card.security": "Security",
-  // TODO New key - Add a translation
-  "profile.card.security": "Security",
+  "profile.card.security": "Seguridad",
 
   // "profile.form.submit": "Update Profile",
-  // TODO New key - Add a translation
-  "profile.form.submit": "Update Profile",
+  "profile.form.submit": "Actualizar perfil",
 
   // "profile.groups.head": "Authorization groups you belong to",
-  // TODO New key - Add a translation
-  "profile.groups.head": "Authorization groups you belong to",
+  "profile.groups.head": "Grupos de autorización a los que pertenece",
 
   // "profile.head": "Update Profile",
-  // TODO New key - Add a translation
-  "profile.head": "Update Profile",
+  "profile.head": "Actualizar perfil",
 
   // "profile.metadata.form.error.firstname.required": "First Name is required",
-  // TODO New key - Add a translation
-  "profile.metadata.form.error.firstname.required": "First Name is required",
+  "profile.metadata.form.error.firstname.required": "El Nombre es obligatorio",
 
   // "profile.metadata.form.error.lastname.required": "Last Name is required",
-  // TODO New key - Add a translation
-  "profile.metadata.form.error.lastname.required": "Last Name is required",
+  "profile.metadata.form.error.lastname.required": "El Apellido es obligatorio",
 
   // "profile.metadata.form.label.email": "Email Address",
-  // TODO New key - Add a translation
-  "profile.metadata.form.label.email": "Email Address",
+  "profile.metadata.form.label.email": "Correo electrónico",
 
   // "profile.metadata.form.label.firstname": "First Name",
-  // TODO New key - Add a translation
-  "profile.metadata.form.label.firstname": "First Name",
+  "profile.metadata.form.label.firstname": "Nombre",
 
   // "profile.metadata.form.label.language": "Language",
-  // TODO New key - Add a translation
-  "profile.metadata.form.label.language": "Language",
+  "profile.metadata.form.label.language": "Idioma",
 
   // "profile.metadata.form.label.lastname": "Last Name",
-  // TODO New key - Add a translation
-  "profile.metadata.form.label.lastname": "Last Name",
+  "profile.metadata.form.label.lastname": "Apellido",
 
   // "profile.metadata.form.label.phone": "Contact Telephone",
-  // TODO New key - Add a translation
-  "profile.metadata.form.label.phone": "Contact Telephone",
+  "profile.metadata.form.label.phone": "Teléfono de contacto",
 
   // "profile.metadata.form.notifications.success.content": "Your changes to the profile were saved.",
-  // TODO New key - Add a translation
-  "profile.metadata.form.notifications.success.content": "Your changes to the profile were saved.",
+  "profile.metadata.form.notifications.success.content": "Tus cambios en el perfil se han guardado.",
 
   // "profile.metadata.form.notifications.success.title": "Profile saved",
-  // TODO New key - Add a translation
-  "profile.metadata.form.notifications.success.title": "Profile saved",
+  "profile.metadata.form.notifications.success.title": "Perfil guardado",
 
   // "profile.notifications.warning.no-changes.content": "No changes were made to the Profile.",
-  // TODO New key - Add a translation
-  "profile.notifications.warning.no-changes.content": "No changes were made to the Profile.",
+  "profile.notifications.warning.no-changes.content": "No se han realizado cambios en el perfil.",
 
   // "profile.notifications.warning.no-changes.title": "No changes",
-  // TODO New key - Add a translation
-  "profile.notifications.warning.no-changes.title": "No changes",
+  "profile.notifications.warning.no-changes.title": "Sin cambios",
 
   // "profile.security.form.error.matching-passwords": "The passwords do not match.",
-  // TODO New key - Add a translation
-  "profile.security.form.error.matching-passwords": "The passwords do not match.",
+  "profile.security.form.error.matching-passwords": "Las contraseñas no coinciden.",
 
   // "profile.security.form.error.password-length": "The password should be at least 6 characters long.",
-  // TODO New key - Add a translation
-  "profile.security.form.error.password-length": "The password should be at least 6 characters long.",
+  "profile.security.form.error.password-length": "La contraseña debe tener al menos 6 caracteres.",
 
   // "profile.security.form.info": "Optionally, you can enter a new password in the box below, and confirm it by typing it again into the second box. It should be at least six characters long.",
-  // TODO New key - Add a translation
-  "profile.security.form.info": "Optionally, you can enter a new password in the box below, and confirm it by typing it again into the second box. It should be at least six characters long.",
+  "profile.security.form.info": "Opcionalmente, puede introducir una nueva contraseña en la casilla inferior y confirmarla escribiéndola de nuevo en la segunda casilla. Debe tener al menos seis caracteres",
 
   // "profile.security.form.label.password": "Password",
-  // TODO New key - Add a translation
-  "profile.security.form.label.password": "Password",
+  "profile.security.form.label.password": "Contraseña",
 
   // "profile.security.form.label.passwordrepeat": "Retype to confirm",
-  // TODO New key - Add a translation
-  "profile.security.form.label.passwordrepeat": "Retype to confirm",
+  "profile.security.form.label.passwordrepeat": "Repita para confirmar",
 
   // "profile.security.form.notifications.success.content": "Your changes to the password were saved.",
-  // TODO New key - Add a translation
-  "profile.security.form.notifications.success.content": "Your changes to the password were saved.",
+  "profile.security.form.notifications.success.content": "Los cambios en la contraseña se han guardado.",
 
   // "profile.security.form.notifications.success.title": "Password saved",
-  // TODO New key - Add a translation
-  "profile.security.form.notifications.success.title": "Password saved",
+  "profile.security.form.notifications.success.title": "Contraseña guardada",
 
   // "profile.security.form.notifications.error.title": "Error changing passwords",
-  // TODO New key - Add a translation
-  "profile.security.form.notifications.error.title": "Error changing passwords",
+  "profile.security.form.notifications.error.title": "Error cambiando las contraseñas",
 
   // "profile.security.form.notifications.error.not-long-enough": "The password has to be at least 6 characters long.",
-  // TODO New key - Add a translation
-  "profile.security.form.notifications.error.not-long-enough": "The password has to be at least 6 characters long.",
+  "profile.security.form.notifications.error.not-long-enough": "La contraseña debe tener al menos 6 caracteres.",
 
   // "profile.security.form.notifications.error.not-same": "The provided passwords are not the same.",
-  // TODO New key - Add a translation
-  "profile.security.form.notifications.error.not-same": "The provided passwords are not the same.",
+  "profile.security.form.notifications.error.not-same": "Las contraseñas proporcionadas no son las mismas.",
 
   // "profile.title": "Update Profile",
-  // TODO New key - Add a translation
-  "profile.title": "Update Profile",
+  "profile.title": "Actualizar perfil",
 
 
 
   // "profile.breadcrumbs": "Update Profile",
-  // TODO New key - Add a translation
-  "profile.breadcrumbs": "Update Profile",
+  "profile.breadcrumbs": "Actualizar perfil",
 
   // "profile.card.identify": "Identify",
-  // TODO New key - Add a translation
-  "profile.card.identify": "Identify",
+  "profile.card.identify": "Identificar",
 
   // "profile.card.security": "Security",
-  // TODO New key - Add a translation
-  "profile.card.security": "Security",
+  "profile.card.security": "Seguridad",
 
   // "profile.card.researcher": "Researcher Profile",
-  // TODO New key - Add a translation
-  "profile.card.researcher": "Researcher Profile",
+  "profile.card.researcher": "Perfil del investigador",
 
   // "profile.form.submit": "Update Profile",
-  // TODO New key - Add a translation
-  "profile.form.submit": "Update Profile",
+  "profile.form.submit": "Actualizar perfil",
 
   // "profile.granted-applications.head": "Manage list of granted authorization to third parties applications",
-  // TODO New key - Add a translation
-  "profile.granted-applications.head": "Manage list of granted authorization to third parties applications",
+  "profile.granted-applications.head": "Gestionar la lista de solicitudes de autorización concedidas a terceros",
 
   // "profile.granted-applications.revoke.cancel": "Cancel",
-  // TODO New key - Add a translation
-  "profile.granted-applications.revoke.cancel": "Cancel",
+  "profile.granted-applications.revoke.cancel": "Cancelar",
 
   // "profile.granted-applications.revoke.error": "An error occurred while revoking the grant to application.",
-  // TODO New key - Add a translation
-  "profile.granted-applications.revoke.error": "An error occurred while revoking the grant to application.",
+  "profile.granted-applications.revoke.error": "Se ha producido un error al revocar la concesión a la aplicación.",
 
   // "profile.granted-applications.revoke.info": "This operation can't be undone. Are you sure?",
-  // TODO New key - Add a translation
-  "profile.granted-applications.revoke.info": "This operation can't be undone. Are you sure?",
+  "profile.granted-applications.revoke.info": "Esta operación no se puede deshacer. ¿Está seguro?",
 
   // "profile.granted-applications.revoke.submit": "Yes, I'm sure",
-  // TODO New key - Add a translation
-  "profile.granted-applications.revoke.submit": "Yes, I'm sure",
+  "profile.granted-applications.revoke.submit": "Sí, estoy seguro",
 
   // "profile.granted-applications.revoke.title": "Revoke grants",
-  // TODO New key - Add a translation
-  "profile.granted-applications.revoke.title": "Revoke grants",
+  "profile.granted-applications.revoke.title": "Revocar las concesiones",
 
   // "profile.granted-applications.table.client-id": "Client ID",
-  // TODO New key - Add a translation
-  "profile.granted-applications.table.client-id": "Client ID",
+  "profile.granted-applications.table.client-id": "ID de cliente",
 
   // "profile.granted-applications.table.client-name": "Client name",
-  // TODO New key - Add a translation
-  "profile.granted-applications.table.client-name": "Client name",
+  "profile.granted-applications.table.client-name": "Nombre del cliente",
 
   // "profile.granted-applications.table.issued-at": "Issued At",
-  // TODO New key - Add a translation
-  "profile.granted-applications.table.issued-at": "Issued At",
+  "profile.granted-applications.table.issued-at": "Emitido en",
 
   // "profile.granted-applications.table.expire-at": "Expire At",
-  // TODO New key - Add a translation
-  "profile.granted-applications.table.expire-at": "Expire At",
+  "profile.granted-applications.table.expire-at": "Expira en",
 
   // "profile.granted-applications.table.not-available": "Not Available",
-  // TODO New key - Add a translation
-  "profile.granted-applications.table.not-available": "Not Available",
+  "profile.granted-applications.table.not-available": "No disponible",
 
   // "profile.granted-applications.table.id": "ID",
-  // TODO New key - Add a translation
   "profile.granted-applications.table.id": "ID",
 
   // "profile.granted-applications.table.revoke": "Revoke",
-  // TODO New key - Add a translation
-  "profile.granted-applications.table.revoke": "Revoke",
+  "profile.granted-applications.table.revoke": "Revocar",
 
   // "profile.granted-applications.table.scopes": "Scopes",
   // TODO New key - Add a translation
   "profile.granted-applications.table.scopes": "Scopes",
 
   // "profile.groups.head": "Authorization groups you belong to",
-  // TODO New key - Add a translation
-  "profile.groups.head": "Authorization groups you belong to",
+  "profile.groups.head": "Grupos de autorización a los que pertenece",
 
   // "profile.head": "Update Profile",
-  // TODO New key - Add a translation
-  "profile.head": "Update Profile",
+  "profile.head": "Actualizar perfil",
 
   // "profile.metadata.form.error.firstname.required": "First Name is required",
-  // TODO New key - Add a translation
-  "profile.metadata.form.error.firstname.required": "First Name is required",
+  "profile.metadata.form.error.firstname.required": "El Nombre es obligatorio",
 
   // "profile.metadata.form.error.lastname.required": "Last Name is required",
-  // TODO New key - Add a translation
-  "profile.metadata.form.error.lastname.required": "Last Name is required",
+  "profile.metadata.form.error.lastname.required": "El Apellido es obligatorio",
 
   // "profile.metadata.form.label.email": "Email Address",
-  // TODO New key - Add a translation
-  "profile.metadata.form.label.email": "Email Address",
+  "profile.metadata.form.label.email": "Correo electrónico",
 
   // "profile.metadata.form.label.firstname": "First Name",
-  // TODO New key - Add a translation
-  "profile.metadata.form.label.firstname": "First Name",
+  "profile.metadata.form.label.firstname": "Nombre",
 
   // "profile.metadata.form.label.language": "Language",
-  // TODO New key - Add a translation
-  "profile.metadata.form.label.language": "Language",
+  "profile.metadata.form.label.language": "Idioma",
 
   // "profile.metadata.form.label.lastname": "Last Name",
-  // TODO New key - Add a translation
-  "profile.metadata.form.label.lastname": "Last Name",
+  "profile.metadata.form.label.lastname": "Apellido",
 
   // "profile.metadata.form.label.phone": "Contact Telephone",
-  // TODO New key - Add a translation
-  "profile.metadata.form.label.phone": "Contact Telephone",
+  "profile.metadata.form.label.phone": "Teléfono de contacto",
 
   // "profile.metadata.form.notifications.success.content": "Your changes to the profile were saved.",
-  // TODO New key - Add a translation
-  "profile.metadata.form.notifications.success.content": "Your changes to the profile were saved.",
+  "profile.metadata.form.notifications.success.content": "Sus cambios en el perfil se han guardado.",
 
   // "profile.metadata.form.notifications.success.title": "Profile saved",
-  // TODO New key - Add a translation
-  "profile.metadata.form.notifications.success.title": "Profile saved",
+  "profile.metadata.form.notifications.success.title": "Perfil guardado",
 
   // "profile.notifications.warning.no-changes.content": "No changes were made to the Profile.",
-  // TODO New key - Add a translation
-  "profile.notifications.warning.no-changes.content": "No changes were made to the Profile.",
+  "profile.notifications.warning.no-changes.content": "No se han realizado cambios en el perfil.",
 
   // "profile.notifications.warning.no-changes.title": "No changes",
-  // TODO New key - Add a translation
-  "profile.notifications.warning.no-changes.title": "No changes",
+  "profile.notifications.warning.no-changes.title": "Sin cambios",
 
   // "profile.security.form.error.matching-passwords": "The passwords do not match.",
-  // TODO New key - Add a translation
-  "profile.security.form.error.matching-passwords": "The passwords do not match.",
+  "profile.security.form.error.matching-passwords": "Las contraseñas no coinciden.",
 
   // "profile.security.form.error.password-length": "The password should be at least 6 characters long.",
-  // TODO New key - Add a translation
-  "profile.security.form.error.password-length": "The password should be at least 6 characters long.",
+  "profile.security.form.error.password-length": "La contraseña debe tener al menos 6 caracteres.",
 
   // "profile.security.form.info": "Optionally, you can enter a new password in the box below, and confirm it by typing it again into the second box. It should be at least six characters long.",
-  // TODO New key - Add a translation
-  "profile.security.form.info": "Optionally, you can enter a new password in the box below, and confirm it by typing it again into the second box. It should be at least six characters long.",
+  "profile.security.form.info": "Opcionalmente, puede introducir una nueva contraseña en la casilla inferior, y confirmarla escribiéndola de nuevo en la segunda casilla. Debe tener al menos seis caracteres.",
 
   // "profile.security.form.label.password": "Password",
-  // TODO New key - Add a translation
-  "profile.security.form.label.password": "Password",
+  "profile.security.form.label.password": "Contraseña",
 
   // "profile.security.form.label.passwordrepeat": "Retype to confirm",
-  // TODO New key - Add a translation
-  "profile.security.form.label.passwordrepeat": "Retype to confirm",
+  "profile.security.form.label.passwordrepeat": "Vuelva a escribir para confirmar",
 
   // "profile.security.form.notifications.success.content": "Your changes to the password were saved.",
-  // TODO New key - Add a translation
-  "profile.security.form.notifications.success.content": "Your changes to the password were saved.",
+  "profile.security.form.notifications.success.content": "Los cambios en la contraseña se han guardado.",
 
   // "profile.security.form.notifications.success.title": "Password saved",
-  // TODO New key - Add a translation
-  "profile.security.form.notifications.success.title": "Password saved",
+  "profile.security.form.notifications.success.title": "Contraseña guardada",
 
   // "profile.security.form.notifications.error.title": "Error changing passwords",
-  // TODO New key - Add a translation
-  "profile.security.form.notifications.error.title": "Error changing passwords",
+  "profile.security.form.notifications.error.title": "Error al cambiar las contraseñas",
 
   // "profile.security.form.notifications.error.not-long-enough": "The password has to be at least 6 characters long.",
-  // TODO New key - Add a translation
-  "profile.security.form.notifications.error.not-long-enough": "The password has to be at least 6 characters long.",
+  "profile.security.form.notifications.error.not-long-enough": "La contraseña debe tener al menos 6 caracteres.",
 
   // "profile.security.form.notifications.error.not-same": "The provided passwords are not the same.",
-  // TODO New key - Add a translation
-  "profile.security.form.notifications.error.not-same": "The provided passwords are not the same.",
+  "profile.security.form.notifications.error.not-same": "Las contraseñas proporcionadas no son las mismas.",
 
   // "profile.title": "Update Profile",
-  // TODO New key - Add a translation
-  "profile.title": "Update Profile",
+  "profile.title": "Actualizar perfil",
 
   // "profile.twofactor.title": "Manage two factor authentication",
-  // TODO New key - Add a translation
-  "profile.twofactor.title": "Manage two factor authentication",
+  "profile.twofactor.title": "Gestionar la autenticación de dos factores",
 
   // "profile.twofactor.text": "Two factor authentication state",
-  // TODO New key - Add a translation
-  "profile.twofactor.text": "Two factor authentication state",
+  "profile.twofactor.text": "Estado de la autenticación de dos factores",
 
   // "profile.twofactor.enabled": "Enabled",
-  // TODO New key - Add a translation
-  "profile.twofactor.enabled": "Enabled",
+  "profile.twofactor.enabled": "Activado",
 
   // "profile.twofactor.disabled": "Disabled",
-  // TODO New key - Add a translation
-  "profile.twofactor.disabled": "Disabled",
+  "profile.twofactor.disabled": "Desactivado",
 
   // "profile.twofactor.update": "Update",
-  // TODO New key - Add a translation
-  "profile.twofactor.update": "Update",
+  "profile.twofactor.update": "Actualizar",
 
   // "profile.twofactor.notification.error": "Error updating two factor authentication state",
-  // TODO New key - Add a translation
-  "profile.twofactor.notification.error": "Error updating two factor authentication state",
+  "profile.twofactor.notification.error": "Error al actualizar el estado de la autenticación de dos factores",
 
   // "project.listelement.badge": "Research Project",
   "project.listelement.badge": "Proyecto de investigación",
@@ -6162,8 +6034,7 @@
   "project.page.description": "Descripción",
 
   // "project.page.edit": "Edit this item",
-  // TODO New key - Add a translation
-  "project.page.edit": "Edit this item",
+  "project.page.edit": "Editar este ítem",
 
   // "project.page.expectedcompletion": "Expected Completion",
   "project.page.expectedcompletion": "Finalización prevista",
@@ -6184,8 +6055,7 @@
   "project.page.titleprefix": "Proyecto de investigación: ",
 
   // "project.search.results.head": "Project Search Results",
-  // TODO New key - Add a translation
-  "project.search.results.head": "Project Search Results",
+  "project.search.results.head": "Resultados de la búsqueda de proyectos",
 
 
 
@@ -6196,8 +6066,7 @@
   "publication.page.description": "Descripción",
 
   // "publication.page.edit": "Edit this item",
-  // TODO New key - Add a translation
-  "publication.page.edit": "Edit this item",
+  "publication.page.edit": "Editar este ítem",
 
   // "publication.page.journal-issn": "Journal ISSN",
   "publication.page.journal-issn": "Revista ISSN",
@@ -6219,125 +6088,96 @@
 
   // "publication.search.title": "DSpace Cris Angular :: Publication Search",
   // TODO New key - Add a translation
-  "publication.search.title": "DSpace Cris Angular :: Publication Search",
+  "publication.search.title": "DSpace Cris Angular :: Búsqueda de publicación",
 
 
   // "register-email.title": "New user registration",
-  // TODO New key - Add a translation
-  "register-email.title": "New user registration",
+  "register-email.title": "Registro de nuevo usuario",
 
   // "register-page.create-profile.header": "Create Profile",
-  // TODO New key - Add a translation
-  "register-page.create-profile.header": "Create Profile",
+  "register-page.create-profile.header": "Crear perfil",
 
   // "register-page.create-profile.identification.header": "Identify",
-  // TODO New key - Add a translation
-  "register-page.create-profile.identification.header": "Identify",
+  "register-page.create-profile.identification.header": "Identificar",
 
   // "register-page.create-profile.identification.email": "Email Address",
-  // TODO New key - Add a translation
-  "register-page.create-profile.identification.email": "Email Address",
+  "register-page.create-profile.identification.email": "Correo electrónico",
 
   // "register-page.create-profile.identification.first-name": "First Name *",
-  // TODO New key - Add a translation
-  "register-page.create-profile.identification.first-name": "First Name *",
+  "register-page.create-profile.identification.first-name": "Nombre *",
 
   // "register-page.create-profile.identification.first-name.error": "Please fill in a First Name",
-  // TODO New key - Add a translation
-  "register-page.create-profile.identification.first-name.error": "Please fill in a First Name",
+  "register-page.create-profile.identification.first-name.error": "Por favor, rellene un Nombre",
 
   // "register-page.create-profile.identification.last-name": "Last Name *",
-  // TODO New key - Add a translation
-  "register-page.create-profile.identification.last-name": "Last Name *",
+  "register-page.create-profile.identification.last-name": "Apellido *",
 
   // "register-page.create-profile.identification.last-name.error": "Please fill in a Last Name",
-  // TODO New key - Add a translation
-  "register-page.create-profile.identification.last-name.error": "Please fill in a Last Name",
+  "register-page.create-profile.identification.last-name.error": "Por favor, rellene un Apellido",
 
   // "register-page.create-profile.identification.contact": "Contact Telephone",
-  // TODO New key - Add a translation
-  "register-page.create-profile.identification.contact": "Contact Telephone",
+  "register-page.create-profile.identification.contact": "Teléfono de contacto",
 
   // "register-page.create-profile.identification.language": "Language",
-  // TODO New key - Add a translation
-  "register-page.create-profile.identification.language": "Language",
+  "register-page.create-profile.identification.language": "Idioma",
 
   // "register-page.create-profile.security.header": "Security",
-  // TODO New key - Add a translation
-  "register-page.create-profile.security.header": "Security",
+  "register-page.create-profile.security.header": "Seguridad",
 
   // "register-page.create-profile.security.info": "Please enter a password in the box below, and confirm it by typing it again into the second box. It should be at least six characters long.",
-  // TODO New key - Add a translation
-  "register-page.create-profile.security.info": "Please enter a password in the box below, and confirm it by typing it again into the second box. It should be at least six characters long.",
+  "register-page.create-profile.security.info": "Por favor, introduzca una contraseña en la casilla de abajo y confírmela escribiendo de nuevo en la segunda casilla. Debe tener al menos seis caracteres.",
 
   // "register-page.create-profile.security.label.password": "Password *",
-  // TODO New key - Add a translation
-  "register-page.create-profile.security.label.password": "Password *",
+  "register-page.create-profile.security.label.password": "Contrseña *",
 
   // "register-page.create-profile.security.label.passwordrepeat": "Retype to confirm *",
-  // TODO New key - Add a translation
-  "register-page.create-profile.security.label.passwordrepeat": "Retype to confirm *",
+  "register-page.create-profile.security.label.passwordrepeat": "Vuelva a escribir para confirmar *",
 
   // "register-page.create-profile.security.error.empty-password": "Please enter a password in the box below.",
-  // TODO New key - Add a translation
-  "register-page.create-profile.security.error.empty-password": "Please enter a password in the box below.",
+  "register-page.create-profile.security.error.empty-password": "Por favor, introduzca una contraseña en la casilla de abajo.",
 
   // "register-page.create-profile.security.error.matching-passwords": "The passwords do not match.",
-  // TODO New key - Add a translation
-  "register-page.create-profile.security.error.matching-passwords": "The passwords do not match.",
+  "register-page.create-profile.security.error.matching-passwords": "Las contraseñas no coinciden",
 
   // "register-page.create-profile.security.error.password-length": "The password should be at least 6 characters long.",
-  // TODO New key - Add a translation
-  "register-page.create-profile.security.error.password-length": "The password should be at least 6 characters long.",
+  "register-page.create-profile.security.error.password-length": "La contraseña debe tener al menos 6 caracteres.",
 
   // "register-page.create-profile.submit": "Complete Registration",
-  // TODO New key - Add a translation
-  "register-page.create-profile.submit": "Complete Registration",
+  "register-page.create-profile.submit": "Finalizar registro",
 
   // "register-page.create-profile.submit.error.content": "Something went wrong while registering a new user.",
-  // TODO New key - Add a translation
-  "register-page.create-profile.submit.error.content": "Something went wrong while registering a new user.",
+  "register-page.create-profile.submit.error.content": "Algo ha ido mal al registrar un nuevo usuario.",
 
   // "register-page.create-profile.submit.error.head": "Registration failed",
-  // TODO New key - Add a translation
-  "register-page.create-profile.submit.error.head": "Registration failed",
+  "register-page.create-profile.submit.error.head": "Registro fallido",
 
   // "register-page.create-profile.submit.success.content": "The registration was successful. You have been logged in as the created user.",
-  // TODO New key - Add a translation
-  "register-page.create-profile.submit.success.content": "The registration was successful. You have been logged in as the created user.",
+  "register-page.create-profile.submit.success.content": "El registro fue exitoso. Se ha iniciado la sesión con el usuario creado.",
 
   // "register-page.create-profile.submit.success.head": "Registration completed",
-  // TODO New key - Add a translation
-  "register-page.create-profile.submit.success.head": "Registration completed",
+  "register-page.create-profile.submit.success.head": "Registro completado",
 
 
   // "register-page.registration.header": "New user registration",
-  // TODO New key - Add a translation
-  "register-page.registration.header": "New user registration",
+  "register-page.registration.header": "Registro de nuevo usuario",
 
   // "register-page.registration.info": "Register an account to subscribe to collections for email updates, and submit new items to DSpace.",
-  // TODO New key - Add a translation
-  "register-page.registration.info": "Register an account to subscribe to collections for email updates, and submit new items to DSpace.",
+  "register-page.registration.info": "Registre una cuenta para suscribirse a las colecciones y recibir actualizaciones por correo electrónico, y envíe nuevos artículos a DSpace.",
 
   // "register-page.registration.email": "Email Address *",
-  // TODO New key - Add a translation
-  "register-page.registration.email": "Email Address *",
+  "register-page.registration.email": "Correo electrónico *",
 
   // "register-page.registration.email.error.required": "Please fill in an email address",
-  // TODO New key - Add a translation
-  "register-page.registration.email.error.required": "Please fill in an email address",
+  "register-page.registration.email.error.required": "Por favor, introduzca una dirección de correo electrónico",
 
   // "register-page.registration.email.error.pattern": "Please fill in a valid email address",
-  // TODO New key - Add a translation
-  "register-page.registration.email.error.pattern": "Please fill in a valid email address",
+  "register-page.registration.email.error.pattern": "Por favor, introduzca una dirección de correo electrónico válida",
 
   // "register-page.registration.email.hint": "This address will be verified and used as your login name.",
-  // TODO New key - Add a translation
-  "register-page.registration.email.hint": "This address will be verified and used as your login name.",
+  "register-page.registration.email.hint": "Esta dirección se verificará y se utilizará como nombre de usuario.",
 
   // "register-page.registration.submit": "Register",
-  // TODO New key - Add a translation
-  "register-page.registration.submit": "Register",
+  "register-page.registration.submit": "Registrar",
 
   // "register-page.registration.success.head": "Verification email sent",
   // TODO New key - Add a translation
