@@ -27,6 +27,9 @@ export class RegisterEmailFormComponent implements OnInit {
   @Input()
   MESSAGE_PREFIX: string;
 
+  @Input()
+  hideHeader = false;
+
   constructor(
     private epersonRegistrationService: EpersonRegistrationService,
     private notificationService: NotificationsService,

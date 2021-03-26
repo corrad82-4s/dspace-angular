@@ -41,14 +41,14 @@ export class CreateProfileComponent implements OnInit {
   activeLangs: LangConfig[];
 
   constructor(
-    private translateService: TranslateService,
-    private ePersonDataService: EPersonDataService,
-    private store: Store<CoreState>,
-    private router: Router,
-    private route: ActivatedRoute,
-    private formBuilder: FormBuilder,
-    private notificationsService: NotificationsService,
-    private endUserAgreementService: EndUserAgreementService
+    protected translateService: TranslateService,
+    protected ePersonDataService: EPersonDataService,
+    protected store: Store<CoreState>,
+    protected router: Router,
+    protected route: ActivatedRoute,
+    protected formBuilder: FormBuilder,
+    protected notificationsService: NotificationsService,
+    protected endUserAgreementService: EndUserAgreementService
   ) {
 
   }
@@ -114,30 +114,9 @@ export class CreateProfileComponent implements OnInit {
    * The submission will not be made when the form or the password is not valid.
    */
   submitEperson() {
-    if (!(this.userInfoForm.invalid || this.isInValidPassword)) {
+    if (this.canSubmit()) {
       const values = {
-        metadata: {
-          'eperson.firstname': [
-            {
-              value: this.firstName.value
-            }
-          ],
-          'eperson.lastname': [
-            {
-              value: this.lastName.value
-            },
-          ],
-          'eperson.phone': [
-            {
-              value: this.contactPhone.value
-            }
-          ],
-          'eperson.language': [
-            {
-              value: this.language.value
-            }
-          ]
-        },
+        metadata: this.getMetadataValues(),
         email: this.email,
         password: this.password,
         canLogIn: true,
@@ -155,13 +134,13 @@ export class CreateProfileComponent implements OnInit {
       }
 
       const eperson = Object.assign(new EPerson(), values);
-      this.ePersonDataService.createEPersonForToken(eperson, this.token).pipe(
+      this.createEPerson(eperson).pipe(
         getFirstCompletedRemoteData(),
       ).subscribe((rd: RemoteData<EPerson>) => {
         if (rd.hasSucceeded) {
           this.notificationsService.success(this.translateService.get('register-page.create-profile.submit.success.head'),
             this.translateService.get('register-page.create-profile.submit.success.content'));
-          this.store.dispatch(new AuthenticateAction(this.email, this.password));
+          this.dispatchAuthenticateAction();
           this.router.navigate(['/home']);
         } else {
           this.notificationsService.error(this.translateService.get('register-page.create-profile.submit.error.head'),
@@ -171,4 +150,40 @@ export class CreateProfileComponent implements OnInit {
     }
   }
 
+  protected canSubmit() {
+    return (!(this.userInfoForm.invalid || this.isInValidPassword));
+  }
+
+  protected createEPerson(eperson): Observable<RemoteData<EPerson>> {
+    return this.ePersonDataService.createEPersonForToken(eperson, this.token);
+  }
+
+  protected dispatchAuthenticateAction() {
+    this.store.dispatch(new AuthenticateAction(this.email, this.password));
+  }
+
+  protected getMetadataValues(): any {
+    return {
+      'eperson.firstname': [
+        {
+          value: this.firstName.value
+        }
+      ],
+      'eperson.lastname': [
+        {
+          value: this.lastName.value
+        },
+      ],
+      'eperson.phone': [
+        {
+          value: this.contactPhone.value
+        }
+      ],
+      'eperson.language': [
+        {
+          value: this.language.value
+        }
+      ]
+    };
+  }
 }

@@ -313,6 +313,27 @@ export class EPersonDataService extends DataService<EPerson> {
   }
 
   /**
+   * Create a new EPerson using a token
+   * @param eperson
+   * @param token
+   */
+  public createEPersonForDniAndDate(eperson: EPerson, dni: string, date: string): Observable<RemoteData<EPerson>> {
+    const requestId = this.requestService.generateRequestId();
+    const hrefObs = this.getBrowseEndpoint().pipe(
+      map((href: string) => `${href}?dni=${dni}&date=${date}`));
+    hrefObs.pipe(
+      find((href: string) => hasValue(href)),
+      map((href: string) => {
+        const request = new PostRequest(requestId, href, eperson);
+        this.requestService.configure(request);
+      })
+    ).subscribe();
+
+    return this.rdbService.buildFromRequestUUID(requestId);
+
+  }
+
+  /**
    * Sends a patch request to update an epersons password based on a forgot password token
    * @param uuid      Uuid of the eperson
    * @param token     The forgot password token
