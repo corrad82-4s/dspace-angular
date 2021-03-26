@@ -3000,36 +3000,28 @@
   "explore.search-section.reset-button": "Reset",
 
   // "explore.directorios.breadcrumbs": "Directorios",
-  // TODO New key - Add a translation
   "explore.directorios.breadcrumbs": "Directorios",
 
   // "explore.infrastructure.breadcrumbs": "Infrastructure",
-  // TODO New key - Add a translation
   "explore.infrastructure.breadcrumbs": "Infrastructure",
 
   // "explore.fundings.breadcrumbs": "Projects",
-  // TODO New key - Add a translation
-  "explore.fundings.breadcrumbs": "Projects",
+  "explore.fundings.breadcrumbs": "Proyectos",
 
   // "explore.fundings_and_projects.breadcrumbs": "Projects",
-  // TODO New key - Add a translation
-  "explore.fundings_and_projects.breadcrumbs": "Projects",
+  "explore.fundings_and_projects.breadcrumbs": "Proyectos",
 
   // "explore.orgunits.breadcrumbs": "Organizations",
-  // TODO New key - Add a translation
-  "explore.orgunits.breadcrumbs": "Organizations",
+  "explore.orgunits.breadcrumbs": "Organizaciones",
 
   // "explore.publications.breadcrumbs": "Research Outputs",
-  // TODO New key - Add a translation
-  "explore.publications.breadcrumbs": "Research Outputs",
+  "explore.publications.breadcrumbs": "Resultados de Investigación",
 
   // "explore.researchoutputs.breadcrumbs": "Research Outputs",
-  // TODO New key - Add a translation
-  "explore.researchoutputs.breadcrumbs": "Research Outputs",
+  "explore.researchoutputs.breadcrumbs": "Resultados de Investigación",
 
   // "explore.researcherprofiles.breadcrumbs": "People",
-  // TODO New key - Add a translation
-  "explore.researcherprofiles.breadcrumbs": "People",
+  "explore.researcherprofiles.breadcrumbs": "Personas",
 
   // "explore.text-section.directorios.title": "Welcome to #PerúCRIS platform Directories",
   "explore.text-section.directorios.title": "Bienvenido a los Directorios de la Plataforma #PerúCRIS",
@@ -3038,13 +3030,11 @@
   "explore.text-section.directorios.description": "La Plataforma #PerúCRIS brinda el soporte informático a la Red Nacional de Información en Ciencia, Tecnología e Innovación (CTI). Aquí encontrarás información sobre el talento humano, organizaciones, publicaciones científicas, fuentes de financiamientos y proyectos en CTI del Perú.",
 
   // "explore.title": "Explore section",
-  // TODO New key - Add a translation
-  "explore.title": "Explore section",
+  "explore.title": "Sección Explorar",
 
 
   // "file-section.error.header": "Error obtaining files for this item",
-  // TODO New key - Add a translation
-  "file-section.error.header": "Error obtaining files for this item",
+  "file-section.error.header": "Error al obtener los archivos de este ítem",
 
 
 
@@ -3058,134 +3048,103 @@
   "footer.link.duraspace": "DuraSpace",
 
   // "footer.link.cookies": "Cookie settings",
-  // TODO New key - Add a translation
-  "footer.link.cookies": "Cookie settings",
+  "footer.link.cookies": "Configuración de las cookies",
 
   // "footer.link.privacy-policy": "Privacy policy",
-  // TODO New key - Add a translation
-  "footer.link.privacy-policy": "Privacy policy",
+  "footer.link.privacy-policy": "Política de privacidad",
 
   // "footer.link.end-user-agreement":"End User Agreement",
-  // TODO New key - Add a translation
-  "footer.link.end-user-agreement":"End User Agreement",
+  "footer.link.end-user-agreement":"Acuerdo de usuario final",
 
 
 
   // "forgot-email.form.header": "Forgot Password",
-  // TODO New key - Add a translation
-  "forgot-email.form.header": "Forgot Password",
+  "forgot-email.form.header": "Olvidé mi contraseña",
 
   // "forgot-email.form.info": "Enter Register an account to subscribe to collections for email updates, and submit new items to DSpace.",
-  // TODO New key - Add a translation
-  "forgot-email.form.info": "Enter Register an account to subscribe to collections for email updates, and submit new items to DSpace.",
+  "forgot-email.form.info": "Acceda a Registrar una cuenta para suscribirse a colecciones para recibir actualizaciones por correo electrónico, y enviar nuevos ítems a DSpace.",
 
   // "forgot-email.form.email": "Email Address *",
-  // TODO New key - Add a translation
-  "forgot-email.form.email": "Email Address *",
+  "forgot-email.form.email": "Dirección de correo electrónico *",
 
   // "forgot-email.form.email.error.required": "Please fill in an email address",
-  // TODO New key - Add a translation
-  "forgot-email.form.email.error.required": "Please fill in an email address",
+  "forgot-email.form.email.error.required": "Por favor, introduzca una dirección de correo electrónico",
 
   // "forgot-email.form.email.error.pattern": "Please fill in a valid email address",
-  // TODO New key - Add a translation
-  "forgot-email.form.email.error.pattern": "Please fill in a valid email address",
+  "forgot-email.form.email.error.pattern": "Por favor, introduzca una dirección de correo electrónico",
 
   // "forgot-email.form.email.hint": "This address will be verified and used as your login name.",
-  // TODO New key - Add a translation
-  "forgot-email.form.email.hint": "This address will be verified and used as your login name.",
+  "forgot-email.form.email.hint": "Esta dirección será verificada y utilizada como su nombre de usuario.",
 
   // "forgot-email.form.submit": "Submit",
-  // TODO New key - Add a translation
-  "forgot-email.form.submit": "Submit",
+  "forgot-email.form.submit": "Enviar",
 
   // "forgot-email.form.success.head": "Verification email sent",
-  // TODO New key - Add a translation
-  "forgot-email.form.success.head": "Verification email sent",
+  "forgot-email.form.success.head": "Correo electrónico de verificación enviado",
 
   // "forgot-email.form.success.content": "An email has been sent to {{ email }} containing a special URL and further instructions.",
-  // TODO New key - Add a translation
-  "forgot-email.form.success.content": "An email has been sent to {{ email }} containing a special URL and further instructions.",
+  "forgot-email.form.success.content": "Se ha enviado un correo electrónico a {{ email }} con una URL especial y más instrucciones.",
 
   // "forgot-email.form.error.head": "Error when trying to register email",
-  // TODO New key - Add a translation
-  "forgot-email.form.error.head": "Error when trying to register email",
+  "forgot-email.form.error.head": "Error al intentar registrar el correo electrónico",
 
   // "forgot-email.form.error.content": "An error occured when registering the following email address: {{ email }}",
-  // TODO New key - Add a translation
-  "forgot-email.form.error.content": "An error occured when registering the following email address: {{ email }}",
+  "forgot-email.form.error.content": "Se ha producido un error al registrar la siguiente dirección de correo electrónico: {{ email }}",
 
 
 
   // "forgot-password.title": "Forgot Password",
-  // TODO New key - Add a translation
-  "forgot-password.title": "Forgot Password",
+  "forgot-password.title": "Olvidé mi contraseña",
 
   // "forgot-password.form.head": "Forgot Password",
-  // TODO New key - Add a translation
-  "forgot-password.form.head": "Forgot Password",
+  "forgot-password.form.head": "Olvidé mi contraseña",
 
   // "forgot-password.form.info": "Enter a new password in the box below, and confirm it by typing it again into the second box. It should be at least six characters long.",
-  // TODO New key - Add a translation
-  "forgot-password.form.info": "Enter a new password in the box below, and confirm it by typing it again into the second box. It should be at least six characters long.",
+  "forgot-password.form.info": "Introduzca una nueva contraseña en la casilla inferior y confírmela escribiendo de nuevo en la segunda casilla. Debe tener al menos seis caracteres.",
 
   // "forgot-password.form.card.security": "Security",
-  // TODO New key - Add a translation
-  "forgot-password.form.card.security": "Security",
+  "forgot-password.form.card.security": "Seguridad",
 
   // "forgot-password.form.identification.header": "Identify",
-  // TODO New key - Add a translation
-  "forgot-password.form.identification.header": "Identify",
+  "forgot-password.form.identification.header": "Identificar",
 
   // "forgot-password.form.identification.email": "Email address: ",
-  // TODO New key - Add a translation
-  "forgot-password.form.identification.email": "Email address: ",
+  "forgot-password.form.identification.email": "Dirección e-mail: ",
 
   // "forgot-password.form.label.password": "Password",
-  // TODO New key - Add a translation
-  "forgot-password.form.label.password": "Password",
+  "forgot-password.form.label.password": "Contraseña",
 
   // "forgot-password.form.label.passwordrepeat": "Retype to confirm",
-  // TODO New key - Add a translation
-  "forgot-password.form.label.passwordrepeat": "Retype to confirm",
+  "forgot-password.form.label.passwordrepeat": "Vuelva a escribir para confirmar",
 
   // "forgot-password.form.error.empty-password": "Please enter a password in the box below.",
-  // TODO New key - Add a translation
-  "forgot-password.form.error.empty-password": "Please enter a password in the box below.",
+  "forgot-password.form.error.empty-password": "Por favor, introduzca una contraseña en la casilla siguiente.",
 
   // "forgot-password.form.error.matching-passwords": "The passwords do not match.",
-  // TODO New key - Add a translation
-  "forgot-password.form.error.matching-passwords": "The passwords do not match.",
+  "forgot-password.form.error.matching-passwords": "Las contraseñas no coinciden.",
 
   // "forgot-password.form.error.password-length": "The password should be at least 6 characters long.",
-  // TODO New key - Add a translation
-  "forgot-password.form.error.password-length": "The password should be at least 6 characters long.",
+  "forgot-password.form.error.password-length": "La contraseña debe tener al menos 6 caracteres.",
 
   // "forgot-password.form.notification.error.title": "Error when trying to submit new password",
-  // TODO New key - Add a translation
-  "forgot-password.form.notification.error.title": "Error when trying to submit new password",
+  "forgot-password.form.notification.error.title": "Error al intentar enviar una nueva contraseña",
 
   // "forgot-password.form.notification.success.content": "The password reset was successful. You have been logged in as the created user.",
-  // TODO New key - Add a translation
-  "forgot-password.form.notification.success.content": "The password reset was successful. You have been logged in as the created user.",
+  "forgot-password.form.notification.success.content": "El restablecimiento de la contraseña fue exitoso. Ha iniciado la sesión con el usuario creado.",
 
   // "forgot-password.form.notification.success.title": "Password reset completed",
-  // TODO New key - Add a translation
-  "forgot-password.form.notification.success.title": "Password reset completed",
+  "forgot-password.form.notification.success.title": "Restablecimiento de contraseña completado",
 
   // "forgot-password.form.submit": "Submit password",
-  // TODO New key - Add a translation
-  "forgot-password.form.submit": "Submit password",
+  "forgot-password.form.submit": "Enviar contraseña",
 
 
 
   // "form.add": "Add",
-  // TODO New key - Add a translation
-  "form.add": "Add",
+  "form.add": "Añadir",
 
   // "form.add-help": "Click here to add the current entry and to add another one",
-  // TODO New key - Add a translation
-  "form.add-help": "Click here to add the current entry and to add another one",
+  "form.add-help": "Haga clic aquí para añadir la entrada actual y para añadir otra",
 
   // "form.cancel": "Cancel",
   "form.cancel": "Cancelar",
@@ -3203,12 +3162,10 @@
   "form.edit-help": "Haga clic aquí para editar el valor seleccionado",
 
   // "form.external.source-help": "Click here to create a new item from this field",
-  // TODO New key - Add a translation
-  "form.external.source-help": "Click here to create a new item from this field",
+  "form.external.source-help": "Haga clic aquí para crear un nuevo ítem desde este campo",
 
   // "form.external.source.group-help": "Click here to create a new item from this group of fields",
-  // TODO New key - Add a translation
-  "form.external.source.group-help": "Click here to create a new item from this group of fields",
+  "form.external.source.group-help": "Haga clic aquí para crear un nuevo ítem a partir de este grupo de campos",
 
   // "form.first-name": "First name",
   "form.first-name": "Primer nombre",
@@ -3232,16 +3189,13 @@
   "form.loading": "Cargando...",
 
   // "form.lookup": "Lookup",
-  // TODO New key - Add a translation
-  "form.lookup": "Lookup",
+  "form.lookup": "Búsqueda",
 
   // "form.lookup-help": "Click here to look up an existing relation",
-  // TODO New key - Add a translation
-  "form.lookup-help": "Click here to look up an existing relation",
+  "form.lookup-help": "Haga clic aquí para buscar una relación existente",
 
   // "form.multiple-selection.no-selection": "No selection",
-  // TODO New key - Add a translation
-  "form.multiple-selection.no-selection": "No selection",
+  "form.multiple-selection.no-selection": "No hay selección",
 
   // "form.no-results": "No results found",
   "form.no-results": "No se han encontrado resultados",
@@ -3250,16 +3204,13 @@
   "form.no-value": "Ningún valor ingresado",
 
   // "form.other-information.data-oairecerif_author_affiliation": "Affiliation",
-  // TODO New key - Add a translation
-  "form.other-information.data-oairecerif_author_affiliation": "Affiliation",
+  "form.other-information.data-oairecerif_author_affiliation": "Filiación",
 
   // "form.other-information.data-oairecerif_editor_affiliation": "Affiliation",
-  // TODO New key - Add a translation
-  "form.other-information.data-oairecerif_editor_affiliation": "Affiliation",
+  "form.other-information.data-oairecerif_editor_affiliation": "Filiación",
 
   // "form.other-information.not-available": "Not available",
-  // TODO New key - Add a translation
-  "form.other-information.not-available": "Not available",
+  "form.other-information.not-available": "No disponible",
 
   // "form.remove": "Remove",
   "form.remove": "Eliminar",
@@ -3274,31 +3225,26 @@
   "form.search": "Buscar",
 
   // "form.search-help": "Click here to look for an existing correspondence",
-  // TODO Source message changed - Revise the translation
   "form.search-help": "Haga clic aquí para buscar una correspondencia existente",
 
   // "form.submit": "Submit",
   "form.submit": "Enviar",
 
   // "funding.listelement.badge" : "Funding",
-  // TODO New key - Add a translation
-  "funding.listelement.badge" : "Funding",
+  "funding.listelement.badge" : "Financiacimiento",
 
 
   // "home.description": "",
   "home.description": "",
 
   // "home.breadcrumbs": "Home",
-  // TODO New key - Add a translation
-  "home.breadcrumbs": "Home",
+  "home.breadcrumbs": "Inicio",
 
-  // "home.title": "DSpace Cris Angular :: Home",
-  // TODO New key - Add a translation
-  "home.title": "DSpace Cris Angular :: Home",
+  // "home.title": "PerúCRIS :: Home",
+  "home.title": "PerúCRIS :: Inicio",
 
-  // "home.top-level-communities.head": "Communities in DSpace Cris",
-  // TODO Source message changed - Revise the translation
-  "home.top-level-communities.head": "Comunidades en DSpace",
+  // "home.top-level-communities.head": "Communities in PerúCRIS",
+  "home.top-level-communities.head": "Comunidades en PerúCRIS",
 
   // "home.top-level-communities.help": "Select a community to browse its collections.",
   "home.top-level-communities.help": "Seleccionar una comunidad para navegar sus colecciones.",
@@ -3306,278 +3252,212 @@
 
 
   // "info.end-user-agreement.accept": "I have read and I agree to the End User Agreement",
-  // TODO New key - Add a translation
-  "info.end-user-agreement.accept": "I have read and I agree to the End User Agreement",
+  "info.end-user-agreement.accept": "He leído y acepto el Acuerdo de Usuario Final",
 
   // "info.end-user-agreement.accept.error": "An error occurred accepting the End User Agreement",
-  // TODO New key - Add a translation
-  "info.end-user-agreement.accept.error": "An error occurred accepting the End User Agreement",
+  "info.end-user-agreement.accept.error": "Se ha producido un error al aceptar el Acuerdo de Usuario Final",
 
   // "info.end-user-agreement.accept.success": "Successfully updated the End User Agreement",
-  // TODO New key - Add a translation
-  "info.end-user-agreement.accept.success": "Successfully updated the End User Agreement",
+  "info.end-user-agreement.accept.success": "Se ha actualizado con éxito el Acuerdo de Usuario Final",
 
   // "info.end-user-agreement.accept.warning": "Before you can proceed, you must agree to the End User Agreement",
-  // TODO New key - Add a translation
-  "info.end-user-agreement.accept.warning": "Before you can proceed, you must agree to the End User Agreement",
+  "info.end-user-agreement.accept.warning": "Antes de continuar, debe aceptar el Acuerdo de Usuario Final",
 
   // "info.end-user-agreement.breadcrumbs": "End User Agreement",
-  // TODO New key - Add a translation
-  "info.end-user-agreement.breadcrumbs": "End User Agreement",
+  "info.end-user-agreement.breadcrumbs": "Acuerdo de Usuario Final",
 
   // "info.end-user-agreement.buttons.cancel": "Cancel",
-  // TODO New key - Add a translation
-  "info.end-user-agreement.buttons.cancel": "Cancel",
+  "info.end-user-agreement.buttons.cancel": "Cancelar",
 
   // "info.end-user-agreement.buttons.save": "Save",
-  // TODO New key - Add a translation
-  "info.end-user-agreement.buttons.save": "Save",
+  "info.end-user-agreement.buttons.save": "Guardar",
 
   // "info.end-user-agreement.head": "End User Agreement",
-  // TODO New key - Add a translation
-  "info.end-user-agreement.head": "End User Agreement",
+  "info.end-user-agreement.head": "Acuerdo de Usuario Final",
 
   // "info.end-user-agreement.title": "End User Agreement",
-  // TODO New key - Add a translation
-  "info.end-user-agreement.title": "End User Agreement",
+  "info.end-user-agreement.title": "Acuerdo de Usuario Final",
 
   // "info.privacy.breadcrumbs": "Privacy Statement",
-  // TODO New key - Add a translation
-  "info.privacy.breadcrumbs": "Privacy Statement",
+  "info.privacy.breadcrumbs": "Declaración de Privacidad",
 
   // "info.privacy.head": "Privacy Statement",
-  // TODO New key - Add a translation
-  "info.privacy.head": "Privacy Statement",
+  "info.privacy.head": "Declaración de Privacidad",
 
   // "info.privacy.title": "Privacy Statement",
-  // TODO New key - Add a translation
-  "info.privacy.title": "Privacy Statement",
+  "info.privacy.title": "Declaración de Privacidad",
 
   // "institutionequipment.listelement.badge": "Institution Equipment",
-  // TODO New key - Add a translation
-  "institutionequipment.listelement.badge": "Institution Equipment",
+  "institutionequipment.listelement.badge": "Equipamiento de la Institución",
 
   // "institutionfunding.listelement.badge": "Institution Funding",
-  // TODO New key - Add a translation
-  "institutionfunding.listelement.badge": "Institution Funding",
+  "institutionfunding.listelement.badge": "Financiaciamiento de la Institución",
 
   // "institutionorgunit.listelement.badge": "Institution Organizational Unit",
-  // TODO New key - Add a translation
-  "institutionorgunit.listelement.badge": "Institution Organizational Unit",
+  "institutionorgunit.listelement.badge": "Unidad Organizativa de la Institución",
 
   // "institutionpatent.listelement.badge": "Institution Patent",
-  // TODO New key - Add a translation
-  "institutionpatent.listelement.badge": "Institution Patent",
+  "institutionpatent.listelement.badge": "Patente de la institución",
 
   // "institutionperson.listelement.badge": "Institution Person",
-  // TODO New key - Add a translation
-  "institutionperson.listelement.badge": "Institution Person",
+  "institutionperson.listelement.badge": "Persona de la institución",
 
   // "institutionproject.listelement.badge": "Institution Project",
-  // TODO New key - Add a translation
-  "institutionproject.listelement.badge": "Institution Project",
+  "institutionproject.listelement.badge": "Proyecto de la Institución",
 
-  // "institutionpublication.listelement.badge": "InstitutionPublication",
-  // TODO New key - Add a translation
-  "institutionpublication.listelement.badge": "InstitutionPublication",
+  // "institutionpublication.listelement.badge": "Institution Publication",
+  "institutionpublication.listelement.badge": "Publicación de la institución",
 
 
 
   // "item.alerts.private": "This item is private",
-  // TODO New key - Add a translation
-  "item.alerts.private": "This item is private",
+  "item.alerts.private": "Este ítem es privado",
 
   // "item.alerts.withdrawn": "This item has been withdrawn",
-  // TODO New key - Add a translation
-  "item.alerts.withdrawn": "This item has been withdrawn",
+  "item.alerts.withdrawn": "Este ítem ha sido retirado",
 
 
 
   // "item.edit.authorizations.heading": "With this editor you can view and alter the policies of an item, plus alter policies of individual item components: bundles and bitstreams. Briefly, an item is a container of bundles, and bundles are containers of bitstreams. Containers usually have ADD/REMOVE/READ/WRITE policies, while bitstreams only have READ/WRITE policies.",
-  // TODO New key - Add a translation
-  "item.edit.authorizations.heading": "With this editor you can view and alter the policies of an item, plus alter policies of individual item components: bundles and bitstreams. Briefly, an item is a container of bundles, and bundles are containers of bitstreams. Containers usually have ADD/REMOVE/READ/WRITE policies, while bitstreams only have READ/WRITE policies.",
+  "item.edit.authorizations.heading": "Con este editor puedes ver y modificar las políticas de un ítem, además de alterar las políticas de los componentes individuales del ítem: bundles y bitstreams. En resumen, un ítem es un contenedor de bundles, y los bundles son contenedores de bitstreams. Los contenedores suelen tener políticas de ADD/REMOVE/READ/WRITE, mientras que los bitstreams sólo tienen políticas de READ/WRITE.",
 
   // "item.edit.authorizations.title": "Edit item's Policies",
-  // TODO New key - Add a translation
-  "item.edit.authorizations.title": "Edit item's Policies",
+  "item.edit.authorizations.title": "Editar las políticas del ítem",
 
 
 
   // "item.badge.private": "Private",
-  // TODO New key - Add a translation
-  "item.badge.private": "Private",
+  "item.badge.private": "Privado",
 
   // "item.badge.withdrawn": "Withdrawn",
-  // TODO New key - Add a translation
-  "item.badge.withdrawn": "Withdrawn",
+  "item.badge.withdrawn": "Retirado",
 
 
 
   // "item.bitstreams.upload.bundle": "Bundle",
-  // TODO New key - Add a translation
   "item.bitstreams.upload.bundle": "Bundle",
 
   // "item.bitstreams.upload.bundle.placeholder": "Select a bundle",
-  // TODO New key - Add a translation
-  "item.bitstreams.upload.bundle.placeholder": "Select a bundle",
+  "item.bitstreams.upload.bundle.placeholder": "Seleccione un bundle",
 
   // "item.bitstreams.upload.bundle.new": "Create bundle",
-  // TODO New key - Add a translation
-  "item.bitstreams.upload.bundle.new": "Create bundle",
+  "item.bitstreams.upload.bundle.new": "Crear bundle",
 
   // "item.bitstreams.upload.bundles.empty": "This item doesn\'t contain any bundles to upload a bitstream to.",
-  // TODO New key - Add a translation
-  "item.bitstreams.upload.bundles.empty": "This item doesn\'t contain any bundles to upload a bitstream to.",
-
+  "item.bitstreams.upload.bundles.empty": "Este ítem no contiene ningún bundle al que cargar un bitstream.",
+  
   // "item.bitstreams.upload.cancel": "Cancel",
-  // TODO New key - Add a translation
-  "item.bitstreams.upload.cancel": "Cancel",
-
+  "item.bitstreams.upload.cancel": "Cancelar",
+  
   // "item.bitstreams.upload.drop-message": "Drop a file to upload",
-  // TODO New key - Add a translation
-  "item.bitstreams.upload.drop-message": "Drop a file to upload",
-
-  // "item.bitstreams.upload.item": "Item: ",
-  // TODO New key - Add a translation
-  "item.bitstreams.upload.item": "Item: ",
-
+  "item.bitstreams.upload.drop-message": "Suelte un archivo para cargarlo",
+  
+  // "item.bitstreams.upload.item": "Item:  ",
+  "item.bitstreams.upload.item": "Item:  ",
+  
   // "item.bitstreams.upload.notifications.bundle.created.content": "Successfully created new bundle.",
-  // TODO New key - Add a translation
-  "item.bitstreams.upload.notifications.bundle.created.content": "Successfully created new bundle.",
+  "item.bitstreams.upload.notifications.bundle.created.content": "Se ha creado con éxito un nuevo bundle.",
 
   // "item.bitstreams.upload.notifications.bundle.created.title": "Created bundle",
-  // TODO New key - Add a translation
-  "item.bitstreams.upload.notifications.bundle.created.title": "Created bundle",
+  "item.bitstreams.upload.notifications.bundle.created.title": "Bundle creado",
 
   // "item.bitstreams.upload.notifications.upload.failed": "Upload failed. Please verify the content before retrying.",
-  // TODO New key - Add a translation
-  "item.bitstreams.upload.notifications.upload.failed": "Upload failed. Please verify the content before retrying.",
+  "item.bitstreams.upload.notifications.upload.failed": "Fallo en la carga. Por favor, verifique el contenido antes de reintentar.",
 
   // "item.bitstreams.upload.title": "Upload bitstream",
-  // TODO New key - Add a translation
-  "item.bitstreams.upload.title": "Upload bitstream",
+  "item.bitstreams.upload.title": "Cargar bitstream",
 
 
 
   // "item.edit.bitstreams.bundle.edit.buttons.upload": "Upload",
-  // TODO New key - Add a translation
-  "item.edit.bitstreams.bundle.edit.buttons.upload": "Upload",
+  "item.edit.bitstreams.bundle.edit.buttons.upload": "Cargar",
 
   // "item.edit.bitstreams.bundle.displaying": "Currently displaying {{ amount }} bitstreams of {{ total }}.",
-  // TODO New key - Add a translation
-  "item.edit.bitstreams.bundle.displaying": "Currently displaying {{ amount }} bitstreams of {{ total }}.",
+  "item.edit.bitstreams.bundle.displaying": "Actualmente se muestran {{ amount }} bitstreams de {{ total }}.",
 
   // "item.edit.bitstreams.bundle.load.all": "Load all ({{ total }})",
-  // TODO New key - Add a translation
-  "item.edit.bitstreams.bundle.load.all": "Load all ({{ total }})",
+  "item.edit.bitstreams.bundle.load.all": "Cargar todo ({{ total }})",
 
   // "item.edit.bitstreams.bundle.load.more": "Load more",
-  // TODO New key - Add a translation
-  "item.edit.bitstreams.bundle.load.more": "Load more",
+  "item.edit.bitstreams.bundle.load.more": "Cargar más",
 
   // "item.edit.bitstreams.bundle.name": "BUNDLE: {{ name }}",
-  // TODO New key - Add a translation
   "item.edit.bitstreams.bundle.name": "BUNDLE: {{ name }}",
 
   // "item.edit.bitstreams.discard-button": "Discard",
-  // TODO New key - Add a translation
-  "item.edit.bitstreams.discard-button": "Discard",
+  "item.edit.bitstreams.discard-button": "Descartar",
 
   // "item.edit.bitstreams.edit.buttons.download": "Download",
-  // TODO New key - Add a translation
-  "item.edit.bitstreams.edit.buttons.download": "Download",
+  "item.edit.bitstreams.edit.buttons.download": "Descargar",
 
   // "item.edit.bitstreams.edit.buttons.drag": "Drag",
-  // TODO New key - Add a translation
-  "item.edit.bitstreams.edit.buttons.drag": "Drag",
+  "item.edit.bitstreams.edit.buttons.drag": "Arrastrar",
 
   // "item.edit.bitstreams.edit.buttons.edit": "Edit",
-  // TODO New key - Add a translation
-  "item.edit.bitstreams.edit.buttons.edit": "Edit",
+  "item.edit.bitstreams.edit.buttons.edit": "Editar",
 
   // "item.edit.bitstreams.edit.buttons.remove": "Remove",
-  // TODO New key - Add a translation
-  "item.edit.bitstreams.edit.buttons.remove": "Remove",
+  "item.edit.bitstreams.edit.buttons.remove": "Quitar",
 
   // "item.edit.bitstreams.edit.buttons.undo": "Undo changes",
-  // TODO New key - Add a translation
-  "item.edit.bitstreams.edit.buttons.undo": "Undo changes",
+  "item.edit.bitstreams.edit.buttons.undo": "Deshacer cambios",
 
   // "item.edit.bitstreams.empty": "This item doesn't contain any bitstreams. Click the upload button to create one.",
-  // TODO New key - Add a translation
-  "item.edit.bitstreams.empty": "This item doesn't contain any bitstreams. Click the upload button to create one.",
+  "item.edit.bitstreams.empty": "Este ítem no contiene ningún bitstream. Haga clic en el botón de carga para crear uno.",
 
   // "item.edit.bitstreams.headers.actions": "Actions",
-  // TODO New key - Add a translation
-  "item.edit.bitstreams.headers.actions": "Actions",
+  "item.edit.bitstreams.headers.actions": "Acciones",
 
   // "item.edit.bitstreams.headers.bundle": "Bundle",
-  // TODO New key - Add a translation
   "item.edit.bitstreams.headers.bundle": "Bundle",
 
   // "item.edit.bitstreams.headers.description": "Description",
-  // TODO New key - Add a translation
-  "item.edit.bitstreams.headers.description": "Description",
+  "item.edit.bitstreams.headers.description": "Descripción",
 
   // "item.edit.bitstreams.headers.format": "Format",
-  // TODO New key - Add a translation
-  "item.edit.bitstreams.headers.format": "Format",
+  "item.edit.bitstreams.headers.format": "Formato",
 
   // "item.edit.bitstreams.headers.name": "Name",
-  // TODO New key - Add a translation
-  "item.edit.bitstreams.headers.name": "Name",
+  "item.edit.bitstreams.headers.name": "Nombre",
 
   // "item.edit.bitstreams.notifications.discarded.content": "Your changes were discarded. To reinstate your changes click the 'Undo' button",
-  // TODO New key - Add a translation
-  "item.edit.bitstreams.notifications.discarded.content": "Your changes were discarded. To reinstate your changes click the 'Undo' button",
+  "item.edit.bitstreams.notifications.discarded.content": "Sus cambios fueron descartados. Para restablecer los cambios, haga clic en el botón "Deshacer".",
 
   // "item.edit.bitstreams.notifications.discarded.title": "Changes discarded",
-  // TODO New key - Add a translation
-  "item.edit.bitstreams.notifications.discarded.title": "Changes discarded",
+  "item.edit.bitstreams.notifications.discarded.title": "Cambios descartados",
 
   // "item.edit.bitstreams.notifications.move.failed.title": "Error moving bitstreams",
-  // TODO New key - Add a translation
-  "item.edit.bitstreams.notifications.move.failed.title": "Error moving bitstreams",
+  "item.edit.bitstreams.notifications.move.failed.title": "Error al mover bitstreams",
 
   // "item.edit.bitstreams.notifications.move.saved.content": "Your move changes to this item's bitstreams and bundles have been saved.",
-  // TODO New key - Add a translation
-  "item.edit.bitstreams.notifications.move.saved.content": "Your move changes to this item's bitstreams and bundles have been saved.",
+  "item.edit.bitstreams.notifications.move.saved.content": "Se han guardado los cambios realizados en los bitstreams y bundles de este ítem.",
 
   // "item.edit.bitstreams.notifications.move.saved.title": "Move changes saved",
-  // TODO New key - Add a translation
-  "item.edit.bitstreams.notifications.move.saved.title": "Move changes saved",
+  "item.edit.bitstreams.notifications.move.saved.title": "Cambios guardados",
 
   // "item.edit.bitstreams.notifications.outdated.content": "The item you're currently working on has been changed by another user. Your current changes are discarded to prevent conflicts",
-  // TODO New key - Add a translation
-  "item.edit.bitstreams.notifications.outdated.content": "The item you're currently working on has been changed by another user. Your current changes are discarded to prevent conflicts",
+  "item.edit.bitstreams.notifications.outdated.content": "El ítem en el que está trabajando actualmente ha sido modificado por otro usuario. Sus cambios actuales se descartan para evitar conflictos",
 
   // "item.edit.bitstreams.notifications.outdated.title": "Changes outdated",
-  // TODO New key - Add a translation
-  "item.edit.bitstreams.notifications.outdated.title": "Changes outdated",
+  "item.edit.bitstreams.notifications.outdated.title": "Cambios obsoletos",
 
   // "item.edit.bitstreams.notifications.remove.failed.title": "Error deleting bitstream",
-  // TODO New key - Add a translation
-  "item.edit.bitstreams.notifications.remove.failed.title": "Error deleting bitstream",
+  "item.edit.bitstreams.notifications.remove.failed.title": "Error al borrar bitstream",
 
   // "item.edit.bitstreams.notifications.remove.saved.content": "Your removal changes to this item's bitstreams have been saved.",
-  // TODO New key - Add a translation
-  "item.edit.bitstreams.notifications.remove.saved.content": "Your removal changes to this item's bitstreams have been saved.",
+  "item.edit.bitstreams.notifications.remove.saved.content": "Los cambios de eliminación de los bitstreams de este ítem han sido guardados.",
 
   // "item.edit.bitstreams.notifications.remove.saved.title": "Removal changes saved",
-  // TODO New key - Add a translation
-  "item.edit.bitstreams.notifications.remove.saved.title": "Removal changes saved",
+  "item.edit.bitstreams.notifications.remove.saved.title": "Cambios de eliminación guardados",
 
   // "item.edit.bitstreams.reinstate-button": "Undo",
-  // TODO New key - Add a translation
-  "item.edit.bitstreams.reinstate-button": "Undo",
+  "item.edit.bitstreams.reinstate-button": "Deshacer",
 
   // "item.edit.bitstreams.save-button": "Save",
-  // TODO New key - Add a translation
-  "item.edit.bitstreams.save-button": "Save",
+  "item.edit.bitstreams.save-button": "Guardar",
 
   // "item.edit.bitstreams.upload-button": "Upload",
-  // TODO New key - Add a translation
-  "item.edit.bitstreams.upload-button": "Upload",
+  "item.edit.bitstreams.upload-button": "Cargar",
 
 
 
@@ -3600,11 +3480,10 @@
   "item.edit.delete.success": "El ítem ha sido eliminado",
 
   // "item.edit.head": "Edit Item",
-  "item.edit.head": "Editar el ítem",
+  "item.edit.head": "Editar ítem",
 
   // "item.edit.breadcrumbs": "Edit Item",
-  // TODO New key - Add a translation
-  "item.edit.breadcrumbs": "Edit Item",
+  "item.edit.breadcrumbs": "Editar Item",
 
 
 
@@ -3618,7 +3497,7 @@
   "item.edit.item-mapper.cancel": "Cancelar",
 
   // "item.edit.item-mapper.description": "This is the item mapper tool that allows administrators to map this item to other collections. You can search for collections and map them, or browse the list of collections the item is currently mapped to.",
-  "item.edit.item-mapper.description": "Esta es la herramienta de asignación de ítemes que permite a los administradores asignar este ítem a otras colecciones. Puede buscar colecciones y asignarlas, o navegar la lista de colecciones a las que está asignado actualmente el ítem",
+  "item.edit.item-mapper.description": "Esta es la herramienta de asignación de ítems que permite a los administradores asignar este ítem a otras colecciones. Puede buscar colecciones y asignarlas, o navegar la lista de colecciones a las que está asignado actualmente el ítem",
 
   // "item.edit.item-mapper.head": "Item Mapper - Map Item to Collections",
   "item.edit.item-mapper.head": "Asignación de ítemes - Asignación del ítem a las Colecciones",
@@ -3648,7 +3527,7 @@
   "item.edit.item-mapper.notifications.remove.error.head": "Eliminación de errores de mapeo",
 
   // "item.edit.item-mapper.notifications.remove.success.content": "Successfully removed mapping of item to {{amount}} collections.",
-  "item.edit.item-mapper.notifications.remove.success.content": "Se eliminó con éxito la asignación del elemento a {{amount}} colecciones.",
+  "item.edit.item-mapper.notifications.remove.success.content": "Se eliminó con éxito la asignación del ítem a {{amount}} colecciones.",
 
   // "item.edit.item-mapper.notifications.remove.success.head": "Removal of mapping completed",
   "item.edit.item-mapper.notifications.remove.success.head": "Eliminación completa de asignación",
@@ -3677,11 +3556,10 @@
   "item.edit.metadata.edit.buttons.undo": "Deshacer cambios",
 
   // "item.edit.metadata.edit.buttons.unedit": "Stop editing",
-  "item.edit.metadata.edit.buttons.unedit": "Parar la edición",
+  "item.edit.metadata.edit.buttons.unedit": "Parar edición",
 
   // "item.edit.metadata.empty": "The item currently doesn't contain any metadata. Click Add to start adding a metadata value.",
-  // TODO New key - Add a translation
-  "item.edit.metadata.empty": "The item currently doesn't contain any metadata. Click Add to start adding a metadata value.",
+  "item.edit.metadata.empty": "El ítem actualmente no contiene ningún metadato. Haga clic en Añadir para empezar a añadir los metadatos..",
 
   // "item.edit.metadata.headers.edit": "Edit",
   "item.edit.metadata.headers.edit": "Editar",
@@ -3690,7 +3568,7 @@
   "item.edit.metadata.headers.field": "Campo",
 
   // "item.edit.metadata.headers.language": "Lang",
-  "item.edit.metadata.headers.language": "Lenguaje",
+  "item.edit.metadata.headers.language": "Idioma",
 
   // "item.edit.metadata.headers.value": "Value",
   "item.edit.metadata.headers.value": "Valor",
@@ -3705,8 +3583,7 @@
   "item.edit.metadata.notifications.discarded.title": "Cambio descartado",
 
   // "item.edit.metadata.notifications.error.title": "An error occurred",
-  // TODO New key - Add a translation
-  "item.edit.metadata.notifications.error.title": "An error occurred",
+  "item.edit.metadata.notifications.error.title": "Se ha producido un error",
 
   // "item.edit.metadata.notifications.invalid.content": "Your changes were not saved. Please make sure all fields are valid before you save.",
   "item.edit.metadata.notifications.invalid.content": "No se guardaron los cambios. Asegúrese de que todos los campos sean válidos antes de guardar.",
@@ -3738,7 +3615,7 @@
   "item.edit.modify.overview.field": "Campo",
 
   // "item.edit.modify.overview.language": "Language",
-  "item.edit.modify.overview.language": "Lenguaje",
+  "item.edit.modify.overview.language": "Idioma",
 
   // "item.edit.modify.overview.value": "Value",
   "item.edit.modify.overview.value": "Valor",
@@ -3816,7 +3693,7 @@
   "item.edit.public.header": "Hacer público el ítem: {{ id }}",
 
   // "item.edit.public.success": "The item is now public",
-  "item.edit.public.success": "Ahora está público el ítem",
+  "item.edit.public.success": "El ítem es ahora público",
 
 
 
@@ -3844,8 +3721,8 @@
   "item.edit.relationships.discard-button": "Descartar",
 
   // "item.edit.relationships.edit.buttons.add": "Add",
-  // TODO New key - Add a translation
-  "item.edit.relationships.edit.buttons.add": "Add",
+  
+  "item.edit.relationships.edit.buttons.add": "Añadir",
 
   // "item.edit.relationships.edit.buttons.remove": "Remove",
   "item.edit.relationships.edit.buttons.remove": "Remover",
@@ -3854,8 +3731,8 @@
   "item.edit.relationships.edit.buttons.undo": "Deshacer cambios",
 
   // "item.edit.relationships.no-relationships": "No relationships",
-  // TODO New key - Add a translation
-  "item.edit.relationships.no-relationships": "No relationships",
+  
+  "item.edit.relationships.no-relationships": "No hay relaciones",
 
   // "item.edit.relationships.notifications.discarded.content": "Your changes were discarded. To reinstate your changes click the 'Undo' button",
   "item.edit.relationships.notifications.discarded.content": "Los cambios fueron descartados. Para restablecer sus cambios, haga clic en el botón 'Deshacer'",
@@ -3864,7 +3741,6 @@
   "item.edit.relationships.notifications.discarded.title": "Cambios descartados",
 
   // "item.edit.relationships.notifications.failed.title": "Error editing relationships",
-  // TODO Source message changed - Revise the translation
   "item.edit.relationships.notifications.failed.title": "Error al eliminar la relación",
 
   // "item.edit.relationships.notifications.outdated.content": "The item you're currently working on has been changed by another user. Your current changes are discarded to prevent conflicts",
@@ -3886,43 +3762,41 @@
   "item.edit.relationships.save-button": "Guardar",
 
   // "item.edit.relationships.no-entity-type": "Add 'relationship.type' metadata to enable relationships for this item",
-  // TODO New key - Add a translation
   "item.edit.relationships.no-entity-type": "Add 'relationship.type' metadata to enable relationships for this item",
 
 
 
   // "item.edit.tabs.bitstreams.head": "Bitstreams",
-  // TODO Source message changed - Revise the translation
-  "item.edit.tabs.bitstreams.head": "Archivos del ítem",
+  "item.edit.tabs.bitstreams.head": "Bitstreams",
 
   // "item.edit.tabs.bitstreams.title": "Item Edit - Bitstreams",
   "item.edit.tabs.bitstreams.title": "Editar ítem - Archivos",
 
   // "item.edit.tabs.curate.head": "Curate",
-  "item.edit.tabs.curate.head": "Curar",
+  "item.edit.tabs.curate.head": "Conservar",
 
   // "item.edit.tabs.curate.title": "Item Edit - Curate",
-  "item.edit.tabs.curate.title": "Editar - Curar Item",
+  "item.edit.tabs.curate.title": "Editar - Conservar Item",
 
   // "item.edit.tabs.metadata.head": "Metadata",
-  // TODO Source message changed - Revise the translation
-  "item.edit.tabs.metadata.head": "Metadatos del ítem",
+  
+  "item.edit.tabs.metadata.head": "Metadatos",
 
   // "item.edit.tabs.metadata.title": "Item Edit -  Metadata",
   "item.edit.tabs.metadata.title": "Editar ítem  -  Metadatos",
 
   // "item.edit.tabs.relationships.head": "Relationships",
-  // TODO Source message changed - Revise the translation
-  "item.edit.tabs.relationships.head": "Relacionador de ítem",
+  
+  "item.edit.tabs.relationships.head": "Relaciones",
 
   // "item.edit.tabs.relationships.title": "Item Edit - Relationships",
-  "item.edit.tabs.relationships.title": "Editar ítem - Relacionador",
+  "item.edit.tabs.relationships.title": "Editar ítem - Relaciones",
 
   // "item.edit.tabs.status.buttons.authorizations.button": "Authorizations...",
   "item.edit.tabs.status.buttons.authorizations.button": "Autorizaciones...",
 
   // "item.edit.tabs.status.buttons.authorizations.label": "Edit item's authorization policies",
-  "item.edit.tabs.status.buttons.authorizations.label": "Editar políticas de autorización de ítemes",
+  "item.edit.tabs.status.buttons.authorizations.label": "Editar políticas de autorización del ítem",
 
   // "item.edit.tabs.status.buttons.delete.button": "Permanently delete",
   "item.edit.tabs.status.buttons.delete.button": "Eliminar permanentemente",
@@ -3943,22 +3817,22 @@
   "item.edit.tabs.status.buttons.move.label": "Mover el ítem a otra colección",
 
   // "item.edit.tabs.status.buttons.private.button": "Make it private...",
-  "item.edit.tabs.status.buttons.private.button": "Hacerle privado...",
+  "item.edit.tabs.status.buttons.private.button": "Hacer privado...",
 
   // "item.edit.tabs.status.buttons.private.label": "Make item private",
-  "item.edit.tabs.status.buttons.private.label": "Hacer privado el ítem",
+  "item.edit.tabs.status.buttons.private.label": "Hacer el ítem privado",
 
   // "item.edit.tabs.status.buttons.public.button": "Make it public...",
-  "item.edit.tabs.status.buttons.public.button": "Hacerle público...",
+  "item.edit.tabs.status.buttons.public.button": "Hacer público...",
 
   // "item.edit.tabs.status.buttons.public.label": "Make item public",
-  "item.edit.tabs.status.buttons.public.label": "Hacer público el ítem",
+  "item.edit.tabs.status.buttons.public.label": "Hacer el ítem público",
 
   // "item.edit.tabs.status.buttons.reinstate.button": "Reinstate...",
-  "item.edit.tabs.status.buttons.reinstate.button": "Reintegrar...",
+  "item.edit.tabs.status.buttons.reinstate.button": "Restablecer...",
 
   // "item.edit.tabs.status.buttons.reinstate.label": "Reinstate item into the repository",
-  "item.edit.tabs.status.buttons.reinstate.label": "Reintegrar el ítem al repositorio",
+  "item.edit.tabs.status.buttons.reinstate.label": "Restablecer el ítem al repositorio",
 
   // "item.edit.tabs.status.buttons.withdraw.button": "Withdraw...",
   "item.edit.tabs.status.buttons.withdraw.button": "Retirar...",
@@ -3967,17 +3841,17 @@
   "item.edit.tabs.status.buttons.withdraw.label": "Retirar el ítem del repositorio",
 
   // "item.edit.tabs.status.description": "Welcome to the item management page. From here you can withdraw, reinstate, move or delete the item. You may also update or add new metadata / bitstreams on the other tabs.",
-  "item.edit.tabs.status.description": "Bienvenido a la página de gestión de ítemes. Desde aquí puede retirar, restablecer, mover o eliminar el ítem. También puede actualizar o agregar nuevos metadatos / archivos en las otras pestañas.",
+  "item.edit.tabs.status.description": "Bienvenido a la página de gestión del ítem. Desde aquí puede retirar, restablecer, mover o eliminar el ítem. También puede actualizar o agregar nuevos metadatos / archivos en las otras pestañas.",
 
   // "item.edit.tabs.status.head": "Status",
-  // TODO Source message changed - Revise the translation
-  "item.edit.tabs.status.head": "Estado del ítem",
+  
+  "item.edit.tabs.status.head": "Estado",
 
   // "item.edit.tabs.status.labels.handle": "Handle",
   "item.edit.tabs.status.labels.handle": "Handle",
 
   // "item.edit.tabs.status.labels.id": "Item Internal ID",
-  "item.edit.tabs.status.labels.id": "ID interno del ítem",
+  "item.edit.tabs.status.labels.id": "ID interno ítem",
 
   // "item.edit.tabs.status.labels.itemPage": "Item Page",
   "item.edit.tabs.status.labels.itemPage": "Página del ítem",
@@ -3986,19 +3860,16 @@
   "item.edit.tabs.status.labels.lastModified": "Última modificación",
 
   // "item.edit.tabs.status.title": "Item Edit -  Status",
-  "item.edit.tabs.status.title": "Editar ítem - Estado",
+  "item.edit.tabs.status.title": "Editar Item - Estado",
 
   // "item.edit.tabs.versionhistory.head": "Version History",
-  // TODO New key - Add a translation
-  "item.edit.tabs.versionhistory.head": "Version History",
+  "item.edit.tabs.versionhistory.head": "Historial de versiones",
 
   // "item.edit.tabs.versionhistory.title": "Item Edit - Version History",
-  // TODO New key - Add a translation
-  "item.edit.tabs.versionhistory.title": "Item Edit - Version History",
+  "item.edit.tabs.versionhistory.title": "Editar Item - Historial de versiones",
 
   // "item.edit.tabs.versionhistory.under-construction": "Editing or adding new versions is not yet possible in this user interface.",
-  // TODO New key - Add a translation
-  "item.edit.tabs.versionhistory.under-construction": "Editing or adding new versions is not yet possible in this user interface.",
+  "item.edit.tabs.versionhistory.under-construction": "La edición o la incorporación de nuevas versiones aún no es posible en esta interfaz de usuario.",
 
   // "item.edit.tabs.view.head": "View Item",
   "item.edit.tabs.view.head": "Ver ítem",
