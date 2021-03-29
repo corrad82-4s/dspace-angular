@@ -2000,120 +2000,94 @@
   "community.edit.tabs.roles.head": "Assign Roles",
 
   // "community.edit.tabs.roles.title": "Community Edit - Roles",
-  // TODO New key - Add a translation
-  "community.edit.tabs.roles.title": "Community Edit - Roles",
+  "community.edit.tabs.roles.title": "Editar Comunidad - Roles",
 
   // "community.edit.tabs.authorizations.head": "Authorizations",
-  // TODO New key - Add a translation
-  "community.edit.tabs.authorizations.head": "Authorizations",
+  "community.edit.tabs.authorizations.head": "Autorizaciones",
 
   // "community.edit.tabs.authorizations.title": "Community Edit - Authorizations",
-  // TODO New key - Add a translation
-  "community.edit.tabs.authorizations.title": "Community Edit - Authorizations",
+  "community.edit.tabs.authorizations.title": "Editar Comunidad - Autorizaciones",
 
 
 
   // "community.listelement.badge": "Community",
-  // TODO New key - Add a translation
-  "community.listelement.badge": "Community",
+  "community.listelement.badge": "Comunidad",
 
 
 
   // "comcol-role.edit.no-group": "None",
-  // TODO New key - Add a translation
-  "comcol-role.edit.no-group": "None",
+  "comcol-role.edit.no-group": "Ninguno",
 
   // "comcol-role.edit.create": "Create",
-  // TODO New key - Add a translation
-  "comcol-role.edit.create": "Create",
+  "comcol-role.edit.create": "Crear",
 
   // "comcol-role.edit.restrict": "Restrict",
-  // TODO New key - Add a translation
-  "comcol-role.edit.restrict": "Restrict",
+  "comcol-role.edit.restrict": "Restringir",
 
   // "comcol-role.edit.delete": "Delete",
-  // TODO New key - Add a translation
-  "comcol-role.edit.delete": "Delete",
+  "comcol-role.edit.delete": "Eliminar",
 
 
   // "comcol-role.edit.community-admin.name": "Administrators",
-  // TODO New key - Add a translation
-  "comcol-role.edit.community-admin.name": "Administrators",
+  "comcol-role.edit.community-admin.name": "Administradores",
 
   // "comcol-role.edit.collection-admin.name": "Administrators",
-  // TODO New key - Add a translation
-  "comcol-role.edit.collection-admin.name": "Administrators",
+  "comcol-role.edit.collection-admin.name": "Administradores",
 
 
   // "comcol-role.edit.community-admin.description": "Community administrators can create sub-communities or collections, and manage or assign management for those sub-communities or collections. In addition, they decide who can submit items to any sub-collections, edit item metadata (after submission), and add (map) existing items from other collections (subject to authorization).",
-  // TODO New key - Add a translation
-  "comcol-role.edit.community-admin.description": "Community administrators can create sub-communities or collections, and manage or assign management for those sub-communities or collections. In addition, they decide who can submit items to any sub-collections, edit item metadata (after submission), and add (map) existing items from other collections (subject to authorization).",
+  "comcol-role.edit.community-admin.description": "Los administradores de la comunidad pueden crear subcomunidades o colecciones, y gestionar o asignar la gestión de esas subcomunidades o colecciones. Además, deciden quién puede enviar ítems a cualquier subcolección, editar los metadatos de los ítems (después de enviarlos), y añadir (asignar) ítems existentes de otras colecciones (sujeto a autorización).",
 
   // "comcol-role.edit.collection-admin.description": "Collection administrators decide who can submit items to the collection, edit item metadata (after submission), and add (map) existing items from other collections to this collection (subject to authorization for that collection).",
-  // TODO New key - Add a translation
-  "comcol-role.edit.collection-admin.description": "Collection administrators decide who can submit items to the collection, edit item metadata (after submission), and add (map) existing items from other collections to this collection (subject to authorization for that collection).",
+  "comcol-role.edit.collection-admin.description": "Los administradores de la colección deciden quién puede enviar ítems a la colección, editar los metadatos de los ítems (después de enviarlos) y añadir (asignar) ítems existentes de otras colecciones a esta colección (sujeto a la autorización para dicha colección).",
 
 
   // "comcol-role.edit.submitters.name": "Submitters",
-  // TODO New key - Add a translation
-  "comcol-role.edit.submitters.name": "Submitters",
+  "comcol-role.edit.submitters.name": "Remitentes",
 
   // "comcol-role.edit.submitters.description": "The E-People and Groups that have permission to submit new items to this collection.",
-  // TODO New key - Add a translation
-  "comcol-role.edit.submitters.description": "The E-People and Groups that have permission to submit new items to this collection.",
+  "comcol-role.edit.submitters.description": "Usuarios y Grupos que tienen permiso para enviar nuevos ítems a esta colección.",
 
 
   // "comcol-role.edit.item_read.name": "Default item read access",
-  // TODO New key - Add a translation
-  "comcol-role.edit.item_read.name": "Default item read access",
+  "comcol-role.edit.item_read.name": "Acceso de lectura del ítem por defecto",
 
   // "comcol-role.edit.item_read.description": "E-People and Groups that can read new items submitted to this collection. Changes to this role are not retroactive. Existing items in the system will still be viewable by those who had read access at the time of their addition.",
-  // TODO New key - Add a translation
-  "comcol-role.edit.item_read.description": "E-People and Groups that can read new items submitted to this collection. Changes to this role are not retroactive. Existing items in the system will still be viewable by those who had read access at the time of their addition.",
+  "comcol-role.edit.item_read.description": "Usuarios y Grupos que pueden leer los nuevos ítems enviados a esta colección. Los cambios en este rol no son retroactivos. Los ítems existentes en el sistema seguirán siendo visibles para aquellos que tenían acceso de lectura en el momento de su incorporación.",
 
   // "comcol-role.edit.item_read.anonymous-group": "Default read for incoming items is currently set to Anonymous.",
-  // TODO New key - Add a translation
-  "comcol-role.edit.item_read.anonymous-group": "Default read for incoming items is currently set to Anonymous.",
+  "comcol-role.edit.item_read.anonymous-group": "La lectura por defecto de los ítems recibidos está actualmente fijada en Anónimo.",
 
 
   // "comcol-role.edit.bitstream_read.name": "Default bitstream read access",
-  // TODO New key - Add a translation
-  "comcol-role.edit.bitstream_read.name": "Default bitstream read access",
+  "comcol-role.edit.bitstream_read.name": "Acceso por defecto de lectura del bitstream",
 
   // "comcol-role.edit.bitstream_read.description": "Community administrators can create sub-communities or collections, and manage or assign management for those sub-communities or collections. In addition, they decide who can submit items to any sub-collections, edit item metadata (after submission), and add (map) existing items from other collections (subject to authorization).",
-  // TODO New key - Add a translation
-  "comcol-role.edit.bitstream_read.description": "Community administrators can create sub-communities or collections, and manage or assign management for those sub-communities or collections. In addition, they decide who can submit items to any sub-collections, edit item metadata (after submission), and add (map) existing items from other collections (subject to authorization).",
+  "comcol-role.edit.bitstream_read.description": "Los administradores de la comunidad pueden crear subcomunidades o colecciones, y gestionar o asignar la gestión de esas subcomunidades o colecciones. Además, deciden quién puede enviar ítems a cualquier subcolección, editar los metadatos de los ítems (después de enviarlos), y añadir ( asignar) ítems existentes de otras colecciones (sujeto a autorización).",
 
   // "comcol-role.edit.bitstream_read.anonymous-group": "Default read for incoming bitstreams is currently set to Anonymous.",
-  // TODO New key - Add a translation
-  "comcol-role.edit.bitstream_read.anonymous-group": "Default read for incoming bitstreams is currently set to Anonymous.",
+  "comcol-role.edit.bitstream_read.anonymous-group": "La lectura por defecto de los bitstreams recibidos está fijada actualmente en Anónimo.",
 
 
   // "comcol-role.edit.editor.name": "Editors",
-  // TODO New key - Add a translation
-  "comcol-role.edit.editor.name": "Editors",
+  "comcol-role.edit.editor.name": "Editores",
 
   // "comcol-role.edit.editor.description": "Editors are able to edit the metadata of incoming submissions, and then accept or reject them.",
-  // TODO New key - Add a translation
-  "comcol-role.edit.editor.description": "Editors are able to edit the metadata of incoming submissions, and then accept or reject them.",
+  "comcol-role.edit.editor.description": "Los editores pueden editar los metadatos de los envíos entrantes, y luego aceptarlos o rechazarlos.",
 
 
   // "comcol-role.edit.finaleditor.name": "Final editors",
-  // TODO New key - Add a translation
-  "comcol-role.edit.finaleditor.name": "Final editors",
+  "comcol-role.edit.finaleditor.name": "Editores finales",
 
   // "comcol-role.edit.finaleditor.description": "Final editors are able to edit the metadata of incoming submissions, but will not be able to reject them.",
-  // TODO New key - Add a translation
-  "comcol-role.edit.finaleditor.description": "Final editors are able to edit the metadata of incoming submissions, but will not be able to reject them.",
+  "comcol-role.edit.finaleditor.description": "Los editores finales pueden editar los metadatos de los envíos entrantes, pero no podrán rechazarlos.",
 
 
   // "comcol-role.edit.reviewer.name": "Reviewers",
-  // TODO New key - Add a translation
-  "comcol-role.edit.reviewer.name": "Reviewers",
+  "comcol-role.edit.reviewer.name": "Revisores",
 
   // "comcol-role.edit.reviewer.description": "Reviewers are able to accept or reject incoming submissions. However, they are not able to edit the submission's metadata.",
-  // TODO New key - Add a translation
-  "comcol-role.edit.reviewer.description": "Reviewers are able to accept or reject incoming submissions. However, they are not able to edit the submission's metadata.",
+  "comcol-role.edit.reviewer.description": "Los revisores pueden aceptar o rechazar los envíos entrantes. Sin embargo, no pueden editar los metadatos del envío.",
 
 
 
@@ -2136,8 +2110,7 @@
   "community.form.title": "Nombre",
 
   // "community.page.edit": "Edit this community",
-  // TODO New key - Add a translation
-  "community.page.edit": "Edit this community",
+  "community.page.edit": "Editar esta comunidad",
 
   // "community.page.handle": "Permanent URI for this community",
   "community.page.handle": "URI permanente para esta comunidad",
@@ -2157,297 +2130,228 @@
   // "community.sub-community-list.head": "Communities of this Community",
   "community.sub-community-list.head": "Comunidades de esta Comunidad",
 
-  // "context-menu.actions": "Actions",
-  // TODO New key - Add a translation
-  "context-menu.actions": "Actions",
+  // "context-menu.actions": "Actions", 
+  "context-menu.actions": "Acciones",
 
   // "context-menu.actions.add-cv-patent.btn": "Add patent",
-  // TODO New key - Add a translation
-  "context-menu.actions.add-cv-patent.btn": "Add patent",
+  "context-menu.actions.add-cv-patent.btn": "Añadir patente",
 
   // "context-menu.actions.add-cv-project.btn": "Add project",
-  // TODO New key - Add a translation
-  "context-menu.actions.add-cv-project.btn": "Add project",
+  "context-menu.actions.add-cv-project.btn": "Añadir proyecto",
 
   // "context-menu.actions.add-cv-publication.btn": "Add publication",
-  // TODO New key - Add a translation
-  "context-menu.actions.add-cv-publication.btn": "Add publication",
+  "context-menu.actions.add-cv-publication.btn": "Añadir publicación",
 
   // "context-menu.actions.audit-item.btn": "Audit",
-  // TODO New key - Add a translation
-  "context-menu.actions.audit-item.btn": "Audit",
+  "context-menu.actions.audit-item.btn": "Auditoría",
 
   // "context-menu.actions.bulk-import.btn": "Import items into collection",
-  // TODO New key - Add a translation
-  "context-menu.actions.bulk-import.btn": "Import items into collection",
+  "context-menu.actions.bulk-import.btn": "Importar ítems a la colección",
 
   // "context-menu.actions.claim.btn": "Claim this profile",
-  // TODO New key - Add a translation
-  "context-menu.actions.claim.btn": "Claim this profile",
+  "context-menu.actions.claim.btn": "Reclamar este perfil",
 
   // "context-menu.actions.export-item.btn": "Export",
-  // TODO New key - Add a translation
-  "context-menu.actions.export-item.btn": "Export",
+  "context-menu.actions.export-item.btn": "Exportar",
 
   // "context-menu.actions.label": "Options",
-  // TODO New key - Add a translation
-  "context-menu.actions.label": "Options",
+  "context-menu.actions.label": "Opciones",
 
   // "context-menu.actions.edit-item.btn.AFFILIATION": "Edit work experience",
-  // TODO New key - Add a translation
-  "context-menu.actions.edit-item.btn.AFFILIATION": "Edit work experience",
+  "context-menu.actions.edit-item.btn.AFFILIATION": "Editar experiencia laboral",
 
   // "context-menu.actions.edit-item.btn.EDUCATION": "Edit education info",
-  // TODO New key - Add a translation
-  "context-menu.actions.edit-item.btn.EDUCATION": "Edit education info",
+  "context-menu.actions.edit-item.btn.EDUCATION": "Editar información sobre educación",
 
   // "context-menu.actions.edit-item.btn.QUALIFICATION": "Edit professional experience",
-  // TODO New key - Add a translation
-  "context-menu.actions.edit-item.btn.QUALIFICATION": "Edit professional experience",
+  "context-menu.actions.edit-item.btn.QUALIFICATION": "Editar experiencia profesional",
 
   // "context-menu.actions.edit-item.btn.FULL": "Edit item",
-  // TODO New key - Add a translation
-  "context-menu.actions.edit-item.btn.FULL": "Edit item",
+  "context-menu.actions.edit-item.btn.FULL": "Editar ítem",
 
   // "context-menu.actions.modify-for-profile.btn": "Modify for own profile",
-  // TODO New key - Add a translation
-  "context-menu.actions.modify-for-profile.btn": "Modify for own profile",
+  "context-menu.actions.modify-for-profile.btn": "Modificación del perfil propio",
 
   // "context-menu.actions.request-correction.btn": "Request correction",
-  // TODO New key - Add a translation
-  "context-menu.actions.request-correction.btn": "Request correction",
+  "context-menu.actions.request-correction.btn": "Solicitar corrección",
 
   // "context-menu.actions.request-correction.confirm.cancel": "Cancel",
-  // TODO New key - Add a translation
-  "context-menu.actions.request-correction.confirm.cancel": "Cancel",
+  "context-menu.actions.request-correction.confirm.cancel": "Cancelar",
 
   // "context-menu.actions.request-correction.confirm.submit": "Yes, I'm sure",
-  // TODO New key - Add a translation
-  "context-menu.actions.request-correction.confirm.submit": "Yes, I'm sure",
+  "context-menu.actions.request-correction.confirm.submit": "Sí, estoy seguro",
 
   // "context-menu.actions.request-correction.error.403": "A request for correction has already been sent, impossible to proceed with the operation.",
-  // TODO New key - Add a translation
-  "context-menu.actions.request-correction.error.403": "A request for correction has already been sent, impossible to proceed with the operation.",
+  "context-menu.actions.request-correction.error.403": "Ya se ha enviado una solicitud de corrección, es imposible proceder con la operación.",
 
   // "context-menu.actions.request-correction.error.generic": "There was an issue when requesting a correction for the item, please try again later.",
-  // TODO New key - Add a translation
-  "context-menu.actions.request-correction.error.generic": "There was an issue when requesting a correction for the item, please try again later.",
+  "context-menu.actions.request-correction.error.generic": "Hubo un problema al solicitar una corrección para el ítem. Por favor, inténtelo más tarde.",
 
   // "context-menu.actions.request-correction.info": "Are you sure you want to proceed with this operation?",
-  // TODO New key - Add a translation
-  "context-menu.actions.request-correction.info": "Are you sure you want to proceed with this operation?",
+  "context-menu.actions.request-correction.info": "¿Está seguro de que quiere proceder con esta operación?",
 
   // "context-menu.actions.request-correction.title": "Request correction",
-  // TODO New key - Add a translation
-  "context-menu.actions.request-correction.title": "Request correction",
+  "context-menu.actions.request-correction.title": "Solicitar corrección",
 
   // "context-menu.actions.dso-page-edit.COMMUNITY.btn": "Administer",
-  // TODO New key - Add a translation
-  "context-menu.actions.dso-page-edit.COMMUNITY.btn": "Administer",
+  "context-menu.actions.dso-page-edit.COMMUNITY.btn": "Administrar",
 
   // "context-menu.actions.dso-page-edit.COLLECTION.btn": "Administer",
-  // TODO New key - Add a translation
-  "context-menu.actions.dso-page-edit.COLLECTION.btn": "Administer",
+  "context-menu.actions.dso-page-edit.COLLECTION.btn": "Administrar",
 
   // "context-menu.actions.dso-page-edit.ITEM.btn": "Administer",
-  // TODO New key - Add a translation
-  "context-menu.actions.dso-page-edit.ITEM.btn": "Administer",
+  "context-menu.actions.dso-page-edit.ITEM.btn": "Administrar",
 
   // "datafile.listelement.badge": "Data File",
-  // TODO New key - Add a translation
-  "datafile.listelement.badge": "Data File",
+  "datafile.listelement.badge": "Archivo de datos",
 
   // "datapackage.listelement.badge": "Data Package",
-  // TODO New key - Add a translation
-  "datapackage.listelement.badge": "Data Package",
+  "datapackage.listelement.badge": "Paquete de datos",
 
   // "cookies.consent.accept-all": "Accept all",
-  // TODO New key - Add a translation
-  "cookies.consent.accept-all": "Accept all",
+  "cookies.consent.accept-all": "Aceptar todo",
 
   // "cookies.consent.accept-selected": "Accept selected",
-  // TODO New key - Add a translation
-  "cookies.consent.accept-selected": "Accept selected",
+  "cookies.consent.accept-selected": "Aceptar seleccionado",
 
   // "cookies.consent.app.opt-out.description": "This app is loaded by default (but you can opt out)",
-  // TODO New key - Add a translation
-  "cookies.consent.app.opt-out.description": "This app is loaded by default (but you can opt out)",
+  "cookies.consent.app.opt-out.description": "Esta aplicación se carga por defecto (pero usted puede optar por abandonarla).",
 
   // "cookies.consent.app.opt-out.title": "(opt-out)",
-  // TODO New key - Add a translation
-  "cookies.consent.app.opt-out.title": "(opt-out)",
+  "cookies.consent.app.opt-out.title": "(Optar por abandonar)",
 
   // "cookies.consent.app.purpose": "purpose",
-  // TODO New key - Add a translation
-  "cookies.consent.app.purpose": "purpose",
+  "cookies.consent.app.purpose": "propósito",
 
   // "cookies.consent.app.required.description": "This application is always required",
-  // TODO New key - Add a translation
-  "cookies.consent.app.required.description": "This application is always required",
+  "cookies.consent.app.required.description": "Esta solicitud es siempre necesaria",
 
   // "cookies.consent.app.required.title": "(always required)",
-  // TODO New key - Add a translation
-  "cookies.consent.app.required.title": "(always required)",
+  "cookies.consent.app.required.title": "(siempre se requiere)",
 
   // "cookies.consent.update": "There were changes since your last visit, please update your consent.",
-  // TODO New key - Add a translation
-  "cookies.consent.update": "There were changes since your last visit, please update your consent.",
+  "cookies.consent.update": "Ha habido cambios desde su última visita, por favor actualice su consentimiento.",
 
   // "cookies.consent.close": "Close",
-  // TODO New key - Add a translation
-  "cookies.consent.close": "Close",
+  "cookies.consent.close": "Cerrar",
 
   // "cookies.consent.decline": "Decline",
-  // TODO New key - Add a translation
-  "cookies.consent.decline": "Decline",
+  "cookies.consent.decline": "Declinar",
 
   // "cookies.consent.content-notice.description": "We collect and process your personal information for the following purposes: <strong>Authentication, Preferences, Acknowledgement and Statistics</strong>. <br/> To learn more, please read our {privacyPolicy}.",
-  // TODO New key - Add a translation
-  "cookies.consent.content-notice.description": "We collect and process your personal information for the following purposes: <strong>Authentication, Preferences, Acknowledgement and Statistics</strong>. <br/> To learn more, please read our {privacyPolicy}.",
+  "cookies.consent.content-notice.description": "Recopilamos y procesamos su información personal para los siguientes fines: <strong>Autenticación, Preferencias, Agradecimiento y Estadísticas</strong>. <br/>Para saber más, lea nuestra {privacyPolicy}.",
 
   // "cookies.consent.content-notice.learnMore": "Customize",
-  // TODO New key - Add a translation
-  "cookies.consent.content-notice.learnMore": "Customize",
+  "cookies.consent.content-notice.learnMore": "Personalice",
 
   // "cookies.consent.content-modal.description": "Here you can see and customize the information that we collect about you.",
-  // TODO New key - Add a translation
-  "cookies.consent.content-modal.description": "Here you can see and customize the information that we collect about you.",
+  "cookies.consent.content-modal.description": "Aquí puede ver y personalizar la información que recopilamos sobre usted.",
 
   // "cookies.consent.content-modal.privacy-policy.name": "privacy policy",
-  // TODO New key - Add a translation
-  "cookies.consent.content-modal.privacy-policy.name": "privacy policy",
+  "cookies.consent.content-modal.privacy-policy.name": "política de privacidad",
 
   // "cookies.consent.content-modal.privacy-policy.text": "To learn more, please read our {privacyPolicy}.",
-  // TODO New key - Add a translation
-  "cookies.consent.content-modal.privacy-policy.text": "To learn more, please read our {privacyPolicy}.",
+  "cookies.consent.content-modal.privacy-policy.text": "Para saber más, lea nuestra {privacyPolicy}.",
 
   // "cookies.consent.content-modal.title": "Information that we collect",
-  // TODO New key - Add a translation
-  "cookies.consent.content-modal.title": "Information that we collect",
+  "cookies.consent.content-modal.title": "Información que recopilamos",
 
 
 
   // "cookies.consent.app.title.authentication": "Authentication",
-  // TODO New key - Add a translation
-  "cookies.consent.app.title.authentication": "Authentication",
+  "cookies.consent.app.title.authentication": "Autenticación",
 
   // "cookies.consent.app.description.authentication": "Required for signing you in",
-  // TODO New key - Add a translation
-  "cookies.consent.app.description.authentication": "Required for signing you in",
+  "cookies.consent.app.description.authentication": "Requerido para iniciar la sesión",
 
 
   // "cookies.consent.app.title.preferences": "Preferences",
-  // TODO New key - Add a translation
-  "cookies.consent.app.title.preferences": "Preferences",
+  "cookies.consent.app.title.preferences": "Preferencias",
 
   // "cookies.consent.app.description.preferences": "Required for saving your preferences",
-  // TODO New key - Add a translation
-  "cookies.consent.app.description.preferences": "Required for saving your preferences",
+  "cookies.consent.app.description.preferences": "Necesario para guardar sus preferencias",
 
 
 
   // "cookies.consent.app.title.acknowledgement": "Acknowledgement",
-  // TODO New key - Add a translation
-  "cookies.consent.app.title.acknowledgement": "Acknowledgement",
+  "cookies.consent.app.title.acknowledgement": "Agradecimiento",
 
   // "cookies.consent.app.description.acknowledgement": "Required for saving your acknowledgements and consents",
-  // TODO New key - Add a translation
-  "cookies.consent.app.description.acknowledgement": "Required for saving your acknowledgements and consents",
+  "cookies.consent.app.description.acknowledgement": "Necesario para guardar sus agradecimientos y consentimientos",
 
 
 
   // "cookies.consent.app.title.google-analytics": "Google Analytics",
-  // TODO New key - Add a translation
   "cookies.consent.app.title.google-analytics": "Google Analytics",
 
   // "cookies.consent.app.description.google-analytics": "Allows us to track statistical data",
-  // TODO New key - Add a translation
-  "cookies.consent.app.description.google-analytics": "Allows us to track statistical data",
+  "cookies.consent.app.description.google-analytics": "Nos permite hacer un seguimiento de los datos estadísticos",
 
 
 
   // "cookies.consent.purpose.functional": "Functional",
-  // TODO New key - Add a translation
-  "cookies.consent.purpose.functional": "Functional",
+  "cookies.consent.purpose.functional": "Funcional",
 
   // "cookies.consent.purpose.statistical": "Statistical",
-  // TODO New key - Add a translation
-  "cookies.consent.purpose.statistical": "Statistical",
+  "cookies.consent.purpose.statistical": "Estadística",
 
 
   // "curation-task.task.checklinks.label":  "Check Links in Metadata",
-  // TODO New key - Add a translation
-  "curation-task.task.checklinks.label":  "Check Links in Metadata",
+  "curation-task.task.checklinks.label":  "Comprobar los enlaces en los metadatos",
 
   // "curation-task.task.noop.label": "NOOP",
-  // TODO New key - Add a translation
   "curation-task.task.noop.label": "NOOP",
 
   // "curation-task.task.profileformats.label": "Profile Bitstream Formats",
-  // TODO New key - Add a translation
-  "curation-task.task.profileformats.label": "Profile Bitstream Formats",
+  "curation-task.task.profileformats.label": "Formatos perfil Bitstream",
 
   // "curation-task.task.requiredmetadata.label": "Check for Required Metadata",
-  // TODO New key - Add a translation
-  "curation-task.task.requiredmetadata.label": "Check for Required Metadata",
+  "curation-task.task.requiredmetadata.label": "Comprobar los metadatos necesarios",
 
   // "curation-task.task.translate.label": "Microsoft Translator",
-  // TODO New key - Add a translation
   "curation-task.task.translate.label": "Microsoft Translator",
 
   // "curation-task.task.vscan.label": "Virus Scan",
-  // TODO New key - Add a translation
-  "curation-task.task.vscan.label": "Virus Scan",
+  "curation-task.task.vscan.label": "Escaneo de virus",
 
 
 
   // "curation.form.task-select.label": "Task:",
-  // TODO New key - Add a translation
-  "curation.form.task-select.label": "Task:",
+  "curation.form.task-select.label": "Tarea:",
 
   // "curation.form.submit": "Start",
-  // TODO New key - Add a translation
-  "curation.form.submit": "Start",
+  "curation.form.submit": "Iniciar",
 
   // "curation.form.submit.success.head": "The curation task has been started successfully",
-  // TODO New key - Add a translation
-  "curation.form.submit.success.head": "The curation task has been started successfully",
+  "curation.form.submit.success.head": "La tarea de conservación se ha iniciado con éxito",
 
   // "curation.form.submit.success.content": "You will be redirected to the corresponding process page.",
-  // TODO New key - Add a translation
-  "curation.form.submit.success.content": "You will be redirected to the corresponding process page.",
+  "curation.form.submit.success.content": "Será redirigido a la página del proceso correspondiente.",
 
   // "curation.form.submit.error.head": "Running the curation task failed",
-  // TODO New key - Add a translation
-  "curation.form.submit.error.head": "Running the curation task failed",
+  "curation.form.submit.error.head": "La ejecución de la tarea de conservación ha fallado",
 
   // "curation.form.submit.error.content": "An error occured when trying to start the curation task.",
-  // TODO New key - Add a translation
-  "curation.form.submit.error.content": "An error occured when trying to start the curation task.",
+  "curation.form.submit.error.content": "Se ha producido un error al intentar iniciar la tarea de conservación.",
 
   // "curation.form.handle.label": "Handle:",
-  // TODO New key - Add a translation
   "curation.form.handle.label": "Handle:",
 
   // "curation.form.handle.hint": "Hint: Enter [your-handle-prefix]/0 to run a task across entire site (not all tasks may support this capability)",
-  // TODO New key - Add a translation
-  "curation.form.handle.hint": "Hint: Enter [your-handle-prefix]/0 to run a task across entire site (not all tasks may support this capability)",
+  "curation.form.handle.hint": "Sugerencia: Introduzca [your-handle-prefix]/0 para ejecutar una tarea en todo el sitio (es posible que no todas las tareas admitan esta capacidad)",
 
 
   // "dso-selector.claim.item.head": "Claim",
-  // TODO New key - Add a translation
-  "dso-selector.claim.item.head": "Claim",
+  "dso-selector.claim.item.head": "Reclamar",
 
   // "dso-selector.claim.item.body": "We have found following profiles that match with your personal data",
-  // TODO New key - Add a translation
-  "dso-selector.claim.item.body": "We have found following profiles that match with your personal data",
+  "dso-selector.claim.item.body": "Hemos encontrado los siguientes perfiles que coinciden con sus datos personales",
 
   // "dso-selector.create.collection.head": "New collection",
   "dso-selector.create.collection.head": "Nueva colección",
 
   // "dso-selector.create.collection.sub-level": "Create a new collection in",
-  // TODO New key - Add a translation
-  "dso-selector.create.collection.sub-level": "Create a new collection in",
+  "dso-selector.create.collection.sub-level": "Crear una nueva colección en",
 
   // "dso-selector.create.community.head": "New community",
   "dso-selector.create.community.head": "Nueva comunidad",
@@ -2462,12 +2366,10 @@
   "dso-selector.create.item.head": "Nuevo ítem",
 
   // "dso-selector.create.item.sub-level": "Create a new item in",
-  // TODO New key - Add a translation
-  "dso-selector.create.item.sub-level": "Create a new item in",
+  "dso-selector.create.item.sub-level": "Crear un nuevo ítem en",
 
   // "dso-selector.create.submission.head": "New submission",
-  // TODO New key - Add a translation
-  "dso-selector.create.submission.head": "New submission",
+  "dso-selector.create.submission.head": "Nuevo envío",
 
   // "dso-selector.edit.collection.head": "Edit collection",
   "dso-selector.edit.collection.head": "Editar colección",
@@ -2479,16 +2381,13 @@
   "dso-selector.edit.item.head": "Editar ítem",
 
   // "dso-selector.export-metadata.dspaceobject.head": "Export metadata from",
-  // TODO New key - Add a translation
-  "dso-selector.export-metadata.dspaceobject.head": "Export metadata from",
+  "dso-selector.export-metadata.dspaceobject.head": "Exportar metadatos desde",
 
   // "dso-selector.import-item.item.head": "Import items",
-  // TODO New key - Add a translation
-  "dso-selector.import-item.item.head": "Import items",
+  "dso-selector.import-item.item.head": "Importar ítems",
 
   // "dso-selector.import-item.sub-level": "Bulk import items in",
-  // TODO New key - Add a translation
-  "dso-selector.import-item.sub-level": "Bulk import items in",
+  "dso-selector.import-item.sub-level": "Importación masiva de ítems en",
 
   // "dso-selector.no-results": "No {{ type }} found",
   "dso-selector.no-results": "No se ha encontrado {{ type }}",
@@ -2498,48 +2397,38 @@
 
 
 
-  // "confirmation-modal.export-metadata.header": "Export metadata for {{ dsoName }}",
-  // TODO New key - Add a translation
-  "confirmation-modal.export-metadata.header": "Export metadata for {{ dsoName }}",
+  // "confirmation-modal.export-metadata.header": "Export metadata for {{ dsoName }}",  
+  "confirmation-modal.export-metadata.header": "Exportación de metadatos para {{ dsoName }}",
 
   // "confirmation-modal.export-metadata.info": "Are you sure you want to export metadata for {{ dsoName }}",
-  // TODO New key - Add a translation
-  "confirmation-modal.export-metadata.info": "Are you sure you want to export metadata for {{ dsoName }}",
+  "confirmation-modal.export-metadata.info": "¿Está seguro de que quiere exportar los metadatos de {{ dsoName }}?",
 
   // "confirmation-modal.export-metadata.cancel": "Cancel",
-  // TODO New key - Add a translation
-  "confirmation-modal.export-metadata.cancel": "Cancel",
+  "confirmation-modal.export-metadata.cancel": "Cancelar",
 
   // "confirmation-modal.export-metadata.confirm": "Export",
-  // TODO New key - Add a translation
-  "confirmation-modal.export-metadata.confirm": "Export",
+  "confirmation-modal.export-metadata.confirm": "Exportar",
 
   // "confirmation-modal.delete-eperson.header": "Delete EPerson \"{{ dsoName }}\"",
-  // TODO New key - Add a translation
-  "confirmation-modal.delete-eperson.header": "Delete EPerson \"{{ dsoName }}\"",
+  "confirmation-modal.delete-eperson.header": "Eliminar usuario \"{{ dsoName }}\"",
 
   // "confirmation-modal.delete-eperson.info": "Are you sure you want to delete EPerson \"{{ dsoName }}\"",
-  // TODO New key - Add a translation
-  "confirmation-modal.delete-eperson.info": "Are you sure you want to delete EPerson \"{{ dsoName }}\"",
+  "confirmation-modal.delete-eperson.info": "¿Está seguro de que desea eliminar al usuario \"{{ dsoName }}\ ?"",
 
   // "confirmation-modal.delete-eperson.cancel": "Cancel",
-  // TODO New key - Add a translation
-  "confirmation-modal.delete-eperson.cancel": "Cancel",
+  "confirmation-modal.delete-eperson.cancel": "Cancelar",
 
   // "confirmation-modal.delete-eperson.confirm": "Delete",
-  // TODO New key - Add a translation
-  "confirmation-modal.delete-eperson.confirm": "Delete",
+  "confirmation-modal.delete-eperson.confirm": "Eliminar",
 
   // "equipment.listelement.badge": "Equipment",
-  // TODO New key - Add a translation
-  "equipment.listelement.badge": "Equipment",
+  "equipment.listelement.badge": "Equipamiento",
 
   // "error.bitstream": "Error fetching bitstream",
-  // TODO New key - Add a translation
-  "error.bitstream": "Error fetching bitstream",
+  "error.bitstream": "Error recuperando bitstream",
 
   // "error.browse-by": "Error fetching items",
-  "error.browse-by": "Error al recuperar los ítemes",
+  "error.browse-by": "Error al recuperar los ítems",
 
   // "error.collection": "Error fetching collection",
   "error.collection": "Error al recuperar la colección",
@@ -2590,414 +2479,313 @@
   "error.validation.pattern": "Esta entrada está restringida por el patrón actual: {{ pattern }}.",
 
   // "error.validation.filerequired": "The file upload is mandatory",
-  // TODO New key - Add a translation
-  "error.validation.filerequired": "The file upload is mandatory",
+  "error.validation.filerequired": "La carga de archivos es obligatoria",
 
 
   // "explore.browse-section.title" : "Browse",
-  // TODO New key - Add a translation
-  "explore.browse-section.title" : "Browse",
+  "explore.browse-section.title" : "Buscar",
 
   // "explore.counters-section.infrastructure" : "Equipments",
-  // TODO New key - Add a translation
-  "explore.counters-section.infrastructure" : "Equipments",
+  "explore.counters-section.infrastructure" : "Equipamientos",
 
   // "explore.counters-section.project_funding" : "Projects",
-  // TODO New key - Add a translation
-  "explore.counters-section.project_funding" : "Projects",
+  "explore.counters-section.project_funding" : "Proyectos",
 
   // "explore.counters-section.orgunits" : "Institutions",
-  // TODO New key - Add a translation
-  "explore.counters-section.orgunits" : "Institutions",
+  "explore.counters-section.orgunits" : "Instituciones",
 
   // "explore.counters-section.publications" : "Publications",
-  // TODO New key - Add a translation
-  "explore.counters-section.publications" : "Publications",
+  "explore.counters-section.publications" : "Publicaciones",
 
   // "explore.counters-section.rprofiles" : "People",
   "explore.counters-section.rprofiles" : "Talento Humano",
 
   // "explore.facet-section.title" : "Discover",
-  // TODO New key - Add a translation
-  "explore.facet-section.title" : "Discover",
+  "explore.facet-section.title" : "Descubrir",
 
   // "explore.index.all" : "All",
-  // TODO New key - Add a translation
-  "explore.index.all" : "All",
+  "explore.index.all" : "Todo",
 
   // "explore.index.author" : "Author",
-  // TODO New key - Add a translation
-  "explore.index.author" : "Author",
+  "explore.index.author" : "Autor",
 
   // "explore.index.birthDate" : "Birthday",
-  // TODO New key - Add a translation
-  "explore.index.birthDate" : "Birthday",
+  "explore.index.birthDate" : "Nacimiento",
 
   // "explore.index.rodatecreated" : "Date created",
-  // TODO New key - Add a translation
-  "explore.index.rodatecreated" : "Date created",
+  "explore.index.rodatecreated" : "Fecha creación",
 
   // "explore.index.rpdatecreated" : "Date created",
-  // TODO New key - Add a translation
-  "explore.index.rpdatecreated" : "Date created",
+  "explore.index.rpdatecreated" : "Fecha creación",
 
   // "explore.index.chart.pie.itemtype_filter" : "Item Type",
-  // TODO New key - Add a translation
-  "explore.index.chart.pie.itemtype_filter" : "Item Type",
+  "explore.index.chart.pie.itemtype_filter" : "Tipo ítem,",
 
   // "explore.index.chart.bar.dateIssued.year": "Year",
-  // TODO New key - Add a translation
-  "explore.index.chart.bar.dateIssued.year": "Year",
+  "explore.index.chart.bar.dateIssued.year": "Año",
 
 
   // "explore.index.dateIssued" : "Date issued",
-  // TODO New key - Add a translation
-  "explore.index.dateIssued" : "Date issued",
+  "explore.index.dateIssued" : "Fecha publicación",
 
   // "explore.index.rodateissued" : "Date issued",
-  // TODO New key - Add a translation
-  "explore.index.rodateissued" : "Date issued",
+  "explore.index.rodateissued" : "Fecha publicación",
 
   // "explore.index.dateissued" : "Date issued",
-  // TODO New key - Add a translation
-  "explore.index.dateissued" : "Date issued",
+  "explore.index.dateissued" : "Fecha publicación",
 
   // "explore.index.rodatemodified" : "Date modified",
-  // TODO New key - Add a translation
-  "explore.index.rodatemodified" : "Date modified",
+  "explore.index.rodatemodified" : "Fecha modificación",
 
   // "explore.index.rpdatemodified" : "Date modified",
-  // TODO New key - Add a translation
-  "explore.index.rpdatemodified" : "Date modified",
+  "explore.index.rpdatemodified" : "Fecha modificación",
 
   // "explore.index.dc.date.accessioned" : "Date accesioned",
-  // TODO New key - Add a translation
-  "explore.index.dc.date.accessioned" : "Date accesioned",
+  "explore.index.dc.date.accessioned" : "Fecha acceso",
 
   // "explore.index.dc.title" : "Title",
-  // TODO New key - Add a translation
-  "explore.index.dc.title" : "Title",
+  "explore.index.dc.title" : "Título",
 
   // "explore.index.editor" : "Editor",
-  // TODO New key - Add a translation
   "explore.index.editor" : "Editor",
 
   // "explore.index.eqtitle" : "Title",
-  // TODO New key - Add a translation
-  "explore.index.eqtitle" : "Title",
+  "explore.index.eqtitle" : "Título",
 
   // "explore.index.eqowner" : "Researcher",
-  // TODO New key - Add a translation
-  "explore.index.eqowner" : "Researcher",
+  "explore.index.eqowner" : "Investigador",
 
   // "explore.index.eqorgunit" : "Organization",
-  // TODO New key - Add a translation
-  "explore.index.eqorgunit" : "Organization",
+  "explore.index.eqorgunit" : "Organización",
 
   // "explore.index.eqdatecreated" : "Date Created",
-  // TODO New key - Add a translation
-  "explore.index.eqdatecreated" : "Date Created",
+  "explore.index.eqdatecreated" : "Fecha Creación",
 
   // "explore.index.eqdatemodified" : "Date Modified",
-  // TODO New key - Add a translation
-  "explore.index.eqdatemodified" : "Date Modified",
+  "explore.index.eqdatemodified" : "Fecha Modificación",
 
   // "explore.index.equipmentUsage" :  "Usage",
-  // TODO New key - Add a translation
-  "explore.index.equipmentUsage" :  "Usage",
+  "explore.index.equipmentUsage" :  "Uso",
 
   // "explore.index.equipmentResearchLine" : "Research Line",
-  // TODO New key - Add a translation
-  "explore.index.equipmentResearchLine" : "Research Line",
+  "explore.index.equipmentResearchLine" : "Línea de investigación",
 
   // "explore.index.equipmentManufacturingCountry" :  "Manufacturing Country",
-  // TODO New key - Add a translation
-  "explore.index.equipmentManufacturingCountry" :  "Manufacturing Country",
+  "explore.index.equipmentManufacturingCountry" :  "País de fabricación",
 
   // "explore.index.entityType" : "Entity type",
-  // TODO New key - Add a translation
-  "explore.index.entityType" : "Entity type",
+  "explore.index.entityType" : "Tipo de entidad",
 
   // "explore.index.familyName" : "Family name",
-  // TODO New key - Add a translation
-  "explore.index.familyName" : "Family name",
+  "explore.index.familyName" : "Apellido",
 
   // "explore.index.funding" : "Funding",
-  // TODO New key - Add a translation
-  "explore.index.funding" : "Funding",
+  "explore.index.funding" : "Financiamiento",
 
   // "explore.index.geolocation" : "Geolocation",
-  // TODO New key - Add a translation
-  "explore.index.geolocation" : "Geolocation",
+  "explore.index.geolocation" : "Geolocalización",
 
   // "explore.index.givenName" : "Given name",
-  // TODO New key - Add a translation
-  "explore.index.givenName" : "Given name",
+  "explore.index.givenName" : "Nombre",
 
   // "explore.index.has_content_in_original_bundle" : "Has content in original bundle",
-  // TODO New key - Add a translation
-  "explore.index.has_content_in_original_bundle" : "Has content in original bundle",
+  "explore.index.has_content_in_original_bundle" : "Tiene contenido en el bundle original",
 
   // "explore.index.investigators" : "Researchers",
-  // TODO New key - Add a translation
-  "explore.index.investigators" : "Researchers",
+  "explore.index.investigators" : "Investigadores",
 
   // "explore.index.isAuthorOfPublication" : "Publication's author",
-  // TODO New key - Add a translation
-  "explore.index.isAuthorOfPublication" : "Publication's author",
+  "explore.index.isAuthorOfPublication" : "Autor de la publicación",
 
   // "explore.index.isJournalOfPublication" : "Publication's journal",
-  // TODO New key - Add a translation
-  "explore.index.isJournalOfPublication" : "Publication's journal",
+  "explore.index.isJournalOfPublication" : "Revista de la publicación",
 
   // "explore.index.isOrgUnitOfPerson" : "Person's organization",
-  // TODO New key - Add a translation
-  "explore.index.isOrgUnitOfPerson" : "Person's organization",
+  "explore.index.isOrgUnitOfPerson" : "Organización de la persona",
 
   // "explore.index.isOrgUnitOfProject" : "Project's organization",
-  // TODO New key - Add a translation
-  "explore.index.isOrgUnitOfProject" : "Project's organization",
+  "explore.index.isOrgUnitOfProject" : "Organización del proyecto",
 
   // "explore.index.isOrgUnitOfPublication" : "Publication's organization",
-  // TODO New key - Add a translation
-  "explore.index.isOrgUnitOfPublication" : "Publication's organization",
+  "explore.index.isOrgUnitOfPublication" : "Organización de la publicación",
 
   // "explore.index.isPersonOfOrgUnit" : "Organization's person",
-  // TODO New key - Add a translation
-  "explore.index.isPersonOfOrgUnit" : "Organization's person",
+  "explore.index.isPersonOfOrgUnit" : "Persona de la organización",
 
   // "explore.index.isPersonOfProject" : "Project's person",
-  // TODO New key - Add a translation
-  "explore.index.isPersonOfProject" : "Project's person",
+  "explore.index.isPersonOfProject" : "Persona del proyecto",
 
   // "explore.index.isProjectOfOrgUnit" : "Organization's project",
-  // TODO New key - Add a translation
-  "explore.index.isProjectOfOrgUnit" : "Organization's project",
+  "explore.index.isProjectOfOrgUnit" : "Proyecto de la organización",
 
   // "explore.index.isProjectOfPerson" : "Person's project",
-  // TODO New key - Add a translation
-  "explore.index.isProjectOfPerson" : "Person's project",
+  "explore.index.isProjectOfPerson" : "Proyecto de la persona",
 
   // "explore.index.isProjectOfPublication" : "Publication's project",
-  // TODO New key - Add a translation
-  "explore.index.isProjectOfPublication" : "Publication's project",
+  "explore.index.isProjectOfPublication" : "Proyecto de la publicación",
 
   // "explore.index.isPublicationOfAuthor" : "Author's publication",
-  // TODO New key - Add a translation
-  "explore.index.isPublicationOfAuthor" : "Author's publication",
+  "explore.index.isPublicationOfAuthor" : "Publicación del autor",
 
   // "explore.index.isPublicationOfJournalIssue" : "Journal issue's publication",
-  // TODO New key - Add a translation
-  "explore.index.isPublicationOfJournalIssue" : "Journal issue's publication",
+  "explore.index.isPublicationOfJournalIssue" : "Publicación del número de la revista",
 
   // "explore.index.isPublicationOfOrgUnit" : "Organization's publication",
-  // TODO New key - Add a translation
-  "explore.index.isPublicationOfOrgUnit" : "Organization's publication",
+  "explore.index.isPublicationOfOrgUnit" : "Publicación de la organización",
 
   // "explore.index.isPublicationOfProject" : "Project's publication",
-  // TODO New key - Add a translation
-  "explore.index.isPublicationOfProject" : "Project's publication",
+  "explore.index.isPublicationOfProject" : "Publicación del proyecto",
 
   // "explore.index.itemidentifier" : "Item identifier",
-  // TODO New key - Add a translation
-  "explore.index.itemidentifier" : "Item identifier",
+  "explore.index.itemidentifier" : "Identificador ítem",
 
   // "explore.index.itemtype" : "Type",
-  // TODO New key - Add a translation
-  "explore.index.itemtype" : "Type",
+  "explore.index.itemtype" : "Tipo",
 
   // "explore.index.lastProjects" : "Last Projects",
-  // TODO New key - Add a translation
-  "explore.index.lastProjects" : "Last Projects",
+  "explore.index.lastProjects" : "Últimos Proyectos",
 
   // "explore.index.lastPublications" : "Last Publications",
-  // TODO New key - Add a translation
-  "explore.index.lastPublications" : "Last Publications",
+  "explore.index.lastPublications" : "Últimas Publicaciones",
 
   // "explore.index.jobTitle" : "Job title",
-  // TODO New key - Add a translation
-  "explore.index.jobTitle" : "Job title",
+  "explore.index.jobTitle" : "Cargo",
 
   // "explore.index.knowsLanguage" : "Knows languages",
-  // TODO New key - Add a translation
-  "explore.index.knowsLanguage" : "Knows languages",
+  "explore.index.knowsLanguage" : "Idiomas conocidos",
 
   // "explore.index.ocde" : "OCDE Subject",
-  // TODO New key - Add a translation
-  "explore.index.ocde" : "OCDE Subject",
+  "explore.index.ocde" : "Materia OCDE",
 
   // "explore.index.organization" : "Organization",
-  // TODO New key - Add a translation
-  "explore.index.organization" : "Organization",
+  "explore.index.organization" : "Organización",
 
   // "explore.index.organizationAddressCountry" : "Organization address country",
-  // TODO New key - Add a translation
-  "explore.index.organizationAddressCountry" : "Organization address country",
+  "explore.index.organizationAddressCountry" : "País dirección organización",
 
   // "explore.index.organizationAddressLocality" : "Organization address locality",
-  // TODO New key - Add a translation
-  "explore.index.organizationAddressLocality" : "Organization address locality",
+  "explore.index.organizationAddressLocality" : "Localidad dirección organización",
 
   // "explore.index.organizationFoundingDate" : "Organization founding date",
-  // TODO New key - Add a translation
-  "explore.index.organizationFoundingDate" : "Organization founding date",
+  "explore.index.organizationFoundingDate" : "Fecha fundación organización",
 
   // "explore.index.organizationLegalName" : "Organization legal name",
-  // TODO New key - Add a translation
-  "explore.index.organizationLegalName" : "Organization legal name",
+  "explore.index.organizationLegalName" : "Nombre legal organización",
 
   // "explore.index.original_bundle_descriptions" : "Original bundle descriptions",
-  // TODO New key - Add a translation
-  "explore.index.original_bundle_descriptions" : "Original bundle descriptions",
+  "explore.index.original_bundle_descriptions" : "Descripciones bundle original",
 
   // "explore.index.original_bundle_filenames" : "Original bundle filenames",
-  // TODO New key - Add a translation
-  "explore.index.original_bundle_filenames" : "Original bundle filenames",
+  "explore.index.original_bundle_filenames" : "Nombres de archivos bundle original",
 
   // "explore.index.ouname" : "Name",
-  // TODO New key - Add a translation
-  "explore.index.ouname" : "Name",
+  "explore.index.ouname" : "Nombre",
 
   // "explore.index.oudatecreated" : "Date Created",
-  // TODO New key - Add a translation
-  "explore.index.oudatecreated" : "Date Created",
+  "explore.index.oudatecreated" : "Fecha Creación",
 
   // "explore.index.oudatemodified" : "Date Modified",
-  // TODO New key - Add a translation
-  "explore.index.oudatemodified" : "Date Modified",
+  "explore.index.oudatemodified" : "Fecha Modificación",
 
   // "explore.index.projectOrgUnits" : "Organizations",
-  // TODO New key - Add a translation
-  "explore.index.projectOrgUnits" : "Organizations",
+  "explore.index.projectOrgUnits" : "Organizaciones",
 
   // "explore.index.peruCrisJuridicalNature" : "Juridical Nature",
-  // TODO New key - Add a translation
-  "explore.index.peruCrisJuridicalNature" : "Juridical Nature",
+  "explore.index.peruCrisJuridicalNature" : "Naturaleza Jurídica",
 
   // "explore.index.peruCrisKeywords" : "Keywords",
-  // TODO New key - Add a translation
-  "explore.index.peruCrisKeywords" : "Keywords",
+  "explore.index.peruCrisKeywords" : "Palabras clave",
 
   // "explore.index.personOrgUnits" : "Organizations",
-  // TODO New key - Add a translation
-  "explore.index.personOrgUnits" : "Organizations",
+  "explore.index.personOrgUnits" : "Organizaciones",
 
   // "explore.index.peruCrisCiuu" : "Industrial Classification",
-  // TODO New key - Add a translation
-  "explore.index.peruCrisCiuu" : "Industrial Classification",
+  "explore.index.peruCrisCiuu" : "Clasificación Industrial",
 
   // "explore.index.peruCrisClassification" : "Classification",
-  // TODO New key - Add a translation
-  "explore.index.peruCrisClassification" : "Classification",
+  "explore.index.peruCrisClassification" : "Clasificación",
 
   // "explore.index.peruCrisSector" : "Sector",
-  // TODO New key - Add a translation
   "explore.index.peruCrisSector" : "Sector",
 
   // "explore.index.pftitle" : "Title",
-  // TODO New key - Add a translation
-  "explore.index.pftitle" : "Title",
+  "explore.index.pftitle" : "Título",
 
   // "explore.index.pfdatecreated" : "Date Created",
-  // TODO New key - Add a translation
-  "explore.index.pfdatecreated" : "Date Created",
+  "explore.index.pfdatecreated" : "Fecha Creación",
 
   // "explore.index.pfdatemodified" : "Date Modified",
-  // TODO New key - Add a translation
-  "explore.index.pfdatemodified" : "Date Modified",
+  "explore.index.pfdatemodified" : "Fecha Modificación",
 
   // "explore.index.pfdatestart" : "Date Start",
-  // TODO New key - Add a translation
-  "explore.index.pfdatestart" : "Date Start",
+  "explore.index.pfdatestart" : "Fecha Inicio",
 
   // "explore.index.pfdateend" :  "Date End",
-  // TODO New key - Add a translation
-  "explore.index.pfdateend" :  "Date End",
+  "explore.index.pfdateend" :  "Fecha Fin",
 
   // "explore.index.pjtitle" : "Title",
-  // TODO New key - Add a translation
-  "explore.index.pjtitle" : "Title",
+  "explore.index.pjtitle" : "Título",
 
   // "explore.index.projectinvestigators" : "Project investigators",
-  // TODO New key - Add a translation
-  "explore.index.projectinvestigators" : "Project investigators",
+  "explore.index.projectinvestigators" : "Investigadores del proyecto",
 
   // "explore.index.rodept" : "Department",
-  // TODO New key - Add a translation
-  "explore.index.rodept" : "Department",
+  "explore.index.rodept" : "Departamento",
 
   // "explore.index.rotitle" : "Title",
-  // TODO New key - Add a translation
-  "explore.index.rotitle" : "Title",
+  "explore.index.rotitle" : "Título",
 
   // "explore.index.rpdept" : "Department",
-  // TODO New key - Add a translation
-  "explore.index.rpdept" : "Department",
+  "explore.index.rpdept" : "Departamento",
 
   // "explore.index.rpname" : "Name",
-  // TODO New key - Add a translation
-  "explore.index.rpname" : "Name",
+  "explore.index.rpname" : "Nombre",
 
   // "explore.index.subject" : "Subject",
-  // TODO New key - Add a translation
-  "explore.index.subject" : "Subject",
+  "explore.index.subject" : "Materia",
 
   // "explore.index.suneduClassification" : "Sunedu Classification",
-  // TODO New key - Add a translation
-  "explore.index.suneduClassification" : "Sunedu Classification",
+  "explore.index.suneduClassification" : "Clasificación Sunedu",
 
   // "explore.index.title" : "Title",
-  // TODO New key - Add a translation
-  "explore.index.title" : "Title",
+  "explore.index.title" : "Título",
 
   // "explore.index.type" : "Type",
-  // TODO New key - Add a translation
-  "explore.index.type" : "Type",
+  "explore.index.type" : "Tipo",
 
   // "explore.index.ubigeo" : "Ubigeo",
-  // TODO New key - Add a translation
   "explore.index.ubigeo" : "Ubigeo",
 
 
   // "explore.search-section.directorios.title": "",
-  // TODO New key - Add a translation
   "explore.search-section.directorios.title": "",
 
   // "explore.search-section.infrastructure.title": "Infrastructure",
-  // TODO New key - Add a translation
-  "explore.search-section.infrastructure.title": "Infrastructure",
+  "explore.search-section.infrastructure.title": "Infraestructuras",
 
   // "explore.search-section.fundings.title": "Search Projects",
-  // TODO New key - Add a translation
-  "explore.search-section.fundings.title": "Search Projects",
+  "explore.search-section.fundings.title": "Buscar Proyectos",
 
   // "explore.search-section.fundings_and_projects.title": "Search Projects",
-  // TODO New key - Add a translation
-  "explore.search-section.fundings_and_projects.title": "Search Projects",
+  "explore.search-section.fundings_and_projects.title": "Buscar Proyectos",
 
   // "explore.search-section.orgunits.title": "Search Organizations",
-  // TODO New key - Add a translation
-  "explore.search-section.orgunits.title": "Search Organizations",
+  "explore.search-section.orgunits.title": "Buscar Organizaciones",
 
   // "explore.search-section.publications.title": "Search Research Outputs",
-  // TODO New key - Add a translation
-  "explore.search-section.publications.title": "Search Research Outputs",
+  "explore.search-section.publications.title": "Buscar Resultados de Investigación",
 
   // "explore.search-section.researchoutputs.title": "Search Research Outputs",
-  // TODO New key - Add a translation
-  "explore.search-section.researchoutputs.title": "Search Research Outputs",
+  "explore.search-section.researchoutputs.title": "Buscar Resultados de Investigación",
 
   // "explore.search-section.researcherprofiles.title": "Search People",
-  // TODO New key - Add a translation
-  "explore.search-section.researcherprofiles.title": "Search People",
+  "explore.search-section.researcherprofiles.title": "Buscar Personas",
 
   // "explore.search-section.search-button": "Search",
-  // TODO New key - Add a translation
-  "explore.search-section.search-button": "Search",
+  "explore.search-section.search-button": "Buscar",
 
   // "explore.search-section.reset-button": "Reset",
-  // TODO New key - Add a translation
-  "explore.search-section.reset-button": "Reset",
+  "explore.search-section.reset-button": "Reiniciar",
 
   // "explore.directorios.breadcrumbs": "Directorios",
   "explore.directorios.breadcrumbs": "Directorios",
