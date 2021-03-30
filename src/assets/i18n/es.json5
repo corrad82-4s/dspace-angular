@@ -2494,6 +2494,39 @@
   // "explore.counters-section.orgunits" : "Institutions",
   "explore.counters-section.orgunits" : "Instituciones",
 
+  
+  // "explore.counters-section.orgunit.investigation_innovation_unities" : "Investigation and Innovation Units",
+  // TODO New key - Add a translation
+  "explore.counters-section.orgunit.investigation_innovation_unities" : "Investigation and Innovation Units",
+  
+  // "explore.counters-section.orgunit.investigation_groups" : "Investigation Groups",
+  // TODO New key - Add a translation
+  "explore.counters-section.orgunit.investigation_groups" : "Investigation Groups",
+  
+  // "explore.counters-section.orgunit.investigation_lines" : "Investigation Lines",
+  // TODO New key - Add a translation
+  "explore.counters-section.orgunit.investigation_lines" : "Investigation Lines",
+  
+  // "explore.counters-section.orgunit.enterprises" : "Enterprises",
+  // TODO New key - Add a translation
+  "explore.counters-section.orgunit.enterprises" : "Enterprises",
+  
+  // "explore.counters-section.orgunit.cti_funders" : "CTI Funders",
+  // TODO New key - Add a translation
+  "explore.counters-section.orgunit.cti_funders" : "CTI Funders",
+  
+  // "explore.counters-section.orgunit.renacyt_centres" : "Renacyt centres",
+  // TODO New key - Add a translation
+  "explore.counters-section.orgunit.renacyt_centres" : "Renacyt centres",
+  
+  // "explore.counters-section.orgunit.ipis" : "IPIS",
+  // TODO New key - Add a translation
+  "explore.counters-section.orgunit.ipis" : "IPIS",
+  
+  // "explore.counters-section.orgunit.universities" : "Universities",
+  // TODO New key - Add a translation
+  "explore.counters-section.orgunit.universities" : "Universities",
+  
   // "explore.counters-section.publications" : "Publications",
   "explore.counters-section.publications" : "Publicaciones",
 
@@ -2503,6 +2536,10 @@
   // "explore.facet-section.title" : "Discover",
   "explore.facet-section.title" : "Descubrir",
 
+  // "explore.index.acronym" : "Acronym",
+  // TODO New key - Add a translation
+  "explore.index.acronym" : "Acronym",
+  
   // "explore.index.all" : "All",
   "explore.index.all" : "Todo",
 
@@ -2512,6 +2549,34 @@
   // "explore.index.birthDate" : "Birthday",
   "explore.index.birthDate" : "Nacimiento",
 
+  // "explore.index.descriptionAbstract" : "Description",
+  // TODO New key - Add a translation
+  "explore.index.descriptionAbstract" : "Description",
+  
+  // "explore.index.name" : "Name",
+  // TODO New key - Add a translation
+  "explore.index.name" : "Name",
+  
+  // "explore.index.organizationIdentifier" : "Identifier",
+  // TODO New key - Add a translation
+  "explore.index.organizationIdentifier" : "Identifier",
+  
+  // "explore.index.organizationNameOrAcronym" : "Name or Acronym",
+  // TODO New key - Add a translation
+  "explore.index.organizationNameOrAcronym" : "Name or Acronym",
+  
+  // "explore.index.parentOrganization" : "Parent Organization",
+  // TODO New key - Add a translation
+  "explore.index.parentOrganization" : "Parent Organization",
+  
+  // "explore.index.perucrisKeywords" : "Keyword(s)",
+  // TODO New key - Add a translation
+  "explore.index.perucrisKeywords" : "Keyword(s)",
+  
+  // "explore.index.region" : "Region",
+  // TODO New key - Add a translation
+  "explore.index.region" : "Region",
+  
   // "explore.index.rodatecreated" : "Date created",
   "explore.index.rodatecreated" : "Fecha creación",
 
@@ -2594,6 +2659,10 @@
   // "explore.index.investigators" : "Researchers",
   "explore.index.investigators" : "Investigadores",
 
+  // "explore.index.institutionalOcde" : "Ocde Institutional Sector",
+  // TODO New key - Add a translation
+  "explore.index.institutionalOcde" : "Ocde Institutional Sector",
+  
   // "explore.index.isAuthorOfPublication" : "Publication's author",
   "explore.index.isAuthorOfPublication" : "Autor de la publicación",
 
@@ -2729,6 +2798,10 @@
   // "explore.index.projectinvestigators" : "Project investigators",
   "explore.index.projectinvestigators" : "Investigadores del proyecto",
 
+  // "explore.index.renacytClassification" : "Authorized Centre Cathegory",
+  // TODO New key - Add a translation
+  "explore.index.renacytClassification" : "Authorized Centre Cathegory",
+  
   // "explore.index.rodept" : "Department",
   "explore.index.rodept" : "Departamento",
 
@@ -2753,11 +2826,13 @@
   // "explore.index.type" : "Type",
   "explore.index.type" : "Tipo",
 
-  // "explore.index.ubigeo" : "Ubigeo",
+  // "explore.index.ubigeo" : "Region",
+  // TODO Source message changed - Revise the translation
   "explore.index.ubigeo" : "Ubigeo",
 
 
-  // "explore.search-section.directorios.title": "",
+  // "explore.search-section.directorios.title": "Search Directories",
+  // TODO Source message changed - Revise the translation
   "explore.search-section.directorios.title": "",
 
   // "explore.search-section.infrastructure.title": "Infrastructure",
@@ -2814,6 +2889,10 @@
   // "explore.text-section.directorios.title": "Welcome to #PerúCRIS platform Directories",
   "explore.text-section.directorios.title": "Bienvenido a los Directorios de la Plataforma #PerúCRIS",
 
+  // "explore.text-section.orgunits.title": "Institutions Directory",
+  // TODO New key - Add a translation
+  "explore.text-section.orgunits.title": "Institutions Directory",
+  
   // "explore.text-section.directorios.description": "La Plataforma #PerúCRIS brinda el soporte informático a la Red Nacional de Información en Ciencia, Tecnología e Innovación (CTI). Aquí encontrarás información sobre el talento humano, organizaciones, publicaciones científicas, fuentes de financiamientos y proyectos en CTI del Perú.",
   "explore.text-section.directorios.description": "La Plataforma #PerúCRIS brinda el soporte informático a la Red Nacional de Información en Ciencia, Tecnología e Innovación (CTI). Aquí encontrarás información sobre el talento humano, organizaciones, publicaciones científicas, fuentes de financiamientos y proyectos en CTI del Perú.",
 
@@ -3509,7 +3588,6 @@
   "item.edit.relationships.discard-button": "Descartar",
 
   // "item.edit.relationships.edit.buttons.add": "Add",
-  
   "item.edit.relationships.edit.buttons.add": "Añadir",
 
   // "item.edit.relationships.edit.buttons.remove": "Remove",
@@ -3519,7 +3597,6 @@
   "item.edit.relationships.edit.buttons.undo": "Deshacer cambios",
 
   // "item.edit.relationships.no-relationships": "No relationships",
-  
   "item.edit.relationships.no-relationships": "No hay relaciones",
 
   // "item.edit.relationships.notifications.discarded.content": "Your changes were discarded. To reinstate your changes click the 'Undo' button",
@@ -3567,14 +3644,12 @@
   "item.edit.tabs.curate.title": "Editar - Conservar Item",
 
   // "item.edit.tabs.metadata.head": "Metadata",
-  
   "item.edit.tabs.metadata.head": "Metadatos",
 
   // "item.edit.tabs.metadata.title": "Item Edit -  Metadata",
   "item.edit.tabs.metadata.title": "Editar ítem  -  Metadatos",
 
   // "item.edit.tabs.relationships.head": "Relationships",
-  
   "item.edit.tabs.relationships.head": "Relaciones",
 
   // "item.edit.tabs.relationships.title": "Item Edit - Relationships",
@@ -3632,7 +3707,6 @@
   "item.edit.tabs.status.description": "Bienvenido a la página de gestión del ítem. Desde aquí puede retirar, restablecer, mover o eliminar el ítem. También puede actualizar o agregar nuevos metadatos / archivos en las otras pestañas.",
 
   // "item.edit.tabs.status.head": "Status",
-  
   "item.edit.tabs.status.head": "Estado",
 
   // "item.edit.tabs.status.labels.handle": "Handle",
@@ -4139,7 +4213,6 @@
   "journalvolume.page.description": "Descripción",
 
   // "journalvolume.page.edit": "Edit this item",
-  
   "journalvolume.page.edit": "Editar este item",
 
   // "journalvolume.page.issuedate": "Issue Date",
@@ -4775,7 +4848,6 @@
   "openaire.broker.event.table.actions": "Acciones",
 
   // "openaire.broker.event.action.accept": "Accept suggestion",
-
   "openaire.broker.event.action.accept": "Aceptar sugerencia",
 
   // "openaire.broker.event.action.ignore": "Ignore suggestion",
@@ -5544,7 +5616,8 @@
   // "profile.card.security": "Security",
   "profile.card.security": "Seguridad",
 
-  // "profile.card.researcher": "Researcher Profile",
+  // "profile.card.researcher": "CTIVitae Profile",
+  // TODO Source message changed - Revise the translation
   "profile.card.researcher": "Perfil del investigador",
 
   // "profile.form.submit": "Update Profile",
@@ -5855,6 +5928,82 @@
   "register-page.registration.error.content": "An error occured when registering the following email address: {{ email }}",
 
 
+  // "register-page.navbar.email" : "Email Registration",
+  // TODO New key - Add a translation
+  "register-page.navbar.email" : "Email Registration",
+
+  // "register-page.navbar.dni" : "DNI Registration",
+  // TODO New key - Add a translation
+  "register-page.navbar.dni" : "DNI Registration",
+  
+
+  // "register-page.dni": "register-page.dni",
+  // TODO New key - Add a translation
+  "register-page.dni": "register-page.dni",
+
+  // "register-page.dni.form.dni": "Dni",
+  // TODO New key - Add a translation
+  "register-page.dni.form.dni": "Dni",
+
+  // "register-page.dni.form.dni.error.required": "Please fill in a Dni",
+  // TODO New key - Add a translation
+  "register-page.dni.form.dni.error.required": "Please fill in a Dni",
+
+  // "register-page.dni.form.dob": "Date of Birth",
+  // TODO New key - Add a translation
+  "register-page.dni.form.dob": "Date of Birth",
+
+  // "register-page.dni.form.dob.error.required": "Please fill in a Date of Birth",
+  // TODO New key - Add a translation
+  "register-page.dni.form.dob.error.required": "Please fill in a Date of Birth",
+
+  // "register-page.dni.validation.bad-request": "register-page.dni.validation.bad-request",
+  // TODO New key - Add a translation
+  "register-page.dni.validation.bad-request": "register-page.dni.validation.bad-request",
+  
+  // "register-page.dni.validation.dni-already-present": "An account associated to the provided Dni already exists.",
+  // TODO New key - Add a translation
+  "register-page.dni.validation.dni-already-present": "An account associated to the provided Dni already exists.",
+  
+  // "register-page.dni.validation.service-unavailable": "The validation service is temporary unavailable.",
+  // TODO New key - Add a translation
+  "register-page.dni.validation.service-unavailable": "The validation service is temporary unavailable.",
+  
+  // "register-page.dni.validation.dni-not-found": "Dni not found.",
+  // TODO New key - Add a translation
+  "register-page.dni.validation.dni-not-found": "Dni not found.",
+  
+  // "register-page.dni.validation.not-matching": "The Date of Birth doesn't match with the provided Dni.",
+  // TODO New key - Add a translation
+  "register-page.dni.validation.not-matching": "The Date of Birth doesn't match with the provided Dni.",
+  
+  // "register-page.dni.submit": "Register",
+  // TODO New key - Add a translation
+  "register-page.dni.submit": "Register",
+  
+
+  // "register-page.create-profile-dni.header": "Complete Dni Registration",
+  // TODO New key - Add a translation
+  "register-page.create-profile-dni.header": "Complete Dni Registration",
+  
+  // "register-page.create-profile-dni.info": "register-page.create-profile-dni.info",
+  // TODO New key - Add a translation
+  "register-page.create-profile-dni.info": "register-page.create-profile-dni.info",
+  
+  // "register-page.create-profile-dni.dni": "Dni",
+  // TODO New key - Add a translation
+  "register-page.create-profile-dni.dni": "Dni",
+  
+  // "register-page.create-profile-dni.date": "Date of Birth",
+  // TODO New key - Add a translation
+  "register-page.create-profile-dni.date": "Date of Birth",
+  
+  // "register-page.create-profile-dni.validation.success": "Dni and Date of Birth are valid for registration.",
+  // TODO New key - Add a translation
+  "register-page.create-profile-dni.validation.success": "Dni and Date of Birth are valid for registration.",
+  
+  
+
 
   // "relationships.isAuthorOf": "Authors",
   "relationships.isAuthorOf": "Autores",
@@ -5910,9 +6059,9 @@
   // TODO New key - Add a translation
   "researcher.profile.action.processing" : "Processing...",
 
-  // "researcher.profile.associated": "Researcher profile associated",
+  // "researcher.profile.associated": "CTIVitae profile associated",
   // TODO New key - Add a translation
-  "researcher.profile.associated": "Researcher profile associated",
+  "researcher.profile.associated": "CTIVitae profile associated",
 
   // "researcher.profile.create.new": "Create new",
   // TODO New key - Add a translation
@@ -5934,9 +6083,9 @@
   // TODO New key - Add a translation
   "researcher.profile.hide": "Hide",
 
-  // "researcher.profile.not.associated": "Researcher profile not yet associated",
+  // "researcher.profile.not.associated": "CTIVitae profile not yet associated",
   // TODO New key - Add a translation
-  "researcher.profile.not.associated": "Researcher profile not yet associated",
+  "researcher.profile.not.associated": "CTIVitae profile not yet associated",
 
   // "researcher.profile.view": "View",
   // TODO New key - Add a translation
@@ -6233,10 +6382,22 @@
   // TODO New key - Add a translation
   "search.filters.applied.charts.chart.pie.itemtype_filter.tab" : "Item Type",
 
+  // "search.filters.applied.charts.graphiteminstitutionalSector.tab" : "OCDE Institutional Sector",
+  // TODO New key - Add a translation
+  "search.filters.applied.charts.graphiteminstitutionalSector.tab" : "OCDE Institutional Sector",
+  
   // "search.filters.applied.charts.graphitemtype.tab" : "Visualization by Type",
   // TODO New key - Add a translation
   "search.filters.applied.charts.graphitemtype.tab" : "Visualization by Type",
 
+  // "search.filters.applied.charts.graphitemtypeOcdeArea.tab" : "OCDE Knowledge Area",
+  // TODO New key - Add a translation
+  "search.filters.applied.charts.graphitemtypeOcdeArea.tab" : "OCDE Knowledge Area",
+  
+  // "search.filters.applied.charts.graphitemubigeo.tab" : "Region",
+  // TODO New key - Add a translation
+  "search.filters.applied.charts.graphitemubigeo.tab" : "Region",
+  
   // "search.filters.applied.charts.graphpubldate.tab" : "Visualization by Date",
   // TODO New key - Add a translation
   "search.filters.applied.charts.graphpubldate.tab" : "Visualization by Date",
@@ -6668,14 +6829,47 @@
   // TODO New key - Add a translation
   "search.filters.filter.suneduClassification.placeholder" : "Sunedu Classification",
 
-
-  // "search.filters.filter.peruCrisCiuu.head" : "Industrial Classification",
+  // "search.filters.filter.institutionalOcde.head" : "Ocde Institutional Sector",
   // TODO New key - Add a translation
-  "search.filters.filter.peruCrisCiuu.head" : "Industrial Classification",
+  "search.filters.filter.institutionalOcde.head" : "Ocde Institutional Sector",
 
-  // "search.filters.filter.peruCrisCiuu.placeholder" : "Industrial Classification",
+  // "search.filters.filter.institutionalOcde.placeholder" : "Ocde Institutional Sector",
   // TODO New key - Add a translation
-  "search.filters.filter.peruCrisCiuu.placeholder" : "Industrial Classification",
+  "search.filters.filter.institutionalOcde.placeholder" : "Ocde Institutional Sector",
+
+  // "search.filters.filter.renacytClassification.head" : "Authorized Centre Cathegory",
+  // TODO New key - Add a translation
+  "search.filters.filter.renacytClassification.head" : "Authorized Centre Cathegory",
+  
+  // "search.filters.filter.renacytClassification.placeholder" : "Authorized Centre Cathegory",
+  // TODO New key - Add a translation
+  "search.filters.filter.renacytClassification.placeholder" : "Authorized Centre Cathegory",
+  
+  // "search.filters.filter.descriptionAbstract.head" : "Description",
+  // TODO New key - Add a translation
+  "search.filters.filter.descriptionAbstract.head" : "Description",
+  
+  // "search.filters.filter.descriptionAbstract.placeholder" : "Description",
+  // TODO New key - Add a translation
+  "search.filters.filter.descriptionAbstract.placeholder" : "Description",
+
+  // "search.filters.filter.organizationIdentifier.head" : "Identifier",
+  // TODO New key - Add a translation
+  "search.filters.filter.organizationIdentifier.head" : "Identifier",
+
+  // "search.filters.filter.organizationIdentifier.placeholder" : "Identifier",
+  // TODO New key - Add a translation
+  "search.filters.filter.organizationIdentifier.placeholder" : "Identifier",
+
+
+
+  // "search.filters.filter.peruCrisCiuu.head" : "CIIU",
+  // TODO New key - Add a translation
+  "search.filters.filter.peruCrisCiuu.head" : "CIIU",
+
+  // "search.filters.filter.peruCrisCiuu.placeholder" : "CIIU",
+  // TODO New key - Add a translation
+  "search.filters.filter.peruCrisCiuu.placeholder" : "CIIU",
 
 
   // "search.filters.filter.peruCrisSector.head" : "Sector",
@@ -8671,13 +8865,13 @@
   // TODO New key - Add a translation
   "cris.tab.label.notification": "Notification",
 
-  // "cris.box.label.projects": "Projects",
-  // TODO New key - Add a translation
-  "cris.box.label.projects": "Projects",
-
   // "cris.box.label.cvprofiles": "CTIVitae Profiles",
   // TODO New key - Add a translation
   "cris.box.label.cvprofiles": "CTIVitae Profiles",
+  
+  // "cris.box.label.projects": "Projects",
+  // TODO New key - Add a translation
+  "cris.box.label.projects": "Projects",
 
   // "cris.box.label.publications": "Publications",
   // TODO New key - Add a translation
