@@ -3667,7 +3667,7 @@
 
   "profile.card.security": "Security",
 
-  "profile.card.researcher": "Researcher Profile",
+  "profile.card.researcher": "CTIVitae Profile",
 
   "profile.form.submit": "Update Profile",
 
@@ -3947,7 +3947,7 @@
 
   "researcher.profile.action.processing" : "Processing...",
 
-  "researcher.profile.associated": "Researcher profile associated",
+  "researcher.profile.associated": "CTIVitae profile associated",
 
   "researcher.profile.create.new": "Create new",
 
@@ -3959,7 +3959,7 @@
 
   "researcher.profile.hide": "Hide",
 
-  "researcher.profile.not.associated": "Researcher profile not yet associated",
+  "researcher.profile.not.associated": "CTIVitae profile not yet associated",
 
   "researcher.profile.view": "View",
 
