@@ -52,8 +52,8 @@ export class RegisterDniComponent implements OnInit {
 
   ngOnInit(): void {
     this.form = this.formBuilder.group({
-      dni: new FormControl('41918999', [Validators.required]),
-      dob: new FormControl({ year: 1982, month: 11, day: 9 }, [Validators.required]),
+      dni: new FormControl(null, [Validators.required]),
+      dob: new FormControl(null, [Validators.required]),
     });
   }
 

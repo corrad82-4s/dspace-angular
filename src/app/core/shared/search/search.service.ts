@@ -503,7 +503,7 @@ export class SearchService implements OnDestroy {
       }),
     );
 
-    // FIXME: this temporary solution must be replaced by incoming method from dspace-cris-7 at next codebase alignment 
+    // FIXME: this temporary solution must be replaced by incoming method from dspace-cris-7 at next codebase alignment
     href$.pipe(take(1)).subscribe((url: string) => {
       let request = new this.request(this.requestService.generateRequestId(), url);
       request = Object.assign(request, {
