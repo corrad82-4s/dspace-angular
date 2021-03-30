@@ -7,12 +7,15 @@ import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { ClaimItemSelectorComponent } from './claim-item-selector.component';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { ProfileClaimService } from 'src/app/profile-page/profile-claim/profile-claim.service';
+import { of } from 'rxjs/internal/observable/of';
 
 describe('ClaimItemSelectorComponent', () => {
   let component: ClaimItemSelectorComponent;
   let fixture: ComponentFixture<ClaimItemSelectorComponent>;
 
-  const profileClaimService = jasmine.createSpyObj('profileClaimService', ['search']);
+  const profileClaimService = jasmine.createSpyObj('profileClaimService', {
+    search: of({ payload: {page: []}})
+  });
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({

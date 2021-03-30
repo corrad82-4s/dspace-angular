@@ -1576,17 +1576,50 @@
 
   "explore.counters-section.orgunits" : "Institutions",
 
+
+  "explore.counters-section.orgunit.investigation_innovation_unities" : "Investigation and Innovation Units",
+
+  "explore.counters-section.orgunit.investigation_groups" : "Investigation Groups",
+
+  "explore.counters-section.orgunit.investigation_lines" : "Investigation Lines",
+
+  "explore.counters-section.orgunit.enterprises" : "Enterprises",
+
+  "explore.counters-section.orgunit.cti_funders" : "CTI Funders",
+
+  "explore.counters-section.orgunit.renacyt_centres" : "Renacyt centres",
+
+  "explore.counters-section.orgunit.ipis" : "IPIS",
+
+  "explore.counters-section.orgunit.universities" : "Universities",
+
   "explore.counters-section.publications" : "Publications",
 
   "explore.counters-section.rprofiles" : "People",
 
   "explore.facet-section.title" : "Discover",
 
+  "explore.index.acronym" : "Acronym",
+
   "explore.index.all" : "All",
 
   "explore.index.author" : "Author",
 
   "explore.index.birthDate" : "Birthday",
+
+  "explore.index.descriptionAbstract" : "Description",
+
+  "explore.index.name" : "Name",
+
+  "explore.index.organizationIdentifier" : "Identifier",
+
+  "explore.index.organizationNameOrAcronym" : "Name or Acronym",
+
+  "explore.index.parentOrganization" : "Parent Organization",
+
+  "explore.index.perucrisKeywords" : "Keyword(s)",
+
+  "explore.index.region" : "Region",
 
   "explore.index.rodatecreated" : "Date created",
 
@@ -1643,6 +1676,8 @@
 
   "explore.index.investigators" : "Researchers",
 
+  "explore.index.institutionalOcde" : "Ocde Institutional Sector",
+
   "explore.index.isAuthorOfPublication" : "Publication's author",
 
   "explore.index.isJournalOfPublication" : "Publication's journal",
@@ -1683,13 +1718,13 @@
 
   "explore.index.knowsLanguage" : "Knows languages",
 
-  "explore.index.ocde" : "OCDE Subject",
+  "explore.index.ocde" : "OCDE Knowledge Area",
 
   "explore.index.organization" : "Organization",
 
-  "explore.index.organizationAddressCountry" : "Organization address country",
+  "explore.index.organizationAddressCountry" : "Country",
 
-  "explore.index.organizationAddressLocality" : "Organization address locality",
+  "explore.index.organizationAddressLocality" : "City",
 
   "explore.index.organizationFoundingDate" : "Organization founding date",
 
@@ -1713,9 +1748,9 @@
 
   "explore.index.personOrgUnits" : "Organizations",
 
-  "explore.index.peruCrisCiuu" : "Industrial Classification",
+  "explore.index.peruCrisCiuu" : "CIUU",
 
-  "explore.index.peruCrisClassification" : "Classification",
+  "explore.index.peruCrisClassification" : "Type",
 
   "explore.index.peruCrisSector" : "Sector",
 
@@ -1733,6 +1768,8 @@
 
   "explore.index.projectinvestigators" : "Project investigators",
 
+  "explore.index.renacytClassification" : "Authorized Centre Cathegory",
+
   "explore.index.rodept" : "Department",
 
   "explore.index.rotitle" : "Title",
@@ -1743,16 +1780,16 @@
 
   "explore.index.subject" : "Subject",
 
-  "explore.index.suneduClassification" : "Sunedu Classification",
+  "explore.index.suneduClassification" : "Superior Education",
 
   "explore.index.title" : "Title",
 
   "explore.index.type" : "Type",
 
-  "explore.index.ubigeo" : "Ubigeo",
+  "explore.index.ubigeo" : "Region",
 
 
-  "explore.search-section.directorios.title": "",
+  "explore.search-section.directorios.title": "Search Directories",
 
   "explore.search-section.infrastructure.title": "Infrastructure",
 
@@ -1789,6 +1826,8 @@
   "explore.researcherprofiles.breadcrumbs": "People",
 
   "explore.text-section.directorios.title": "Welcome to #PerúCRIS platform Directories",
+
+  "explore.text-section.orgunits.title": "Institutions Directory",
 
   "explore.text-section.directorios.description": "La Plataforma #PerúCRIS brinda el soporte informático a la Red Nacional de Información en Ciencia, Tecnología e Innovación (CTI). Aquí encontrarás información sobre el talento humano, organizaciones, publicaciones científicas, fuentes de financiamientos y proyectos en CTI del Perú.",
 
@@ -3628,7 +3667,7 @@
 
   "profile.card.security": "Security",
 
-  "profile.card.researcher": "Researcher Profile",
+  "profile.card.researcher": "CTIVitae Profile",
 
   "profile.form.submit": "Update Profile",
 
@@ -3833,6 +3872,46 @@
   "register-page.registration.error.content": "An error occured when registering the following email address: {{ email }}",
 
 
+  "register-page.navbar.email" : "Email Registration",
+
+  "register-page.navbar.dni" : "DNI Registration",
+
+
+  "register-page.dni": "register-page.dni",
+
+  "register-page.dni.form.dni": "Dni",
+
+  "register-page.dni.form.dni.error.required": "Please fill in a Dni",
+
+  "register-page.dni.form.dob": "Date of Birth",
+
+  "register-page.dni.form.dob.error.required": "Please fill in a Date of Birth",
+
+  "register-page.dni.validation.bad-request": "register-page.dni.validation.bad-request",
+
+  "register-page.dni.validation.dni-already-present": "An account associated to the provided Dni already exists.",
+
+  "register-page.dni.validation.service-unavailable": "The validation service is temporary unavailable.",
+
+  "register-page.dni.validation.dni-not-found": "Dni not found.",
+
+  "register-page.dni.validation.not-matching": "The Date of Birth doesn't match with the provided Dni.",
+
+  "register-page.dni.submit": "Register",
+
+
+  "register-page.create-profile-dni.header": "Complete Dni Registration",
+
+  "register-page.create-profile-dni.info": "register-page.create-profile-dni.info",
+
+  "register-page.create-profile-dni.dni": "Dni",
+
+  "register-page.create-profile-dni.date": "Date of Birth",
+
+  "register-page.create-profile-dni.validation.success": "Dni and Date of Birth are valid for registration.",
+
+
+
 
   "relationships.isAuthorOf": "Authors",
 
@@ -3868,7 +3947,7 @@
 
   "researcher.profile.action.processing" : "Processing...",
 
-  "researcher.profile.associated": "Researcher profile associated",
+  "researcher.profile.associated": "CTIVitae profile associated",
 
   "researcher.profile.create.new": "Create new",
 
@@ -3880,7 +3959,7 @@
 
   "researcher.profile.hide": "Hide",
 
-  "researcher.profile.not.associated": "Researcher profile not yet associated",
+  "researcher.profile.not.associated": "CTIVitae profile not yet associated",
 
   "researcher.profile.view": "View",
 
@@ -4038,7 +4117,13 @@
 
   "search.filters.applied.charts.chart.pie.itemtype_filter.tab" : "Item Type",
 
+  "search.filters.applied.charts.graphiteminstitutionalSector.tab" : "OCDE Institutional Sector",
+
   "search.filters.applied.charts.graphitemtype.tab" : "Visualization by Type",
+
+  "search.filters.applied.charts.graphitemtypeOcdeArea.tab" : "OCDE Knowledge Area",
+
+  "search.filters.applied.charts.graphitemubigeo.tab" : "Region",
 
   "search.filters.applied.charts.graphpubldate.tab" : "Visualization by Date",
 
@@ -4273,10 +4358,27 @@
 
   "search.filters.filter.suneduClassification.placeholder" : "Sunedu Classification",
 
+  "search.filters.filter.institutionalOcde.head" : "Ocde Institutional Sector",
 
-  "search.filters.filter.peruCrisCiuu.head" : "Industrial Classification",
+  "search.filters.filter.institutionalOcde.placeholder" : "Ocde Institutional Sector",
 
-  "search.filters.filter.peruCrisCiuu.placeholder" : "Industrial Classification",
+  "search.filters.filter.renacytClassification.head" : "Authorized Centre Cathegory",
+
+  "search.filters.filter.renacytClassification.placeholder" : "Authorized Centre Cathegory",
+
+  "search.filters.filter.descriptionAbstract.head" : "Description",
+
+  "search.filters.filter.descriptionAbstract.placeholder" : "Description",
+
+  "search.filters.filter.organizationIdentifier.head" : "Identifier",
+
+  "search.filters.filter.organizationIdentifier.placeholder" : "Identifier",
+
+
+
+  "search.filters.filter.peruCrisCiuu.head" : "CIIU",
+
+  "search.filters.filter.peruCrisCiuu.placeholder" : "CIIU",
 
 
   "search.filters.filter.peruCrisSector.head" : "Sector",

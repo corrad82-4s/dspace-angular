@@ -48,7 +48,7 @@ export class ClaimItemMenuComponent extends ContextMenuEntryComponent {
     this.authService.getAuthenticatedUserFromStore().pipe(
       switchMap((user) => this.researcherProfileService.findById(user.id)),
       switchMap((researcherProfile) => {
-        if(researcherProfile == null){
+        if (researcherProfile == null) {
           return this.researcherProfileService.createFromExternalSource(this.injectedContextMenuObject.self);
         } else {
           return this.researcherProfileService.claim(researcherProfile, this.injectedContextMenuObject.id);
