@@ -1,7 +1,7 @@
 {
 
-  // "Biography": "English Biography",
-  "Biography": "Spanish Biography",
+  // "Biography": "Biography",
+  "Biography": "Biografía",
 
   // "401.help": "You're not authorized to access this page. You can use the button below to get back to the home page.",
   "401.help": "No está autorizado a acceder a esta página. Puede utilizar el siguiente botón para volver a la página de inicio.",
@@ -117,8 +117,7 @@
   "admin.institution.explore.entities": "Entidades",
 
   // "admin.institution.explore.name": "Institution name",
-  // TODO New key - Add a translation
-  "admin.institution.explore.name": "Nombre de la institución",
+  "admin.institution.explore.name": "Nombre institución",
 
   // "admin.institution.explore.no-entities": "No available entities",
   "admin.institution.explore.no-entities": "No hay entidades disponibles",
@@ -189,7 +188,6 @@
   "admin.registries.bitstream-formats.edit.extensions.label": "Extensiones de los archivos",
 
   // "admin.registries.bitstream-formats.edit.extensions.placeholder": "Enter a file extension without the dot",
-  // TODO Source message changed - Revise the translation
   "admin.registries.bitstream-formats.edit.extensions.placeholder": "Ingrese la extensión del archivo sin punto",
 
   // "admin.registries.bitstream-formats.edit.failure.content": "An error occurred while editing the bitstream format.",
@@ -202,7 +200,6 @@
   "admin.registries.bitstream-formats.edit.head": "Formato de Archivo: {{ format }}",
 
   // "admin.registries.bitstream-formats.edit.internal.hint": "Formats marked as internal are hidden from the user, and used for administrative purposes.",
-  // TODO Source message changed - Revise the translation
   "admin.registries.bitstream-formats.edit.internal.hint": "Los formatos marcados como internos están ocultos para el usuario y se utilizan con fines administrativos.",
 
   // "admin.registries.bitstream-formats.edit.internal.label": "Internal",
@@ -268,10 +265,8 @@
   // "admin.registries.bitstream-formats.table.supportLevel.head": "Support Level",
   "admin.registries.bitstream-formats.table.supportLevel.head": "Nivel de soporte",
 
-  // "admin.registries.bitstream-formats.title": "DSpace Cris Angular :: Bitstream Format Registry",
-  // TODO New key - Add a translation
-  "admin.registries.bitstream-formats.title": "DSpace Cris Angular :: Formato de registro de Bitstream",
-
+  // "admin.registries.bitstream-formats.title": "PerúCRIS :: Bitstream Format Registry",
+  "admin.registries.bitstream-formats.title": "PerúCRIS :: Formato de registro de Bitstream",
 
 
   // "admin.registries.metadata.breadcrumbs": "Metadata registry",
@@ -310,9 +305,8 @@
   // "admin.registries.metadata.schemas.table.namespace": "Namespace",
   "admin.registries.metadata.schemas.table.namespace": "Namespace",
 
-  // "admin.registries.metadata.title": "DSpace Cris Angular :: Metadata Registry",
-  // TODO New key - Add a translation
-  "admin.registries.metadata.title": "DSpace Cris Angular :: Registro de metadatos",
+  // "admin.registries.metadata.title": "PerúCRIS :: Metadata Registry",
+  "admin.registries.metadata.title": "PerúCRIS :: Registro de metadatos",
 
 
 
@@ -406,8 +400,7 @@
   "admin.access-control.epeople.actions.stop-impersonating": "Detener suplantación de usuario",
 
   // "admin.access-control.epeople.title": "DSpace Angular :: EPeople",
-  // TODO New key - Add a translation
-  "admin.access-control.epeople.title": "DSpace Angular :: Usuarios",
+  "admin.access-control.epeople.title": "PerúCRIS :: Usuarios",
 
   // "admin.access-control.epeople.head": "EPeople",
   // TODO New key - Add a translation
@@ -511,7 +504,6 @@
   "admin.access-control.epeople.form.rolesNoAvailable": "No hay roles disponibles",
 
   // "admin.access-control.epeople.form.table.id": "ID",
-  // TODO New key - Add a translation
   "admin.access-control.epeople.form.table.id": "ID",
 
   // "admin.access-control.epeople.form.table.name": "Name",
@@ -552,16 +544,13 @@
   "admin.access-control.groups.badge.scoped": "Rol de alcance institucional",
 
   // "admin.access-control.groups.title": "DSpace Angular :: Groups",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.title": "DSpace Angular :: Grupos",
+  "admin.access-control.groups.title": "PerúCRIS :: Grupos",
 
   // "admin.access-control.groups.title.singleGroup": "DSpace Angular :: Edit Group",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.title.singleGroup": "DSpace Angular :: Editar Grupo",
+  "admin.access-control.groups.title.singleGroup": "PerúCRIS :: Editar Grupo",
 
   // "admin.access-control.groups.title.addGroup": "DSpace Angular :: New Group",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.title.addGroup": "DSpace Angular :: Nuevo Grupo",
+  "admin.access-control.groups.title.addGroup": "PerúCRIS :: Nuevo Grupo",
 
   // "admin.access-control.groups.head": "Groups/Roles",
   "admin.access-control.groups.head": "Grupos/Roles",
@@ -883,8 +872,6 @@
   "admin.search.title": "Búsqueda Administrativa",
 
 
-
-
   // "admin.workflow.breadcrumbs": "Administer Workflow",
   "admin.workflow.breadcrumbs": "Administrar Flujo de Trabajo",
 
@@ -896,12 +883,10 @@
 
   // "admin.workflow.item.delete": "Delete",
   // TODO New key - Add a translation
-  "admin.workflow.item.delete": "Delete",
+  "admin.workflow.item.delete": "Eliminar",
 
   // "admin.workflow.item.send-back": "Send back",
   "admin.workflow.item.send-back": "Devolver",
-
-
 
   // "admin.metadata-import.breadcrumbs": "Import Metadata",
   "admin.metadata-import.breadcrumbs": "Importar Metadatos",
@@ -930,9 +915,6 @@
   // "admin.metadata-import.page.error.addFile": "Select file first!",
   "admin.metadata-import.page.error.addFile": "Seleccione primero el archivo",
 
-
-
-
   // "auth.errors.invalid-user": "Invalid email address or password.",
   "auth.errors.invalid-user": "No es válida la dirección de correo o la clave.",
 
@@ -942,7 +924,6 @@
 
 
   // "bitstream.edit.bitstream": "Bitstream: ",
-  // TODO New key - Add a translation
   "bitstream.edit.bitstream": "Bitstream: ",
 
   // "bitstream.edit.form.description.hint": "Optionally, provide a brief description of the file, for example \"<i>Main article</i>\" or \"<i>Experiment data readings</i>\".",
@@ -1001,10 +982,10 @@
   "browse.comcol.by.instauthor": "Por Autor",
 
   // "browse.comcol.by.dateissued": "By Issue Date",
-  "browse.comcol.by.dateissued": "Por Fecha de Publicación",
+  "browse.comcol.by.dateissued": "Por Fecha Publicación",
 
   // "browse.comcol.by.instdateissued": "By Issue Date",
-  "browse.comcol.by.instdateissued": "Por Fecha de Emisión",
+  "browse.comcol.by.instdateissued": "Por Fecha Emisión",
 
   // "browse.comcol.by.insttitle": "By Title",
   "browse.comcol.by.insttitle": "Por Título",
@@ -1019,7 +1000,7 @@
   "browse.comcol.by.pjtitle": "Por Título",
 
   // "browse.comcol.by.instpjtitle": "By Title",
-  "browse.comcol.by.instpjtitle": "By Title",
+  "browse.comcol.by.instpjtitle": "Por Título",
 
   // "browse.comcol.by.rodept": "By Department",
   "browse.comcol.by.rodept": "Por Departamento",
@@ -1056,7 +1037,7 @@
 
 
   // "browse.comcol.head": "Browse",
-  "browse.comcol.head": "Navegar",
+  "browse.comcol.head": "Buscar",
 
   // "browse.empty": "No items to show.",
   "browse.empty": "No hay ítems para mostrar.",
@@ -1065,279 +1046,214 @@
   "browse.metadata.author": "Autor",
 
   // "browse.metadata.dateissued": "Issue Date",
-  "browse.metadata.dateissued": "Fecha de Publicación",
+  "browse.metadata.dateissued": "Fecha Publicación",
 
   // "browse.metadata.eqdatecreated": "Date Created",
-  // TODO New key - Add a translation
-  "browse.metadata.eqdatecreated": "Fecha de Creación",
+  "browse.metadata.eqdatecreated": "Fecha Creación",
 
   // "browse.metadata.eqdatemodified": "Date Modified",
-  "browse.metadata.eqdatemodified": "Fecha de Modificación",
+  "browse.metadata.eqdatemodified": "Fecha Modificación",
 
   // "browse.metadata.eqtitle": "Title",
   "browse.metadata.eqtitle": "Título",
 
   // "browse.metadata.ouname" : "Name",
-  // TODO New key - Add a translation
   "browse.metadata.ouname" : "Nombre",
 
   // "browse.metadata.pjtitle" : "Title",
-  // TODO New key - Add a translation
   "browse.metadata.pjtitle" : "Título",
 
   // "browse.metadata.instauthor": "Author",
-  // TODO New key - Add a translation
   "browse.metadata.instauthor": "Autor",
 
   // "browse.metadata.instdateissued": "Issue Date",
-  // TODO New key - Add a translation
-  "browse.metadata.instdateissued": "Fecha de publicación",
+  "browse.metadata.instdateissued": "Fecha Publicación",
 
   // "browse.metadata.instrodept": "Department",
-  // TODO New key - Add a translation
   "browse.metadata.instrodept": "Departamento",
 
   // "browse.metadata.instsubject": "Subject",
-  // TODO New key - Add a translation
   "browse.metadata.instsubject": "Materia",
 
   // "browse.metadata.insttitle": "Title",
-  // TODO New key - Add a translation
   "browse.metadata.insttitle": "Título",
 
   // "browse.metadata.insttype": "Type",
-  // TODO New key - Add a translation
   "browse.metadata.insttype": "Tipo",
 
   // "browse.metadata.instpjtitle": "Title",
-  // TODO New key - Add a translation
   "browse.metadata.instpjtitle": "Título",
 
   // "browse.metadata.instrpdept": "Department",
-  // TODO New key - Add a translation
   "browse.metadata.instrpdept": "Departamento",
 
   // "browse.metadata.instrpname": "Name",
-  // TODO New key - Add a translation
   "browse.metadata.instrpname": "Nombre",
 
   // "browse.metadata.instouname": "Name",
-  // TODO New key - Add a translation
   "browse.metadata.instouname": "Nombre",
 
   // "browse.metadata.oudatecreated": "Creation Date",
-  // TODO New key - Add a translation
-  "browse.metadata.oudatecreated": "Fecha de Creación",
+  "browse.metadata.oudatecreated": "Fecha Creación",
 
   // "browse.metadata.oudatemodified": "Modification Date",
-  // TODO New key - Add a translation
-  "browse.metadata.oudatemodified": "Fecha de Modificación",
+  "browse.metadata.oudatemodified": "Fecha Modificación",
 
   // "browse.metadata.pfdatecreated": "Creation Date",
-  // TODO New key - Add a translation
-  "browse.metadata.pfdatecreated": "Fecha de Creación",
+  "browse.metadata.pfdatecreated": "Fecha Creación",
 
   // "browse.metadata.pfdatemodified": "Modification Date",
-  // TODO New key - Add a translation
-  "browse.metadata.pfdatemodified": "Modification Date",
+  "browse.metadata.pfdatemodified": "Fecha Modificación",
 
   // "browse.metadata.pfdatestart": "Start Date",
-  // TODO New key - Add a translation
   "browse.metadata.pfdatestart": "Fecha Inicio",
 
   // "browse.metadata.pfdateend": "End Date",
-  // TODO New key - Add a translation
   "browse.metadata.pfdateend": "Fecha Fin",
 
   // "browse.metadata.rodept": "Department",
-  // TODO New key - Add a translation
   "browse.metadata.rodept": "Departamento",
 
   // "browse.metadata.rotitle": "Title",
-  // TODO New key - Add a translation
   "browse.metadata.rotitle": "Título",
 
   // "browse.metadata.rodateissued": "Date Issued",
-  // TODO New key - Add a translation
-  "browse.metadata.rodateissued": "Date Issued",
+  "browse.metadata.rodateissued": "Fecha Emisión",
 
   // "browse.metadata.rodatecreated": "Date Created",
-  // TODO New key - Add a translation
-  "browse.metadata.rodatecreated": "Date Created",
+  "browse.metadata.rodatecreated": "Fecha Creación",
 
   // "browse.metadata.rodatemodified": "Date Modified",
-  // TODO New key - Add a translation
-  "browse.metadata.rodatemodified": "Date Modified",
+  "browse.metadata.rodatemodified": "Fecha Modificación",
 
   // "browse.metadata.rpdatecreated": "Date Created",
-  // TODO New key - Add a translation
-  "browse.metadata.rpdatecreated": "Date Created",
+  "browse.metadata.rpdatecreated": "Fecha Creación",
 
   // "browse.metadata.rpdatemodified": "Date Modified",
-  // TODO New key - Add a translation
-  "browse.metadata.rpdatemodified": "Date Modified",
+  "browse.metadata.rpdatemodified": "Fecha Modificación",
 
   // "browse.metadata.rpdept": "Department",
-  // TODO New key - Add a translation
-  "browse.metadata.rpdept": "Department",
+  "browse.metadata.rpdept": "Departamento",
 
   // "browse.metadata.rpname": "Name",
-  // TODO New key - Add a translation
-  "browse.metadata.rpname": "Name",
+  "browse.metadata.rpname": "Nombre",
 
   // "browse.metadata.subject": "Subject",
   "browse.metadata.subject": "Materia",
 
   // "browse.metadata.type": "Type",
-  // TODO New key - Add a translation
-  "browse.metadata.type": "Type",
+  "browse.metadata.type": "Tipo",
 
   // "browse.metadata.title": "Title",
   "browse.metadata.title": "Título",
 
   // "browse.metadata.author.breadcrumbs": "Browse by Author",
-  // TODO New key - Add a translation
-  "browse.metadata.author.breadcrumbs": "Browse by Author",
+  "browse.metadata.author.breadcrumbs": "Buscar por Autor",
 
   // "browse.metadata.instauthor.breadcrumbs": "Browse by Author",
-  // TODO New key - Add a translation
-  "browse.metadata.instauthor.breadcrumbs": "Browse by Author",
+  "browse.metadata.instauthor.breadcrumbs": "Buscar por Autor",
 
   // "browse.metadata.dateissued.breadcrumbs": "Browse by Date",
-  // TODO New key - Add a translation
-  "browse.metadata.dateissued.breadcrumbs": "Browse by Date",
+  "browse.metadata.dateissued.breadcrumbs": "Buscar por Fecha",
 
   // "browse.metadata.instdateissued.breadcrumbs": "Browse by Date",
-  // TODO New key - Add a translation
-  "browse.metadata.instdateissued.breadcrumbs": "Browse by Date",
+  "browse.metadata.instdateissued.breadcrumbs": "Buscar por Fecha",
 
   // "browse.metadata.eqdatecreated.breadcrumbs": "Browse by Creation Date",
-  // TODO New key - Add a translation
-  "browse.metadata.eqdatecreated.breadcrumbs": "Browse by Creation Date",
+  "browse.metadata.eqdatecreated.breadcrumbs": "Buscar por Fecha Creación",
 
   // "browse.metadata.eqdatemodified.breadcrumbs": "Browse by Modification Date",
-  // TODO New key - Add a translation
-  "browse.metadata.eqdatemodified.breadcrumbs": "Browse by Modification Date",
+  "browse.metadata.eqdatemodified.breadcrumbs": "Buscar por Fecha Modificación",
 
   // "browse.metadata.eqtitle.breadcrumbs": "Browse by Title",
-  // TODO New key - Add a translation
-  "browse.metadata.eqtitle.breadcrumbs": "Browse by Title",
+  "browse.metadata.eqtitle.breadcrumbs": "Buscar por Título",
 
   // "browse.metadata.ouname.breadcrumbs" : "Browse by Name",
-  // TODO New key - Add a translation
-  "browse.metadata.ouname.breadcrumbs" : "Browse by Name",
+  "browse.metadata.ouname.breadcrumbs" : "Buscar por Nombre",
 
   // "browse.metadata.instouname.breadcrumbs" : "Browse by Name",
-  // TODO New key - Add a translation
-  "browse.metadata.instouname.breadcrumbs" : "Browse by Name",
+  "browse.metadata.instouname.breadcrumbs" : "Buscar por Nombre",
 
   // "browse.metadata.oudatecreated.breadcrumbs" : "Browse by Creation Date",
-  // TODO New key - Add a translation
-  "browse.metadata.oudatecreated.breadcrumbs" : "Browse by Creation Date",
+  "browse.metadata.oudatecreated.breadcrumbs" : "Buscar por Fecha Creación",
 
   // "browse.metadata.oudatemodified.breadcrumbs" : "Browse by Modification Date",
-  // TODO New key - Add a translation
-  "browse.metadata.oudatemodified.breadcrumbs" : "Browse by Modification Date",
+  "browse.metadata.oudatemodified.breadcrumbs" : "Buscar por Fecha Modificación",
 
   // "browse.metadata.pftitle.breadcrumbs" : "Browse by Title",
-  // TODO New key - Add a translation
-  "browse.metadata.pftitle.breadcrumbs" : "Browse by Title",
+  "browse.metadata.pftitle.breadcrumbs" : "Buscar por Título",
 
   // "browse.metadata.pfdatecreated.breadcrumbs" : "Browse by Creation Date",
-  // TODO New key - Add a translation
-  "browse.metadata.pfdatecreated.breadcrumbs" : "Browse by Creation Date",
+  "browse.metadata.pfdatecreated.breadcrumbs" : "Buscar por Fecha Creación",
 
   // "browse.metadata.pfdatemodified.breadcrumbs" :  "Browse by Modification Date",
-  // TODO New key - Add a translation
-  "browse.metadata.pfdatemodified.breadcrumbs" :  "Browse by Modification Date",
+  "browse.metadata.pfdatemodified.breadcrumbs" :  "Buscar por Fecha Modificación",
 
   // "browse.metadata.pfdatestart.breadcrumbs" : "Browse by Start Date",
-  // TODO New key - Add a translation
-  "browse.metadata.pfdatestart.breadcrumbs" : "Browse by Start Date",
+  "browse.metadata.pfdatestart.breadcrumbs" : "Buscar por Fecha Inicio",
 
   // "browse.metadata.pfdateend.breadcrumbs" :  "Browse by End Date",
-  // TODO New key - Add a translation
-  "browse.metadata.pfdateend.breadcrumbs" :  "Browse by End Date",
+  "browse.metadata.pfdateend.breadcrumbs" :  "Buscar por Fecha Fin",
 
   // "browse.metadata.pjtitle.breadcrumbs" : "Browse by Title",
-  // TODO New key - Add a translation
-  "browse.metadata.pjtitle.breadcrumbs" : "Browse by Title",
+  "browse.metadata.pjtitle.breadcrumbs" : "Buscar por Título",
 
   // "browse.metadata.instpjtitle.breadcrumbs" : "Browse by Title",
-  // TODO New key - Add a translation
-  "browse.metadata.instpjtitle.breadcrumbs" : "Browse by Title",
+  "browse.metadata.instpjtitle.breadcrumbs" : "Buscar por Título",
 
   // "browse.metadata.instrodept.breadcrumbs": "Browse by Department",
-  // TODO New key - Add a translation
-  "browse.metadata.instrodept.breadcrumbs": "Browse by Department",
+  "browse.metadata.instrodept.breadcrumbs": "Buscar por Departamento",
 
   // "browse.metadata.rodept.breadcrumbs": "Browse by Department",
-  // TODO New key - Add a translation
-  "browse.metadata.rodept.breadcrumbs": "Browse by Department",
+  "browse.metadata.rodept.breadcrumbs": "Browse by Departamento",
 
   // "browse.metadata.rotitle.breadcrumbs": "Browse by Title",
-  // TODO New key - Add a translation
-  "browse.metadata.rotitle.breadcrumbs": "Browse by Title",
+  "browse.metadata.rotitle.breadcrumbs": "Buscar por Título",
 
   // "browse.metadata.rodateissued.breadcrumbs": "Date Issued",
-  // TODO New key - Add a translation
-  "browse.metadata.rodateissued.breadcrumbs": "Date Issued",
+  "browse.metadata.rodateissued.breadcrumbs": "Fecha Emisión",
 
   // "browse.metadata.rodatecreated.breadcrumbs": "Date Created",
-  // TODO New key - Add a translation
-  "browse.metadata.rodatecreated.breadcrumbs": "Date Created",
+  "browse.metadata.rodatecreated.breadcrumbs": "Fecha Creación",
 
   // "browse.metadata.rodatemodified.breadcrumbs": "Date Modified",
-  // TODO New key - Add a translation
-  "browse.metadata.rodatemodified.breadcrumbs": "Date Modified",
+  "browse.metadata.rodatemodified.breadcrumbs": "Fecha Modificación",
 
   // "browse.metadata.rpdatecreated.breadcrumbs": "Date Created",
-  // TODO New key - Add a translation
-  "browse.metadata.rpdatecreated.breadcrumbs": "Date Created",
+  "browse.metadata.rpdatecreated.breadcrumbs": "Fecha Creación",
 
   // "browse.metadata.rpdatemodified.breadcrumbs": "Date Modified",
-  // TODO New key - Add a translation
-  "browse.metadata.rpdatemodified.breadcrumbs": "Date Modified",
+  "browse.metadata.rpdatemodified.breadcrumbs": "Fecha Modificación",
 
   // "browse.metadata.rpdept.breadcrumbs" : "Browse by Department",
-  // TODO New key - Add a translation
-  "browse.metadata.rpdept.breadcrumbs" : "Browse by Department",
+  "browse.metadata.rpdept.breadcrumbs" : "Buscar por Departamento",
 
   // "browse.metadata.instrpdept.breadcrumbs" : "Browse by Department",
-  // TODO New key - Add a translation
-  "browse.metadata.instrpdept.breadcrumbs" : "Browse by Department",
+  "browse.metadata.instrpdept.breadcrumbs" : "Buscar por Departamento",
 
   // "browse.metadata.rpname.breadcrumbs": "Browse by Name",
-  // TODO New key - Add a translation
-  "browse.metadata.rpname.breadcrumbs": "Browse by Name",
+  "browse.metadata.rpname.breadcrumbs": "Buscar por Nombre",
 
   // "browse.metadata.instrpname.breadcrumbs": "Browse by Name",
-  // TODO New key - Add a translation
-  "browse.metadata.instrpname.breadcrumbs": "Browse by Name",
+  "browse.metadata.instrpname.breadcrumbs": "Buscar por Nombre",
 
   // "browse.metadata.subject.breadcrumbs": "Browse by Subject",
-  // TODO New key - Add a translation
-  "browse.metadata.subject.breadcrumbs": "Browse by Subject",
+  "browse.metadata.subject.breadcrumbs": "Buscar por Materia",
 
   // "browse.metadata.instsubject.breadcrumbs": "Browse by Subject",
-  // TODO New key - Add a translation
-  "browse.metadata.instsubject.breadcrumbs": "Browse by Subject",
+  "browse.metadata.instsubject.breadcrumbs": "Buscar por Materia",
 
   // "browse.metadata.type.breadcrumbs": "Browse by Type",
-  // TODO New key - Add a translation
-  "browse.metadata.type.breadcrumbs": "Browse by Type",
+  "browse.metadata.type.breadcrumbs": "Buscar por Tipo",
 
   // "browse.metadata.insttype.breadcrumbs": "Browse by Type",
-  // TODO New key - Add a translation
-  "browse.metadata.insttype.breadcrumbs": "Browse by Type",
+  "browse.metadata.insttype.breadcrumbs": "Buscar por Tipo",
 
   // "browse.metadata.title.breadcrumbs": "Browse by Title",
-  // TODO New key - Add a translation
-  "browse.metadata.title.breadcrumbs": "Browse by Title",
+  "browse.metadata.title.breadcrumbs": "Buscar por Título",
 
   // "browse.metadata.insttitle.breadcrumbs": "Browse by Title",
-  // TODO New key - Add a translation
-  "browse.metadata.insttitle.breadcrumbs": "Browse by Title",
+  "browse.metadata.insttitle.breadcrumbs": "Buscar por Título",
 
   // "browse.startsWith.choose_start": "(Choose start)",
   "browse.startsWith.choose_start": "(Seleccionar el inicio)",
@@ -1400,71 +1316,55 @@
   "browse.title": "Navegando {{ collection }} por {{ field }} {{ value }}",
 
 
-
   // "bulk-import.abort-on-error" : "Abort on first error",
-  // TODO New key - Add a translation
-  "bulk-import.abort-on-error" : "Abort on first error",
+  "bulk-import.abort-on-error" : "Abortar al primer error",
 
   // "bulk-import.back": "Back",
-  // TODO New key - Add a translation
-  "bulk-import.back": "Back",
+  "bulk-import.back": "Volver",
 
   // "bulk-import.breadcrumbs" : "Bulk import",
-  // TODO New key - Add a translation
-  "bulk-import.breadcrumbs" : "Bulk import",
+  "bulk-import.breadcrumbs" : "Importación masiva",
 
   // "bulk-import.collection-name" : "Collection",
-  // TODO New key - Add a translation
-  "bulk-import.collection-name" : "Collection",
+  "bulk-import.collection-name" : "Colección",
 
   // "bulk-import.error": "An error occurred while creating the import process",
-  // TODO New key - Add a translation
-  "bulk-import.error": "An error occurred while creating the import process",
+  "bulk-import.error": "Se ha producido un error al crear el proceso de importación",
 
   // "bulk-import.file" : "Source file",
-  // TODO New key - Add a translation
-  "bulk-import.file" : "Source file",
+  "bulk-import.file" : "Archivo de origen",
 
   // "bulk-import.header" : "Bulk import",
-  // TODO New key - Add a translation
-  "bulk-import.header" : "Bulk import",
+  "bulk-import.header" : "Importación masiva",
 
   // "bulk-import.processing": "Processing...",
-  // TODO New key - Add a translation
-  "bulk-import.processing": "Processing...",
+  "bulk-import.processing": "Procesando...",
 
   // "bulk-import.success": "The import process was successfully created",
-  // TODO New key - Add a translation
-  "bulk-import.success": "The import process was successfully created",
+  "bulk-import.success": "El proceso de importación se ha creado con éxito",
 
   // "bulk-import.submit": "Start import",
-  // TODO New key - Add a translation
-  "bulk-import.submit": "Start import",
+  "bulk-import.submit": "Iniciar importación",
 
   // "bulk-import.title" : "Bulk import",
-  // TODO New key - Add a translation
-  "bulk-import.title" : "Bulk import",
-
+  "bulk-import.title" : "Importación masiva",
 
 
   // "chips.remove": "Remove chip",
   "chips.remove": "Eliminar chip",
 
 
-
   // "collection.create.head": "Create a Collection",
   "collection.create.head": "Crear una Colección",
 
   // "collection.create.notifications.success": "Successfully created the Collection",
-  // TODO New key - Add a translation
-  "collection.create.notifications.success": "Successfully created the Collection",
+  "collection.create.notifications.success": "Se ha creado la Colección con éxito",
 
   // "collection.create.sub-head": "Create a Collection for Community {{ parent }}",
   "collection.create.sub-head": "Crear una Colección por Comunidad {{ parent }}",
 
   // "collection.curate.header": "Curate Collection: {{collection}}",
-  // TODO New key - Add a translation
-  "collection.curate.header": "Curate Collection: {{collection}}",
+  "collection.curate.header": "Conservar Colección: {{collection}}",
 
   // "collection.delete.cancel": "Cancel",
   "collection.delete.cancel": "Cancelar",
@@ -1485,7 +1385,6 @@
   "collection.delete.text": "Está seguro de eliminar la colección \"{{ dso }}\"",
 
 
-
   // "collection.edit.delete": "Delete this collection",
   "collection.edit.delete": "Eliminar esta colección",
 
@@ -1493,9 +1392,7 @@
   "collection.edit.head": "Editar la Colección",
 
   // "collection.edit.breadcrumbs": "Edit Collection",
-  // TODO New key - Add a translation
-  "collection.edit.breadcrumbs": "Edit Collection",
-
+  "collection.edit.breadcrumbs": "Editar Colección",
 
 
   // "collection.edit.item-mapper.cancel": "Cancel",
@@ -1505,272 +1402,215 @@
   "collection.edit.item-mapper.collection": "Colección: \"<b>{{name}}</b>\"",
 
   // "collection.edit.item-mapper.confirm": "Map selected items",
-  "collection.edit.item-mapper.confirm": "Mapa de ítemes seleccionados",
+  "collection.edit.item-mapper.confirm": "Mapear los ítems seleccionados",
 
   // "collection.edit.item-mapper.description": "This is the item mapper tool that allows collection administrators to map items from other collections into this collection. You can search for items from other collections and map them, or browse the list of currently mapped items.",
-  "collection.edit.item-mapper.description": "Esta es la herramienta de asignación de ítemes que permite a los administradores de colecciones asignar ítemes de otras colecciones a esta colección. Puede buscar ítemes de otras colecciones y asignarlos, o navegar la lista de elementos asignados actualmente.",
+  "collection.edit.item-mapper.description": "Esta es la herramienta de asignación de ítems que permite a los administradores de colecciones asignar ítems de otras colecciones a esta colección. Puede buscar ítems de otras colecciones y asignarlos, o navegar la lista de elementos asignados actualmente.",
 
   // "collection.edit.item-mapper.head": "Item Mapper - Map Items from Other Collections",
-  "collection.edit.item-mapper.head": "Asignación de ítem - Asignación de ítemes para otras Colecciones",
+  "collection.edit.item-mapper.head": "Asignación de ítem - Asignación de ítems para otras Colecciones",
 
   // "collection.edit.item-mapper.no-search": "Please enter a query to search",
   "collection.edit.item-mapper.no-search": "Favor ingrese una consulta para buscar",
 
   // "collection.edit.item-mapper.notifications.map.error.content": "Errors occurred for mapping of {{amount}} items.",
-  "collection.edit.item-mapper.notifications.map.error.content": "Errores encontrados para asignar {{amount}} ítemes.",
+  "collection.edit.item-mapper.notifications.map.error.content": "Errores encontrados para asignar {{amount}} ítems.",
 
   // "collection.edit.item-mapper.notifications.map.error.head": "Mapping errors",
   "collection.edit.item-mapper.notifications.map.error.head": "Errores asignados",
 
   // "collection.edit.item-mapper.notifications.map.success.content": "Successfully mapped {{amount}} items.",
-  "collection.edit.item-mapper.notifications.map.success.content": "Exitosamente asignado {{amount}} ítemes.",
+  "collection.edit.item-mapper.notifications.map.success.content": "Exitosamente asignado {{amount}} ítems.",
 
   // "collection.edit.item-mapper.notifications.map.success.head": "Mapping completed",
   "collection.edit.item-mapper.notifications.map.success.head": "Asignación completa",
 
   // "collection.edit.item-mapper.notifications.unmap.error.content": "Errors occurred for removing the mappings of {{amount}} items.",
-  "collection.edit.item-mapper.notifications.unmap.error.content": "Errores encontrados al eliminar la asignación de {{amount}} ítemes.",
+  "collection.edit.item-mapper.notifications.unmap.error.content": "Errores encontrados al eliminar la asignación de {{amount}} ítems.",
 
   // "collection.edit.item-mapper.notifications.unmap.error.head": "Remove mapping errors",
   "collection.edit.item-mapper.notifications.unmap.error.head": "Eliminar errores de asignación",
 
   // "collection.edit.item-mapper.notifications.unmap.success.content": "Successfully removed the mappings of {{amount}} items.",
-  "collection.edit.item-mapper.notifications.unmap.success.content": "Exitosamente eliminado las asignaciones de {{amount}} ítemes.",
+  "collection.edit.item-mapper.notifications.unmap.success.content": "Exitosamente eliminado las asignaciones de {{amount}} ítems.",
 
   // "collection.edit.item-mapper.notifications.unmap.success.head": "Remove mapping completed",
-  "collection.edit.item-mapper.notifications.unmap.success.head": "Asignación eliminada completa",
+  "collection.edit.item-mapper.notifications.unmap.success.head": "Eliminación de la asignación completada",
 
   // "collection.edit.item-mapper.remove": "Remove selected item mappings",
-  "collection.edit.item-mapper.remove": "Eliminar asignaciones de ítemes seleccionados",
+  "collection.edit.item-mapper.remove": "Eliminar asignaciones de ítems seleccionados",
 
   // "collection.edit.item-mapper.tabs.browse": "Browse mapped items",
-  "collection.edit.item-mapper.tabs.browse": "Navegar asignación de ítemes",
+  "collection.edit.item-mapper.tabs.browse": "Buscar ítems asignados",
 
   // "collection.edit.item-mapper.tabs.map": "Map new items",
-  "collection.edit.item-mapper.tabs.map": "Asignar nuevo ítemes",
-
+  "collection.edit.item-mapper.tabs.map": "Asignar nuevo ítems",
 
 
   // "collection.edit.logo.label": "Collection logo",
-  // TODO New key - Add a translation
-  "collection.edit.logo.label": "Collection logo",
+  "collection.edit.logo.label": "Logotipo colección",
 
   // "collection.edit.logo.notifications.add.error": "Uploading Collection logo failed. Please verify the content before retrying.",
-  // TODO New key - Add a translation
-  "collection.edit.logo.notifications.add.error": "Uploading Collection logo failed. Please verify the content before retrying.",
+  "collection.edit.logo.notifications.add.error": "No se ha podido cargar el logotipo de la colección. Por favor, verifique el contenido antes de reintentar.",
 
   // "collection.edit.logo.notifications.add.success": "Upload Collection logo successful.",
-  // TODO New key - Add a translation
-  "collection.edit.logo.notifications.add.success": "Upload Collection logo successful.",
+  "collection.edit.logo.notifications.add.success": "Subida exitosa del logotipo de la colección.",
 
   // "collection.edit.logo.notifications.delete.success.title": "Logo deleted",
-  // TODO New key - Add a translation
-  "collection.edit.logo.notifications.delete.success.title": "Logo deleted",
+  "collection.edit.logo.notifications.delete.success.title": "Logo eliminado",
 
   // "collection.edit.logo.notifications.delete.success.content": "Successfully deleted the collection's logo",
-  // TODO New key - Add a translation
-  "collection.edit.logo.notifications.delete.success.content": "Successfully deleted the collection's logo",
+  "collection.edit.logo.notifications.delete.success.content": "Eliminado con éxito el logotipo de la colección",
 
   // "collection.edit.logo.notifications.delete.error.title": "Error deleting logo",
-  // TODO New key - Add a translation
-  "collection.edit.logo.notifications.delete.error.title": "Error deleting logo",
-
+  "collection.edit.logo.notifications.delete.error.title": "Error al borrar el logotipo",
+  
   // "collection.edit.logo.upload": "Drop a Collection Logo to upload",
-  // TODO New key - Add a translation
-  "collection.edit.logo.upload": "Drop a Collection Logo to upload",
-
+  "collection.edit.logo.upload": "Suelte un logotipo de la colección para cargarlo",
+  
   // "collection.edit.notifications.success": "Successfully edited the Collection",
-  // TODO New key - Add a translation
-  "collection.edit.notifications.success": "Successfully edited the Collection",
-
+  "collection.edit.notifications.success": "Edición exitosa de la Colección",
+  
   // "collection.edit.return": "Return",
-  // TODO New key - Add a translation
-  "collection.edit.return": "Return",
+  "collection.edit.return": "Volver",
 
 
-
-  // "collection.edit.tabs.curate.head": "Curate",
-  // TODO New key - Add a translation
-  "collection.edit.tabs.curate.head": "Curate",
+  // "collection.edit.tabs.curate.head": "Curate",  
+  "collection.edit.tabs.curate.head": "Conservar",
 
   // "collection.edit.tabs.curate.title": "Collection Edit - Curate",
-  // TODO New key - Add a translation
-  "collection.edit.tabs.curate.title": "Collection Edit - Curate",
+  "collection.edit.tabs.curate.title": "Editar Colección - Conservar",
 
   // "collection.edit.tabs.authorizations.head": "Authorizations",
-  // TODO New key - Add a translation
-  "collection.edit.tabs.authorizations.head": "Authorizations",
+  "collection.edit.tabs.authorizations.head": "Autorizaciones",
 
   // "collection.edit.tabs.authorizations.title": "Collection Edit - Authorizations",
-  // TODO New key - Add a translation
-  "collection.edit.tabs.authorizations.title": "Collection Edit - Authorizations",
+  "collection.edit.tabs.authorizations.title": "Editar Colección - Autorizaciones",
 
   // "collection.edit.tabs.metadata.head": "Edit Metadata",
-  // TODO New key - Add a translation
-  "collection.edit.tabs.metadata.head": "Edit Metadata",
+  "collection.edit.tabs.metadata.head": "Editar Metadatos",
 
   // "collection.edit.tabs.metadata.title": "Collection Edit - Metadata",
-  // TODO New key - Add a translation
-  "collection.edit.tabs.metadata.title": "Collection Edit - Metadata",
+  "collection.edit.tabs.metadata.title": "Editar Colección - Metadatos",
 
   // "collection.edit.tabs.roles.head": "Assign Roles",
-  // TODO New key - Add a translation
-  "collection.edit.tabs.roles.head": "Assign Roles",
+  "collection.edit.tabs.roles.head": "Asignar Roles",
 
   // "collection.edit.tabs.roles.title": "Collection Edit - Roles",
-  // TODO New key - Add a translation
-  "collection.edit.tabs.roles.title": "Collection Edit - Roles",
+  "collection.edit.tabs.roles.title": "Editar Colección - Roles",
 
   // "collection.edit.tabs.source.external": "This collection harvests its content from an external source",
-  // TODO New key - Add a translation
-  "collection.edit.tabs.source.external": "This collection harvests its content from an external source",
+  "collection.edit.tabs.source.external": "Esta colección obtiene su contenido de una fuente externa",
 
   // "collection.edit.tabs.source.form.adminEmail": "Admin's address",
-  // TODO New key - Add a translation
-  "collection.edit.tabs.source.form.adminEmail": "Admin's address",
+  "collection.edit.tabs.source.form.adminEmail": "Dirección del administrador",
 
   // "collection.edit.tabs.source.form.errors.oaiSource.required": "You must provide a set id of the target collection.",
-  // TODO New key - Add a translation
-  "collection.edit.tabs.source.form.errors.oaiSource.required": "You must provide a set id of the target collection.",
+  "collection.edit.tabs.source.form.errors.oaiSource.required": "Debe proporcionar el set ID de la colección de destino.",
 
   // "collection.edit.tabs.source.form.harvestType": "Content being harvested",
-  // TODO New key - Add a translation
-  "collection.edit.tabs.source.form.harvestType": "Content being harvested",
+  "collection.edit.tabs.source.form.harvestType": "Contenido recolectado",
 
   // "collection.edit.tabs.source.form.head": "Configure an external source",
-  // TODO New key - Add a translation
-  "collection.edit.tabs.source.form.head": "Configure an external source",
+  "collection.edit.tabs.source.form.head": "Configurar una fuente externa",
 
   // "collection.edit.tabs.source.form.metadataConfigId": "Metadata Format",
-  // TODO New key - Add a translation
-  "collection.edit.tabs.source.form.metadataConfigId": "Metadata Format",
+  "collection.edit.tabs.source.form.metadataConfigId": "Formato Metadatos",
 
   // "collection.edit.tabs.source.form.oaiSetId": "OAI specific set id",
-  // TODO New key - Add a translation
-  "collection.edit.tabs.source.form.oaiSetId": "OAI specific set id",
+  "collection.edit.tabs.source.form.oaiSetId": "OAI set id específico",
 
   // "collection.edit.tabs.source.form.oaiSource": "OAI Provider",
-  // TODO New key - Add a translation
-  "collection.edit.tabs.source.form.oaiSource": "OAI Provider",
+  "collection.edit.tabs.source.form.oaiSource": "OAI Proveedor",
 
   // "collection.edit.tabs.source.form.options.harvestType.METADATA_AND_BITSTREAMS": "Harvest metadata and bitstreams (requires ORE support)",
-  // TODO New key - Add a translation
-  "collection.edit.tabs.source.form.options.harvestType.METADATA_AND_BITSTREAMS": "Harvest metadata and bitstreams (requires ORE support)",
+  "collection.edit.tabs.source.form.options.harvestType.METADATA_AND_BITSTREAMS": "Recolectar metadatos y bitstreams (requiere soporte ORE)",
 
   // "collection.edit.tabs.source.form.options.harvestType.METADATA_AND_REF": "Harvest metadata and references to bitstreams (requires ORE support)",
-  // TODO New key - Add a translation
-  "collection.edit.tabs.source.form.options.harvestType.METADATA_AND_REF": "Harvest metadata and references to bitstreams (requires ORE support)",
+  "collection.edit.tabs.source.form.options.harvestType.METADATA_AND_REF": "Recolectar metadatos y referencias a bitstreams (requiere soporte ORE)",
 
   // "collection.edit.tabs.source.form.options.harvestType.METADATA_ONLY": "Harvest metadata only",
-  // TODO New key - Add a translation
-  "collection.edit.tabs.source.form.options.harvestType.METADATA_ONLY": "Harvest metadata only",
+  "collection.edit.tabs.source.form.options.harvestType.METADATA_ONLY": "Recolectar sólo metadatos",
 
   // "collection.edit.tabs.source.form.preTransform": "Pre transformation name",
-  // TODO New key - Add a translation
-  "collection.edit.tabs.source.form.preTransform": "Pre transformation name",
+  "collection.edit.tabs.source.form.preTransform": "Nombre Pre-transformación",
 
   // "collection.edit.tabs.source.form.postTransform": "Post transformation name",
-  // TODO New key - Add a translation
-  "collection.edit.tabs.source.form.postTransform": "Post transformation name",
+  "collection.edit.tabs.source.form.postTransform": "Nombre Post-transformación",
 
   // "collection.edit.tabs.source.form.forceSynchronization": "Force Synchronization",
-  // TODO New key - Add a translation
-  "collection.edit.tabs.source.form.forceSynchronization": "Force Synchronization",
+  "collection.edit.tabs.source.form.forceSynchronization": "Forzar Sincronización",
 
   // "collection.edit.tabs.source.form.recordValidationEnabled": "Record validation",
-  // TODO New key - Add a translation
-  "collection.edit.tabs.source.form.recordValidationEnabled": "Record validation",
+  "collection.edit.tabs.source.form.recordValidationEnabled": "Validación registro",
 
   // "collection.edit.tabs.source.form.itemValidationEnabled": "Item validation",
-  // TODO New key - Add a translation
-  "collection.edit.tabs.source.form.itemValidationEnabled": "Item validation",
+  "collection.edit.tabs.source.form.itemValidationEnabled": "Validación ítem",
 
   // "collection.edit.tabs.source.form.ccAddresses": "CC's addresses",
-  // TODO New key - Add a translation
-  "collection.edit.tabs.source.form.ccAddresses": "CC's addresses",
+  "collection.edit.tabs.source.form.ccAddresses": "CC dirección",
 
   // "collection.edit.tabs.source.head": "Content Source",
-  // TODO New key - Add a translation
-  "collection.edit.tabs.source.head": "Content Source",
+  "collection.edit.tabs.source.head": "Fuente Contenido",
 
   // "collection.edit.tabs.source.notifications.discarded.content": "Your changes were discarded. To reinstate your changes click the 'Undo' button",
-  // TODO New key - Add a translation
-  "collection.edit.tabs.source.notifications.discarded.content": "Your changes were discarded. To reinstate your changes click the 'Undo' button",
+  "collection.edit.tabs.source.notifications.discarded.content": "Sus cambios fueron descartados. Para restablecer los cambios, haga clic en el botón "Deshacer".",
 
   // "collection.edit.tabs.source.notifications.discarded.title": "Changed discarded",
-  // TODO New key - Add a translation
-  "collection.edit.tabs.source.notifications.discarded.title": "Changed discarded",
+  "collection.edit.tabs.source.notifications.discarded.title": "Cambios descartados",
 
   // "collection.edit.tabs.source.notifications.invalid.content": "Your changes were not saved. Please make sure all fields are valid before you save.",
-  // TODO New key - Add a translation
-  "collection.edit.tabs.source.notifications.invalid.content": "Your changes were not saved. Please make sure all fields are valid before you save.",
+  "collection.edit.tabs.source.notifications.invalid.content": "Sus cambios no se han guardado. Por favor, asegúrese de que todos los campos son válidos antes de guardar.",
 
   // "collection.edit.tabs.source.notifications.invalid.title": "Metadata invalid",
-  // TODO New key - Add a translation
-  "collection.edit.tabs.source.notifications.invalid.title": "Metadata invalid",
+  "collection.edit.tabs.source.notifications.invalid.title": "Metadatos no válidos",
 
   // "collection.edit.tabs.source.notifications.saved.content": "Your changes to this collection's content source were saved.",
-  // TODO New key - Add a translation
-  "collection.edit.tabs.source.notifications.saved.content": "Your changes to this collection's content source were saved.",
+  "collection.edit.tabs.source.notifications.saved.content": "Sus cambios en la fuente de contenido de esta colección se han guardado.",
 
   // "collection.edit.tabs.source.notifications.saved.title": "Content Source saved",
-  // TODO New key - Add a translation
-  "collection.edit.tabs.source.notifications.saved.title": "Content Source saved",
+  "collection.edit.tabs.source.notifications.saved.title": "Fuente de contenido guardada",
 
   // "collection.edit.tabs.source.title": "Collection Edit - Content Source",
-  // TODO New key - Add a translation
-  "collection.edit.tabs.source.title": "Collection Edit - Content Source",
-
+  "collection.edit.tabs.source.title": "Editar Colección - Fuente Contenido",
 
 
   // "collection.edit.template.add-button": "Add",
-  // TODO New key - Add a translation
-  "collection.edit.template.add-button": "Add",
+  "collection.edit.template.add-button": "Añadir",
 
   // "collection.edit.template.breadcrumbs": "Item template",
-  // TODO New key - Add a translation
-  "collection.edit.template.breadcrumbs": "Item template",
+  "collection.edit.template.breadcrumbs": "Plantilla de ítems",
 
   // "collection.edit.template.cancel": "Cancel",
-  // TODO New key - Add a translation
-  "collection.edit.template.cancel": "Cancel",
+  "collection.edit.template.cancel": "Cancelar",
 
   // "collection.edit.template.delete-button": "Delete",
-  // TODO New key - Add a translation
-  "collection.edit.template.delete-button": "Delete",
+  "collection.edit.template.delete-button": "Eliminar",
 
   // "collection.edit.template.edit-button": "Edit",
-  // TODO New key - Add a translation
-  "collection.edit.template.edit-button": "Edit",
+  "collection.edit.template.edit-button": "Editar",
 
   // "collection.edit.template.head": "Edit Template Item for Collection \"{{ collection }}\"",
-  // TODO New key - Add a translation
-  "collection.edit.template.head": "Edit Template Item for Collection \"{{ collection }}\"",
+  "collection.edit.template.head": "Editar plantilla de ítems para la colección \"{{ collection }}\"",
 
   // "collection.edit.template.label": "Template item",
-  // TODO New key - Add a translation
-  "collection.edit.template.label": "Template item",
+  "collection.edit.template.label": "Plantilla ítem",
 
   // "collection.edit.template.notifications.delete.error": "Failed to delete the item template",
-  // TODO New key - Add a translation
-  "collection.edit.template.notifications.delete.error": "Failed to delete the item template",
+  "collection.edit.template.notifications.delete.error": "No se ha podido eliminar la plantilla de ítems",
 
   // "collection.edit.template.notifications.delete.success": "Successfully deleted the item template",
-  // TODO New key - Add a translation
-  "collection.edit.template.notifications.delete.success": "Successfully deleted the item template",
+  "collection.edit.template.notifications.delete.success": "Se ha eliminado con éxito la plantilla de ítems",
 
   // "collection.edit.template.title": "Edit Template Item",
-  // TODO New key - Add a translation
-  "collection.edit.template.title": "Edit Template Item",
+  "collection.edit.template.title": "Editar Plantilla Item",
 
 
   // "collection-export.success": "Export of the collection's items started successfully",
-  // TODO New key - Add a translation
   "collection-export.success": "Export of the collection's items started successfully",
 
   // "collection-export.error": "An error occurs starting the collection's items export",
-  // TODO New key - Add a translation
-  "collection-export.error": "An error occurs starting the collection's items export",
+  "collection-export.error": "Se ha producido un error al iniciar la exportación de ítems de la colección",
 
 
   // "collection.form.abstract": "Short Description",
@@ -1780,7 +1620,7 @@
   "collection.form.description": "Texto introductorio (HTML)",
 
   // "collection.form.errors.title.required": "Please enter a collection name",
-  "collection.form.errors.title.required": "Favor ingrese un nombre a la colección",
+  "collection.form.errors.title.required": "Por favor, introduzca el nombre de la colección",
 
   // "collection.form.license": "License",
   "collection.form.license": "Licencia",
@@ -1792,8 +1632,7 @@
   "collection.form.rights": "Texto de copyright (HTML)",
 
   // "collection.form.sharedWorkspace": "Shared workspace",
-  // TODO New key - Add a translation
-  "collection.form.sharedWorkspace": "Shared workspace",
+  "collection.form.sharedWorkspace": "Espacio de trabajo compartido",
 
   // "collection.form.tableofcontents": "News (HTML)",
   "collection.form.tableofcontents": "Noticias (HTML)",
@@ -1802,46 +1641,36 @@
   "collection.form.title": "Nombre",
 
   // "collection.form.entityType": "Entity Type",
-  // TODO New key - Add a translation
-  "collection.form.entityType": "Entity Type",
+  "collection.form.entityType": "Tipo Entidad",
 
   // "collection.form.errors.entityType.required": "Please choose an entity type for this collection",
-  // TODO New key - Add a translation
-  "collection.form.errors.entityType.required": "Please choose an entity type for this collection",
+  "collection.form.errors.entityType.required": "Por favor, elija un tipo de entidad para esta colección",
 
   // "collection.form.errors.submissionDefinition.required": "Please choose a submission definition for this collection",
-  // TODO New key - Add a translation
-  "collection.form.errors.submissionDefinition.required": "Please choose a submission definition for this collection",
+  "collection.form.errors.submissionDefinition.required": "Por favor, elija una definición de presentación para esta colección",
 
   // "collection.form.submissionDefinition": "Submission definition",
-  // TODO New key - Add a translation
-  "collection.form.submissionDefinition": "Submission definition",
-
+  "collection.form.submissionDefinition": "Definición de presentación",
 
 
   // "collection.listelement.badge": "Collection",
-  // TODO New key - Add a translation
-  "collection.listelement.badge": "Collection",
-
+  "collection.listelement.badge": "Colección",
 
 
   // "collection.page.browse.recent.head": "Recent Submissions",
   "collection.page.browse.recent.head": "Envíos recientes",
 
   // "collection.page.browse.recent.empty": "No items to show",
-  "collection.page.browse.recent.empty": "No ítemes para mostrar",
+  "collection.page.browse.recent.empty": "No ítems para mostrar",
 
   // "collection.page.edit": "Edit this collection",
-  // TODO New key - Add a translation
-  "collection.page.edit": "Edit this collection",
+  "collection.page.edit": "Editar esta colección",
 
   // "collection.page.bulk-import": "Import items into this collection",
-  // TODO New key - Add a translation
-  "collection.page.bulk-import": "Import items into this collection",
+  "collection.page.bulk-import": "Importar ítems a esta colección",
 
   // "collection.page.export": "Export items from this collection",
-  // TODO New key - Add a translation
-  "collection.page.export": "Export items from this collection",
+  "collection.page.export": "Exportar ítems de esta colección",
 
   // "collection.page.handle": "Permanent URI for this collection",
   "collection.page.handle": "URI permanente para esta colección",
@@ -1851,7 +1680,6 @@
 
   // "collection.page.news": "News",
   "collection.page.news": "Noticias",
-
 
 
   // "collection.select.confirm": "Confirm selected",
@@ -1864,43 +1692,34 @@
   "collection.select.table.title": "Título",
 
 
-
   // "collection.source.update.notifications.error.content": "The provided settings have been tested and didn't work.",
-  // TODO New key - Add a translation
-  "collection.source.update.notifications.error.content": "The provided settings have been tested and didn't work.",
+  "collection.source.update.notifications.error.content": "Los ajustes proporcionados han sido probados y no han funcionado.",
 
   // "collection.source.update.notifications.error.title": "Server Error",
-  // TODO New key - Add a translation
-  "collection.source.update.notifications.error.title": "Server Error",
-
+  "collection.source.update.notifications.error.title": "Error del servidor",
 
 
   // "communityList.tabTitle": "DSpace - Community List",
-  // TODO New key - Add a translation
-  "communityList.tabTitle": "DSpace - Community List",
+  "communityList.tabTitle": "DSpace - Lista de Comunidades",
 
   // "communityList.title": "List of Communities",
-  "communityList.title": "List of Communities",
+  "communityList.title": "Lista de Comunidades",
 
   // "communityList.showMore": "Show More",
-  // TODO New key - Add a translation
-  "communityList.showMore": "Show More",
-
+  "communityList.showMore": "Mostrar Más",
 
 
   // "community.create.head": "Create a Community",
   "community.create.head": "Crear una Comunidad",
 
   // "community.create.notifications.success": "Successfully created the Community",
-  // TODO New key - Add a translation
-  "community.create.notifications.success": "Successfully created the Community",
+  "community.create.notifications.success": "La Comunidad ha sido creada con éxito",
 
   // "community.create.sub-head": "Create a Sub-Community for Community {{ parent }}",
   "community.create.sub-head": "Crear una Sub-Comunidad por Communidad {{ parent }}",
 
   // "community.curate.header": "Curate Community: {{community}}",
-  // TODO New key - Add a translation
-  "community.curate.header": "Curate Community: {{community}}",
+  "community.curate.header": "Conservar Comunidad: {{community}}",
 
   // "community.delete.cancel": "Cancel",
   "community.delete.cancel": "Cancelar",
@@ -1927,77 +1746,58 @@
   "community.edit.head": "Editar la Comunidad",
 
   // "community.edit.breadcrumbs": "Edit Community",
-  // TODO New key - Add a translation
-  "community.edit.breadcrumbs": "Edit Community",
+  "community.edit.breadcrumbs": "Editar Comunidad",
 
 
   // "community.edit.logo.label": "Community logo",
-  // TODO New key - Add a translation
-  "community.edit.logo.label": "Community logo",
+  "community.edit.logo.label": "Logo Comunidad",
 
   // "community.edit.logo.notifications.add.error": "Uploading Community logo failed. Please verify the content before retrying.",
-  // TODO New key - Add a translation
-  "community.edit.logo.notifications.add.error": "Uploading Community logo failed. Please verify the content before retrying.",
+  "community.edit.logo.notifications.add.error": "No se ha podido cargar el logotipo de la Comunidad. Por favor, verifique el contenido antes de reintentar.",
 
   // "community.edit.logo.notifications.add.success": "Upload Community logo successful.",
-  // TODO New key - Add a translation
-  "community.edit.logo.notifications.add.success": "Upload Community logo successful.",
+  "community.edit.logo.notifications.add.success": "Subida con éxito del logotipo de la Comunidad.",
 
   // "community.edit.logo.notifications.delete.success.title": "Logo deleted",
-  // TODO New key - Add a translation
-  "community.edit.logo.notifications.delete.success.title": "Logo deleted",
+  "community.edit.logo.notifications.delete.success.title": "Logo eliminado",
 
   // "community.edit.logo.notifications.delete.success.content": "Successfully deleted the community's logo",
-  // TODO New key - Add a translation
-  "community.edit.logo.notifications.delete.success.content": "Successfully deleted the community's logo",
+  "community.edit.logo.notifications.delete.success.content": "Eliminado con éxito el logotipo de la comunidad",
 
   // "community.edit.logo.notifications.delete.error.title": "Error deleting logo",
-  // TODO New key - Add a translation
-  "community.edit.logo.notifications.delete.error.title": "Error deleting logo",
+  "community.edit.logo.notifications.delete.error.title": "Error al eliminar el logotipo",
 
   // "community.edit.logo.upload": "Drop a Community Logo to upload",
-  // TODO New key - Add a translation
-  "community.edit.logo.upload": "Drop a Community Logo to upload",
-
+  "community.edit.logo.upload": "Suelte un logotipo comunitario para cargarlo",
 
 
   // "community.edit.notifications.success": "Successfully edited the Community",
-  // TODO New key - Add a translation
-  "community.edit.notifications.success": "Successfully edited the Community",
+  "community.edit.notifications.success": "La Comunidad ha sido editada con éxito",
 
   // "community.edit.notifications.unauthorized": "You do not have privileges to make this change",
-  // TODO New key - Add a translation
-  "community.edit.notifications.unauthorized": "You do not have privileges to make this change",
+  "community.edit.notifications.unauthorized": "No posee privilegios para realizar este cambio",
 
   // "community.edit.notifications.error": "An error occured while editing the Community",
-  // TODO New key - Add a translation
-  "community.edit.notifications.error": "An error occured while editing the Community",
+  "community.edit.notifications.error": "Se ha producido un error al editar la Comunidad",
 
   // "community.edit.return": "Return",
-  // TODO New key - Add a translation
-  "community.edit.return": "Return",
-
+  "community.edit.return": "Volver",
 
 
   // "community.edit.tabs.curate.head": "Curate",
-  // TODO New key - Add a translation
-  "community.edit.tabs.curate.head": "Curate",
+  "community.edit.tabs.curate.head": "Conservar",
 
   // "community.edit.tabs.curate.title": "Community Edit - Curate",
-  // TODO New key - Add a translation
-  "community.edit.tabs.curate.title": "Community Edit - Curate",
+  "community.edit.tabs.curate.title": "Editar Communidad - Curate",
 
   // "community.edit.tabs.metadata.head": "Edit Metadata",
-  // TODO New key - Add a translation
-  "community.edit.tabs.metadata.head": "Edit Metadata",
+  "community.edit.tabs.metadata.head": "Editar Metadatos",
 
   // "community.edit.tabs.metadata.title": "Community Edit - Metadata",
-  // TODO New key - Add a translation
-  "community.edit.tabs.metadata.title": "Community Edit - Metadata",
+  "community.edit.tabs.metadata.title": "Editar Comunidad - Metadatos",
 
   // "community.edit.tabs.roles.head": "Assign Roles",
-  // TODO New key - Add a translation
-  "community.edit.tabs.roles.head": "Assign Roles",
+  "community.edit.tabs.roles.head": "Asignar Roles",
 
   // "community.edit.tabs.roles.title": "Community Edit - Roles",
   "community.edit.tabs.roles.title": "Editar Comunidad - Roles",
