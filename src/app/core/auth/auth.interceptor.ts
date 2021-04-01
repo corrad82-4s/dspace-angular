@@ -26,6 +26,8 @@ import { AuthMethod } from './models/auth.method';
 import { AuthMethodType } from './models/auth.method-type';
 import { hasAuthMethodRendering } from '../../shared/log-in/methods/log-in.methods-decorator';
 
+export const CAS_LOGOUT_HEADER = 'Oidc-Logout';
+
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
 
@@ -274,6 +276,8 @@ export class AuthInterceptor implements HttpInterceptor {
             });
           } else {
             // logout successfully
+            this.casLogoutHandler(response);
+
             authRes = response.clone({
               body: this.makeAuthStatusObject(false)
             });
@@ -311,4 +315,20 @@ export class AuthInterceptor implements HttpInterceptor {
         return observableThrowError(error);
       })) as any;
   }
+
+  /**
+   * After a successful logout if a CAS_LOGOUT_HEADER is present, navigates the browser to the contained url
+   * to perform the Single Logout operation.
+   * @param response
+   * @private
+   */
+  private casLogoutHandler(response: HttpResponse<any>) {
+    if (response.headers && response.headers.get(CAS_LOGOUT_HEADER)) {
+      const customLocation = response.headers.get(CAS_LOGOUT_HEADER);
+      setTimeout(() => {
+          window.location.href = customLocation;
+        }, 100);
+    }
+  }
+
 }

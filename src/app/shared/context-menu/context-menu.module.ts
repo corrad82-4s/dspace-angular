@@ -13,6 +13,10 @@ import { DsoPageEditMenuComponent } from './dso-page-edit/dso-page-edit-menu.com
 import { ExportCollectionMenuComponent } from './export-collection/export-collection-menu.component';
 import { BulkImportMenuComponent } from './bulk-import/bulk-import-menu.component';
 import { ClaimItemMenuComponent } from './claim-item/claim-item-menu.component';
+import { AddCvPublicationMenuComponent } from './add-cv-publication/add-cv-publication-menu.component';
+import { AddCvPatentMenuComponent } from './add-cv-patent/add-cv-patent-menu.component';
+import { AddCvProjectMenuComponent } from './add-cv-project/add-cv-project-menu.component';
+import { ModifyForProfileMenuComponent } from './modify-for-profile/modify-for-profile-menu.component';
 
 const COMPONENTS = [
   BulkImportMenuComponent,
@@ -22,7 +26,11 @@ const COMPONENTS = [
   EditItemMenuComponent,
   ExportItemMenuComponent,
   ExportCollectionMenuComponent,
-  ClaimItemMenuComponent
+  ClaimItemMenuComponent,
+  AddCvPublicationMenuComponent,
+  AddCvProjectMenuComponent,
+  AddCvPatentMenuComponent,
+  ModifyForProfileMenuComponent
 ];
 
 const ENTRY_COMPONENTS = [
@@ -32,7 +40,11 @@ const ENTRY_COMPONENTS = [
   EditItemMenuComponent,
   ExportItemMenuComponent,
   ExportCollectionMenuComponent,
-  ClaimItemMenuComponent
+  ClaimItemMenuComponent,
+  AddCvPublicationMenuComponent,
+  AddCvProjectMenuComponent,
+  AddCvPatentMenuComponent,
+  ModifyForProfileMenuComponent
 ];
 
 const MODULE = [

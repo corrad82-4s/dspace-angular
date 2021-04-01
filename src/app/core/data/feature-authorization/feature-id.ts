@@ -12,5 +12,6 @@ export enum FeatureID {
   CanClaimItem = 'canClaimItem',
   CanCorrectItem = 'canCorrectItem',
   CanWithdrawItem = 'canWithdrawItem',
-  CanReinstateItem = 'canReinstateItem'
+  CanReinstateItem = 'canReinstateItem',
+  CanChangeProfileRelatedEntity = 'canChangeProfileRelatedEntity'
 }

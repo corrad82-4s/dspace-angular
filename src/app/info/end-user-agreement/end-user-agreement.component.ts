@@ -72,7 +72,13 @@ export class EndUserAgreementComponent implements OnInit {
       take(1)
     ).subscribe((redirectUrl) => {
       if (isNotEmpty(redirectUrl)) {
-        this.store.dispatch(new RefreshTokenAndRedirectAction(this.authService.getToken(), redirectUrl));
+        this.authService.isAuthenticated().pipe(take(1)).subscribe((authenticated) => {
+          if (authenticated) {
+            this.store.dispatch(new RefreshTokenAndRedirectAction(this.authService.getToken(), redirectUrl));
+          } else {
+            this.router.navigateByUrl(decodeURIComponent(redirectUrl)).then();
+          }
+        });
       }
     });
   }

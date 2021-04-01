@@ -6,6 +6,9 @@ import { RegisterEmailComponent } from './register-email/register-email.componen
 import { CreateProfileComponent } from './create-profile/create-profile.component';
 import { RegisterEmailFormModule } from '../register-email-form/register-email-form.module';
 import { ProfilePageModule } from '../profile-page/profile-page.module';
+import { RegisterDniComponent } from './register-dni/register-dni.component';
+import { RegisterDniProfileComponent } from './register-dni/register-dni-profile/register-dni-profile.component';
+import { RegisterNavbarComponent } from './register-navbar/register-navbar.component';
 
 @NgModule({
   imports: [
@@ -13,11 +16,14 @@ import { ProfilePageModule } from '../profile-page/profile-page.module';
     SharedModule,
     RegisterPageRoutingModule,
     RegisterEmailFormModule,
-    ProfilePageModule,
+    ProfilePageModule
   ],
   declarations: [
     RegisterEmailComponent,
-    CreateProfileComponent
+    CreateProfileComponent,
+    RegisterDniComponent,
+    RegisterDniProfileComponent,
+    RegisterNavbarComponent
   ],
   providers: []
 })

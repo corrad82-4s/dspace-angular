@@ -244,9 +244,9 @@ describe('EPersonFormComponent', () => {
           model.value = true;
         }
       });
-      component.institutionalScopedRoles[0].group.forEach((model) => {
-        if (model.name === InstitutionalScopedRoleGroupMock.id) {
-          model.value = true;
+      component.institutionalScopedRoles[0].options.forEach((option) => {
+        if (option.value.id === InstitutionalScopedRoleGroupMock.id) {
+          component.institutionalScopedRoles[0].value = [option.value];
         }
       });
     });

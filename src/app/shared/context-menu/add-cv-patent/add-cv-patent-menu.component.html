@@ -1,0 +1,5 @@
+<ng-container *ngIf="(isCvProfile() | async)">
+  <button ngbDropdownItem [routerLink]="['/submit']" [queryParams] = "getCvPatentCollectionId() | async">
+    {{'context-menu.actions.add-cv-patent.btn' | translate}}
+  </button>
+</ng-container>

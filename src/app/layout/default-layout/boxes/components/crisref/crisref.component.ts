@@ -18,6 +18,11 @@ interface CrisRef {
 }
 
 /**
+ * Authorities which start with these prefixes must be discarded.
+ */
+const prefixReferenceDenyList = ['will be referenced', 'will be generated'];
+
+/**
  * This component renders the crisref metadata fields
  */
 @Component({
@@ -58,7 +63,7 @@ export class CrisrefComponent extends RenderingTypeModelComponent implements OnI
     if (hasValue(itemMetadata)) {
       this.references = observableFrom(itemMetadata).pipe(
         concatMap((metadataValue: MetadataValue) => {
-          if (hasValue(metadataValue.authority)) {
+          if (this.hasReferencedAuthority(metadataValue.authority)) {
             return this.itemService.findById(metadataValue.authority).pipe(
               getFirstSucceededRemoteDataPayload(),
               map((item) => {
@@ -98,5 +103,13 @@ export class CrisrefComponent extends RenderingTypeModelComponent implements OnI
    */
   ngOnDestroy(): void {
     this.subs.filter((sub) => hasValue(sub)).forEach((sub) => sub.unsubscribe());
+  }
+
+  hasReferencedAuthority(authority: string) {
+    return hasValue(authority) && !this.isAuthorityDenied(authority);
+  }
+
+  private isAuthorityDenied(authority): boolean {
+    return prefixReferenceDenyList.find(prefix => authority.startsWith(prefix)) !== undefined;
   }
 }
