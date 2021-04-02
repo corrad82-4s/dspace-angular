@@ -1,4 +1,4 @@
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { BehaviorSubject, Observable, of } from 'rxjs';
@@ -40,6 +40,11 @@ export class ProfilePageResearcherFormComponent implements OnInit {
      * @type {BehaviorSubject<boolean>}
      */
     processingCreate$: BehaviorSubject<boolean>  = new BehaviorSubject<boolean>(false);
+
+    /**
+     * Reference to NgbModal
+     */
+    public modalRef: NgbModalRef;
 
     canClaim$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
@@ -107,11 +112,21 @@ export class ProfilePageResearcherFormComponent implements OnInit {
     }
 
     /**
+     * Open the modal to confirm the delation the given researcher profile.
+     *
+     * @param content the modal content to show
+     */
+     openDeletionModal(content: any): void {
+       this.modalRef = this.modalService.open(content);
+    }
+
+    /**
      * Delete the given researcher profile.
      *
      * @param researcherProfile the profile to delete
      */
     deleteProfile( researcherProfile: ResearcherProfile): void {
+        this.modalRef?.close('Send Button');
         this.processingDelete$.next(true);
         this.researcherProfileService.delete(researcherProfile)
             .subscribe ( (deleted) => {

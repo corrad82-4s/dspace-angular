@@ -56,7 +56,8 @@ describe('ProfilePageResearcherFormComponent', () => {
         });
 
         modalService = jasmine.createSpyObj('NgbModal', {
-            open: {componentInstance: {}}
+            open: {componentInstance: {}},
+            close: () => null
         });
 
     }
@@ -108,6 +109,15 @@ describe('ProfilePageResearcherFormComponent', () => {
             profile.visible = true;
             component.toggleProfileVisibility(profile);
             expect(researcherProfileService.setVisibility).toHaveBeenCalledWith(profile, false);
+        });
+
+    });
+
+    describe('openDeletionModal', () => {
+
+        it('should open the deletion modal', () => {
+            component.openDeletionModal({});
+            expect(modalService.open).toHaveBeenCalledTimes(1);
         });
 
     });
