@@ -8652,156 +8652,118 @@
   "cris.boxmetadata.label.authors": "Autor(es)",
 
   // "cris.boxmetadata.label.author’sorcid": "Author’s ORCID",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.author’sorcid": "Author’s ORCID",
+  "cris.boxmetadata.label.author’sorcid": "ORCID del autor",
 
   // "cris.boxmetadata.label.author’sdni": "Author’s DNI",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.author’sdni": "Author’s DNI",
+  "cris.boxmetadata.label.author’sdni": "DNI del autor",
 
   // "cris.boxmetadata.label.editors": "Editor(s)",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.editors": "Editor(s)",
+  "cris.boxmetadata.label.editors": "Editor(es)",
 
   // "cris.boxmetadata.label.editor’sorcid": "Editor’s ORCID",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.editor’sorcid": "Editor’s ORCID",
+  "cris.boxmetadata.label.editor’sorcid": "ORCID del editor",
 
   // "cris.boxmetadata.label.editor’sdni": "Editor’s DNI",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.editor’sdni": "Editor’s DNI",
+  "cris.boxmetadata.label.editor’sdni": "DNI del editor",
 
   // "cris.boxmetadata.label.doi": "DOI",
-  // TODO New key - Add a translation
   "cris.boxmetadata.label.doi": "DOI",
 
   // "cris.boxmetadata.label.projects": "Project(s)",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.projects": "Project(s)",
+  "cris.boxmetadata.label.projects": "Proyecto(s)",
 
   // "cris.boxmetadata.label.fundings": "Funding(s)",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.fundings": "Funding(s)",
+  "cris.boxmetadata.label.fundings": "Financiación(es)",
 
   // "cris.boxmetadata.label.subjects": "Subjects",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.subjects": "Subjects",
+  "cris.boxmetadata.label.subjects": "Materias",
 
   // "cris.boxmetadata.label.ddcsubjects": "DDC Subject(s)",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.ddcsubjects": "DDC Subject(s)",
+  "cris.boxmetadata.label.ddcsubjects": "Materia(s) DDC",
 
   // "cris.boxmetadata.label.locsubjects": "LOC Subject(s)",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.locsubjects": "LOC Subject(s)",
+  "cris.boxmetadata.label.locsubjects": "Materia(s) LOC",
 
   // "cris.boxmetadata.label.meshkeywords": "Mesh Keyword(s)",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.meshkeywords": "Mesh Keyword(s)",
+  "cris.boxmetadata.label.meshkeywords": "Palabra(s) clave Mesh",
 
   // "cris.boxmetadata.label.advisor": "Advisor",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.advisor": "Advisor",
+  "cris.boxmetadata.label.advisor": "Asesor",
 
   // "cris.boxmetadata.label.advisor’sorcid": "Advisor’s ORCID",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.advisor’sorcid": "Advisor’s ORCID",
+  "cris.boxmetadata.label.advisor’sorcid": "ORCID del asesor",
 
   // "cris.boxmetadata.label.advisor’sdni": "Advisor’s DNI",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.advisor’sdni": "Advisor’s DNI",
+  "cris.boxmetadata.label.advisor’sdni": "DNI del asesor",
 
   // "cris.boxmetadata.label.renatitype": "Renati Type",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.renatitype": "Renati Type",
+  "cris.boxmetadata.label.renatitype": "Tipo Renati",
 
   // "cris.boxmetadata.label.degreename": "Degree Name",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.degreename": "Degree Name",
+  "cris.boxmetadata.label.degreename": "Nombre del título",
 
   // "cris.boxmetadata.label.level": "Level",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.level": "Level",
+  "cris.boxmetadata.label.level": "Nivel",
 
   // "cris.boxmetadata.label.degreedisciplines": "Degree Discipline(s)",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.degreedisciplines": "Degree Discipline(s)",
+  "cris.boxmetadata.label.degreedisciplines": "Disciplina(s) del título",
 
   // "cris.boxmetadata.label.disciplines": "Discipline(s)",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.disciplines": "Discipline(s)",
+  "cris.boxmetadata.label.disciplines": "Disciplina(s)",
 
   // "cris.boxmetadata.label.juror": "Juror",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.juror": "Juror",
+  "cris.boxmetadata.label.juror": "Jurado",
 
   // "cris.boxmetadata.label.grantor": "Grantor",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.grantor": "Grantor",
+  "cris.boxmetadata.label.grantor": "Otorgante",
 
   // "cris.boxmetadata.label.issuer": "Issuer",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.issuer": "Issuer",
+  "cris.boxmetadata.label.issuer": "Emisor",
 
   // "cris.boxmetadata.label.applicationdate": "Application Date",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.applicationdate": "Application Date",
+  "cris.boxmetadata.label.applicationdate": "Fecha de aplicación",
 
   // "cris.boxmetadata.label.publicationdate": "Publication Date",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.publicationdate": "Publication Date",
+  "cris.boxmetadata.label.publicationdate": "Fecha de publicación",
 
   // "cris.boxmetadata.label.patentcountry": "Patent Country",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.patentcountry": "Patent Country",
+  "cris.boxmetadata.label.patentcountry": "País de la patente",
 
   // "cris.boxmetadata.label.patentholdercountry": "Patent Holder Country",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.patentholdercountry": "Patent Holder Country",
+  "cris.boxmetadata.label.patentholdercountry": "País del titular de la patente",
 
   // "cris.boxmetadata.label.inventors": "Inventor(s)",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.inventors": "Inventor(s)",
+  "cris.boxmetadata.label.inventors": "Inventor(es)",
 
   // "cris.boxmetadata.label.holder": "Holder",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.holder": "Holder",
+  "cris.boxmetadata.label.holder": "Titular",
 
   // "cris.boxmetadata.label.patentnumber": "Patent Number",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.patentnumber": "Patent Number",
+  "cris.boxmetadata.label.patentnumber": "Número de la patente",
 
   // "cris.boxmetadata.label.url": "URL",
-  // TODO New key - Add a translation
   "cris.boxmetadata.label.url": "URL",
 
   // "cris.boxmetadata.label.language": "Language",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.language": "Language",
+  "cris.boxmetadata.label.language": "Idioma",
 
   // "cris.boxmetadata.label.cipsubjects": "CIP Subject(s)",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.cipsubjects": "CIP Subject(s)",
+  "cris.boxmetadata.label.cipsubjects": "Materia(s) CIP",
 
   // "cris.boxmetadata.label.projects": "Projects",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.projects": "Projects",
+  "cris.boxmetadata.label.projects": "Proyectos",
 
   // "cris.boxmetadata.label.predecessor": "Predecessor",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.predecessor": "Predecessor",
+  "cris.boxmetadata.label.predecessor": "Predecesor",
 
   // "cris.boxmetadata.label.references": "References",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.references": "References",
+  "cris.boxmetadata.label.references": "Referencias",
 
   // "cris.boxmetadata.label.recipient": "Recipient",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.recipient": "Recipient",
+  "cris.boxmetadata.label.recipient": "Destinatario",
 
   // "cris.boxmetadata.label.message": "Message"
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.message": "Message"
+  "cris.boxmetadata.label.message": "Mensaje"
 
 
 
