@@ -4506,13 +4506,13 @@
   "mydspace.status.workflow": "Flujo de trabajo",
 
   // "mydspace.status.workspace": "Workspace",
-  "mydspace.status.workspace": "Workspace",
+  "mydspace.status.workspace": "Espacio de trabajo",
 
   // "mydspace.title": "MyDSpace",
   "mydspace.title": "MiDSpace",
 
   // "mydspace.upload.upload-failed": "Error creating new workspace. Please verify the content uploaded before retry.",
-  "mydspace.upload.upload-failed": "Error al crear nuevo Workspace. Verifique el contenido cargado antes de intentarlo de nuevo.",
+  "mydspace.upload.upload-failed": "Error al crear nuevo espacio de trabajo. Verifique el contenido cargado antes de intentarlo de nuevo.",
 
   // "mydspace.upload.upload-failed-manyentries": "Unprocessable file. Detected too many entries but allowed only one for file.",
   "mydspace.upload.upload-failed-manyentries": "Archivo no procesable. Se han detectado demasiadas entradas, pero sólo se permite una para el archivo.",
@@ -4522,10 +4522,10 @@
   "mydspace.upload.upload-failed-moreonefile": "Solicitud no procesable. Sólo se permite un archivo.",
 
   // "mydspace.upload.upload-multiple-successful": "{{qty}} new workspace items created.",
-  "mydspace.upload.upload-multiple-successful": "{{qty}} Nuevos ítems de workspace creados.",
+  "mydspace.upload.upload-multiple-successful": "{{qty}} nuevos ítems de espacio de trabajo creados.",
 
   // "mydspace.upload.upload-successful": "New workspace item created. Click {{here}} for edit it.",
-  "mydspace.upload.upload-successful": "Nuevos ítems de workspace creados. Clic {{here}} para editar.",
+  "mydspace.upload.upload-successful": "Nuevo ítem del espacio de trabajo creados. Clic {{here}} para editar.",
 
   // "mydspace.view-btn": "View",
   "mydspace.view-btn": "Ver",
@@ -4552,7 +4552,6 @@
   "mydspace.item.withdrawn-request": "Retiro",
 
   // "mydspace.item.reinstate-request": "Reinstatement",
-  // TODO New key - Add a translation
   "mydspace.item.reinstate-request": "Reintegro",
 
   // "nav.browse.header": "All of DSpace",
@@ -4588,7 +4587,6 @@
 
 
   // "openaire.broker.title": "OpenAIRE Broker",
-  // TODO New key - Add a translation
   "openaire.broker.title": "OpenAIRE Broker",
 
   // "openaire.broker.topics.description": "Below you can see all the topics received from the subscriptions to OpenAIRE.",
@@ -4613,15 +4611,13 @@
   "openaire.broker.noTopics": "No se han encontrado temas.",
 
   // "openaire.broker.topic.error.service.retrieve": "An error occurred while loading the OpenAIRE Broker topics",
-  // TODO New key - Add a translation
-  "openaire.broker.topic.error.service.retrieve": "An error occurred while loading the OpenAIRE Broker topics",
+  "openaire.broker.topic.error.service.retrieve": "Se ha producido un error al cargar los temas de OpenAIRE Broker",
 
   // "openaire.broker.loading": "Loading ...",
   "openaire.broker.loading": "Cargando ...",
 
   // "openaire.events.title": "OpenAIRE Broker Suggestions",
-  // TODO New key - Add a translation
-  "openaire.events.title": "OpenAIRE Broker Suggestions",
+  "openaire.events.title": "Sugerencias del OpenAIRE Broker",
 
   // "openaire.broker.events.description": "Below the list of all the suggestions, received from OpenAIRE, for the selected topic.",
   "openaire.broker.events.description": "A continuación la lista de todas las sugerencias, obtenidas de OpenAIRE, sobre el tema seleccionado.",
@@ -4660,12 +4656,10 @@
   "openaire.broker.event.action.import": "Importar el proyecto y aceptar la sugerencia",
 
   // "openaire.broker.event.table.pidtype": "PID Type:",
-  // TODO New key - Add a translation
-  "openaire.broker.event.table.pidtype": "PID Type:",
+  "openaire.broker.event.table.pidtype": "Tipo PID:",
 
   // "openaire.broker.event.table.pidvalue": "PID Value:",
-  // TODO New key - Add a translation
-  "openaire.broker.event.table.pidvalue": "PID Value:",
+  "openaire.broker.event.table.pidvalue": "Valor PID:",
 
   // "openaire.broker.event.table.subjectValue": "Subject Value:",
   "openaire.broker.event.table.subjectValue": "Valor de la materia:",
@@ -5078,8 +5072,7 @@
   "person.page.orcid.scope.authenticate": "Obtenga su ORCID iD",
 
   // "person.page.orcid.scope.read-limited": "Read your information with visibility set to Trusted Parties",
-  // TODO New key - Add a translation
-  "person.page.orcid.scope.read-limited": "Read your information with visibility set to Trusted Parties",
+  "person.page.orcid.scope.read-limited": "Lea su información con la visibilidad establecida en los Terceros de Confianza",
 
   // "person.page.orcid.scope.activities-update": "Add/update your research activities",
   "person.page.orcid.scope.activities-update": "Añadir/actualizar sus actividades de investigación",
@@ -5463,8 +5456,7 @@
   "profile.granted-applications.table.revoke": "Revocar",
 
   // "profile.granted-applications.table.scopes": "Scopes",
-  // TODO New key - Add a translation
-  "profile.granted-applications.table.scopes": "Scopes",
+  "profile.granted-applications.table.scopes": "Alcances",
 
   // "profile.groups.head": "Authorization groups you belong to",
   "profile.groups.head": "Grupos de autorización a los que pertenece",
@@ -5790,7 +5782,7 @@
   "relationships.isAuthorOf.Person": "Autores (personas)",
 
   // "relationships.isAuthorOf.OrgUnit": "Authors (organizational units)",
-  "relationships.isAuthorOf.OrgUnit": "Autores (unidades organizacionales)",
+  "relationships.isAuthorOf.OrgUnit": "Autores (unidades organizativas)",
 
   // "relationships.isIssueOf": "Journal Issues",
   "relationships.isIssueOf": "Números de Revista",
@@ -5802,7 +5794,7 @@
   "relationships.isJournalOf": "Revistas",
 
   // "relationships.isOrgUnitOf": "Organizational Units",
-  "relationships.isOrgUnitOf": "Unidades Organizacionales",
+  "relationships.isOrgUnitOf": "Unidades Organizativas",
 
   // "relationships.isPersonOf": "Authors",
   "relationships.isPersonOf": "Autores",
@@ -6123,10 +6115,10 @@
   "search.filters.applied.charts.RELATION.CvPerson.notifications.title": "Notificaciones",
 
   // "search.filters.applied.charts.RELATION.InstitutionOrgUnit.iouorganizations": "OrgUnits",
-  "search.filters.applied.charts.RELATION.InstitutionOrgUnit.iouorganizations": "Instituciones",
+  "search.filters.applied.charts.RELATION.InstitutionOrgUnit.iouorganizations": "Unidades organizativas",
 
   // "search.filters.applied.charts.RELATION.InstitutionOrgUnit.iouorganizations.title": "OrgUnits",
-  "search.filters.applied.charts.RELATION.InstitutionOrgUnit.iouorganizations.title": "Instituciones",
+  "search.filters.applied.charts.RELATION.InstitutionOrgUnit.iouorganizations.title": "Unidades organizativas",
 
   // "search.filters.applied.charts.RELATION.InstitutionOrgUnit.ioupeople": "People",
   "search.filters.applied.charts.RELATION.InstitutionOrgUnit.ioupeople": "Personas",
@@ -6201,10 +6193,10 @@
 
 
   // "search.filters.applied.charts.RELATION.OrgUnit.organizations": "OrgUnits",
-  "search.filters.applied.charts.RELATION.OrgUnit.organizations": "Instituciones",
+  "search.filters.applied.charts.RELATION.OrgUnit.organizations": "Unidades organizativas",
 
   // "search.filters.applied.charts.RELATION.OrgUnit.organizations.title": "OrgUnits",
-  "search.filters.applied.charts.RELATION.OrgUnit.organizations.title": "Instituciones",
+  "search.filters.applied.charts.RELATION.OrgUnit.organizations.title": "Unidades organizativas",
 
   // "search.filters.applied.charts.RELATION.OrgUnit.publications.title": "Research Output",
   "search.filters.applied.charts.RELATION.OrgUnit.publications.title": "Resultado de investigación",
@@ -6542,7 +6534,7 @@
   "search.filters.filter.scope.head": "Alcance",
 
   // "search.filters.filter.scope.placeholder": "Scope filter",
-  "search.filters.filter.scope.placeholder": "Filtro del Alcance",
+  "search.filters.filter.scope.placeholder": "Filtro de Alcance",
 
   // "search.filters.filter.show-less": "Collapse",
   "search.filters.filter.show-less": "Contraer",
@@ -7101,10 +7093,10 @@
   "submission.sections.describe.relationship-lookup.external-source.import-modal.head.crossref": "Importación desde CrossRef",
 
   // "submission.sections.describe.relationship-lookup.external-source.import-modal.head.sherpaJournal": "Importing from Sherpa Journal",
-  "submission.sections.describe.relationship-lookup.external-source.import-modal.head.sherpaJournal": "Importación desde Sherpa Journal",
+  "submission.sections.describe.relationship-lookup.external-source.import-modal.head.sherpaJournal": "Importación desde Revistas Sherpa",
 
   // "submission.sections.describe.relationship-lookup.external-source.import-modal.head.sherpaPublisher": "Importing from Sherpa Publisher",
-  "submission.sections.describe.relationship-lookup.external-source.import-modal.head.sherpaPublisher": "Importación desde Sherpa Publisher",
+  "submission.sections.describe.relationship-lookup.external-source.import-modal.head.sherpaPublisher": "Importación desde Editores Sherpa",
 
   // "submission.sections.describe.relationship-lookup.external-source.import-modal.head.pubmed": "Importing from PubMed",
   "submission.sections.describe.relationship-lookup.external-source.import-modal.head.pubmed": "Importación desde PubMed",
@@ -7185,7 +7177,7 @@
   "submission.sections.describe.relationship-lookup.search-tab.tab-title.Person": "Autores locales ({{ count }})",
 
   // "submission.sections.describe.relationship-lookup.search-tab.tab-title.OrgUnit": "Local Organizational Units ({{ count }})",
-  "submission.sections.describe.relationship-lookup.search-tab.tab-title.OrgUnit": "Unidades organizacionales locales ({{ count }})",
+  "submission.sections.describe.relationship-lookup.search-tab.tab-title.OrgUnit": "Unidades organizativas locales ({{ count }})",
 
   // "submission.sections.describe.relationship-lookup.search-tab.tab-title.DataPackage": "Local Data Packages ({{ count }})",
   "submission.sections.describe.relationship-lookup.search-tab.tab-title.DataPackage": "Paquetes de datos locales ({{ count }})",
@@ -7236,7 +7228,7 @@
   "submission.sections.describe.relationship-lookup.search-tab.tab-title.isFundingOfPublication": "Búsqueda de financiación",
 
   // "submission.sections.describe.relationship-lookup.search-tab.tab-title.isChildOrgUnitOf": "Search for Organizational Units",
-  "submission.sections.describe.relationship-lookup.search-tab.tab-title.isChildOrgUnitOf": "Búsqueda de unidades organizacionales",
+  "submission.sections.describe.relationship-lookup.search-tab.tab-title.isChildOrgUnitOf": "Búsqueda de unidades organizativas",
 
   // "submission.sections.describe.relationship-lookup.selection-tab.tab-title": "Current Selection ({{ count }})",
   "submission.sections.describe.relationship-lookup.selection-tab.tab-title": "Selección actual ({{ count }})",
@@ -7272,7 +7264,7 @@
   "submission.sections.describe.relationship-lookup.title.Person": "Autores",
 
   // "submission.sections.describe.relationship-lookup.title.OrgUnit": "Organizational Units",
-  "submission.sections.describe.relationship-lookup.title.OrgUnit": "Unidades organizacionales",
+  "submission.sections.describe.relationship-lookup.title.OrgUnit": "Unidades Organizativas",
 
   // "submission.sections.describe.relationship-lookup.title.DataPackage": "Data Packages",
   "submission.sections.describe.relationship-lookup.title.DataPackage": "Paquetes de datos",
@@ -7736,7 +7728,7 @@
   "submission.workflow.generic.reinstate": "Restablecer",
 
   // "submission.workflow.generic.reinstate-help": "Select this option to request the item reinstatement.",
-  "submission.workflow.generic.reinstate-help": "Seleccione esta opción para solicitar el restablecimiento del ítem.",
+  "submission.workflow.generic.reinstate-help": "Seleccione esta opción para solicitar el reintegro del ítem.",
 
   // "submission.workflow.generic.reinstate.success": "Reinstate request made successfully",
   "submission.workflow.generic.reinstate.success": "Solicitud de restablecimiento realizada con éxito",
