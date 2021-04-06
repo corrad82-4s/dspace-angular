@@ -5219,7 +5219,7 @@
   "process.detail.start-time" : "Hora de inicio",
 
   // "process.detail.end-time" : "Finish time",
-  "process.detail.end-time" : "Hora de finalización",
+  "process.detail.end-time" : "Hora fin",
 
   // "process.detail.status" : "Status",
   "process.detail.status" : "Estado",
@@ -5230,7 +5230,7 @@
 
 
   // "process.overview.table.finish" : "Finish time",
-  "process.overview.table.finish" : "Hora de finalización",
+  "process.overview.table.finish" : "Hora fin",
 
   // "process.overview.table.id" : "Process ID",
   "process.overview.table.id" : "ID del proceso",
@@ -5953,7 +5953,7 @@
   "resource-policies.form.eperson-group-list.table.headers.name": "Nombre",
 
   // "resource-policies.form.date.end.label": "End Date",
-  "resource-policies.form.date.end.label": "Fecha de finalización",
+  "resource-policies.form.date.end.label": "Fecha de fin",
 
   // "resource-policies.form.date.start.label": "Start Date",
   "resource-policies.form.date.start.label": "Fecha de inicio",
@@ -5974,7 +5974,7 @@
   "resource-policies.table.headers.action": "Acción",
 
   // "resource-policies.table.headers.date.end": "End Date",
-  "resource-policies.table.headers.date.end": "Fecha de finalización",
+  "resource-policies.table.headers.date.end": "Fecha de fin",
 
   // "resource-policies.table.headers.date.start": "Start Date",
   "resource-policies.table.headers.date.start": "Fecha de inicio",
@@ -6126,204 +6126,155 @@
   "search.filters.applied.charts.RELATION.InstitutionOrgUnit.iouorganizations": "Instituciones",
 
   // "search.filters.applied.charts.RELATION.InstitutionOrgUnit.iouorganizations.title": "OrgUnits",
-  // TODO New key - Add a translation
-  "search.filters.applied.charts.RELATION.InstitutionOrgUnit.iouorganizations.title": "OrgUnits",
+  "search.filters.applied.charts.RELATION.InstitutionOrgUnit.iouorganizations.title": "Instituciones",
 
   // "search.filters.applied.charts.RELATION.InstitutionOrgUnit.ioupeople": "People",
-  // TODO New key - Add a translation
-  "search.filters.applied.charts.RELATION.InstitutionOrgUnit.ioupeople": "People",
+  "search.filters.applied.charts.RELATION.InstitutionOrgUnit.ioupeople": "Personas",
 
   // "search.filters.applied.charts.RELATION.InstitutionOrgUnit.ioupeople.title": "People",
-  // TODO New key - Add a translation
-  "search.filters.applied.charts.RELATION.InstitutionOrgUnit.ioupeople.title": "People",
+  "search.filters.applied.charts.RELATION.InstitutionOrgUnit.ioupeople.title": "Personas",
 
   // "search.filters.applied.charts.RELATION.InstitutionOrgUnit.iouprojects": "Projects",
-  // TODO New key - Add a translation
-  "search.filters.applied.charts.RELATION.InstitutionOrgUnit.iouprojects": "Projects",
+  "search.filters.applied.charts.RELATION.InstitutionOrgUnit.iouprojects": "Proyectos",
 
   // "search.filters.applied.charts.RELATION.InstitutionOrgUnit.iouprojects.title": "Projects",
-  // TODO New key - Add a translation
-  "search.filters.applied.charts.RELATION.InstitutionOrgUnit.iouprojects.title": "Projects",
+  "search.filters.applied.charts.RELATION.InstitutionOrgUnit.iouprojects.title": "Proyectos",
 
   // "search.filters.applied.charts.RELATION.InstitutionOrgUnit.ioupublications": "Publications",
-  // TODO New key - Add a translation
-  "search.filters.applied.charts.RELATION.InstitutionOrgUnit.ioupublications": "Publications",
+  "search.filters.applied.charts.RELATION.InstitutionOrgUnit.ioupublications": "Publicaciones",
 
   // "search.filters.applied.charts.RELATION.InstitutionOrgUnit.ioupublications.title": "Publications",
-  // TODO New key - Add a translation
-  "search.filters.applied.charts.RELATION.InstitutionOrgUnit.ioupublications.title": "Publications",
+  "search.filters.applied.charts.RELATION.InstitutionOrgUnit.ioupublications.title": "Publicaciones",
 
   // "search.filters.applied.charts.RELATION.InstitutionOrgUnit.iourpprojects": "Researchers PRojects",
-  // TODO New key - Add a translation
-  "search.filters.applied.charts.RELATION.InstitutionOrgUnit.iourpprojects": "Researchers PRojects",
+  "search.filters.applied.charts.RELATION.InstitutionOrgUnit.iourpprojects": "Proyectos de investigadores",
 
   // "search.filters.applied.charts.RELATION.InstitutionOrgUnit.iourpprojects.title": "Researchers PRojects",
-  // TODO New key - Add a translation
-  "search.filters.applied.charts.RELATION.InstitutionOrgUnit.iourpprojects.title": "Researchers PRojects",
+  "search.filters.applied.charts.RELATION.InstitutionOrgUnit.iourpprojects.title": "Proyectos de investigadores",
 
   // "search.filters.applied.charts.RELATION.InstitutionOrgUnit.ioupublications": "Researchers Publications",
-  // TODO New key - Add a translation
-  "search.filters.applied.charts.RELATION.InstitutionOrgUnit.ioupublications": "Researchers Publications",
+  "search.filters.applied.charts.RELATION.InstitutionOrgUnit.ioupublications": "Publicaciones de investigadores",
 
   // "search.filters.applied.charts.RELATION.InstitutionOrgUnit.ioupublications.title": "Researchers Publications",
-  // TODO New key - Add a translation
-  "search.filters.applied.charts.RELATION.InstitutionOrgUnit.ioupublications.title": "Researchers Publications",
+  "search.filters.applied.charts.RELATION.InstitutionOrgUnit.ioupublications.title": "Publicaciones de investigadores",
 
   // "search.filters.applied.charts.RELATION.InstitutionOrgUnit.iourppublications": "Researchers Publications",
-  // TODO New key - Add a translation
-  "search.filters.applied.charts.RELATION.InstitutionOrgUnit.iourppublications": "Researchers Publications",
+  "search.filters.applied.charts.RELATION.InstitutionOrgUnit.iourppublications": "Publicaciones de investigadores",
 
   // "search.filters.applied.charts.RELATION.InstitutionOrgUnit.iourppublications.title": "Researchers Publications",
-  // TODO New key - Add a translation
-  "search.filters.applied.charts.RELATION.InstitutionOrgUnit.iourppublications.title": "Researchers Publications",
+  "search.filters.applied.charts.RELATION.InstitutionOrgUnit.iourppublications.title": "Publicaciones de investigadores",
 
   // "search.filters.applied.charts.RELATION.InstitutionPerson.ippatents.title": "Patents",
-  // TODO New key - Add a translation
-  "search.filters.applied.charts.RELATION.InstitutionPerson.ippatents.title": "Patents",
+  "search.filters.applied.charts.RELATION.InstitutionPerson.ippatents.title": "Patentes",
 
   // "search.filters.applied.charts.RELATION.InstitutionPerson.ipprojects.title": "Projects",
-  // TODO New key - Add a translation
-  "search.filters.applied.charts.RELATION.InstitutionPerson.ipprojects.title": "Projects",
+  "search.filters.applied.charts.RELATION.InstitutionPerson.ipprojects.title": "Proyectos",
 
   // "search.filters.applied.charts.RELATION.InstitutionPerson.ipresearchoutputs.title": "Research Output",
-  // TODO New key - Add a translation
-  "search.filters.applied.charts.RELATION.InstitutionPerson.ipresearchoutputs.title": "Research Output",
+  "search.filters.applied.charts.RELATION.InstitutionPerson.ipresearchoutputs.title": "Resultado de investigación",
 
   // "search.filters.applied.charts.RELATION.InstitutionProject.ipgrants": "Fundings",
-  // TODO New key - Add a translation
-  "search.filters.applied.charts.RELATION.InstitutionProject.ipgrants": "Fundings",
+  "search.filters.applied.charts.RELATION.InstitutionProject.ipgrants": "Financiaciones",
 
   // "search.filters.applied.charts.RELATION.InstitutionProject.ipgrants.title": "Fundings",
-  // TODO New key - Add a translation
-  "search.filters.applied.charts.RELATION.InstitutionProject.ipgrants.title": "Fundings",
+  "search.filters.applied.charts.RELATION.InstitutionProject.ipgrants.title": "Financiaciones",
 
   // "search.filters.applied.charts.RELATION.InstitutionProject.ippatents": "Patents",
-  // TODO New key - Add a translation
-  "search.filters.applied.charts.RELATION.InstitutionProject.ippatents": "Patents",
+  "search.filters.applied.charts.RELATION.InstitutionProject.ippatents": "Patentes",
 
   // "search.filters.applied.charts.RELATION.InstitutionProject.ippatents.title": "Patents",
-  // TODO New key - Add a translation
-  "search.filters.applied.charts.RELATION.InstitutionProject.ippatents.title": "Patents",
+  "search.filters.applied.charts.RELATION.InstitutionProject.ippatents.title": "Patentes",
 
   // "search.filters.applied.charts.RELATION.InstitutionProject.ipprojects": "Projects",
-  // TODO New key - Add a translation
-  "search.filters.applied.charts.RELATION.InstitutionProject.ipprojects": "Projects",
+  "search.filters.applied.charts.RELATION.InstitutionProject.ipprojects": "Proyectos",
 
   // "search.filters.applied.charts.RELATION.InstitutionProject.ipprojects.title": "Projects",
-  // TODO New key - Add a translation
-  "search.filters.applied.charts.RELATION.InstitutionProject.ipprojects.title": "Projects",
+  "search.filters.applied.charts.RELATION.InstitutionProject.ipprojects.title": "Proyectos",
 
   // "search.filters.applied.charts.RELATION.InstitutionProject.ipresearchoutputs": "Research Output",
-  // TODO New key - Add a translation
-  "search.filters.applied.charts.RELATION.InstitutionProject.ipresearchoutputs": "Research Output",
+  "search.filters.applied.charts.RELATION.InstitutionProject.ipresearchoutputs": "Resultado de investigación",
 
   // "search.filters.applied.charts.RELATION.InstitutionProject.ipresearchoutputs.title": "Research Output",
-  // TODO New key - Add a translation
-  "search.filters.applied.charts.RELATION.InstitutionProject.ipresearchoutputs.title": "Research Output",
+  "search.filters.applied.charts.RELATION.InstitutionProject.ipresearchoutputs.title": "Resultado de invetigación",
 
 
 
 
   // "search.filters.applied.charts.RELATION.OrgUnit.organizations": "OrgUnits",
-  // TODO New key - Add a translation
-  "search.filters.applied.charts.RELATION.OrgUnit.organizations": "OrgUnits",
+  "search.filters.applied.charts.RELATION.OrgUnit.organizations": "Instituciones",
 
   // "search.filters.applied.charts.RELATION.OrgUnit.organizations.title": "OrgUnits",
-  // TODO New key - Add a translation
-  "search.filters.applied.charts.RELATION.OrgUnit.organizations.title": "OrgUnits",
+  "search.filters.applied.charts.RELATION.OrgUnit.organizations.title": "Instituciones",
 
   // "search.filters.applied.charts.RELATION.OrgUnit.publications.title": "Research Output",
-  // TODO New key - Add a translation
-  "search.filters.applied.charts.RELATION.OrgUnit.publications.title": "Research Output",
+  "search.filters.applied.charts.RELATION.OrgUnit.publications.title": "Resultado de investigación",
 
   // "search.filters.applied.charts.RELATION.OrgUnit.people": "People",
-  // TODO New key - Add a translation
-  "search.filters.applied.charts.RELATION.OrgUnit.people": "People",
+  "search.filters.applied.charts.RELATION.OrgUnit.people": "Personas",
 
   // "search.filters.applied.charts.RELATION.OrgUnit.people.title": "People",
-  // TODO New key - Add a translation
-  "search.filters.applied.charts.RELATION.OrgUnit.people.title": "People",
+  "search.filters.applied.charts.RELATION.OrgUnit.people.title": "Personas",
 
   // "search.filters.applied.charts.RELATION.OrgUnit.projects": "Projects",
-  // TODO New key - Add a translation
-  "search.filters.applied.charts.RELATION.OrgUnit.projects": "Projects",
+  "search.filters.applied.charts.RELATION.OrgUnit.projects": "Proyectos",
 
   // "search.filters.applied.charts.RELATION.OrgUnit.projects.title": "Projects",
-  // TODO New key - Add a translation
-  "search.filters.applied.charts.RELATION.OrgUnit.projects.title": "Projects",
+  "search.filters.applied.charts.RELATION.OrgUnit.projects.title": "Proyectos",
 
   // "search.filters.applied.charts.RELATION.OrgUnit.publications": "Publications",
-  // TODO New key - Add a translation
-  "search.filters.applied.charts.RELATION.OrgUnit.publications": "Publications",
+  "search.filters.applied.charts.RELATION.OrgUnit.publications": "Publicaciones",
 
   // "search.filters.applied.charts.RELATION.OrgUnit.publications.title": "Publications",
-  // TODO New key - Add a translation
-  "search.filters.applied.charts.RELATION.OrgUnit.publications.title": "Publications",
+  "search.filters.applied.charts.RELATION.OrgUnit.publications.title": "Publicaciones",
 
   // "search.filters.applied.charts.RELATION.OrgUnit.rpprojects": "Researchers Projects",
-  // TODO New key - Add a translation
-  "search.filters.applied.charts.RELATION.OrgUnit.rpprojects": "Researchers Projects",
+  "search.filters.applied.charts.RELATION.OrgUnit.rpprojects": "Proyectos de los investigadores",
 
   // "search.filters.applied.charts.RELATION.OrgUnit.rpprojects.title": "Researchers Projects",
-  // TODO New key - Add a translation
-  "search.filters.applied.charts.RELATION.OrgUnit.rpprojects.title": "Researchers Projects",
+  "search.filters.applied.charts.RELATION.OrgUnit.rpprojects.title": "Proyectos de los investigadores",
 
   // "search.filters.applied.charts.RELATION.OrgUnit.publications": "Researchers Publications",
-  // TODO New key - Add a translation
-  "search.filters.applied.charts.RELATION.OrgUnit.publications": "Researchers Publications",
+  "search.filters.applied.charts.RELATION.OrgUnit.publications": "Proyectos de los investigadores",
 
   // "search.filters.applied.charts.RELATION.Person.patents.title": "Patents",
-  // TODO New key - Add a translation
-  "search.filters.applied.charts.RELATION.Person.patents.title": "Patents",
+  "search.filters.applied.charts.RELATION.Person.patents.title": "Patentes",
 
   // "search.filters.applied.charts.RELATION.Person.projects.title": "Projects",
-  // TODO New key - Add a translation
-  "search.filters.applied.charts.RELATION.Person.projects.title": "Projects",
+  "search.filters.applied.charts.RELATION.Person.projects.title": "Proyectos",
 
   // "search.filters.applied.charts.RELATION.Person.researchoutputs.title": "Research Output",
-  // TODO New key - Add a translation
-  "search.filters.applied.charts.RELATION.Person.researchoutputs.title": "Research Output",
+  "search.filters.applied.charts.RELATION.Person.researchoutputs.title": "Resultado de investigación",
 
   // "search.filters.applied.charts.RELATION.Project.grants": "Fundings",
-  // TODO New key - Add a translation
-  "search.filters.applied.charts.RELATION.Project.grants": "Fundings",
+  "search.filters.applied.charts.RELATION.Project.grants": "Financiaciones",
 
   // "search.filters.applied.charts.RELATION.Project.grants.title": "Fundings",
-  // TODO New key - Add a translation
-  "search.filters.applied.charts.RELATION.Project.grants.title": "Fundings",
+  "search.filters.applied.charts.RELATION.Project.grants.title": "Financiaciones",
 
   // "search.filters.applied.charts.RELATION.Project.patents": "Patents",
-  // TODO New key - Add a translation
-  "search.filters.applied.charts.RELATION.Project.patents": "Patents",
+  "search.filters.applied.charts.RELATION.Project.patents": "Patentes",
 
   // "search.filters.applied.charts.RELATION.Project.patents.title": "Patents",
-  // TODO New key - Add a translation
-  "search.filters.applied.charts.RELATION.Project.patents.title": "Patents",
+  "search.filters.applied.charts.RELATION.Project.patents.title": "Patentes",
 
   // "search.filters.applied.charts.RELATION.Project.projects": "Projects",
-  // TODO New key - Add a translation
-  "search.filters.applied.charts.RELATION.Project.projects": "Projects",
+  "search.filters.applied.charts.RELATION.Project.projects": "Projectos",
 
   // "search.filters.applied.charts.RELATION.Project.projects.title": "Projects",
-  // TODO New key - Add a translation
-  "search.filters.applied.charts.RELATION.Project.projects.title": "Projects",
+  "search.filters.applied.charts.RELATION.Project.projects.title": "Projectos",
 
   // "search.filters.applied.charts.RELATION.Project.researchoutputs": "Research Output",
-  // TODO New key - Add a translation
-  "search.filters.applied.charts.RELATION.Project.researchoutputs": "Research Output",
+  "search.filters.applied.charts.RELATION.Project.researchoutputs": "Resultado de investigación",
 
   // "search.filters.applied.charts.RELATION.Project.researchoutputs.title": "Research Output",
-  // TODO New key - Add a translation
-  "search.filters.applied.charts.RELATION.Project.researchoutputs.title": "Research Output",
+  "search.filters.applied.charts.RELATION.Project.researchoutputs.title": "Resultado de investigación",
 
   // "search.filters.applied.charts.RELATION.CvProject.ipresearchoutputs.title": "Research Output",
-  // TODO New key - Add a translation
-  "search.filters.applied.charts.RELATION.CvProject.ipresearchoutputs.title": "Research Output",
+  "search.filters.applied.charts.RELATION.CvProject.ipresearchoutputs.title": "Resultado de investigación",
 
 
   // "search.filters.applied.charts.no.data.found": "No data found",
-  // TODO New key - Add a translation
-  "search.filters.applied.charts.no.data.found": "No data found",
+  "search.filters.applied.charts.no.data.found": "No se encontraron datos",
 
 
 
@@ -6380,20 +6331,16 @@
   "search.filters.filter.dateSubmitted.placeholder": "Fecha de Envío",
 
   // "search.filters.filter.discoverable.head": "Private",
-  // TODO New key - Add a translation
-  "search.filters.filter.discoverable.head": "Private",
+  "search.filters.filter.discoverable.head": "Privado",
 
   // "search.filters.filter.editor.head": "Editor",
-  // TODO New key - Add a translation
   "search.filters.filter.editor.head": "Editor",
 
   // "search.filters.filter.editor.placeholder": "Editor",
-  // TODO New key - Add a translation
   "search.filters.filter.editor.placeholder": "Editor",
 
   // "search.filters.filter.withdrawn.head": "Withdrawn",
-  // TODO New key - Add a translation
-  "search.filters.filter.withdrawn.head": "Withdrawn",
+  "search.filters.filter.withdrawn.head": "Retirado",
 
   // "search.filters.filter.entityType.head": "Item Type",
   "search.filters.filter.entityType.head": "Tipo de Ítem",
@@ -6402,60 +6349,46 @@
   "search.filters.filter.entityType.placeholder": "Tipo de Ítem",
 
   // "search.filters.filter.eqowner.head": "Researcher",
-  // TODO New key - Add a translation
-  "search.filters.filter.eqowner.head": "Researcher",
+  "search.filters.filter.eqowner.head": "Investigador",
 
   // "search.filters.filter.eqowner.placeholder": "Researcher",
-  // TODO New key - Add a translation
-  "search.filters.filter.eqowner.placeholder": "Researcher",
+  "search.filters.filter.eqowner.placeholder": "Investigador",
 
   // "search.filters.filter.eqorgunit.head": "Organization",
-  // TODO New key - Add a translation
-  "search.filters.filter.eqorgunit.head": "Organization",
+  "search.filters.filter.eqorgunit.head": "Organización",
 
   // "search.filters.filter.eqorgunit.placeholder": "Organization",
-  // TODO New key - Add a translation
-  "search.filters.filter.eqorgunit.placeholder": "Organization",
+  "search.filters.filter.eqorgunit.placeholder": "Organización",
 
   // "search.filters.filter.equipmentUsage.head": "Usage",
-  // TODO New key - Add a translation
-  "search.filters.filter.equipmentUsage.head": "Usage",
+  "search.filters.filter.equipmentUsage.head": "Uso",
 
   // "search.filters.filter.equipmentUsage.placeholder": "Usage",
-  // TODO New key - Add a translation
-  "search.filters.filter.equipmentUsage.placeholder": "Usage",
+  "search.filters.filter.equipmentUsage.placeholder": "Uso",
 
   // "search.filters.filter.equipmentResearchLine.head": "Research Line",
-  // TODO New key - Add a translation
-  "search.filters.filter.equipmentResearchLine.head": "Research Line",
+  "search.filters.filter.equipmentResearchLine.head": "Línea de investigación",
 
   // "search.filters.filter.equipmentResearchLine.placeholder": "Research Line",
-  // TODO New key - Add a translation
-  "search.filters.filter.equipmentResearchLine.placeholder": "Research Line",
+  "search.filters.filter.equipmentResearchLine.placeholder": "Línea de investigación",
 
   // "search.filters.filter.equipmentManufacturingCountry.head": "Manufacturing Country",
-  // TODO New key - Add a translation
-  "search.filters.filter.equipmentManufacturingCountry.head": "Manufacturing Country",
+  "search.filters.filter.equipmentManufacturingCountry.head": "País de fabricación",
 
   // "search.filters.filter.equipmentManufacturingCountry.placeholder": "Manufacturing Country",
-  // TODO New key - Add a translation
-  "search.filters.filter.equipmentManufacturingCountry.placeholder": "Manufacturing Country",
+  "search.filters.filter.equipmentManufacturingCountry.placeholder": "País de fabricación",
 
   // "search.filters.filter.funding.head": "Funding",
-  // TODO New key - Add a translation
-  "search.filters.filter.funding.head": "Funding",
+  "search.filters.filter.funding.head": "Financiación",
 
   // "search.filters.filter.funding.placeholder": "Funding",
-  // TODO New key - Add a translation
-  "search.filters.filter.funding.placeholder": "Funding",
+  "search.filters.filter.funding.placeholder": "Financiación",
 
   // "search.filters.filter.geolocation.head" : "Geolocation",
-  // TODO New key - Add a translation
-  "search.filters.filter.geolocation.head" : "Geolocation",
+  "search.filters.filter.geolocation.head" : "Geolocalización",
 
   // "search.filters.filter.geolocation.placeholder" : "Geolocation",
-  // TODO New key - Add a translation
-  "search.filters.filter.geolocation.placeholder" : "Geolocation",
+  "search.filters.filter.geolocation.placeholder" : "Geolocalización",
 
   // "search.filters.filter.has_content_in_original_bundle.head": "Has files",
   "search.filters.filter.has_content_in_original_bundle.head": "Tiene archivos",
@@ -6467,12 +6400,10 @@
   "search.filters.filter.itemtype.placeholder": "Tipo",
 
   // "search.filters.filter.investigators.head": "Researcher",
-  // TODO New key - Add a translation
-  "search.filters.filter.investigators.head": "Researcher",
+  "search.filters.filter.investigators.head": "Investigador",
 
   // "search.filters.filter.investigators.placeholder": "Researcher",
-  // TODO New key - Add a translation
-  "search.filters.filter.investigators.placeholder": "Researcher",
+  "search.filters.filter.investigators.placeholder": "Investigador",
 
   // "search.filters.filter.jobTitle.head": "Job Title",
   "search.filters.filter.jobTitle.head": "Título profesional",
@@ -6488,97 +6419,75 @@
 
 
   // "search.filters.filter.projectOrgUnits.head" : "Organizations",
-  // TODO New key - Add a translation
-  "search.filters.filter.projectOrgUnits.head" : "Organizations",
+  "search.filters.filter.projectOrgUnits.head" : "Organizaciones",
 
   // "search.filters.filter.projectOrgUnits.placeholder" : "Organizations",
-  // TODO New key - Add a translation
-  "search.filters.filter.projectOrgUnits.placeholder" : "Organizations",
+  "search.filters.filter.projectOrgUnits.placeholder" : "Organizaciones",
 
   // "search.filters.filter.personOrgUnits.head" : "Organizations",
-  // TODO New key - Add a translation
-  "search.filters.filter.personOrgUnits.head" : "Organizations",
+  "search.filters.filter.personOrgUnits.head" : "Organizaciones",
 
   // "search.filters.filter.personOrgUnits.placeholder" : "Organizations",
-  // TODO New key - Add a translation
-  "search.filters.filter.personOrgUnits.placeholder" : "Organizations",
+  "search.filters.filter.personOrgUnits.placeholder" : "Organizaciones",
 
   // "search.filters.filter.peruCrisClassification.head" : "Classification",
-  // TODO New key - Add a translation
-  "search.filters.filter.peruCrisClassification.head" : "Classification",
+  "search.filters.filter.peruCrisClassification.head" : "Clasificación",
 
   // "search.filters.filter.peruCrisClassification.placeholder" : "Classification",
-  // TODO New key - Add a translation
-  "search.filters.filter.peruCrisClassification.placeholder" : "Classification",
+  "search.filters.filter.peruCrisClassification.placeholder" : "Clasificación",
 
 
   // "search.filters.filter.suneduClassification.head" : "Sunedu Classification",
-  // TODO New key - Add a translation
-  "search.filters.filter.suneduClassification.head" : "Sunedu Classification",
+  "search.filters.filter.suneduClassification.head" : "Clasificación SUNEDU",
 
   // "search.filters.filter.suneduClassification.placeholder" : "Sunedu Classification",
-  // TODO New key - Add a translation
-  "search.filters.filter.suneduClassification.placeholder" : "Sunedu Classification",
+  "search.filters.filter.suneduClassification.placeholder" : "Clasificación SUNEDU",
 
   // "search.filters.filter.institutionalOcde.head" : "Ocde Institutional Sector",
-  // TODO New key - Add a translation
-  "search.filters.filter.institutionalOcde.head" : "Ocde Institutional Sector",
+  "search.filters.filter.institutionalOcde.head" : "Sector institucional de la OCDE",
 
   // "search.filters.filter.institutionalOcde.placeholder" : "Ocde Institutional Sector",
-  // TODO New key - Add a translation
-  "search.filters.filter.institutionalOcde.placeholder" : "Ocde Institutional Sector",
+  "search.filters.filter.institutionalOcde.placeholder" : "Sector institucional de la OCDE",
 
   // "search.filters.filter.renacytClassification.head" : "Authorized Centre Cathegory",
-  // TODO New key - Add a translation
-  "search.filters.filter.renacytClassification.head" : "Authorized Centre Cathegory",
+  "search.filters.filter.renacytClassification.head" : "Categoría de Centro Autorizado",
   
   // "search.filters.filter.renacytClassification.placeholder" : "Authorized Centre Cathegory",
-  // TODO New key - Add a translation
-  "search.filters.filter.renacytClassification.placeholder" : "Authorized Centre Cathegory",
+  "search.filters.filter.renacytClassification.placeholder" : "Categoría de Centro Autorizado",
   
   // "search.filters.filter.descriptionAbstract.head" : "Description",
-  // TODO New key - Add a translation
-  "search.filters.filter.descriptionAbstract.head" : "Description",
+  "search.filters.filter.descriptionAbstract.head" : "Descripción",
   
   // "search.filters.filter.descriptionAbstract.placeholder" : "Description",
-  // TODO New key - Add a translation
-  "search.filters.filter.descriptionAbstract.placeholder" : "Description",
+  "search.filters.filter.descriptionAbstract.placeholder" : "Descripción",
 
   // "search.filters.filter.organizationIdentifier.head" : "Identifier",
-  // TODO New key - Add a translation
-  "search.filters.filter.organizationIdentifier.head" : "Identifier",
+  "search.filters.filter.organizationIdentifier.head" : "Identificador",
 
   // "search.filters.filter.organizationIdentifier.placeholder" : "Identifier",
-  // TODO New key - Add a translation
-  "search.filters.filter.organizationIdentifier.placeholder" : "Identifier",
+  "search.filters.filter.organizationIdentifier.placeholder" : "Identificador",
 
 
 
   // "search.filters.filter.peruCrisCiuu.head" : "CIIU",
-  // TODO New key - Add a translation
   "search.filters.filter.peruCrisCiuu.head" : "CIIU",
 
   // "search.filters.filter.peruCrisCiuu.placeholder" : "CIIU",
-  // TODO New key - Add a translation
   "search.filters.filter.peruCrisCiuu.placeholder" : "CIIU",
 
 
   // "search.filters.filter.peruCrisSector.head" : "Sector",
-  // TODO New key - Add a translation
   "search.filters.filter.peruCrisSector.head" : "Sector",
 
   // "search.filters.filter.peruCrisSector.placeholder" : "Sector",
-  // TODO New key - Add a translation
   "search.filters.filter.peruCrisSector.placeholder" : "Sector",
 
 
   // "search.filters.filter.peruCrisJuridicalNature.head" : "Juridical Nature",
-  // TODO New key - Add a translation
   "search.filters.filter.peruCrisJuridicalNature.head" : "Juridical Nature",
 
   // "search.filters.filter.peruCrisJuridicalNature.placeholder" : "Juridical Nature",
-  // TODO New key - Add a translation
-  "search.filters.filter.peruCrisJuridicalNature.placeholder" : "Juridical Nature",
+  "search.filters.filter.peruCrisJuridicalNature.placeholder" : "Naturaleza jurídica",
 
 
   // "search.filters.filter.peruCrisKeywords.head" : "Keywords",
