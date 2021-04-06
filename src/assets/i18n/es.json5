@@ -6484,19 +6484,17 @@
 
 
   // "search.filters.filter.peruCrisJuridicalNature.head" : "Juridical Nature",
-  "search.filters.filter.peruCrisJuridicalNature.head" : "Juridical Nature",
+  "search.filters.filter.peruCrisJuridicalNature.head" : "Naturaleza jurídica",
 
   // "search.filters.filter.peruCrisJuridicalNature.placeholder" : "Juridical Nature",
   "search.filters.filter.peruCrisJuridicalNature.placeholder" : "Naturaleza jurídica",
 
 
   // "search.filters.filter.peruCrisKeywords.head" : "Keywords",
-  // TODO New key - Add a translation
-  "search.filters.filter.peruCrisKeywords.head" : "Keywords",
+  "search.filters.filter.peruCrisKeywords.head" : "Palabras clave",
 
   // "search.filters.filter.peruCrisKeywords.placeholder" : "Keywords",
-  // TODO New key - Add a translation
-  "search.filters.filter.peruCrisKeywords.placeholder" : "Keywords",
+  "search.filters.filter.peruCrisKeywords.placeholder" : "Palabras clave",
 
   // "search.filters.filter.namedresourcetype.head": "Status",
   "search.filters.filter.namedresourcetype.head": "Estado",
@@ -6511,20 +6509,16 @@
   "search.filters.filter.objectpeople.placeholder": "Persona",
 
   // "search.filters.filter.ocde.head": "OCDE Subject",
-  // TODO New key - Add a translation
-  "search.filters.filter.ocde.head": "OCDE Subject",
+  "search.filters.filter.ocde.head": "Materia de la OCDE",
 
   // "search.filters.filter.ocde.placeholder": "OCDE Subject",
-  // TODO New key - Add a translation
-  "search.filters.filter.ocde.placeholder": "OCDE Subject",
+  "search.filters.filter.ocde.placeholder": "Materia de la OCDE",
 
   // "search.filters.filter.organization.head": "Organization",
-  // TODO New key - Add a translation
-  "search.filters.filter.organization.head": "Organization",
+  "search.filters.filter.organization.head": "Organización",
 
   // "search.filters.filter.organization.placeholder": "Organization",
-  // TODO New key - Add a translation
-  "search.filters.filter.organization.placeholder": "Organization",
+  "search.filters.filter.organization.placeholder": "Organización",
 
   // "search.filters.filter.organizationAddressCountry.head": "Country",
   "search.filters.filter.organizationAddressCountry.head": "País",
@@ -6569,48 +6563,37 @@
   "search.filters.filter.submitter.placeholder": "Remitente",
 
   // "search.filters.filter.ubigeo.head": "Ubigeo",
-  // TODO New key - Add a translation
   "search.filters.filter.ubigeo.head": "Ubigeo",
 
   // "search.filters.filter.ubigeo.placeholder": "Ubigeo",
-  // TODO New key - Add a translation
   "search.filters.filter.ubigeo.placeholder": "Ubigeo",
 
 
   // "search.filters.entityType.JournalIssue": "Journal Issue",
-  // TODO New key - Add a translation
-  "search.filters.entityType.JournalIssue": "Journal Issue",
+  "search.filters.entityType.JournalIssue": "Número de revista",
 
   // "search.filters.entityType.JournalVolume": "Journal Volume",
-  // TODO New key - Add a translation
-  "search.filters.entityType.JournalVolume": "Journal Volume",
+  "search.filters.entityType.JournalVolume": "Volumen de revista",
 
   // "search.filters.entityType.OrgUnit": "Organizational Unit",
-  // TODO New key - Add a translation
-  "search.filters.entityType.OrgUnit": "Organizational Unit",
+  "search.filters.entityType.OrgUnit": "Unidad organizacional",
 
   // "search.filters.has_content_in_original_bundle.true": "Yes",
-  // TODO New key - Add a translation
-  "search.filters.has_content_in_original_bundle.true": "Yes",
+  "search.filters.has_content_in_original_bundle.true": "Sí",
 
   // "search.filters.has_content_in_original_bundle.false": "No",
-  // TODO New key - Add a translation
   "search.filters.has_content_in_original_bundle.false": "No",
 
   // "search.filters.discoverable.true": "No",
-  // TODO New key - Add a translation
   "search.filters.discoverable.true": "No",
 
   // "search.filters.discoverable.false": "Yes",
-  // TODO New key - Add a translation
-  "search.filters.discoverable.false": "Yes",
+  "search.filters.discoverable.false": "Sí",
 
   // "search.filters.withdrawn.true": "Yes",
-  // TODO New key - Add a translation
-  "search.filters.withdrawn.true": "Yes",
+  "search.filters.withdrawn.true": "Si",
 
   // "search.filters.withdrawn.false": "No",
-  // TODO New key - Add a translation
   "search.filters.withdrawn.false": "No",
 
 
@@ -6638,15 +6621,13 @@
   "search.results.head": "Resultados de Búsqueda",
 
   // "search.results.no-results": "Your search returned no results. Having trouble finding what you're looking for? Try putting",
-  // TODO Source message changed - Revise the translation
-  "search.results.no-results": "Your search returned no results. Having trouble finding what you're looking for? Try putting",
+  "search.results.no-results": "Su búsqueda no ha dado resultados. ¿Tiene problemas para encontrar lo que busca? Pruebe buscando",
 
   // "search.results.no-results-link": "quotes around it",
   "search.results.no-results-link": "citas a su alrededor",
 
   // "search.results.empty": "Your search returned no results.",
-  // TODO New key - Add a translation
-  "search.results.empty": "Your search returned no results.",
+  "search.results.empty": "Su búsqueda no ha dado resultados.",
 
 
 
@@ -6685,12 +6666,10 @@
 
 
   // "sorting.ASC": "Ascending",
-  // TODO New key - Add a translation
-  "sorting.ASC": "Ascending",
+  "sorting.ASC": "Ascendente",
 
   // "sorting.DESC": "Descending",
-  // TODO New key - Add a translation
-  "sorting.DESC": "Descending",
+  "sorting.DESC": "Descendente",
 
   // "sorting.dc.title.ASC": "Title Ascending",
   "sorting.dc.title.ASC": "Título Ascendente",
@@ -6702,57 +6681,44 @@
   "sorting.score.DESC": "Relevancia",
 
   // "sorting.ASC": "Ascending",
-  // TODO New key - Add a translation
-  "sorting.ASC": "Ascending",
+  "sorting.ASC": "Ascendente",
 
   // "sorting.DESC": "Descending",
-  // TODO New key - Add a translation
-  "sorting.DESC": "Descending",
+  "sorting.DESC": "Descendente",
 
 
   // "statistics.title": "Statistics",
-  // TODO New key - Add a translation
-  "statistics.title": "Statistics",
+  "statistics.title": "Estadísticas",
 
   // "statistics.header": "Statistics for {{ scope }}",
-  // TODO New key - Add a translation
-  "statistics.header": "Statistics for {{ scope }}",
+  "statistics.header": "Estadísticas para {{ scope }}",
 
   // "statistics.breadcrumbs": "Statistics",
-  // TODO New key - Add a translation
-  "statistics.breadcrumbs": "Statistics",
+  "statistics.breadcrumbs": "Estadísticas",
 
   // "statistics.page.no-data": "No data available",
-  // TODO New key - Add a translation
-  "statistics.page.no-data": "No data available",
+  "statistics.page.no-data": "No hay datos disponibles",
 
   // "statistics.table.no-data": "No data available",
-  // TODO New key - Add a translation
-  "statistics.table.no-data": "No data available",
+  "statistics.table.no-data": "No hay datos disponibles",
 
   // "statistics.table.title.TotalVisits": "Total visits",
-  // TODO New key - Add a translation
-  "statistics.table.title.TotalVisits": "Total visits",
+  "statistics.table.title.TotalVisits": "Total de visitas",
 
   // "statistics.table.title.TotalVisitsPerMonth": "Total visits per month",
-  // TODO New key - Add a translation
-  "statistics.table.title.TotalVisitsPerMonth": "Total visits per month",
+  "statistics.table.title.TotalVisitsPerMonth": "Total de visitas por mes",
 
   // "statistics.table.title.TotalDownloads": "File Visits",
-  // TODO New key - Add a translation
-  "statistics.table.title.TotalDownloads": "File Visits",
+  "statistics.table.title.TotalDownloads": "Visitas al archivo",
 
   // "statistics.table.title.TopCountries": "Top country views",
-  // TODO New key - Add a translation
-  "statistics.table.title.TopCountries": "Top country views",
+  "statistics.table.title.TopCountries": "Vistas por país",
 
-  // "statistics.table.title.TopCities": "Top city views",
-  // TODO New key - Add a translation
-  "statistics.table.title.TopCities": "Top city views",
+  // "statistics.table.title.TopCities": "Top city views"
+  "statistics.table.title.TopCities": "Vistas por ciudad",
 
   // "statistics.table.header.views": "Views",
-  // TODO New key - Add a translation
-  "statistics.table.header.views": "Views",
+  "statistics.table.header.views": "Vistas",
 
 
 
@@ -6787,884 +6753,673 @@
   "submission.general.save-later": "Guardar para más adelante",
 
   // "submission.general.save-later.edit-item": "Save and return",
-  // TODO New key - Add a translation
-  "submission.general.save-later.edit-item": "Save and return",
+  "submission.general.save-later.edit-item": "Guardar y regresar",
 
 
   // "submission.import-external.page.title": "Import metadata from an external source",
-  // TODO New key - Add a translation
-  "submission.import-external.page.title": "Import metadata from an external source",
+  "submission.import-external.page.title": "Importar metadatos de una fuente externa",
 
   // "submission.import-external.title": "Import metadata from an external source",
-  // TODO New key - Add a translation
-  "submission.import-external.title": "Import metadata from an external source",
+  "submission.import-external.title": "Importar metadatos de una fuente externa",
 
   // "submission.import-external.title.Dataset": "Import dataset from an external source",
-  // TODO New key - Add a translation
-  "submission.import-external.title.Dataset": "Import dataset from an external source",
+  "submission.import-external.title.Dataset": "Importar  conjunto de datos de una fuente externa",
 
   // "submission.import-external.title.Equipment": "Import equipment from an external source",
-  // TODO New key - Add a translation
-  "submission.import-external.title.Equipment": "Import equipment from an external source",
+  "submission.import-external.title.Equipment": "Importar equipamiento desde una fuente externa",
 
   // "submission.import-external.title.Event": "Import event from an external source",
-  // TODO New key - Add a translation
-  "submission.import-external.title.Event": "Import event from an external source",
+  "submission.import-external.title.Event": "Importar evento desde una fuente externa",
 
   // "submission.import-external.title.Funding": "Import fund from an external source",
-  // TODO New key - Add a translation
-  "submission.import-external.title.Funding": "Import fund from an external source",
+  "submission.import-external.title.Funding": "Importar financiación desde una fuente externa",
 
   // "submission.import-external.title.InstitutionEquipment": "Import equipment from an external source",
-  // TODO New key - Add a translation
-  "submission.import-external.title.InstitutionEquipment": "Import equipment from an external source",
+  "submission.import-external.title.InstitutionEquipment": "Importar equipamiento desde una fuente externa",
 
   // "submission.import-external.title.InstitutionEvent": "Import event from an external source",
-  // TODO New key - Add a translation
-  "submission.import-external.title.InstitutionEvent": "Import event from an external source",
+  "submission.import-external.title.InstitutionEvent": "Importar evento desde una fuente externa",
 
   // "submission.import-external.title.InstitutionFunding": "Import fund from an external source",
-  // TODO New key - Add a translation
-  "submission.import-external.title.InstitutionFunding": "Import fund from an external source",
+  "submission.import-external.title.InstitutionFunding": "Importar financiación desde una fuente externa",
 
   // "submission.import-external.title.InstitutionOrgUnit": "Import publisher from an external source",
-  // TODO New key - Add a translation
-  "submission.import-external.title.InstitutionOrgUnit": "Import publisher from an external source",
+  "submission.import-external.title.InstitutionOrgUnit": "Importar el editor desde una fuente externa",
 
   // "submission.import-external.title.InstitutionPatent": "Import patent from an external source",
-  // TODO New key - Add a translation
-  "submission.import-external.title.InstitutionPatent": "Import patent from an external source",
+  "submission.import-external.title.InstitutionPatent": "Importar patente desde una fuente externa",
 
   // "submission.import-external.title.InstitutionPerson": "Import person from an external source",
-  // TODO New key - Add a translation
-  "submission.import-external.title.InstitutionPerson": "Import person from an external source",
+  "submission.import-external.title.InstitutionPerson": "Importar persona desde una fuente externa",
 
   // "submission.import-external.title.InstitutionProject": "Import project from an external source",
-  // TODO New key - Add a translation
-  "submission.import-external.title.InstitutionProject": "Import project from an external source",
+  "submission.import-external.title.InstitutionProject": "Importar proyecto desde una fuente externa",
 
   // "submission.import-external.title.InstitutionPublication": "Import publication from an external source",
-  // TODO New key - Add a translation
-  "submission.import-external.title.InstitutionPublication": "Import publication from an external source",
+  "submission.import-external.title.InstitutionPublication": "Importar publicación desde una fuente externa",
 
   // "submission.import-external.title.Journal": "Import journal from an external source",
-  // TODO New key - Add a translation
-  "submission.import-external.title.Journal": "Import journal from an external source",
+  "submission.import-external.title.Journal": "Importar revista desde una fuente externa",
 
   // "submission.import-external.title.OrgUnit": "Import publisher from an external source",
-  // TODO New key - Add a translation
-  "submission.import-external.title.OrgUnit": "Import publisher from an external source",
+  "submission.import-external.title.OrgUnit": "Importar el editor desde una fuente externa",
 
   // "submission.import-external.title.Patent": "Import patent from an external source",
-  // TODO New key - Add a translation
-  "submission.import-external.title.Patent": "Import patent from an external source",
+  "submission.import-external.title.Patent": "Importar patente desde una fuente externa",
 
   // "submission.import-external.title.Person": "Import person from an external source",
-  // TODO New key - Add a translation
-  "submission.import-external.title.Person": "Import person from an external source",
+  "submission.import-external.title.Person": "Importar persona desde una fuente externa",
 
   // "submission.import-external.title.Project": "Import project from an external source",
-  // TODO New key - Add a translation
-  "submission.import-external.title.Project": "Import project from an external source",
+  "submission.import-external.title.Project": "Importar proyecto desde una fuente externa",
 
-  // "submission.import-external.title.Publication": "Import publication from an external source",
-  // TODO New key - Add a translation
-  "submission.import-external.title.Publication": "Import publication from an external source",
+  // "submission.import-external.title.Publication": "Import publication from an external source"
+  "submission.import-external.title.Publication": "Importar publicación desde una fuente externa",
 
   // "submission.import-external.page.hint": "Enter a query above to find items from the web to import in to DSpace.",
-  // TODO New key - Add a translation
-  "submission.import-external.page.hint": "Enter a query above to find items from the web to import in to DSpace.",
+  "submission.import-external.page.hint": "Introduzca una consulta en la parte superior para encontrar ítems de la web para importarlos a DSpace.",
 
   // "submission.import-external.page.noentity": "An entity type must be selected in order to use this page. Select it using the 'Import metadata from an external source' button in 'MyDspace' page.",
-  // TODO New key - Add a translation
-  "submission.import-external.page.noentity": "An entity type must be selected in order to use this page. Select it using the 'Import metadata from an external source' button in 'MyDspace' page.",
+  "submission.import-external.page.noentity": "Es necesario seleccionar un tipo de entidad para poder utilizar esta página. Selecciónelo mediante el botón "Importar metadatos de una fuente externa" en la página "MyDspace".",
 
   // "submission.import-external.back-to-my-dspace": "Back to MyDSpace",
-  // TODO New key - Add a translation
-  "submission.import-external.back-to-my-dspace": "Back to MyDSpace",
+  "submission.import-external.back-to-my-dspace": "Volver a MyDSpace",
 
   // "submission.import-external.search.placeholder": "Search the external source",
-  // TODO New key - Add a translation
-  "submission.import-external.search.placeholder": "Search the external source",
+  "submission.import-external.search.placeholder": "Buscar la fuente externa",
 
   // "submission.import-external.search.button": "Search",
-  // TODO New key - Add a translation
-  "submission.import-external.search.button": "Search",
+  "submission.import-external.search.button": "Buscar",
 
   // "submission.import-external.search.button.hint": "Write some words to search",
-  // TODO New key - Add a translation
-  "submission.import-external.search.button.hint": "Write some words to search",
+  "submission.import-external.search.button.hint": "Escriba algunas palabras para buscar",
 
   // "submission.import-external.search.source.hint": "Pick an external source",
-  // TODO New key - Add a translation
-  "submission.import-external.search.source.hint": "Pick an external source",
+  "submission.import-external.search.source.hint": "Escoja una fuente externa",
 
   // "submission.import-external.source.ads": "NASA/ADS",
-  // TODO New key - Add a translation
   "submission.import-external.source.ads": "NASA/ADS",
 
   // "submission.import-external.source.arxiv": "arXiv",
-  // TODO New key - Add a translation
   "submission.import-external.source.arxiv": "arXiv",
 
   // "submission.import-external.source.cinii": "CiNii",
-  // TODO New key - Add a translation
   "submission.import-external.source.cinii": "CiNii",
 
   // "submission.import-external.source.crossref": "CrossRef",
-  // TODO New key - Add a translation
   "submission.import-external.source.crossref": "CrossRef",
 
   // "submission.import-external.source.loading": "Loading ...",
-  // TODO New key - Add a translation
-  "submission.import-external.source.loading": "Loading ...",
+  "submission.import-external.source.loading": "Cargando ...",
 
   // "submission.import-external.source.scielo": "Scielo",
-  // TODO New key - Add a translation
   "submission.import-external.source.scielo": "Scielo",
 
   // "submission.import-external.source.sherpaJournal": "SHERPA Journals",
-  // TODO New key - Add a translation
-  "submission.import-external.source.sherpaJournal": "SHERPA Journals",
+  "submission.import-external.source.sherpaJournal": "Revistas SHERPA",
 
   // "submission.import-external.source.sherpaPublisher": "SHERPA Publishers",
-  // TODO New key - Add a translation
-  "submission.import-external.source.sherpaPublisher": "SHERPA Publishers",
+  "submission.import-external.source.sherpaPublisher": "Editores SHERPA",
 
   // "submission.import-external.source.orcid": "ORCID",
-  // TODO New key - Add a translation
   "submission.import-external.source.orcid": "ORCID",
 
   // "submission.import-external.source.pubmed": "Pubmed",
-  // TODO New key - Add a translation
   "submission.import-external.source.pubmed": "Pubmed",
 
   // "submission.import-external.source.pubmedeu": "Pubmed Europe",
-  // TODO New key - Add a translation
   "submission.import-external.source.pubmedeu": "Pubmed Europe",
 
   // "submission.import-external.source.alicia": "Alicia",
-  // TODO New key - Add a translation
   "submission.import-external.source.alicia": "Alicia",
 
   // "submission.import-external.source.lcname": "Library of Congress Names",
-  // TODO New key - Add a translation
-  "submission.import-external.source.lcname": "Library of Congress Names",
+  "submission.import-external.source.lcname": "Nombres de la Library of Congress",
 
   // "submission.import-external.source.scopus": "Scopus",
-  // TODO New key - Add a translation
   "submission.import-external.source.scopus": "Scopus",
 
   // "submission.import-external.source.openaire": "OpenAIRE by Author",
-  // TODO New key - Add a translation
-  "submission.import-external.source.openaire": "OpenAIRE by Author",
+  "submission.import-external.source.openaire": "OpenAIRE por Autor",
 
   // "submission.import-external.source.openaireTitle": "OpenAIRE by Title",
-  // TODO New key - Add a translation
-  "submission.import-external.source.openaireTitle": "OpenAIRE by Title",
+  "submission.import-external.source.openaireTitle": "OpenAIRE por Título",
+  
   // "submission.import-external.source.wos": "Web of Science",
-  // TODO New key - Add a translation
   "submission.import-external.source.wos": "Web of Science",
 
   // "submission.import-external.source.openaire": "OpenAIRE",
-  // TODO New key - Add a translation
   "submission.import-external.source.openaire": "OpenAIRE",
 
   // "submission.import-external.source.epo": "European Patent Office (EPO)",
-  // TODO New key - Add a translation
-  "submission.import-external.source.epo": "European Patent Office (EPO)",
+  "submission.import-external.source.epo": "Oficina Europea de Patentes (OEP)",
 
   // "submission.import-external.preview.title.Dataset": "Dataset Preview",
-  // TODO New key - Add a translation
-  "submission.import-external.preview.title.Dataset": "Dataset Preview",
+  "submission.import-external.preview.title.Dataset": "Vista previa del conjunto de datos",
 
   // "submission.import-external.preview.title.Equipment": "Equipment Preview",
-  // TODO New key - Add a translation
-  "submission.import-external.preview.title.Equipment": "Equipment Preview",
+  "submission.import-external.preview.title.Equipment": "Vista previa del equipamiento",
 
   // "submission.import-external.preview.title.Event": "Event Preview",
-  // TODO New key - Add a translation
-  "submission.import-external.preview.title.Event": "Event Preview",
+  "submission.import-external.preview.title.Event": "Vista previa del evento",
 
   // "submission.import-external.preview.title.Funding": "Funding Preview",
-  // TODO New key - Add a translation
-  "submission.import-external.preview.title.Funding": "Funding Preview",
+  "submission.import-external.preview.title.Funding": "Vista previa de la financiación",
 
   // "submission.import-external.preview.title.InstitutionEquipment": "Equipment Preview",
-  // TODO New key - Add a translation
-  "submission.import-external.preview.title.InstitutionEquipment": "Equipment Preview",
+  "submission.import-external.preview.title.InstitutionEquipment": "Vista previa del equipamiento",
 
   // "submission.import-external.preview.title.InstitutionFunding": "Funding Preview",
-  // TODO New key - Add a translation
-  "submission.import-external.preview.title.InstitutionFunding": "Funding Preview",
+  "submission.import-external.preview.title.InstitutionFunding": "Vista previa de la financiación",
 
   // "submission.import-external.preview.title.InstitutionOrgUnit": "Publisher Preview",
-  // TODO New key - Add a translation
-  "submission.import-external.preview.title.InstitutionOrgUnit": "Publisher Preview",
+  "submission.import-external.preview.title.InstitutionOrgUnit": "Vista previa del editor",
 
   // "submission.import-external.preview.title.InstitutionPatent": "Patent Preview",
-  // TODO New key - Add a translation
-  "submission.import-external.preview.title.InstitutionPatent": "Patent Preview",
+  "submission.import-external.preview.title.InstitutionPatent": "Vista previa de la patente",
 
   // "submission.import-external.preview.title.InstitutionPerson": "Person Preview",
-  // TODO New key - Add a translation
-  "submission.import-external.preview.title.InstitutionPerson": "Person Preview",
+  "submission.import-external.preview.title.InstitutionPerson": "Vista previa de la persona",
 
   // "submission.import-external.preview.title.InstitutionProject": "Project Preview",
-  // TODO New key - Add a translation
-  "submission.import-external.preview.title.InstitutionProject": "Project Preview",
+  "submission.import-external.preview.title.InstitutionProject": "Vista previa del proyecto",
 
   // "submission.import-external.preview.title.InstitutionPublication": "Publication Preview",
-  // TODO New key - Add a translation
-  "submission.import-external.preview.title.InstitutionPublication": "Publication Preview",
+  "submission.import-external.preview.title.InstitutionPublication": "Vista previa de la publicación",
 
   // "submission.import-external.preview.title.Journal": "Journal Preview",
-  // TODO New key - Add a translation
-  "submission.import-external.preview.title.Journal": "Journal Preview",
+  "submission.import-external.preview.title.Journal": "Vista previa de la revista",
 
   // "submission.import-external.preview.title.OrgUnit": "Publisher Preview",
-  // TODO New key - Add a translation
-  "submission.import-external.preview.title.OrgUnit": "Publisher Preview",
+  "submission.import-external.preview.title.OrgUnit": "Vista previa del editor",
 
   // "submission.import-external.preview.title.Patent": "Patent Preview",
-  // TODO New key - Add a translation
-  "submission.import-external.preview.title.Patent": "Patent Preview",
+  "submission.import-external.preview.title.Patent": "Vista previa de la patente",
 
   // "submission.import-external.preview.title.Person": "Person Preview",
-  // TODO New key - Add a translation
-  "submission.import-external.preview.title.Person": "Person Preview",
+  "submission.import-external.preview.title.Person": "Vista previa de la persona",
 
   // "submission.import-external.preview.title.Project": "Project Preview",
-  // TODO New key - Add a translation
-  "submission.import-external.preview.title.Project": "Project Preview",
+  "submission.import-external.preview.title.Project": "Vista previa del proyecto",
 
   // "submission.import-external.preview.title.Publication": "Publication Preview",
-  // TODO New key - Add a translation
-  "submission.import-external.preview.title.Publication": "Publication Preview",
+  "submission.import-external.preview.title.Publication": "Busta previa de la publicación",
 
   // "submission.import-external.preview.subtitle": "The metadata below was imported from an external source. It will be pre-filled when you start the submission.",
-  // TODO New key - Add a translation
-  "submission.import-external.preview.subtitle": "The metadata below was imported from an external source. It will be pre-filled when you start the submission.",
+  "submission.import-external.preview.subtitle": "Los metadatos que aparecen a continuación se han importado de una fuente externa. Se rellenarán automáticamente cuando se inicie el envío.",
 
   // "submission.import-external.preview.button.import": "Start submission",
-  // TODO New key - Add a translation
-  "submission.import-external.preview.button.import": "Start submission",
+  "submission.import-external.preview.button.import": "Empezar envío",
 
   // "submission.import-external.preview.error.import.title": "Submission error",
-  // TODO New key - Add a translation
-  "submission.import-external.preview.error.import.title": "Submission error",
+  "submission.import-external.preview.error.import.title": "Error de envío",
 
   // "submission.import-external.preview.error.import.body": "An error occurs during the external source entry import process.",
-  // TODO New key - Add a translation
-  "submission.import-external.preview.error.import.body": "An error occurs during the external source entry import process.",
+  "submission.import-external.preview.error.import.body": "Se produce un error durante el proceso de importación de entradas de origen externo.",
+
   // "submission.sections.detect-duplicate.clear-decision": "Undo",
-  // TODO New key - Add a translation
-  "submission.sections.detect-duplicate.clear-decision": "Undo",
+  "submission.sections.detect-duplicate.clear-decision": "Deshacer",
 
   // "submission.sections.detect-duplicate.clear-decision-help": "Click for clear the decision about this pontential duplicate",
-  // TODO New key - Add a translation
-  "submission.sections.detect-duplicate.clear-decision-help": "Click for clear the decision about this pontential duplicate",
+  "submission.sections.detect-duplicate.clear-decision-help": "Haga clic para aclarar la decisión sobre este posible duplicado",
 
   // "submission.sections.detect-duplicate.confirm-duplicate": "Confirm (It's a duplicate)",
-  // TODO New key - Add a translation
-  "submission.sections.detect-duplicate.confirm-duplicate": "Confirm (It's a duplicate)",
+  "submission.sections.detect-duplicate.confirm-duplicate": "Confirmar (Es un duplicado)",
 
   // "submission.sections.detect-duplicate.confirm-not-duplicate": "Confirm (It's not a duplicate)",
-  // TODO New key - Add a translation
-  "submission.sections.detect-duplicate.confirm-not-duplicate": "Confirm (It's not a duplicate)",
+  "submission.sections.detect-duplicate.confirm-not-duplicate": "Confirmar (No es un duplicado)",
 
   // "submission.sections.detect-duplicate.decision-success-notice": "Choice registered successfully",
-  // TODO New key - Add a translation
-  "submission.sections.detect-duplicate.decision-success-notice": "Choice registered successfully",
+  "submission.sections.detect-duplicate.decision-success-notice": "Elección registrada con éxito",
 
   // "submission.sections.detect-duplicate.disclaimer": "The system has identified some potential duplicates. Please carefully review the list and flag each occurency with the appropriate choice or discard this submission.",
-  // TODO New key - Add a translation
-  "submission.sections.detect-duplicate.disclaimer": "The system has identified some potential duplicates. Please carefully review the list and flag each occurency with the appropriate choice or discard this submission.",
+  "submission.sections.detect-duplicate.disclaimer": "El sistema ha identificado algunos posibles duplicados. Por favor, revise cuidadosamente la lista y marque cada ocurrencia con la opción apropiada o descarte este envío.",
 
   // "submission.sections.detect-duplicate.disclaimer-ctrl": "The system has identified some potential duplicates. Please carefully review the list and the submitter comments and perform the appropriate action.",
-  // TODO New key - Add a translation
-  "submission.sections.detect-duplicate.disclaimer-ctrl": "The system has identified some potential duplicates. Please carefully review the list and the submitter comments and perform the appropriate action.",
+  "submission.sections.detect-duplicate.disclaimer-ctrl": "El sistema ha identificado algunos posibles duplicados. Por favor, revise cuidadosamente la lista y los comentarios del remitente y realice la acción apropiada.",
 
   // "submission.sections.detect-duplicate.disclaimer-no-match": "All your feedback on potential duplicates have been registered correctly.",
-  // TODO New key - Add a translation
-  "submission.sections.detect-duplicate.disclaimer-no-match": "All your feedback on potential duplicates have been registered correctly.",
+  "submission.sections.detect-duplicate.disclaimer-no-match": "Todos sus comentarios sobre posibles duplicados se han registrado correctamente.",
 
   // "submission.sections.detect-duplicate.duplicate": "It's a duplicate",
-  // TODO New key - Add a translation
-  "submission.sections.detect-duplicate.duplicate": "It's a duplicate",
+  "submission.sections.detect-duplicate.duplicate": "Es un duplicado",
 
   // "submission.sections.detect-duplicate.duplicate-ctrl": "Mark the record to merge",
-  // TODO New key - Add a translation
-  "submission.sections.detect-duplicate.duplicate-ctrl": "Mark the record to merge",
+  "submission.sections.detect-duplicate.duplicate-ctrl": "Marcar el registro para fusionar",
 
   // "submission.sections.detect-duplicate.duplicate-detected": "Potential duplicate detected",
-  // TODO New key - Add a translation
-  "submission.sections.detect-duplicate.duplicate-detected": "Potential duplicate detected",
+  "submission.sections.detect-duplicate.duplicate-detected": "Posible duplicado detectado",
 
   // "submission.sections.detect-duplicate.duplicate-help": "Click here if this is a duplicate of your item",
-  // TODO New key - Add a translation
-  "submission.sections.detect-duplicate.duplicate-help": "Click here if this is a duplicate of your item",
+  "submission.sections.detect-duplicate.duplicate-help": "Haga clic aquí si este es un duplicado de su ítem",
 
   // "submission.sections.detect-duplicate.note-help": "Please enter your reason for the duplication into the box below.",
-  // TODO New key - Add a translation
-  "submission.sections.detect-duplicate.note-help": "Please enter your reason for the duplication into the box below.",
+  "submission.sections.detect-duplicate.note-help": "Por favor, introduzca el motivo de la duplicación en la siguiente casilla.",
 
   // "submission.sections.detect-duplicate.note-placeholder": "Describe the reason of duplication",
-  // TODO New key - Add a translation
-  "submission.sections.detect-duplicate.note-placeholder": "Describe the reason of duplication",
+  "submission.sections.detect-duplicate.note-placeholder": "Describa el motivo de la duplicación",
 
   // "submission.sections.detect-duplicate.no-decision": "No decision yet",
-  // TODO New key - Add a translation
-  "submission.sections.detect-duplicate.no-decision": "No decision yet",
+  "submission.sections.detect-duplicate.no-decision": "Aún no hay decisión",
 
   // "submission.sections.detect-duplicate.not-duplicate": "It's not a duplicate",
-  // TODO New key - Add a translation
-  "submission.sections.detect-duplicate.not-duplicate": "It's not a duplicate",
+  "submission.sections.detect-duplicate.not-duplicate": "No es un duplicado",
 
   // "submission.sections.detect-duplicate.not-duplicate-help": "Click here if this is not a duplicate of your item",
-  // TODO New key - Add a translation
-  "submission.sections.detect-duplicate.not-duplicate-help": "Click here if this is not a duplicate of your item",
+  "submission.sections.detect-duplicate.not-duplicate-help": "Haga clic aquí si esto no es un duplicado de su ítem",
 
   // "submission.sections.detect-duplicate.submitter-decision": "Submitter decision:",
-  // TODO New key - Add a translation
-  "submission.sections.detect-duplicate.submitter-decision": "Submitter decision:",
+  "submission.sections.detect-duplicate.submitter-decision": "Decisión del remitente:",
 
   // "submission.sections.detect-duplicate.submitter-note": "Submitter note:",
-  // TODO New key - Add a translation
-  "submission.sections.detect-duplicate.submitter-note": "Submitter note:",
+  "submission.sections.detect-duplicate.submitter-note": "Nota del remitente:",
 
 
 
   // "submission.sections.describe.relationship-lookup.close": "Close",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.close": "Close",
+  "submission.sections.describe.relationship-lookup.close": "Cerrar",
 
   // "submission.sections.describe.relationship-lookup.external-source.added": "Successfully added local entry to the selection",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.external-source.added": "Successfully added local entry to the selection",
+  "submission.sections.describe.relationship-lookup.external-source.added": "Se ha añadido con éxito la entrada local a la selección",
 
   // "submission.sections.describe.relationship-lookup.external-source.import-button-title.isAuthorOfPublication": "Import remote author",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.external-source.import-button-title.isAuthorOfPublication": "Import remote author",
+  "submission.sections.describe.relationship-lookup.external-source.import-button-title.isAuthorOfPublication": "Importar autor",
 
   // "submission.sections.describe.relationship-lookup.external-source.import-button-title.Journal": "Import remote journal",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.external-source.import-button-title.Journal": "Import remote journal",
+  "submission.sections.describe.relationship-lookup.external-source.import-button-title.Journal": "Importar revista",
 
   // "submission.sections.describe.relationship-lookup.external-source.import-button-title.Journal Issue": "Import remote journal issue",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.external-source.import-button-title.Journal Issue": "Import remote journal issue",
+  "submission.sections.describe.relationship-lookup.external-source.import-button-title.Journal Issue": "Importar número de revista",
 
   // "submission.sections.describe.relationship-lookup.external-source.import-button-title.Journal Volume": "Import remote journal volume",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.external-source.import-button-title.Journal Volume": "Import remote journal volume",
+  "submission.sections.describe.relationship-lookup.external-source.import-button-title.Journal Volume": "Importar volumen de la revista",
 
   // "submission.sections.describe.relationship-lookup.external-source.import-modal.isAuthorOfPublication.title": "Import Remote Author",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.external-source.import-modal.isAuthorOfPublication.title": "Import Remote Author",
+  "submission.sections.describe.relationship-lookup.external-source.import-modal.isAuthorOfPublication.title": "Importar autor",
 
   // "submission.sections.describe.relationship-lookup.external-source.import-button-title.Person": "Import remote person",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.external-source.import-button-title.Person": "Import remote person",
+  "submission.sections.describe.relationship-lookup.external-source.import-button-title.Person": "Importar persona",
 
   // "submission.sections.describe.relationship-lookup.external-source.import-button-title.Dataset": "Import remote dataset",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.external-source.import-button-title.Dataset": "Import remote dataset",
+  "submission.sections.describe.relationship-lookup.external-source.import-button-title.Dataset": "Importar conjunto de datos",
 
   // "submission.sections.describe.relationship-lookup.external-source.import-button-title.Equipment": "Import remote equipment",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.external-source.import-button-title.Equipment": "Import remote equipment",
+  "submission.sections.describe.relationship-lookup.external-source.import-button-title.Equipment": "Importar equipamiento",
 
   // "submission.sections.describe.relationship-lookup.external-source.import-button-title.Event": "Import remote event",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.external-source.import-button-title.Event": "Import remote event",
+  "submission.sections.describe.relationship-lookup.external-source.import-button-title.Event": "Importar evento",
 
   // "submission.sections.describe.relationship-lookup.external-source.import-button-title.Funding": "Import remote fund",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.external-source.import-button-title.Funding": "Import remote fund",
+  "submission.sections.describe.relationship-lookup.external-source.import-button-title.Funding": "Importar financiación",
 
   // "submission.sections.describe.relationship-lookup.external-source.import-button-title.OrgUnit": "Import remote publisher",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.external-source.import-button-title.OrgUnit": "Import remote publisher",
+  "submission.sections.describe.relationship-lookup.external-source.import-button-title.OrgUnit": "Importar editor",
 
   // "submission.sections.describe.relationship-lookup.external-source.import-button-title.Patent": "Import remote patent",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.external-source.import-button-title.Patent": "Import remote patent",
+  "submission.sections.describe.relationship-lookup.external-source.import-button-title.Patent": "Importar patente",
 
   // "submission.sections.describe.relationship-lookup.external-source.import-button-title.Project": "Import remote project",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.external-source.import-button-title.Project": "Import remote project",
+  "submission.sections.describe.relationship-lookup.external-source.import-button-title.Project": "Importar proyecto",
 
   // "submission.sections.describe.relationship-lookup.external-source.import-button-title.Publication": "Import remote publication",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.external-source.import-button-title.Publication": "Import remote publication",
+  "submission.sections.describe.relationship-lookup.external-source.import-button-title.Publication": "Importar publicación",
 
   // "submission.sections.describe.relationship-lookup.external-source.import-modal.Author.title": "Import Remote Author",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.external-source.import-modal.Author.title": "Import Remote Author",
+  "submission.sections.describe.relationship-lookup.external-source.import-modal.Author.title": "Importar autor",
 
   // "submission.sections.describe.relationship-lookup.external-source.import-modal.isAuthorOfPublication.added.local-entity": "Successfully added local author to the selection",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.external-source.import-modal.isAuthorOfPublication.added.local-entity": "Successfully added local author to the selection",
+  "submission.sections.describe.relationship-lookup.external-source.import-modal.isAuthorOfPublication.added.local-entity": "Se ha añadido con éxito el autor local a la selección",
 
   // "submission.sections.describe.relationship-lookup.external-source.import-modal.isAuthorOfPublication.added.new-entity": "Successfully imported and added external author to the selection",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.external-source.import-modal.isAuthorOfPublication.added.new-entity": "Successfully imported and added external author to the selection",
+  "submission.sections.describe.relationship-lookup.external-source.import-modal.isAuthorOfPublication.added.new-entity": "Se ha importado y añadido con éxito el autor externo a la selección",
 
   // "submission.sections.describe.relationship-lookup.external-source.import-modal.authority": "Authority",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.external-source.import-modal.authority": "Authority",
+  "submission.sections.describe.relationship-lookup.external-source.import-modal.authority": "Autoridad",
 
   // "submission.sections.describe.relationship-lookup.external-source.import-modal.authority.new": "Import as a new local authority entry",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.external-source.import-modal.authority.new": "Import as a new local authority entry",
+  "submission.sections.describe.relationship-lookup.external-source.import-modal.authority.new": "Importar como una nueva entrada de autoridad local",
 
   // "submission.sections.describe.relationship-lookup.external-source.import-modal.cancel": "Cancel",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.external-source.import-modal.cancel": "Cancel",
+  "submission.sections.describe.relationship-lookup.external-source.import-modal.cancel": "Cancelar",
 
   // "submission.sections.describe.relationship-lookup.external-source.import-modal.collection": "Select a collection to import new entries to",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.external-source.import-modal.collection": "Select a collection to import new entries to",
+  "submission.sections.describe.relationship-lookup.external-source.import-modal.collection": "Seleccione una colección para importar nuevas entradas",
 
   // "submission.sections.describe.relationship-lookup.external-source.import-modal.entities": "Entities",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.external-source.import-modal.entities": "Entities",
+  "submission.sections.describe.relationship-lookup.external-source.import-modal.entities": "Entidades",
 
   // "submission.sections.describe.relationship-lookup.external-source.import-modal.entities.new": "Import as a new local entity",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.external-source.import-modal.entities.new": "Import as a new local entity",
+  "submission.sections.describe.relationship-lookup.external-source.import-modal.entities.new": "Importar como una nueva entidad local",
 
   // "submission.sections.describe.relationship-lookup.external-source.import-modal.head.lcname": "Importing from LC Name",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.external-source.import-modal.head.lcname": "Importing from LC Name",
+  "submission.sections.describe.relationship-lookup.external-source.import-modal.head.lcname": "Importación desde un nombre LC",
 
   // "submission.sections.describe.relationship-lookup.external-source.import-modal.head.orcid": "Importing from ORCID",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.external-source.import-modal.head.orcid": "Importing from ORCID",
+  "submission.sections.describe.relationship-lookup.external-source.import-modal.head.orcid": "Importación desde ORCID",
 
   // "submission.sections.describe.relationship-lookup.external-source.import-modal.head.crossref": "Importing from CrossRef",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.external-source.import-modal.head.crossref": "Importing from CrossRef",
+  "submission.sections.describe.relationship-lookup.external-source.import-modal.head.crossref": "Importación desde CrossRef",
 
   // "submission.sections.describe.relationship-lookup.external-source.import-modal.head.sherpaJournal": "Importing from Sherpa Journal",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.external-source.import-modal.head.sherpaJournal": "Importing from Sherpa Journal",
+  "submission.sections.describe.relationship-lookup.external-source.import-modal.head.sherpaJournal": "Importación desde Sherpa Journal",
 
   // "submission.sections.describe.relationship-lookup.external-source.import-modal.head.sherpaPublisher": "Importing from Sherpa Publisher",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.external-source.import-modal.head.sherpaPublisher": "Importing from Sherpa Publisher",
+  "submission.sections.describe.relationship-lookup.external-source.import-modal.head.sherpaPublisher": "Importación desde Sherpa Publisher",
 
   // "submission.sections.describe.relationship-lookup.external-source.import-modal.head.pubmed": "Importing from PubMed",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.external-source.import-modal.head.pubmed": "Importing from PubMed",
+  "submission.sections.describe.relationship-lookup.external-source.import-modal.head.pubmed": "Importación desde PubMed",
 
   // "submission.sections.describe.relationship-lookup.external-source.import-modal.head.arxiv": "Importing from arXiv",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.external-source.import-modal.head.arxiv": "Importing from arXiv",
+  "submission.sections.describe.relationship-lookup.external-source.import-modal.head.arxiv": "Importación desde arXiv",
 
   // "submission.sections.describe.relationship-lookup.external-source.import-modal.import": "Import",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.external-source.import-modal.import": "Import",
+  "submission.sections.describe.relationship-lookup.external-source.import-modal.import": "Importar",
 
   // "submission.sections.describe.relationship-lookup.external-source.import-modal.Journal.title": "Import Remote Journal",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.external-source.import-modal.Journal.title": "Import Remote Journal",
+  "submission.sections.describe.relationship-lookup.external-source.import-modal.Journal.title": "Importar revista",
 
   // "submission.sections.describe.relationship-lookup.external-source.import-modal.Journal.added.local-entity": "Successfully added local journal to the selection",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.external-source.import-modal.Journal.added.local-entity": "Successfully added local journal to the selection",
+  "submission.sections.describe.relationship-lookup.external-source.import-modal.Journal.added.local-entity": "Se ha añadido con éxito la revista local a la selección",
 
   // "submission.sections.describe.relationship-lookup.external-source.import-modal.Journal.added.new-entity": "Successfully imported and added external journal to the selection",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.external-source.import-modal.Journal.added.new-entity": "Successfully imported and added external journal to the selection",
+  "submission.sections.describe.relationship-lookup.external-source.import-modal.Journal.added.new-entity": "Se ha importado y añadido con éxito la revista externa a la selección",
 
   // "submission.sections.describe.relationship-lookup.external-source.import-modal.Journal Issue.title": "Import Remote Journal Issue",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.external-source.import-modal.Journal Issue.title": "Import Remote Journal Issue",
+  "submission.sections.describe.relationship-lookup.external-source.import-modal.Journal Issue.title": "Importar el número de revista",
 
   // "submission.sections.describe.relationship-lookup.external-source.import-modal.Journal Issue.added.local-entity": "Successfully added local journal issue to the selection",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.external-source.import-modal.Journal Issue.added.local-entity": "Successfully added local journal issue to the selection",
+  "submission.sections.describe.relationship-lookup.external-source.import-modal.Journal Issue.added.local-entity": "Se ha añadido con éxito el número de la revista local a la selección",
 
   // "submission.sections.describe.relationship-lookup.external-source.import-modal.Journal Issue.added.new-entity": "Successfully imported and added external journal issue to the selection",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.external-source.import-modal.Journal Issue.added.new-entity": "Successfully imported and added external journal issue to the selection",
+  "submission.sections.describe.relationship-lookup.external-source.import-modal.Journal Issue.added.new-entity": "Se ha importado y añadido con éxito la edición de la revista externa a la selección",
 
   // "submission.sections.describe.relationship-lookup.external-source.import-modal.Journal Volume.title": "Import Remote Journal Volume",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.external-source.import-modal.Journal Volume.title": "Import Remote Journal Volume",
+  "submission.sections.describe.relationship-lookup.external-source.import-modal.Journal Volume.title": "Importar volumen de la revista",
 
   // "submission.sections.describe.relationship-lookup.external-source.import-modal.Journal Volume.added.local-entity": "Successfully added local journal volume to the selection",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.external-source.import-modal.Journal Volume.added.local-entity": "Successfully added local journal volume to the selection",
+  "submission.sections.describe.relationship-lookup.external-source.import-modal.Journal Volume.added.local-entity": "Se ha añadido con éxito el volumen de la revista local a la selección",
 
   // "submission.sections.describe.relationship-lookup.external-source.import-modal.Journal Volume.added.new-entity": "Successfully imported and added external journal volume to the selection",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.external-source.import-modal.Journal Volume.added.new-entity": "Successfully imported and added external journal volume to the selection",
+  "submission.sections.describe.relationship-lookup.external-source.import-modal.Journal Volume.added.new-entity": "Se ha importado y añadido con éxito el volumen de la revista externa a la selección",
 
   // "submission.sections.describe.relationship-lookup.external-source.import-modal.select": "Select a local match:",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.external-source.import-modal.select": "Select a local match:",
+  "submission.sections.describe.relationship-lookup.external-source.import-modal.select": "Seleccione un coincidencia local:",
 
   // "submission.sections.describe.relationship-lookup.search-tab.deselect-all": "Deselect all",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.search-tab.deselect-all": "Deselect all",
+  "submission.sections.describe.relationship-lookup.search-tab.deselect-all": "Desmarcar todo",
 
   // "submission.sections.describe.relationship-lookup.search-tab.deselect-page": "Deselect page",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.search-tab.deselect-page": "Deselect page",
+  "submission.sections.describe.relationship-lookup.search-tab.deselect-page": "Desmarcar página",
 
   // "submission.sections.describe.relationship-lookup.search-tab.loading": "Loading...",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.search-tab.loading": "Loading...",
+  "submission.sections.describe.relationship-lookup.search-tab.loading": "Cargando...",
 
   // "submission.sections.describe.relationship-lookup.search-tab.placeholder": "Search query",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.search-tab.placeholder": "Search query",
+  "submission.sections.describe.relationship-lookup.search-tab.placeholder": "Consulta de búsqueda",
 
   // "submission.sections.describe.relationship-lookup.search-tab.search": "Go",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.search-tab.search": "Go",
+  "submission.sections.describe.relationship-lookup.search-tab.search": "Ir",
 
   // "submission.sections.describe.relationship-lookup.search-tab.select-all": "Select all",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.search-tab.select-all": "Select all",
+  "submission.sections.describe.relationship-lookup.search-tab.select-all": "Seleccionar todo",
 
   // "submission.sections.describe.relationship-lookup.search-tab.select-page": "Select page",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.search-tab.select-page": "Select page",
+  "submission.sections.describe.relationship-lookup.search-tab.select-page": "Seleccionar página",
 
   // "submission.sections.describe.relationship-lookup.selected": "Selected {{ size }} items",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.selected": "Selected {{ size }} items",
+  "submission.sections.describe.relationship-lookup.selected": "{{ size }} ítems seleccionados",
 
   // "submission.sections.describe.relationship-lookup.search-tab.tab-title.isAuthorOfPublication": "Local Authors ({{ count }})",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.search-tab.tab-title.isAuthorOfPublication": "Local Authors ({{ count }})",
+  "submission.sections.describe.relationship-lookup.search-tab.tab-title.isAuthorOfPublication": "({{ count }}) autores locales",
 
   // "submission.sections.describe.relationship-lookup.search-tab.tab-title.isJournalOfPublication": "Local Journals ({{ count }})",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.search-tab.tab-title.isJournalOfPublication": "Local Journals ({{ count }})",
+  "submission.sections.describe.relationship-lookup.search-tab.tab-title.isJournalOfPublication": "Revistas locales ({{ count }})",
+  
   // "submission.sections.describe.relationship-lookup.search-tab.tab-title.Project": "Local Projects ({{ count }})",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.search-tab.tab-title.Project": "Local Projects ({{ count }})",
+  "submission.sections.describe.relationship-lookup.search-tab.tab-title.Project": "Proyectos locales ({{ count }})",
 
   // "submission.sections.describe.relationship-lookup.search-tab.tab-title.Publication": "Local Publications ({{ count }})",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.search-tab.tab-title.Publication": "Local Publications ({{ count }})",
+  "submission.sections.describe.relationship-lookup.search-tab.tab-title.Publication": "Publicaciones locales ({{ count }})",
 
   // "submission.sections.describe.relationship-lookup.search-tab.tab-title.Person": "Local Authors ({{ count }})",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.search-tab.tab-title.Person": "Local Authors ({{ count }})",
+  "submission.sections.describe.relationship-lookup.search-tab.tab-title.Person": "Autores locales ({{ count }})",
 
   // "submission.sections.describe.relationship-lookup.search-tab.tab-title.OrgUnit": "Local Organizational Units ({{ count }})",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.search-tab.tab-title.OrgUnit": "Local Organizational Units ({{ count }})",
+  "submission.sections.describe.relationship-lookup.search-tab.tab-title.OrgUnit": "Unidades organizacionales locales ({{ count }})",
 
   // "submission.sections.describe.relationship-lookup.search-tab.tab-title.DataPackage": "Local Data Packages ({{ count }})",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.search-tab.tab-title.DataPackage": "Local Data Packages ({{ count }})",
+  "submission.sections.describe.relationship-lookup.search-tab.tab-title.DataPackage": "Paquetes de datos locales ({{ count }})",
 
   // "submission.sections.describe.relationship-lookup.search-tab.tab-title.DataFile": "Local Data Files ({{ count }})",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.search-tab.tab-title.DataFile": "Local Data Files ({{ count }})",
+  "submission.sections.describe.relationship-lookup.search-tab.tab-title.DataFile": "Archivos de datos locales ({{ count }})",
 
   // "submission.sections.describe.relationship-lookup.search-tab.tab-title.Journal": "Local Journals ({{ count }})",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.search-tab.tab-title.Journal": "Local Journals ({{ count }})",
+  "submission.sections.describe.relationship-lookup.search-tab.tab-title.Journal": "Revistas locales ({{ count }})",
 
   // "submission.sections.describe.relationship-lookup.search-tab.tab-title.isJournalIssueOfPublication": "Local Journal Issues ({{ count }})",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.search-tab.tab-title.isJournalIssueOfPublication": "Local Journal Issues ({{ count }})",
+  "submission.sections.describe.relationship-lookup.search-tab.tab-title.isJournalIssueOfPublication": "Números de revistas locales ({{ count }})",
+  
   // "submission.sections.describe.relationship-lookup.search-tab.tab-title.JournalIssue": "Local Journal Issues ({{ count }})",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.search-tab.tab-title.JournalIssue": "Local Journal Issues ({{ count }})",
+  "submission.sections.describe.relationship-lookup.search-tab.tab-title.JournalIssue": "Números de revistas locales ({{ count }})",
 
   // "submission.sections.describe.relationship-lookup.search-tab.tab-title.isJournalVolumeOfPublication": "Local Journal Volumes ({{ count }})",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.search-tab.tab-title.isJournalVolumeOfPublication": "Local Journal Volumes ({{ count }})",
+  "submission.sections.describe.relationship-lookup.search-tab.tab-title.isJournalVolumeOfPublication": "Volúmenes de revistas locales ({{ count }})",
+  
   // "submission.sections.describe.relationship-lookup.search-tab.tab-title.JournalVolume": "Local Journal Volumes ({{ count }})",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.search-tab.tab-title.JournalVolume": "Local Journal Volumes ({{ count }})",
+  "submission.sections.describe.relationship-lookup.search-tab.tab-title.JournalVolume": "Volúmenes de revistas locales ({{ count }})",
 
   // "submission.sections.describe.relationship-lookup.search-tab.tab-title.crossref": "Crossref ({{ count }})",
-  // TODO New key - Add a translation
   "submission.sections.describe.relationship-lookup.search-tab.tab-title.crossref": "Crossref ({{ count }})",
 
   // "submission.sections.describe.relationship-lookup.search-tab.tab-title.sherpaJournal": "Sherpa Journals ({{ count }})",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.search-tab.tab-title.sherpaJournal": "Sherpa Journals ({{ count }})",
+  "submission.sections.describe.relationship-lookup.search-tab.tab-title.sherpaJournal": "Revistas Sherpa ({{ count }})",
 
   // "submission.sections.describe.relationship-lookup.search-tab.tab-title.sherpaPublisher": "Sherpa Publishers ({{ count }})",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.search-tab.tab-title.sherpaPublisher": "Sherpa Publishers ({{ count }})",
+  "submission.sections.describe.relationship-lookup.search-tab.tab-title.sherpaPublisher": "Editores Sherpa ({{ count }})",
 
   // "submission.sections.describe.relationship-lookup.search-tab.tab-title.orcid": "ORCID ({{ count }})",
-  // TODO New key - Add a translation
   "submission.sections.describe.relationship-lookup.search-tab.tab-title.orcid": "ORCID ({{ count }})",
 
   // "submission.sections.describe.relationship-lookup.search-tab.tab-title.lcname": "LC Names ({{ count }})",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.search-tab.tab-title.lcname": "LC Names ({{ count }})",
+  "submission.sections.describe.relationship-lookup.search-tab.tab-title.lcname": "Nombres LC ({{ count }})",
 
   // "submission.sections.describe.relationship-lookup.search-tab.tab-title.pubmed": "PubMed ({{ count }})",
-  // TODO New key - Add a translation
   "submission.sections.describe.relationship-lookup.search-tab.tab-title.pubmed": "PubMed ({{ count }})",
 
   // "submission.sections.describe.relationship-lookup.search-tab.tab-title.arxiv": "arXiv ({{ count }})",
-  // TODO New key - Add a translation
   "submission.sections.describe.relationship-lookup.search-tab.tab-title.arxiv": "arXiv ({{ count }})",
 
   // "submission.sections.describe.relationship-lookup.search-tab.tab-title.isFundingAgencyOfPublication": "Search for Funding Agencies",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.search-tab.tab-title.isFundingAgencyOfPublication": "Search for Funding Agencies",
+  "submission.sections.describe.relationship-lookup.search-tab.tab-title.isFundingAgencyOfPublication": "Búsqueda de organismos de financiación",
 
   // "submission.sections.describe.relationship-lookup.search-tab.tab-title.isFundingOfPublication": "Search for Funding",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.search-tab.tab-title.isFundingOfPublication": "Search for Funding",
+  "submission.sections.describe.relationship-lookup.search-tab.tab-title.isFundingOfPublication": "Búsqueda de financiación",
 
   // "submission.sections.describe.relationship-lookup.search-tab.tab-title.isChildOrgUnitOf": "Search for Organizational Units",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.search-tab.tab-title.isChildOrgUnitOf": "Search for Organizational Units",
+  "submission.sections.describe.relationship-lookup.search-tab.tab-title.isChildOrgUnitOf": "Búsqueda de unidades organizacionales",
 
   // "submission.sections.describe.relationship-lookup.selection-tab.tab-title": "Current Selection ({{ count }})",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.selection-tab.tab-title": "Current Selection ({{ count }})",
+  "submission.sections.describe.relationship-lookup.selection-tab.tab-title": "Selección actual ({{ count }})",
 
   // "submission.sections.describe.relationship-lookup.title.isJournalIssueOfPublication": "Journal Issues",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.title.isJournalIssueOfPublication": "Journal Issues",
+  "submission.sections.describe.relationship-lookup.title.isJournalIssueOfPublication": "Números de revista",
+  
   // "submission.sections.describe.relationship-lookup.title.JournalIssue": "Journal Issues",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.title.JournalIssue": "Journal Issues",
+  "submission.sections.describe.relationship-lookup.title.JournalIssue": "Números de revista",
 
   // "submission.sections.describe.relationship-lookup.title.isJournalVolumeOfPublication": "Journal Volumes",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.title.isJournalVolumeOfPublication": "Journal Volumes",
+  "submission.sections.describe.relationship-lookup.title.isJournalVolumeOfPublication": "Volúmenes de revista",
+  
   // "submission.sections.describe.relationship-lookup.title.JournalVolume": "Journal Volumes",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.title.JournalVolume": "Journal Volumes",
+  "submission.sections.describe.relationship-lookup.title.JournalVolume": "Volúmenes de revista",
 
   // "submission.sections.describe.relationship-lookup.title.isJournalOfPublication": "Journals",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.title.isJournalOfPublication": "Journals",
+  "submission.sections.describe.relationship-lookup.title.isJournalOfPublication": "Revistas",
 
   // "submission.sections.describe.relationship-lookup.title.isAuthorOfPublication": "Authors",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.title.isAuthorOfPublication": "Authors",
+  "submission.sections.describe.relationship-lookup.title.isAuthorOfPublication": "Autores",
 
   // "submission.sections.describe.relationship-lookup.title.isFundingAgencyOfPublication": "Funding Agency",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.title.isFundingAgencyOfPublication": "Funding Agency",
+  "submission.sections.describe.relationship-lookup.title.isFundingAgencyOfPublication": "Agencia de financiación",
+  
   // "submission.sections.describe.relationship-lookup.title.Project": "Projects",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.title.Project": "Projects",
+  "submission.sections.describe.relationship-lookup.title.Project": "Proyectos",
 
   // "submission.sections.describe.relationship-lookup.title.Publication": "Publications",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.title.Publication": "Publications",
+  "submission.sections.describe.relationship-lookup.title.Publication": "Publicaciones",
 
   // "submission.sections.describe.relationship-lookup.title.Person": "Authors",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.title.Person": "Authors",
+  "submission.sections.describe.relationship-lookup.title.Person": "Autores",
 
   // "submission.sections.describe.relationship-lookup.title.OrgUnit": "Organizational Units",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.title.OrgUnit": "Organizational Units",
+  "submission.sections.describe.relationship-lookup.title.OrgUnit": "Unidades organizacionales",
 
   // "submission.sections.describe.relationship-lookup.title.DataPackage": "Data Packages",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.title.DataPackage": "Data Packages",
+  "submission.sections.describe.relationship-lookup.title.DataPackage": "Paquetes de datos",
 
   // "submission.sections.describe.relationship-lookup.title.DataFile": "Data Files",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.title.DataFile": "Data Files",
+  "submission.sections.describe.relationship-lookup.title.DataFile": "Archivos de datos",
 
   // "submission.sections.describe.relationship-lookup.title.Funding Agency": "Funding Agency",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.title.Funding Agency": "Funding Agency",
+  "submission.sections.describe.relationship-lookup.title.Funding Agency": "Agencia de financiación",
 
   // "submission.sections.describe.relationship-lookup.title.isFundingOfPublication": "Funding",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.title.isFundingOfPublication": "Funding",
+  "submission.sections.describe.relationship-lookup.title.isFundingOfPublication": "Financiación",
 
   // "submission.sections.describe.relationship-lookup.title.isChildOrgUnitOf": "Parent Organizational Unit",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.title.isChildOrgUnitOf": "Parent Organizational Unit",
+  "submission.sections.describe.relationship-lookup.title.isChildOrgUnitOf": "Unidad organizativa principal",
 
   // "submission.sections.describe.relationship-lookup.search-tab.toggle-dropdown": "Toggle dropdown",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.search-tab.toggle-dropdown": "Toggle dropdown",
+  "submission.sections.describe.relationship-lookup.search-tab.toggle-dropdown": "Desplegar el menú",
 
   // "submission.sections.describe.relationship-lookup.selection-tab.settings": "Settings",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.selection-tab.settings": "Settings",
+  "submission.sections.describe.relationship-lookup.selection-tab.settings": "Ajustes",
 
   // "submission.sections.describe.relationship-lookup.selection-tab.no-selection": "Your selection is currently empty.",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.selection-tab.no-selection": "Your selection is currently empty.",
+  "submission.sections.describe.relationship-lookup.selection-tab.no-selection": "Su selección está vacía.",
 
   // "submission.sections.describe.relationship-lookup.selection-tab.title.isAuthorOfPublication": "Selected Authors",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.selection-tab.title.isAuthorOfPublication": "Selected Authors",
+  "submission.sections.describe.relationship-lookup.selection-tab.title.isAuthorOfPublication": "Autores seleccionados",
 
   // "submission.sections.describe.relationship-lookup.selection-tab.title.isJournalOfPublication": "Selected Journals",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.selection-tab.title.isJournalOfPublication": "Selected Journals",
+  "submission.sections.describe.relationship-lookup.selection-tab.title.isJournalOfPublication": "Revistas seleccionadas",
 
   // "submission.sections.describe.relationship-lookup.selection-tab.title.isJournalVolumeOfPublication": "Selected Journal Volume",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.selection-tab.title.isJournalVolumeOfPublication": "Selected Journal Volume",
+  "submission.sections.describe.relationship-lookup.selection-tab.title.isJournalVolumeOfPublication": "Volumen de la revista seleccionado",
+  
   // "submission.sections.describe.relationship-lookup.selection-tab.title.Project": "Selected Projects",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.selection-tab.title.Project": "Selected Projects",
+  "submission.sections.describe.relationship-lookup.selection-tab.title.Project": "Proyectos seleccionados",
 
   // "submission.sections.describe.relationship-lookup.selection-tab.title.Publication": "Selected Publications",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.selection-tab.title.Publication": "Selected Publications",
+  "submission.sections.describe.relationship-lookup.selection-tab.title.Publication": "Publicaciones seleccionadas",
 
   // "submission.sections.describe.relationship-lookup.selection-tab.title.Person": "Selected Authors",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.selection-tab.title.Person": "Selected Authors",
+  "submission.sections.describe.relationship-lookup.selection-tab.title.Person": "Autores seleccionados",
 
   // "submission.sections.describe.relationship-lookup.selection-tab.title.OrgUnit": "Selected Organizational Units",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.selection-tab.title.OrgUnit": "Selected Organizational Units",
+  "submission.sections.describe.relationship-lookup.selection-tab.title.OrgUnit": "Unidades organizativas seleccionadas",
 
   // "submission.sections.describe.relationship-lookup.selection-tab.title.DataPackage": "Selected Data Packages",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.selection-tab.title.DataPackage": "Selected Data Packages",
+  "submission.sections.describe.relationship-lookup.selection-tab.title.DataPackage": "Paquetes de datos seleccionados",
 
   // "submission.sections.describe.relationship-lookup.selection-tab.title.DataFile": "Selected Data Files",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.selection-tab.title.DataFile": "Selected Data Files",
+  "submission.sections.describe.relationship-lookup.selection-tab.title.DataFile": "Archivos de datos seleccionados",
 
   // "submission.sections.describe.relationship-lookup.selection-tab.title.Journal": "Selected Journals",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.selection-tab.title.Journal": "Selected Journals",
+  "submission.sections.describe.relationship-lookup.selection-tab.title.Journal": "Revistas seleccionadas",
 
   // "submission.sections.describe.relationship-lookup.selection-tab.title.isJournalIssueOfPublication": "Selected Issue",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.selection-tab.title.isJournalIssueOfPublication": "Selected Issue",
+  "submission.sections.describe.relationship-lookup.selection-tab.title.isJournalIssueOfPublication": "Número seleccionado",
+  
   // "submission.sections.describe.relationship-lookup.selection-tab.title.JournalVolume": "Selected Journal Volume",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.selection-tab.title.JournalVolume": "Selected Journal Volume",
+  "submission.sections.describe.relationship-lookup.selection-tab.title.JournalVolume": "Volumen de revista seleccionado",
 
   // "submission.sections.describe.relationship-lookup.selection-tab.title.isFundingAgencyOfPublication": "Selected Funding Agency",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.selection-tab.title.isFundingAgencyOfPublication": "Selected Funding Agency",
+  "submission.sections.describe.relationship-lookup.selection-tab.title.isFundingAgencyOfPublication": "Agencia de financiación seleccionada",
 
   // "submission.sections.describe.relationship-lookup.selection-tab.title.isFundingOfPublication": "Selected Funding",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.selection-tab.title.isFundingOfPublication": "Selected Funding",
+  "submission.sections.describe.relationship-lookup.selection-tab.title.isFundingOfPublication": "Financiación seleccionada",
+  
   // "submission.sections.describe.relationship-lookup.selection-tab.title.JournalIssue": "Selected Issue",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.selection-tab.title.JournalIssue": "Selected Issue",
+  "submission.sections.describe.relationship-lookup.selection-tab.title.JournalIssue": "Número seleccionado",
 
   // "submission.sections.describe.relationship-lookup.selection-tab.title.isChildOrgUnitOf": "Selected Organizational Unit",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.selection-tab.title.isChildOrgUnitOf": "Selected Organizational Unit",
+  "submission.sections.describe.relationship-lookup.selection-tab.title.isChildOrgUnitOf": "Unidad organizativa seleccionada",
 
-  // "submission.sections.describe.relationship-lookup.selection-tab.title.sherpaJournal": "Search Results",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.selection-tab.title.sherpaJournal": "Search Results",
+  // "submission.sections.describe.relationship-lookup.selection-tab.title.sherpaJournal": "Search Results"
+  "submission.sections.describe.relationship-lookup.selection-tab.title.sherpaJournal": "Resultados de búsqueda",
 
   // "submission.sections.describe.relationship-lookup.selection-tab.title.crossref": "Search Results",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.selection-tab.title.crossref": "Search Results",
+  "submission.sections.describe.relationship-lookup.selection-tab.title.crossref": "Resultados de búsqueda",
 
   // "submission.sections.describe.relationship-lookup.selection-tab.title.sherpaPublisher": "Search Results",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.selection-tab.title.sherpaPublisher": "Search Results",
+  "submission.sections.describe.relationship-lookup.selection-tab.title.sherpaPublisher": "Resultados de búsqueda",
 
   // "submission.sections.describe.relationship-lookup.selection-tab.title.orcid": "Search Results",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.selection-tab.title.orcid": "Search Results",
+  "submission.sections.describe.relationship-lookup.selection-tab.title.orcid": "Resultados de búsqueda",
 
   // "submission.sections.describe.relationship-lookup.selection-tab.title.orcidv2": "Search Results",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.selection-tab.title.orcidv2": "Search Results",
+  "submission.sections.describe.relationship-lookup.selection-tab.title.orcidv2": "Resultados de búsqueda",
 
   // "submission.sections.describe.relationship-lookup.selection-tab.title.lcname": "Search Results",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.selection-tab.title.lcname": "Search Results",
+  "submission.sections.describe.relationship-lookup.selection-tab.title.lcname": "Resultados de búsqueda",
 
   // "submission.sections.describe.relationship-lookup.selection-tab.title.pubmed": "Search Results",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.selection-tab.title.pubmed": "Search Results",
+  "submission.sections.describe.relationship-lookup.selection-tab.title.pubmed": "Resultados de búsqueda",
 
   // "submission.sections.describe.relationship-lookup.selection-tab.title.arxiv": "Search Results",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.selection-tab.title.arxiv": "Search Results",
+  "submission.sections.describe.relationship-lookup.selection-tab.title.arxiv": "Resultados de búsqueda",
 
   // "submission.sections.describe.relationship-lookup.selection-tab.title.openaire": "Search Results",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.selection-tab.title.openaire": "Search Results",
+  "submission.sections.describe.relationship-lookup.selection-tab.title.openaire": "Resultados de búsqueda",
 
   // "submission.sections.describe.relationship-lookup.selection-tab.title.epo": "Search Results",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.selection-tab.title.epo": "Search Results",
+  "submission.sections.describe.relationship-lookup.selection-tab.title.epo": "Resultados de búsqueda",
 
   // "submission.sections.describe.relationship-lookup.selection-tab.title.scopus": "Search Results",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.selection-tab.title.scopus": "Search Results",
+  "submission.sections.describe.relationship-lookup.selection-tab.title.scopus": "Resultados de búsqueda",
 
   // "submission.sections.describe.relationship-lookup.selection-tab.title.scielo": "Search Results",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.selection-tab.title.scielo": "Search Results",
+  "submission.sections.describe.relationship-lookup.selection-tab.title.scielo": "Resultados de búsqueda",
 
   // "submission.sections.describe.relationship-lookup.selection-tab.title.wos": "Search Results",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.selection-tab.title.wos": "Search Results",
+  "submission.sections.describe.relationship-lookup.selection-tab.title.wos": "Resultados de búsqueda",
 
   // "submission.sections.describe.relationship-lookup.selection-tab.title.alicia": "Search Results",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.selection-tab.title.alicia": "Search Results",
+  "submission.sections.describe.relationship-lookup.selection-tab.title.alicia": "Resultados de búsqueda",
 
   // "submission.sections.describe.relationship-lookup.selection-tab.title": "Search Results",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.selection-tab.title": "Search Results",
+  "submission.sections.describe.relationship-lookup.selection-tab.title": "Resultados de búsqueda",
 
   // "submission.sections.describe.relationship-lookup.name-variant.notification.content": "Would you like to save \"{{ value }}\" as a name variant for this person so you and others can reuse it for future submissions? If you don\'t you can still use it for this submission.",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.name-variant.notification.content": "Would you like to save \"{{ value }}\" as a name variant for this person so you and others can reuse it for future submissions? If you don\'t you can still use it for this submission.",
+  "submission.sections.describe.relationship-lookup.name-variant.notification.content": "¿Desea guardar \"{{ value }}\" como variante del nombre de esta persona para que usted y otros puedan reutilizarlo en futuros envíos? Si no lo hace, puede seguir utilizándolo para este envío.",
 
   // "submission.sections.describe.relationship-lookup.name-variant.notification.confirm": "Save a new name variant",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.name-variant.notification.confirm": "Save a new name variant",
+  "submission.sections.describe.relationship-lookup.name-variant.notification.confirm": "Guardar una nueva variante de nombre",
 
   // "submission.sections.describe.relationship-lookup.name-variant.notification.decline": "Use only for this submission",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.name-variant.notification.decline": "Use only for this submission",
+  "submission.sections.describe.relationship-lookup.name-variant.notification.decline": "Utilizar sólo para este envío",
 
   // "submission.sections.ccLicense.type": "License Type",
-  // TODO New key - Add a translation
-  "submission.sections.ccLicense.type": "License Type",
+  "submission.sections.ccLicense.type": "Tipo de licencia",
 
   // "submission.sections.ccLicense.select": "Select a license type…",
-  // TODO New key - Add a translation
-  "submission.sections.ccLicense.select": "Select a license type…",
+  "submission.sections.ccLicense.select": "Seleccione un tipo de licencia…",
 
   // "submission.sections.ccLicense.change": "Change your license type…",
-  // TODO New key - Add a translation
-  "submission.sections.ccLicense.change": "Change your license type…",
+  "submission.sections.ccLicense.change": "Cambie su tipo de licencia…",
 
   // "submission.sections.ccLicense.none": "No licenses available",
-  // TODO New key - Add a translation
-  "submission.sections.ccLicense.none": "No licenses available",
+  "submission.sections.ccLicense.none": "No hay licencias disponibles",
 
   // "submission.sections.ccLicense.option.select": "Select an option…",
-  // TODO New key - Add a translation
-  "submission.sections.ccLicense.option.select": "Select an option…",
+  "submission.sections.ccLicense.option.select": "Seleccione una opción…",
 
   // "submission.sections.ccLicense.link": "You’ve selected the following license:",
-  // TODO New key - Add a translation
-  "submission.sections.ccLicense.link": "You’ve selected the following license:",
+  "submission.sections.ccLicense.link": "Ha seleccionado la siguiente licencia:",
 
   // "submission.sections.ccLicense.confirmation": "I grant the license above",
-  // TODO New key - Add a translation
-  "submission.sections.ccLicense.confirmation": "I grant the license above",
+  "submission.sections.ccLicense.confirmation": "Yo concedo la licencia anterior",
 
   // "submission.sections.general.add-more": "Add more",
   "submission.sections.general.add-more": "Agregar más",
@@ -7694,8 +7449,7 @@
   "submission.sections.general.no-collection": "Nueva colección enviada",
 
   // "submission.sections.general.no-entity": "No entity found",
-  // TODO New key - Add a translation
-  "submission.sections.general.no-entity": "No entity found",
+  "submission.sections.general.no-entity": "No se encontró ninguna entidad",
 
   // "submission.sections.general.no-sections": "No options available",
   "submission.sections.general.no-sections": "No hay opciones disponibles",
@@ -7707,7 +7461,7 @@
   "submission.sections.general.save_success_notice": "Envío guardado exitosamente.",
 
   // "submission.sections.general.search-collection": "Search for a collection",
-  "submission.sections.general.search-collection": "Search for a collection",
+  "submission.sections.general.search-collection": "Buscar por una colección",
 
   // "submission.sections.general.sections_not_valid": "There are incomplete sections.",
   "submission.sections.general.sections_not_valid": "Existen secciones incompletas.",
