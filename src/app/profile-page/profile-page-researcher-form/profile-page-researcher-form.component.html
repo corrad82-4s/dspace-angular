@@ -58,9 +58,14 @@
     <div class="alert alert-warning" role="alert">
       {{'researcher.profile.deletion.warning' | translate}}
     </div>
-    <form (ngSubmit)="deleteProfile(researcherProfile)" >
+    <form (ngSubmit)="deleteProfile(researcherProfile)" [formGroup]="deletionConfirmationForm">
+      <div class="alert alert-info" role="alert">
+        {{'researcher.profile.deletion.confirmation-message' | translate}}
+      </div>
+      <input type="text" style="width: 100%" formControlName="confirmation" />
       <button id="btn-chat"
               class="btn btn-danger btn-lg btn-block mt-3"
+              [disabled]="!deletionConfirmationForm.valid || confirmationTextAreaNotEqualsToDelete()"
               type="submit">
         <span>{{'researcher.profile.deletion.confirm' | translate}}</span>
       </button>

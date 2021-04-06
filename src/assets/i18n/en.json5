@@ -3957,6 +3957,8 @@
 
   "researcher.profile.deletion.confirm": "Delete profile",
 
+  "researcher.profile.deletion.confirmation-message" : "To confirm the deletion write 'delete' in the following text input and press the button",
+
   "researcher.profile.deletion.title": "Warning",
 
   "researcher.profile.deletion.warning": "The deletion of the profile is not reversible. Once the profile has been deleted, it and all the items related to it cannot be recovered. Press the button below to confirm the operation.",
