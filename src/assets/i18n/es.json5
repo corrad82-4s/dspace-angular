@@ -5712,95 +5712,73 @@
   "register-page.registration.submit": "Registrar",
 
   // "register-page.registration.success.head": "Verification email sent",
-  // TODO New key - Add a translation
-  "register-page.registration.success.head": "Verification email sent",
+  "register-page.registration.success.head": "Correo electrónico de verificación enviado",
 
   // "register-page.registration.success.content": "An email has been sent to {{ email }} containing a special URL and further instructions.",
-  // TODO New key - Add a translation
-  "register-page.registration.success.content": "An email has been sent to {{ email }} containing a special URL and further instructions.",
+  "register-page.registration.success.content": "Se ha enviado un correo electrónico a {{ email }} que contiene una URL especial y otras instrucciones.",
 
   // "register-page.registration.error.head": "Error when trying to register email",
-  // TODO New key - Add a translation
-  "register-page.registration.error.head": "Error when trying to register email",
+  "register-page.registration.error.head": "Error al intentar registrar el correo electrónico",
 
   // "register-page.registration.error.content": "An error occured when registering the following email address: {{ email }}",
-  // TODO New key - Add a translation
-  "register-page.registration.error.content": "An error occured when registering the following email address: {{ email }}",
+  "register-page.registration.error.content": "Se ha producido un error al registrar la siguiente dirección de correo electrónico: {{ email }}",
 
 
   // "register-page.navbar.email" : "Email Registration",
-  // TODO New key - Add a translation
-  "register-page.navbar.email" : "Email Registration",
+  "register-page.navbar.email" : "Registro de correo electrónico",
 
   // "register-page.navbar.dni" : "DNI Registration",
-  // TODO New key - Add a translation
-  "register-page.navbar.dni" : "DNI Registration",
+  "register-page.navbar.dni" : "Registro de DNI",
   
 
   // "register-page.dni": "register-page.dni",
-  // TODO New key - Add a translation
   "register-page.dni": "register-page.dni",
 
   // "register-page.dni.form.dni": "Dni",
-  // TODO New key - Add a translation
-  "register-page.dni.form.dni": "Dni",
+  "register-page.dni.form.dni": "DNI",
 
   // "register-page.dni.form.dni.error.required": "Please fill in a Dni",
-  // TODO New key - Add a translation
-  "register-page.dni.form.dni.error.required": "Please fill in a Dni",
+  "register-page.dni.form.dni.error.required": "Por favor, rellene un DNI",
 
   // "register-page.dni.form.dob": "Date of Birth",
-  // TODO New key - Add a translation
-  "register-page.dni.form.dob": "Date of Birth",
+  "register-page.dni.form.dob": "Fecha de nacimiento",
 
   // "register-page.dni.form.dob.error.required": "Please fill in a Date of Birth",
-  // TODO New key - Add a translation
-  "register-page.dni.form.dob.error.required": "Please fill in a Date of Birth",
+  "register-page.dni.form.dob.error.required": "Por favor, rellene una fecha de nacimiento",
 
   // "register-page.dni.validation.bad-request": "register-page.dni.validation.bad-request",
-  // TODO New key - Add a translation
   "register-page.dni.validation.bad-request": "register-page.dni.validation.bad-request",
   
   // "register-page.dni.validation.dni-already-present": "An account associated to the provided Dni already exists.",
-  // TODO New key - Add a translation
-  "register-page.dni.validation.dni-already-present": "An account associated to the provided Dni already exists.",
+  "register-page.dni.validation.dni-already-present": "Ya existe una cuenta asociada al DNI proporcionado.",
   
   // "register-page.dni.validation.service-unavailable": "The validation service is temporary unavailable.",
-  // TODO New key - Add a translation
-  "register-page.dni.validation.service-unavailable": "The validation service is temporary unavailable.",
+  "register-page.dni.validation.service-unavailable": "El servicio de validación no está disponible temporalmente.",
   
   // "register-page.dni.validation.dni-not-found": "Dni not found.",
-  // TODO New key - Add a translation
-  "register-page.dni.validation.dni-not-found": "Dni not found.",
+  "register-page.dni.validation.dni-not-found": "No se ha encontrado el DNI",
   
   // "register-page.dni.validation.not-matching": "The Date of Birth doesn't match with the provided Dni.",
-  // TODO New key - Add a translation
-  "register-page.dni.validation.not-matching": "The Date of Birth doesn't match with the provided Dni.",
+  "register-page.dni.validation.not-matching": "La fecha de nacimiento no coincide con el DNI proporcionado.",
   
   // "register-page.dni.submit": "Register",
-  // TODO New key - Add a translation
-  "register-page.dni.submit": "Register",
+  "register-page.dni.submit": "Registro",
   
 
   // "register-page.create-profile-dni.header": "Complete Dni Registration",
-  // TODO New key - Add a translation
-  "register-page.create-profile-dni.header": "Complete Dni Registration",
+  "register-page.create-profile-dni.header": "Completar el registro del DNI",
   
   // "register-page.create-profile-dni.info": "register-page.create-profile-dni.info",
-  // TODO New key - Add a translation
   "register-page.create-profile-dni.info": "register-page.create-profile-dni.info",
   
   // "register-page.create-profile-dni.dni": "Dni",
-  // TODO New key - Add a translation
-  "register-page.create-profile-dni.dni": "Dni",
+  "register-page.create-profile-dni.dni": "DNI",
   
   // "register-page.create-profile-dni.date": "Date of Birth",
-  // TODO New key - Add a translation
-  "register-page.create-profile-dni.date": "Date of Birth",
+  "register-page.create-profile-dni.date": "Fecha de nacimiento",
   
   // "register-page.create-profile-dni.validation.success": "Dni and Date of Birth are valid for registration.",
-  // TODO New key - Add a translation
-  "register-page.create-profile-dni.validation.success": "Dni and Date of Birth are valid for registration.",
+  "register-page.create-profile-dni.validation.success": "El DNI y la fecha de nacimiento son válidos para el registro.",
   
   
 
@@ -5809,12 +5787,10 @@
   "relationships.isAuthorOf": "Autores",
 
   // "relationships.isAuthorOf.Person": "Authors (persons)",
-  // TODO New key - Add a translation
-  "relationships.isAuthorOf.Person": "Authors (persons)",
+  "relationships.isAuthorOf.Person": "Autores (personas)",
 
   // "relationships.isAuthorOf.OrgUnit": "Authors (organizational units)",
-  // TODO New key - Add a translation
-  "relationships.isAuthorOf.OrgUnit": "Authors (organizational units)",
+  "relationships.isAuthorOf.OrgUnit": "Autores (unidades organizacionales)",
 
   // "relationships.isIssueOf": "Journal Issues",
   "relationships.isIssueOf": "Números de Revista",
@@ -5850,260 +5826,197 @@
   "relationships.isVolumeOf": "Volúmenes de Revista",
 
   // "relationships.isContributorOf": "Contributors",
-  // TODO New key - Add a translation
-  "relationships.isContributorOf": "Contributors",
+  "relationships.isContributorOf": "Contribuidores",
 
 
 
   // "researcher.profile.action.processing" : "Processing...",
-  // TODO New key - Add a translation
-  "researcher.profile.action.processing" : "Processing...",
+  "researcher.profile.action.processing" : "Procesando...",
 
   // "researcher.profile.associated": "CTIVitae profile associated",
-  // TODO New key - Add a translation
-  "researcher.profile.associated": "CTIVitae profile associated",
+  "researcher.profile.associated": "Perfil de CTIVitae asociado",
 
   // "researcher.profile.create.new": "Create new",
-  // TODO New key - Add a translation
-  "researcher.profile.create.new": "Create new",
+  "researcher.profile.create.new": "Crear nuevo",
 
   // "researcher.profile.create.fromEpersonData": "See matching profiles",
-  // TODO New key - Add a translation
-  "researcher.profile.create.fromEpersonData": "See matching profiles",
+  "researcher.profile.create.fromEpersonData": "Ver perfiles coincidentes",
 
   // "researcher.profile.delete": "Delete",
-  // TODO New key - Add a translation
-  "researcher.profile.delete": "Delete",
+  "researcher.profile.delete": "Eliminar",
 
   // "researcher.profile.expose": "Expose",
-  // TODO New key - Add a translation
-  "researcher.profile.expose": "Expose",
+  "researcher.profile.expose": "Exponer",
 
   // "researcher.profile.hide": "Hide",
-  // TODO New key - Add a translation
-  "researcher.profile.hide": "Hide",
+  "researcher.profile.hide": "Ocultar",
 
   // "researcher.profile.not.associated": "CTIVitae profile not yet associated",
-  // TODO New key - Add a translation
-  "researcher.profile.not.associated": "CTIVitae profile not yet associated",
+  "researcher.profile.not.associated": "Perfil de CTIVitae no ha sido asociado aún",
 
   // "researcher.profile.view": "View",
-  // TODO New key - Add a translation
-  "researcher.profile.view": "View",
+  "researcher.profile.view": "Ver",
 
   // "researcher.profile.private.visibility" : "PRIVATE",
-  // TODO New key - Add a translation
-  "researcher.profile.private.visibility" : "PRIVATE",
+  "researcher.profile.private.visibility" : "PRIVADO",
 
   // "researcher.profile.public.visibility" : "PUBLIC",
-  // TODO New key - Add a translation
-  "researcher.profile.public.visibility" : "PUBLIC",
+  "researcher.profile.public.visibility" : "PÚBLICO",
 
   // "researcherprofile.error.claim.title" : "Error",
-  // TODO New key - Add a translation
   "researcherprofile.error.claim.title" : "Error",
 
 
 
   // "resource-policies.add.button": "Add",
-  // TODO New key - Add a translation
-  "resource-policies.add.button": "Add",
+  "resource-policies.add.button": "Añadir",
 
   // "resource-policies.add.for.": "Add a new policy",
-  // TODO New key - Add a translation
-  "resource-policies.add.for.": "Add a new policy",
+  "resource-policies.add.for.": "Añadir una nueva política",
 
   // "resource-policies.add.for.bitstream": "Add a new Bitstream policy",
-  // TODO New key - Add a translation
-  "resource-policies.add.for.bitstream": "Add a new Bitstream policy",
+  "resource-policies.add.for.bitstream": "Añadir una nueva política de Bitstream",
 
   // "resource-policies.add.for.bundle": "Add a new Bundle policy",
-  // TODO New key - Add a translation
-  "resource-policies.add.for.bundle": "Add a new Bundle policy",
+  "resource-policies.add.for.bundle": "Añadir una nueva política de Bundle",
 
   // "resource-policies.add.for.item": "Add a new Item policy",
-  // TODO New key - Add a translation
-  "resource-policies.add.for.item": "Add a new Item policy",
+  "resource-policies.add.for.item": "Añadir una nueva política de ítems",
 
   // "resource-policies.add.for.community": "Add a new Community policy",
-  // TODO New key - Add a translation
-  "resource-policies.add.for.community": "Add a new Community policy",
+  "resource-policies.add.for.community": "Añadir una nueva política de Comunidad",
 
   // "resource-policies.add.for.collection": "Add a new Collection policy",
-  // TODO New key - Add a translation
-  "resource-policies.add.for.collection": "Add a new Collection policy",
+  "resource-policies.add.for.collection": "Añadir una nueva política de Colección",
 
   // "resource-policies.create.page.heading": "Create new resource policy for ",
-  // TODO New key - Add a translation
-  "resource-policies.create.page.heading": "Create new resource policy for ",
+  "resource-policies.create.page.heading": "Crear una nueva política de recursos para ",
 
   // "resource-policies.create.page.failure.content": "An error occurred while creating the resource policy.",
-  // TODO New key - Add a translation
-  "resource-policies.create.page.failure.content": "An error occurred while creating the resource policy.",
+  "resource-policies.create.page.failure.content": "Se ha producido un error al crear la política de recursos.",
 
   // "resource-policies.create.page.success.content": "Operation successful",
-  // TODO New key - Add a translation
-  "resource-policies.create.page.success.content": "Operation successful",
+  "resource-policies.create.page.success.content": "Operación exitosa",
 
   // "resource-policies.create.page.title": "Create new resource policy",
-  // TODO New key - Add a translation
-  "resource-policies.create.page.title": "Create new resource policy",
+  "resource-policies.create.page.title": "Crear una nueva política de recursos",
 
   // "resource-policies.delete.btn": "Delete selected",
-  // TODO New key - Add a translation
-  "resource-policies.delete.btn": "Delete selected",
+  "resource-policies.delete.btn": "Eliminar seleccionados",
 
   // "resource-policies.delete.btn.title": "Delete selected resource policies",
-  // TODO New key - Add a translation
-  "resource-policies.delete.btn.title": "Delete selected resource policies",
+  "resource-policies.delete.btn.title": "Eliminar políticas de recursos seleccionadas",
 
   // "resource-policies.delete.failure.content": "An error occurred while deleting selected resource policies.",
-  // TODO New key - Add a translation
-  "resource-policies.delete.failure.content": "An error occurred while deleting selected resource policies.",
+  "resource-policies.delete.failure.content": "Se ha producido un error al eliminar las políticas de recursos seleccionadas.",
 
   // "resource-policies.delete.success.content": "Operation successful",
-  // TODO New key - Add a translation
-  "resource-policies.delete.success.content": "Operation successful",
+  "resource-policies.delete.success.content": "Operación exitosa",
 
   // "resource-policies.edit.page.heading": "Edit resource policy ",
-  // TODO New key - Add a translation
-  "resource-policies.edit.page.heading": "Edit resource policy ",
+  "resource-policies.edit.page.heading": "Editar política de recursos ",
 
   // "resource-policies.edit.page.failure.content": "An error occurred while editing the resource policy.",
-  // TODO New key - Add a translation
-  "resource-policies.edit.page.failure.content": "An error occurred while editing the resource policy.",
+  "resource-policies.edit.page.failure.content": "Se ha producido un error al editar la política de recursos.",
 
   // "resource-policies.edit.page.success.content": "Operation successful",
-  // TODO New key - Add a translation
-  "resource-policies.edit.page.success.content": "Operation successful",
+  "resource-policies.edit.page.success.content": "Operación exitosa",
 
   // "resource-policies.edit.page.title": "Edit resource policy",
-  // TODO New key - Add a translation
-  "resource-policies.edit.page.title": "Edit resource policy",
+  "resource-policies.edit.page.title": "Editar política de recursos",
 
   // "resource-policies.form.action-type.label": "Select the action type",
-  // TODO New key - Add a translation
-  "resource-policies.form.action-type.label": "Select the action type",
+  "resource-policies.form.action-type.label": "Seleccione el tipo de acción",
 
   // "resource-policies.form.action-type.required": "You must select the resource policy action.",
-  // TODO New key - Add a translation
-  "resource-policies.form.action-type.required": "You must select the resource policy action.",
+  "resource-policies.form.action-type.required": "Debe seleccionar la acción de política de recursos.",
 
   // "resource-policies.form.eperson-group-list.label": "The eperson or group that will be grant of the permission",
-  // TODO New key - Add a translation
-  "resource-policies.form.eperson-group-list.label": "The eperson or group that will be grant of the permission",
+  "resource-policies.form.eperson-group-list.label": "El usuario o grupo al que se le concederá el permiso",
 
   // "resource-policies.form.eperson-group-list.select.btn": "Select",
-  // TODO New key - Add a translation
-  "resource-policies.form.eperson-group-list.select.btn": "Select",
+  "resource-policies.form.eperson-group-list.select.btn": "Seleccionar",
 
   // "resource-policies.form.eperson-group-list.tab.eperson": "Search for a ePerson",
-  // TODO New key - Add a translation
-  "resource-policies.form.eperson-group-list.tab.eperson": "Search for a ePerson",
+  "resource-policies.form.eperson-group-list.tab.eperson": "Buscar un usuario",
 
   // "resource-policies.form.eperson-group-list.tab.group": "Search for a group",
-  // TODO New key - Add a translation
-  "resource-policies.form.eperson-group-list.tab.group": "Search for a group",
+  "resource-policies.form.eperson-group-list.tab.group": "Buscar un grupo",
 
   // "resource-policies.form.eperson-group-list.table.headers.action": "Action",
-  // TODO New key - Add a translation
-  "resource-policies.form.eperson-group-list.table.headers.action": "Action",
+  "resource-policies.form.eperson-group-list.table.headers.action": "Acción",
 
   // "resource-policies.form.eperson-group-list.table.headers.id": "ID",
-  // TODO New key - Add a translation
   "resource-policies.form.eperson-group-list.table.headers.id": "ID",
 
   // "resource-policies.form.eperson-group-list.table.headers.name": "Name",
-  // TODO New key - Add a translation
-  "resource-policies.form.eperson-group-list.table.headers.name": "Name",
+  "resource-policies.form.eperson-group-list.table.headers.name": "Nombre",
 
   // "resource-policies.form.date.end.label": "End Date",
-  // TODO New key - Add a translation
-  "resource-policies.form.date.end.label": "End Date",
+  "resource-policies.form.date.end.label": "Fecha de finalización",
 
   // "resource-policies.form.date.start.label": "Start Date",
-  // TODO New key - Add a translation
-  "resource-policies.form.date.start.label": "Start Date",
+  "resource-policies.form.date.start.label": "Fecha de inicio",
 
   // "resource-policies.form.description.label": "Description",
-  // TODO New key - Add a translation
-  "resource-policies.form.description.label": "Description",
+  "resource-policies.form.description.label": "Descripción",
 
   // "resource-policies.form.name.label": "Name",
-  // TODO New key - Add a translation
-  "resource-policies.form.name.label": "Name",
+  "resource-policies.form.name.label": "Nombre",
 
   // "resource-policies.form.policy-type.label": "Select the policy type",
-  // TODO New key - Add a translation
-  "resource-policies.form.policy-type.label": "Select the policy type",
+  "resource-policies.form.policy-type.label": "Seleccione el tipo de política",
 
   // "resource-policies.form.policy-type.required": "You must select the resource policy type.",
-  // TODO New key - Add a translation
-  "resource-policies.form.policy-type.required": "You must select the resource policy type.",
+  "resource-policies.form.policy-type.required": "Debe seleccionar el tipo de política de recursos.",
 
   // "resource-policies.table.headers.action": "Action",
-  // TODO New key - Add a translation
-  "resource-policies.table.headers.action": "Action",
+  "resource-policies.table.headers.action": "Acción",
 
   // "resource-policies.table.headers.date.end": "End Date",
-  // TODO New key - Add a translation
-  "resource-policies.table.headers.date.end": "End Date",
+  "resource-policies.table.headers.date.end": "Fecha de finalización",
 
   // "resource-policies.table.headers.date.start": "Start Date",
-  // TODO New key - Add a translation
-  "resource-policies.table.headers.date.start": "Start Date",
+  "resource-policies.table.headers.date.start": "Fecha de inicio",
 
   // "resource-policies.table.headers.edit": "Edit",
-  // TODO New key - Add a translation
-  "resource-policies.table.headers.edit": "Edit",
+  "resource-policies.table.headers.edit": "Editar",
 
   // "resource-policies.table.headers.edit.group": "Edit group",
-  // TODO New key - Add a translation
-  "resource-policies.table.headers.edit.group": "Edit group",
+  "resource-policies.table.headers.edit.group": "Editar grupo",
 
   // "resource-policies.table.headers.edit.policy": "Edit policy",
-  // TODO New key - Add a translation
-  "resource-policies.table.headers.edit.policy": "Edit policy",
+  "resource-policies.table.headers.edit.policy": "Editar política",
 
   // "resource-policies.table.headers.eperson": "EPerson",
-  // TODO New key - Add a translation
-  "resource-policies.table.headers.eperson": "EPerson",
+  "resource-policies.table.headers.eperson": "Usuario",
 
   // "resource-policies.table.headers.group": "Group",
-  // TODO New key - Add a translation
-  "resource-policies.table.headers.group": "Group",
+  "resource-policies.table.headers.group": "Grupo",
 
   // "resource-policies.table.headers.id": "ID",
-  // TODO New key - Add a translation
   "resource-policies.table.headers.id": "ID",
 
   // "resource-policies.table.headers.name": "Name",
-  // TODO New key - Add a translation
-  "resource-policies.table.headers.name": "Name",
+  "resource-policies.table.headers.name": "Nombre",
 
   // "resource-policies.table.headers.policyType": "type",
-  // TODO New key - Add a translation
-  "resource-policies.table.headers.policyType": "type",
+  "resource-policies.table.headers.policyType": "tipo",
 
   // "resource-policies.table.headers.title.for.bitstream": "Policies for Bitstream",
-  // TODO New key - Add a translation
-  "resource-policies.table.headers.title.for.bitstream": "Policies for Bitstream",
+  "resource-policies.table.headers.title.for.bitstream": "Políticas para el Bitstream",
 
   // "resource-policies.table.headers.title.for.bundle": "Policies for Bundle",
-  // TODO New key - Add a translation
-  "resource-policies.table.headers.title.for.bundle": "Policies for Bundle",
+  "resource-policies.table.headers.title.for.bundle": "Política para el Bundle",
 
   // "resource-policies.table.headers.title.for.item": "Policies for Item",
-  // TODO New key - Add a translation
-  "resource-policies.table.headers.title.for.item": "Policies for Item",
+  "resource-policies.table.headers.title.for.item": "Políticas para el ítems",
 
   // "resource-policies.table.headers.title.for.community": "Policies for Community",
-  // TODO New key - Add a translation
-  "resource-policies.table.headers.title.for.community": "Policies for Community",
+  "resource-policies.table.headers.title.for.community": "Políticas para la Comunidad",
 
   // "resource-policies.table.headers.title.for.collection": "Policies for Collection",
-  // TODO New key - Add a translation
-  "resource-policies.table.headers.title.for.collection": "Policies for Collection",
+  "resource-policies.table.headers.title.for.collection": "Políticas para la Colección",
 
 
 
@@ -6111,16 +6024,13 @@
   "search.description": "",
 
   // "search.switch-configuration.title": "Show",
-  // TODO Source message changed - Revise the translation
-  "search.switch-configuration.title": "Show",
+  "search.switch-configuration.title": "Mostrar",
 
   // "search.title": "DSpace Cris Angular :: Search",
-  // TODO New key - Add a translation
-  "search.title": "DSpace Cris Angular :: Search",
+  "search.title": "DSpace Cris Angular :: Buscar",
 
   // "search.breadcrumbs": "Search",
-  // TODO New key - Add a translation
-  "search.breadcrumbs": "Search",
+  "search.breadcrumbs": "Buscar",
 
 
   // "search.filters.applied.f.author": "Author",
@@ -6158,81 +6068,62 @@
   "search.filters.applied.f.submitter": "Remitente",
 
   // "search.filters.applied.f.jobTitle": "Job Title",
-  // TODO New key - Add a translation
-  "search.filters.applied.f.jobTitle": "Job Title",
+  "search.filters.applied.f.jobTitle": "Cargo",
 
   // "search.filters.applied.f.birthDate.max": "End birth date",
-  // TODO New key - Add a translation
-  "search.filters.applied.f.birthDate.max": "End birth date",
+  "search.filters.applied.f.birthDate.max": "Fecha de nacimiento límite",
 
   // "search.filters.applied.f.birthDate.min": "Start birth date",
-  // TODO New key - Add a translation
-  "search.filters.applied.f.birthDate.min": "Start birth date",
+  "search.filters.applied.f.birthDate.min": "Fecha de nacimiento de inicio",
 
   // "search.filters.applied.f.withdrawn": "Withdrawn",
-  // TODO New key - Add a translation
-  "search.filters.applied.f.withdrawn": "Withdrawn",
+  "search.filters.applied.f.withdrawn": "Retirado",
 
 
   // "search.filters.applied.charts.chart.bar.dateIssued.year.tab" : "Date Issued",
-  // TODO New key - Add a translation
-  "search.filters.applied.charts.chart.bar.dateIssued.year.tab" : "Date Issued",
+  "search.filters.applied.charts.chart.bar.dateIssued.year.tab" : "Fecha de publicación",
 
   // "search.filters.applied.charts.chart.pie.itemtype_filter.tab" : "Item Type",
-  // TODO New key - Add a translation
-  "search.filters.applied.charts.chart.pie.itemtype_filter.tab" : "Item Type",
+  "search.filters.applied.charts.chart.pie.itemtype_filter.tab" : "Tipo de ítem",
 
   // "search.filters.applied.charts.graphiteminstitutionalSector.tab" : "OCDE Institutional Sector",
-  // TODO New key - Add a translation
-  "search.filters.applied.charts.graphiteminstitutionalSector.tab" : "OCDE Institutional Sector",
+  "search.filters.applied.charts.graphiteminstitutionalSector.tab" : "Sector institucional de la OCDE",
   
   // "search.filters.applied.charts.graphitemtype.tab" : "Visualization by Type",
-  // TODO New key - Add a translation
-  "search.filters.applied.charts.graphitemtype.tab" : "Visualization by Type",
+  "search.filters.applied.charts.graphitemtype.tab" : "Visualización por tipo",
 
   // "search.filters.applied.charts.graphitemtypeOcdeArea.tab" : "OCDE Knowledge Area",
-  // TODO New key - Add a translation
-  "search.filters.applied.charts.graphitemtypeOcdeArea.tab" : "OCDE Knowledge Area",
+  "search.filters.applied.charts.graphitemtypeOcdeArea.tab" : "Área de conocimiento de la OCDE",
   
   // "search.filters.applied.charts.graphitemubigeo.tab" : "Region",
-  // TODO New key - Add a translation
-  "search.filters.applied.charts.graphitemubigeo.tab" : "Region",
+  "search.filters.applied.charts.graphitemubigeo.tab" : "Región",
   
   // "search.filters.applied.charts.graphpubldate.tab" : "Visualization by Date",
-  // TODO New key - Add a translation
-  "search.filters.applied.charts.graphpubldate.tab" : "Visualization by Date",
+  "search.filters.applied.charts.graphpubldate.tab" : "Visualización por fecha",
 
   // "search.filters.applied.charts.graphpubldateltr.tab" : "Visualization Demo LTR",
-  // TODO New key - Add a translation
-  "search.filters.applied.charts.graphpubldateltr.tab" : "Visualization Demo LTR",
+  "search.filters.applied.charts.graphpubldateltr.tab" : "Demostración de visualización LTR",
 
   // "search.filters.applied.charts.graphpubldatetrl.tab" : "Visualization Demo RTL",
-  // TODO New key - Add a translation
-  "search.filters.applied.charts.graphpubldatetrl.tab" : "Visualization Demo RTL",
+  "search.filters.applied.charts.graphpubldatetrl.tab" : "Demostración de visualización RTL",
 
   // "search.filters.applied.charts.default.title": "Search Output",
-  // TODO New key - Add a translation
-  "search.filters.applied.charts.default.title": "Search Output",
+  "search.filters.applied.charts.default.title": "Buscar resultados",
 
   // "search.filters.applied.charts.RELATION.CvPerson.researchoutputs.title": "Research Outputs",
-  // TODO New key - Add a translation
-  "search.filters.applied.charts.RELATION.CvPerson.researchoutputs.title": "Research Outputs",
+  "search.filters.applied.charts.RELATION.CvPerson.researchoutputs.title": "Resultados de la investigación",
 
   // "search.filters.applied.charts.RELATION.CvPerson.projects.title": "Projects",
-  // TODO New key - Add a translation
-  "search.filters.applied.charts.RELATION.CvPerson.projects.title": "Projects",
+  "search.filters.applied.charts.RELATION.CvPerson.projects.title": "Proyectos",
 
   // "search.filters.applied.charts.RELATION.CvPerson.patents.title": "Patents",
-  // TODO New key - Add a translation
-  "search.filters.applied.charts.RELATION.CvPerson.patents.title": "Patents",
+  "search.filters.applied.charts.RELATION.CvPerson.patents.title": "Patentes",
 
   // "search.filters.applied.charts.RELATION.CvPerson.notifications.title": "Notifications",
-  // TODO New key - Add a translation
-  "search.filters.applied.charts.RELATION.CvPerson.notifications.title": "Notifications",
+  "search.filters.applied.charts.RELATION.CvPerson.notifications.title": "Notificaciones",
 
   // "search.filters.applied.charts.RELATION.InstitutionOrgUnit.iouorganizations": "OrgUnits",
-  // TODO New key - Add a translation
-  "search.filters.applied.charts.RELATION.InstitutionOrgUnit.iouorganizations": "OrgUnits",
+  "search.filters.applied.charts.RELATION.InstitutionOrgUnit.iouorganizations": "Instituciones",
 
   // "search.filters.applied.charts.RELATION.InstitutionOrgUnit.iouorganizations.title": "OrgUnits",
   // TODO New key - Add a translation
