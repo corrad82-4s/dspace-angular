@@ -7469,200 +7469,151 @@
 
 
   // "submission.sections.submit.progressbar.CClicense": "Creative commons license",
-  // TODO New key - Add a translation
-  "submission.sections.submit.progressbar.CClicense": "Creative commons license",
+  "submission.sections.submit.progressbar.CClicense": "Licencia Creative Commons",
 
   // "submission.sections.submit.progressbar.describe.cv-person-edit-affiliation": "Affiliation information",
-  // TODO New key - Add a translation
-  "submission.sections.submit.progressbar.describe.cv-person-edit-affiliation": "Affiliation information",
+  "submission.sections.submit.progressbar.describe.cv-person-edit-affiliation": "Información de la afiliación",
 
   // "submission.sections.submit.progressbar.describe.cv-person-edit-education": "Education information",
-  // TODO New key - Add a translation
-  "submission.sections.submit.progressbar.describe.cv-person-edit-education": "Education information",
+  "submission.sections.submit.progressbar.describe.cv-person-edit-education": "Información de educación",
 
   // "submission.sections.submit.progressbar.describe.cv-person-edit-qualification": "Qualification information",
-  // TODO New key - Add a translation
-  "submission.sections.submit.progressbar.describe.cv-person-edit-qualification": "Qualification information",
+  "submission.sections.submit.progressbar.describe.cv-person-edit-qualification": "Información de calificación",
 
   // "submission.sections.submit.progressbar.describe.equipment": "Equipment basic information",
-  // TODO New key - Add a translation
-  "submission.sections.submit.progressbar.describe.equipment": "Equipment basic information",
+  "submission.sections.submit.progressbar.describe.equipment": "Información básica del equipamiento",
 
   // "submission.sections.submit.progressbar.describe.institution-equipment": "Equipment basic information",
-  // TODO New key - Add a translation
-  "submission.sections.submit.progressbar.describe.institution-equipment": "Equipment basic information",
+  "submission.sections.submit.progressbar.describe.institution-equipment": "Información básica del equipamiento",
 
   // "submission.sections.submit.progressbar.describe.event": "Event basic information",
-  // TODO New key - Add a translation
-  "submission.sections.submit.progressbar.describe.event": "Event basic information",
+  "submission.sections.submit.progressbar.describe.event": "Información básica del eventp",
 
   // "submission.sections.submit.progressbar.describe.funding": "Funding basic information",
-  // TODO New key - Add a translation
-  "submission.sections.submit.progressbar.describe.funding": "Funding basic information",
+  "submission.sections.submit.progressbar.describe.funding": "Información básica de la financiación",
 
   // "submission.sections.submit.progressbar.describe.institution-funding": "Funding basic information",
-  // TODO New key - Add a translation
-  "submission.sections.submit.progressbar.describe.institution-funding": "Funding basic information",
+  "submission.sections.submit.progressbar.describe.institution-funding": "Información básica de la financiación",
 
   // "submission.sections.submit.progressbar.describe.journal": "Journal basic information",
-  // TODO New key - Add a translation
-  "submission.sections.submit.progressbar.describe.journal": "Journal basic information",
+  "submission.sections.submit.progressbar.describe.journal": "Información básica de la revista",
 
   // "submission.sections.submit.progressbar.describe.notification-form": "Notification",
-  // TODO New key - Add a translation
-  "submission.sections.submit.progressbar.describe.notification-form": "Notification",
+  "submission.sections.submit.progressbar.describe.notification-form": "Notificación",
 
   // "submission.sections.submit.progressbar.describe.orgunit": "Org Unit basic information",
-  // TODO New key - Add a translation
-  "submission.sections.submit.progressbar.describe.orgunit": "Org Unit basic information",
+  "submission.sections.submit.progressbar.describe.orgunit": "Información básica de la unidad organizativa",
 
   // "submission.sections.submit.progressbar.describe.institution-orgunit": "Org Unit basic information",
-  // TODO New key - Add a translation
-  "submission.sections.submit.progressbar.describe.institution-orgunit": "Org Unit basic information",
+  "submission.sections.submit.progressbar.describe.institution-orgunit": "Información básica de la unidad organizativa",
 
   // "submission.sections.submit.progressbar.describe.patent": "Patent basic information",
-  // TODO New key - Add a translation
-  "submission.sections.submit.progressbar.describe.patent": "Patent basic information",
+  "submission.sections.submit.progressbar.describe.patent": "Información básica de la patente",
 
   // "submission.sections.submit.progressbar.describe.institution-patent": "Patent basic information",
-  // TODO New key - Add a translation
-  "submission.sections.submit.progressbar.describe.institution-patent": "Patent basic information",
+  "submission.sections.submit.progressbar.describe.institution-patent": "Información básica de la patente",
 
   // "submission.sections.submit.progressbar.describe.cv-patent": "Patent basic information",
-  // TODO New key - Add a translation
-  "submission.sections.submit.progressbar.describe.cv-patent": "Patent basic information",
+  "submission.sections.submit.progressbar.describe.cv-patent": "Información básica de la patente",
 
   // "submission.sections.submit.progressbar.describe.patent_indexing": "Patent indexing",
-  // TODO New key - Add a translation
-  "submission.sections.submit.progressbar.describe.patent_indexing": "Patent indexing",
+  "submission.sections.submit.progressbar.describe.patent_indexing": "Indización de la patentes",
 
   // "submission.sections.submit.progressbar.describe.institution-patent_indexing": "Patent indexing",
-  // TODO New key - Add a translation
-  "submission.sections.submit.progressbar.describe.institution-patent_indexing": "Patent indexing",
+  "submission.sections.submit.progressbar.describe.institution-patent_indexing": "Indización de la patente",
 
   // "submission.sections.submit.progressbar.describe.cv-patent_indexing": "Patent indexing",
-  // TODO New key - Add a translation
-  "submission.sections.submit.progressbar.describe.cv-patent_indexing": "Patent indexing",
+  "submission.sections.submit.progressbar.describe.cv-patent_indexing": "Indización de la patente",
 
   // "submission.sections.submit.progressbar.describe.patent_references": "Patent references",
-  // TODO New key - Add a translation
-  "submission.sections.submit.progressbar.describe.patent_references": "Patent references",
+  "submission.sections.submit.progressbar.describe.patent_references": "Referencias de la patente",
 
   // "submission.sections.submit.progressbar.describe.institution-patent_references": "Patent references",
-  // TODO New key - Add a translation
-  "submission.sections.submit.progressbar.describe.institution-patent_references": "Patent references",
+  "submission.sections.submit.progressbar.describe.institution-patent_references": "Referencias de la patente",
 
   // "submission.sections.submit.progressbar.describe.cv-patent_references": "Patent references",
-  // TODO New key - Add a translation
-  "submission.sections.submit.progressbar.describe.cv-patent_references": "Patent references",
+  "submission.sections.submit.progressbar.describe.cv-patent_references": "Referencias de la patente",
 
   // "submission.sections.submit.progressbar.describe.person": "Person basic information",
-  // TODO New key - Add a translation
-  "submission.sections.submit.progressbar.describe.person": "Person basic information",
+  "submission.sections.submit.progressbar.describe.person": "Información básica de la persona",
 
   // "submission.sections.submit.progressbar.describe.institution-person": "Person basic information",
-  // TODO New key - Add a translation
-  "submission.sections.submit.progressbar.describe.institution-person": "Person basic information",
+  "submission.sections.submit.progressbar.describe.institution-person": "Información básica de la persona",
 
   // "submission.sections.submit.progressbar.describe.cv-person": "Profile basic information",
-  // TODO New key - Add a translation
-  "submission.sections.submit.progressbar.describe.cv-person": "Profile basic information",
+  "submission.sections.submit.progressbar.describe.cv-person": "Información básica del perfil",
 
   // "submission.sections.submit.progressbar.describe.product": "Product basic information",
-  // TODO New key - Add a translation
-  "submission.sections.submit.progressbar.describe.product": "Product basic information",
+  "submission.sections.submit.progressbar.describe.product": "Información básica del producto",
 
   // "submission.sections.submit.progressbar.describe.institution-product": "Product basic information",
-  // TODO New key - Add a translation
-  "submission.sections.submit.progressbar.describe.institution-product": "Product basic information",
+  "submission.sections.submit.progressbar.describe.institution-product": "Información básica del producto",
 
   // "submission.sections.submit.progressbar.describe.product_indexing": "Product indexing",
-  // TODO New key - Add a translation
-  "submission.sections.submit.progressbar.describe.product_indexing": "Product indexing",
+  "submission.sections.submit.progressbar.describe.product_indexing": "Indización del producto",
 
   // "submission.sections.submit.progressbar.describe.institution-product_indexing": "Product indexing",
-  // TODO New key - Add a translation
-  "submission.sections.submit.progressbar.describe.institution-product_indexing": "Product indexing",
+  "submission.sections.submit.progressbar.describe.institution-product_indexing": "Indización del producto",
 
   // "submission.sections.submit.progressbar.describe.product_references": "Product references",
-  // TODO New key - Add a translation
-  "submission.sections.submit.progressbar.describe.product_references": "Product references",
+  "submission.sections.submit.progressbar.describe.product_references": "Referencias del producto",
 
   // "submission.sections.submit.progressbar.describe.institution-product_references": "Product references",
-  // TODO New key - Add a translation
-  "submission.sections.submit.progressbar.describe.institution-product_references": "Product references",
+  "submission.sections.submit.progressbar.describe.institution-product_references": "Referencias del producto",
 
   // "submission.sections.submit.progressbar.describe.project": "Project basic information",
-  // TODO New key - Add a translation
-  "submission.sections.submit.progressbar.describe.project": "Project basic information",
+  "submission.sections.submit.progressbar.describe.project": "Información básica del proyecto",
 
   // "submission.sections.submit.progressbar.describe.institution-project": "Project basic information",
-  // TODO New key - Add a translation
-  "submission.sections.submit.progressbar.describe.institution-project": "Project basic information",
+  "submission.sections.submit.progressbar.describe.institution-project": "Información básica del proyecto",
 
   // "submission.sections.submit.progressbar.describe.cv-project": "Project basic information",
-  // TODO New key - Add a translation
-  "submission.sections.submit.progressbar.describe.cv-project": "Project basic information",
+  "submission.sections.submit.progressbar.describe.cv-project": "Información básica del proyecto",
 
   // "submission.sections.submit.progressbar.describe.publication": "Publication basic information",
-  // TODO New key - Add a translation
-  "submission.sections.submit.progressbar.describe.publication": "Publication basic information",
+  "submission.sections.submit.progressbar.describe.publication": "Información básica de la publicación",
 
   // "submission.sections.submit.progressbar.describe.institution-publication": "Publication basic information",
-  // TODO New key - Add a translation
-  "submission.sections.submit.progressbar.describe.institution-publication": "Publication basic information",
+  "submission.sections.submit.progressbar.describe.institution-publication": "Información básica de la publicación",
 
   // "submission.sections.submit.progressbar.describe.cv-publication": "Publication basic information",
-  // TODO New key - Add a translation
-  "submission.sections.submit.progressbar.describe.cv-publication": "Publication basic information",
+  "submission.sections.submit.progressbar.describe.cv-publication": "Información básica de la publicación",
 
   // "submission.sections.submit.progressbar.describe.publication_bibliographic_details": "Publication bibliographic details",
-  // TODO New key - Add a translation
-  "submission.sections.submit.progressbar.describe.publication_bibliographic_details": "Publication bibliographic details",
+  "submission.sections.submit.progressbar.describe.publication_bibliographic_details": "Detalles bibliográficos de la publicación",
 
   // "submission.sections.submit.progressbar.describe.institution-publication_bibliographic_details": "Publication bibliographic details",
-  // TODO New key - Add a translation
-  "submission.sections.submit.progressbar.describe.institution-publication_bibliographic_details": "Publication bibliographic details",
+  "submission.sections.submit.progressbar.describe.institution-publication_bibliographic_details": "Detalles bibliográficos de la publicación",
 
   // "submission.sections.submit.progressbar.describe.cv-publication_bibliographic_details": "Publication bibliographic details",
-  // TODO New key - Add a translation
-  "submission.sections.submit.progressbar.describe.cv-publication_bibliographic_details": "Publication bibliographic details",
+  "submission.sections.submit.progressbar.describe.cv-publication_bibliographic_details": "Detalles bibliográficos de la publicación",
 
   // "submission.sections.submit.progressbar.describe.publication_indexing": "Publication indexing",
-  // TODO New key - Add a translation
-  "submission.sections.submit.progressbar.describe.publication_indexing": "Publication indexing",
+  "submission.sections.submit.progressbar.describe.publication_indexing": "Indización de la publicación",
 
   // "submission.sections.submit.progressbar.describe.institution-publication_indexing": "Publication indexing",
-  // TODO New key - Add a translation
-  "submission.sections.submit.progressbar.describe.institution-publication_indexing": "Publication indexing",
+  "submission.sections.submit.progressbar.describe.institution-publication_indexing": "Indización de la publicación",
 
   // "submission.sections.submit.progressbar.describe.cv-publication_indexing": "Publication indexing",
-  // TODO New key - Add a translation
-  "submission.sections.submit.progressbar.describe.cv-publication_indexing": "Publication indexing",
+  "submission.sections.submit.progressbar.describe.cv-publication_indexing": "Indización de la publicación",
 
   // "submission.sections.submit.progressbar.describe.publication_references": "Publication references",
-  // TODO New key - Add a translation
-  "submission.sections.submit.progressbar.describe.publication_references": "Publication references",
+  "submission.sections.submit.progressbar.describe.publication_references": "Referencias de la publicación",
 
   // "submission.sections.submit.progressbar.describe.institution-publication_references": "Publication references",
-  // TODO New key - Add a translation
-  "submission.sections.submit.progressbar.describe.institution-publication_references": "Publication references",
+  "submission.sections.submit.progressbar.describe.institution-publication_references": "Referencias de la publicación",
 
   // "submission.sections.submit.progressbar.describe.cv-publication_references": "Publication references",
-  // TODO New key - Add a translation
-  "submission.sections.submit.progressbar.describe.cv-publication_references": "Publication references",
+  "submission.sections.submit.progressbar.describe.cv-publication_references": "Referencias de la publicación",
 
   // "submission.sections.submit.progressbar.describe.publication_thesis": "Publication Thesis",
-  // TODO New key - Add a translation
-  "submission.sections.submit.progressbar.describe.publication_thesis": "Publication Thesis",
+  "submission.sections.submit.progressbar.describe.publication_thesis": "Tesis de la publicación",
 
   // "submission.sections.submit.progressbar.describe.institution-publication_thesis": "Publication Thesis",
-  // TODO New key - Add a translation
-  "submission.sections.submit.progressbar.describe.institution-publication_thesis": "Publication Thesis",
+  "submission.sections.submit.progressbar.describe.institution-publication_thesis": "Tesis de la publicación",
 
   // "submission.sections.submit.progressbar.describe.cv-publication_thesis": "Publication Thesis",
-  // TODO New key - Add a translation
-  "submission.sections.submit.progressbar.describe.cv-publication_thesis": "Publication Thesis",
+  "submission.sections.submit.progressbar.describe.cv-publication_thesis": "Tesis de la publicación",
 
   // "submission.sections.submit.progressbar.describe.rp": "Researcher basic information",
   "submission.sections.submit.progressbar.describe.rp": "Información básica del investigador",
@@ -7869,8 +7820,7 @@
   "submission.workflow.tasks.claimed.reject.reason.title": "Motivo",
 
   // "submission.workflow.tasks.claimed.reject": "Reject",
-  // TODO New key - Add a translation
-  "submission.workflow.tasks.claimed.reject": "Reject",
+  "submission.workflow.tasks.claimed.reject": "Rechzar",
 
   // "submission.workflow.tasks.claimed.reject_help": "If you have reviewed the item and found it is <strong>not</strong> suitable for inclusion in the collection, select \"Reject\".  You will then be asked to enter a message indicating why the item is unsuitable, and whether the submitter should change something and resubmit.",
   "submission.workflow.tasks.claimed.reject_help": "Si ha revisado el ítem y ha encontrado que <strong> no es </strong> adecuado para su inclusión en la colección, seleccione \"Rechazar\". Después se le pedirá que ingrese un mensaje que indique por qué el ítem no es adecuado y si el remitente debe cambiar algo y volver a enviarlo.",
@@ -7919,7 +7869,6 @@
 
 
   // "title": "DSpace Cris",
-  // TODO Source message changed - Revise the translation
   "title": "DSpace",
 
 
@@ -7938,7 +7887,6 @@
   "treeview.search.form.reset": "Reiniciar",
 
   // "treeview.search.form.search": "Search",
-  // TODO New key - Add a translation
   "treeview.search.form.search": "Buscar",
 
   // "treeview.search.no-result": "There were no items to show",
@@ -8136,760 +8084,572 @@
   "peru-layout.corrections.back": "Volver",
 
   // "peru-layout.shadow-copies": "Sources of information: ",
-  // TODO Source message changed - Revise the translation
   "peru-layout.shadow-copies": "Fuentes de información: "
 
   // "cris.tab.label.profile": "Profile",
-  // TODO New key - Add a translation
-  "cris.tab.label.profile": "Profile",
+  "cris.tab.label.profile": "Perfil",
 
   // "cris.tab.label.publications": "Publications",
-  // TODO New key - Add a translation
-  "cris.tab.label.publications": "Publications",
+  "cris.tab.label.publications": "Publicaciones",
 
   // "cris.tab.label.projects": "Projects",
-  // TODO New key - Add a translation
-  "cris.tab.label.projects": "Projects",
+  "cris.tab.label.projects": "Proyectos",
 
   // "cris.tab.label.patents": "Patents",
-  // TODO New key - Add a translation
-  "cris.tab.label.patents": "Patents",
+  "cris.tab.label.patents": "Patentes",
 
   // "cris.tab.label.orgunits": "OrgUnits",
-  // TODO New key - Add a translation
-  "cris.tab.label.orgunits": "OrgUnits",
+  "cris.tab.label.orgunits": "Unidades organizativas",
 
   // "cris.tab.label.orcid": "ORCID",
-  // TODO New key - Add a translation
   "cris.tab.label.orcid": "ORCID",
 
   // "cris.tab.label.other": "Other",
-  // TODO New key - Add a translation
-  "cris.tab.label.other": "Other",
+  "cris.tab.label.other": "Otro",
 
   // "cris.tab.label.indicators": "Indicators",
-  // TODO New key - Add a translation
-  "cris.tab.label.indicators": "Indicators",
+  "cris.tab.label.indicators": "Indicadores",
 
   // "cris.tab.label.securedtab": "Secured Tab",
-  // TODO New key - Add a translation
-  "cris.tab.label.securedtab": "Secured Tab",
+  "cris.tab.label.securedtab": "Pestaña asegurada",
 
   // "cris.tab.label.qualifications": "Qualifications",
-  // TODO New key - Add a translation
-  "cris.tab.label.qualifications": "Qualifications",
+  "cris.tab.label.qualifications": "Calificaciones",
 
   // "cris.tab.label.equipments": "Equipments",
-  // TODO New key - Add a translation
-  "cris.tab.label.equipments": "Equipments",
+  "cris.tab.label.equipments": "Equipamientos",
 
   // "cris.tab.label.notifications": "Notifications",
-  // TODO New key - Add a translation
-  "cris.tab.label.notifications": "Notifications",
+  "cris.tab.label.notifications": "Notificaciones",
 
   // "cris.tab.label.informations": "Informations",
-  // TODO New key - Add a translation
-  "cris.tab.label.informations": "Informations",
+  "cris.tab.label.informations": "Informaciones",
 
   // "cris.tab.label.researcherspublications": "Researchers publications",
-  // TODO New key - Add a translation
-  "cris.tab.label.researcherspublications": "Researchers publications",
+  "cris.tab.label.researcherspublications": "Publicaciones del investigador",
 
   // "cris.tab.label.researchersprojects": "Researchers projects",
-  // TODO New key - Add a translation
-  "cris.tab.label.researchersprojects": "Researchers projects",
+  "cris.tab.label.researchersprojects": "Proyectos del investigador",
 
   // "cris.tab.label.people": "People",
-  // TODO New key - Add a translation
-  "cris.tab.label.people": "People",
+  "cris.tab.label.people": "Personas",
 
   // "cris.tab.label.details": "Details",
-  // TODO New key - Add a translation
-  "cris.tab.label.details": "Details",
+  "cris.tab.label.details": "Detalles",
 
   // "cris.tab.label.internaldata": "Internal Data",
-  // TODO New key - Add a translation
-  "cris.tab.label.internaldata": "Internal Data",
+  "cris.tab.label.internaldata": "Datos internos",
 
   // "cris.tab.label.fundings": "Fundings",
-  // TODO New key - Add a translation
-  "cris.tab.label.fundings": "Fundings",
+  "cris.tab.label.fundings": "Financiaciones",
 
   // "cris.tab.label.notification": "Notification",
-  // TODO New key - Add a translation
-  "cris.tab.label.notification": "Notification",
+  "cris.tab.label.notification": "Notificación",
 
   // "cris.box.label.cvprofiles": "CTIVitae Profiles",
-  // TODO New key - Add a translation
-  "cris.box.label.cvprofiles": "CTIVitae Profiles",
+  "cris.box.label.cvprofiles": "Perfiles del CTIVitae",
   
   // "cris.box.label.projects": "Projects",
-  // TODO New key - Add a translation
-  "cris.box.label.projects": "Projects",
+  "cris.box.label.projects": "Proyectos",
 
   // "cris.box.label.publications": "Publications",
-  // TODO New key - Add a translation
-  "cris.box.label.publications": "Publications",
+  "cris.box.label.publications": "Publicaciones",
 
   // "cris.box.label.patents": "Patents",
-  // TODO New key - Add a translation
-  "cris.box.label.patents": "Patents",
+  "cris.box.label.patents": "Patentes",
 
   // "cris.box.label.orgunits": "OrgUnits",
-  // TODO New key - Add a translation
-  "cris.box.label.orgunits": "OrgUnits",
+  "cris.box.label.orgunits": "Unidades organizativas",
 
   // "cris.box.label.professionalqualifications": "Professional Qualifications",
-  // TODO New key - Add a translation
-  "cris.box.label.professionalqualifications": "Professional Qualifications",
+  "cris.box.label.professionalqualifications": "Calificaciones profesionales",
 
   // "cris.box.label.mediacontactdirectory": "Media Contact Directory",
-  // TODO New key - Add a translation
-  "cris.box.label.mediacontactdirectory": "Media Contact Directory",
+  "cris.box.label.mediacontactdirectory": "Directorio de contactos con los medios de comunicación",
 
   // "cris.box.label.orcidregistryqueue": "ORCID Registry Queue",
-  // TODO New key - Add a translation
-  "cris.box.label.orcidregistryqueue": "ORCID Registry Queue",
+  "cris.box.label.orcidregistryqueue": "Lista de espera del registro ORCID",
 
   // "cris.box.label.namecard": "Name Card",
-  // TODO New key - Add a translation
-  "cris.box.label.namecard": "Name Card",
+  "cris.box.label.namecard": "Tarjeta con nombre",
 
   // "cris.box.label.orcidsynchronizationsettings": "ORCID Synchronization settings",
-  // TODO New key - Add a translation
-  "cris.box.label.orcidsynchronizationsettings": "ORCID Synchronization settings",
+  "cris.box.label.orcidsynchronizationsettings": "Detalles de sincronización con ORCID",
 
   // "cris.box.label.profile": "Profile",
-  // TODO New key - Add a translation
-  "cris.box.label.profile": "Profile",
+  "cris.box.label.profile": "Perfil",
 
   // "cris.box.label.orcidauthorizations": "ORCID Authorizations",
-  // TODO New key - Add a translation
-  "cris.box.label.orcidauthorizations": "ORCID Authorizations",
+  "cris.box.label.orcidauthorizations": "Autorizaciones ORCID",
 
   // "cris.box.label.securedbox": "Secured box",
-  // TODO New key - Add a translation
-  "cris.box.label.securedbox": "Secured box",
+  "cris.box.label.securedbox": "Caja asegurada",
 
   // "cris.box.label.sunedudata": "Sunedu Data",
-  // TODO New key - Add a translation
-  "cris.box.label.sunedudata": "Sunedu Data",
+  "cris.box.label.sunedudata": "Datos de SUNEDU",
 
   // "cris.box.label.reniecdata": "Reniec Data",
-  // TODO New key - Add a translation
-  "cris.box.label.reniecdata": "Reniec Data",
+  "cris.box.label.reniecdata": "Datos de RENIEC",
 
   // "cris.box.label.bibliometrics": "Bibliometrics",
-  // TODO New key - Add a translation
-  "cris.box.label.bibliometrics": "Bibliometrics",
+  "cris.box.label.bibliometrics": "Bibliometría",
 
   // "cris.box.label.projects": "Projects ",
-  // TODO New key - Add a translation
-  "cris.box.label.projects": "Projects ",
+  "cris.box.label.projects": "Proyectos ",
 
   // "cris.box.label.equipments": "Equipments",
-  // TODO New key - Add a translation
-  "cris.box.label.equipments": "Equipments",
+  "cris.box.label.equipments": "Equipamientos",
 
   // "cris.box.label.notifications": "Notifications",
-  // TODO New key - Add a translation
-  "cris.box.label.notifications": "Notifications",
+  "cris.box.label.notifications": "Notificaciones",
 
   // "cris.box.label.orgunit'sresearchersprojects": "OrgUnit's Researchers projects",
-  // TODO New key - Add a translation
-  "cris.box.label.orgunit'sresearchersprojects": "OrgUnit's Researchers projects",
+  "cris.box.label.orgunit'sresearchersprojects": "Proyectos de los investigadores de la unidad organizativa",
 
   // "cris.box.label.orgunit'spublications": "OrgUnit's Publications",
-  // TODO New key - Add a translation
-  "cris.box.label.orgunit'spublications": "OrgUnit's Publications",
+  "cris.box.label.orgunit'spublications": "Publicaciones de la unidad organizativa",
 
   // "cris.box.label.orgunit'sresearcherspublications": "OrgUnit's Researchers publications",
-  // TODO New key - Add a translation
-  "cris.box.label.orgunit'sresearcherspublications": "OrgUnit's Researchers publications",
+  "cris.box.label.orgunit'sresearcherspublications": "Publicaciones de investigadores de la unidad organizativa",
 
   // "cris.box.label.orgunit'sresearchers": "OrgUnit's Researchers",
-  // TODO New key - Add a translation
-  "cris.box.label.orgunit'sresearchers": "OrgUnit's Researchers",
+  "cris.box.label.orgunit'sresearchers": "Investigadores de la unidad organizativa",
 
   // "cris.box.label.orgunitfundedprojects": "OrgUnit funded Projects",
-  // TODO New key - Add a translation
-  "cris.box.label.orgunitfundedprojects": "OrgUnit funded Projects",
+  "cris.box.label.orgunitfundedprojects": "Proyectos financiados por la unidad organizativa",
 
   // "cris.box.label.description": "Description",
-  // TODO New key - Add a translation
-  "cris.box.label.description": "Description",
+  "cris.box.label.description": "Descripción",
 
   // "cris.box.label.suborgunits": "SubOrgUnits",
-  // TODO New key - Add a translation
-  "cris.box.label.suborgunits": "SubOrgUnits",
+  "cris.box.label.suborgunits": "Subunidades organizativas",
 
   // "cris.box.label.details": "Details",
-  // TODO New key - Add a translation
-  "cris.box.label.details": "Details",
+  "cris.box.label.details": "Detalles",
 
   // "cris.box.label.rucnumber": "Ruc Number",
-  // TODO New key - Add a translation
-  "cris.box.label.rucnumber": "Ruc Number",
+  "cris.box.label.rucnumber": "Número RUC",
 
   // "cris.box.label.identifiers": "Identifiers",
-  // TODO New key - Add a translation
-  "cris.box.label.identifiers": "Identifiers",
+  "cris.box.label.identifiers": "Identificadores",
 
   // "cris.box.label.card": "Card",
-  // TODO New key - Add a translation
-  "cris.box.label.card": "Card",
+  "cris.box.label.card": "Tarjeta",
 
   // "cris.box.label.fundings": "Fundings",
-  // TODO New key - Add a translation
-  "cris.box.label.fundings": "Fundings",
+  "cris.box.label.fundings": "Financiaciones",
 
   // "cris.box.label.status": "Status",
-  // TODO New key - Add a translation
-  "cris.box.label.status": "Status",
+  "cris.box.label.status": "Estado",
 
   // "cris.box.label.internal": "Internal",
-  // TODO New key - Add a translation
-  "cris.box.label.internal": "Internal",
+  "cris.box.label.internal": "Interno",
 
   // "cris.box.label.projectcard": "Project Card",
-  // TODO New key - Add a translation
-  "cris.box.label.projectcard": "Project Card",
+  "cris.box.label.projectcard": "Tarjeta de proyecto",
 
   // "cris.box.label.primarydata": "Primary Data",
-  // TODO New key - Add a translation
-  "cris.box.label.primarydata": "Primary Data",
+  "cris.box.label.primarydata": "Datos primarios",
 
   // "cris.box.label.journaldescription": "Journal description",
-  // TODO New key - Add a translation
-  "cris.box.label.journaldescription": "Journal description",
+  "cris.box.label.journaldescription": "Descripción de la revista",
 
   // "cris.box.label.equipmentdescription": "Equipment description",
-  // TODO New key - Add a translation
-  "cris.box.label.equipmentdescription": "Equipment description",
+  "cris.box.label.equipmentdescription": "Descripción del equipamiento",
 
   // "cris.box.label.data": "Data",
-  // TODO New key - Add a translation
-  "cris.box.label.data": "Data",
+  "cris.box.label.data": "Datos",
 
   // "cris.box.label.basicinformation": "Basic Information",
-  // TODO New key - Add a translation
-  "cris.box.label.basicinformation": "Basic Information",
+  "cris.box.label.basicinformation": "Información básica",
 
   // "cris.box.label.idinformation": "Id information",
-  // TODO New key - Add a translation
-  "cris.box.label.idinformation": "Id information",
+  "cris.box.label.idinformation": "Información de identificación",
 
   // "cris.box.label.notification": "Notification",
-  // TODO New key - Add a translation
-  "cris.box.label.notification": "Notification",
+  "cris.box.label.notification": "Notificación",
 
   // "cris.boxmetadata.label.country": "Country",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.country": "Country",
+  "cris.boxmetadata.label.country": "País",
 
   // "cris.boxmetadata.label.city": "City",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.city": "City",
+  "cris.boxmetadata.label.city": "Ciudad",
 
   // "cris.boxmetadata.label.description": "Description",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.description": "Description",
+  "cris.boxmetadata.label.description": "Descripción",
 
   // "cris.boxmetadata.label.organisationname": "Organisation Name",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.organisationname": "Organisation Name",
+  "cris.boxmetadata.label.organisationname": "Nombre de la organización",
 
   // "cris.boxmetadata.label.legalname": "Legal name",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.legalname": "Legal name",
+  "cris.boxmetadata.label.legalname": "Nombre legal",
 
   // "cris.boxmetadata.label.acronym": "Acronym",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.acronym": "Acronym",
+  "cris.boxmetadata.label.acronym": "Acrónimo",
 
   // "cris.boxmetadata.label.director": "Director",
-  // TODO New key - Add a translation
   "cris.boxmetadata.label.director": "Director",
 
   // "cris.boxmetadata.label.parentorganisation": "Parent Organisation",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.parentorganisation": "Parent Organisation",
+  "cris.boxmetadata.label.parentorganisation": "Organización matriz",
 
-  // "cris.boxmetadata.label.foundingdate": "Founding Date",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.foundingdate": "Founding Date",
+  // "cris.boxmetadata.label.foundingdate": "Funding Date",
+  "cris.boxmetadata.label.foundingdate": "Fecha de financiación",
 
   // "cris.boxmetadata.label.boards": "Boards",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.boards": "Boards",
+  "cris.boxmetadata.label.boards": "Comités",
 
   // "cris.boxmetadata.label.website": "Web Site",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.website": "Web Site",
+  "cris.boxmetadata.label.website": "Sitio Web",
 
   // "cris.boxmetadata.label.ubigeo": "UbiGeo",
-  // TODO New key - Add a translation
   "cris.boxmetadata.label.ubigeo": "UbiGeo",
 
   // "cris.boxmetadata.label.sectorinstitutional": "Sector Institutional",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.sectorinstitutional": "Sector Institutional",
+  "cris.boxmetadata.label.sectorinstitutional": "Sector institucional",
 
   // "cris.boxmetadata.label.perucrisclassification": "PeruCRIS Classification",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.perucrisclassification": "PeruCRIS Classification",
+  "cris.boxmetadata.label.perucrisclassification": "Clasificación PeruCRIS",
 
   // "cris.boxmetadata.label.suneduclassification": "Sunedu Classification",
   // TODO New key - Add a translation
-  "cris.boxmetadata.label.suneduclassification": "Sunedu Classification",
+  "cris.boxmetadata.label.suneduclassification": "Clasificación SUNEDU",
 
   // "cris.boxmetadata.label.industrialclassification": "Industrial Classification",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.industrialclassification": "Industrial Classification",
+  "cris.boxmetadata.label.industrialclassification": "Clasificación Industrial",
 
   // "cris.boxmetadata.label.juridicalnature": "Juridical Nature",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.juridicalnature": "Juridical Nature",
+  "cris.boxmetadata.label.juridicalnature": "Naturaleza jurídica",
 
   // "cris.boxmetadata.label.keywords": "Keyword(s)",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.keywords": "Keyword(s)",
+  "cris.boxmetadata.label.keywords": "Palabra(s) clave",
 
   // "cris.boxmetadata.label.subjectocde": "Subject OCDE",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.subjectocde": "Subject OCDE",
+  "cris.boxmetadata.label.subjectocde": "Materia de la OCDE",
 
   // "cris.boxmetadata.label.type": "Type",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.type": "Type",
+  "cris.boxmetadata.label.type": "Tipo",
 
   // "cris.boxmetadata.label.rucnumber": "RUC Number",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.rucnumber": "RUC Number",
+  "cris.boxmetadata.label.rucnumber": "Número RUC",
 
   // "cris.boxmetadata.label.crossreffunderid": "CrossRef Funder ID",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.crossreffunderid": "CrossRef Funder ID",
+  "cris.boxmetadata.label.crossreffunderid": "Identificador del financiador en CrossRef",
 
   // "cris.boxmetadata.label.researchorganizationregistry": "Research Organization Registry",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.researchorganizationregistry": "Research Organization Registry",
+  "cris.boxmetadata.label.researchorganizationregistry": "Registro de Organizaciones de Investigación",
 
   // "cris.boxmetadata.label.internationalstandardnameidentifier": "International Standard Name Identifier",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.internationalstandardnameidentifier": "International Standard Name Identifier",
+  "cris.boxmetadata.label.internationalstandardnameidentifier": "Identificador Estándar Internacional de Nombres",
 
   // "cris.boxmetadata.label.ringgoldidentifier": "Ringgold identifier",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.ringgoldidentifier": "Ringgold identifier",
+  "cris.boxmetadata.label.ringgoldidentifier": "Identificador Ringgold",
 
   // "cris.boxmetadata.label.scopusaffid": "Scopus AffId",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.scopusaffid": "Scopus AffId",
+  "cris.boxmetadata.label.scopusaffid": "Identificador Scopus de afiliación",
 
   // "cris.boxmetadata.label.renacytregistration": "Renacyt Registration",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.renacytregistration": "Renacyt Registration",
+  "cris.boxmetadata.label.renacytregistration": "Registro Renacyt",
 
   // "cris.boxmetadata.label.renacytdateofqualification": "Renacyt Date Of Qualification",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.renacytdateofqualification": "Renacyt Date Of Qualification",
+  "cris.boxmetadata.label.renacytdateofqualification": "Fecha de Calificación Renacyt",
 
   // "cris.boxmetadata.label.renacytregistrationnumber": "Renacyt Registration Number",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.renacytregistrationnumber": "Renacyt Registration Number",
+  "cris.boxmetadata.label.renacytregistrationnumber": "Número de registro Renacyt",
 
   // "cris.boxmetadata.label.renacytvalidityofregistration": "Renacyt Validity Of Registration",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.renacytvalidityofregistration": "Renacyt Validity Of Registration",
+  "cris.boxmetadata.label.renacytvalidityofregistration": "Validez del registro Renacyt",
 
   // "cris.boxmetadata.label.renacytlevelorclassification": "Renacyt Level or Classification",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.renacytlevelorclassification": "Renacyt Level or Classification",
+  "cris.boxmetadata.label.renacytlevelorclassification": "Nivel de calificación Renacyt",
 
   // "cris.boxmetadata.label.keywords": "Keywords",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.keywords": "Keywords",
+  "cris.boxmetadata.label.keywords": "Palabras clave",
 
   // "cris.boxmetadata.label.uses": "Uses",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.uses": "Uses",
+  "cris.boxmetadata.label.uses": "Usos",
 
   // "cris.boxmetadata.label.openaireid": "OpenAIRE ID",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.openaireid": "OpenAIRE ID",
+  "cris.boxmetadata.label.openaireid": "Identificador OpenAIRE",
 
   // "cris.boxmetadata.label.projecttitle": "Project Title",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.projecttitle": "Project Title",
+  "cris.boxmetadata.label.projecttitle": "Título del proyecto",
 
   // "cris.boxmetadata.label.consortiumcoordinator": "Consortium Coordinator",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.consortiumcoordinator": "Consortium Coordinator",
+  "cris.boxmetadata.label.consortiumcoordinator": "Coordinador del consorcio",
 
   // "cris.boxmetadata.label.partnerorganisations": "Partner Organisations",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.partnerorganisations": "Partner Organisations",
+  "cris.boxmetadata.label.partnerorganisations": "Organizaciones asociadas",
 
   // "cris.boxmetadata.label.ocdesubjects": "OCDE Subject(s)",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.ocdesubjects": "OCDE Subject(s)",
+  "cris.boxmetadata.label.ocdesubjects": "Materia(s) OCDE",
 
   // "cris.boxmetadata.label.organisations": "Organisations",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.organisations": "Organisations",
+  "cris.boxmetadata.label.organisations": "Organizaciones",
 
   // "cris.boxmetadata.label.principalinvestigator": "Principal Investigator",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.principalinvestigator": "Principal Investigator",
+  "cris.boxmetadata.label.principalinvestigator": "Investigador principal",
 
   // "cris.boxmetadata.label.investigators": "Investigators",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.investigators": "Investigators",
+  "cris.boxmetadata.label.investigators": "Investigadores",
 
   // "cris.boxmetadata.label.projectwebsite": "Project Web Site",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.projectwebsite": "Project Web Site",
+  "cris.boxmetadata.label.projectwebsite": "Sitio Web del proyecto",
 
   // "cris.boxmetadata.label.startdate": "Start Date",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.startdate": "Start Date",
+  "cris.boxmetadata.label.startdate": "Fecha de inicio",
 
   // "cris.boxmetadata.label.enddate": "End Date",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.enddate": "End Date",
+  "cris.boxmetadata.label.enddate": "Fecha de fin",
 
   // "cris.boxmetadata.label.awardurl": "Award URL",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.awardurl": "Award URL",
+  "cris.boxmetadata.label.awardurl": "URL del premio",
 
   // "cris.boxmetadata.label.funding": "Funding",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.funding": "Funding",
+  "cris.boxmetadata.label.funding": "Financiación",
 
   // "cris.boxmetadata.label.internalid": "Internal ID",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.internalid": "Internal ID",
+  "cris.boxmetadata.label.internalid": "Identificación interna",
 
   // "cris.boxmetadata.label.status": "Status",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.status": "Status",
+  "cris.boxmetadata.label.status": "Estado",
 
   // "cris.boxmetadata.label.internalnote": "Internal Note",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.internalnote": "Internal Note",
+  "cris.boxmetadata.label.internalnote": "Nota interna",
 
   // "cris.boxmetadata.label.fundingtitle": "Funding title",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.fundingtitle": "Funding title",
+  "cris.boxmetadata.label.fundingtitle": "Título de la financiación",
 
   // "cris.boxmetadata.label.project": "Project",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.project": "Project",
+  "cris.boxmetadata.label.project": "Proyecto",
 
   // "cris.boxmetadata.label.funder": "Funder",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.funder": "Funder",
+  "cris.boxmetadata.label.funder": "Financiador",
 
   // "cris.boxmetadata.label.duration": "Duration",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.duration": "Duration",
+  "cris.boxmetadata.label.duration": "Duración",
 
   // "cris.boxmetadata.label.fundingprogram": "Funding Program",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.fundingprogram": "Funding Program",
+  "cris.boxmetadata.label.fundingprogram": "Programa de financiación",
 
   // "cris.boxmetadata.label.amount": "Amount",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.amount": "Amount",
+  "cris.boxmetadata.label.amount": "Monto",
 
   // "cris.boxmetadata.label.currency": "Currency",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.currency": "Currency",
+  "cris.boxmetadata.label.currency": "Moneda",
 
   // "cris.boxmetadata.label.oamandate": "OA Mandate",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.oamandate": "OA Mandate",
+  "cris.boxmetadata.label.oamandate": "Mandato OA",
 
   // "cris.boxmetadata.label.fundingcode": "Funding code",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.fundingcode": "Funding code",
+  "cris.boxmetadata.label.fundingcode": "Código de la financiación",
 
   // "cris.boxmetadata.label.researchinterests": "Research Interests",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.researchinterests": "Research Interests",
+  "cris.boxmetadata.label.researchinterests": "Intereses de investigación",
 
   // "cris.boxmetadata.label.knowslanguage": "Knows Language",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.knowslanguage": "Knows Language",
+  "cris.boxmetadata.label.knowslanguage": "Conoce el idioma",
 
   // "cris.boxmetadata.label.qualification": "Qualification",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.qualification": "Qualification",
+  "cris.boxmetadata.label.qualification": "Calificación",
 
   // "cris.boxmetadata.label.qualificationgroup": "Qualification Group",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.qualificationgroup": "Qualification Group",
+  "cris.boxmetadata.label.qualificationgroup": "Grupo de calificación",
 
   // "cris.boxmetadata.label.validfrom": "Valid From",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.validfrom": "Valid From",
+  "cris.boxmetadata.label.validfrom": "Válido desde",
 
   // "cris.boxmetadata.label.validto": "Valid To",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.validto": "Valid To",
+  "cris.boxmetadata.label.validto": "Válido hasta",
 
   // "cris.boxmetadata.label.fullname": "Full name",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.fullname": "Full name",
+  "cris.boxmetadata.label.fullname": "Nombre completo",
 
   // "cris.boxmetadata.label.translatedname": "Translated Name",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.translatedname": "Translated Name",
+  "cris.boxmetadata.label.translatedname": "Nombre traducido",
 
   // "cris.boxmetadata.label.mainaffiliation": "Main Affiliation",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.mainaffiliation": "Main Affiliation",
+  "cris.boxmetadata.label.mainaffiliation": "Afiliación principal",
 
   // "cris.boxmetadata.label.affiliations": "Affiliation(s)",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.affiliations": "Affiliation(s)",
+  "cris.boxmetadata.label.affiliations": "Afiliación(es)",
 
   // "cris.boxmetadata.label.affiliation’sroles": "Affiliation’s Role(s)",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.affiliation’sroles": "Affiliation’s Role(s)",
+  "cris.boxmetadata.label.affiliation’sroles": "Rol(es) en la afiliación",
 
   // "cris.boxmetadata.label.affiliation’sstartdates": "Affiliation’s Start Date(s)",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.affiliation’sstartdates": "Affiliation’s Start Date(s)",
+  "cris.boxmetadata.label.affiliation’sstartdates": "Fecha(s) de inicio en la afiliación",
 
   // "cris.boxmetadata.label.affiliation’senddates": "Affiliation’s End Date(s)",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.affiliation’senddates": "Affiliation’s End Date(s)",
+  "cris.boxmetadata.label.affiliation’senddates": "Fecha(s) de fin en la afiliación",
 
   // "cris.boxmetadata.label.preferredname": "Preferred name",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.preferredname": "Preferred name",
+  "cris.boxmetadata.label.preferredname": "Nombre preferido",
 
   // "cris.boxmetadata.label.officialname": "Official Name",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.officialname": "Official Name",
+  "cris.boxmetadata.label.officialname": "Nombre oficial",
 
   // "cris.boxmetadata.label.alternativename": "Alternative Name",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.alternativename": "Alternative Name",
+  "cris.boxmetadata.label.alternativename": "Nombre alternativo",
 
   // "cris.boxmetadata.label.email": "Email",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.email": "Email",
+  "cris.boxmetadata.label.email": "Correo electrónico",
 
   // "cris.boxmetadata.label.orcid": "ORCID",
-  // TODO New key - Add a translation
   "cris.boxmetadata.label.orcid": "ORCID",
 
   // "cris.boxmetadata.label.scopusauthorid": "Scopus Author ID",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.scopusauthorid": "Scopus Author ID",
+  "cris.boxmetadata.label.scopusauthorid": "Scopus author id",
 
   // "cris.boxmetadata.label.researcherid": "Researcher ID",
-  // TODO New key - Add a translation
   "cris.boxmetadata.label.researcherid": "Researcher ID",
 
   // "cris.boxmetadata.label.biography": "Biography",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.biography": "Biography",
+  "cris.boxmetadata.label.biography": "Biografía",
 
   // "cris.boxmetadata.label.affiliation": "Affiliation",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.affiliation": "Affiliation",
+  "cris.boxmetadata.label.affiliation": "Afiliación",
 
   // "cris.boxmetadata.label.education": "Education",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.education": "Education",
+  "cris.boxmetadata.label.education": "Educación",
 
   // "cris.boxmetadata.label.dni": "DNI",
-  // TODO New key - Add a translation
   "cris.boxmetadata.label.dni": "DNI",
 
   // "cris.boxmetadata.label.passport": "Passport",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.passport": "Passport",
+  "cris.boxmetadata.label.passport": "Pasaporte",
 
   // "cris.boxmetadata.label.immigrationcard": "Immigration Card",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.immigrationcard": "Immigration Card",
+  "cris.boxmetadata.label.immigrationcard": "Tarjeta de Inmigración",
 
   // "cris.boxmetadata.label.dina": "DINA",
-  // TODO New key - Add a translation
   "cris.boxmetadata.label.dina": "DINA",
 
   // "cris.boxmetadata.label.renacytid": "Renacyt ID",
-  // TODO New key - Add a translation
   "cris.boxmetadata.label.renacytid": "Renacyt ID",
 
   // "cris.boxmetadata.label.role": "Role",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.role": "Role",
+  "cris.boxmetadata.label.role": "Rol",
 
   // "cris.boxmetadata.label.educationcountry": "Education Country",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.educationcountry": "Education Country",
+  "cris.boxmetadata.label.educationcountry": "País de educación",
 
   // "cris.boxmetadata.label.educationgrantor": "Education Grantor",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.educationgrantor": "Education Grantor",
+  "cris.boxmetadata.label.educationgrantor": "Otorgante de la educación",
 
   // "cris.boxmetadata.label.apellidopaterno": "Apellido Paterno",
-  // TODO New key - Add a translation
   "cris.boxmetadata.label.apellidopaterno": "Apellido Paterno",
 
   // "cris.boxmetadata.label.apellidomaterno": "Apellido Materno",
-  // TODO New key - Add a translation
   "cris.boxmetadata.label.apellidomaterno": "Apellido Materno",
 
   // "cris.boxmetadata.label.apellidocasada": "Apellido Casada",
-  // TODO New key - Add a translation
   "cris.boxmetadata.label.apellidocasada": "Apellido Casada",
 
   // "cris.boxmetadata.label.givenname": "Given Name",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.givenname": "Given Name",
+  "cris.boxmetadata.label.givenname": "Nombre de pila",
 
   // "cris.boxmetadata.label.domicilioubigeo": "Domicilio UBIGEO",
-  // TODO New key - Add a translation
   "cris.boxmetadata.label.domicilioubigeo": "Domicilio UBIGEO",
 
   // "cris.boxmetadata.label.region": "Region",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.region": "Region",
+  "cris.boxmetadata.label.region": "Región",
 
   // "cris.boxmetadata.label.province": "Province",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.province": "Province",
+  "cris.boxmetadata.label.province": "Provincia",
 
   // "cris.boxmetadata.label.district": "District",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.district": "District",
+  "cris.boxmetadata.label.district": "Distrito",
 
   // "cris.boxmetadata.label.direccion": "Direccion",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.direccion": "Direccion",
+  "cris.boxmetadata.label.direccion": "Dirección",
 
   // "cris.boxmetadata.label.birthubigeo": "Birth UBIGEO",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.birthubigeo": "Birth UBIGEO",
+  "cris.boxmetadata.label.birthubigeo": "UBIGEO de nacimiento",
 
   // "cris.boxmetadata.label.birthregion": "Birth Region",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.birthregion": "Birth Region",
+  "cris.boxmetadata.label.birthregion": "Región de nacimiento",
 
   // "cris.boxmetadata.label.birthprovince": "Birth Province",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.birthprovince": "Birth Province",
+  "cris.boxmetadata.label.birthprovince": "Provincia de nacimiento",
 
   // "cris.boxmetadata.label.birthdistrict": "Birth District",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.birthdistrict": "Birth District",
+  "cris.boxmetadata.label.birthdistrict": "Distrito de nacimiento",
 
   // "cris.boxmetadata.label.gender": "Gender",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.gender": "Gender",
+  "cris.boxmetadata.label.gender": "Género",
 
   // "cris.boxmetadata.label.birthdate": "Birth Date",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.birthdate": "Birth Date",
+  "cris.boxmetadata.label.birthdate": "Fecha de nacimiento",
 
   // "cris.boxmetadata.label.journaltitle": "Journal Title",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.journaltitle": "Journal Title",
+  "cris.boxmetadata.label.journaltitle": "Título de la revista",
 
   // "cris.boxmetadata.label.issn": "ISSN",
-  // TODO New key - Add a translation
   "cris.boxmetadata.label.issn": "ISSN",
 
   // "cris.boxmetadata.label.title": "Title",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.title": "Title",
+  "cris.boxmetadata.label.title": "Título",
 
   // "cris.boxmetadata.label.location": "Location",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.location": "Location",
+  "cris.boxmetadata.label.location": "Ubicación",
 
   // "cris.boxmetadata.label.organizer": "Organizer",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.organizer": "Organizer",
+  "cris.boxmetadata.label.organizer": "Organizador",
 
   // "cris.boxmetadata.label.sponsor": "Sponsor",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.sponsor": "Sponsor",
+  "cris.boxmetadata.label.sponsor": "Patrocinador",
 
   // "cris.boxmetadata.label.partnerorganisation": "Partner Organisation",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.partnerorganisation": "Partner Organisation",
+  "cris.boxmetadata.label.partnerorganisation": "Organización asociada",
 
   // "cris.boxmetadata.label.partnerproject": "Partner Project",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.partnerproject": "Partner Project",
+  "cris.boxmetadata.label.partnerproject": "Proyecto asociado",
 
   // "cris.boxmetadata.label.abstract": "Abstract",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.abstract": "Abstract",
+  "cris.boxmetadata.label.abstract": "Resumen",
 
   // "cris.boxmetadata.label.name": "Name",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.name": "Name",
+  "cris.boxmetadata.label.name": "Nombre",
 
   // "cris.boxmetadata.label.owningorganization": "Owning Organization",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.owningorganization": "Owning Organization",
+  "cris.boxmetadata.label.owningorganization": "Organización propietaria",
 
   // "cris.boxmetadata.label.owningperson": "Owning Person",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.owningperson": "Owning Person",
+  "cris.boxmetadata.label.owningperson": "Persona propietaria",
 
   // "cris.boxmetadata.label.usage": "Usage",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.usage": "Usage",
+  "cris.boxmetadata.label.usage": "Uso",
 
   // "cris.boxmetadata.label.researchline": "Research Line",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.researchline": "Research Line",
+  "cris.boxmetadata.label.researchline": "Línea de investigación",
 
   // "cris.boxmetadata.label.manufacturingcountry": "Manufacturing Country",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.manufacturingcountry": "Manufacturing Country",
+  "cris.boxmetadata.label.manufacturingcountry": "País de fabricación",
 
   // "cris.boxmetadata.label.acquisitiondate": "Acquisition Date",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.acquisitiondate": "Acquisition Date",
+  "cris.boxmetadata.label.acquisitiondate": "Fecha de adquisición",
 
   // "cris.boxmetadata.label.manufacturingdate": "Manufacturing Date",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.manufacturingdate": "Manufacturing Date",
+  "cris.boxmetadata.label.manufacturingdate": "Fecha de fabricación",
 
   // "cris.boxmetadata.label.grantno.": "Grant no.",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.grantno.": "Grant no.",
+  "cris.boxmetadata.label.grantno.": "Subvención No.",
 
   // "cris.boxmetadata.label.journal": "Journal",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.journal": "Journal",
+  "cris.boxmetadata.label.journal": "Revista",
 
   // "cris.boxmetadata.label.dateissued": "Date Issued",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.dateissued": "Date Issued",
+  "cris.boxmetadata.label.dateissued": "Fecha de publicación",
 
   // "cris.boxmetadata.label.volume": "Volume",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.volume": "Volume",
+  "cris.boxmetadata.label.volume": "Volumen",
 
   // "cris.boxmetadata.label.issue": "Issue",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.issue": "Issue",
+  "cris.boxmetadata.label.issue": "Número",
 
   // "cris.boxmetadata.label.authors": "Author(s)",
-  // TODO New key - Add a translation
-  "cris.boxmetadata.label.authors": "Author(s)",
+  "cris.boxmetadata.label.authors": "Autor(es)",
 
   // "cris.boxmetadata.label.author’sorcid": "Author’s ORCID",
   // TODO New key - Add a translation
