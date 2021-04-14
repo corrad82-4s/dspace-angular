@@ -1,10 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Injector, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { ClaimedTaskActionsAbstractComponent } from '../abstract/claimed-task-actions-abstract.component';
-import { ClaimedTaskDataService } from '../../../../core/tasks/claimed-task-data.service';
 import { rendersWorkflowTaskOption } from '../switcher/claimed-task-actions-decorator';
+import { Router } from '@angular/router';
+import { NotificationsService } from '../../../notifications/notifications.service';
+import { TranslateService } from '@ngx-translate/core';
+import { SearchService } from '../../../../core/shared/search/search.service';
+import { RequestService } from '../../../../core/data/request.service';
+import { Observable } from 'rxjs';
+import { RemoteData } from '../../../../core/data/remote-data';
+import { DSpaceObject } from '../../../../core/shared/dspace-object.model';
+import { of } from 'rxjs/internal/observable/of';
+import { ClaimedDeclinedTaskSearchResult } from '../../../object-collection/shared/claimed-declined-task-search-result.model';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { getFirstSucceededRemoteDataPayload } from '../../../../core/shared/operators';
@@ -37,18 +46,16 @@ export class ClaimedTaskActionsRejectComponent extends ClaimedTaskActionsAbstrac
    */
   public modalRef: NgbModalRef;
 
-  /**
-   * Initialize instance variables
-   *
-   * @param {FormBuilder} formBuilder
-   * @param {NgbModal} modalService
-   * @param claimedTaskService
-   */
-  constructor(protected claimedTaskService: ClaimedTaskDataService,
+  constructor(protected injector: Injector,
+              protected router: Router,
+              protected notificationsService: NotificationsService,
+              protected translate: TranslateService,
+              protected searchService: SearchService,
+              protected requestService: RequestService,
               private formBuilder: FormBuilder,
               private modalService: NgbModal,
               private workflowItemService: WorkflowItemDataService) {
-    super(claimedTaskService);
+    super(injector, router, notificationsService, translate, searchService, requestService);
   }
 
   /**
@@ -61,6 +68,14 @@ export class ClaimedTaskActionsRejectComponent extends ClaimedTaskActionsAbstrac
   }
 
   /**
+   * Submit a reject option for the task
+   */
+  submitTask() {
+    this.modalRef.close('Send Button');
+    super.submitTask();
+  }
+
+  /**
    * Create the request body for rejecting a workflow task
    * Includes the reason from the form
    */
@@ -70,11 +85,24 @@ export class ClaimedTaskActionsRejectComponent extends ClaimedTaskActionsAbstrac
   }
 
   /**
-   * Submit a reject option for the task
+   * Open modal
+   *
+   * @param content
    */
-  submitTask() {
-    this.modalRef.close('Send Button');
-    super.submitTask();
+  openRejectModal(content: any) {
+    this.rejectForm.reset();
+    this.modalRef = this.modalService.open(content);
+  }
+
+  reloadObjectExecution(): Observable<RemoteData<DSpaceObject> | DSpaceObject> {
+    return of(this.object);
+  }
+
+  convertReloadedObject(dso: DSpaceObject): DSpaceObject {
+    const reloadedObject = Object.assign(new ClaimedDeclinedTaskSearchResult(), dso, {
+      indexableObject: dso
+    });
+    return reloadedObject;
   }
 
   /**

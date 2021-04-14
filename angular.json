@@ -17,6 +17,7 @@
         "build": {
           "builder": "@angular-builders/custom-webpack:browser",
           "options": {
+            "extractCss": true,
             "preserveSymlinks": true,
             "customWebpackConfig": {
               "path": "./webpack/webpack.browser.ts",
@@ -28,11 +29,15 @@
               "angular2-text-mask",
               "cerialize",
               "core-js",
+              "file-saver",
+              "html2pdf.js",
               "lodash",
               "jwt-decode",
+              "ngx-export-as",
               "url-parse",
               "uuid",
               "webfontloader",
+              "xlsx",
               "zone.js"
             ],
             "outputPath": "dist/browser",
@@ -46,7 +51,21 @@
               "src/robots.txt"
             ],
             "styles": [
-              "src/styles.scss"
+              {
+                "input": "src/styles/base-theme.scss",
+                "inject": false,
+                "bundleName": "base-theme"
+              },
+              {
+                "input": "src/themes/custom/styles/theme.scss",
+                "inject": false,
+                "bundleName": "custom-theme"
+              },
+              {
+                "input": "src/themes/dspace/styles/theme.scss",
+                "inject": false,
+                "bundleName": "dspace-theme"
+              }
             ],
             "scripts": []
           },
@@ -116,7 +135,11 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              {
+                "input": "src/styles/base-theme.scss",
+                "inject": false,
+                "bundleName": "base-theme"
+              }
             ],
             "scripts": []
           }

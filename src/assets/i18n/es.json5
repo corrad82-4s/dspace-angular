@@ -34,8 +34,6 @@
   // "404.page-not-found": "page not found",
   "404.page-not-found": "Página no encontrada",
 
-
-
   // "admin.curation-tasks.breadcrumbs": "System curation tasks",
   "admin.curation-tasks.breadcrumbs": "Tareas de conservación del sistema",
 
@@ -755,6 +753,10 @@
   // "admin.access-control.groups.form.members-list.no-items": "No EPeople found in that search",
   "admin.access-control.groups.form.members-list.no-items": "No se ha encontrado ningún usuario en la búsqueda.",
 
+  // "admin.access-control.groups.form.subgroups-list.notification.failure": "Something went wrong: \"{{cause}}\"",
+  // TODO New key - Add a translation
+  "admin.access-control.groups.form.subgroups-list.notification.failure": "Something went wrong: \"{{cause}}\"",
+
   // "admin.access-control.groups.form.subgroups-list.head": "Groups",
   "admin.access-control.groups.form.subgroups-list.head": "Grupos",
 
@@ -869,8 +871,12 @@
   "admin.search.item.withdraw": "Retirar",
 
   // "admin.search.title": "Administrative Search",
+  // TODO New key - Add a translation
   "admin.search.title": "Búsqueda Administrativa",
-
+  
+  // "administrativeView.search.results.head": "Administrative Search",
+  // TODO New key - Add a translation
+  "administrativeView.search.results.head": "Administrative Search",
 
   // "admin.workflow.breadcrumbs": "Administer Workflow",
   "admin.workflow.breadcrumbs": "Administrar Flujo de Trabajo",
@@ -973,6 +979,7 @@
 
   // "bitstream.edit.title": "Edit bitstream",
   "bitstream.edit.title": "Editar bitstream",
+
 
 
   // "browse.comcol.by.author": "By Author",
@@ -1395,6 +1402,14 @@
   "collection.edit.breadcrumbs": "Editar Colección",
 
 
+  // "collection.edit.tabs.mapper.head": "Item Mapper",
+  // TODO New key - Add a translation
+  "collection.edit.tabs.mapper.head": "Item Mapper",
+
+  // "collection.edit.tabs.item-mapper.title": "Collection Edit - Item Mapper",
+  // TODO New key - Add a translation
+  "collection.edit.tabs.item-mapper.title": "Collection Edit - Item Mapper",
+
   // "collection.edit.item-mapper.cancel": "Cancel",
   "collection.edit.item-mapper.cancel": "Cancelar",
 
@@ -1468,6 +1483,8 @@
   // "collection.edit.logo.upload": "Drop a Collection Logo to upload",
   "collection.edit.logo.upload": "Suelte un logotipo de la colección para cargarlo",
   
+
+
   // "collection.edit.notifications.success": "Successfully edited the Collection",
   "collection.edit.notifications.success": "Edición exitosa de la Colección",
   
@@ -1475,7 +1492,7 @@
   "collection.edit.return": "Volver",
 
 
-  // "collection.edit.tabs.curate.head": "Curate",  
+  // "collection.edit.tabs.curate.head": "Curate",
   "collection.edit.tabs.curate.head": "Conservar",
 
   // "collection.edit.tabs.curate.title": "Collection Edit - Curate",
@@ -1930,7 +1947,7 @@
   // "community.sub-community-list.head": "Communities of this Community",
   "community.sub-community-list.head": "Comunidades de esta Comunidad",
 
-  // "context-menu.actions": "Actions", 
+  // "context-menu.actions": "Actions",
   "context-menu.actions": "Acciones",
 
   // "context-menu.actions.add-cv-patent.btn": "Add patent",
@@ -2197,7 +2214,7 @@
 
 
 
-  // "confirmation-modal.export-metadata.header": "Export metadata for {{ dsoName }}",  
+  // "confirmation-modal.export-metadata.header": "Export metadata for {{ dsoName }}",
   "confirmation-modal.export-metadata.header": "Exportación de metadatos para {{ dsoName }}",
 
   // "confirmation-modal.export-metadata.info": "Are you sure you want to export metadata for {{ dsoName }}",
@@ -2294,19 +2311,19 @@
   // "explore.counters-section.orgunits" : "Institutions",
   "explore.counters-section.orgunits" : "Instituciones",
 
-  
+
   // "explore.counters-section.orgunit.investigation_innovation_unities" : "Investigation and Innovation Units",
   // TODO New key - Add a translation
   "explore.counters-section.orgunit.investigation_innovation_unities" : "Investigation and Innovation Units",
-  
+
   // "explore.counters-section.orgunit.investigation_groups" : "Investigation Groups",
   // TODO New key - Add a translation
   "explore.counters-section.orgunit.investigation_groups" : "Investigation Groups",
-  
+
   // "explore.counters-section.orgunit.investigation_lines" : "Investigation Lines",
   // TODO New key - Add a translation
   "explore.counters-section.orgunit.investigation_lines" : "Investigation Lines",
-  
+
   // "explore.counters-section.orgunit.enterprises" : "Enterprises",
   // TODO New key - Add a translation
   "explore.counters-section.orgunit.enterprises" : "Enterprises",
@@ -2314,19 +2331,19 @@
   // "explore.counters-section.orgunit.cti_funders" : "CTI Funders",
   // TODO New key - Add a translation
   "explore.counters-section.orgunit.cti_funders" : "CTI Funders",
-  
+
   // "explore.counters-section.orgunit.renacyt_centres" : "Renacyt centres",
   // TODO New key - Add a translation
   "explore.counters-section.orgunit.renacyt_centres" : "Renacyt centres",
-  
+
   // "explore.counters-section.orgunit.ipis" : "IPIS",
   // TODO New key - Add a translation
   "explore.counters-section.orgunit.ipis" : "IPIS",
-  
+
   // "explore.counters-section.orgunit.universities" : "Universities",
   // TODO New key - Add a translation
   "explore.counters-section.orgunit.universities" : "Universities",
-  
+
   // "explore.counters-section.publications" : "Publications",
   "explore.counters-section.publications" : "Publicaciones",
 
@@ -2339,7 +2356,7 @@
   // "explore.index.acronym" : "Acronym",
   // TODO New key - Add a translation
   "explore.index.acronym" : "Acronym",
-  
+
   // "explore.index.all" : "All",
   "explore.index.all" : "Todo",
 
@@ -2352,31 +2369,31 @@
   // "explore.index.descriptionAbstract" : "Description",
   // TODO New key - Add a translation
   "explore.index.descriptionAbstract" : "Description",
-  
+
   // "explore.index.name" : "Name",
   // TODO New key - Add a translation
   "explore.index.name" : "Name",
-  
+
   // "explore.index.organizationIdentifier" : "Identifier",
   // TODO New key - Add a translation
   "explore.index.organizationIdentifier" : "Identifier",
-  
+
   // "explore.index.organizationNameOrAcronym" : "Name or Acronym",
   // TODO New key - Add a translation
   "explore.index.organizationNameOrAcronym" : "Name or Acronym",
-  
+
   // "explore.index.parentOrganization" : "Parent Organization",
   // TODO New key - Add a translation
   "explore.index.parentOrganization" : "Parent Organization",
-  
+
   // "explore.index.perucrisKeywords" : "Keyword(s)",
   // TODO New key - Add a translation
   "explore.index.perucrisKeywords" : "Keyword(s)",
-  
+
   // "explore.index.region" : "Region",
   // TODO New key - Add a translation
   "explore.index.region" : "Region",
-  
+
   // "explore.index.rodatecreated" : "Date created",
   "explore.index.rodatecreated" : "Fecha creación",
 
@@ -2462,7 +2479,7 @@
   // "explore.index.institutionalOcde" : "Ocde Institutional Sector",
   // TODO New key - Add a translation
   "explore.index.institutionalOcde" : "Ocde Institutional Sector",
-  
+
   // "explore.index.isAuthorOfPublication" : "Publication's author",
   "explore.index.isAuthorOfPublication" : "Autor de la publicación",
 
@@ -2601,7 +2618,7 @@
   // "explore.index.renacytClassification" : "Authorized Centre Cathegory",
   // TODO New key - Add a translation
   "explore.index.renacytClassification" : "Authorized Centre Cathegory",
-  
+
   // "explore.index.rodept" : "Department",
   "explore.index.rodept" : "Departamento",
 
@@ -2692,7 +2709,7 @@
   // "explore.text-section.orgunits.title": "Institutions Directory",
   // TODO New key - Add a translation
   "explore.text-section.orgunits.title": "Institutions Directory",
-  
+
   // "explore.text-section.directorios.description": "La Plataforma #PerúCRIS brinda el soporte informático a la Red Nacional de Información en Ciencia, Tecnología e Innovación (CTI). Aquí encontrarás información sobre el talento humano, organizaciones, publicaciones científicas, fuentes de financiamientos y proyectos en CTI del Perú.",
   "explore.text-section.directorios.description": "La Plataforma #PerúCRIS brinda el soporte informático a la Red Nacional de Información en Ciencia, Tecnología e Innovación (CTI). Aquí encontrarás información sobre el talento humano, organizaciones, publicaciones científicas, fuentes de financiamientos y proyectos en CTI del Perú.",
 
@@ -2870,6 +2887,8 @@
   // "form.no-value": "No value entered",
   "form.no-value": "Ningún valor ingresado",
 
+  // "form.other-information": {},
+  "form.other-information": {},
   // "form.other-information.data-oairecerif_author_affiliation": "Affiliation",
   "form.other-information.data-oairecerif_author_affiliation": "Filiación",
 
@@ -3153,6 +3172,13 @@
   "item.edit.breadcrumbs": "Editar Item",
 
 
+  // "item.edit.tabs.mapper.head": "Collection Mapper",
+  // TODO New key - Add a translation
+  "item.edit.tabs.mapper.head": "Collection Mapper",
+
+  // "item.edit.tabs.item-mapper.title": "Item Edit - Collection Mapper",
+  // TODO New key - Add a translation
+  "item.edit.tabs.item-mapper.title": "Item Edit - Collection Mapper",
 
   // "item.edit.item-mapper.buttons.add": "Map item to selected collections",
   "item.edit.item-mapper.buttons.add": "Asignar el ítem a las colecciones seleccionadas",
@@ -3564,13 +3590,13 @@
   // "item.listelement.badge": "Item",
   "item.listelement.badge": "Item",
 
-  // "item.page.description": "Description",  
+  // "item.page.description": "Description",
   "item.page.description": "Descripción",
 
-  // "item.page.edit": "Edit this item", 
+  // "item.page.edit": "Edit this item",
   "item.page.edit": "Editar este ítem",
 
-  // "item.page.journal-issn": "Journal ISSN",  
+  // "item.page.journal-issn": "Journal ISSN",
   "item.page.journal-issn": "ISSN Revista",
 
   // "item.page.journal-title": "Journal Title",
@@ -4141,7 +4167,7 @@
 
   // "menu.section.notifications_openaire_broker": "OpenAIRE Broker",
   "menu.section.notifications_openaire_broker": "OpenAIRE Broker",
-  
+
   // "menu.section.notifications_reciter": "Publication Claim",
   "menu.section.notifications_reciter": "Reclamación publicación",
 
@@ -4177,6 +4203,24 @@
 
   // "menu.section.browse_community_by_title": "By Title",
   "menu.section.browse_community_by_title": "Por Título",
+
+  // "menu.section.browse_global": "All of DSpace",
+  "menu.section.browse_global": "Todo DSpace",
+
+  // "menu.section.browse_global_by_author": "By Author",
+  "menu.section.browse_global_by_author": "Por Autor",
+
+  // "menu.section.browse_global_by_dateissued": "By Issue Date",
+  "menu.section.browse_global_by_dateissued": "Por Fecha de Publicación",
+
+  // "menu.section.browse_global_by_subject": "By Subject",
+  "menu.section.browse_global_by_subject": "Por Materia",
+
+  // "menu.section.browse_global_by_title": "By Title",
+  "menu.section.browse_global_by_title": "Por Título",
+
+  // "menu.section.browse_global_communities_and_collections": "Communities & Collections",
+  "menu.section.browse_global_communities_and_collections": "Comunidades & Colecciones",
 
   // "menu.section.explore_directorios": "Directorios",
   "menu.section.explore_directorios": "Directorios",
@@ -5721,7 +5765,7 @@
 
   // "register-page.navbar.dni" : "DNI Registration",
   "register-page.navbar.dni" : "Registro de DNI",
-  
+
 
   // "register-page.dni": "register-page.dni",
   "register-page.dni": "register-page.dni",
@@ -5740,40 +5784,52 @@
 
   // "register-page.dni.validation.bad-request": "register-page.dni.validation.bad-request",
   "register-page.dni.validation.bad-request": "register-page.dni.validation.bad-request",
-  
+
   // "register-page.dni.validation.dni-already-present": "An account associated to the provided Dni already exists.",
   "register-page.dni.validation.dni-already-present": "Ya existe una cuenta asociada al DNI proporcionado.",
-  
+
   // "register-page.dni.validation.service-unavailable": "The validation service is temporary unavailable.",
   "register-page.dni.validation.service-unavailable": "El servicio de validación no está disponible temporalmente.",
-  
+
   // "register-page.dni.validation.dni-not-found": "Dni not found.",
   "register-page.dni.validation.dni-not-found": "No se ha encontrado el DNI",
-  
+
   // "register-page.dni.validation.not-matching": "The Date of Birth doesn't match with the provided Dni.",
   "register-page.dni.validation.not-matching": "La fecha de nacimiento no coincide con el DNI proporcionado.",
-  
+
   // "register-page.dni.submit": "Register",
   "register-page.dni.submit": "Registro",
-  
+
 
   // "register-page.create-profile-dni.header": "Complete Dni Registration",
   "register-page.create-profile-dni.header": "Completar el registro del DNI",
-  
+
   // "register-page.create-profile-dni.info": "register-page.create-profile-dni.info",
   "register-page.create-profile-dni.info": "register-page.create-profile-dni.info",
-  
+
   // "register-page.create-profile-dni.dni": "Dni",
   "register-page.create-profile-dni.dni": "DNI",
-  
+
   // "register-page.create-profile-dni.date": "Date of Birth",
   "register-page.create-profile-dni.date": "Fecha de nacimiento",
-  
+
   // "register-page.create-profile-dni.validation.success": "Dni and Date of Birth are valid for registration.",
   "register-page.create-profile-dni.validation.success": "El DNI y la fecha de nacimiento son válidos para el registro.",
-  
+
   
 
+
+  // "relationships.add.error.relationship-type.content": "No suitable match could be found for relationship type {{ type }} between the two items",
+  // TODO New key - Add a translation
+  "relationships.add.error.relationship-type.content": "No suitable match could be found for relationship type {{ type }} between the two items",
+
+  // "relationships.add.error.server.content": "The server returned an error",
+  // TODO New key - Add a translation
+  "relationships.add.error.server.content": "The server returned an error",
+
+  // "relationships.add.error.title": "Unable to add relationship",
+  // TODO New key - Add a translation
+  "relationships.add.error.title": "Unable to add relationship",
 
   // "relationships.isAuthorOf": "Authors",
   "relationships.isAuthorOf": "Autores",
@@ -6080,16 +6136,16 @@
 
   // "search.filters.applied.charts.graphiteminstitutionalSector.tab" : "OCDE Institutional Sector",
   "search.filters.applied.charts.graphiteminstitutionalSector.tab" : "Sector institucional de la OCDE",
-  
+
   // "search.filters.applied.charts.graphitemtype.tab" : "Visualization by Type",
   "search.filters.applied.charts.graphitemtype.tab" : "Visualización por tipo",
 
   // "search.filters.applied.charts.graphitemtypeOcdeArea.tab" : "OCDE Knowledge Area",
   "search.filters.applied.charts.graphitemtypeOcdeArea.tab" : "Área de conocimiento de la OCDE",
-  
+
   // "search.filters.applied.charts.graphitemubigeo.tab" : "Region",
   "search.filters.applied.charts.graphitemubigeo.tab" : "Región",
-  
+
   // "search.filters.applied.charts.graphpubldate.tab" : "Visualization by Date",
   "search.filters.applied.charts.graphpubldate.tab" : "Visualización por fecha",
 
@@ -6443,13 +6499,13 @@
 
   // "search.filters.filter.renacytClassification.head" : "Authorized Centre Cathegory",
   "search.filters.filter.renacytClassification.head" : "Categoría de Centro Autorizado",
-  
+
   // "search.filters.filter.renacytClassification.placeholder" : "Authorized Centre Cathegory",
   "search.filters.filter.renacytClassification.placeholder" : "Categoría de Centro Autorizado",
-  
+
   // "search.filters.filter.descriptionAbstract.head" : "Description",
   "search.filters.filter.descriptionAbstract.head" : "Descripción",
-  
+
   // "search.filters.filter.descriptionAbstract.placeholder" : "Description",
   "search.filters.filter.descriptionAbstract.placeholder" : "Descripción",
 
@@ -6559,7 +6615,6 @@
 
   // "search.filters.filter.ubigeo.placeholder": "Ubigeo",
   "search.filters.filter.ubigeo.placeholder": "Ubigeo",
-
 
   // "search.filters.entityType.JournalIssue": "Journal Issue",
   "search.filters.entityType.JournalIssue": "Número de revista",
@@ -6868,6 +6923,10 @@
   // "submission.import-external.source.lcname": "Library of Congress Names",
   "submission.import-external.source.lcname": "Nombres de la Library of Congress",
 
+  // "submission.import-external.preview.title": "Item Preview",
+  // TODO New key - Add a translation
+  "submission.import-external.preview.title": "Item Preview",
+
   // "submission.import-external.source.scopus": "Scopus",
   "submission.import-external.source.scopus": "Scopus",
 
@@ -6876,7 +6935,7 @@
 
   // "submission.import-external.source.openaireTitle": "OpenAIRE by Title",
   "submission.import-external.source.openaireTitle": "OpenAIRE por Título",
-  
+
   // "submission.import-external.source.wos": "Web of Science",
   "submission.import-external.source.wos": "Web of Science",
 
@@ -7166,7 +7225,7 @@
 
   // "submission.sections.describe.relationship-lookup.search-tab.tab-title.isJournalOfPublication": "Local Journals ({{ count }})",
   "submission.sections.describe.relationship-lookup.search-tab.tab-title.isJournalOfPublication": "Revistas locales ({{ count }})",
-  
+
   // "submission.sections.describe.relationship-lookup.search-tab.tab-title.Project": "Local Projects ({{ count }})",
   "submission.sections.describe.relationship-lookup.search-tab.tab-title.Project": "Proyectos locales ({{ count }})",
 
@@ -7190,13 +7249,13 @@
 
   // "submission.sections.describe.relationship-lookup.search-tab.tab-title.isJournalIssueOfPublication": "Local Journal Issues ({{ count }})",
   "submission.sections.describe.relationship-lookup.search-tab.tab-title.isJournalIssueOfPublication": "Números de revistas locales ({{ count }})",
-  
+
   // "submission.sections.describe.relationship-lookup.search-tab.tab-title.JournalIssue": "Local Journal Issues ({{ count }})",
   "submission.sections.describe.relationship-lookup.search-tab.tab-title.JournalIssue": "Números de revistas locales ({{ count }})",
 
   // "submission.sections.describe.relationship-lookup.search-tab.tab-title.isJournalVolumeOfPublication": "Local Journal Volumes ({{ count }})",
   "submission.sections.describe.relationship-lookup.search-tab.tab-title.isJournalVolumeOfPublication": "Volúmenes de revistas locales ({{ count }})",
-  
+
   // "submission.sections.describe.relationship-lookup.search-tab.tab-title.JournalVolume": "Local Journal Volumes ({{ count }})",
   "submission.sections.describe.relationship-lookup.search-tab.tab-title.JournalVolume": "Volúmenes de revistas locales ({{ count }})",
 
@@ -7235,13 +7294,13 @@
 
   // "submission.sections.describe.relationship-lookup.title.isJournalIssueOfPublication": "Journal Issues",
   "submission.sections.describe.relationship-lookup.title.isJournalIssueOfPublication": "Números de revista",
-  
+
   // "submission.sections.describe.relationship-lookup.title.JournalIssue": "Journal Issues",
   "submission.sections.describe.relationship-lookup.title.JournalIssue": "Números de revista",
 
   // "submission.sections.describe.relationship-lookup.title.isJournalVolumeOfPublication": "Journal Volumes",
   "submission.sections.describe.relationship-lookup.title.isJournalVolumeOfPublication": "Volúmenes de revista",
-  
+
   // "submission.sections.describe.relationship-lookup.title.JournalVolume": "Journal Volumes",
   "submission.sections.describe.relationship-lookup.title.JournalVolume": "Volúmenes de revista",
 
@@ -7253,7 +7312,7 @@
 
   // "submission.sections.describe.relationship-lookup.title.isFundingAgencyOfPublication": "Funding Agency",
   "submission.sections.describe.relationship-lookup.title.isFundingAgencyOfPublication": "Agencia de financiación",
-  
+
   // "submission.sections.describe.relationship-lookup.title.Project": "Projects",
   "submission.sections.describe.relationship-lookup.title.Project": "Proyectos",
 
@@ -7298,7 +7357,7 @@
 
   // "submission.sections.describe.relationship-lookup.selection-tab.title.isJournalVolumeOfPublication": "Selected Journal Volume",
   "submission.sections.describe.relationship-lookup.selection-tab.title.isJournalVolumeOfPublication": "Volumen de la revista seleccionado",
-  
+
   // "submission.sections.describe.relationship-lookup.selection-tab.title.Project": "Selected Projects",
   "submission.sections.describe.relationship-lookup.selection-tab.title.Project": "Proyectos seleccionados",
 
@@ -7322,7 +7381,7 @@
 
   // "submission.sections.describe.relationship-lookup.selection-tab.title.isJournalIssueOfPublication": "Selected Issue",
   "submission.sections.describe.relationship-lookup.selection-tab.title.isJournalIssueOfPublication": "Número seleccionado",
-  
+
   // "submission.sections.describe.relationship-lookup.selection-tab.title.JournalVolume": "Selected Journal Volume",
   "submission.sections.describe.relationship-lookup.selection-tab.title.JournalVolume": "Volumen de revista seleccionado",
 
@@ -7331,7 +7390,7 @@
 
   // "submission.sections.describe.relationship-lookup.selection-tab.title.isFundingOfPublication": "Selected Funding",
   "submission.sections.describe.relationship-lookup.selection-tab.title.isFundingOfPublication": "Financiación seleccionada",
-  
+
   // "submission.sections.describe.relationship-lookup.selection-tab.title.JournalIssue": "Selected Issue",
   "submission.sections.describe.relationship-lookup.selection-tab.title.JournalIssue": "Número seleccionado",
 
@@ -8140,7 +8199,7 @@
 
   // "cris.box.label.cvprofiles": "CTIVitae Profiles",
   "cris.box.label.cvprofiles": "Perfiles del CTIVitae",
-  
+
   // "cris.box.label.projects": "Projects",
   "cris.box.label.projects": "Proyectos",
 

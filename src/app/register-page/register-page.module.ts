@@ -6,6 +6,7 @@ import { RegisterEmailComponent } from './register-email/register-email.componen
 import { CreateProfileComponent } from './create-profile/create-profile.component';
 import { RegisterEmailFormModule } from '../register-email-form/register-email-form.module';
 import { ProfilePageModule } from '../profile-page/profile-page.module';
+import { ThemedCreateProfileComponent } from './create-profile/themed-create-profile.component';
 import { RegisterDniComponent } from './register-dni/register-dni.component';
 import { RegisterDniProfileComponent } from './register-dni/register-dni-profile/register-dni-profile.component';
 import { RegisterNavbarComponent } from './register-navbar/register-navbar.component';
@@ -16,11 +17,12 @@ import { RegisterNavbarComponent } from './register-navbar/register-navbar.compo
     SharedModule,
     RegisterPageRoutingModule,
     RegisterEmailFormModule,
-    ProfilePageModule
+    ProfilePageModule,
   ],
   declarations: [
     RegisterEmailComponent,
     CreateProfileComponent,
+    ThemedCreateProfileComponent
     RegisterDniComponent,
     RegisterDniProfileComponent,
     RegisterNavbarComponent

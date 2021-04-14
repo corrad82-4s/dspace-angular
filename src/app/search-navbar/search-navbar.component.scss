@@ -1,5 +1,5 @@
 input[type="text"] {
-  margin-top: -0.5 * $font-size-base;
+  margin-top: calc(-0.5 * var(--bs-font-size-base));
 
   &:focus {
     background-color: rgba(255, 255, 255, 0.5) !important;
@@ -12,14 +12,18 @@ input[type="text"] {
 
 a.submit-icon {
   cursor: pointer;
+  position: sticky;
+  top: 0;
 }
 
-
-
-@media screen and (max-width: map-get($grid-breakpoints, sm)) {
+@media screen and (max-width: map-get($grid-breakpoints, md)) {
   #query:focus {
     max-width: 250px !important;
     width: 40vw !important;
+  }
+
+  a.submit-icon {
+    color: var(--bs-link-color);
   }
 }
 

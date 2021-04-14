@@ -33,6 +33,8 @@ import { MetricAltmetricComponent } from './default-layout/boxes/components/metr
 import { MetricDimensionsComponent } from './default-layout/boxes/components/metric/metric-dimensions/metric-dimensions.component';
 import { MetricDspacecrisComponent } from './default-layout/boxes/components/metric/metric-dspacecris/metric-dspacecris.component';
 import { MetricGooglescholarComponent } from './default-layout/boxes/components/metric/metric-googlescholar/metric-googlescholar.component';
+import { TableComponent } from './default-layout/boxes/components/table/table.component';
+import { InlineComponent } from './default-layout/boxes/components/inline/inline.component';
 import { PeruLayoutComponent } from './peru-layout/peru-layout.component';
 import { PeruTabComponent } from './peru-layout/peru-tab/peru-tab.component';
 import { PeruMetadataBoxComponent } from './peru-layout/boxes/peru-metadata-box/peru-metadata-box.component';
@@ -99,6 +101,8 @@ const ENTRY_COMPONENTS = [
     MetricDimensionsComponent,
     MetricDspacecrisComponent,
     MetricGooglescholarComponent,
+    TableComponent,
+    InlineComponent
     PeruLayoutComponent,
     PeruTabComponent,
     PeruMetadataBoxComponent,

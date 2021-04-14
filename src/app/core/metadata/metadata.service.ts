@@ -5,7 +5,7 @@ import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 
 import { TranslateService } from '@ngx-translate/core';
 
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
 import { catchError, distinctUntilKeyChanged, filter, first, map, take } from 'rxjs/operators';
 
 import { hasValue, isNotEmpty } from '../../shared/empty.util';
@@ -19,9 +19,13 @@ import { BitstreamFormat } from '../shared/bitstream-format.model';
 import { Bitstream } from '../shared/bitstream.model';
 import { DSpaceObject } from '../shared/dspace-object.model';
 import { Item } from '../shared/item.model';
-import { getFirstSucceededRemoteDataPayload, getFirstSucceededRemoteListPayload } from '../shared/operators';
-import { HardRedirectService } from '../services/hard-redirect.service';
-import { URLCombiner } from '../url-combiner/url-combiner';
+import {
+  getFirstSucceededRemoteDataPayload,
+  getFirstSucceededRemoteListPayload
+} from '../shared/operators';
+import { environment } from '../../../environments/environment';
+import { RootDataService } from '../data/root-data.service';
+import { getBitstreamDownloadRoute } from '../../app-routing-paths';
 
 @Injectable()
 export class MetadataService {
@@ -40,7 +44,7 @@ export class MetadataService {
     private dsoNameService: DSONameService,
     private bitstreamDataService: BitstreamDataService,
     private bitstreamFormatDataService: BitstreamFormatDataService,
-    private redirectService: HardRedirectService
+    private rootService: RootDataService
   ) {
     // TODO: determine what open graph meta tags are needed and whether
     // the differ per route. potentially add image based on DSpaceObject
@@ -81,9 +85,11 @@ export class MetadataService {
       this.clearMetaTags();
     }
     if (routeInfo.data.value.title) {
-      this.translate.get(routeInfo.data.value.title, routeInfo.data.value).pipe(take(1)).subscribe((translatedTitle: string) => {
-        this.addMetaTag('title', translatedTitle);
-        this.title.setTitle(translatedTitle);
+      const titlePrefix = this.translate.get('repository.title.prefix');
+      const title = this.translate.get(routeInfo.data.value.title, routeInfo.data.value);
+      combineLatest([titlePrefix, title]).pipe(take(1)).subscribe(([translatedTitlePrefix, translatedTitle]: [string, string]) => {
+        this.addMetaTag('title', translatedTitlePrefix + translatedTitle);
+        this.title.setTitle(translatedTitlePrefix + translatedTitle);
       });
     }
     if (routeInfo.data.value.description) {
@@ -91,6 +97,8 @@ export class MetadataService {
         this.addMetaTag('description', translatedDescription);
       });
     }
+
+    this.setGenerator();
   }
 
   private initialize(dspaceObject: DSpaceObject): void {
@@ -256,7 +264,7 @@ export class MetadataService {
    */
   private setCitationAbstractUrlTag(): void {
     if (this.currentObject.value instanceof Item) {
-      const value = new URLCombiner(this.redirectService.getRequestOrigin(), this.router.url).toString();
+      const value = [environment.ui.baseUrl, this.router.url].join('');
       this.addMetaTag('citation_abstract_html_url', value);
     }
   }
@@ -281,13 +289,22 @@ export class MetadataService {
               getFirstSucceededRemoteDataPayload()
             ).subscribe((format: BitstreamFormat) => {
               if (format.mimetype === 'application/pdf') {
-                const rewrittenURL= this.redirectService.rewriteDownloadURL(bitstream._links.content.href);
-                this.addMetaTag('citation_pdf_url', rewrittenURL);
+                const bitstreamLink =  getBitstreamDownloadRoute(bitstream);
+                this.addMetaTag('citation_pdf_url', bitstreamLink);
               }
             });
           }
         });
     }
+  }
+
+  /**
+   * Add <meta name="Generator" ... >  to the <head> containing the current DSpace version
+   */
+  private setGenerator(): void {
+    this.rootService.findRoot().pipe(getFirstSucceededRemoteDataPayload()).subscribe((root) => {
+      this.addMetaTag('Generator', root.dspaceVersion);
+    });
   }
 
   private hasType(value: string): boolean {

@@ -7,13 +7,15 @@
                          [configurationList]="(configurationList$ | async)"
                          [resultCount]="(resultsRD$ | async)?.payload.totalElements"
                          [viewModeList]="viewModeList"
+                         [refreshFilters]="refreshFilters.asObservable()"
                          [inPlaceSearch]="inPlaceSearch"></ds-search-sidebar>
       <div class="col-12 col-md-9">
           <ds-search-form id="search-form"
                           [query]="(searchOptions$ | async)?.query"
                           [scope]="(searchOptions$ | async)?.scope"
                           [currentUrl]="getSearchLink()"
-                          [inPlaceSearch]="inPlaceSearch">
+                          [inPlaceSearch]="inPlaceSearch"
+                          [searchPlaceholder]="'mydspace.search-form.placeholder' | translate">
           </ds-search-form>
           <ds-search-labels [inPlaceSearch]="inPlaceSearch"></ds-search-labels>
           <div class="row">
@@ -26,6 +28,7 @@
                                      [resultCount]="(resultsRD$ | async)?.payload.totalElements"
                                      (toggleSidebar)="closeSidebar()"
                                      [ngClass]="{'active': !(isSidebarCollapsed() | async)}"
+                                     [refreshFilters]="refreshFilters.asObservable()"
                                      [inPlaceSearch]="inPlaceSearch">
                   </ds-search-sidebar>
                   <div id="search-content" class="col-12">
@@ -40,7 +43,8 @@
                       </div>
                       <ds-my-dspace-results [searchResults]="resultsRD$ | async"
                                             [searchConfig]="searchOptions$ | async"
-                                            [context]="context$ | async"></ds-my-dspace-results>
+                                            [context]="context$ | async"
+                                            (contentChange)="onResultsContentChange()"></ds-my-dspace-results>
                   </div>
               </div>
           </div>

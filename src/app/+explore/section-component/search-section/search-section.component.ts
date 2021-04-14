@@ -1,9 +1,8 @@
-import { SimpleSearchFilterConfig } from './../../../shared/search/simple-search-filter-config.model';
 import { Component, Input, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { map, filter } from 'rxjs/operators';
+import { map } from 'rxjs/operators';
 import { SearchSection } from '../../../core/layout/models/section.model';
 import { getFirstSucceededRemoteDataPayload } from '../../../core/shared/operators';
 import { SearchService } from '../../../core/shared/search/search.service';
@@ -47,21 +46,18 @@ export class SearchSectionComponent implements OnInit {
 
     this.filters = this.searchService.getSearchConfigurationFor(null, this.searchSection.discoveryConfigurationName).pipe(
       getFirstSucceededRemoteDataPayload(),
-      // FIXME: at dspace-cris-7 merge replace this logic with usage of SearchConfig object
-      map((searchFilterConfig: any) => {
-        const filtered = searchFilterConfig.filter((filterConfig) => !filterConfig.filterType.startsWith('chart'));
-        return [this.allFilter].concat(filtered.map((filterConfig) => filterConfig.name));
-       })
+      map((searchFilterConfig: SearchConfig) => {
+        return [this.allFilter].concat(searchFilterConfig.filters.map((filterConfig) => filterConfig.filter));
+      })
     );
 
     this.searchForm = this.formBuilder.group(({
       queryArray: this.formBuilder.array([])
     }));
 
-    const statements = this.searchSection.initialStatements ? this.searchSection.initialStatements : 3;
-    for (let i = 0; i < statements; i++) {
-      this.addQueryStatement();
-    }
+    this.addQueryStatement();
+    this.addQueryStatement();
+    this.addQueryStatement();
   }
 
   /**
@@ -85,10 +81,9 @@ export class SearchSectionComponent implements OnInit {
    */
   onReset() {
     this.queryArray.controls.splice(0, this.queryArray.controls.length);
-    const statements = this.searchSection.initialStatements ? this.searchSection.initialStatements : 3;
-    for (let i = 0; i < statements; i++) {
-      this.addQueryStatement();
-    }
+    this.addQueryStatement();
+    this.addQueryStatement();
+    this.addQueryStatement();
   }
 
   /**
@@ -116,8 +111,8 @@ export class SearchSectionComponent implements OnInit {
 
     for (const statement of statements) {
       if (statement.query !== '') {
-        const statementFilter = statement.filter !== this.allFilter ? statement.filter + ':' : '';
-        query = query + ' ' + statementFilter + '(' + statement.query + ') ' + statement.operation;
+        const filter = statement.filter !== this.allFilter ? statement.filter + ':' : '';
+        query = query + ' ' + filter + '(' + statement.query + ') ' + statement.operation;
       }
     }
 

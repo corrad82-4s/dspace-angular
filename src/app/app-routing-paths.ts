@@ -5,11 +5,17 @@ import { Item } from './core/shared/item.model';
 import { getCommunityPageRoute } from './+community-page/community-page-routing-paths';
 import { getCollectionPageRoute } from './+collection-page/collection-page-routing-paths';
 import { getItemPageRoute } from './+item-page/item-page-routing-paths';
+import { hasValue } from './shared/empty.util';
+import { URLCombiner } from './core/url-combiner/url-combiner';
 
 export const BITSTREAM_MODULE_PATH = 'bitstreams';
 
 export function getBitstreamModuleRoute() {
   return `/${BITSTREAM_MODULE_PATH}`;
+}
+
+export function getBitstreamDownloadRoute(bitstream): string {
+  return new URLCombiner(getBitstreamModuleRoute(), bitstream.uuid, 'download').toString();
 }
 
 export const ADMIN_MODULE_PATH = 'admin';
@@ -51,13 +57,15 @@ export function getBulkImportRoute(collection: Collection): string {
 }
 
 export function getDSORoute(dso: DSpaceObject): string {
-  switch ((dso as any).type) {
-    case Community.type.value:
-      return getCommunityPageRoute(dso.uuid);
-    case Collection.type.value:
-      return getCollectionPageRoute(dso.uuid);
-    case Item.type.value:
-      return getItemPageRoute(dso.uuid);
+  if (hasValue(dso)) {
+    switch ((dso as any).type) {
+      case Community.type.value:
+        return getCommunityPageRoute(dso.uuid);
+      case Collection.type.value:
+        return getCollectionPageRoute(dso.uuid);
+      case Item.type.value:
+        return getItemPageRoute(dso as Item);
+    }
   }
 }
 
@@ -76,6 +84,12 @@ export function getPageNotFoundRoute() {
 export const INFO_MODULE_PATH = 'info';
 export function getInfoModulePath() {
   return `/${INFO_MODULE_PATH}`;
+}
+
+export const ACCESS_CONTROL_MODULE_PATH = 'access-control';
+
+export function getAccessControlModuleRoute() {
+  return `/${ACCESS_CONTROL_MODULE_PATH}`;
 }
 
 export const EDIT_ITEM_PATH = 'edit-items';

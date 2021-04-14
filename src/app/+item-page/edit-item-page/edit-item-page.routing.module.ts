@@ -22,15 +22,17 @@ import { ResourcePolicyEditComponent } from '../../shared/resource-policies/edit
 import { I18nBreadcrumbsService } from '../../core/breadcrumbs/i18n-breadcrumbs.service';
 import {
   ITEM_EDIT_AUTHORIZATIONS_PATH,
-  ITEM_EDIT_MOVE_PATH,
   ITEM_EDIT_DELETE_PATH,
-  ITEM_EDIT_PUBLIC_PATH,
+  ITEM_EDIT_MOVE_PATH,
   ITEM_EDIT_PRIVATE_PATH,
+  ITEM_EDIT_PUBLIC_PATH,
   ITEM_EDIT_REINSTATE_PATH,
   ITEM_EDIT_WITHDRAW_PATH
 } from './edit-item-page.routing-paths';
 import { ItemPageReinstateGuard } from './item-page-reinstate.guard';
 import { ItemPageWithdrawGuard } from './item-page-withdraw.guard';
+import { ItemPageEditMetadataGuard } from '../item-page-edit-metadata.guard';
+import { ItemPageAdministratorGuard } from '../item-page-administrator.guard';
 
 /**
  * Routing module that handles the routing for the Edit Item page administrator functionality
@@ -57,39 +59,50 @@ import { ItemPageWithdrawGuard } from './item-page-withdraw.guard';
               {
                 path: 'status',
                 component: ItemStatusComponent,
-                data: { title: 'item.edit.tabs.status.title', showBreadcrumbs: true }
+                data: { title: 'item.edit.tabs.status.title', showBreadcrumbs: true },
+                canActivate: [ItemPageAdministratorGuard]
               },
               {
                 path: 'bitstreams',
                 component: ItemBitstreamsComponent,
-                data: { title: 'item.edit.tabs.bitstreams.title', showBreadcrumbs: true }
+                data: { title: 'item.edit.tabs.bitstreams.title', showBreadcrumbs: true },
+                canActivate: [ItemPageAdministratorGuard]
               },
               {
                 path: 'metadata',
                 component: ItemMetadataComponent,
-                data: { title: 'item.edit.tabs.metadata.title', showBreadcrumbs: true }
+                data: { title: 'item.edit.tabs.metadata.title', showBreadcrumbs: true },
+                canActivate: [ItemPageEditMetadataGuard]
               },
               {
                 path: 'relationships',
                 component: ItemRelationshipsComponent,
-                data: { title: 'item.edit.tabs.relationships.title', showBreadcrumbs: true }
+                data: { title: 'item.edit.tabs.relationships.title', showBreadcrumbs: true },
+                canActivate: [ItemPageEditMetadataGuard]
               },
+              /* TODO - uncomment & fix when view page exists
               {
                 path: 'view',
-                /* TODO - change when view page exists */
                 component: ItemBitstreamsComponent,
                 data: { title: 'item.edit.tabs.view.title', showBreadcrumbs: true }
-              },
+              }, */
+              /* TODO - uncomment & fix when curate page exists
               {
                 path: 'curate',
-                /* TODO - change when curate page exists */
                 component: ItemBitstreamsComponent,
                 data: { title: 'item.edit.tabs.curate.title', showBreadcrumbs: true }
-              },
+              }, */
               {
                 path: 'versionhistory',
                 component: ItemVersionHistoryComponent,
-                data: { title: 'item.edit.tabs.versionhistory.title', showBreadcrumbs: true }
+                data: { title: 'item.edit.tabs.versionhistory.title', showBreadcrumbs: true },
+                canActivate: [ItemPageAdministratorGuard]
+              },
+              {
+                path: 'mapper',
+                component: ItemCollectionMapperComponent,
+                data: { title: 'item.edit.tabs.item-mapper.title', showBreadcrumbs: true },
+                canActivate: [ItemPageAdministratorGuard]
               }
             ]
           },
@@ -160,7 +173,9 @@ import { ItemPageWithdrawGuard } from './item-page-withdraw.guard';
     ResourcePolicyResolver,
     ResourcePolicyTargetResolver,
     ItemPageReinstateGuard,
-    ItemPageWithdrawGuard
+    ItemPageWithdrawGuard,
+    ItemPageAdministratorGuard,
+    ItemPageEditMetadataGuard,
   ]
 })
 export class EditItemPageRoutingModule {

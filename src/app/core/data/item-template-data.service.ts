@@ -22,6 +22,7 @@ import { FollowLinkConfig } from '../../shared/utils/follow-link-config.model';
 import { NoContent } from '../shared/NoContent.model';
 import { hasValue } from '../../shared/empty.util';
 import { Operation } from 'fast-json-patch';
+import { getFirstCompletedRemoteData } from '../shared/operators';
 
 /* tslint:disable:max-classes-per-file */
 /**
@@ -58,14 +59,22 @@ class DataServiceImpl extends ItemDataService {
   }
 
   /**
+   * Get the endpoint based on a collection
+   * @param collectionID  The ID of the collection to base the endpoint on
+   */
+  public getCollectionEndpoint(collectionID: string): Observable<string> {
+    return this.collectionService.getIDHrefObs(collectionID).pipe(
+      switchMap((href: string) => this.halService.getEndpoint(this.collectionLinkPath, href))
+    );
+  }
+
+  /**
    * Set the endpoint to be based on a collection
    * @param collectionID  The ID of the collection to base the endpoint on
    */
   private setCollectionEndpoint(collectionID: string) {
     this.collectionEndpoint = true;
-    this.endpoint$ = this.collectionService.getIDHrefObs(collectionID).pipe(
-      switchMap((href: string) => this.halService.getEndpoint(this.collectionLinkPath, href))
-    );
+    this.endpoint$ = this.getCollectionEndpoint(collectionID);
   }
 
   /**
@@ -100,13 +109,16 @@ class DataServiceImpl extends ItemDataService {
   /**
    * Set the collection ID and send a find by ID request
    * @param collectionID
-   * @param reRequestOnStale  Whether or not the request should automatically be re-requested after
-   *                          the response becomes stale
-   * @param linksToFollow     List of {@link FollowLinkConfig} that indicate which {@link HALLink}s should be automatically resolved
+   * @param useCachedVersionIfAvailable If this is true, the request will only be sent if there's
+   *                                    no valid cached version. Defaults to true
+   * @param reRequestOnStale            Whether or not the request should automatically be re-
+   *                                    requested after the response becomes stale
+   * @param linksToFollow               List of {@link FollowLinkConfig} that indicate which
+   *                                    {@link HALLink}s should be automatically resolved
    */
-  findByCollectionID(collectionID: string, reRequestOnStale = true, ...linksToFollow: FollowLinkConfig<Item>[]): Observable<RemoteData<Item>> {
+  findByCollectionID(collectionID: string, useCachedVersionIfAvailable = true, reRequestOnStale = true, ...linksToFollow: FollowLinkConfig<Item>[]): Observable<RemoteData<Item>> {
     this.setCollectionEndpoint(collectionID);
-    return super.findById(collectionID, reRequestOnStale, ...linksToFollow);
+    return super.findById(collectionID, useCachedVersionIfAvailable, reRequestOnStale, ...linksToFollow);
   }
 
   /**
@@ -127,6 +139,7 @@ class DataServiceImpl extends ItemDataService {
   deleteByCollectionID(item: Item, collectionID: string): Observable<boolean> {
     this.setRegularEndpoint();
     return super.delete(item.uuid).pipe(
+      getFirstCompletedRemoteData(),
       map((response: RemoteData<NoContent>) => hasValue(response) && response.hasSucceeded)
     );
   }
@@ -178,12 +191,15 @@ export class ItemTemplateDataService implements UpdateDataService<Item> {
   /**
    * Find an item template by collection ID
    * @param collectionID
-   * @param reRequestOnStale  Whether or not the request should automatically be re-requested after
-   *                          the response becomes stale
-   * @param linksToFollow     List of {@link FollowLinkConfig} that indicate which {@link HALLink}s should be automatically resolved
+   * @param useCachedVersionIfAvailable If this is true, the request will only be sent if there's
+   *                                    no valid cached version. Defaults to true
+   * @param reRequestOnStale            Whether or not the request should automatically be re-
+   *                                    requested after the response becomes stale
+   * @param linksToFollow               List of {@link FollowLinkConfig} that indicate which
+   *                                    {@link HALLink}s should be automatically resolved
    */
-  findByCollectionID(collectionID: string, reRequestOnStale = true, ...linksToFollow: FollowLinkConfig<Item>[]): Observable<RemoteData<Item>> {
-    return this.dataService.findByCollectionID(collectionID, reRequestOnStale, ...linksToFollow);
+  findByCollectionID(collectionID: string, useCachedVersionIfAvailable = true, reRequestOnStale = true, ...linksToFollow: FollowLinkConfig<Item>[]): Observable<RemoteData<Item>> {
+    return this.dataService.findByCollectionID(collectionID, useCachedVersionIfAvailable, reRequestOnStale, ...linksToFollow);
   }
 
   /**
@@ -202,6 +218,14 @@ export class ItemTemplateDataService implements UpdateDataService<Item> {
    */
   deleteByCollectionID(item: Item, collectionID: string): Observable<boolean> {
     return this.dataService.deleteByCollectionID(item, collectionID);
+  }
+
+  /**
+   * Get the endpoint based on a collection
+   * @param collectionID  The ID of the collection to base the endpoint on
+   */
+  getCollectionEndpoint(collectionID: string): Observable<string> {
+    return this.dataService.getCollectionEndpoint(collectionID);
   }
 }
 /* tslint:enable:max-classes-per-file */

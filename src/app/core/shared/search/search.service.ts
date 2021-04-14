@@ -1,7 +1,7 @@
 import { combineLatest as observableCombineLatest, Observable, of as observableOf } from 'rxjs';
 import { Injectable, OnDestroy } from '@angular/core';
-import { NavigationExtras, Router } from '@angular/router';
-import { first, map, switchMap, take } from 'rxjs/operators';
+import { Router } from '@angular/router';
+import { map, switchMap, take } from 'rxjs/operators';
 import { followLink, FollowLinkConfig } from '../../../shared/utils/follow-link-config.model';
 import { LinkService } from '../../cache/builders/link.service';
 import { PaginatedList } from '../../data/paginated-list.model';
@@ -37,6 +37,9 @@ import { ListableObject } from '../../../shared/object-collection/shared/listabl
 import { getSearchResultFor } from '../../../shared/search/search-result-element-decorator';
 import { FacetConfigResponse } from '../../../shared/search/facet-config-response.model';
 import { FacetValues } from '../../../shared/search/facet-values.model';
+import { PaginationService } from '../../pagination/pagination.service';
+import { SearchConfigurationService } from './search-configuration.service';
+import { PaginationComponentOptions } from '../../../shared/pagination/pagination-component-options.model';
 import { SearchConfig } from '../../../shared/search/search-filters/search-config.model';
 import { FilterConfigResponseParsingService } from '../../data/filter-config-response-parsing.service';
 
@@ -88,7 +91,9 @@ export class SearchService implements OnDestroy {
               private linkService: LinkService,
               private halService: HALEndpointService,
               private communityService: CommunityDataService,
-              private dspaceObjectService: DSpaceObjectDataService
+              private dspaceObjectService: DSpaceObjectDataService,
+              private paginationService: PaginationService,
+              private searchConfigurationService: SearchConfigurationService
   ) {
   }
 
@@ -122,10 +127,14 @@ export class SearchService implements OnDestroy {
    * Method to retrieve a paginated list of search results from the server
    * @param {PaginatedSearchOptions} searchOptions The configuration necessary to perform this search
    * @param responseMsToLive The amount of milliseconds for the response to live in cache
+   * @param useCachedVersionIfAvailable If this is true, the request will only be sent if there's
+   * no valid cached version. Defaults to true
+   * @param reRequestOnStale Whether or not the request should automatically be re-requested after
+   * the response becomes stale
    * @param linksToFollow List of {@link FollowLinkConfig} that indicate which {@link HALLink}s should be automatically resolved
    * @returns {Observable<RemoteData<SearchObjects<T>>>} Emits a paginated list with all search results found
    */
-  search<T extends DSpaceObject>(searchOptions?: PaginatedSearchOptions, responseMsToLive?: number, ...linksToFollow: FollowLinkConfig<T>[]): Observable<RemoteData<SearchObjects<T>>> {
+  search<T extends DSpaceObject>(searchOptions?: PaginatedSearchOptions, responseMsToLive?: number, useCachedVersionIfAvailable = true, reRequestOnStale = true, ...linksToFollow: FollowLinkConfig<T>[]): Observable<RemoteData<SearchObjects<T>>> {
     const href$ = this.getEndpoint(searchOptions);
 
     href$.pipe(take(1)).subscribe((url: string) => {
@@ -141,14 +150,14 @@ export class SearchService implements OnDestroy {
         searchOptions: searchOptions
       });
 
-      this.requestService.configure(request);
+      this.requestService.send(request, useCachedVersionIfAvailable);
     });
 
     const sqr$ = href$.pipe(
       switchMap((href: string) => this.rdb.buildFromHref<SearchObjects<T>>(href))
     );
 
-    return this.directlyAttachIndexableObjects(sqr$);
+    return this.directlyAttachIndexableObjects(sqr$, useCachedVersionIfAvailable, reRequestOnStale, ...linksToFollow);
  }
 
   /**
@@ -170,19 +179,23 @@ export class SearchService implements OnDestroy {
    * Method to directly attach the indexableObjects to search results, instead of using RemoteData.
    * For compatibility with the way the search was written originally
    *
-   * @param sqr$:         a SearchObjects RemotaData Observable without its indexableObjects
-   *                      attached
-   * @param linksToFollow List of {@link FollowLinkConfig} that indicate which {@link HALLink}s on
-   *                      the indexableObjects should be automatically resolved
+   * @param sqr$:                       a SearchObjects RemotaData Observable without its
+   *                                    indexableObjects attached
+   * @param useCachedVersionIfAvailable If this is true, the request will only be sent if there's
+   *                                    no valid cached version. Defaults to true
+   * @param reRequestOnStale            Whether or not the request should automatically be re-
+   *                                    requested after the response becomes stale
+   * @param linksToFollow               List of {@link FollowLinkConfig} that indicate which
+   *                                    {@link HALLink}s should be automatically resolved
    * @protected
    */
-  protected directlyAttachIndexableObjects<T extends DSpaceObject>(sqr$: Observable<RemoteData<SearchObjects<T>>>, ...linksToFollow: FollowLinkConfig<T>[]): Observable<RemoteData<SearchObjects<T>>> {
+  protected directlyAttachIndexableObjects<T extends DSpaceObject>(sqr$: Observable<RemoteData<SearchObjects<T>>>, useCachedVersionIfAvailable = true, reRequestOnStale = true, ...linksToFollow: FollowLinkConfig<T>[]): Observable<RemoteData<SearchObjects<T>>> {
     return sqr$.pipe(
       switchMap((resultsRd: RemoteData<SearchObjects<T>>) => {
         if (hasValue(resultsRd.payload) && isNotEmpty(resultsRd.payload.page)) {
           // retrieve the indexableObjects for all search results on the page
           const searchResult$Array: Observable<SearchResult<T>>[] = resultsRd.payload.page.map((result: SearchResult<T>) =>
-            this.dspaceObjectService.findByHref(result._links.indexableObject.href, true, ...linksToFollow as any).pipe(
+            this.dspaceObjectService.findByHref(result._links.indexableObject.href, useCachedVersionIfAvailable, reRequestOnStale, ...linksToFollow as any).pipe(
               getFirstCompletedRemoteData(),
               getRemoteDataPayload(),
               hasValueOperator(),
@@ -278,19 +291,27 @@ export class SearchService implements OnDestroy {
           return FacetConfigResponseParsingService;
         }
       });
-      this.requestService.configure(request);
+        this.requestService.send(request, true);
     });
 
     return this.rdb.buildFromHref(href$).pipe(
       map((rd: RemoteData<FacetConfigResponse>) => {
         if (rd.hasSucceeded) {
+          let filters: SearchFilterConfig[];
+          if (isNotEmpty(rd.payload.filters)) {
+            filters = rd.payload.filters
+              .map((filter: any) => Object.assign(new SearchFilterConfig(), filter));
+          } else {
+            filters = [];
+          }
+
           return new RemoteData(
             rd.timeCompleted,
             rd.msToLive,
             rd.lastUpdated,
             rd.state,
             rd.errorMessage,
-            rd.payload.filters,
+            filters,
             rd.statusCode,
           );
         } else {
@@ -335,7 +356,7 @@ export class SearchService implements OnDestroy {
           return FilterConfigResponseParsingService;
         }
       });
-      this.requestService.configure(request);
+      this.requestService.send(request);
     });
 
     return this.rdb.buildFromHref(href$).pipe(
@@ -383,7 +404,7 @@ export class SearchService implements OnDestroy {
         return FacetValueResponseParsingService;
       }
     });
-    this.requestService.configure(request);
+    this.requestService.send(request, true);
 
     return this.rdb.buildFromHref(href);
   }
@@ -459,20 +480,16 @@ export class SearchService implements OnDestroy {
    * @param {ViewMode} viewMode Mode to switch to
    */
   setViewMode(viewMode: ViewMode, searchLinkParts?: string[]) {
-    this.routeService.getQueryParameterValue('pageSize').pipe(first())
-      .subscribe((pageSize) => {
-        let queryParams = { view: viewMode, page: 1 };
+    this.paginationService.getCurrentPagination(this.searchConfigurationService.paginationID, new PaginationComponentOptions()).pipe(take(1))
+      .subscribe((config) => {
+        let pageParams = { page: 1 };
+        const queryParams = { view: viewMode };
         if (viewMode === ViewMode.DetailedListElement) {
-          queryParams = Object.assign(queryParams, {pageSize: '1'});
-        } else if (pageSize === '1') {
-          queryParams = Object.assign(queryParams, {pageSize: '10'});
+          pageParams = Object.assign(pageParams, {pageSize: 1});
+        } else if (config.pageSize === 1) {
+          pageParams = Object.assign(pageParams, {pageSize: 10});
         }
-        const navigationExtras: NavigationExtras = {
-          queryParams: queryParams,
-          queryParamsHandling: 'merge'
-        };
-
-        this.router.navigate(hasValue(searchLinkParts) ? searchLinkParts : [this.getSearchLink()], navigationExtras);
+        this.paginationService.updateRouteWithUrl(this.searchConfigurationService.paginationID, hasValue(searchLinkParts) ? searchLinkParts : [this.getSearchLink()], pageParams, queryParams);
       });
   }
 
@@ -503,34 +520,12 @@ export class SearchService implements OnDestroy {
       }),
     );
 
-    // FIXME: this temporary solution must be replaced by incoming method from dspace-cris-7 at next codebase alignment
     href$.pipe(take(1)).subscribe((url: string) => {
-      let request = new this.request(this.requestService.generateRequestId(), url);
-      request = Object.assign(request, {
-        getResponseParser(): GenericConstructor<ResponseParsingService> {
-          return FilterConfigResponseParsingService;
-        }
-      });
-      this.requestService.configure(request);
+      const request = new this.request(this.requestService.generateRequestId(), url);
+      this.requestService.send(request);
     });
 
-    return this.rdb.buildFromHref(href$).pipe(
-      map((rd: RemoteData<SearchConfig>) => {
-        if (rd.hasSucceeded) {
-          return new RemoteData(
-            rd.timeCompleted,
-            rd.msToLive,
-            rd.lastUpdated,
-            rd.state,
-            rd.errorMessage,
-            rd.payload.filters,
-            rd.statusCode,
-          );
-        } else {
-          return rd as any;
-        }
-      })
-    );
+    return this.rdb.buildFromHref(href$);
   }
 
   /**
