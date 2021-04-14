@@ -37,7 +37,7 @@ export class CrisLayoutDefaultSidebarComponent implements OnChanges {
    */
   @Output() selectedTab = new EventEmitter<Tab>();
 
-  constructor(private location: Location, private router: Router, private route: ActivatedRoute) { }
+  constructor(protected location: Location, protected router: Router, protected route: ActivatedRoute) { }
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes.tabs && changes.tabs.currentValue) {

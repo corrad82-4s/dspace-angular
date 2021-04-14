@@ -22,10 +22,10 @@ import { RegisterNavbarComponent } from './register-navbar/register-navbar.compo
   declarations: [
     RegisterEmailComponent,
     CreateProfileComponent,
-    ThemedCreateProfileComponent
+    ThemedCreateProfileComponent,
+    RegisterNavbarComponent,
     RegisterDniComponent,
-    RegisterDniProfileComponent,
-    RegisterNavbarComponent
+    RegisterDniProfileComponent
   ],
   providers: []
 })

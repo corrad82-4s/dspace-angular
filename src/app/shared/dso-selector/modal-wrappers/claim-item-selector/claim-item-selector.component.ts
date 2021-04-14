@@ -15,6 +15,7 @@ import { SearchResult } from '../../../search/search-result.model';
 import { Input } from '@angular/core';
 import { getFirstSucceededRemoteDataPayload } from '../../../../core/shared/operators';
 import { switchMap } from 'rxjs/operators';
+import { Item } from '../../../../core/shared/item.model';
 
 
 
@@ -51,7 +52,7 @@ export class ClaimItemSelectorComponent extends DSOSelectorModalWrapperComponent
   }
 
   navigate(dso: DSpaceObject) {
-    this.router.navigate([getItemPageRoute(dso.uuid)]);
+    this.router.navigate([getItemPageRoute(dso as Item)]);
   }
 
   rejectAssociation(selectedDso: DSpaceObject): void {

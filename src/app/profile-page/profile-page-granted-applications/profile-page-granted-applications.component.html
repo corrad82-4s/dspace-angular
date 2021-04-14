@@ -2,7 +2,6 @@
 
 <ds-pagination [paginationOptions]="paginationOptions"
                [collectionSize]="(getApplications() | async)?.length"
-               [disableRouteParameterUpdate]="true"
                [hideGear]="true"
                (pageChange)="setPage($event)">
 

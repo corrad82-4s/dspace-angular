@@ -341,7 +341,7 @@ export class EPersonDataService extends DataService<EPerson> {
       find((href: string) => hasValue(href)),
       map((href: string) => {
         const request = new PostRequest(requestId, href, eperson);
-        this.requestService.configure(request);
+        this.requestService.send(request);
       })
     ).subscribe();
 

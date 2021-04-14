@@ -1,4 +1,3 @@
-import { hasSucceeded } from './../core/data/request.reducer';
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
@@ -32,7 +31,6 @@ import { AuthorizationDataService } from '../core/data/feature-authorization/aut
 import { FeatureID } from '../core/data/feature-authorization/feature-id';
 import { ScriptDataService } from '../core/data/processes/script-data.service';
 import { NotificationsService } from '../shared/notifications/notifications.service';
-import { RequestEntry } from '../core/data/request.reducer';
 import { ProcessParameter } from '../process-page/processes/process-parameter.model';
 import { TranslateService } from '@ngx-translate/core';
 import { RequestService } from '../core/data/request.service';
@@ -77,8 +75,7 @@ export class CollectionPageComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private authService: AuthService,
-    private paginationService: PaginationService
-    private authService: AuthService,
+    private paginationService: PaginationService,
     private authorizationService: AuthorizationDataService,
     private scriptService: ScriptDataService,
     private translationService: TranslateService,

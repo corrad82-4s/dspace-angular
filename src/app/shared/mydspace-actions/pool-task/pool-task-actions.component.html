@@ -13,8 +13,8 @@
         *ngIf="(isInstitutionRejectionTask() | async)"
         class="btn btn-danger mt-1 mb-3"
         ngbTooltip="{{'submission.workflow.tasks.pool.reject_help' | translate}}"
-        [disabled]="(processingClaim$ | async)"
+        [disabled]="(processing$ | async)"
         (click)="claim()">
-  <span *ngIf="(processingClaim$ | async)"><i class='fas fa-circle-notch fa-spin'></i> {{'submission.workflow.tasks.generic.processing' | translate}}</span>
-  <span *ngIf="!(processingClaim$ | async)"><i class="fas fa-trash"></i> {{'submission.workflow.tasks.pool.reject' | translate}}</span>
+  <span *ngIf="(processing$ | async)"><i class='fas fa-circle-notch fa-spin'></i> {{'submission.workflow.tasks.generic.processing' | translate}}</span>
+  <span *ngIf="!(processing$ | async)"><i class="fas fa-trash"></i> {{'submission.workflow.tasks.pool.reject' | translate}}</span>
 </button>

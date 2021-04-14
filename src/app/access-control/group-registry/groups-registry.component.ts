@@ -9,7 +9,7 @@ import {
   of as observableOf,
   Subscription
 } from 'rxjs';
-import { catchError, map, switchMap, take } from 'rxjs/operators';
+import { catchError, first, map, switchMap, take } from 'rxjs/operators';
 import { DSpaceObjectDataService } from '../../core/data/dspace-object-data.service';
 import { AuthorizationDataService } from '../../core/data/feature-authorization/authorization-data.service';
 import { FeatureID } from '../../core/data/feature-authorization/feature-id';
@@ -35,6 +35,7 @@ import { NotificationsService } from '../../shared/notifications/notifications.s
 import { PaginationComponentOptions } from '../../shared/pagination/pagination-component-options.model';
 import { NoContent } from '../../core/shared/NoContent.model';
 import { PaginationService } from '../../core/pagination/pagination.service';
+import { Operation } from 'fast-json-patch';
 
 @Component({
   selector: 'ds-groups-registry',
@@ -258,6 +259,66 @@ export class GroupsRegistryComponent implements OnInit, OnDestroy {
     }
     this.subs.filter((sub) => hasValue(sub)).forEach((sub) => sub.unsubscribe());
     this.paginationService.clearPagination(this.config.id);
+  }
+
+
+  /**
+   * Returns the type of the given group (lowercase).
+   * @param group the group whose type to calculate
+   */
+  getGroupType(group: Group): string {
+    const type = group.firstMetadataValue('perucris.group.type');
+    if (!type) {
+      return 'normal';
+    }
+    return type.toLowerCase();
+  }
+
+  /**
+   * Returns true if the given group is enabled.
+   * @param group the group to check
+   */
+  isEnabled(group: Group): boolean {
+    const status = group.firstMetadataValue('perucris.group.status');
+    return !status || status.toUpperCase() === 'ENABLED';
+  }
+
+  /**
+   * Toggle the given group status.
+   *
+   * @param group the group to edit
+   */
+  toggleGroupStatus(group: Group) {
+    const nextStatus: string = this.isEnabled(group) ? 'DISABLED' : 'ENABLED';
+    const path = '/metadata/perucris.group.status';
+    let operation: Operation = null;
+    if ( group.hasMetadata('perucris.group.status')) {
+      operation = {
+        path: path,
+        op: 'replace',
+        value: nextStatus
+      };
+    } else {
+      operation = {
+        path: path,
+        op: 'add',
+        value: nextStatus
+      };
+    }
+
+    this.groupService.patch(group, [operation])
+      .pipe(first())
+      .subscribe((response: any) => {
+        if (response.isSuccessful) {
+          const msg = this.translateService.get('admin.access-control.groups.notification.edit.success', { name: group.name });
+          this.notificationsService.success( msg );
+          this.groupService.clearGroupLinkRequests(group._links.subgroups.href);
+          this.groupService.clearGroupLinkRequests(group._links.epersons.href);
+        } else {
+          const msg = this.translateService.get('admin.access-control.groups.notification.edit.failure', { name: group.name });
+          this.notificationsService.error( msg );
+        }
+      });
   }
 
 }

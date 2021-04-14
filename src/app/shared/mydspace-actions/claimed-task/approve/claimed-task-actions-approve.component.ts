@@ -11,9 +11,7 @@ import { SearchService } from '../../../../core/shared/search/search.service';
 import { RequestService } from '../../../../core/data/request.service';
 import { ClaimedApprovedTaskSearchResult } from '../../../object-collection/shared/claimed-approved-task-search-result.model';
 import { of } from 'rxjs/internal/observable/of';
-import { ClaimedTaskDataService } from '../../../../core/tasks/claimed-task-data.service';
 import { map } from 'rxjs/operators';
-import { Observable } from 'rxjs';
 import { WorkflowItemDataService } from '../../../../core/submission/workflowitem-data.service';
 import { getFirstSucceededRemoteDataPayload } from '../../../../core/shared/operators';
 

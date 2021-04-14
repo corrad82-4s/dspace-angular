@@ -6,6 +6,7 @@
     <div class="wrapper" [ngClass]="{'wrapper-close': !(isSideBarHidden() | async)}">
         <div>
             <ds-peru-sidebar
+                    [item]="item"
                     [sidebarActive]="(hasSidebar() | async)"
                     [sidebarStatus]="!(isSideBarHidden() | async)"
                     [tabs]="(getTabs() | async)"

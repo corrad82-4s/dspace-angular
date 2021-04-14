@@ -58,8 +58,8 @@ export class MultiColumnTopSectionComponent implements OnInit {
    * Get the item page url
    * @param id The item id for which the url is requested
    */
-  getItemPage(id: string): string {
-    return getItemPageRoute(id);
+  getItemPage(topObject): string {
+    return getItemPageRoute(topObject);
   }
 
   getColumns(): TopSectionColumn[] {

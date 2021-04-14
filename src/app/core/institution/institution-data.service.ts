@@ -5,7 +5,7 @@ import { catchError, distinctUntilChanged, flatMap, map, switchMap } from 'rxjs/
 import { isNotEmpty } from '../../shared/empty.util';
 import { NotificationsService } from '../../shared/notifications/notifications.service';
 import { createFailedRemoteDataObject$ } from '../../shared/remote-data.utils';
-import { ErrorResponse, RestResponse } from '../cache/response.models';
+import { RestResponse } from '../cache/response.models';
 import { CommunityDataService } from '../data/community-data.service';
 import { ConfigurationDataService } from '../data/configuration-data.service';
 import { PaginatedList } from '../data/paginated-list.model';
@@ -14,7 +14,13 @@ import { FindListOptions, PostRequest } from '../data/request.models';
 import { RequestService } from '../data/request.service';
 import { HttpOptions } from '../dspace-rest/dspace-rest.service';
 import { Community } from '../shared/community.model';
-import { configureRequest, getFinishedRemoteData, getFirstSucceededRemoteDataPayload, getRemoteDataPayload, getResponseFromEntry } from '../shared/operators';
+import {
+  getFinishedRemoteData,
+  getFirstSucceededRemoteDataPayload,
+  getRemoteDataPayload,
+  getResponseFromEntry,
+  sendRequest
+} from '../shared/operators';
 
 /**
  * Service to handle institutions.
@@ -51,7 +57,7 @@ export class InstitutionDataService {
         const hrefWithParentAndName = `${href}?parent=${parentCommunity.id}&name=${name}`;
         return new PostRequest(requestId, hrefWithParentAndName, template.self, options);
       }),
-      configureRequest(this.requestService)
+      sendRequest(this.requestService)
     ).subscribe();
 
     return this.fetchCreateResponse(requestId).pipe(

@@ -9,35 +9,20 @@ import {
 } from '@ng-dynamic-forms/core';
 import { TranslateService } from '@ngx-translate/core';
 import { combineLatest as observableCombineLatest, Observable, of as observableOf, Subscription } from 'rxjs';
-import { switchMap, take } from 'rxjs/operators';
+import { reduce, switchMap, take, tap } from 'rxjs/operators';
 import { PaginatedList } from '../../../core/data/paginated-list.model';
 import { RemoteData } from '../../../core/data/remote-data';
 import { EPersonDataService } from '../../../core/eperson/eperson-data.service';
 import { GroupDataService } from '../../../core/eperson/group-data.service';
 import { EPerson } from '../../../core/eperson/models/eperson.model';
 import { Group } from '../../../core/eperson/models/group.model';
-import { combineLatest, Observable, Subscription } from 'rxjs';
-import { PaginatedList } from '../../../../core/data/paginated-list.model';
-import { RemoteData } from '../../../../core/data/remote-data';
-import { EPersonDataService } from '../../../../core/eperson/eperson-data.service';
-import { GroupDataService } from '../../../../core/eperson/group-data.service';
-import { EPerson } from '../../../../core/eperson/models/eperson.model';
-import { Group } from '../../../../core/eperson/models/group.model';
 import {
-  getFirstSucceededRemoteData,
   getFirstCompletedRemoteData,
+  getFirstSucceededRemoteData,
   getFirstSucceededRemoteDataPayload,
   getFirstSucceededRemoteListPayload,
   getPaginatedListPayload,
   getRemoteDataPayload
-} from '../../../../core/shared/operators';
-import { hasValue } from '../../../../shared/empty.util';
-import { FormBuilderService } from '../../../../shared/form/builder/form-builder.service';
-import { NotificationsService } from '../../../../shared/notifications/notifications.service';
-import { PaginationComponentOptions } from '../../../../shared/pagination/pagination-component-options.model';
-import { AuthService } from '../../../../core/auth/auth.service';
-import { AuthorizationDataService } from '../../../../core/data/feature-authorization/authorization-data.service';
-import { FeatureID } from '../../../../core/data/feature-authorization/feature-id';
 } from '../../../core/shared/operators';
 import { hasValue } from '../../../shared/empty.util';
 import { FormBuilderService } from '../../../shared/form/builder/form-builder.service';
@@ -53,13 +38,8 @@ import { NoContent } from '../../../core/shared/NoContent.model';
 import { PaginationService } from '../../../core/pagination/pagination.service';
 import { EpersonRegistrationService } from '../../../core/data/eperson-registration.service';
 import { Registration } from '../../../core/shared/registration.model';
-import { RequestService } from '../../../../core/data/request.service';
-import { NoContent } from '../../../../core/shared/NoContent.model';
-import { EpersonRegistrationService } from '../../../../core/data/eperson-registration.service';
-import { Registration } from '../../../../core/shared/registration.model';
-import { ConfirmationModalComponent } from '../../../../shared/confirmation-modal/confirmation-modal.component';
-import { reduce, switchMap, take, tap, map } from 'rxjs/operators';
-import { DsDynamicMultipleSelectModel } from '../../../../shared/form/builder/ds-dynamic-form-ui/models/multiple-select/ds-dynamic-multiple-select.model';
+import { DsDynamicMultipleSelectModel } from '../../../shared/form/builder/ds-dynamic-form-ui/models/multiple-select/ds-dynamic-multiple-select.model';
+import { map } from 'rxjs/internal/operators/map';
 
 @Component({
   selector: 'ds-eperson-form',
@@ -349,25 +329,25 @@ export class EPersonFormComponent implements OnInit, OnDestroy {
       const activeEPerson$ = this.epersonService.getActiveEPerson();
 
       this.groups  = activeEPerson$.pipe(
-        switchMap((eperson) => {
-          return observableCombineLatest([observableOf(eperson), this.paginationService.getFindListOptions(this.config.id, {
+        switchMap((ep) => {
+          return observableCombineLatest([observableOf(ep), this.paginationService.getFindListOptions(this.config.id, {
             currentPage: 1,
             elementsPerPage: this.config.pageSize
           })]);
         }),
-        switchMap(([eperson, findListOptions]) => {
-          if (eperson != null) {
-            return this.groupsDataService.findAllByHref(eperson._links.groups.href, findListOptions);
+        switchMap(([ep, findListOptions]) => {
+          if (ep != null) {
+            return this.groupsDataService.findAllByHref(ep._links.groups.href, findListOptions);
           }
           return observableOf(undefined);
         })
       );
 
       this.canImpersonate$ = activeEPerson$.pipe(
-        switchMap((eperson) => this.authorizationService.isAuthorized(FeatureID.LoginOnBehalfOf, hasValue(eperson) ? eperson.self : undefined))
+        switchMap((ep) => this.authorizationService.isAuthorized(FeatureID.LoginOnBehalfOf, hasValue(ep) ? ep.self : undefined))
       );
       this.canDelete$ = activeEPerson$.pipe(
-        switchMap((eperson) => this.authorizationService.isAuthorized(FeatureID.CanDelete, hasValue(eperson) ? eperson.self : undefined))
+        switchMap((ep) => this.authorizationService.isAuthorized(FeatureID.CanDelete, hasValue(ep) ? ep.self : undefined))
       );
     });
   }

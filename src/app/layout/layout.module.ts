@@ -102,7 +102,7 @@ const ENTRY_COMPONENTS = [
     MetricDspacecrisComponent,
     MetricGooglescholarComponent,
     TableComponent,
-    InlineComponent
+    InlineComponent,
     PeruLayoutComponent,
     PeruTabComponent,
     PeruMetadataBoxComponent,

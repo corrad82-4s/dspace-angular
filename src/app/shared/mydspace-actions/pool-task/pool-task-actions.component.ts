@@ -16,11 +16,10 @@ import { NotificationsService } from '../../notifications/notifications.service'
 import { RequestService } from '../../../core/data/request.service';
 import { SearchService } from '../../../core/shared/search/search.service';
 import { ClaimedTaskDataService } from '../../../core/tasks/claimed-task-data.service';
-import { getFirstSucceededRemoteDataPayload } from '../../../core/shared/operators';
+import { getFirstSucceededRemoteData, getFirstSucceededRemoteDataPayload } from '../../../core/shared/operators';
 import { Item } from '../../../core/shared/item.model';
 import { DSpaceObject } from '../../../core/shared/dspace-object.model';
 import { MyDSpaceReloadableActionsComponent } from '../mydspace-reloadable-actions';
-import { ProcessTaskResponse } from '../../../core/tasks/models/process-task-response';
 
 /**
  * This component represents mydspace actions related to PoolTask object.

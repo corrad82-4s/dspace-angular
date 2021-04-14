@@ -311,8 +311,6 @@ const PROVIDERS = [
   LookupRelationService,
   VersionDataService,
   VersionHistoryDataService,
-  LicenseDataService,
-  ItemTypeDataService,
   ItemSourcesDataService,
   WorkflowActionDataService,
   ProcessDataService,

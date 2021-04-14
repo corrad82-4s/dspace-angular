@@ -1,5 +1,4 @@
-import { Component, Injector, Input, OnInit } from '@angular/core';
-import { ChangeDetectorRef, Component, Injector, Input } from '@angular/core';
+import { ChangeDetectorRef, Component, Injector, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { MyDSpaceActionsComponent } from '../mydspace-actions';

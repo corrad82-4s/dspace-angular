@@ -60,7 +60,7 @@ export class DnisRestService {
       }),
       tap((request: RestRequest) => {
         this.requestService.removeByHrefSubstring(request.href);
-        this.requestService.configure(request);
+        this.requestService.send(request);
       }),
       mergeMap(() => this.fetchRequest(requestId)),
       distinctUntilChanged());

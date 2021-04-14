@@ -12,7 +12,7 @@ import { Community } from '../../../core/shared/community.model';
 import { DSpaceObject } from '../../../core/shared/dspace-object.model';
 import { MetadataValue } from '../../../core/shared/metadata.models';
 import { getFirstSucceededRemoteDataWithNotEmptyPayload, getFirstSucceededRemoteListPayload } from '../../../core/shared/operators';
-import { getGroupEditRoute } from '../../admin-access-control/admin-access-control-routing-paths';
+import { getGroupEditRoute } from '../../../access-control/access-control-routing-paths';
 
 /**
  * A component that provides a summary of the institutional space.

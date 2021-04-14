@@ -82,6 +82,7 @@ import { FooterComponent } from './app/footer/footer.component';
 import { BreadcrumbsComponent } from './app/breadcrumbs/breadcrumbs.component';
 import { CrisItemPageModule } from '../../app/cris-item-page/cris-item-page.module';
 import { CrisStatisticsPageModule } from '../../app/statistics-page/cris-statistics-page/cris-statistics-page.module';
+import { RegisterNavbarComponent } from './app/register-page/register-navbar/register-navbar.component';
 
 const DECLARATIONS = [
   HomePageComponent,
@@ -112,6 +113,7 @@ const DECLARATIONS = [
   ForgotPasswordFormComponent,
   ProfilePageComponent,
   RegisterEmailComponent,
+  RegisterNavbarComponent,
   MyDSpacePageComponent,
   SubmissionEditComponent,
   SubmissionImportExternalComponent,
