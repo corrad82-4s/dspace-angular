@@ -4,5 +4,6 @@ export enum AuthMethodType {
   Oidc = 'oidc',
   Ldap = 'ldap',
   Ip = 'ip',
-  X509 = 'x509'
+  X509 = 'x509',
+  Orcid = 'orcid'
 }

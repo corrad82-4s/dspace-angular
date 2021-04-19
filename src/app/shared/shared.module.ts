@@ -256,6 +256,7 @@ import { BulkImportSelectorComponent } from './dso-selector/modal-wrappers/bulk-
 import { AdministeredCollectionSelectorComponent } from './dso-selector/dso-selector/administered-collection-selector/administered-collection-selector.component';
 import { ThemedConfigurationSearchPageComponent } from '../+search-page/themed-configuration-search-page.component';
 import { SearchNavbarComponent } from '../search-navbar/search-navbar.component';
+import { LogInOrcidComponent } from './log-in/methods/orcid/log-in-orcid.component';
 import { MyDSpaceRequestTypeComponent } from './object-collection/shared/mydspace-request-type/mydspace-request-type.component';
 import { DsMultipleSelectControlComponent } from './form/builder/custom-controls/multiple-select/ds-multiple-select-control.component';
 import { DsDynamicMultipleSelectComponent } from './form/builder/ds-dynamic-form-ui/models/multiple-select/ds-dynamic-multiple-select.component';
@@ -452,6 +453,7 @@ const COMPONENTS = [
   ExistingRelationListElementComponent,
   LogInShibbolethComponent,
   LogInOidcComponent,
+  LogInOrcidComponent,
   LogInPasswordComponent,
   LogInContainerComponent,
   ItemVersionsComponent,
@@ -558,6 +560,7 @@ const ENTRY_COMPONENTS = [
   SearchAuthorityFilterComponent,
   LogInPasswordComponent,
   LogInShibbolethComponent,
+  LogInOrcidComponent,
   LogInOidcComponent,
   ItemVersionsComponent,
   BundleListElementComponent,

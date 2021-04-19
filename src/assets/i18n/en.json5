@@ -2856,6 +2856,8 @@
 
   "login.form.or-divider": "or",
 
+  "login.form.orcid": "Log in with ORCID",
+
   "login.form.password": "Password",
 
   "login.form.shibboleth": "Log in with Shibboleth",
@@ -3108,7 +3110,7 @@
 
   "mydspace.new-submission": "New submission",
 
-  "mydspace.new-bulk-import": "New import",
+  "mydspace.new-bulk-import": "New bulk import",
 
   "mydspace.new-submission-external": "Import metadata from external source",
 
@@ -3463,7 +3465,7 @@
 
   "person.page.orcid.sync-profile.affiliation" : "Affiliation",
 
-  "person.page.orcid.sync-profile.bibliographic" : "Bibliographic data",
+  "person.page.orcid.sync-profile.biographical" : "Biographical data",
 
   "person.page.orcid.sync-profile.education" : "Education",
 
@@ -4361,8 +4363,9 @@
 
   "search.filters.applied.charts.RELATION.Project.researchoutputs.title": "Research Output",
 
-  "search.filters.applied.charts.RELATION.CvProject.ipresearchoutputs.title": "Research Output",
+  "search.filters.applied.charts.RELATION.Project.fundings.title": "Fundings",
 
+  "search.filters.applied.charts.RELATION.CvProject.ipresearchoutputs.title": "Research Output",
 
   "search.filters.applied.charts.no.data.found": "No data found",
 
@@ -4603,6 +4606,16 @@
 
   "search.results.head": "Search Results",
 
+  "default.search.results.head": "Search Results",
+
+  "infrastructure.search.results.head": "Infrastructures Search Results",
+
+  "project_funding.search.results.head": "Projects Search Results",
+
+  "researchoutputs.search.results.head": "Publications Search Results",
+
+  "orgunit.search.results.head": "Organizations Search Results",
+
   "search.results.no-results": "Your search returned no results. Having trouble finding what you're looking for? Try putting",
 
   "search.results.no-results-link": "quotes around it",
@@ -4643,12 +4656,30 @@
 
   "sorting.dc.title.DESC": "Title Descending",
 
-  "sorting.score.DESC": "Relevance",
+  "sorting.score.ASC": "Relevance Ascending",
 
-  "sorting.ASC": "Ascending",
+  "sorting.score.DESC": "Relevance Descending",
 
-  "sorting.DESC": "Descending",
+  "sorting.dc.date.issued.ASC": "Date Issued Ascending",
 
+  "sorting.dc.date.issued.DESC": "Date Issued Descending",
+
+  "sorting.dc.date.accessioned.ASC": "Accessioned Date Ascending",
+
+  "sorting.dc.date.accessioned.DESC": "Accessioned Date Descending",
+
+  "sorting.lastModified.ASC": "Last modified Ascending",
+
+  "sorting.lastModified.DESC": "Last modified Descending",
+
+
+  "statistics.export.csv": "Export CSV",
+
+  "statistics.export.excel": "Export Excel",
+
+  "statistics.export.jpg": "Export as JPEG",
+
+  "statistics.export.png": "Export as PNG",
 
   "statistics.title": "Statistics",
 
@@ -5204,6 +5235,8 @@
   "submission.sections.submit.progressbar.describe.orgunit": "Org Unit basic information",
 
   "submission.sections.submit.progressbar.describe.institution-orgunit": "Org Unit basic information",
+
+  "submission.sections.submit.progressbar.describe.owner": "Owner",
 
   "submission.sections.submit.progressbar.describe.patent": "Patent basic information",
 
