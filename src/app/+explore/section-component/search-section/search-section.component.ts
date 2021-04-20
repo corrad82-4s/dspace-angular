@@ -55,9 +55,10 @@ export class SearchSectionComponent implements OnInit {
       queryArray: this.formBuilder.array([])
     }));
 
-    this.addQueryStatement();
-    this.addQueryStatement();
-    this.addQueryStatement();
+    const statements = this.searchSection.initialStatements ? this.searchSection.initialStatements : 3;
+    for (let i = 0; i < statements; i++) {
+      this.addQueryStatement();
+    }
   }
 
   /**
@@ -81,9 +82,10 @@ export class SearchSectionComponent implements OnInit {
    */
   onReset() {
     this.queryArray.controls.splice(0, this.queryArray.controls.length);
-    this.addQueryStatement();
-    this.addQueryStatement();
-    this.addQueryStatement();
+    const statements = this.searchSection.initialStatements ? this.searchSection.initialStatements : 3;
+    for (let i = 0; i < statements; i++) {
+      this.addQueryStatement();
+    }
   }
 
   /**
