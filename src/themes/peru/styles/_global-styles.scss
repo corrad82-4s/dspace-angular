@@ -22,6 +22,12 @@
   }
 }
 
+// Hack to obtain fluid layout
 .container {
   max-width: 98% !important;
+}
+
+.not-source-metadata,
+.not-source-metadata a {
+  color: lightgray !important;
 }
