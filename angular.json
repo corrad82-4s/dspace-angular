@@ -65,6 +65,11 @@
                 "input": "src/themes/dspace/styles/theme.scss",
                 "inject": false,
                 "bundleName": "dspace-theme"
+              },
+              {
+                "input": "src/themes/peru/styles/theme.scss",
+                "inject": false,
+                "bundleName": "peru-theme"
               }
             ],
             "scripts": []

@@ -426,7 +426,7 @@ export const environment: GlobalConfig = {
 
     {
       // The default dspace theme
-      name: 'dspace'
+      name: 'peru'
     },
   ],
   // Whether the UI should rewrite file download URLs to match its domain. Only necessary to enable when running UI and REST API on separate domains
