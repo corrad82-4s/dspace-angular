@@ -270,7 +270,7 @@ describe('EPersonDataService', () => {
       it('should send PatchRequest with add role metadata operations', () => {
         const operations = [{ op: 'add', path: '/metadata/perucris.eperson.role', value: role }];
         const expected = new PatchRequest(requestService.generateRequestId(), epersonsEndpoint + '/' + EPersonMock.uuid, operations);
-        expect(requestService.configure).toHaveBeenCalledWith(expected);
+        expect(requestService.send).toHaveBeenCalledWith(expected);
       });
     });
 
@@ -307,7 +307,7 @@ describe('EPersonDataService', () => {
       it('should send PatchRequest with add institutional role metadata operations', () => {
         const operations = [{ op: 'add', path: '/metadata/perucris.eperson.institutional-role', value: role }];
         const expected = new PatchRequest(requestService.generateRequestId(), epersonsEndpoint + '/' + EPersonMock.uuid, operations);
-        expect(requestService.configure).toHaveBeenCalledWith(expected);
+        expect(requestService.send).toHaveBeenCalledWith(expected);
       });
     });
 
@@ -344,7 +344,7 @@ describe('EPersonDataService', () => {
       it('should send PatchRequest with add institutional scoped role metadata operations', () => {
         const operations = [{ op: 'add', path: '/metadata/perucris.eperson.institutional-scoped-role', value: role }];
         const expected = new PatchRequest(requestService.generateRequestId(), epersonsEndpoint + '/' + EPersonMock.uuid, operations);
-        expect(requestService.configure).toHaveBeenCalledWith(expected);
+        expect(requestService.send).toHaveBeenCalledWith(expected);
       });
     });
   });

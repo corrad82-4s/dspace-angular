@@ -24,12 +24,11 @@ import { SearchService } from '../../../core/shared/search/search.service';
 import { ClaimedTaskDataService } from '../../../core/tasks/claimed-task-data.service';
 import { PoolTaskSearchResult } from '../../object-collection/shared/pool-task-search-result.model';
 import { ProcessTaskResponse } from '../../../core/tasks/models/process-task-response';
+import { WorkflowStep } from '../../../core/submission/models/workflowstep.model';
+import { WorkflowStepDataService } from '../../../core/submission/workflowstep-data.service';
 
 let mockDataService: PoolTaskDataService;
 let mockClaimedTaskDataService: ClaimedTaskDataService;
-import { WorkflowStep } from 'src/app/core/submission/models/workflowstep.model';
-import { WorkflowStepDataService } from 'src/app/core/submission/workflowstep-data.service';
-
 let component: PoolTaskActionsComponent;
 let fixture: ComponentFixture<PoolTaskActionsComponent>;
 
@@ -106,7 +105,7 @@ describe('PoolTaskActionsComponent', () => {
         { provide: PoolTaskDataService, useValue: mockDataService },
         { provide: ClaimedTaskDataService, useValue: mockClaimedTaskDataService },
         { provide: SearchService, useValue: searchService },
-        { provide: RequestService, useValue: requestServce },
+        { provide: RequestService, useValue: requestService },
         { provide: WorkflowStepDataService, useValue: mockWorkflowStepDataService }
       ],
       schemas: [NO_ERRORS_SCHEMA]

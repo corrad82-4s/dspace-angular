@@ -22,9 +22,11 @@ import { NotificationsService } from '../notifications/notifications.service';
 import { SearchService } from '../../core/shared/search/search.service';
 import { RequestService } from '../../core/data/request.service';
 import { ProcessTaskResponse } from '../../core/tasks/models/process-task-response';
+import { WorkflowStepDataService } from '../../core/submission/workflowstep-data.service';
 
 let mockDataService: PoolTaskDataService;
 let mockClaimedTaskDataService: ClaimedTaskDataService;
+let workflowStepDataService: WorkflowStepDataService;
 
 let component: PoolTaskActionsComponent;
 let fixture: ComponentFixture<PoolTaskActionsComponent>;
@@ -69,12 +71,19 @@ const item = Object.assign(new Item(), {
 const rdItem = createSuccessfulRemoteDataObject(item);
 const workflowitem = Object.assign(new WorkflowItem(), { item: observableOf(rdItem) });
 const rdWorkflowitem = createSuccessfulRemoteDataObject(workflowitem);
-mockObject = Object.assign(new PoolTask(), { workflowitem: observableOf(rdWorkflowitem), id: '1234' });
+mockObject = Object.assign(new PoolTask(), {
+  workflowitem: observableOf(rdWorkflowitem),
+  id: '1234',
+  _links: { step: { href: 'href' } }
+});
+
+const workflowStep: any = { id: null };
 
 describe('MyDSpaceReloadableActionsComponent', () => {
   beforeEach(fakeAsync(() => {
     mockDataService = new PoolTaskDataService(null, null, null, null, null, null, null, null);
     mockClaimedTaskDataService = new ClaimedTaskDataService(null, null, null, null, null, null, null, null);
+    workflowStepDataService = new WorkflowStepDataService(null, null, null, null, null, null, null, null);
     TestBed.configureTestingModule({
       imports: [
         TranslateModule.forRoot({
@@ -92,7 +101,8 @@ describe('MyDSpaceReloadableActionsComponent', () => {
         { provide: PoolTaskDataService, useValue: mockDataService },
         { provide: ClaimedTaskDataService, useValue: mockClaimedTaskDataService },
         { provide: SearchService, useValue: searchService },
-        { provide: RequestService, useValue: requestService }
+        { provide: RequestService, useValue: requestService },
+        { provide: WorkflowStepDataService, useValue: workflowStepDataService }
       ],
       schemas: [NO_ERRORS_SCHEMA]
     }).overrideComponent(PoolTaskActionsComponent, {
@@ -101,6 +111,9 @@ describe('MyDSpaceReloadableActionsComponent', () => {
   }));
 
   beforeEach(() => {
+
+    spyOn(workflowStepDataService, 'findByHref').and.returnValue(observableOf(createSuccessfulRemoteDataObject(workflowStep)));
+
     fixture = TestBed.createComponent(PoolTaskActionsComponent);
     component = fixture.componentInstance;
     component.object = mockObject;

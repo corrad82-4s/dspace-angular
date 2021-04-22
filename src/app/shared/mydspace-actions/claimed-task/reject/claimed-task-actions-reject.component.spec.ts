@@ -1,7 +1,6 @@
 import { ChangeDetectionStrategy, Injector, NO_ERRORS_SCHEMA } from '@angular/core';
 import { createSuccessfulRemoteDataObject$ } from '../../../../shared/remote-data.utils';
 import { WorkflowItemDataService } from '../../../../core/submission/workflowitem-data.service';
-import { ChangeDetectionStrategy, NO_ERRORS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { By } from '@angular/platform-browser';

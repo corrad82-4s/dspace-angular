@@ -1,9 +1,7 @@
-import { createSuccessfulRemoteDataObject, createSuccessfulRemoteDataObject$ } from '../../../../shared/remote-data.utils';
+import { createSuccessfulRemoteDataObject$ } from '../../../../shared/remote-data.utils';
 import { WorkflowItemDataService } from '../../../../core/submission/workflowitem-data.service';
-import { ChangeDetectionStrategy, NO_ERRORS_SCHEMA } from '@angular/core';
-import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { ChangeDetectionStrategy, Injector, NO_ERRORS_SCHEMA } from '@angular/core';
-import { async, ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { of, of as observableOf } from 'rxjs';

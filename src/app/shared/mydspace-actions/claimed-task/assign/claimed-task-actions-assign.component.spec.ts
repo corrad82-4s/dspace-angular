@@ -1,10 +1,10 @@
-import { ChangeDetectionStrategy, NO_ERRORS_SCHEMA } from '@angular/core';
+import { ChangeDetectionStrategy, Injector, NO_ERRORS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { By } from '@angular/platform-browser';
 import { NgbModal, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-translate/core';
-import { of as observableOf } from 'rxjs';
+import { of, of as observableOf } from 'rxjs';
 import { AuthService } from 'src/app/core/auth/auth.service';
 import { CollectionDataService } from 'src/app/core/data/collection-data.service';
 import { EPersonDataService } from 'src/app/core/eperson/eperson-data.service';
@@ -16,7 +16,6 @@ import { WorkflowItem } from 'src/app/core/submission/models/workflowitem.model'
 import { WorkflowStep } from 'src/app/core/submission/models/workflowstep.model';
 import { WorkflowItemDataService } from 'src/app/core/submission/workflowitem-data.service';
 import { WorkflowStepDataService } from 'src/app/core/submission/workflowstep-data.service';
-import { getMockTranslateService } from 'src/app/shared/mocks/translate.service.mock';
 import { NotificationsService } from 'src/app/shared/notifications/notifications.service';
 import { createSuccessfulRemoteDataObject$ } from 'src/app/shared/remote-data.utils';
 import { NotificationsServiceStub } from 'src/app/shared/testing/notifications-service.stub';
@@ -26,6 +25,12 @@ import { ClaimedTask } from '../../../../core/tasks/models/claimed-task-object.m
 import { ProcessTaskResponse } from '../../../../core/tasks/models/process-task-response';
 import { TranslateLoaderMock } from '../../../mocks/translate-loader.mock';
 import { ClaimedTaskActionsAssignComponent } from './claimed-task-actions-assign.component';
+import { Router } from '@angular/router';
+import { RouterStub } from '../../../testing/router.stub';
+import { SearchService } from '../../../../core/shared/search/search.service';
+import { getMockSearchService } from '../../../mocks/search-service.mock';
+import { RequestService } from '../../../../core/data/request.service';
+import { getMockRequestService } from '../../../mocks/request.service.mock';
 
 let component: ClaimedTaskActionsAssignComponent;
 let fixture: ComponentFixture<ClaimedTaskActionsAssignComponent>;
@@ -91,6 +96,10 @@ describe('ClaimedTaskActionsAssignComponent', () => {
     getAuthenticatedUserFromStore: observableOf(currentUser)
   });
 
+  const searchService = getMockSearchService();
+
+  const requestService = getMockRequestService();
+
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
@@ -105,6 +114,7 @@ describe('ClaimedTaskActionsAssignComponent', () => {
       ],
       declarations: [ClaimedTaskActionsAssignComponent],
       providers: [
+        { provide: Injector, useValue: {} },
         { provide: ClaimedTaskDataService, useValue: claimedTaskService },
         { provide: CollectionDataService, useValue: collectionService },
         { provide: WorkflowItemDataService, useValue: workflowItemService },
@@ -113,6 +123,9 @@ describe('ClaimedTaskActionsAssignComponent', () => {
         { provide: EPersonDataService, useValue: ePersonService },
         { provide: AuthService, useValue: authService },
         { provide: NotificationsService, useValue: new NotificationsServiceStub() },
+        { provide: Router, useValue: new RouterStub() },
+        { provide: SearchService, useValue: searchService },
+        { provide: RequestService, useValue: requestService },
         FormBuilder,
         NgbModal
       ],
@@ -165,30 +178,41 @@ describe('ClaimedTaskActionsAssignComponent', () => {
 
   }));
 
-  it('on form submit should call claimedTaskService\'s submitTask with the expected body', async(() => {
+  describe('submitTask', () => {
+    let expectedBody;
 
-    spyOn(component.processCompleted, 'emit');
+    beforeEach(() => {
+      spyOn(component.processCompleted, 'emit');
+      spyOn(component, 'startActionExecution').and.returnValue(of(null));
 
-    const expectedBody = {
-      [component.option]: 'true',
-      user: null
-    };
+      expectedBody = {
+        [component.option]: 'true'
+      };
 
-    const btn = fixture.debugElement.query(By.css('.btn-info'));
-    btn.nativeElement.click();
-    fixture.detectChanges();
-
-    fixture.whenStable().then(() => {
-      expect(component.modalRef).toBeDefined();
-
-      const form = ((document as any).querySelector('form'));
-      form.dispatchEvent(new Event('ngSubmit'));
+      component.submitTask();
       fixture.detectChanges();
-
-      expect(claimedTaskService.submitTask).toHaveBeenCalledWith(object.id, expectedBody);
-      expect(component.processCompleted.emit).toHaveBeenCalledWith(true);
     });
 
-  }));
+    it('should start the action execution', () => {
+      expect(component.startActionExecution).toHaveBeenCalled();
+    });
+  });
+
+  describe('actionExecution', () => {
+
+    it('should call claimedTaskService\'s submitTask', (done) => {
+
+      const expectedBody = {
+        [component.option]: 'true',
+        user: ''
+      };
+
+      component.actionExecution().subscribe(() => {
+        expect(claimedTaskService.submitTask).toHaveBeenCalledWith(object.id, expectedBody);
+        done();
+      });
+    });
+
+  });
 
 });

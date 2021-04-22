@@ -15,12 +15,12 @@ import { getFirstSucceededRemoteDataPayload, getFirstSucceededRemoteListPayload 
 import { WorkflowItemDataService } from '../../../../core/submission/workflowitem-data.service';
 import { WorkflowStepDataService } from '../../../../core/submission/workflowstep-data.service';
 import { NotificationsService } from '../../../../shared/notifications/notifications.service';
-import { ClaimedTaskDataService } from '../../../../core/tasks/claimed-task-data.service';
 import { ClaimedTaskActionsAbstractComponent } from '../abstract/claimed-task-actions-abstract.component';
 import { rendersWorkflowTaskOption } from '../switcher/claimed-task-actions-decorator';
 import { Router } from '@angular/router';
 import { SearchService } from '../../../../core/shared/search/search.service';
 import { RequestService } from '../../../../core/data/request.service';
+import { ClaimedTask } from '../../../../core/tasks/models/claimed-task-object.model';
 
 export const WORKFLOW_TASK_OPTION_ASSIGN = 'submit_assign';
 
@@ -81,11 +81,9 @@ export class ClaimedTaskActionsAssignComponent extends ClaimedTaskActionsAbstrac
    super(injector, router, notificationsService, translate, searchService, requestService);
  }
 
+  initObjects(object: ClaimedTask) {
+    super.initObjects(object);
 
-  /**
-   * Initialize form
-   */
-  ngOnInit() {
     this.assignForm = this.formBuilder.group({
       user: ['', Validators.required]
     });

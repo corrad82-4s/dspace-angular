@@ -70,12 +70,7 @@ export class PoolTaskActionsComponent extends MyDSpaceReloadableActionsComponent
     super(PoolTask.type, injector, router, notificationsService, translate, searchService, requestService);
   }
 
-  /**
-   * Claim the task.
-   */
-  claim() {
-    this.subs.push(this.startActionExecution().pipe(take(1)).subscribe());
-  }
+
 
   /**
    * Init the PoolTask and WorkflowItem objects
@@ -102,6 +97,13 @@ export class PoolTaskActionsComponent extends MyDSpaceReloadableActionsComponent
   }
 
   /**
+   * Claim the task.
+   */
+  claim() {
+    this.subs.push(this.startActionExecution().pipe(take(1)).subscribe());
+  }
+
+  /**
    * Retrieve the itemUuid.
    */
   initReloadAnchor() {
@@ -114,15 +116,17 @@ export class PoolTaskActionsComponent extends MyDSpaceReloadableActionsComponent
     });
   }
 
-  ngOnDestroy() {
-    this.subs.forEach((sub) => sub.unsubscribe());
-  }
-
-
   isInstitutionRejectionTask(): Observable<boolean> {
     return this.workflowStepService.findByHref(this.object._links.step.href).pipe(
       getFirstSucceededRemoteData(),
       map((workflowStep) => workflowStep.payload && workflowStep.payload.id === 'waitForConcytecStep')
     );
   }
+
+  ngOnDestroy() {
+    this.subs.forEach((sub) => sub.unsubscribe());
+  }
+
+
+
 }

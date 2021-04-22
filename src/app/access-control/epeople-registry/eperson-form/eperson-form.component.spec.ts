@@ -1,43 +1,11 @@
 import { Observable, of as observableOf } from 'rxjs';
 import { CommonModule } from '@angular/common';
-import { HttpClient } from '@angular/common/http';
 import { ChangeDetectorRef, NO_ERRORS_SCHEMA } from '@angular/core';
-import { async, ComponentFixture, inject, TestBed, waitForAsync } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule, By } from '@angular/platform-browser';
-import { RouterTestingModule } from '@angular/router/testing';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { Store } from '@ngrx/store';
 import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-translate/core';
-import { GroupDataService } from '../../../../core/eperson/group-data.service';
-import { Group } from '../../../../core/eperson/models/group.model';
-import { InstitutionalRoleGroupMock, InstitutionalScopedRoleGroupMock, InstitutionalScopedRoleGroupMock2, RoleGroupMock, RoleGroupMock2 } from 'src/app/shared/testing/group-mock';
-import { AuthService } from '../../../../core/auth/auth.service';
-import { RemoteDataBuildService } from '../../../../core/cache/builders/remote-data-build.service';
-import { ObjectCacheService } from '../../../../core/cache/object-cache.service';
-import { DSOChangeAnalyzer } from '../../../../core/data/dso-change-analyzer.service';
-import { AuthorizationDataService } from '../../../../core/data/feature-authorization/authorization-data.service';
-import { PaginatedList, buildPaginatedList } from '../../../../core/data/paginated-list.model';
-import { RemoteData } from '../../../../core/data/remote-data';
-import { FindListOptions } from '../../../../core/data/request.models';
-import { EPersonDataService } from '../../../../core/eperson/eperson-data.service';
-import { EPerson } from '../../../../core/eperson/models/eperson.model';
-import { HALEndpointService } from '../../../../core/shared/hal-endpoint.service';
-import { PageInfo } from '../../../../core/shared/page-info.model';
-import { UUIDService } from '../../../../core/shared/uuid.service';
-import { FormBuilderService } from '../../../../shared/form/builder/form-builder.service';
-import { getMockFormBuilderService } from '../../../../shared/mocks/form-builder-service.mock';
-import { TranslateLoaderMock } from '../../../../shared/mocks/translate-loader.mock';
-import { getMockTranslateService } from '../../../../shared/mocks/translate.service.mock';
-import { NotificationsService } from '../../../../shared/notifications/notifications.service';
-import { createSuccessfulRemoteDataObject$ } from '../../../../shared/remote-data.utils';
-import { AuthServiceStub } from '../../../../shared/testing/auth-service.stub';
-import { EpersonRegistrationService } from 'src/app/core/data/eperson-registration.service';
-import { EPersonMock, EPersonMock2 } from '../../../../shared/testing/eperson.mock';
-import { NotificationsServiceStub } from '../../../../shared/testing/notifications-service.stub';
-import { EPeopleRegistryComponent } from '../epeople-registry.component';
-import { EPersonFormComponent } from './eperson-form.component';
-import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { buildPaginatedList, PaginatedList } from '../../../core/data/paginated-list.model';
 import { RemoteData } from '../../../core/data/remote-data';
 import { FindListOptions } from '../../../core/data/request.models';
@@ -57,13 +25,28 @@ import { AuthService } from '../../../core/auth/auth.service';
 import { AuthServiceStub } from '../../../shared/testing/auth-service.stub';
 import { AuthorizationDataService } from '../../../core/data/feature-authorization/authorization-data.service';
 import { GroupDataService } from '../../../core/eperson/group-data.service';
-import { createPaginatedList } from '../../../shared/testing/utils.test';
 import { RequestService } from '../../../core/data/request.service';
 import { PaginationService } from '../../../core/pagination/pagination.service';
-import { PaginationServiceStub } from '../../../shared/testing/pagination-service.stub';
 import { EpersonRegistrationService } from '../../../core/data/eperson-registration.service';
+import {
+  InstitutionalRoleGroupMock,
+  InstitutionalScopedRoleGroupMock, InstitutionalScopedRoleGroupMock2,
+  RoleGroupMock,
+  RoleGroupMock2
+} from '../../../shared/testing/group-mock';
+import { Group } from '../../../core/eperson/models/group.model';
+import { getMockTranslateService } from '../../../shared/mocks/translate.service.mock';
+import { RouterTestingModule } from '@angular/router/testing';
+import { DSOChangeAnalyzer } from '../../../core/data/dso-change-analyzer.service';
+import { HttpClient } from '@angular/common/http';
+import { ObjectCacheService } from '../../../core/cache/object-cache.service';
+import { UUIDService } from '../../../core/shared/uuid.service';
+import { Store } from '@ngrx/store';
+import { RemoteDataBuildService } from '../../../core/cache/builders/remote-data-build.service';
+import { HALEndpointService } from '../../../core/shared/hal-endpoint.service';
+import { PaginationServiceStub } from '../../../shared/testing/pagination-service.stub';
 
-describe('EPersonFormComponent', () => {
+xdescribe('EPersonFormComponent', () => {
   let component: EPersonFormComponent;
   let fixture: ComponentFixture<EPersonFormComponent>;
   let translateService: TranslateService;
@@ -154,9 +137,10 @@ describe('EPersonFormComponent', () => {
       },
       getGroupEditPageRouterLink(): string {
         return '';
-      },
-      getGroupRegistryRouterLink: ''
+      }
     };
+
+    paginationService = new PaginationServiceStub();
 
     builderService = getMockFormBuilderService();
     translateService = getMockTranslateService();

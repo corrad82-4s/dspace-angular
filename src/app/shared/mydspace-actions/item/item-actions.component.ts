@@ -19,6 +19,9 @@ import { Observable } from 'rxjs/internal/Observable';
 import { of } from 'rxjs/internal/observable/of';
 import { BehaviorSubject } from 'rxjs';
 import { getItemPageRoute } from '../../../+item-page/item-page-routing-paths';
+import { ProcessTaskResponse } from '../../../core/tasks/models/process-task-response';
+import { DSpaceObject } from '../../../core/shared/dspace-object.model';
+import { RemoteData } from '../../../core/data/remote-data';
 
 /**
  * This component represents mydspace actions related to Item object.
@@ -257,6 +260,14 @@ export class ItemActionsComponent extends MyDSpaceActionsComponent<Item, ItemDat
       take(1),
       map((value: PaginatedList<Relationship>) => value.totalElements !== 0 )
     );
+  }
+
+  actionExecution(): Observable<ProcessTaskResponse> {
+    return undefined;
+  }
+
+  reloadObjectExecution(): Observable<RemoteData<DSpaceObject> | DSpaceObject> {
+    return undefined;
   }
 
 }
