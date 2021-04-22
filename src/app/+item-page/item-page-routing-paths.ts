@@ -18,6 +18,16 @@ export function getItemPageRoute(item: Item) {
   return getEntityPageRoute(type, item.uuid);
 }
 
+/**
+ * Get the route to an item's page
+ * Depending on the item's entity type, the route will either start with /items or /entities
+ * @param type  The item type
+ * @param uuid The item uuid
+ */
+export function getItemPageRouteByTypeAndUuid(type: string, uuid: string) {
+  return getEntityPageRoute(type, uuid);
+}
+
 export function getItemEditRoute(item: Item) {
   return new URLCombiner(getItemPageRoute(item), ITEM_EDIT_PATH).toString();
 }

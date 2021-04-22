@@ -12,7 +12,7 @@ import { Observable } from 'rxjs';
 import { MultiColumnTopSection } from '../../../core/layout/models/section.model';
 import { SortDirection, SortOptions } from '../../../core/cache/models/sort-options.model';
 import { map } from 'rxjs/operators';
-import { getItemPageRoute } from '../../../+item-page/item-page-routing-paths';
+import { getItemPageRouteByTypeAndUuid } from '../../../+item-page/item-page-routing-paths';
 
 @Component({
   selector: 'ds-multi-column-top-section',
@@ -56,10 +56,11 @@ export class MultiColumnTopSectionComponent implements OnInit {
 
   /**
    * Get the item page url
-   * @param id The item id for which the url is requested
+   * @param topObject The item for which the url is requested
    */
   getItemPage(topObject): string {
-    return getItemPageRoute(topObject);
+    const type = Metadata.firstValue(topObject.metadata, 'dspace.entity.type');
+    return getItemPageRouteByTypeAndUuid(type, topObject.id);
   }
 
   getColumns(): TopSectionColumn[] {
