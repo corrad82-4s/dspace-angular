@@ -16,6 +16,31 @@
             </div>
 
             <div class="card mb-4">
+                <div class="card-header">{{'register-page.create-profile-dni.email.header' | translate}}</div>
+                <div class="card-body">
+                    <form [class]="'ng-invalid'" [formGroup]="emailForm">
+
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-12">
+                                    <label for="email">{{'register-page.create-profile-dni.email' | translate}}</label>
+                                    <input [className]="(emailControl.invalid) && (emailControl.dirty || emailControl.touched) ? 'form-control is-invalid' :'form-control'"
+                                           type="text" id="email" formControlName="email"/>
+                                    <div *ngIf="emailControl.invalid && (emailControl.dirty || emailControl.touched)"
+                                         class="invalid-feedback show-feedback">
+                                        <span *ngIf="emailControl.errors && emailControl.errors.required">
+                                            {{ 'register-page.create-profile-dni.email.error' | translate }}
+                                        </span>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="card mb-4">
                 <div class="card-header">{{'register-page.create-profile.security.header' | translate}}</div>
                 <div class="card-body">
 
