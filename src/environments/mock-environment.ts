@@ -255,6 +255,21 @@ export const environment: Partial<GlobalConfig> = {
         entityType: 'ORGUNIT',
         icon: 'fa fa-university'
       }
+    ],
+    metadataIcons: [
+      {
+        metadata: 'person.identifier.orcid',
+        icon: 'fa fa-check',
+        classes: 'text-success',
+        title: 'cris.boxmetadata.verified.orcid'
+      },
+      {
+        metadata: 'perucris.identifier.dni',
+        icon: 'fa fa-check',
+        classes: 'text-success',
+        title: 'cris.boxmetadata.verified.dni'
+      }
+
     ]
   }
 };
