@@ -10,6 +10,7 @@
     <div  [class]="'d-flex flex-column ' + valueStyle">
     <span *ngFor="let metadataValue of metadataValues" class="txt-value">
       {{ normalizeValue(metadataValue) | dsDate }}
+      <i *ngIf="metadataIcon" class="{{ metadataIcon.icon }} {{ metadataIcon.classes}}" title="{{ metadataIcon.title | translate }}"></i>
     </span>
     </div>
   </ng-template>
