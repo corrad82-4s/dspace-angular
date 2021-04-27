@@ -1427,6 +1427,10 @@
 
   "context-menu.actions.dso-page-edit.ITEM.btn": "Administer",
 
+  "context-menu.actions.hide-notification.btn": "Hide Notification",
+
+  "context-menu.actions.show-notification.btn": "Show Notification",
+
   "datafile.listelement.badge": "Data File",
 
   "datapackage.listelement.badge": "Data Package",
@@ -6084,6 +6088,10 @@
 
   "cris.boxmetadata.label.recipient": "Recipient",
 
-  "cris.boxmetadata.label.message": "Message"
+  "cris.boxmetadata.label.message": "Message",
+
+  "cris.boxmetadata.verified.orcid": "Verified in ORCID",
+
+  "cris.boxmetadata.verified.dni": "Verified in Reniec"
 
 }
