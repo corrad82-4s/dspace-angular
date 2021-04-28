@@ -202,6 +202,7 @@ import { OpenaireSuggestionSource } from './openaire/reciter-suggestions/models/
 import { StatisticsCategory } from './statistics/models/statistics-category.model';
 import { RootDataService } from './data/root-data.service';
 import { SearchConfig } from '../shared/search/search-filters/search-config.model';
+import { EditItemRelationsGuard } from '../edit-item-relationships/guards/edit-item-relationships.guard';
 import { ItemSourcesDataService } from './item-sources/item-sources-data.service';
 import { ItemSources } from './item-sources/model/item-sources.model';
 import { CvEntity } from './profile/model/cv-entity.model';
@@ -348,7 +349,8 @@ const PROVIDERS = [
   OrcidQueueService,
   OrcidHistoryService,
   EditItemDataService,
-  EditItemModeDataService
+  EditItemModeDataService,
+  EditItemRelationsGuard,
 ];
 
 /**
