@@ -168,7 +168,8 @@ export class EditItemRelationshipsComponent implements OnInit {
         this.item = rd.payload;
 
         this.itemType = this.item.firstMetadataValue('dspace.entity.type');
-        const relationshipConfig = 'RELATION.' + this.itemType + '.' + this.relationshipType;
+        // this configuration with 'all' prefix is needed in discovery because this search must return hidden items
+        const relationshipConfig = 'RELATION.' + this.itemType + '.all' + this.relationshipType;
 
         this.searchConfigService.setOptions(relationshipConfig,this.item.id);
 
@@ -206,7 +207,7 @@ export class EditItemRelationshipsComponent implements OnInit {
       followLink('leftItem')
     )
     .subscribe((relationships: Relationship[]) => {
-      const relations = relationships.filter((relation) => relation.leftwardValue.toLowerCase().includes(this.relationshipType));
+      const relations = relationships.filter((relation) => hasValue(relation.leftwardValue)  && relation.leftwardValue.toLowerCase().includes(this.relationshipType));
       setTimeout( () => {
         console.log(relations);
         this.relationshipResults$.next(relations);

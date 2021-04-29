@@ -8,7 +8,7 @@
       (cdkDropListDropped)="drop($event)">
 
       <div class="relationships-sort-list" *ngFor="let relationship of relationships" cdkDrag>
-        <ds-relationships-items-list-preview [item]="(relationship.leftItem | async)?.payload"></ds-relationships-items-list-preview>
+        <ds-relationships-items-list-preview *ngIf="!relationship.leftwardValue.toLowerCase().includes('hidden') " [item]="(relationship.leftItem | async)?.payload"></ds-relationships-items-list-preview>
       </div>
 
     </div>
