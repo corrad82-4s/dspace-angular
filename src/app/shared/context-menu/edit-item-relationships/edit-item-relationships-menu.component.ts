@@ -1,6 +1,6 @@
 import { Component, Inject, OnDestroy, OnInit } from '@angular/core';
 
-import { BehaviorSubject, Observable, Subscription } from 'rxjs';
+import {BehaviorSubject, Observable, of, Subscription} from 'rxjs';
 import { map, mergeMap, startWith } from 'rxjs/operators';
 import { NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { hasValue, isNotEmpty } from '../../empty.util';
@@ -118,7 +118,8 @@ export class EditItemRelationshipsMenuComponent extends ContextMenuEntryComponen
     this.subs.push(this.boxService.findByItem(this.contextMenuObject.id, tab.id)
       .pipe(getFirstSucceededRemoteListPayload())
       .subscribe( (boxes: Box[]) => {
-        const relationshipsBoxes = boxes.filter( (box) => box.boxType === 'RELATION');
+        // for PGC customization, notifications are handled in a different way
+        const relationshipsBoxes = boxes.filter( (box) => box.boxType === 'RELATION' && box.shortname !== 'notifications');
         this.relationships.push(...relationshipsBoxes);
       }));
   }
@@ -134,6 +135,10 @@ export class EditItemRelationshipsMenuComponent extends ContextMenuEntryComponen
    * Check if edit mode is available
    */
   isEditAvailable(): Observable<boolean> {
+    // PGC customization, management available, right now, only for CvPerson entities
+    if (this.contextMenuObject.firstMetadataValue('dspace.entity.type') !== 'CvPerson') {
+      return of(false);
+    }
     return this.editModes$.asObservable().pipe(
       map((editModes) => isNotEmpty(editModes) && editModes.length > 0)
     );

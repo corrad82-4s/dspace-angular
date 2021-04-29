@@ -1427,9 +1427,13 @@
 
   "context-menu.actions.dso-page-edit.ITEM.btn": "Administer",
 
-  "context-menu.actions.edit-item-relationships.btn.researchoutputs": "Manage Research Outputs",
+  "context-menu.actions.edit-item-relationships.btn.researchoutputs": "Manage Publications",
 
   "context-menu.actions.edit-item-relationships.btn.projects": "Manage Projects",
+
+  "context-menu.actions.edit-item-relationships.btn.equipments": "Manage Equipments",
+
+  "context-menu.actions.edit-item-relationships.btn.patents": "Manage Patents",
 
   "context-menu.actions.edit-item-relationships.btn.organizations": "Manage Organizations",
 
@@ -1441,9 +1445,7 @@
 
   "context-menu.actions.edit-item-relationships.btn.people": "Manage People",
 
-  "context-menu.actions.edit-item-relationships.btn.projects": "Manage Projects",
 
-  
 
   "datafile.listelement.badge": "Data File",
 
@@ -5708,11 +5710,13 @@
 
   "cris.box.label.cvprofiles": "CTIVitae Profiles",
 
-  "cris.box.label.projects": "Projects",
+  "cris.box.label.selectedprojects": "Selected Projects",
 
   "cris.box.label.publications": "Publications",
 
   "cris.box.label.patents": "Patents",
+
+  "cris.box.label.selectedpatents": "Selected Patents",
 
   "cris.box.label.orgunits": "OrgUnits",
 
@@ -5742,7 +5746,11 @@
 
   "cris.box.label.equipments": "Equipments",
 
+  "cris.box.label.selectedequipments": "Selected Equipments",
+
   "cris.box.label.notifications": "Notifications",
+
+  "cris.box.label.hiddennotifications": "Hidden Notifications",
 
   "cris.box.label.orgunit'sresearchersprojects": "OrgUnit's Researchers projects",
 
