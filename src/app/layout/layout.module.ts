@@ -45,6 +45,7 @@ import { SourcesOfInformationComponent } from './peru-layout/sources-of-informat
 import { PendingCorrectionComponent } from './peru-layout/pending-corrections/pending-correction/pending-correction.component';
 import { PendingCorrectionsComponent } from './peru-layout/pending-corrections/pending-corrections.component';
 import { PendingCorrectionDetailsComponent } from './peru-layout/pending-corrections/pending-correction/pending-correction-details/pending-correction-details.component';
+import { TextVerifiedComponent } from './default-layout/boxes/components/text-verified/text-verified.component';
 
 const ENTRY_COMPONENTS = [
   // put only entry components that use custom decorator
@@ -69,7 +70,8 @@ const ENTRY_COMPONENTS = [
   PeruTabComponent,
   PeruMetadataBoxComponent,
   PeruSearchBoxComponent,
-  PeruMetricsBoxComponent
+  PeruMetricsBoxComponent,
+  TextVerifiedComponent
 ];
 @NgModule({
   declarations: [
@@ -113,6 +115,7 @@ const ENTRY_COMPONENTS = [
     PendingCorrectionDetailsComponent,
     SourcesOfInformationComponent,
     PeruSidebarComponent,
+    TextVerifiedComponent
   ],
   imports: [
     CommonModule,

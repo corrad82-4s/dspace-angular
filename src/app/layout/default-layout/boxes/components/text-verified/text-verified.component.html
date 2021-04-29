@@ -6,19 +6,13 @@
   </span>
 
 
-  <ng-template #metadata>
+  <div>
     <div  [class]="'d-flex flex-column ' + valueStyle">
     <span *ngFor="let metadataValue of metadataValues" class="txt-value">
       {{ normalizeValue(metadataValue) | dsDate }}
+      <i *ngIf="metadataIcon" class="{{ metadataIcon.icon }} {{ metadataIcon.classes}}" title="{{ metadataIcon.title | translate }}"></i>
     </span>
     </div>
-  </ng-template>
-
-  <div  *ngIf="indexToBeRendered>=0; else metadata"  [class]="'d-flex flex-column ' + valueStyle">
-    <span *ngFor="let metadataValue of [metadataValues[indexToBeRendered]]" class="txt-value">
-      {{ normalizeValue(metadataValue)  }}
-    </span>
   </div>
-
 
 </div>
