@@ -42,10 +42,12 @@ import { SubmissionModule } from '../../app/submission/submission.module';
 import { MyDSpacePageModule } from '../../app/+my-dspace-page/my-dspace-page.module';
 import { NavbarComponent } from './app/navbar/navbar.component';
 import { FooterComponent } from './app/footer/footer.component';
+import { HeaderComponent } from './app/header/header.component';
 
 
 const DECLARATIONS = [
   HomeNewsComponent,
+  HeaderComponent,
   NavbarComponent,
   FooterComponent
 ];

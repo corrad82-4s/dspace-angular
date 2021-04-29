@@ -9,8 +9,10 @@
   --ds-navbar-link-color: #{$gray-600};
   --ds-navbar-link-color-hover: #{darken($gray-600, 15%)};
 
-  --ds-ctivitae-breadcrumb-bg: #dbfbff;
-  --ds-ctivitae-breadcrumb-link-color: #{$cyan};
-  --ds-ctivitae-breadcrumb-link-active-color: #{darken($cyan, 30%)};
+  --ds-header-bg: #00a0af;
+  --ds-header-icon-color: #{darken(white, 5%)};
+  --ds-header-icon-color-hover: white;
+  --ds-navbar-link-color: #{darken(white, 5%)};
+  --ds-navbar-link-color-hover: white;
 }
 

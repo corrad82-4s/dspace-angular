@@ -40,10 +40,12 @@ import { CollectionPageModule } from '../../app/+collection-page/collection-page
 import { SubmissionModule } from '../../app/submission/submission.module';
 import { MyDSpacePageModule } from '../../app/+my-dspace-page/my-dspace-page.module';
 import { NavbarComponent } from './app/navbar/navbar.component';
+import { HeaderComponent } from './app/header/header.component';
 
 
 const DECLARATIONS = [
-  NavbarComponent
+  NavbarComponent,
+  HeaderComponent
 ];
 
 @NgModule({

@@ -28,7 +28,7 @@
     "ng-high-memory": "node --max_old_space_size=8192 node_modules/@angular/cli/bin/ng",
     "build:client-and-server-bundles": "npm run ng-high-memory -- build --prod && npm run ng-high-memory -- run dspace-angular:server:production --bundleDependencies true",
     "test:watch": "npm-run-all --parallel config:test:watch test",
-    "test": "ng test --sourceMap=true --watch=true",
+    "test": "npm run ng-high-memory -- test --sourceMap=true --watch=true",
     "test:headless": "ng test --watch=false --sourceMap=true --browsers=ChromeHeadless --code-coverage",
     "lint": "ng lint",
     "lint-fix": "ng lint --fix=true",
