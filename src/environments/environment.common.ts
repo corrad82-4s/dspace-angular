@@ -428,6 +428,11 @@ export const environment: GlobalConfig = {
       // The default dspace theme
       name: 'peru'
     },
+    // {
+    //   // A theme for the ctivitae community and all collections and/or items within it
+    //   name: 'ctivitae',
+    //   handle: '123456789/23576'
+    // }
   ],
   // Whether the UI should rewrite file download URLs to match its domain. Only necessary to enable when running UI and REST API on separate domains
   rewriteDownloadUrls: false,
