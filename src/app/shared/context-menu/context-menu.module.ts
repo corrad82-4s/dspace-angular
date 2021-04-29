@@ -18,6 +18,7 @@ import { AddCvPublicationMenuComponent } from './add-cv-publication/add-cv-publi
 import { AddCvPatentMenuComponent } from './add-cv-patent/add-cv-patent-menu.component';
 import { AddCvProjectMenuComponent } from './add-cv-project/add-cv-project-menu.component';
 import { ModifyForProfileMenuComponent } from './modify-for-profile/modify-for-profile-menu.component';
+import { HideNotificationMenuComponent } from './hide-notification/hide-notification-menu.component';
 
 const COMPONENTS = [
   BulkImportMenuComponent,
@@ -32,6 +33,7 @@ const COMPONENTS = [
   AddCvProjectMenuComponent,
   AddCvPatentMenuComponent,
   ModifyForProfileMenuComponent,
+  HideNotificationMenuComponent,
   ExportCollectionMenuComponent,
   EditItemRelationshipsMenuComponent
 ];
