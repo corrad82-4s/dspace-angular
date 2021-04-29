@@ -6,6 +6,8 @@ import { ItemDataService } from '../core/data/item-data.service';
 import { followLink } from '../shared/utils/follow-link-config.model';
 import { Item } from '../core/shared/item.model';
 import { getFirstCompletedRemoteData } from '../core/shared/operators';
+import { ResolvedAction } from '../core/resolving/resolver.actions';
+import { Store } from '@ngrx/store';
 
 /**
  * This class represents a resolver that requests a specific item before the route is activated
@@ -13,7 +15,7 @@ import { getFirstCompletedRemoteData } from '../core/shared/operators';
 @Injectable()
 export class CrisItemPageResolver implements Resolve<RemoteData<Item>> {
 
-  constructor(private itemService: ItemDataService) {
+  constructor(private itemService: ItemDataService, private store: Store<any>,) {
 
   }
 
@@ -25,13 +27,20 @@ export class CrisItemPageResolver implements Resolve<RemoteData<Item>> {
    * or an error if something went wrong
    */
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<RemoteData<Item>> {
-    return this.itemService.findById(route.params.id,
+    const itemRD$ = this.itemService.findById(route.params.id,
       true, true,
       followLink('owningCollection'),
       followLink('bundles'),
       followLink('relationships'),
       followLink('version', undefined, true, true, true, followLink('versionhistory')),
     ).pipe(getFirstCompletedRemoteData());
+
+    itemRD$.subscribe((itemRD: RemoteData<Item>) => {
+      this.store.dispatch(new ResolvedAction(state.url, itemRD.payload));
+    });
+
+
+    return itemRD$;
   }
 
 }
