@@ -5776,11 +5776,15 @@
 
   "cris.box.label.projects": "Projects ",
 
+  "cris.box.label.education": "Education",
+
   "cris.box.label.equipments": "Equipments",
 
   "cris.box.label.selectedequipments": "Selected Equipments",
 
   "cris.box.label.notifications": "Notifications",
+
+  "cris.box.label.notificationsto": "Recipient(s)",
 
   "cris.box.label.hiddennotifications": "Hidden Notifications",
 
@@ -5990,6 +5994,8 @@
 
   "cris.boxmetadata.label.education": "Education",
 
+  "cris.boxmetadata.label.educationrole": "Role",
+
   "cris.boxmetadata.label.dni": "DNI",
 
   "cris.boxmetadata.label.passport": "Passport",
@@ -6157,6 +6163,9 @@
   "cris.boxmetadata.label.recipient": "Recipient",
 
   "cris.boxmetadata.label.message": "Message",
+
+
+  "cris.boxmetadata.label.messageto": "Recipient(s)",
 
   "cris.boxmetadata.verified.orcid": "Verified in ORCID",
 
