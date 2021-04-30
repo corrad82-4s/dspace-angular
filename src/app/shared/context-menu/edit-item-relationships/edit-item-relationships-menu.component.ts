@@ -118,8 +118,9 @@ export class EditItemRelationshipsMenuComponent extends ContextMenuEntryComponen
     this.subs.push(this.boxService.findByItem(this.contextMenuObject.id, tab.id)
       .pipe(getFirstSucceededRemoteListPayload())
       .subscribe( (boxes: Box[]) => {
-        // for PGC customization, notifications are handled in a different way
-        const relationshipsBoxes = boxes.filter( (box) => box.boxType === 'RELATION' && box.shortname !== 'notifications');
+        // for PGC customization, notifications are handled in a different way, 'selected' and 'notifications' should be excluded
+        // FIXME: a allow/deny list can be useful to decide which boxes are included in manage feature
+        const relationshipsBoxes = boxes.filter( (box) => box.boxType === 'RELATION' && !box.shortname.includes('notifications') && !box.shortname.includes('selected') && !box.shortname.includes('hrprofiles'));
         this.relationships.push(...relationshipsBoxes);
       }));
   }

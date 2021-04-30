@@ -4294,13 +4294,25 @@
 
   "search.filters.applied.charts.default.title": "Search Output",
 
+  "search.filters.applied.charts.RELATION.CvPerson.selectedresearchoutputs.title": "Selected Research Outputs",
+
   "search.filters.applied.charts.RELATION.CvPerson.researchoutputs.title": "Research Outputs",
 
+  "search.filters.applied.charts.RELATION.CvPerson.selectedprojects.title": "Selected Projects",
+
   "search.filters.applied.charts.RELATION.CvPerson.projects.title": "Projects",
+
+  "search.filters.applied.charts.RELATION.CvPerson.selectedpatents.title": "Selected Patents",
+
+  "search.filters.applied.charts.RELATION.CvPerson.equipments.title": "Equipments",
+
+  "search.filters.applied.charts.RELATION.CvPerson.selectedequipments.title": "Selected Equipments",
 
   "search.filters.applied.charts.RELATION.CvPerson.patents.title": "Patents",
 
   "search.filters.applied.charts.RELATION.CvPerson.notifications.title": "Notifications",
+
+  "search.filters.applied.charts.RELATION.CvPerson.hiddennotifications.title": "Notifications",
 
   "search.filters.applied.charts.RELATION.InstitutionOrgUnit.iouorganizations": "OrgUnits",
 
@@ -5676,9 +5688,15 @@
 
   "cris.tab.label.publications": "Publications",
 
+  "cris.tab.label.selectedpublications": "Selected Publications",
+
   "cris.tab.label.projects": "Projects",
 
+  "cris.tab.label.selectedprojects": "Selected Projects",
+
   "cris.tab.label.patents": "Patents",
+
+  "cris.tab.label.selectedpatents": "Selected Patents",
 
   "cris.tab.label.orgunits": "OrgUnits",
 
@@ -5694,7 +5712,11 @@
 
   "cris.tab.label.equipments": "Equipments",
 
+  "cris.tab.label.selectedequipments": "Selected Equipments",
+
   "cris.tab.label.notifications": "Notifications",
+
+  "cris.tab.label.hiddennotifications": "Hidden Notifications",
 
   "cris.tab.label.informations": "Informations",
 
@@ -5712,9 +5734,15 @@
 
   "cris.tab.label.notification": "Notification",
 
-  "cris.box.label.cvprofiles": "CTIVitae Profiles",
+  "cris.box.label.cvprofiles": "CTIVitae Profile",
+
+  "cris.box.label.hrprofiles": "Linked Profile",
+
+  "cris.box.label.metrics": "CTIVitae Profiles",
 
   "cris.box.label.selectedprojects": "Selected Projects",
+
+  "cris.box.label.selectedpublications": "Selected Publications",
 
   "cris.box.label.publications": "Publications",
 
@@ -5936,11 +5964,11 @@
 
   "cris.boxmetadata.label.affiliations": "Affiliation(s)",
 
-  "cris.boxmetadata.label.affiliation’sroles": "Affiliation’s Role(s)",
+  "cris.boxmetadata.label.affiliationsroles": "Role",
 
-  "cris.boxmetadata.label.affiliation’sstartdates": "Affiliation’s Start Date(s)",
+  "cris.boxmetadata.label.affiliationsstartdates": "From",
 
-  "cris.boxmetadata.label.affiliation’senddates": "Affiliation’s End Date(s)",
+  "cris.boxmetadata.label.affiliationsenddates": "To",
 
   "cris.boxmetadata.label.preferredname": "Preferred name",
 
@@ -5974,9 +6002,9 @@
 
   "cris.boxmetadata.label.role": "Role",
 
-  "cris.boxmetadata.label.educationcountry": "Education Country",
+  "cris.boxmetadata.label.educationcountry": "Country",
 
-  "cris.boxmetadata.label.educationgrantor": "Education Grantor",
+  "cris.boxmetadata.label.educationgrantor": "Grantor",
 
   "cris.boxmetadata.label.apellidopaterno": "Apellido Paterno",
 
