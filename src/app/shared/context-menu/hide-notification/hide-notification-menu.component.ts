@@ -20,6 +20,8 @@ export class HideNotificationMenuComponent extends ContextMenuEntryComponent imp
 
   public modalRef: NgbModalRef;
 
+  public isNotification: boolean;
+
   public isHidden$: Observable<boolean>;
 
   public isProcessing$: Subject<boolean> = new Subject<boolean>();
@@ -34,6 +36,7 @@ export class HideNotificationMenuComponent extends ContextMenuEntryComponent imp
   }
 
   ngOnInit(): void {
+    this.isNotification = this.contextMenuObject.firstMetadataValue('dspace.entity.type') === 'Notification';
     this.isHidden$ = this.notificationMenuService.isHiddenObs(this.contextMenuObject as Item);
   }
 
