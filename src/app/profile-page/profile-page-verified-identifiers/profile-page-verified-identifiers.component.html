@@ -1,0 +1,23 @@
+<div class="card mb-4">
+  <div class="card-header">{{'profile.card.verified-identifiers' | translate}} </div>
+  <div class="card-body">
+    <div class="container">
+
+        <div class="row" *ngIf="orcid">
+          <div class="col-4 col-sm-2"><strong>{{'profile.card.verified-identifiers.orcid' | translate}}</strong></div>
+          <div class="col-8 col-sm-10"><span id="orcid">{{ orcid }}</span> <i class="fa fa-check text-success"></i></div>
+        </div>
+
+        <div class="row" *ngIf="dni">
+          <div class="col-4 col-sm-2"><strong>{{'profile.card.verified-identifiers.dni' | translate}}</strong></div>
+          <div class="col-8 col-sm-10"><span id="dni">{{ dni }}</span> <i class="fa fa-check text-success"></i></div>
+        </div>
+
+        <div class="row" *ngIf="!orcid && !dni">
+            {{'profile.card.verified-identifiers.empty' | translate}}
+        </div>
+
+    </div>
+
+  </div>
+</div>

@@ -3868,6 +3868,16 @@
 
   "profile.twofactor.notification.error": "Error updating two factor authentication state",
 
+
+  "profile.card.verified-identifiers": "Verified External Identifiers",
+
+  "profile.card.verified-identifiers.orcid": "Orcid",
+
+  "profile.card.verified-identifiers.dni": "Dni",
+
+  "profile.card.verified-identifiers.empty": "No verified external identifier present.",
+
+
   "project.listelement.badge": "Research Project",
 
   "project.page.contributor": "Contributors",
