@@ -4020,6 +4020,12 @@
 
   "register-page.create-profile-dni.info": "register-page.create-profile-dni.info",
 
+  "register-page.create-profile-dni.email.header": "Email",
+
+  "register-page.create-profile-dni.email": "Email",
+
+  "register-page.create-profile-dni.email.error": "Email is required",
+
   "register-page.create-profile-dni.dni": "Dni",
 
   "register-page.create-profile-dni.date": "Date of Birth",
