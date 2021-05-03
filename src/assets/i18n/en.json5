@@ -1427,9 +1427,9 @@
 
   "context-menu.actions.dso-page-edit.ITEM.btn": "Administer",
 
-  "context-menu.actions.hide-notification.btn": "Hide Notification",
+  "context-menu.actions.hide-notification.btn": "Mark as Read",
 
-  "context-menu.actions.show-notification.btn": "Show Notification",
+  "context-menu.actions.show-notification.btn": "Mark as Unread",
 
   "context-menu.actions.edit-item-relationships.btn.researchoutputs": "Manage Publications",
 
@@ -5730,9 +5730,9 @@
 
   "cris.tab.label.selectedequipments": "Selected Equipments",
 
-  "cris.tab.label.notifications": "Notifications",
+  "cris.tab.label.notifications": "Unread Notifications",
 
-  "cris.tab.label.hiddennotifications": "Hidden Notifications",
+  "cris.tab.label.hiddennotifications": "Read Notifications",
 
   "cris.tab.label.informations": "Informations",
 
@@ -5802,7 +5802,7 @@
 
   "cris.box.label.notificationsto": "Recipient(s)",
 
-  "cris.box.label.hiddennotifications": "Hidden Notifications",
+  "cris.box.label.hiddennotifications": "Read Notifications",
 
   "cris.box.label.orgunit'sresearchersprojects": "OrgUnit's Researchers projects",
 
