@@ -9,6 +9,7 @@ import { rendersContextMenuEntriesForType } from '../context-menu.decorator';
 import { Item } from '../../../core/shared/item.model';
 import { take } from 'rxjs/operators';
 import { NotificationMenuService } from './notification-menu.service';
+import { NotificationsService } from '../../notifications/notifications.service';
 
 @Component({
   selector: 'ds-context-menu-hide-notification',
@@ -20,9 +21,9 @@ export class HideNotificationMenuComponent extends ContextMenuEntryComponent imp
 
   public modalRef: NgbModalRef;
 
-  public isNotification: boolean;
+  public isResearcherNotification$: Observable<boolean>;
 
-  public isHidden$: Observable<boolean>;
+  public isHidden: boolean;
 
   public isProcessing$: Subject<boolean> = new Subject<boolean>();
 
@@ -30,14 +31,16 @@ export class HideNotificationMenuComponent extends ContextMenuEntryComponent imp
     @Inject('contextMenuObjectProvider') protected injectedContextMenuObject: DSpaceObject,
     @Inject('contextMenuObjectTypeProvider') protected injectedContextMenuObjectType: DSpaceObjectType,
     protected configurationDataService: ConfigurationDataService,
-    protected notificationMenuService: NotificationMenuService
+    protected notificationMenuService: NotificationMenuService,
+    protected notificationsService: NotificationsService
   ) {
     super(injectedContextMenuObject, injectedContextMenuObjectType);
   }
 
   ngOnInit(): void {
-    this.isNotification = this.contextMenuObject.firstMetadataValue('dspace.entity.type') === 'Notification';
-    this.isHidden$ = this.notificationMenuService.isHiddenObs(this.contextMenuObject as Item);
+    console.log(this.contextMenuObject.allMetadata('perucris.notification.to'));
+    this.isResearcherNotification$ = this.notificationMenuService.isResearcherNotification(this.contextMenuObject as Item);
+    this.updateIsHidden();
   }
 
   show() {
@@ -46,6 +49,8 @@ export class HideNotificationMenuComponent extends ContextMenuEntryComponent imp
       .pipe(take(1))
       .subscribe((response) => {
         this.isProcessing$.next(false);
+        this.notificationsService.success('The notification is now visible.');
+        this.updateIsHidden();
       });
   }
 
@@ -55,7 +60,15 @@ export class HideNotificationMenuComponent extends ContextMenuEntryComponent imp
       .pipe(take(1))
       .subscribe((response) => {
         this.isProcessing$.next(false);
+        this.notificationsService.success('The notification is now hidden.');
+        this.updateIsHidden();
       });
+  }
+
+  updateIsHidden() {
+    this.notificationMenuService.isHiddenObs(this.contextMenuObject as Item).subscribe((isHidden) => {
+      this.isHidden = isHidden;
+    });
   }
 
 

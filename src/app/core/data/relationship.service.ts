@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { MemoizedSelector, select, Store } from '@ngrx/store';
-import { combineLatest as observableCombineLatest, Observable } from 'rxjs';
+import { combineLatest as observableCombineLatest, forkJoin, Observable } from 'rxjs';
 import { distinctUntilChanged, filter, map, mergeMap, startWith, switchMap, take, tap } from 'rxjs/operators';
 import {
   compareArraysUsingIds,
@@ -35,7 +35,7 @@ import {
   getFirstSucceededRemoteData,
   getFirstSucceededRemoteDataPayload,
   getAllSucceededRemoteData,
-  getRemoteDataPayload
+  getRemoteDataPayload, getAllSucceededRemoteDataPayload
 } from '../shared/operators';
 import { DataService } from './data.service';
 import { DefaultChangeAnalyzer } from './default-change-analyzer.service';
@@ -46,6 +46,7 @@ import { DeleteRequest, FindListOptions, PostRequest, RestRequest } from './requ
 import { RequestService } from './request.service';
 import { RequestEntryState } from './request.reducer';
 import { NoContent } from '../shared/NoContent.model';
+import { of } from 'rxjs/internal/observable/of';
 
 const relationshipListsStateSelector = (state: AppState) => state.relationshipLists;
 
@@ -360,19 +361,57 @@ export class RelationshipService extends DataService<Relationship> {
         getFirstSucceededRemoteData(),
         // the mergemap below will emit all elements of the list as separate events
         mergeMap((relationshipListRD: RemoteData<PaginatedList<Relationship>>) => relationshipListRD.payload.page),
-        mergeMap((relationship: Relationship) => {
-          return observableCombineLatest([
-            this.itemService.findByHref(relationship._links.leftItem.href).pipe(compareItemsByUUID(item2)),
-            this.itemService.findByHref(relationship._links.rightItem.href).pipe(compareItemsByUUID(item2))
-          ]).pipe(
-            map(([isLeftItem, isRightItem]) => isLeftItem || isRightItem),
-            map((isMatch) => isMatch ? relationship : undefined)
-          );
-        }),
+        mergeMap((relationship: Relationship) => this.relationshipMatch(relationship, item2)),
         filter((relationship) => hasValue(relationship)),
         take(1)
       );
   }
+
+  /**
+   * Returns the relationship if item2 is part of it, undefined otherwise
+   * @param relationship
+   * @param item2
+   * @private
+   */
+  private relationshipMatch(relationship, item2): Observable<Relationship> {
+    return observableCombineLatest([
+      this.itemService.findByHref(relationship._links.leftItem.href).pipe(compareItemsByUUID(item2)),
+      this.itemService.findByHref(relationship._links.rightItem.href).pipe(compareItemsByUUID(item2))
+    ]).pipe(
+      map(([isLeftItem, isRightItem]) => isLeftItem || isRightItem),
+      map((isMatch) => isMatch ? relationship : undefined)
+    );
+  }
+
+  /**
+   * Method to check whether a relationship exists based on two items and a relationship type label
+   * @param item1 The first item in the relationship
+   * @param item2 The second item in the relationship
+   * @param label The rightward or leftward type of the relationship
+   * @param useCachedVersion
+   */
+  relationshipExists(item1: Item, item2: Item, label: string, useCachedVersion: boolean): Observable<boolean> {
+    return this.getItemRelationshipsByLabel(
+      item1,
+      label,
+      {},
+      useCachedVersion,
+      false,
+      followLink('relationshipType'),
+      followLink('leftItem'),
+      followLink('rightItem')
+    ).pipe(
+      getAllSucceededRemoteDataPayload(),
+      switchMap((relationshipList: PaginatedList<Relationship>) => {
+        if (relationshipList.totalElements === 0) {
+          return of([]);
+        }
+        return forkJoin(relationshipList.page.map((relationship) => this.relationshipMatch(relationship, item2)));
+      }),
+      map((matchingRelationships: Relationship[]) => matchingRelationships.find((rel) => hasValue(rel)) !== undefined)
+    );
+  }
+
 
   /**
    * Method to set the name variant for specific list and item
