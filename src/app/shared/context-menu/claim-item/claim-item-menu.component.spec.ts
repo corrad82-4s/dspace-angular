@@ -1,4 +1,3 @@
-import { createSuccessfulRemoteDataObject, createSuccessfulRemoteDataObject$ } from 'src/app/shared/remote-data.utils';
 import { of as observableOf } from 'rxjs/internal/observable/of';
 import { getTestScheduler } from 'jasmine-marbles';
 import { NotificationsService } from './../../notifications/notifications.service';
@@ -15,6 +14,8 @@ import { DSpaceObjectType } from 'src/app/core/shared/dspace-object-type.model';
 import { RouterTestingModule } from '@angular/router/testing';
 import { TestScheduler } from 'rxjs/internal/testing/TestScheduler';
 import { By } from '@angular/platform-browser';
+import { AuthServiceStub } from '../../testing/auth-service.stub';
+import { AuthService } from '../../../core/auth/auth.service';
 
 describe('ClaimItemMenuComponent', () => {
   let component: ClaimItemMenuComponent;
@@ -24,6 +25,7 @@ describe('ClaimItemMenuComponent', () => {
 
   let dso: DSpaceObject;
   let authorizationService: any;
+  let authService: AuthServiceStub;
   let researcherProfileService: any;
 
   beforeEach(async(() => {
@@ -40,6 +42,7 @@ describe('ClaimItemMenuComponent', () => {
     researcherProfileService = jasmine.createSpyObj('researcherProfileService', {
       createFromExternalSource: jasmine.createSpy('createFromExternalSource')
     });
+    authService = new AuthServiceStub();
     TestBed.configureTestingModule({
       declarations: [ ClaimItemMenuComponent ],
       imports: [
@@ -55,7 +58,8 @@ describe('ClaimItemMenuComponent', () => {
         { provide: 'contextMenuObjectTypeProvider', useValue: DSpaceObjectType.ITEM },
         { provide: AuthorizationDataService, useValue: authorizationService },
         { provide: ResearcherProfileService, useValue: researcherProfileService },
-        { provide: NotificationsService, useValue: {} }
+        { provide: NotificationsService, useValue: {} },
+        { provide: AuthService, useValue: authService },
       ]
     })
     .compileComponents();

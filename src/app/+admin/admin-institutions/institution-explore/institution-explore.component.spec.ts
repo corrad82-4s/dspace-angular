@@ -162,11 +162,11 @@ describe('InstitutionExploreComponent', () => {
 
       const firstRoleLink = roleList.children[0].children[0];
       expect(firstRoleLink.nativeElement.textContent.trim()).toEqual('Institutional Role A: First Institution');
-      expect(firstRoleLink.nativeElement.href).toContain('/admin/access-control/groups/1993322');
+      expect(firstRoleLink.nativeElement.href).toContain('/access-control/groups/1993322');
 
       const secondRoleLink = roleList.children[1].children[0];
       expect(secondRoleLink.nativeElement.textContent.trim()).toEqual('Institutional Role B: First Institution');
-      expect(secondRoleLink.nativeElement.href).toContain('/admin/access-control/groups/5453362');
+      expect(secondRoleLink.nativeElement.href).toContain('/access-control/groups/5453362');
     }));
 
   });

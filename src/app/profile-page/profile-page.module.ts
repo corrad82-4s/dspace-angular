@@ -6,8 +6,10 @@ import { ProfilePageComponent } from './profile-page.component';
 import { ProfilePageMetadataFormComponent } from './profile-page-metadata-form/profile-page-metadata-form.component';
 import { ProfilePageSecurityFormComponent } from './profile-page-security-form/profile-page-security-form.component';
 import { ProfilePageResearcherFormComponent } from './profile-page-researcher-form/profile-page-researcher-form.component';
+import { ThemedProfilePageComponent } from './themed-profile-page.component';
 import { ProfilePageGrantedApplicationsComponent } from './profile-page-granted-applications/profile-page-granted-applications.component';
 import { ProfilePageTwophaseAuthenticationComponent } from './profile-page-twophase-authentication/profile-page-twophase-authentication.component';
+import { ProfilePageVerifiedIdentifiersComponent } from './profile-page-verified-identifiers/profile-page-verified-identifiers.component';
 
 @NgModule({
   imports: [
@@ -20,11 +22,13 @@ import { ProfilePageTwophaseAuthenticationComponent } from './profile-page-twoph
   ],
   declarations: [
     ProfilePageComponent,
+    ThemedProfilePageComponent,
     ProfilePageMetadataFormComponent,
     ProfilePageSecurityFormComponent,
     ProfilePageResearcherFormComponent,
     ProfilePageGrantedApplicationsComponent,
-    ProfilePageTwophaseAuthenticationComponent
+    ProfilePageTwophaseAuthenticationComponent,
+    ProfilePageVerifiedIdentifiersComponent
   ]
 })
 export class ProfilePageModule {

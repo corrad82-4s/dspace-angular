@@ -171,7 +171,7 @@
 
   "admin.registries.bitstream-formats.table.name": "Name",
 
-  "admin.registries.bitstream-formats.table.return": "Return",
+  "admin.registries.bitstream-formats.table.return": "Back",
 
   "admin.registries.bitstream-formats.table.supportLevel.KNOWN": "Known",
 
@@ -181,7 +181,7 @@
 
   "admin.registries.bitstream-formats.table.supportLevel.head": "Support Level",
 
-  "admin.registries.bitstream-formats.title": "DSpace Cris Angular :: Bitstream Format Registry",
+  "admin.registries.bitstream-formats.title": "Bitstream Format Registry",
 
 
 
@@ -209,7 +209,7 @@
 
   "admin.registries.metadata.schemas.table.namespace": "Namespace",
 
-  "admin.registries.metadata.title": "DSpace Cris Angular :: Metadata Registry",
+  "admin.registries.metadata.title": "Metadata Registry",
 
 
 
@@ -259,9 +259,9 @@
 
   "admin.registries.schema.notification.success": "Success",
 
-  "admin.registries.schema.return": "Return",
+  "admin.registries.schema.return": "Back",
 
-  "admin.registries.schema.title": "DSpace Cris Angular :: Metadata Schema Registry",
+  "admin.registries.schema.title": "Metadata Schema Registry",
 
 
 
@@ -273,7 +273,9 @@
 
   "admin.access-control.epeople.actions.stop-impersonating": "Stop impersonating EPerson",
 
-  "admin.access-control.epeople.title": "DSpace Angular :: EPeople",
+  "admin.access-control.epeople.breadcrumbs": "EPeople",
+
+  "admin.access-control.epeople.title": "EPeople",
 
   "admin.access-control.epeople.head": "EPeople",
 
@@ -286,6 +288,8 @@
   "admin.access-control.epeople.search.scope.email": "E-mail (exact)",
 
   "admin.access-control.epeople.search.button": "Search",
+
+  "admin.access-control.epeople.search.placeholder": "Search people...",
 
   "admin.access-control.epeople.button.add": "Add EPerson",
 
@@ -318,6 +322,8 @@
   "admin.access-control.epeople.form.canLogIn": "Can log in",
 
   "admin.access-control.epeople.form.requireCertificate": "Requires certificate",
+
+  "admin.access-control.epeople.form.return": "Back",
 
   "admin.access-control.epeople.form.notification.created.success": "Successfully created EPerson \"{{name}}\"",
 
@@ -368,11 +374,17 @@
 
   "admin.access-control.groups.badge.scoped": "Institutional Scoped Role",
 
-  "admin.access-control.groups.title": "DSpace Angular :: Groups",
+  "admin.access-control.groups.title": "Groups",
 
-  "admin.access-control.groups.title.singleGroup": "DSpace Angular :: Edit Group",
+  "admin.access-control.groups.breadcrumbs": "Groups",
 
-  "admin.access-control.groups.title.addGroup": "DSpace Angular :: New Group",
+  "admin.access-control.groups.singleGroup.breadcrumbs": "Edit Group",
+
+  "admin.access-control.groups.title.singleGroup": "Edit Group",
+
+  "admin.access-control.groups.title.addGroup": "New Group",
+
+  "admin.access-control.groups.addGroup.breadcrumbs": "New Group",
 
   "admin.access-control.groups.head": "Groups/Roles",
 
@@ -384,13 +396,13 @@
 
   "admin.access-control.groups.search.button": "Search",
 
+  "admin.access-control.groups.search.placeholder": "Search groups...",
+
   "admin.access-control.groups.table.id": "ID",
 
   "admin.access-control.groups.table.name": "Name",
 
   "admin.access-control.groups.table.members": "Members",
-
-  "admin.access-control.groups.table.comcol": "Community / Collection",
 
   "admin.access-control.groups.table.edit": "Edit",
 
@@ -510,6 +522,8 @@
 
   "admin.access-control.groups.form.members-list.no-items": "No EPeople found in that search",
 
+  "admin.access-control.groups.form.subgroups-list.notification.failure": "Something went wrong: \"{{cause}}\"",
+
   "admin.access-control.groups.form.subgroups-list.head": "Groups",
 
   "admin.access-control.groups.form.subgroups-list.search.head": "Add Subgroup",
@@ -548,7 +562,7 @@
 
   "admin.access-control.groups.form.subgroups-list.no-subgroups-yet": "No subgroups in group yet.",
 
-  "admin.access-control.groups.form.return": "Return to groups",
+  "admin.access-control.groups.form.return": "Back",
 
 
 
@@ -587,6 +601,8 @@
 
   "admin.search.title": "Administrative Search",
 
+  "administrativeView.search.results.head": "Administrative Search",
+
 
 
 
@@ -614,7 +630,7 @@
 
   "admin.metadata-import.page.dropMsgReplace": "Drop to replace the metadata CSV to import",
 
-  "admin.metadata-import.page.button.return": "Return",
+  "admin.metadata-import.page.button.return": "Back",
 
   "admin.metadata-import.page.button.proceed": "Proceed",
 
@@ -626,6 +642,10 @@
   "auth.errors.invalid-user": "Invalid email address or password.",
 
   "auth.messages.expired": "Your session has expired. Please log in again.",
+
+
+
+  "bitstream.download.page": "Now downloading {{bitstream}}..." ,
 
 
 
@@ -849,11 +869,17 @@
 
   "browse.metadata.title.breadcrumbs": "Browse by Title",
 
+  "browse.next.button": "Next",
+
+  "browse.previous.button": "Previous",
+
   "browse.metadata.insttitle.breadcrumbs": "Browse by Title",
 
   "browse.startsWith.choose_start": "(Choose start)",
 
   "browse.startsWith.choose_year": "(Choose year)",
+
+  "browse.startsWith.choose_year.label": "Choose the issue year",
 
   "browse.startsWith.jump": "Jump to a point in the index:",
 
@@ -877,17 +903,21 @@
 
   "browse.startsWith.months.none": "(Choose month)",
 
+  "browse.startsWith.months.none.label": "Choose the issue month",
+
   "browse.startsWith.months.november": "November",
 
   "browse.startsWith.months.october": "October",
 
   "browse.startsWith.months.september": "September",
 
-  "browse.startsWith.submit": "Go",
+  "browse.startsWith.submit": "Browse",
 
-  "browse.startsWith.type_date": "Or type in a date (year-month):",
+  "browse.startsWith.type_date": "Or type in a date (year-month) and click 'Browse'",
 
-  "browse.startsWith.type_text": "Or enter first few letters:",
+  "browse.startsWith.type_date.label": "Or type in a date (year-month) and click on the Browse button",
+
+  "browse.startsWith.type_text": "Type the first few letters and click on the Browse button",
 
   "browse.title": "Browsing {{ collection }} by {{ field }} {{ value }}",
 
@@ -919,6 +949,7 @@
 
   "chips.remove": "Remove chip",
 
+  "chart.load-more": "Load more results",
 
 
   "collection.create.head": "Create a Collection",
@@ -951,6 +982,10 @@
 
 
 
+  "collection.edit.tabs.mapper.head": "Item Mapper",
+
+  "collection.edit.tabs.item-mapper.title": "Collection Edit - Item Mapper",
+
   "collection.edit.item-mapper.cancel": "Cancel",
 
   "collection.edit.item-mapper.collection": "Collection: \"<b>{{name}}</b>\"",
@@ -981,11 +1016,17 @@
 
   "collection.edit.item-mapper.remove": "Remove selected item mappings",
 
+  "collection.edit.item-mapper.search-form.placeholder": "Search items...",
+
   "collection.edit.item-mapper.tabs.browse": "Browse mapped items",
 
   "collection.edit.item-mapper.tabs.map": "Map new items",
 
 
+
+  "collection.edit.logo.delete.title": "Delete logo",
+
+  "collection.edit.logo.delete-undo.title": "Undo delete",
 
   "collection.edit.logo.label": "Collection logo",
 
@@ -1003,7 +1044,7 @@
 
   "collection.edit.notifications.success": "Successfully edited the Collection",
 
-  "collection.edit.return": "Return",
+  "collection.edit.return": "Back",
 
 
 
@@ -1085,9 +1126,13 @@
 
   "collection.edit.template.edit-button": "Edit",
 
+  "collection.edit.template.error": "An error occurred retrieving the template item",
+
   "collection.edit.template.head": "Edit Template Item for Collection \"{{ collection }}\"",
 
   "collection.edit.template.label": "Template item",
+
+  "collection.edit.template.loading": "Loading template item...",
 
   "collection.edit.template.notifications.delete.error": "Failed to delete the item template",
 
@@ -1165,7 +1210,9 @@
 
 
 
-  "communityList.tabTitle": "DSpace - Community List",
+  "communityList.breadcrumbs": "Community List",
+
+  "communityList.tabTitle": "Community List",
 
   "communityList.title": "List of Communities",
 
@@ -1200,6 +1247,10 @@
   "community.edit.breadcrumbs": "Edit Community",
 
 
+  "community.edit.logo.delete.title": "Delete logo",
+
+  "community.edit.logo.delete-undo.title": "Undo delete",
+
   "community.edit.logo.label": "Community logo",
 
   "community.edit.logo.notifications.add.error": "Uploading Community logo failed. Please verify the content before retrying.",
@@ -1222,7 +1273,7 @@
 
   "community.edit.notifications.error": "An error occured while editing the Community",
 
-  "community.edit.return": "Return",
+  "community.edit.return": "Back",
 
 
 
@@ -1376,6 +1427,30 @@
 
   "context-menu.actions.dso-page-edit.ITEM.btn": "Administer",
 
+  "context-menu.actions.hide-notification.btn": "Mark as Read",
+
+  "context-menu.actions.show-notification.btn": "Mark as Unread",
+
+  "context-menu.actions.edit-item-relationships.btn.researchoutputs": "Manage Publications",
+
+  "context-menu.actions.edit-item-relationships.btn.projects": "Manage Projects",
+
+  "context-menu.actions.edit-item-relationships.btn.equipments": "Manage Equipments",
+
+  "context-menu.actions.edit-item-relationships.btn.patents": "Manage Patents",
+
+  "context-menu.actions.edit-item-relationships.btn.organizations": "Manage Organizations",
+
+  "context-menu.actions.edit-item-relationships.btn.rppublications": "Manage Rppublications",
+
+  "context-menu.actions.edit-item-relationships.btn.publications": "Manage Publications",
+
+  "context-menu.actions.edit-item-relationships.btn.rpprojects": "Manage Rpprojects",
+
+  "context-menu.actions.edit-item-relationships.btn.people": "Manage People",
+
+
+
   "datafile.listelement.badge": "Data File",
 
   "datapackage.listelement.badge": "Data Package",
@@ -1476,6 +1551,10 @@
   "dso-selector.claim.item.head": "Claim",
 
   "dso-selector.claim.item.body": "We have found following profiles that match with your personal data",
+
+  "dso.name.untitled": "Untitled",
+
+
 
   "dso-selector.create.collection.head": "New collection",
 
@@ -1864,7 +1943,7 @@
 
   "forgot-email.form.email.hint": "This address will be verified and used as your login name.",
 
-  "forgot-email.form.submit": "Submit",
+  "forgot-email.form.submit": "Save",
 
   "forgot-email.form.success.head": "Verification email sent",
 
@@ -1908,7 +1987,7 @@
 
 
 
-  "form.add": "Add",
+  "form.add": "Add more",
 
   "form.add-help": "Click here to add the current entry and to add another one",
 
@@ -1917,6 +1996,8 @@
   "form.clear": "Clear",
 
   "form.clear-help": "Click here to remove the selected value",
+
+  "form.discard": "Discard",
 
   "form.edit": "Edit",
 
@@ -1966,7 +2047,10 @@
 
   "form.search-help": "Click here to look for an existing correspondence",
 
-  "form.submit": "Submit",
+  "form.submit": "Save",
+
+  "form.repeatable.sort.tip": "Drop the item in the new position",
+
 
   "funding.listelement.badge" : "Funding",
 
@@ -1975,7 +2059,9 @@
 
   "home.breadcrumbs": "Home",
 
-  "home.title": "DSpace Cris Angular :: Home",
+  "home.search-form.placeholder": "Search the repository ...",
+
+  "home.title": "Home",
 
   "home.top-level-communities.head": "Communities in DSpace Cris",
 
@@ -2143,7 +2229,12 @@
 
   "item.edit.breadcrumbs": "Edit Item",
 
+  "item.edit.tabs.disabled.tooltip": "You don't have permission to access this tab",
 
+
+  "item.edit.tabs.mapper.head": "Collection Mapper",
+
+  "item.edit.tabs.item-mapper.title": "Item Edit - Collection Mapper",
 
   "item.edit.item-mapper.buttons.add": "Map item to selected collections",
 
@@ -2174,6 +2265,8 @@
   "item.edit.item-mapper.notifications.remove.success.content": "Successfully removed mapping of item to {{amount}} collections.",
 
   "item.edit.item-mapper.notifications.remove.success.head": "Removal of mapping completed",
+
+  "item.edit.item-mapper.search-form.placeholder": "Search collections...",
 
   "item.edit.item-mapper.tabs.browse": "Browse mapped collections",
 
@@ -2331,8 +2424,10 @@
 
   "item.edit.relationships.save-button": "Save",
 
-  "item.edit.relationships.no-entity-type": "Add 'relationship.type' metadata to enable relationships for this item",
+  "item.edit.relationships.no-entity-type": "Add 'dspace.entity.type' metadata to enable relationships for this item",
 
+
+  "item.edit.return": "Back",
 
 
   "item.edit.tabs.bitstreams.head": "Bitstreams",
@@ -2441,7 +2536,7 @@
 
   "item.search.results.head": "Item Search Results",
 
-  "item.search.title": "DSpace Angular :: Item Search",
+  "item.search.title": "Item Search",
 
   "item.page.abstract": "Abstract",
 
@@ -2644,7 +2739,7 @@
 
   "item.version.history.head": "Version History",
 
-  "item.version.history.return": "Return",
+  "item.version.history.return": "Back",
 
   "item.version.history.selected": "Selected version",
 
@@ -2699,7 +2794,7 @@
 
   "journal.search.results.head": "Journal Search Results",
 
-  "journal.search.title": "DSpace Cris Angular :: Journal Search",
+  "journal.search.title": "Journal Search",
 
 
 
@@ -2785,6 +2880,8 @@
 
   "login.form.or-divider": "or",
 
+  "login.form.orcid": "Log in with ORCID",
+
   "login.form.password": "Password",
 
   "login.form.shibboleth": "Log in with Shibboleth",
@@ -2807,9 +2904,11 @@
 
 
 
-  "menu.header.admin": "Admin",
+  "menu.header.admin": "Management",
 
   "menu.header.image.logo": "Repository logo",
+
+  "menu.header.admin.description": "Management menu",
 
 
 
@@ -3001,6 +3100,8 @@
   "menu.section.workflow": "Administer Workflow",
 
 
+  "mydspace.breadcrumbs": "MyDSpace",
+
   "mydspace.description": "",
 
   "mydspace.general.text-here": "here",
@@ -3033,7 +3134,7 @@
 
   "mydspace.new-submission": "New submission",
 
-  "mydspace.new-bulk-import": "New import",
+  "mydspace.new-bulk-import": "New bulk import",
 
   "mydspace.new-submission-external": "Import metadata from external source",
 
@@ -3056,6 +3157,8 @@
   "mydspace.results.no-title": "No title",
 
   "mydspace.results.no-uri": "No Uri",
+
+  "mydspace.search-form.placeholder": "Search in mydspace...",
 
   "mydspace.show.workflow": "All tasks",
 
@@ -3109,7 +3212,9 @@
 
   "nav.login": "Log In",
 
-  "nav.logout": "Log Out",
+  "nav.logout": "User profile menu and Log Out",
+
+  "nav.main.description": "Main navigation bar",
 
   "nav.mydspace": "MyDSpace",
 
@@ -3120,6 +3225,8 @@
   "nav.statistics.header": "Statistics",
 
   "nav.stop-impersonating": "Stop impersonating EPerson",
+
+  "nav.user.description" : "User profile bar",
 
 
 
@@ -3324,6 +3431,8 @@
 
 
 
+  "pagination.options.description": "Pagination options",
+
   "pagination.results-per-page": "Results Per Page",
 
   "pagination.showing.detail": "{{ range }} of {{ total }}",
@@ -3380,7 +3489,7 @@
 
   "person.page.orcid.sync-profile.affiliation" : "Affiliation",
 
-  "person.page.orcid.sync-profile.bibliographic" : "Bibliographic data",
+  "person.page.orcid.sync-profile.biographical" : "Biographical data",
 
   "person.page.orcid.sync-profile.education" : "Education",
 
@@ -3451,7 +3560,7 @@
 
   "person.search.results.head": "Person Search Results",
 
-  "person.search.title": "DSpace Cris Angular :: Person Search",
+  "person.search.title": "Person Search",
 
   "cvperson.listelement.badge": "Profile",
 
@@ -3473,7 +3582,7 @@
 
   "process.new.cancel": "Cancel",
 
-  "process.new.submit": "Submit",
+  "process.new.submit": "Save",
 
   "process.new.select-script": "Script",
 
@@ -3669,7 +3778,7 @@
 
   "profile.card.researcher": "CTIVitae Profile",
 
-  "profile.form.submit": "Update Profile",
+  "profile.form.submit": "Save",
 
   "profile.granted-applications.head": "Manage list of granted authorization to third parties applications",
 
@@ -3759,6 +3868,16 @@
 
   "profile.twofactor.notification.error": "Error updating two factor authentication state",
 
+
+  "profile.card.verified-identifiers": "Verified External Identifiers",
+
+  "profile.card.verified-identifiers.orcid": "Orcid",
+
+  "profile.card.verified-identifiers.dni": "Dni",
+
+  "profile.card.verified-identifiers.empty": "No verified external identifier present.",
+
+
   "project.listelement.badge": "Research Project",
 
   "project.page.contributor": "Contributors",
@@ -3801,7 +3920,14 @@
 
   "publication.search.results.head": "Publication Search Results",
 
-  "publication.search.title": "DSpace Cris Angular :: Publication Search",
+  "publication.search.title": "Publication Search",
+
+
+  "media-viewer.next": "Next",
+
+  "media-viewer.previous": "Previous",
+
+  "media-viewer.playlist": "Playlist",
 
 
   "register-email.title": "New user registration",
@@ -3904,6 +4030,12 @@
 
   "register-page.create-profile-dni.info": "register-page.create-profile-dni.info",
 
+  "register-page.create-profile-dni.email.header": "Email",
+
+  "register-page.create-profile-dni.email": "Email",
+
+  "register-page.create-profile-dni.email.error": "Email is required",
+
   "register-page.create-profile-dni.dni": "Dni",
 
   "register-page.create-profile-dni.date": "Date of Birth",
@@ -3912,6 +4044,12 @@
 
 
 
+
+  "relationships.add.error.relationship-type.content": "No suitable match could be found for relationship type {{ type }} between the two items",
+
+  "relationships.add.error.server.content": "The server returned an error",
+
+  "relationships.add.error.title": "Unable to add relationship",
 
   "relationships.isAuthorOf": "Authors",
 
@@ -3943,6 +4081,24 @@
 
   "relationships.isContributorOf": "Contributors",
 
+  "relationships.select": "Select",
+
+  "relationships.hide": "Hide",
+
+  "relationships.unselect": "Unselect",
+
+  "relationships.unhide": "Unhide",
+
+  "relationships.title" : "Relationships",
+
+  "relationships.no.relationships.found" : "No relationships",
+
+  "relationships.no.data.found" : "No data found",
+
+
+  "repository.image.logo": "Repository logo",
+
+  "repository.title.prefix": "DSpace Cris Angular :: ",
 
 
   "researcher.profile.action.processing" : "Processing...",
@@ -3954,6 +4110,14 @@
   "researcher.profile.create.fromEpersonData": "See matching profiles",
 
   "researcher.profile.delete": "Delete",
+
+  "researcher.profile.deletion.confirm": "Delete profile",
+
+  "researcher.profile.deletion.confirmation-message" : "To confirm the deletion write 'delete' in the following text input and press the button",
+
+  "researcher.profile.deletion.title": "Warning",
+
+  "researcher.profile.deletion.warning": "The deletion of the profile is not reversible. Once the profile has been deleted, it and all the items related to it cannot be recovered. Press the button below to confirm the operation.",
 
   "researcher.profile.expose": "Expose",
 
@@ -4013,7 +4177,7 @@
 
   "resource-policies.form.action-type.required": "You must select the resource policy action.",
 
-  "resource-policies.form.eperson-group-list.label": "The eperson or group that will be grant of the permission",
+  "resource-policies.form.eperson-group-list.label": "The eperson or group that will be granted the permission",
 
   "resource-policies.form.eperson-group-list.select.btn": "Select",
 
@@ -4077,9 +4241,11 @@
 
   "search.switch-configuration.title": "Show",
 
-  "search.title": "DSpace Cris Angular :: Search",
+  "search.title": "Search",
 
   "search.breadcrumbs": "Search",
+
+  "search.search-form.placeholder": "Search the repository ...",
 
 
   "search.filters.applied.f.author": "Author",
@@ -4112,8 +4278,19 @@
 
   "search.filters.applied.f.withdrawn": "Withdrawn",
 
+  "search.filters.applied.f.graphitemtype": "Item type",
+
+  "search.filters.applied.f.graphpubldate": "Public date",
+
+  "search.filters.applied.f.graphpubldateltr": "Public date LTR",
+
+  "search.filters.applied.f.graphpubldatetrl": "Public date RTL",
+
+
 
   "search.filters.applied.charts.chart.bar.dateIssued.year.tab" : "Date Issued",
+
+  "search.filters.applied.charts.chart.pie.more-value" : "More",
 
   "search.filters.applied.charts.chart.pie.itemtype_filter.tab" : "Item Type",
 
@@ -4133,13 +4310,25 @@
 
   "search.filters.applied.charts.default.title": "Search Output",
 
+  "search.filters.applied.charts.RELATION.CvPerson.selectedresearchoutputs.title": "Selected Research Outputs",
+
   "search.filters.applied.charts.RELATION.CvPerson.researchoutputs.title": "Research Outputs",
 
+  "search.filters.applied.charts.RELATION.CvPerson.selectedprojects.title": "Selected Projects",
+
   "search.filters.applied.charts.RELATION.CvPerson.projects.title": "Projects",
+
+  "search.filters.applied.charts.RELATION.CvPerson.selectedpatents.title": "Selected Patents",
+
+  "search.filters.applied.charts.RELATION.CvPerson.equipments.title": "Equipments",
+
+  "search.filters.applied.charts.RELATION.CvPerson.selectedequipments.title": "Selected Equipments",
 
   "search.filters.applied.charts.RELATION.CvPerson.patents.title": "Patents",
 
   "search.filters.applied.charts.RELATION.CvPerson.notifications.title": "Notifications",
+
+  "search.filters.applied.charts.RELATION.CvPerson.hiddennotifications.title": "Notifications",
 
   "search.filters.applied.charts.RELATION.InstitutionOrgUnit.iouorganizations": "OrgUnits",
 
@@ -4240,8 +4429,9 @@
 
   "search.filters.applied.charts.RELATION.Project.researchoutputs.title": "Research Output",
 
-  "search.filters.applied.charts.RELATION.CvProject.ipresearchoutputs.title": "Research Output",
+  "search.filters.applied.charts.RELATION.Project.fundings.title": "Fundings",
 
+  "search.filters.applied.charts.RELATION.CvProject.ipresearchoutputs.title": "Research Output",
 
   "search.filters.applied.charts.no.data.found": "No data found",
 
@@ -4255,6 +4445,8 @@
   "search.filters.filter.birthDate.head": "Birth Date",
 
   "search.filters.filter.birthDate.placeholder": "Birth Date",
+
+  "search.filters.filter.collapse": "Collapse filter",
 
   "search.filters.filter.creativeDatePublished.head": "Date Published",
 
@@ -4293,6 +4485,8 @@
   "search.filters.filter.entityType.head": "Item Type",
 
   "search.filters.filter.entityType.placeholder": "Item Type",
+
+  "search.filters.filter.expand": "Expand filter",
 
   "search.filters.filter.eqowner.head": "Researcher",
 
@@ -4471,14 +4665,22 @@
 
   "search.form.search": "Search",
 
-  "search.form.search_dspace": "Search DSpace",
-
-  "search.form.search_mydspace": "Search MyDSpace",
+  "search.form.search_dspace": "All repository",
 
 
 
 
   "search.results.head": "Search Results",
+
+  "default.search.results.head": "Search Results",
+
+  "infrastructure.search.results.head": "Infrastructures Search Results",
+
+  "project_funding.search.results.head": "Projects Search Results",
+
+  "researchoutputs.search.results.head": "Publications Search Results",
+
+  "orgunit.search.results.head": "Organizations Search Results",
 
   "search.results.no-results": "Your search returned no results. Having trouble finding what you're looking for? Try putting",
 
@@ -4520,12 +4722,30 @@
 
   "sorting.dc.title.DESC": "Title Descending",
 
-  "sorting.score.DESC": "Relevance",
+  "sorting.score.ASC": "Relevance Ascending",
 
-  "sorting.ASC": "Ascending",
+  "sorting.score.DESC": "Relevance Descending",
 
-  "sorting.DESC": "Descending",
+  "sorting.dc.date.issued.ASC": "Date Issued Ascending",
 
+  "sorting.dc.date.issued.DESC": "Date Issued Descending",
+
+  "sorting.dc.date.accessioned.ASC": "Accessioned Date Ascending",
+
+  "sorting.dc.date.accessioned.DESC": "Accessioned Date Descending",
+
+  "sorting.lastModified.ASC": "Last modified Ascending",
+
+  "sorting.lastModified.DESC": "Last modified Descending",
+
+
+  "statistics.export.csv": "Export CSV",
+
+  "statistics.export.excel": "Export Excel",
+
+  "statistics.export.jpg": "Export as JPEG",
+
+  "statistics.export.png": "Export as PNG",
 
   "statistics.title": "Statistics",
 
@@ -4549,9 +4769,22 @@
 
   "statistics.table.header.views": "Views",
 
+  "statistics.categories.title": "Statistics by Category",
 
+  "statistics.categories.mainReports.tab": "Main Reports",
+
+  "statistics.categories.projectsReports.tab": "Project Reports",
+
+  "statistics.categories.publicationsReports.tab": "Publication Reports",
+
+  "statistics.reports.title": "Reports",
+
+
+  "submission.edit.breadcrumbs": "Edit Submission",
 
   "submission.edit.title": "Edit Submission",
+
+  "submission.general.cancel": "Cancel",
 
   "submission.general.cannot_submit": "You have not the privilege to make a new submission.",
 
@@ -4842,6 +5075,8 @@
 
   "submission.sections.describe.relationship-lookup.search-tab.search": "Go",
 
+  "submission.sections.describe.relationship-lookup.search-tab.search-form.placeholder": "Search...",
+
   "submission.sections.describe.relationship-lookup.search-tab.select-all": "Select all",
 
   "submission.sections.describe.relationship-lookup.search-tab.select-page": "Select page",
@@ -4890,6 +5125,8 @@
   "submission.sections.describe.relationship-lookup.search-tab.tab-title.isFundingOfPublication": "Search for Funding",
 
   "submission.sections.describe.relationship-lookup.search-tab.tab-title.isChildOrgUnitOf": "Search for Organizational Units",
+
+  "submission.sections.describe.relationship-lookup.selection-tab.search-form.placeholder": "Search...",
 
   "submission.sections.describe.relationship-lookup.selection-tab.tab-title": "Current Selection ({{ count }})",
 
@@ -5065,6 +5302,8 @@
 
   "submission.sections.submit.progressbar.describe.institution-orgunit": "Org Unit basic information",
 
+  "submission.sections.submit.progressbar.describe.owner": "Owner",
+
   "submission.sections.submit.progressbar.describe.patent": "Patent basic information",
 
   "submission.sections.submit.progressbar.describe.institution-patent": "Patent basic information",
@@ -5203,7 +5442,9 @@
 
 
 
-  "submission.submit.title": "Submission",
+  "submission.submit.breadcrumbs": "New submission",
+
+  "submission.submit.title": "New submission",
 
 
 
@@ -5382,12 +5623,6 @@
 
 
 
-  "administrativeView.search.results.head": "Administrative Search",
-
-  "menu.section.admin_search": "Admin Search",
-
-
-
   "uploader.browse": "browse",
 
   "uploader.drag-message": "Drag & Drop your files here",
@@ -5409,6 +5644,10 @@
   "workflowAdmin.search.results.head": "Administer Workflow",
 
 
+
+  "workflow-item.edit.breadcrumbs": "Edit workflowitem",
+
+  "workflow-item.edit.title": "Edit workflowitem",
 
   "workflow-item.delete.notification.success.title": "Deleted",
 
@@ -5465,9 +5704,15 @@
 
   "cris.tab.label.publications": "Publications",
 
+  "cris.tab.label.selectedpublications": "Selected Publications",
+
   "cris.tab.label.projects": "Projects",
 
+  "cris.tab.label.selectedprojects": "Selected Projects",
+
   "cris.tab.label.patents": "Patents",
+
+  "cris.tab.label.selectedpatents": "Selected Patents",
 
   "cris.tab.label.orgunits": "OrgUnits",
 
@@ -5483,7 +5728,11 @@
 
   "cris.tab.label.equipments": "Equipments",
 
-  "cris.tab.label.notifications": "Notifications",
+  "cris.tab.label.selectedequipments": "Selected Equipments",
+
+  "cris.tab.label.notifications": "Unread Notifications",
+
+  "cris.tab.label.hiddennotifications": "Read Notifications",
 
   "cris.tab.label.informations": "Informations",
 
@@ -5501,13 +5750,21 @@
 
   "cris.tab.label.notification": "Notification",
 
-  "cris.box.label.cvprofiles": "CTIVitae Profiles",
+  "cris.box.label.cvprofiles": "CTIVitae Profile",
 
-  "cris.box.label.projects": "Projects",
+  "cris.box.label.hrprofiles": "Linked Profile",
+
+  "cris.box.label.metrics": "CTIVitae Profiles",
+
+  "cris.box.label.selectedprojects": "Selected Projects",
+
+  "cris.box.label.selectedpublications": "Selected Publications",
 
   "cris.box.label.publications": "Publications",
 
   "cris.box.label.patents": "Patents",
+
+  "cris.box.label.selectedpatents": "Selected Patents",
 
   "cris.box.label.orgunits": "OrgUnits",
 
@@ -5535,9 +5792,17 @@
 
   "cris.box.label.projects": "Projects ",
 
+  "cris.box.label.education": "Education",
+
   "cris.box.label.equipments": "Equipments",
 
+  "cris.box.label.selectedequipments": "Selected Equipments",
+
   "cris.box.label.notifications": "Notifications",
+
+  "cris.box.label.notificationsto": "Recipient(s)",
+
+  "cris.box.label.hiddennotifications": "Read Notifications",
 
   "cris.box.label.orgunit'sresearchersprojects": "OrgUnit's Researchers projects",
 
@@ -5719,11 +5984,11 @@
 
   "cris.boxmetadata.label.affiliations": "Affiliation(s)",
 
-  "cris.boxmetadata.label.affiliation’sroles": "Affiliation’s Role(s)",
+  "cris.boxmetadata.label.affiliationsroles": "Role",
 
-  "cris.boxmetadata.label.affiliation’sstartdates": "Affiliation’s Start Date(s)",
+  "cris.boxmetadata.label.affiliationsstartdates": "From",
 
-  "cris.boxmetadata.label.affiliation’senddates": "Affiliation’s End Date(s)",
+  "cris.boxmetadata.label.affiliationsenddates": "To",
 
   "cris.boxmetadata.label.preferredname": "Preferred name",
 
@@ -5745,6 +6010,8 @@
 
   "cris.boxmetadata.label.education": "Education",
 
+  "cris.boxmetadata.label.educationrole": "Role",
+
   "cris.boxmetadata.label.dni": "DNI",
 
   "cris.boxmetadata.label.passport": "Passport",
@@ -5757,9 +6024,9 @@
 
   "cris.boxmetadata.label.role": "Role",
 
-  "cris.boxmetadata.label.educationcountry": "Education Country",
+  "cris.boxmetadata.label.educationcountry": "Country",
 
-  "cris.boxmetadata.label.educationgrantor": "Education Grantor",
+  "cris.boxmetadata.label.educationgrantor": "Grantor",
 
   "cris.boxmetadata.label.apellidopaterno": "Apellido Paterno",
 
@@ -5911,7 +6178,13 @@
 
   "cris.boxmetadata.label.recipient": "Recipient",
 
-  "cris.boxmetadata.label.message": "Message"
+  "cris.boxmetadata.label.message": "Message",
+
+
+  "cris.boxmetadata.label.messageto": "Recipient(s)",
+
+  "cris.boxmetadata.verified.orcid": "Verified in ORCID",
+
+  "cris.boxmetadata.verified.dni": "Verified in Reniec"
 
 }
-

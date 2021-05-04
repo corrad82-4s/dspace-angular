@@ -1,7 +1,7 @@
 import { Component, EventEmitter, NgZone, OnDestroy, OnInit, Output } from '@angular/core';
 import { combineLatest as observableCombineLatest, Observable, Subscription } from 'rxjs';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
-import { hasValue } from '../../../../empty.util';
+import { hasValue, isNotEmpty } from '../../../../empty.util';
 import { map, skip, switchMap, take } from 'rxjs/operators';
 import { SEARCH_CONFIG_SERVICE } from '../../../../../+my-dspace-page/my-dspace-page.component';
 import { SearchConfigurationService } from '../../../../../core/shared/search/search-configuration.service';
@@ -11,7 +11,11 @@ import { ListableObject } from '../../../../object-collection/shared/listable-ob
 import { RelationshipOptions } from '../../models/relationship-options.model';
 import { SearchResult } from '../../../../search/search-result.model';
 import { Item } from '../../../../../core/shared/item.model';
-import { getAllSucceededRemoteData, getRemoteDataPayload } from '../../../../../core/shared/operators';
+import {
+  getAllSucceededRemoteData,
+  getAllSucceededRemoteDataPayload,
+  getRemoteDataPayload
+} from '../../../../../core/shared/operators';
 import { AddRelationshipAction, RemoveRelationshipAction, UpdateRelationshipNameVariantAction } from './relationship.actions';
 import { RelationshipService } from '../../../../../core/data/relationship.service';
 import { RelationshipTypeService } from '../../../../../core/data/relationship-type.service';
@@ -19,11 +23,16 @@ import { Store } from '@ngrx/store';
 import { AppState } from '../../../../../app.reducer';
 import { Context } from '../../../../../core/shared/context.model';
 import { LookupRelationService } from '../../../../../core/data/lookup-relation.service';
-import { RemoteData } from '../../../../../core/data/remote-data';
-import { PaginatedList } from '../../../../../core/data/paginated-list.model';
 import { ExternalSource } from '../../../../../core/shared/external-source.model';
 import { ExternalSourceService } from '../../../../../core/data/external-source.service';
 import { Router } from '@angular/router';
+import { RemoteDataBuildService } from '../../../../../core/cache/builders/remote-data-build.service';
+import { followLink } from '../../../../utils/follow-link-config.model';
+import { SubmissionObject } from '../../../../../core/submission/models/submission-object.model';
+import { Collection } from '../../../../../core/shared/collection.model';
+import { SubmissionService } from '../../../../../submission/submission.service';
+import { SubmissionObjectDataService } from '../../../../../core/submission/submission-object-data.service';
+import { RemoteData } from '../../../../../core/data/remote-data';
 
 @Component({
   selector: 'ds-dynamic-lookup-relation-modal',
@@ -101,7 +110,7 @@ export class DsDynamicLookupRelationModalComponent implements OnInit, OnDestroy 
   /**
    * A list of the available external sources configured for this relationship
    */
-  externalSourcesRD$: Observable<RemoteData<PaginatedList<ExternalSource>>>;
+  externalSourcesRD$: Observable<ExternalSource[]>;
 
   /**
    * The total amount of internal items for the current options
@@ -113,6 +122,11 @@ export class DsDynamicLookupRelationModalComponent implements OnInit, OnDestroy 
    */
   totalExternal$: Observable<number[]>;
 
+  /**
+   * List of subscriptions to unsubscribe from
+   */
+  private subs: Subscription[] = [];
+
   constructor(
     public modal: NgbActiveModal,
     private selectableListService: SelectableListService,
@@ -121,14 +135,18 @@ export class DsDynamicLookupRelationModalComponent implements OnInit, OnDestroy 
     private externalSourceService: ExternalSourceService,
     private lookupRelationService: LookupRelationService,
     private searchConfigService: SearchConfigurationService,
+    private rdbService: RemoteDataBuildService,
+    private submissionService: SubmissionService,
+    private submissionObjectService: SubmissionObjectDataService,
     private zone: NgZone,
     private store: Store<AppState>,
-    private router: Router,
+    private router: Router
   ) {
 
   }
 
   ngOnInit(): void {
+    this.setItem();
     this.selection$ = this.selectableListService
       .getSelectableList(this.listId)
       .pipe(map((listState: SelectableListState) => hasValue(listState) && hasValue(listState.selection) ? listState.selection : []));
@@ -141,7 +159,13 @@ export class DsDynamicLookupRelationModalComponent implements OnInit, OnDestroy 
       this.context = Context.EntitySearchModal;
     }
 
-    this.externalSourcesRD$ = this.externalSourceService.findAll();
+    if (isNotEmpty(this.relationshipOptions.externalSources)) {
+      this.externalSourcesRD$ = this.rdbService.aggregate(
+        this.relationshipOptions.externalSources.map((source) => this.externalSourceService.findById(source))
+      ).pipe(
+        getAllSucceededRemoteDataPayload()
+      );
+    }
 
     this.setTotals();
   }
@@ -180,6 +204,24 @@ export class DsDynamicLookupRelationModalComponent implements OnInit, OnDestroy 
             );
           });
       });
+  }
+
+  /**
+   *  Initialize this.item$ based on this.model.submissionId
+   */
+  private setItem() {
+    const submissionObject$ = this.submissionObjectService
+      .findById(this.submissionId, true, true, followLink('item'), followLink('collection')).pipe(
+        getAllSucceededRemoteData(),
+        getRemoteDataPayload()
+      );
+
+    const item$ = submissionObject$.pipe(switchMap((submissionObject: SubmissionObject) => (submissionObject.item as Observable<RemoteData<Item>>).pipe(getAllSucceededRemoteData(), getRemoteDataPayload())));
+    const collection$ = submissionObject$.pipe(switchMap((submissionObject: SubmissionObject) => (submissionObject.collection as Observable<RemoteData<Collection>>).pipe(getAllSucceededRemoteData(), getRemoteDataPayload())));
+
+    this.subs.push(item$.subscribe((item) => this.item = item));
+    this.subs.push(collection$.subscribe((collection) => this.collection = collection));
+
   }
 
   /**
@@ -224,21 +266,21 @@ export class DsDynamicLookupRelationModalComponent implements OnInit, OnDestroy 
     );
 
     const externalSourcesAndOptions$ = observableCombineLatest(
-      this.externalSourcesRD$.pipe(
-        getAllSucceededRemoteData(),
-        getRemoteDataPayload()
-      ),
+      this.externalSourcesRD$,
       this.searchConfigService.paginatedSearchOptions
     );
 
     this.totalExternal$ = externalSourcesAndOptions$.pipe(
       switchMap(([sources, options]) =>
-        observableCombineLatest(...sources.page.map((source: ExternalSource) => this.lookupRelationService.getTotalExternalResults(source, options))))
+        observableCombineLatest(...sources.map((source: ExternalSource) => this.lookupRelationService.getTotalExternalResults(source, options))))
     );
   }
 
   ngOnDestroy() {
     this.router.navigate([], {});
     Object.values(this.subMap).forEach((subscription) => subscription.unsubscribe());
+    this.subs
+      .filter((sub) => hasValue(sub))
+      .forEach((sub) => sub.unsubscribe());
   }
 }

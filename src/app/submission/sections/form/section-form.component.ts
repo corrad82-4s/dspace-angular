@@ -2,7 +2,15 @@ import { ChangeDetectorRef, Component, Inject, ViewChild, OnDestroy } from '@ang
 import { DynamicFormControlEvent, DynamicFormControlModel } from '@ng-dynamic-forms/core';
 
 import { combineLatest as observableCombineLatest, Observable, Subscription } from 'rxjs';
-import { distinctUntilChanged, filter, find, map, mergeMap, switchMap, take, tap } from 'rxjs/operators';
+import {
+  distinctUntilChanged,
+  filter,
+  find,
+  map,
+  take,
+  tap,
+  mergeMap
+} from 'rxjs/operators';
 import { TranslateService } from '@ngx-translate/core';
 import { findIndex, isEqual } from 'lodash';
 
@@ -11,7 +19,7 @@ import { FormComponent } from '../../../shared/form/form.component';
 import { FormService } from '../../../shared/form/form.service';
 import { SectionModelComponent } from '../models/section.model';
 import { SubmissionFormsConfigService } from '../../../core/config/submission-forms-config.service';
-import { hasNoValue, hasValue, isNotEmpty, isUndefined } from '../../../shared/empty.util';
+import { hasValue, isNotEmpty, isUndefined } from '../../../shared/empty.util';
 import { JsonPatchOperationPathCombiner } from '../../../core/json-patch/builder/json-patch-operation-path-combiner';
 import { SubmissionFormsModel } from '../../../core/config/models/config-submission-forms.model';
 import { SubmissionSectionError, SubmissionSectionObject } from '../../objects/submission-objects.reducer';
@@ -27,7 +35,6 @@ import { difference } from '../../../shared/object.util';
 import { WorkspaceitemSectionFormObject } from '../../../core/submission/models/workspaceitem-section-form.model';
 import { WorkspaceItem } from '../../../core/submission/models/workspaceitem.model';
 import { getFirstSucceededRemoteData, getRemoteDataPayload } from '../../../core/shared/operators';
-import { SubmissionObject } from '../../../core/submission/models/submission-object.model';
 import { SubmissionObjectDataService } from '../../../core/submission/submission-object-data.service';
 import { ObjectCacheService } from '../../../core/cache/object-cache.service';
 import { RequestService } from '../../../core/data/request.service';
@@ -169,21 +176,10 @@ export class SubmissionSectionformComponent extends SectionModelComponent implem
       mergeMap(() =>
         observableCombineLatest([
           this.sectionService.getSectionData(this.submissionId, this.sectionData.id, this.sectionData.sectionType),
-          this.submissionObjectService.getHrefByID(this.submissionId).pipe(take(1)).pipe(
-            switchMap((href: string) => {
-              this.objectCache.remove(href);
-              this.requestService.removeByHrefSubstring(this.submissionId);
-              return observableCombineLatest(
-                this.objectCache.hasByHref$(href),
-                this.requestService.hasByHref$(href)
-              ).pipe(
-                filter(([existsInOC, existsInRC]) => !existsInOC && !existsInRC),
-                take(1),
-                switchMap(() => this.submissionObjectService.findById(this.submissionId, false, followLink('item')).pipe(getFirstSucceededRemoteData(), getRemoteDataPayload()) as Observable<SubmissionObject>)
-              );
-            })
-          )]
-        )),
+          this.submissionObjectService.findById(this.submissionId, true, false, followLink('item')).pipe(
+            getFirstSucceededRemoteData(),
+            getRemoteDataPayload())
+        ])),
       take(1))
       .subscribe(([sectionData, workspaceItem]: [WorkspaceitemSectionFormObject, WorkspaceItem]) => {
         if (isUndefined(this.formModel)) {
@@ -365,19 +361,16 @@ export class SubmissionSectionformComponent extends SectionModelComponent implem
    *    the [[DynamicFormControlEvent]] emitted
    */
   onChange(event: DynamicFormControlEvent): void {
-    // don't handle change events for things with an index < 0, those are template rows.
-    if (hasNoValue(event.context) || hasNoValue(event.context.index) || event.context.index >= 0) {
-      this.formOperationsService.dispatchOperationsFromEvent(
-        this.pathCombiner,
-        event,
-        this.previousValue,
-        this.hasStoredValue(this.formBuilderService.getId(event.model), this.formOperationsService.getArrayIndexFromEvent(event)));
-      const metadata = this.formOperationsService.getFieldPathSegmentedFromChangeEvent(event);
-      const value = this.formOperationsService.getFieldValueFromChangeEvent(event);
+    this.formOperationsService.dispatchOperationsFromEvent(
+      this.pathCombiner,
+      event,
+      this.previousValue,
+      this.hasStoredValue(this.formBuilderService.getId(event.model), this.formOperationsService.getArrayIndexFromEvent(event)));
+    const metadata = this.formOperationsService.getFieldPathSegmentedFromChangeEvent(event);
+    const value = this.formOperationsService.getFieldValueFromChangeEvent(event);
 
-      if (environment.submission.autosave.metadata.indexOf(metadata) !== -1 && isNotEmpty(value)) {
-        this.submissionService.dispatchSave(this.submissionId);
-      }
+    if (environment.submission.autosave.metadata.indexOf(metadata) !== -1 && isNotEmpty(value)) {
+      this.submissionService.dispatchSave(this.submissionId);
     }
   }
 
@@ -456,6 +449,19 @@ export class SubmissionSectionformComponent extends SectionModelComponent implem
    */
   isFieldToRemove(fieldId, index) {
     return this.fieldsOnTheirWayToBeRemoved.has(fieldId) && this.fieldsOnTheirWayToBeRemoved.get(fieldId).includes(index);
+  }
+
+  /**
+   * Handle the customEvent (ex. drag-drop move event).
+   * The customEvent is stored inside event.$event
+   * @param $event
+   */
+  onCustomEvent(event: DynamicFormControlEvent) {
+    this.formOperationsService.dispatchOperationsFromEvent(
+      this.pathCombiner,
+      event,
+      this.previousValue,
+      null);
   }
 
   ngOnDestroy(): void {

@@ -12,11 +12,13 @@ import { AuditItemMenuComponent } from './audit-item/audit-item-menu.component';
 import { DsoPageEditMenuComponent } from './dso-page-edit/dso-page-edit-menu.component';
 import { ExportCollectionMenuComponent } from './export-collection/export-collection-menu.component';
 import { BulkImportMenuComponent } from './bulk-import/bulk-import-menu.component';
+import { EditItemRelationshipsMenuComponent } from './edit-item-relationships/edit-item-relationships-menu.component';
 import { ClaimItemMenuComponent } from './claim-item/claim-item-menu.component';
 import { AddCvPublicationMenuComponent } from './add-cv-publication/add-cv-publication-menu.component';
 import { AddCvPatentMenuComponent } from './add-cv-patent/add-cv-patent-menu.component';
 import { AddCvProjectMenuComponent } from './add-cv-project/add-cv-project-menu.component';
 import { ModifyForProfileMenuComponent } from './modify-for-profile/modify-for-profile-menu.component';
+import { HideNotificationMenuComponent } from './hide-notification/hide-notification-menu.component';
 
 const COMPONENTS = [
   BulkImportMenuComponent,
@@ -30,7 +32,10 @@ const COMPONENTS = [
   AddCvPublicationMenuComponent,
   AddCvProjectMenuComponent,
   AddCvPatentMenuComponent,
-  ModifyForProfileMenuComponent
+  ModifyForProfileMenuComponent,
+  HideNotificationMenuComponent,
+  ExportCollectionMenuComponent,
+  EditItemRelationshipsMenuComponent
 ];
 
 const ENTRY_COMPONENTS = [
@@ -44,7 +49,9 @@ const ENTRY_COMPONENTS = [
   AddCvPublicationMenuComponent,
   AddCvProjectMenuComponent,
   AddCvPatentMenuComponent,
-  ModifyForProfileMenuComponent
+  ModifyForProfileMenuComponent,
+  ExportCollectionMenuComponent,
+  EditItemRelationshipsMenuComponent
 ];
 
 const MODULE = [

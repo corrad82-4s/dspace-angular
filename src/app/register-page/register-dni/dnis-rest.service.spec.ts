@@ -47,7 +47,7 @@ describe('DnisRestService test suite', () => {
       scheduler.schedule(() => service.verifyDni(dni, date).subscribe());
       scheduler.flush();
 
-      expect(requestService.configure).toHaveBeenCalledWith(expected);
+      expect(requestService.send).toHaveBeenCalledWith(expected);
     });
   });
 

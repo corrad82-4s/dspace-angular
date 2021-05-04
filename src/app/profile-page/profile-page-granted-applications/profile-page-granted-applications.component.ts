@@ -1,5 +1,4 @@
-import { getFirstCompletedRemoteData, getFirstSucceededRemoteData } from './../../core/shared/operators';
-import { hasSucceeded } from './../../core/data/request.reducer';
+import { getFirstCompletedRemoteData } from './../../core/shared/operators';
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 
 import { BehaviorSubject, Observable, Subscription } from 'rxjs';
@@ -13,7 +12,6 @@ import { GrantedApplication } from './models/granted-application.model';
 import { MetadataValue } from '../../core/shared/metadata.models';
 import { PaginationComponentOptions } from '../../shared/pagination/pagination-component-options.model';
 import { EPersonDataService } from '../../core/eperson/eperson-data.service';
-import { RestResponse } from '../../core/cache/response.models';
 import { hasValue, isNotEmpty } from '../../shared/empty.util';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { NotificationsService } from '../../shared/notifications/notifications.service';

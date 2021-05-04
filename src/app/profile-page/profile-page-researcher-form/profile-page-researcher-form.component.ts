@@ -1,4 +1,4 @@
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { BehaviorSubject, Observable, of } from 'rxjs';
@@ -8,6 +8,7 @@ import { ResearcherProfileService } from '../../core/profile/researcher-profile.
 import { ProfileClaimService } from '../profile-claim/profile-claim.service';
 import { ClaimItemSelectorComponent } from '../../shared/dso-selector/modal-wrappers/claim-item-selector/claim-item-selector.component';
 import { mergeMap, take } from 'rxjs/operators';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
     selector: 'ds-profile-page-researcher-form',
@@ -41,11 +42,22 @@ export class ProfilePageResearcherFormComponent implements OnInit {
      */
     processingCreate$: BehaviorSubject<boolean>  = new BehaviorSubject<boolean>(false);
 
+    /**
+     * Reference to NgbModal
+     */
+    public modalRef: NgbModalRef;
+
+    /**
+     * The deletion confirmation form group
+     */
+    public deletionConfirmationForm: FormGroup;
+
     canClaim$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
     constructor( protected researcherProfileService: ResearcherProfileService,
                  protected router: Router, private claimService: ProfileClaimService,
-                 private modalService: NgbModal) {
+                 private modalService: NgbModal,
+                 private formBuilder: FormBuilder) {
 
     }
 
@@ -53,6 +65,10 @@ export class ProfilePageResearcherFormComponent implements OnInit {
      * Initialize the component searching the current user researcher profile.
      */
     ngOnInit(): void {
+
+        this.deletionConfirmationForm = this.formBuilder.group({
+          confirmation: ['', Validators.required]
+        });
 
         this.researcherProfileService.findById(this.user.id)
         .pipe(
@@ -107,11 +123,22 @@ export class ProfilePageResearcherFormComponent implements OnInit {
     }
 
     /**
+     * Open the modal to confirm the delation the given researcher profile.
+     *
+     * @param content the modal content to show
+     */
+     openDeletionModal(content: any): void {
+       this.deletionConfirmationForm.reset();
+       this.modalRef = this.modalService.open(content);
+    }
+
+    /**
      * Delete the given researcher profile.
      *
      * @param researcherProfile the profile to delete
      */
     deleteProfile( researcherProfile: ResearcherProfile): void {
+        this.modalRef?.close('Send Button');
         this.processingDelete$.next(true);
         this.researcherProfileService.delete(researcherProfile)
             .subscribe ( (deleted) => {
@@ -154,6 +181,11 @@ export class ProfilePageResearcherFormComponent implements OnInit {
 
     canClaim(): Observable<boolean> {
         return this.canClaim$.asObservable();
+    }
+
+    confirmationTextAreaNotEqualsToDelete() {
+      const confirmationMessage: string = this.deletionConfirmationForm.value.confirmation as string;
+      return !confirmationMessage || confirmationMessage.toLocaleLowerCase() !== 'delete';
     }
 
 }

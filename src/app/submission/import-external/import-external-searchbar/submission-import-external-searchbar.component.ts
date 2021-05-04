@@ -129,7 +129,7 @@ export class SubmissionImportExternalSearchbarComponent implements OnInit, OnDes
         const paginatedListRD = createSuccessfulRemoteDataObject(paginatedList);
         return observableOf(paginatedListRD);
       }),
-      getFirstSucceededRemoteDataPayload()
+      getFirstSucceededRemoteDataPayload(),
     ).subscribe((externalSource: PaginatedList<ExternalSource>) => {
       externalSource.page.forEach((element) => {
         this.sourceList.push({ id: element.id, name: element.name });
@@ -174,8 +174,8 @@ export class SubmissionImportExternalSearchbarComponent implements OnInit, OnDes
           const paginatedListRD = createSuccessfulRemoteDataObject(paginatedList);
           return observableOf(paginatedListRD);
         }),
-        tap(() => this.sourceListLoading = false),
-        getFirstSucceededRemoteData()
+        getFirstSucceededRemoteData(),
+        tap(() => this.sourceListLoading = false)
       ).subscribe((externalSource: RemoteData<PaginatedList<ExternalSource>>) => {
         externalSource.payload.page.forEach((element) => {
           this.sourceList.push({ id: element.id, name: element.name });

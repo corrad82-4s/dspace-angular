@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { RegisterEmailComponent } from './register-email/register-email.component';
-import { CreateProfileComponent } from './create-profile/create-profile.component';
 import { ItemPageResolver } from '../+item-page/item-page.resolver';
 import { RegistrationResolver } from '../register-email-form/registration.resolver';
 import { EndUserAgreementCookieGuard } from '../core/end-user-agreement/end-user-agreement-cookie.guard';
+import { ThemedCreateProfileComponent } from './create-profile/themed-create-profile.component';
 import { RegisterDniComponent } from './register-dni/register-dni.component';
 import { RegisterDniProfileComponent } from './register-dni/register-dni-profile/register-dni-profile.component';
 
@@ -28,7 +28,7 @@ import { RegisterDniProfileComponent } from './register-dni/register-dni-profile
       },
       {
         path: ':token',
-        component: CreateProfileComponent,
+        component: ThemedCreateProfileComponent,
         resolve: {registration: RegistrationResolver},
         canActivate: [EndUserAgreementCookieGuard]
       }

@@ -29,7 +29,7 @@ export class AddCvProjectMenuComponent extends ContextMenuEntryComponent impleme
   }
 
   ngOnInit(): void {
-    this.isCvProfile$.next(this.contextMenuObject.firstMetadataValue('relationship.type') === 'CvPerson');
+    this.isCvProfile$.next(this.contextMenuObject.firstMetadataValue('dspace.entity.type') === 'CvPerson');
   }
 
   isCvProfile(): Observable<boolean> {

@@ -1,0 +1,65 @@
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+// Sticky Footer
+.outer-wrapper {
+  display: flex;
+  margin: 0;
+}
+
+.inner-wrapper {
+  flex: 1 1 auto;
+  flex-flow: column nowrap;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  width: 100%;
+  position: relative;
+}
+
+.main-content {
+  z-index: var(--ds-main-z-index);
+  flex: 1 1 100%;
+  margin-top: var(--ds-content-spacing);
+  margin-bottom: var(--ds-content-spacing);
+}
+
+.alert.hide {
+  padding: 0;
+  margin: 0;
+}
+
+ds-admin-sidebar {
+  position: fixed;
+  z-index: var(--ds-sidebar-z-index);
+}
+
+.ds-full-screen-loader {
+  height: 100vh;
+}
+
+.sticky-top {
+  z-index: 0;
+}
+
+.media-viewer
+  .change-gallery
+  .ngx-gallery
+  ngx-gallery-preview.ngx-gallery-active {
+  right: 0;
+  left: auto;
+  width: calc(100% - 53px);
+}
+
+.ds-submission-reorder-dragging {
+  .ds-hint,
+  button {
+    display: none;
+  }
+}

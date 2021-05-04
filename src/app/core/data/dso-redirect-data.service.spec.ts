@@ -9,9 +9,10 @@ import { ObjectCacheService } from '../cache/object-cache.service';
 import { CoreState } from '../core.reducers';
 import { HALEndpointService } from '../shared/hal-endpoint.service';
 import { DsoRedirectDataService } from './dso-redirect-data.service';
-import { FindByIDRequest, IdentifierType } from './request.models';
+import { GetRequest, IdentifierType } from './request.models';
 import { RequestService } from './request.service';
 import { createSuccessfulRemoteDataObject } from '../../shared/remote-data.utils';
+import { Item } from '../shared/item.model';
 
 describe('DsoRedirectDataService', () => {
   let scheduler: TestScheduler;
@@ -42,16 +43,16 @@ describe('DsoRedirectDataService', () => {
     });
     requestService = jasmine.createSpyObj('requestService', {
       generateRequestId: requestUUID,
-      configure: true
+      send: true
     });
     router = {
       navigate: jasmine.createSpy('navigate')
     };
 
-    remoteData = createSuccessfulRemoteDataObject({
+    remoteData = createSuccessfulRemoteDataObject(Object.assign(new Item(), {
       type: 'item',
       uuid: '123456789'
-    });
+    }));
 
     rdbService = jasmine.createSpyObj('rdbService', {
       buildSingle: cold('a', {
@@ -93,18 +94,18 @@ describe('DsoRedirectDataService', () => {
       expect(halService.getEndpoint).toHaveBeenCalledWith('dso');
     });
 
-    it('should configure the proper FindByIDRequest for uuid', () => {
+    it('should send the proper FindByIDRequest for uuid', () => {
       scheduler.schedule(() => service.findByIdAndIDType(dsoUUID, IdentifierType.UUID));
       scheduler.flush();
 
-      expect(requestService.configure).toHaveBeenCalledWith(new FindByIDRequest(requestUUID, requestUUIDURL, dsoUUID));
+      expect(requestService.send).toHaveBeenCalledWith(new GetRequest(requestUUID, requestUUIDURL), true);
     });
 
-    it('should configure the proper FindByIDRequest for handle', () => {
+    it('should send the proper FindByIDRequest for handle', () => {
       scheduler.schedule(() => service.findByIdAndIDType(dsoHandle, IdentifierType.HANDLE));
       scheduler.flush();
 
-      expect(requestService.configure).toHaveBeenCalledWith(new FindByIDRequest(requestUUID, requestHandleURL, dsoHandle));
+      expect(requestService.send).toHaveBeenCalledWith(new GetRequest(requestUUID, requestHandleURL), true);
     });
 
     it('should navigate to item route', () => {
@@ -114,7 +115,24 @@ describe('DsoRedirectDataService', () => {
       redir.subscribe();
       scheduler.schedule(() => redir);
       scheduler.flush();
-      expect(router.navigate).toHaveBeenCalledWith([remoteData.payload.type + 's/' + remoteData.payload.uuid]);
+      expect(router.navigate).toHaveBeenCalledWith(['/items/' + remoteData.payload.uuid]);
+    });
+    it('should navigate to entities route with the corresponding entity type', () => {
+      remoteData.payload.type = 'item';
+      remoteData.payload.metadata =  {
+        'dspace.entity.type': [
+          {
+            language: 'en_US',
+            value: 'Publication'
+          }
+        ],
+      };
+      const redir = service.findByIdAndIDType(dsoHandle, IdentifierType.HANDLE);
+      // The framework would normally subscribe but do it here so we can test navigation.
+      redir.subscribe();
+      scheduler.schedule(() => redir);
+      scheduler.flush();
+      expect(router.navigate).toHaveBeenCalledWith(['/entities/publication/' + remoteData.payload.uuid]);
     });
 
     it('should navigate to collections route', () => {
@@ -162,7 +180,7 @@ describe('DsoRedirectDataService', () => {
 
     it('should include nested linksToFollow 3lvl', () => {
       const expected = `${requestUUIDURL}&embed=owningCollection/itemtemplate/relationships`;
-      const result = (service as any).getIDHref(pidLink, dsoUUID, followLink('owningCollection', undefined, true, followLink('itemtemplate', undefined, true, followLink('relationships'))));
+      const result = (service as any).getIDHref(pidLink, dsoUUID, followLink('owningCollection', undefined, true, true, true, followLink('itemtemplate', undefined, true, true, true, followLink('relationships'))));
       expect(result).toEqual(expected);
     });
   });

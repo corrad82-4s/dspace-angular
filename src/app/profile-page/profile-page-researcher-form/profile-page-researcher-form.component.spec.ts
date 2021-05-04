@@ -14,6 +14,7 @@ import { RouterStub } from '../../shared/testing/router.stub';
 import { VarDirective } from '../../shared/utils/var.directive';
 import { ProfileClaimService } from '../profile-claim/profile-claim.service';
 import { ProfilePageResearcherFormComponent } from './profile-page-researcher-form.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 describe('ProfilePageResearcherFormComponent', () => {
 
@@ -56,7 +57,8 @@ describe('ProfilePageResearcherFormComponent', () => {
         });
 
         modalService = jasmine.createSpyObj('NgbModal', {
-            open: {componentInstance: {}}
+            open: {componentInstance: {}},
+            close: () => null
         });
 
     }
@@ -65,7 +67,7 @@ describe('ProfilePageResearcherFormComponent', () => {
         init();
         TestBed.configureTestingModule({
           declarations: [ProfilePageResearcherFormComponent, VarDirective],
-          imports: [TranslateModule.forRoot(), RouterTestingModule.withRoutes([])],
+          imports: [TranslateModule.forRoot(), RouterTestingModule.withRoutes([]), FormsModule, ReactiveFormsModule],
           providers: [
             { provide: ResearcherProfileService, useValue: researcherProfileService },
             { provide: Router, useValue: router},
@@ -108,6 +110,15 @@ describe('ProfilePageResearcherFormComponent', () => {
             profile.visible = true;
             component.toggleProfileVisibility(profile);
             expect(researcherProfileService.setVisibility).toHaveBeenCalledWith(profile, false);
+        });
+
+    });
+
+    describe('openDeletionModal', () => {
+
+        it('should open the deletion modal', () => {
+            component.openDeletionModal({});
+            expect(modalService.open).toHaveBeenCalledTimes(1);
         });
 
     });

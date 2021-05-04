@@ -1,5 +1,6 @@
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
+import { CollectionItemMapperComponent } from '../collection-item-mapper/collection-item-mapper.component';
 import { EditCollectionPageComponent } from './edit-collection-page.component';
 import { CollectionMetadataComponent } from './collection-metadata/collection-metadata.component';
 import { CollectionRolesComponent } from './collection-roles/collection-roles.component';
@@ -11,6 +12,7 @@ import { ResourcePolicyTargetResolver } from '../../shared/resource-policies/res
 import { ResourcePolicyCreateComponent } from '../../shared/resource-policies/create/resource-policy-create.component';
 import { ResourcePolicyResolver } from '../../shared/resource-policies/resolvers/resource-policy.resolver';
 import { ResourcePolicyEditComponent } from '../../shared/resource-policies/edit/resource-policy-edit.component';
+import { CollectionAdministratorGuard } from '../../core/data/feature-authorization/feature-authorization-guard/collection-administrator.guard';
 
 /**
  * Routing module that handles the routing for the Edit Collection page administrator functionality
@@ -25,6 +27,7 @@ import { ResourcePolicyEditComponent } from '../../shared/resource-policies/edit
         },
         data: { breadcrumbKey: 'collection.edit' },
         component: EditCollectionPageComponent,
+        canActivate: [CollectionAdministratorGuard],
         children: [
           {
             path: '',
@@ -86,7 +89,12 @@ import { ResourcePolicyEditComponent } from '../../shared/resource-policies/edit
                 data: { title: 'collection.edit.tabs.authorizations.title', showBreadcrumbs: true }
               }
             ]
-          }
+          },
+          {
+            path: 'mapper',
+            component: CollectionItemMapperComponent,
+            data: { title: 'collection.edit.tabs.item-mapper.title', hideReturnButton: true, showBreadcrumbs: true }
+          },
         ]
       }
     ])

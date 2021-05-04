@@ -1,5 +1,5 @@
 import { AuthService } from './../../../../core/auth/auth.service';
-import { Component } from '@angular/core';
+import { Component, Injector } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { TranslateService } from '@ngx-translate/core';
@@ -15,9 +15,12 @@ import { getFirstSucceededRemoteDataPayload, getFirstSucceededRemoteListPayload 
 import { WorkflowItemDataService } from '../../../../core/submission/workflowitem-data.service';
 import { WorkflowStepDataService } from '../../../../core/submission/workflowstep-data.service';
 import { NotificationsService } from '../../../../shared/notifications/notifications.service';
-import { ClaimedTaskDataService } from '../../../../core/tasks/claimed-task-data.service';
 import { ClaimedTaskActionsAbstractComponent } from '../abstract/claimed-task-actions-abstract.component';
 import { rendersWorkflowTaskOption } from '../switcher/claimed-task-actions-decorator';
+import { Router } from '@angular/router';
+import { SearchService } from '../../../../core/shared/search/search.service';
+import { RequestService } from '../../../../core/data/request.service';
+import { ClaimedTask } from '../../../../core/tasks/models/claimed-task-object.model';
 
 export const WORKFLOW_TASK_OPTION_ASSIGN = 'submit_assign';
 
@@ -56,7 +59,14 @@ export class ClaimedTaskActionsAssignComponent extends ClaimedTaskActionsAbstrac
   * @param {NgbModal} modalService
   * @param claimedTaskService
   */
- constructor(protected claimedTaskService: ClaimedTaskDataService,
+ constructor(
+             protected injector: Injector,
+             protected router: Router,
+             protected notificationsService: NotificationsService,
+             protected translate: TranslateService,
+             protected searchService: SearchService,
+             protected requestService: RequestService,
+              // protected claimedTaskService: ClaimedTaskDataService,
              private formBuilder: FormBuilder,
              private modalService: NgbModal,
              private collectionService: CollectionDataService,
@@ -67,13 +77,13 @@ export class ClaimedTaskActionsAssignComponent extends ClaimedTaskActionsAbstrac
              private authService: AuthService,
              private notificationService: NotificationsService,
              private translateService: TranslateService) {
-   super(claimedTaskService);
+   // super(claimedTaskService);
+   super(injector, router, notificationsService, translate, searchService, requestService);
  }
 
-  /**
-   * Initialize form
-   */
-  ngOnInit() {
+  initObjects(object: ClaimedTask) {
+    super.initObjects(object);
+
     this.assignForm = this.formBuilder.group({
       user: ['', Validators.required]
     });

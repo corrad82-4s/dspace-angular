@@ -7,6 +7,9 @@
         <ds-profile-page-researcher-form [user]="user"></ds-profile-page-researcher-form>
       </div>
     </div>
+
+    <ds-profile-page-verified-identifiers [user]="user"></ds-profile-page-verified-identifiers>
+
     <div class="card mb-4">
       <div class="card-header">{{'profile.card.identify' | translate}}</div>
       <div class="card-body">
@@ -23,8 +26,11 @@
         ></ds-profile-page-security-form>
       </div>
     </div>
+    <div class="col-12 text-right pr-0">
+      <button class="btn btn-primary" (click)="updateProfile()"><i class="fas fa-edit"></i> {{'profile.form.submit' | translate}}</button>
+    </div>
 
-    <button class="btn btn-outline-primary" (click)="updateProfile()">{{'profile.form.submit' | translate}}</button>
+
 
     <ds-profile-page-twophase-authtentication [user]="user"></ds-profile-page-twophase-authtentication>
 

@@ -64,7 +64,7 @@ export class SourcesCorrectionsUtilsService {
    * @protected
    */
   protected getOwningCollection(item: Item): Observable<Collection> {
-    return this.itemService.findById(item.uuid, true, followLink('owningCollection'))
+    return this.itemService.findById(item.uuid, true, true, followLink('owningCollection'))
       .pipe(
         getFirstSucceededRemoteDataPayload(),
         switchMap((fullItem: Item) => {
@@ -79,7 +79,7 @@ export class SourcesCorrectionsUtilsService {
    * @protected
    */
   protected getParentCommunity(collection: Collection): Observable<Community> {
-    return this.collectionService.findById(collection.uuid, true, followLink('parentCommunity'))
+    return this.collectionService.findById(collection.uuid, true,true, followLink('parentCommunity'))
       .pipe(
         getFirstSucceededRemoteDataPayload(),
         switchMap((fullCollection: Collection) => {

@@ -21,6 +21,7 @@ import { RestRequestMethod } from '../data/rest-request-method';
 import { environment } from '../../../environments/environment';
 import { ObjectCacheEntry } from './object-cache.reducer';
 import { Operation } from 'fast-json-patch';
+import { NoOpAction } from '../../shared/ngrx/no-op.action';
 
 @Injectable()
 export class ServerSyncBufferEffects {
@@ -80,7 +81,7 @@ export class ServerSyncBufferEffects {
               switchMap((array) => [...array, new EmptySSBAction(action.payload)])
             );
             } else {
-              return observableOf({ type: 'NO_ACTION' });
+              return observableOf(new NoOpAction());
             }
           })
         );
@@ -94,14 +95,16 @@ export class ServerSyncBufferEffects {
    * @returns {Observable<Action>} ApplyPatchObjectCacheAction to be dispatched
    */
   private applyPatch(href: string): Observable<Action> {
-    const patchObject = this.objectCache.getByHref(href).pipe(take(1));
+    const patchObject = this.objectCache.getByHref(href).pipe(
+      take(1)
+    );
 
     return patchObject.pipe(
       map((entry: ObjectCacheEntry) => {
         if (isNotEmpty(entry.patches)) {
           const flatPatch: Operation[] = [].concat(...entry.patches.map((patch) => patch.operations));
           if (isNotEmpty(flatPatch)) {
-            this.requestService.configure(new PatchRequest(this.requestService.generateRequestId(), href, flatPatch));
+            this.requestService.send(new PatchRequest(this.requestService.generateRequestId(), href, flatPatch));
           }
         }
         return new ApplyPatchObjectCacheAction(href);

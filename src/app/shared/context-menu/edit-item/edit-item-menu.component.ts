@@ -46,6 +46,7 @@ export class EditItemMenuComponent extends ContextMenuEntryComponent implements 
    */
   private sub: Subscription;
 
+
   /**
    * Initialize instance variables
    *
@@ -63,7 +64,7 @@ export class EditItemMenuComponent extends ContextMenuEntryComponent implements 
 
   ngOnInit(): void {
     // Retrieve edit modes
-    this.sub = this.editItemService.findById(this.contextMenuObject.id + ':none', true, followLink('modes')).pipe(
+    this.sub = this.editItemService.findById(this.contextMenuObject.id + ':none', true, true, followLink('modes')).pipe(
       getAllSucceededRemoteDataPayload(),
       mergeMap((editItem: EditItem) => editItem.modes.pipe(
         getFirstSucceededRemoteListPayload())

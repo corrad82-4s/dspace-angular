@@ -1,0 +1,25 @@
+<ng-container *ngIf="isNotification">
+
+  <ng-container *ngIf="(isHidden$ | async) else showTemplate">
+    <button ngbDropdownItem (click)="hide()" id="hideBtn">
+      <ng-container *ngIf="!(isProcessing$ | async) else spinner">
+        {{'context-menu.actions.hide-notification.btn' | translate}}
+      </ng-container>
+    </button>
+  </ng-container>
+
+</ng-container>
+
+
+<ng-template #showTemplate>
+  <button ngbDropdownItem (click)="show()" id="showBtn">
+    <ng-container *ngIf="!(isProcessing$ | async) else spinner">
+      {{'context-menu.actions.show-notification.btn' | translate}}
+    </ng-container>
+  </button>
+</ng-template>
+
+<ng-template #spinner>
+  <i class="fa fa-spinner fa-spin fa-fw"></i>
+  <span class="sr-only">Loading...</span>
+</ng-template>

@@ -7,6 +7,8 @@ import { AddToObjectCacheAction } from '../cache/object-cache.actions';
 import { Item } from '../shared/item.model';
 import { AddToIndexAction } from './index.actions';
 import { IndexName } from './index.reducer';
+import { provideMockStore } from '@ngrx/store/testing';
+import { NoOpAction } from '../../shared/ngrx/no-op.action';
 
 describe('ObjectUpdatesEffects', () => {
   let indexEffects: UUIDIndexEffects;
@@ -18,6 +20,7 @@ describe('ObjectUpdatesEffects', () => {
   let alternativeLink;
   let selfLink;
   let otherLink;
+  let initialState;
 
   function init() {
     selfLink = 'rest.org/items/6ca6549c-3db2-4288-8ce4-4a3bce011860';
@@ -34,6 +37,15 @@ describe('ObjectUpdatesEffects', () => {
     msToLive = 90000;
     requestUUID = '324e5a5c-06f7-428d-b3ba-cc322c5dde39';
     alternativeLink = 'rest.org/alternative-link/1234';
+    initialState = {
+      core: {
+        index: {
+          [IndexName.REQUEST]: {
+            [selfLink]: requestUUID
+          }
+        }
+      }
+    };
   }
 
   beforeEach(waitForAsync(() => {
@@ -42,6 +54,7 @@ describe('ObjectUpdatesEffects', () => {
       providers: [
         UUIDIndexEffects,
         provideMockActions(() => actions),
+        provideMockStore({ initialState }),
       ],
     });
   }));
@@ -67,14 +80,14 @@ describe('ObjectUpdatesEffects', () => {
     it('should emit NO_ACTION when a AddToObjectCacheAction without an alternativeLink is dispatched', () => {
       action = new AddToObjectCacheAction(objectToCache, timeCompleted, msToLive, requestUUID, undefined);
       actions = hot('--a-', { a: action });
-      const expected = cold('--b-', { b: { type: 'NO_ACTION' } });
+      const expected = cold('--b-', { b: new NoOpAction() });
       expect(indexEffects.addAlternativeObjectLink$).toBeObservable(expected);
     });
 
     it('should emit NO_ACTION when a AddToObjectCacheAction with an alternativeLink that\'s the same as the objectToCache\'s selfLink is dispatched', () => {
       action = new AddToObjectCacheAction(objectToCache, timeCompleted, msToLive, requestUUID, objectToCache._links.self.href);
       actions = hot('--a-', { a: action });
-      const expected = cold('--b-', { b: { type: 'NO_ACTION' } });
+      const expected = cold('--b-', { b: new NoOpAction() });
       expect(indexEffects.addAlternativeObjectLink$).toBeObservable(expected);
     });
   });

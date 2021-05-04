@@ -1,9 +1,8 @@
-import { createFailedRemoteDataObject$, createSuccessfulRemoteDataObject, createSuccessfulRemoteDataObject$ } from 'src/app/shared/remote-data.utils';
+import { createFailedRemoteDataObject$, createSuccessfulRemoteDataObject$ } from 'src/app/shared/remote-data.utils';
 import { ActivatedRoute, Router } from '@angular/router';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 
-import { of as observableOf } from 'rxjs';
 import { TestScheduler } from 'rxjs/testing';
 import { getTestScheduler } from 'jasmine-marbles';
 import { NgxPaginationModule } from 'ngx-pagination';
@@ -25,8 +24,10 @@ import { HostWindowService } from '../../shared/host-window.service';
 import { HostWindowServiceStub } from '../../shared/testing/host-window-service.stub';
 import { EPerson } from '../../core/eperson/models/eperson.model';
 import { Metadata } from '../../core/shared/metadata.utils';
-import { RestResponse } from '../../core/cache/response.models';
 import { MetadataValue } from '../../core/shared/metadata.models';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { PaginationServiceStub } from '../../shared/testing/pagination-service.stub';
+import { PaginationService } from '../../core/pagination/pagination.service';
 
 describe('ProfilePageGrantedApplicationsComponent', () => {
   let scheduler: TestScheduler;
@@ -194,6 +195,7 @@ describe('ProfilePageGrantedApplicationsComponent', () => {
     }
   ];
   const metadataList = Metadata.all(mockEPerson.metadata, EPERSON_GRANTED_METADATA);
+  const paginationService = new PaginationServiceStub();
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -212,8 +214,10 @@ describe('ProfilePageGrantedApplicationsComponent', () => {
         { provide: HostWindowService, useValue: new HostWindowServiceStub(0) },
         { provide: NotificationsService, useValue: new NotificationsServiceStub() },
         { provide: EPersonDataService, useValue: ePersonDataService },
-        { provide: Router, useValue: new RouterStub() }
+        { provide: Router, useValue: new RouterStub() },
+        { provide: PaginationService, useValue: paginationService }
       ],
+      schemas: [NO_ERRORS_SCHEMA]
     })
     .compileComponents();
   }));

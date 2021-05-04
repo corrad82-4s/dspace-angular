@@ -14,9 +14,12 @@ import { HALEndpointService } from '../shared/hal-endpoint.service';
 import { DataService } from './data.service';
 import { DSOChangeAnalyzer } from './dso-change-analyzer.service';
 import { RemoteData } from './remote-data';
-import { FindByIDRequest, IdentifierType } from './request.models';
+import { IdentifierType } from './request.models';
 import { RequestService } from './request.service';
 import { getFirstCompletedRemoteData } from '../shared/operators';
+import { DSpaceObject } from '../shared/dspace-object.model';
+import { Item } from '../shared/item.model';
+import { getItemPageRoute } from '../../+item-page/item-page-routing-paths';
 
 @Injectable()
 export class DsoRedirectDataService extends DataService<any> {
@@ -53,16 +56,24 @@ export class DsoRedirectDataService extends DataService<any> {
       {}, [], ...linksToFollow);
   }
 
-  findByIdAndIDType(id: string, identifierType = IdentifierType.UUID): Observable<RemoteData<FindByIDRequest>> {
+  findByIdAndIDType(id: string, identifierType = IdentifierType.UUID): Observable<RemoteData<DSpaceObject>> {
     this.setLinkPath(identifierType);
     return this.findById(id).pipe(
       getFirstCompletedRemoteData(),
       tap((response) => {
         if (response.hasSucceeded) {
-          const uuid = response.payload.uuid;
-          const newRoute = this.getEndpointFromDSOType(response.payload.type);
-          if (hasValue(uuid) && hasValue(newRoute)) {
-            this.router.navigate([newRoute + '/' + uuid]);
+          const dso = response.payload;
+          const uuid = dso.uuid;
+          if (hasValue(uuid)) {
+            let newRoute = this.getEndpointFromDSOType(response.payload.type);
+            if (dso.type.startsWith('item')) {
+              newRoute = getItemPageRoute(dso as Item);
+            } else if (hasValue(newRoute)) {
+              newRoute += '/' + uuid;
+            }
+            if (hasValue(newRoute)) {
+              this.router.navigate([newRoute]);
+            }
           }
         }
       })

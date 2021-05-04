@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
-import { CollectionPageComponent } from './collection-page.component';
 import { CollectionPageResolver } from './collection-page.resolver';
 import { CreateCollectionPageComponent } from './create-collection-page/create-collection-page.component';
 import { AuthenticatedGuard } from '../core/auth/authenticated.guard';
@@ -9,7 +8,6 @@ import { CreateCollectionPageGuard } from './create-collection-page/create-colle
 import { DeleteCollectionPageComponent } from './delete-collection-page/delete-collection-page.component';
 import { EditItemTemplatePageComponent } from './edit-item-template-page/edit-item-template-page.component';
 import { ItemTemplatePageResolver } from './edit-item-template-page/item-template-page.resolver';
-import { CollectionItemMapperComponent } from './collection-item-mapper/collection-item-mapper.component';
 import { CollectionBreadcrumbResolver } from '../core/breadcrumbs/collection-breadcrumb.resolver';
 import { DSOBreadcrumbsService } from '../core/breadcrumbs/dso-breadcrumbs.service';
 import { LinkService } from '../core/cache/builders/link.service';
@@ -22,6 +20,7 @@ import {
 import { CollectionPageAdministratorGuard } from './collection-page-administrator.guard';
 import { MenuItemType } from '../shared/menu/initial-menus-state';
 import { LinkMenuItemModel } from '../shared/menu/menu-item/models/link.model';
+import { ThemedCollectionPageComponent } from './themed-collection-page.component';
 
 @NgModule({
   imports: [
@@ -63,14 +62,8 @@ import { LinkMenuItemModel } from '../shared/menu/menu-item/models/link.model';
           },
           {
             path: '',
-            component: CollectionPageComponent,
+            component: ThemedCollectionPageComponent,
             pathMatch: 'full',
-          },
-          {
-            path: '/edit/mapper',
-            component: CollectionItemMapperComponent,
-            pathMatch: 'full',
-            canActivate: [AuthenticatedGuard]
           }
         ],
         data: {

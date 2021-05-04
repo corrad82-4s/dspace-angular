@@ -1,8 +1,10 @@
 import { Component, Input } from '@angular/core';
 
-import { hasValue } from '../../../../shared/empty.util';
+import { hasValue, isNotEmpty } from '../../../../shared/empty.util';
 import { Item } from '../../../../core/shared/item.model';
 import { LayoutField } from '../../../../core/layout/models/metadata-component.model';
+import { PLACEHOLDER_PARENT_METADATA } from '../../../../shared/form/builder/ds-dynamic-form-ui/ds-dynamic-form-constants';
+import { environment } from '../../../../../environments/environment';
 
 /**
  * This class defines the basic model to extends for create a new
@@ -31,6 +33,9 @@ export abstract class RenderingTypeModelComponent {
   /**
    * Returns the value of the metadata to show
    */
+
+  @Input() nested: boolean;
+  @Input() indexToBeRendered;
   get metadataValues(): string[] {
     return this.item.allMetadataValues(this.field.metadata);
   }
@@ -69,4 +74,25 @@ export abstract class RenderingTypeModelComponent {
   get valueStyle(): string {
     return this.field.styleValue;
   }
+
+  /**
+   * Normalize value to display
+   * @param value
+   */
+  normalizeValue(value: string): string {
+    if (isNotEmpty(value) && value.includes(PLACEHOLDER_PARENT_METADATA)) {
+      return '';
+    } else {
+      return value;
+    }
+  }
+
+  /**
+   * Icon Configuration related to the field metadata.
+   */
+  get metadataIcon() {
+    const config = environment.layout.metadataIcons.find((c) => c.metadata === this.field.metadata);
+    return config ? config : null;
+  }
+
 }

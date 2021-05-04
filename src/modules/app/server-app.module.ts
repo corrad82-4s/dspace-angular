@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { ServerModule } from '@angular/platform-server';
-import { RouterModule } from '@angular/router';
 
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 
@@ -31,6 +30,9 @@ import { HardRedirectService } from '../../app/core/services/hard-redirect.servi
 import { ServerHardRedirectService } from '../../app/core/services/server-hard-redirect.service';
 import { Angulartics2 } from 'angulartics2';
 import { Angulartics2Mock } from '../../app/shared/mocks/angulartics2.service.mock';
+import { RouterModule } from '@angular/router';
+import { AuthRequestService } from '../../app/core/auth/auth-request.service';
+import { ServerAuthRequestService } from '../../app/core/auth/server-auth-request.service';
 
 export function createTranslateLoader() {
   return new TranslateJson5UniversalLoader('dist/server/assets/i18n/', '.json5');
@@ -81,6 +83,10 @@ export function createTranslateLoader() {
     {
       provide: SubmissionService,
       useClass: ServerSubmissionService
+    },
+    {
+      provide: AuthRequestService,
+      useClass: ServerAuthRequestService,
     },
     {
       provide: LocaleService,

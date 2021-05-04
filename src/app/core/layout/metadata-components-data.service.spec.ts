@@ -71,7 +71,7 @@ describe('MetadataComponentsDataService', () => {
 
     requestService = jasmine.createSpyObj('requestService', {
       generateRequestId: requestUUID,
-      configure: true,
+      send: true,
       removeByHrefSubstring: {},
       getByHref: of(responseCacheEntry),
       getByUUID: of(responseCacheEntry),

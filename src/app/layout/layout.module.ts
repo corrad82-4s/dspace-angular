@@ -33,6 +33,8 @@ import { MetricAltmetricComponent } from './default-layout/boxes/components/metr
 import { MetricDimensionsComponent } from './default-layout/boxes/components/metric/metric-dimensions/metric-dimensions.component';
 import { MetricDspacecrisComponent } from './default-layout/boxes/components/metric/metric-dspacecris/metric-dspacecris.component';
 import { MetricGooglescholarComponent } from './default-layout/boxes/components/metric/metric-googlescholar/metric-googlescholar.component';
+import { TableComponent } from './default-layout/boxes/components/table/table.component';
+import { InlineComponent } from './default-layout/boxes/components/inline/inline.component';
 import { PeruLayoutComponent } from './peru-layout/peru-layout.component';
 import { PeruTabComponent } from './peru-layout/peru-tab/peru-tab.component';
 import { PeruMetadataBoxComponent } from './peru-layout/boxes/peru-metadata-box/peru-metadata-box.component';
@@ -43,6 +45,7 @@ import { SourcesOfInformationComponent } from './peru-layout/sources-of-informat
 import { PendingCorrectionComponent } from './peru-layout/pending-corrections/pending-correction/pending-correction.component';
 import { PendingCorrectionsComponent } from './peru-layout/pending-corrections/pending-corrections.component';
 import { PendingCorrectionDetailsComponent } from './peru-layout/pending-corrections/pending-correction/pending-correction-details/pending-correction-details.component';
+import { TextVerifiedComponent } from './default-layout/boxes/components/text-verified/text-verified.component';
 
 const ENTRY_COMPONENTS = [
   // put only entry components that use custom decorator
@@ -67,7 +70,8 @@ const ENTRY_COMPONENTS = [
   PeruTabComponent,
   PeruMetadataBoxComponent,
   PeruSearchBoxComponent,
-  PeruMetricsBoxComponent
+  PeruMetricsBoxComponent,
+  TextVerifiedComponent
 ];
 @NgModule({
   declarations: [
@@ -99,6 +103,8 @@ const ENTRY_COMPONENTS = [
     MetricDimensionsComponent,
     MetricDspacecrisComponent,
     MetricGooglescholarComponent,
+    TableComponent,
+    InlineComponent,
     PeruLayoutComponent,
     PeruTabComponent,
     PeruMetadataBoxComponent,
@@ -109,6 +115,7 @@ const ENTRY_COMPONENTS = [
     PendingCorrectionDetailsComponent,
     SourcesOfInformationComponent,
     PeruSidebarComponent,
+    TextVerifiedComponent
   ],
   imports: [
     CommonModule,

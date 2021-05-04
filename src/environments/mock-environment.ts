@@ -116,8 +116,6 @@ export const environment: Partial<GlobalConfig> = {
     async: true,
     time: false
   },
-  // Google Analytics tracking id
-  gaTrackingId: '',
   // Log directory
   logDirectory: '.',
   // NOTE: will log all redux actions and transfers in console
@@ -200,8 +198,34 @@ export const environment: Partial<GlobalConfig> = {
       undoTimeout: 10000 // 10 seconds
     }
   },
-  theme: {
-    name: 'default',
+  themes: [
+    {
+      name: 'full-item-page-theme',
+      regex: 'items/aa6c6c83-3a83-4953-95d1-2bc2e67854d2/full'
+    },
+    {
+      name: 'error-theme',
+      regex: 'collections/aaaa.*'
+    },
+    {
+      name: 'handle-theme',
+      handle: '10673/1233'
+    },
+    {
+      name: 'regex-theme',
+      regex: 'collections\/e8043bc2.*'
+    },
+    {
+      name: 'uuid-theme',
+      uuid: '0958c910-2037-42a9-81c7-dca80e3892b4'
+    },
+    {
+      name: 'base',
+    },
+  ],
+  mediaViewer: {
+    image: true,
+    video: true
   },
   layout: {
     urn: [
@@ -231,6 +255,21 @@ export const environment: Partial<GlobalConfig> = {
         entityType: 'ORGUNIT',
         icon: 'fa fa-university'
       }
+    ],
+    metadataIcons: [
+      {
+        metadata: 'person.identifier.orcid',
+        icon: 'fa fa-check',
+        classes: 'text-success',
+        title: 'cris.boxmetadata.verified.orcid'
+      },
+      {
+        metadata: 'perucris.identifier.dni',
+        icon: 'fa fa-check',
+        classes: 'text-success',
+        title: 'cris.boxmetadata.verified.dni'
+      }
+
     ]
   }
 };

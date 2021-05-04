@@ -7,7 +7,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { Store } from '@ngrx/store';
 import { CoreState } from '../../../core/core.reducers';
 import { CreateProfileComponent } from '../../create-profile/create-profile.component';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { RemoteData } from '../../../core/data/remote-data';
 import { EPerson } from '../../../core/eperson/models/eperson.model';
@@ -21,6 +21,8 @@ export class RegisterDniProfileComponent extends CreateProfileComponent {
 
   dni: string;
   date: string;
+
+  emailForm: FormGroup;
 
   constructor(protected translateService: TranslateService,
               protected ePersonDataService: EPersonDataService,
@@ -38,17 +40,28 @@ export class RegisterDniProfileComponent extends CreateProfileComponent {
       this.dni = params.dni;
       this.date = params.date;
     });
+
+    this.emailForm = this.formBuilder.group({
+      email: new FormControl('', {
+        validators: [Validators.required, Validators.email],
+      })
+    });
   }
 
   canSubmit() {
-    return !this.isInValidPassword;
+    return !this.isInValidPassword && this.emailForm.valid;
   }
 
   getMetadataValues(): any {
     return {};
   }
 
+  get emailControl() {
+    return this.emailForm.get('email');
+  }
+
   createEPerson(eperson): Observable<RemoteData<EPerson>> {
+    eperson.email = this.emailControl.value;
     return this.ePersonDataService.createEPersonForDniAndDate(eperson, this.dni, this.date);
   }
 

@@ -37,8 +37,6 @@
   // "404.page-not-found": "page not found",
   "404.page-not-found": "lapa nav atrasta",
 
-
-
   // "admin.curation-tasks.breadcrumbs": "System curation tasks",
   // TODO New key - Add a translation
   "admin.curation-tasks.breadcrumbs": "System curation tasks",
@@ -50,54 +48,6 @@
   // "admin.curation-tasks.header": "System curation tasks",
   // TODO New key - Add a translation
   "admin.curation-tasks.header": "System curation tasks",
-
-
-
-  // "admin.edit-user-agreement.breadcrumbs": "Edit User Agreement",
-  // TODO New key - Add a translation
-  "admin.edit-user-agreement.breadcrumbs": "Edit User Agreement",
-
-  // "admin.edit-user-agreement.confirm.title": "Force acceptance",
-  // TODO New key - Add a translation
-  "admin.edit-user-agreement.confirm.title": "Force acceptance",
-
-  // "admin.edit-user-agreement.confirm.info":"Do you want to force all users to accept the new user agreement?",
-  // TODO New key - Add a translation
-  "admin.edit-user-agreement.confirm.info":"Do you want to force all users to accept the new user agreement?",
-
-  // "admin.edit-user-agreement.confirm.cancel":"Cancel",
-  // TODO New key - Add a translation
-  "admin.edit-user-agreement.confirm.cancel":"Cancel",
-
-  // "admin.edit-user-agreement.confirm.no":"No, update only",
-  // TODO New key - Add a translation
-  "admin.edit-user-agreement.confirm.no":"No, update only",
-
-  // "admin.edit-user-agreement.confirm.yes":"Yes, update and force",
-  // TODO New key - Add a translation
-  "admin.edit-user-agreement.confirm.yes":"Yes, update and force",
-
-  // "admin.edit-user-agreement.save-button": "Save",
-  // TODO New key - Add a translation
-  "admin.edit-user-agreement.save-button": "Save",
-
-  // "admin.edit-user-agreement.header": "Edit User Agreement",
-  // TODO New key - Add a translation
-  "admin.edit-user-agreement.header": "Edit User Agreement",
-
-  // "admin.edit-user-agreement.success": "User agreement successfully updated",
-  // TODO New key - Add a translation
-  "admin.edit-user-agreement.success": "User agreement successfully updated",
-
-  // "admin.edit-user-agreement.error": "An error occurred while updating the user agreement",
-  // TODO New key - Add a translation
-  "admin.edit-user-agreement.error": "An error occurred while updating the user agreement",
-
-  // "admin.edit-user-agreement.title": "Edit User Agreement",
-  // TODO New key - Add a translation
-  "admin.edit-user-agreement.title": "Edit User Agreement",
-
-
 
   // "admin.registries.bitstream-formats.breadcrumbs": "Format registry",
   // TODO New key - Add a translation
@@ -157,7 +107,6 @@
   "admin.registries.bitstream-formats.edit.extensions.label": "Faila paplašinājums",
 
   // "admin.registries.bitstream-formats.edit.extensions.placeholder": "Enter a file extension without the dot",
-  // TODO Source message changed - Revise the translation
   "admin.registries.bitstream-formats.edit.extensions.placeholder": "Ievadiet faila paplašinājumu bez punkta",
 
   // "admin.registries.bitstream-formats.edit.failure.content": "An error occurred while editing the bitstream format.",
@@ -235,9 +184,8 @@
   // "admin.registries.bitstream-formats.table.supportLevel.head": "Support Level",
   "admin.registries.bitstream-formats.table.supportLevel.head": "Atbalsta Līmenis",
 
-  // "admin.registries.bitstream-formats.title": "DSpace Cris Angular :: Bitstream Format Registry",
-  // TODO New key - Add a translation
-  "admin.registries.bitstream-formats.title": "DSpace Cris Angular :: Bitstream Format Registry",
+  // "admin.registries.bitstream-formats.title": "DSpace Angular :: Bitstream Format Registry",
+  "admin.registries.bitstream-formats.title": "DSpace Angular :: Bitu straumes Formatu Reģistrs",
 
 
 
@@ -278,9 +226,8 @@
   // "admin.registries.metadata.schemas.table.namespace": "Namespace",
   "admin.registries.metadata.schemas.table.namespace": "Nosaukumvieta",
 
-  // "admin.registries.metadata.title": "DSpace Cris Angular :: Metadata Registry",
-  // TODO New key - Add a translation
-  "admin.registries.metadata.title": "DSpace Cris Angular :: Metadata Registry",
+  // "admin.registries.metadata.title": "DSpace Angular :: Metadata Registry",
+  "admin.registries.metadata.title": "DSpace Angular :: Metadatu Registry",
 
 
 
@@ -357,9 +304,8 @@
   // "admin.registries.schema.return": "Return",
   "admin.registries.schema.return": "Atgriezties",
 
-  // "admin.registries.schema.title": "DSpace Cris Angular :: Metadata Schema Registry",
-  // TODO New key - Add a translation
-  "admin.registries.schema.title": "DSpace Cris Angular :: Metadata Schema Registry",
+  // "admin.registries.schema.title": "DSpace Angular :: Metadata Schema Registry",
+  "admin.registries.schema.title": "DSpace Angular :: Metadatu shēmas reģistrs",
 
 
 
@@ -389,8 +335,7 @@
   "admin.access-control.epeople.search.head": "Meklēt",
 
   // "admin.access-control.epeople.button.see-all": "Browse All",
-  // TODO New key - Add a translation
-  "admin.access-control.epeople.button.see-all": "Browse All",
+  "admin.access-control.epeople.button.see-all": "Skatīt visus",
 
   // "admin.access-control.epeople.search.scope.metadata": "Metadata",
   "admin.access-control.epeople.search.scope.metadata": "Metadati",
@@ -411,19 +356,16 @@
   "admin.access-control.epeople.table.name": "Lietotājs",
 
   // "admin.access-control.epeople.table.email": "E-mail (exact)",
-  // TODO Source message changed - Revise the translation
-  "admin.access-control.epeople.table.email": "E-pasts",
+  "admin.access-control.epeople.table.email": "E-pasts (precīzs)",
 
   // "admin.access-control.epeople.table.edit": "Edit",
   "admin.access-control.epeople.table.edit": "Rediģēt",
 
   // "admin.access-control.epeople.table.edit.buttons.edit": "Edit \"{{name}}\"",
-  // TODO New key - Add a translation
-  "admin.access-control.epeople.table.edit.buttons.edit": "Edit \"{{name}}\"",
+  "admin.access-control.epeople.table.edit.buttons.edit": "Rediģēt \"{{name}}\"",
 
   // "admin.access-control.epeople.table.edit.buttons.remove": "Delete \"{{name}}\"",
-  // TODO New key - Add a translation
-  "admin.access-control.epeople.table.edit.buttons.remove": "Delete \"{{name}}\"",
+  "admin.access-control.epeople.table.edit.buttons.remove": "Dzēst \"{{name}}\"",
 
   // "admin.access-control.epeople.no-items": "No EPeople to show.",
   "admin.access-control.epeople.no-items": "Nav pieejamas EPersonas.",
@@ -479,24 +421,19 @@
   "admin.access-control.epeople.form.notification.deleted.failure": "Failed to delete EPerson \"{{name}}\"",
 
   // "admin.access-control.epeople.form.groupsEPersonIsMemberOf": "Member of these groups:",
-  // TODO New key - Add a translation
-  "admin.access-control.epeople.form.groupsEPersonIsMemberOf": "Member of these groups:",
+  "admin.access-control.epeople.form.groupsEPersonIsMemberOf": "Grupas lietotāji:",
 
   // "admin.access-control.epeople.form.table.id": "ID",
-  // TODO New key - Add a translation
   "admin.access-control.epeople.form.table.id": "ID",
 
   // "admin.access-control.epeople.form.table.name": "Name",
-  // TODO New key - Add a translation
-  "admin.access-control.epeople.form.table.name": "Name",
+  "admin.access-control.epeople.form.table.name": "Vārds",
 
   // "admin.access-control.epeople.form.memberOfNoGroups": "This EPerson is not a member of any groups",
-  // TODO New key - Add a translation
-  "admin.access-control.epeople.form.memberOfNoGroups": "This EPerson is not a member of any groups",
+  "admin.access-control.epeople.form.memberOfNoGroups": "EPersona nepieder nevienai grupai",
 
   // "admin.access-control.epeople.form.goToGroups": "Add to groups",
-  // TODO New key - Add a translation
-  "admin.access-control.epeople.form.goToGroups": "Add to groups",
+  "admin.access-control.epeople.form.goToGroups": "Pievienot grupām",
 
   // "admin.access-control.epeople.notification.deleted.failure": "Failed to delete EPerson: \"{{name}}\"",
   "admin.access-control.epeople.notification.deleted.failure": "Neizdevās dzēst EPersonu: \"{{name}}\"",
@@ -507,8 +444,7 @@
 
 
   // "admin.access-control.groups.title": "DSpace Angular :: Groups",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.title": "DSpace Angular :: Groups",
+  "admin.access-control.groups.title": "DSpace Angular :: Grupas",
 
   // "admin.access-control.groups.title.singleGroup": "DSpace Angular :: Edit Group",
   // TODO New key - Add a translation
@@ -519,60 +455,43 @@
   "admin.access-control.groups.title.addGroup": "DSpace Angular :: New Group",
 
   // "admin.access-control.groups.head": "Groups",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.head": "Groups",
+  "admin.access-control.groups.head": "Grupas",
 
   // "admin.access-control.groups.button.add": "Add group",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.button.add": "Add group",
+  "admin.access-control.groups.button.add": "Pievienot grupu",
 
   // "admin.access-control.groups.search.head": "Search groups",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.search.head": "Search groups",
+  "admin.access-control.groups.search.head": "Meklēt grupas",
 
   // "admin.access-control.groups.button.see-all": "Browse all",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.button.see-all": "Browse all",
+  "admin.access-control.groups.button.see-all": "Skatīt visas",
 
   // "admin.access-control.groups.search.button": "Search",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.search.button": "Search",
+  "admin.access-control.groups.search.button": "Meklēt",
 
   // "admin.access-control.groups.table.id": "ID",
-  // TODO New key - Add a translation
   "admin.access-control.groups.table.id": "ID",
 
   // "admin.access-control.groups.table.name": "Name",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.table.name": "Name",
+  "admin.access-control.groups.table.name": "Vārds",
 
   // "admin.access-control.groups.table.members": "Members",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.table.members": "Members",
-
-  // "admin.access-control.groups.table.comcol": "Community / Collection",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.table.comcol": "Community / Collection",
+  "admin.access-control.groups.table.members": "Lietotāji",
 
   // "admin.access-control.groups.table.edit": "Edit",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.table.edit": "Edit",
+  "admin.access-control.groups.table.edit": "Rediģēt",
 
   // "admin.access-control.groups.table.edit.buttons.edit": "Edit \"{{name}}\"",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.table.edit.buttons.edit": "Edit \"{{name}}\"",
+  "admin.access-control.groups.table.edit.buttons.edit": "Rediģēt \"{{name}}\"",
 
   // "admin.access-control.groups.table.edit.buttons.remove": "Delete \"{{name}}\"",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.table.edit.buttons.remove": "Delete \"{{name}}\"",
+  "admin.access-control.groups.table.edit.buttons.remove": "Dzēst \"{{name}}\"",
 
   // "admin.access-control.groups.no-items": "No groups found with this in their name or this as UUID",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.no-items": "No groups found with this in their name or this as UUID",
+  "admin.access-control.groups.no-items": "Netika atrasta grupa ar šādu nosaukumu vai identifikatoru",
 
   // "admin.access-control.groups.notification.deleted.success": "Successfully deleted group \"{{name}}\"",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.notification.deleted.success": "Successfully deleted group \"{{name}}\"",
+  "admin.access-control.groups.notification.deleted.success": "Veiksmīgi dzēsta grupa \"{{name}}\"",
 
   // "admin.access-control.groups.notification.deleted.failure.title": "Failed to delete group \"{{name}}\"",
   // TODO New key - Add a translation
@@ -581,14 +500,6 @@
   // "admin.access-control.groups.notification.deleted.failure.content": "Cause: \"{{cause}}\"",
   // TODO New key - Add a translation
   "admin.access-control.groups.notification.deleted.failure.content": "Cause: \"{{cause}}\"",
-
-  // "admin.access-control.groups.notification.edit.success": "Successfully edited group \"{{name}}\"",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.notification.edit.success": "Successfully edited group \"{{name}}\"",
-
-  // "admin.access-control.groups.notification.edit.failure": "Failed to edit group \"{{name}}\"",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.notification.edit.failure": "Failed to edit group \"{{name}}\"",
 
 
 
@@ -601,32 +512,25 @@
   "admin.access-control.groups.form.alert.workflowGroup": "This group can’t be modified or deleted because it corresponds to a role in the submission and workflow process in the \"{{name}}\" {{comcol}}. You can delete it from the <a href='{{comcolEditRolesRoute}}'>\"assign roles\"</a> tab on the edit {{comcol}} page. You can still add and remove group members using this page.",
 
   // "admin.access-control.groups.form.head.create": "Create group",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.form.head.create": "Create group",
+  "admin.access-control.groups.form.head.create": "Izveidot grupu",
 
   // "admin.access-control.groups.form.head.edit": "Edit group",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.form.head.edit": "Edit group",
+  "admin.access-control.groups.form.head.edit": "Rediģēt grupu",
 
   // "admin.access-control.groups.form.groupName": "Group name",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.form.groupName": "Group name",
+  "admin.access-control.groups.form.groupName": "Grupas nosaukums",
 
   // "admin.access-control.groups.form.groupDescription": "Description",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.form.groupDescription": "Description",
+  "admin.access-control.groups.form.groupDescription": "Apraksts",
 
   // "admin.access-control.groups.form.notification.created.success": "Successfully created Group \"{{name}}\"",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.form.notification.created.success": "Successfully created Group \"{{name}}\"",
+  "admin.access-control.groups.form.notification.created.success": "Izveidota grupa \"{{name}}\"",
 
   // "admin.access-control.groups.form.notification.created.failure": "Failed to create Group \"{{name}}\"",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.form.notification.created.failure": "Failed to create Group \"{{name}}\"",
+  "admin.access-control.groups.form.notification.created.failure": "Neizdevās izveidot grupu \"{{name}}\"",
 
   // "admin.access-control.groups.form.notification.created.failure.groupNameInUse": "Failed to create Group with name: \"{{name}}\", make sure the name is not already in use.",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.form.notification.created.failure.groupNameInUse": "Failed to create Group with name: \"{{name}}\", make sure the name is not already in use.",
+  "admin.access-control.groups.form.notification.created.failure.groupNameInUse": "Neizdevās izveidot grupu ar nosaukumu: \"{{name}}\", pārliecinies vai grupa ar šādu nosaukumu jau netiek izmantota.",
 
   // "admin.access-control.groups.form.notification.edited.failure": "Failed to edit Group \"{{name}}\"",
   // TODO New key - Add a translation
@@ -673,160 +577,125 @@
   "admin.access-control.groups.form.notification.deleted.failure.content": "Cause: \"{{ cause }}\"",
 
   // "admin.access-control.groups.form.members-list.head": "EPeople",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.form.members-list.head": "EPeople",
+  "admin.access-control.groups.form.members-list.head": "EPersona",
 
   // "admin.access-control.groups.form.members-list.search.head": "Add EPeople",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.form.members-list.search.head": "Add EPeople",
+  "admin.access-control.groups.form.members-list.search.head": "Pievienot EPersonu",
 
   // "admin.access-control.groups.form.members-list.button.see-all": "Browse All",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.form.members-list.button.see-all": "Browse All",
+  "admin.access-control.groups.form.members-list.button.see-all": "Skatīt visus",
 
   // "admin.access-control.groups.form.members-list.headMembers": "Current Members",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.form.members-list.headMembers": "Current Members",
+  "admin.access-control.groups.form.members-list.headMembers": "Pašreizējie lietotāji",
 
   // "admin.access-control.groups.form.members-list.search.scope.metadata": "Metadata",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.form.members-list.search.scope.metadata": "Metadata",
+  "admin.access-control.groups.form.members-list.search.scope.metadata": "Metadats",
 
   // "admin.access-control.groups.form.members-list.search.scope.email": "E-mail (exact)",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.form.members-list.search.scope.email": "E-mail (exact)",
+  "admin.access-control.groups.form.members-list.search.scope.email": "E-pasts (precīzi)",
 
   // "admin.access-control.groups.form.members-list.search.button": "Search",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.form.members-list.search.button": "Search",
+  "admin.access-control.groups.form.members-list.search.button": "Meklēt",
 
   // "admin.access-control.groups.form.members-list.table.id": "ID",
-  // TODO New key - Add a translation
   "admin.access-control.groups.form.members-list.table.id": "ID",
 
   // "admin.access-control.groups.form.members-list.table.name": "Name",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.form.members-list.table.name": "Name",
+  "admin.access-control.groups.form.members-list.table.name": "Nosaukums",
 
   // "admin.access-control.groups.form.members-list.table.edit": "Remove / Add",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.form.members-list.table.edit": "Remove / Add",
+  "admin.access-control.groups.form.members-list.table.edit": "Noņemt / Pievienot",
 
   // "admin.access-control.groups.form.members-list.table.edit.buttons.remove": "Remove member with name \"{{name}}\"",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.form.members-list.table.edit.buttons.remove": "Remove member with name \"{{name}}\"",
+  "admin.access-control.groups.form.members-list.table.edit.buttons.remove": "Noņemt lietotāju ar vārdu \"{{name}}\"",
 
   // "admin.access-control.groups.form.members-list.notification.success.addMember": "Successfully added member: \"{{name}}\"",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.form.members-list.notification.success.addMember": "Successfully added member: \"{{name}}\"",
+  "admin.access-control.groups.form.members-list.notification.success.addMember": "Veiksmīgi pievienots lietotājs: \"{{name}}\"",
 
   // "admin.access-control.groups.form.members-list.notification.failure.addMember": "Failed to add member: \"{{name}}\"",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.form.members-list.notification.failure.addMember": "Failed to add member: \"{{name}}\"",
+  "admin.access-control.groups.form.members-list.notification.failure.addMember": "Neizdevās pievienot lietotāju: \"{{name}}\"",
 
   // "admin.access-control.groups.form.members-list.notification.success.deleteMember": "Successfully deleted member: \"{{name}}\"",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.form.members-list.notification.success.deleteMember": "Successfully deleted member: \"{{name}}\"",
+  "admin.access-control.groups.form.members-list.notification.success.deleteMember": "Veiksmīgi dzēsts lietotājs: \"{{name}}\"",
 
   // "admin.access-control.groups.form.members-list.notification.failure.deleteMember": "Failed to delete member: \"{{name}}\"",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.form.members-list.notification.failure.deleteMember": "Failed to delete member: \"{{name}}\"",
+  "admin.access-control.groups.form.members-list.notification.failure.deleteMember": "Neizdevās dzēst lietotāju: \"{{name}}\"",
 
   // "admin.access-control.groups.form.members-list.table.edit.buttons.add": "Add member with name \"{{name}}\"",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.form.members-list.table.edit.buttons.add": "Add member with name \"{{name}}\"",
+  "admin.access-control.groups.form.members-list.table.edit.buttons.add": "Pievienot lietotāju ar vārdu \"{{name}}\"",
 
   // "admin.access-control.groups.form.members-list.notification.failure.noActiveGroup": "No current active group, submit a name first.",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.form.members-list.notification.failure.noActiveGroup": "No current active group, submit a name first.",
+  "admin.access-control.groups.form.members-list.notification.failure.noActiveGroup": "Pašlaik nav aktīvu grupu, iesniegt sākumā vārdu.",
 
   // "admin.access-control.groups.form.members-list.no-members-yet": "No members in group yet, search and add.",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.form.members-list.no-members-yet": "No members in group yet, search and add.",
+  "admin.access-control.groups.form.members-list.no-members-yet": "Grupā nav lietotāju, atrast un pievienot.",
 
   // "admin.access-control.groups.form.members-list.no-items": "No EPeople found in that search",
+  "admin.access-control.groups.form.members-list.no-items": "Netika atrasta neviena EPersona",
+
+  // "admin.access-control.groups.form.subgroups-list.notification.failure": "Something went wrong: \"{{cause}}\"",
   // TODO New key - Add a translation
-  "admin.access-control.groups.form.members-list.no-items": "No EPeople found in that search",
+  "admin.access-control.groups.form.subgroups-list.notification.failure": "Something went wrong: \"{{cause}}\"",
 
   // "admin.access-control.groups.form.subgroups-list.head": "Groups",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.form.subgroups-list.head": "Groups",
+  "admin.access-control.groups.form.subgroups-list.head": "Grupas",
 
   // "admin.access-control.groups.form.subgroups-list.search.head": "Add Subgroup",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.form.subgroups-list.search.head": "Add Subgroup",
+  "admin.access-control.groups.form.subgroups-list.search.head": "Pievienot apakšgrupu",
 
   // "admin.access-control.groups.form.subgroups-list.button.see-all": "Browse All",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.form.subgroups-list.button.see-all": "Browse All",
+  "admin.access-control.groups.form.subgroups-list.button.see-all": "Skatīt visus",
 
   // "admin.access-control.groups.form.subgroups-list.headSubgroups": "Current Subgroups",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.form.subgroups-list.headSubgroups": "Current Subgroups",
+  "admin.access-control.groups.form.subgroups-list.headSubgroups": "Pašreizējās apakšgrupas",
 
   // "admin.access-control.groups.form.subgroups-list.search.button": "Search",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.form.subgroups-list.search.button": "Search",
+  "admin.access-control.groups.form.subgroups-list.search.button": "Meklēt",
 
   // "admin.access-control.groups.form.subgroups-list.table.id": "ID",
-  // TODO New key - Add a translation
   "admin.access-control.groups.form.subgroups-list.table.id": "ID",
 
   // "admin.access-control.groups.form.subgroups-list.table.name": "Name",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.form.subgroups-list.table.name": "Name",
+  "admin.access-control.groups.form.subgroups-list.table.name": "Vārds",
 
   // "admin.access-control.groups.form.subgroups-list.table.edit": "Remove / Add",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.form.subgroups-list.table.edit": "Remove / Add",
+  "admin.access-control.groups.form.subgroups-list.table.edit": "Noņemt / Pievienot",
 
   // "admin.access-control.groups.form.subgroups-list.table.edit.buttons.remove": "Remove subgroup with name \"{{name}}\"",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.form.subgroups-list.table.edit.buttons.remove": "Remove subgroup with name \"{{name}}\"",
+  "admin.access-control.groups.form.subgroups-list.table.edit.buttons.remove": "Noņemt apakšgrupu ar nosaukumu \"{{name}}\"",
 
   // "admin.access-control.groups.form.subgroups-list.table.edit.buttons.add": "Add subgroup with name \"{{name}}\"",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.form.subgroups-list.table.edit.buttons.add": "Add subgroup with name \"{{name}}\"",
+  "admin.access-control.groups.form.subgroups-list.table.edit.buttons.add": "Pievienot apakšgrupu ar nosaukumu \"{{name}}\"",
 
   // "admin.access-control.groups.form.subgroups-list.table.edit.currentGroup": "Current group",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.form.subgroups-list.table.edit.currentGroup": "Current group",
+  "admin.access-control.groups.form.subgroups-list.table.edit.currentGroup": "Pašreizējā grupa",
 
   // "admin.access-control.groups.form.subgroups-list.notification.success.addSubgroup": "Successfully added subgroup: \"{{name}}\"",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.form.subgroups-list.notification.success.addSubgroup": "Successfully added subgroup: \"{{name}}\"",
+  "admin.access-control.groups.form.subgroups-list.notification.success.addSubgroup": "Veiksmīgi pievienota apakšgrupa: \"{{name}}\"",
 
   // "admin.access-control.groups.form.subgroups-list.notification.failure.addSubgroup": "Failed to add subgroup: \"{{name}}\"",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.form.subgroups-list.notification.failure.addSubgroup": "Failed to add subgroup: \"{{name}}\"",
+  "admin.access-control.groups.form.subgroups-list.notification.failure.addSubgroup": "Neizdevās pievienot apakšgrupu: \"{{name}}\"",
 
   // "admin.access-control.groups.form.subgroups-list.notification.success.deleteSubgroup": "Successfully deleted subgroup: \"{{name}}\"",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.form.subgroups-list.notification.success.deleteSubgroup": "Successfully deleted subgroup: \"{{name}}\"",
+  "admin.access-control.groups.form.subgroups-list.notification.success.deleteSubgroup": "Veiksmīgi dzēsta apakšgrupa: \"{{name}}\"",
 
   // "admin.access-control.groups.form.subgroups-list.notification.failure.deleteSubgroup": "Failed to delete subgroup: \"{{name}}\"",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.form.subgroups-list.notification.failure.deleteSubgroup": "Failed to delete subgroup: \"{{name}}\"",
+  "admin.access-control.groups.form.subgroups-list.notification.failure.deleteSubgroup": "Neizdevās dzēst apakšgrupu: \"{{name}}\"",
 
   // "admin.access-control.groups.form.subgroups-list.notification.failure.noActiveGroup": "No current active group, submit a name first.",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.form.subgroups-list.notification.failure.noActiveGroup": "No current active group, submit a name first.",
+  "admin.access-control.groups.form.subgroups-list.notification.failure.noActiveGroup": "Pašlaik nav aktīvu grupu, iesniegt sākumā vārdu.",
 
   // "admin.access-control.groups.form.subgroups-list.notification.failure.subgroupToAddIsActiveGroup": "This is the current group, can't be added.",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.form.subgroups-list.notification.failure.subgroupToAddIsActiveGroup": "This is the current group, can't be added.",
+  "admin.access-control.groups.form.subgroups-list.notification.failure.subgroupToAddIsActiveGroup": "Šī ir pašreizēja grupa, nevar pievienot",
 
   // "admin.access-control.groups.form.subgroups-list.no-items": "No groups found with this in their name or this as UUID",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.form.subgroups-list.no-items": "No groups found with this in their name or this as UUID",
+  "admin.access-control.groups.form.subgroups-list.no-items": "Netika atrasta grupa ar šādu nosaukumu vai identifikatoru",
 
   // "admin.access-control.groups.form.subgroups-list.no-subgroups-yet": "No subgroups in group yet.",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.form.subgroups-list.no-subgroups-yet": "No subgroups in group yet.",
+  "admin.access-control.groups.form.subgroups-list.no-subgroups-yet": "Grupā pašreiz nav apakšgrupu.",
 
   // "admin.access-control.groups.form.return": "Return to groups",
-  // TODO New key - Add a translation
-  "admin.access-control.groups.form.return": "Return to groups",
+  "admin.access-control.groups.form.return": "Atgriezties pie grupām",
 
 
 
@@ -863,28 +732,26 @@
   // "admin.search.title": "Administrative Search",
   "admin.search.title": "Administratīvā Meklēšana",
 
+  // "administrativeView.search.results.head": "Administrative Search",
+  "administrativeView.search.results.head": "Administratīvā meklēšana",
+
 
 
 
   // "admin.workflow.breadcrumbs": "Administer Workflow",
-  // TODO New key - Add a translation
-  "admin.workflow.breadcrumbs": "Administer Workflow",
+  "admin.workflow.breadcrumbs": "Administrēt darba plūsmu",
 
   // "admin.workflow.title": "Administer Workflow",
-  // TODO New key - Add a translation
-  "admin.workflow.title": "Administer Workflow",
+  "admin.workflow.title": "Administrēt darba plūsmu",
 
   // "admin.workflow.item.workflow": "Workflow",
-  // TODO New key - Add a translation
-  "admin.workflow.item.workflow": "Workflow",
+  "admin.workflow.item.workflow": "Darba plūsma",
 
   // "admin.workflow.item.delete": "Delete",
-  // TODO New key - Add a translation
-  "admin.workflow.item.delete": "Delete",
+  "admin.workflow.item.delete": "Dzēst",
 
   // "admin.workflow.item.send-back": "Send back",
-  // TODO New key - Add a translation
-  "admin.workflow.item.send-back": "Send back",
+  "admin.workflow.item.send-back": "Sūtīt atpakaļ",
 
 
 
@@ -936,72 +803,56 @@
 
 
   // "bitstream.edit.bitstream": "Bitstream: ",
-  // TODO New key - Add a translation
-  "bitstream.edit.bitstream": "Bitstream: ",
+  "bitstream.edit.bitstream": "Bitu straume: ",
 
   // "bitstream.edit.form.description.hint": "Optionally, provide a brief description of the file, for example \"<i>Main article</i>\" or \"<i>Experiment data readings</i>\".",
-  // TODO New key - Add a translation
-  "bitstream.edit.form.description.hint": "Optionally, provide a brief description of the file, for example \"<i>Main article</i>\" or \"<i>Experiment data readings</i>\".",
+  "bitstream.edit.form.description.hint": "Pēc izvēles sniedziet īsu faila aprakstu, piemēram, \"<i>Galvanais raksts</i>\" vai \"<i>Eksperimenta datu nolasījumi</i>\".",
 
   // "bitstream.edit.form.description.label": "Description",
-  // TODO New key - Add a translation
-  "bitstream.edit.form.description.label": "Description",
+  "bitstream.edit.form.description.label": "Apraksts",
 
   // "bitstream.edit.form.embargo.hint": "The first day from which access is allowed. <b>This date cannot be modified on this form.</b> To set an embargo date for a bitstream, go to the <i>Item Status</i> tab, click <i>Authorizations...</i>, create or edit the bitstream's <i>READ</i> policy, and set the <i>Start Date</i> as desired.",
-  // TODO New key - Add a translation
-  "bitstream.edit.form.embargo.hint": "The first day from which access is allowed. <b>This date cannot be modified on this form.</b> To set an embargo date for a bitstream, go to the <i>Item Status</i> tab, click <i>Authorizations...</i>, create or edit the bitstream's <i>READ</i> policy, and set the <i>Start Date</i> as desired.",
+  "bitstream.edit.form.embargo.hint": "Pirmā diena, no kuras atļauta pieeja. <b>Šai formai nevarēs mainīt datumu.</b> Lai uzstādītu embargo datumu šai bitu straumei, doties uz <i>Materiāla statuss</i>, noklikšķiniet uz <i>Autorizācijas...</i>, izveidot vai rediģēt bitu straumes <i>LASĪT</i> politiku, un uzstādīt <i>Sākuma datumu</i> kā vēlaties.",
 
   // "bitstream.edit.form.embargo.label": "Embargo until specific date",
-  // TODO New key - Add a translation
-  "bitstream.edit.form.embargo.label": "Embargo until specific date",
+  "bitstream.edit.form.embargo.label": "Embargo līdz noteiktam datumam",
 
   // "bitstream.edit.form.fileName.hint": "Change the filename for the bitstream. Note that this will change the display bitstream URL, but old links will still resolve as long as the sequence ID does not change.",
-  // TODO New key - Add a translation
-  "bitstream.edit.form.fileName.hint": "Change the filename for the bitstream. Note that this will change the display bitstream URL, but old links will still resolve as long as the sequence ID does not change.",
+  "bitstream.edit.form.fileName.hint": "Mainīt faila nosaukumu bitu straumei. Ņemiet vērā, ka tas mainīs redzamo bitu straumes URL, bet vecās saites joprojām būš pieejamas, kamēr ID secība nemainīsies.",
 
   // "bitstream.edit.form.fileName.label": "Filename",
-  // TODO New key - Add a translation
-  "bitstream.edit.form.fileName.label": "Filename",
+  "bitstream.edit.form.fileName.label": "Faila nosaukums",
 
   // "bitstream.edit.form.newFormat.label": "Describe new format",
-  // TODO New key - Add a translation
-  "bitstream.edit.form.newFormat.label": "Describe new format",
+  "bitstream.edit.form.newFormat.label": "Aprakstīt jauno formātu",
 
   // "bitstream.edit.form.newFormat.hint": "The application you used to create the file, and the version number (for example, \"<i>ACMESoft SuperApp version 1.5</i>\").",
-  // TODO New key - Add a translation
-  "bitstream.edit.form.newFormat.hint": "The application you used to create the file, and the version number (for example, \"<i>ACMESoft SuperApp version 1.5</i>\").",
+  "bitstream.edit.form.newFormat.hint": "Lietojumprogramma, kuru izmantojāt faila izveidošanai, un versijas numurs (piemēram, \"<i> ACMESoft SuperApp versija 1.5 </i>\").",
 
   // "bitstream.edit.form.primaryBitstream.label": "Primary bitstream",
-  // TODO New key - Add a translation
-  "bitstream.edit.form.primaryBitstream.label": "Primary bitstream",
+  "bitstream.edit.form.primaryBitstream.label": "Galvenā bitu straume",
 
   // "bitstream.edit.form.selectedFormat.hint": "If the format is not in the above list, <b>select \"format not in list\" above</b> and describe it under \"Describe new format\".",
-  // TODO New key - Add a translation
-  "bitstream.edit.form.selectedFormat.hint": "If the format is not in the above list, <b>select \"format not in list\" above</b> and describe it under \"Describe new format\".",
+  "bitstream.edit.form.selectedFormat.hint": "Ja formāts nav iepriekš minētajā sarakstā, <b>atlasiet “formāts, kurš nav sarakstā” iepriekš </b> un aprakstiet to sadaļā “Aprakstīt jauno formātu”.",
 
   // "bitstream.edit.form.selectedFormat.label": "Selected Format",
-  // TODO New key - Add a translation
-  "bitstream.edit.form.selectedFormat.label": "Selected Format",
+  "bitstream.edit.form.selectedFormat.label": "Izvēlētais formāts",
 
   // "bitstream.edit.form.selectedFormat.unknown": "Format not in list",
-  // TODO New key - Add a translation
-  "bitstream.edit.form.selectedFormat.unknown": "Format not in list",
+  "bitstream.edit.form.selectedFormat.unknown": "Formāts, kurš nav sarakstā",
 
   // "bitstream.edit.notifications.error.format.title": "An error occurred saving the bitstream's format",
-  // TODO New key - Add a translation
-  "bitstream.edit.notifications.error.format.title": "An error occurred saving the bitstream's format",
+  "bitstream.edit.notifications.error.format.title": "Saglabājot bitu straumes formātu, radās kļūda",
 
   // "bitstream.edit.notifications.saved.content": "Your changes to this bitstream were saved.",
-  // TODO New key - Add a translation
-  "bitstream.edit.notifications.saved.content": "Your changes to this bitstream were saved.",
+  "bitstream.edit.notifications.saved.content": "Jūsu izmaiņas šajā bitu straumē tika saglabātas.",
 
   // "bitstream.edit.notifications.saved.title": "Bitstream saved",
-  // TODO New key - Add a translation
-  "bitstream.edit.notifications.saved.title": "Bitstream saved",
+  "bitstream.edit.notifications.saved.title": "Bitu straume saglabāta",
 
   // "bitstream.edit.title": "Edit bitstream",
-  // TODO New key - Add a translation
-  "bitstream.edit.title": "Edit bitstream",
+  "bitstream.edit.title": "Rediģēt bitu straumi",
+
 
 
   // "browse.comcol.by.author": "By Author",
@@ -1010,36 +861,11 @@
   // "browse.comcol.by.dateissued": "By Issue Date",
   "browse.comcol.by.dateissued": "Pēc Izdošanas Datuma",
 
-  // "browse.comcol.by.ouname": "By Name",
-  // TODO New key - Add a translation
-  "browse.comcol.by.ouname": "By Name",
-
-  // "browse.comcol.by.pjtitle": "By Title",
-  // TODO New key - Add a translation
-  "browse.comcol.by.pjtitle": "By Title",
-
-  // "browse.comcol.by.rodept": "By Department",
-  // TODO New key - Add a translation
-  "browse.comcol.by.rodept": "By Department",
-
-  // "browse.comcol.by.rpdept": "By Department",
-  // TODO New key - Add a translation
-  "browse.comcol.by.rpdept": "By Department",
-
-  // "browse.comcol.by.rpname": "By Name",
-  // TODO New key - Add a translation
-  "browse.comcol.by.rpname": "By Name",
-
   // "browse.comcol.by.subject": "By Subject",
   "browse.comcol.by.subject": "Pēc Priekšmeta",
 
   // "browse.comcol.by.title": "By Title",
   "browse.comcol.by.title": "Pēc Nosaukuma",
-
-  // "browse.comcol.by.type": "By Type",
-  // TODO New key - Add a translation
-  "browse.comcol.by.type": "By Type",
-
 
   // "browse.comcol.head": "Browse",
   "browse.comcol.head": "Pārlūkot",
@@ -1053,44 +879,8 @@
   // "browse.metadata.dateissued": "Issue Date",
   "browse.metadata.dateissued": "Izdošanas datums",
 
-  // "browse.metadata.eqdatecreated": "Date Created",
-  // TODO New key - Add a translation
-  "browse.metadata.eqdatecreated": "Date Created",
-
-  // "browse.metadata.eqdatemodified": "Date Modified",
-  // TODO New key - Add a translation
-  "browse.metadata.eqdatemodified": "Date Modified",
-
-  // "browse.metadata.eqtitle": "Title",
-  // TODO New key - Add a translation
-  "browse.metadata.eqtitle": "Title",
-
-  // "browse.metadata.ouname" : "Name",
-  // TODO New key - Add a translation
-  "browse.metadata.ouname" : "Name",
-
-  // "browse.metadata.pjtitle" : "Title",
-  // TODO New key - Add a translation
-  "browse.metadata.pjtitle" : "Title",
-
-  // "browse.metadata.rodept": "Department",
-  // TODO New key - Add a translation
-  "browse.metadata.rodept": "Department",
-
-  // "browse.metadata.rpdept": "Department",
-  // TODO New key - Add a translation
-  "browse.metadata.rpdept": "Department",
-
-  // "browse.metadata.rpname": "Name",
-  // TODO New key - Add a translation
-  "browse.metadata.rpname": "Name",
-
   // "browse.metadata.subject": "Subject",
   "browse.metadata.subject": "Priekšmets",
-
-  // "browse.metadata.type": "Type",
-  // TODO New key - Add a translation
-  "browse.metadata.type": "Type",
 
   // "browse.metadata.title": "Title",
   "browse.metadata.title": "Nosaukums",
@@ -1101,44 +891,8 @@
   // "browse.metadata.dateissued.breadcrumbs": "Browse by Date",
   "browse.metadata.dateissued.breadcrumbs": "Meklēt pēc Datuma",
 
-  // "browse.metadata.eqdatecreated.breadcrumbs": "Browse by Creation Date",
-  // TODO New key - Add a translation
-  "browse.metadata.eqdatecreated.breadcrumbs": "Browse by Creation Date",
-
-  // "browse.metadata.eqdatemodified.breadcrumbs": "Browse by Modification Date",
-  // TODO New key - Add a translation
-  "browse.metadata.eqdatemodified.breadcrumbs": "Browse by Modification Date",
-
-  // "browse.metadata.eqtitle.breadcrumbs": "Browse by Title",
-  // TODO New key - Add a translation
-  "browse.metadata.eqtitle.breadcrumbs": "Browse by Title",
-
-  // "browse.metadata.ouname.breadcrumbs" : "Browse by Name",
-  // TODO New key - Add a translation
-  "browse.metadata.ouname.breadcrumbs" : "Browse by Name",
-
-  // "browse.metadata.pjtitle.breadcrumbs" : "Browse by Title",
-  // TODO New key - Add a translation
-  "browse.metadata.pjtitle.breadcrumbs" : "Browse by Title",
-
-  // "browse.metadata.rodept.breadcrumbs": "Browse by Department",
-  // TODO New key - Add a translation
-  "browse.metadata.rodept.breadcrumbs": "Browse by Department",
-
-  // "browse.metadata.rpdept.breadcrumbs" : "Browse by Department",
-  // TODO New key - Add a translation
-  "browse.metadata.rpdept.breadcrumbs" : "Browse by Department",
-
-  // "browse.metadata.rpname.breadcrumbs": "Browse by Name",
-  // TODO New key - Add a translation
-  "browse.metadata.rpname.breadcrumbs": "Browse by Name",
-
   // "browse.metadata.subject.breadcrumbs": "Browse by Subject",
   "browse.metadata.subject.breadcrumbs": "Meklēt pēc Priekšmeta",
-
-  // "browse.metadata.type.breadcrumbs": "Browse by Type",
-  // TODO New key - Add a translation
-  "browse.metadata.type.breadcrumbs": "Browse by Type",
 
   // "browse.metadata.title.breadcrumbs": "Browse by Title",
   "browse.metadata.title.breadcrumbs": "Meklēt pēc Nosaukuma",
@@ -1202,58 +956,7 @@
 
   // "browse.title": "Browsing {{ collection }} by {{ field }} {{ value }}",
   "browse.title": "Meklē {{ collection }} pēc {{ field }} {{ value }}",
-
-
-
-  // "bulk-import.abort-on-error" : "Abort on first error",
-  // TODO New key - Add a translation
-  "bulk-import.abort-on-error" : "Abort on first error",
-
-  // "bulk-import.back": "Back",
-  // TODO New key - Add a translation
-  "bulk-import.back": "Back",
-
-  // "bulk-import.breadcrumbs" : "Bulk import",
-  // TODO New key - Add a translation
-  "bulk-import.breadcrumbs" : "Bulk import",
-
-  // "bulk-import.collection-name" : "Collection",
-  // TODO New key - Add a translation
-  "bulk-import.collection-name" : "Collection",
-
-  // "bulk-import.error": "An error occurred while creating the import process",
-  // TODO New key - Add a translation
-  "bulk-import.error": "An error occurred while creating the import process",
-
-  // "bulk-import.file" : "Source file",
-  // TODO New key - Add a translation
-  "bulk-import.file" : "Source file",
-
-  // "bulk-import.header" : "Bulk import",
-  // TODO New key - Add a translation
-  "bulk-import.header" : "Bulk import",
-
-  // "bulk-import.processing": "Processing...",
-  // TODO New key - Add a translation
-  "bulk-import.processing": "Processing...",
-
-  // "bulk-import.success": "The import process was successfully created",
-  // TODO New key - Add a translation
-  "bulk-import.success": "The import process was successfully created",
-
-  // "bulk-import.submit": "Start import",
-  // TODO New key - Add a translation
-  "bulk-import.submit": "Start import",
-
-  // "bulk-import.title" : "Bulk import",
-  // TODO New key - Add a translation
-  "bulk-import.title" : "Bulk import",
-
-  // "bulk-import.workflow" : "Use collection workflow",
-  // TODO New key - Add a translation
-  "bulk-import.workflow" : "Use collection workflow",
-
-
+  
 
   // "chips.remove": "Remove chip",
   "chips.remove": "Dzēst daļu",
@@ -1303,6 +1006,14 @@
   "collection.edit.breadcrumbs": "Rediģēt Kolekciju",
 
 
+
+  // "collection.edit.tabs.mapper.head": "Item Mapper",
+  // TODO New key - Add a translation
+  "collection.edit.tabs.mapper.head": "Item Mapper",
+
+  // "collection.edit.tabs.item-mapper.title": "Collection Edit - Item Mapper",
+  // TODO New key - Add a translation
+  "collection.edit.tabs.item-mapper.title": "Collection Edit - Item Mapper",
 
   // "collection.edit.item-mapper.cancel": "Cancel",
   "collection.edit.item-mapper.cancel": "Atcelt",
@@ -1378,6 +1089,8 @@
   // "collection.edit.logo.upload": "Drop a Collection Logo to upload",
   "collection.edit.logo.upload": "Ievietot Kolekcijas logotipu, lai augšupielādētu",
 
+
+
   // "collection.edit.notifications.success": "Successfully edited the Collection",
   "collection.edit.notifications.success": "Kolekcija ir veiksmīgi rediģēta",
 
@@ -1415,10 +1128,6 @@
   // "collection.edit.tabs.source.external": "This collection harvests its content from an external source",
   "collection.edit.tabs.source.external": "Šīs kolekcijas saturs tiek iegūts no ārēja avota",
 
-  // "collection.edit.tabs.source.form.adminEmail": "Admin's email",
-  // TODO New key - Add a translation
-  "collection.edit.tabs.source.form.adminEmail": "Admin's email",
-
   // "collection.edit.tabs.source.form.errors.oaiSource.required": "You must provide a set id of the target collection.",
   "collection.edit.tabs.source.form.errors.oaiSource.required": "Jums ir jānorāda noteikts id no mērķa kolekcijas",
 
@@ -1445,14 +1154,6 @@
 
   // "collection.edit.tabs.source.form.options.harvestType.METADATA_ONLY": "Harvest metadata only",
   "collection.edit.tabs.source.form.options.harvestType.METADATA_ONLY": "Iegūt tikai metadatus",
-
-  // "collection.edit.tabs.source.form.preTransform": "Pre transformation name",
-  // TODO New key - Add a translation
-  "collection.edit.tabs.source.form.preTransform": "Pre transformation name",
-
-  // "collection.edit.tabs.source.form.postTransform": "Post transformation name",
-  // TODO New key - Add a translation
-  "collection.edit.tabs.source.form.postTransform": "Post transformation name",
 
   // "collection.edit.tabs.source.head": "Content Source",
   "collection.edit.tabs.source.head": "Satura Avots",
@@ -1519,15 +1220,7 @@
   // "collection.edit.template.title": "Edit Template Item",
   // TODO New key - Add a translation
   "collection.edit.template.title": "Edit Template Item",
-
-
-  // "collection-export.success": "Export of the collection's items started successfully",
-  // TODO New key - Add a translation
-  "collection-export.success": "Export of the collection's items started successfully",
-
-  // "collection-export.error": "An error occurs starting the collection's items export",
-  // TODO New key - Add a translation
-  "collection-export.error": "An error occurs starting the collection's items export",
+  
 
 
   // "collection.form.abstract": "Short Description",
@@ -1548,31 +1241,11 @@
   // "collection.form.rights": "Copyright text (HTML)",
   "collection.form.rights": "Autortiesību teksts (HTML)",
 
-  // "collection.form.sharedWorkspace": "Shared workspace",
-  // TODO New key - Add a translation
-  "collection.form.sharedWorkspace": "Shared workspace",
-
   // "collection.form.tableofcontents": "News (HTML)",
   "collection.form.tableofcontents": "Jaunumi (HTML)",
 
   // "collection.form.title": "Name",
   "collection.form.title": "Nosaukums",
-
-  // "collection.form.entityType": "Entity Type",
-  // TODO New key - Add a translation
-  "collection.form.entityType": "Entity Type",
-
-  // "collection.form.errors.entityType.required": "Please choose an entity type for this collection",
-  // TODO New key - Add a translation
-  "collection.form.errors.entityType.required": "Please choose an entity type for this collection",
-
-  // "collection.form.errors.submissionDefinition.required": "Please choose a submission definition for this collection",
-  // TODO New key - Add a translation
-  "collection.form.errors.submissionDefinition.required": "Please choose a submission definition for this collection",
-
-  // "collection.form.submissionDefinition": "Submission definition",
-  // TODO New key - Add a translation
-  "collection.form.submissionDefinition": "Submission definition",
 
 
 
@@ -1591,10 +1264,6 @@
   // "collection.page.edit": "Edit this collection",
   // TODO New key - Add a translation
   "collection.page.edit": "Edit this collection",
-
-  // "collection.page.export": "Export items from this collection",
-  // TODO New key - Add a translation
-  "collection.page.export": "Export items from this collection",
 
   // "collection.page.handle": "Permanent URI for this collection",
   "collection.page.handle": "Kolekcijas nemainīgs URI",
@@ -1889,77 +1558,7 @@
   // "community.sub-community-list.head": "Communities of this Community",
   "community.sub-community-list.head": "Šīs kategorijas apakš-kategorijas",
 
-  // "context-menu.actions": "Actions",
-  // TODO New key - Add a translation
-  "context-menu.actions": "Actions",
 
-  // "context-menu.actions.audit-item.btn": "Audit",
-  // TODO New key - Add a translation
-  "context-menu.actions.audit-item.btn": "Audit",
-
-  // "context-menu.actions.bulk-import.btn": "Import items into collection",
-  // TODO New key - Add a translation
-  "context-menu.actions.bulk-import.btn": "Import items into collection",
-
-  // "context-menu.actions.export-item.btn": "Export",
-  // TODO New key - Add a translation
-  "context-menu.actions.export-item.btn": "Export",
-
-  // "context-menu.actions.label": "Options",
-  // TODO New key - Add a translation
-  "context-menu.actions.label": "Options",
-
-  // "context-menu.actions.edit-item.btn.FULL": "Edit item",
-  // TODO New key - Add a translation
-  "context-menu.actions.edit-item.btn.FULL": "Edit item",
-
-  // "context-menu.actions.request-correction.btn": "Request correction",
-  // TODO New key - Add a translation
-  "context-menu.actions.request-correction.btn": "Request correction",
-
-  // "context-menu.actions.request-correction.confirm.cancel": "Cancel",
-  // TODO New key - Add a translation
-  "context-menu.actions.request-correction.confirm.cancel": "Cancel",
-
-  // "context-menu.actions.request-correction.confirm.submit": "Yes, I'm sure",
-  // TODO New key - Add a translation
-  "context-menu.actions.request-correction.confirm.submit": "Yes, I'm sure",
-
-  // "context-menu.actions.request-correction.error.403": "A request for correction has already been sent, impossible to proceed with the operation.",
-  // TODO New key - Add a translation
-  "context-menu.actions.request-correction.error.403": "A request for correction has already been sent, impossible to proceed with the operation.",
-
-  // "context-menu.actions.request-correction.error.generic": "There was an issue when requesting a correction for the item, please try again later.",
-  // TODO New key - Add a translation
-  "context-menu.actions.request-correction.error.generic": "There was an issue when requesting a correction for the item, please try again later.",
-
-  // "context-menu.actions.request-correction.info": "Are you sure you want to proceed with this operation?",
-  // TODO New key - Add a translation
-  "context-menu.actions.request-correction.info": "Are you sure you want to proceed with this operation?",
-
-  // "context-menu.actions.request-correction.title": "Request correction",
-  // TODO New key - Add a translation
-  "context-menu.actions.request-correction.title": "Request correction",
-
-  // "context-menu.actions.dso-page-edit.COMMUNITY.btn": "Administer",
-  // TODO New key - Add a translation
-  "context-menu.actions.dso-page-edit.COMMUNITY.btn": "Administer",
-
-  // "context-menu.actions.dso-page-edit.COLLECTION.btn": "Administer",
-  // TODO New key - Add a translation
-  "context-menu.actions.dso-page-edit.COLLECTION.btn": "Administer",
-
-  // "context-menu.actions.dso-page-edit.ITEM.btn": "Administer",
-  // TODO New key - Add a translation
-  "context-menu.actions.dso-page-edit.ITEM.btn": "Administer",
-
-  // "datafile.listelement.badge": "Data File",
-  // TODO New key - Add a translation
-  "datafile.listelement.badge": "Data File",
-
-  // "datapackage.listelement.badge": "Data Package",
-  // TODO New key - Add a translation
-  "datapackage.listelement.badge": "Data Package",
 
   // "cookies.consent.accept-all": "Accept all",
   // TODO New key - Add a translation
@@ -2215,13 +1814,9 @@
   // TODO New key - Add a translation
   "confirmation-modal.delete-eperson.confirm": "Delete",
 
-  // "equipment.listelement.badge": "Equipment",
-  // TODO New key - Add a translation
-  "equipment.listelement.badge": "Equipment",
 
   // "error.bitstream": "Error fetching bitstream",
-  // TODO New key - Add a translation
-  "error.bitstream": "Error fetching bitstream",
+  "error.bitstream": "Radās kļūda, saņemot bitu straumi",
 
   // "error.browse-by": "Error fetching items",
   "error.browse-by": "Materiālu ielasīšanas kļūda",
@@ -2276,300 +1871,7 @@
 
   // "error.validation.filerequired": "The file upload is mandatory",
   "error.validation.filerequired": "Faila augšupielāde ir obligāta",
-
-
-  // "explore.browse-section.title" : "Browse",
-  // TODO New key - Add a translation
-  "explore.browse-section.title" : "Browse",
-
-  // "explore.facet-section.title" : "Discover",
-  // TODO New key - Add a translation
-  "explore.facet-section.title" : "Discover",
-
-  // "explore.index.all" : "All",
-  // TODO New key - Add a translation
-  "explore.index.all" : "All",
-
-  // "explore.index.author" : "Author",
-  // TODO New key - Add a translation
-  "explore.index.author" : "Author",
-
-  // "explore.index.birthDate" : "Birthday",
-  // TODO New key - Add a translation
-  "explore.index.birthDate" : "Birthday",
-
-  // "explore.index.chart.pie.itemtype_filter" : "Item Type",
-  // TODO New key - Add a translation
-  "explore.index.chart.pie.itemtype_filter" : "Item Type",
-
-  // "explore.index.chart.bar.dateIssued.year": "Year",
-  // TODO New key - Add a translation
-  "explore.index.chart.bar.dateIssued.year": "Year",
-
-
-  // "explore.index.dateIssued" : "Date issued",
-  // TODO New key - Add a translation
-  "explore.index.dateIssued" : "Date issued",
-
-  // "explore.index.dateissued" : "Date issued",
-  // TODO New key - Add a translation
-  "explore.index.dateissued" : "Date issued",
-
-  // "explore.index.dc.date.accessioned" : "Date accesioned",
-  // TODO New key - Add a translation
-  "explore.index.dc.date.accessioned" : "Date accesioned",
-
-  // "explore.index.dc.title" : "Title",
-  // TODO New key - Add a translation
-  "explore.index.dc.title" : "Title",
-
-  // "explore.index.editor" : "Editor",
-  // TODO New key - Add a translation
-  "explore.index.editor" : "Editor",
-
-  // "explore.index.eqtitle" : "Title",
-  // TODO New key - Add a translation
-  "explore.index.eqtitle" : "Title",
-
-  // "explore.index.eqowner" : "Researcher",
-  // TODO New key - Add a translation
-  "explore.index.eqowner" : "Researcher",
-
-  // "explore.index.eqorgunit" : "Organization",
-  // TODO New key - Add a translation
-  "explore.index.eqorgunit" : "Organization",
-
-  // "explore.index.entityType" : "Entity type",
-  // TODO New key - Add a translation
-  "explore.index.entityType" : "Entity type",
-
-  // "explore.index.familyName" : "Family name",
-  // TODO New key - Add a translation
-  "explore.index.familyName" : "Family name",
-
-  // "explore.index.funding" : "Funding",
-  // TODO New key - Add a translation
-  "explore.index.funding" : "Funding",
-
-  // "explore.index.givenName" : "Given name",
-  // TODO New key - Add a translation
-  "explore.index.givenName" : "Given name",
-
-  // "explore.index.has_content_in_original_bundle" : "Has content in original bundle",
-  // TODO New key - Add a translation
-  "explore.index.has_content_in_original_bundle" : "Has content in original bundle",
-
-  // "explore.index.investigators" : "Researchers",
-  // TODO New key - Add a translation
-  "explore.index.investigators" : "Researchers",
-
-  // "explore.index.isAuthorOfPublication" : "Publication's author",
-  // TODO New key - Add a translation
-  "explore.index.isAuthorOfPublication" : "Publication's author",
-
-  // "explore.index.isJournalOfPublication" : "Publication's journal",
-  // TODO New key - Add a translation
-  "explore.index.isJournalOfPublication" : "Publication's journal",
-
-  // "explore.index.isOrgUnitOfPerson" : "Person's organization",
-  // TODO New key - Add a translation
-  "explore.index.isOrgUnitOfPerson" : "Person's organization",
-
-  // "explore.index.isOrgUnitOfProject" : "Project's organization",
-  // TODO New key - Add a translation
-  "explore.index.isOrgUnitOfProject" : "Project's organization",
-
-  // "explore.index.isOrgUnitOfPublication" : "Publication's organization",
-  // TODO New key - Add a translation
-  "explore.index.isOrgUnitOfPublication" : "Publication's organization",
-
-  // "explore.index.isPersonOfOrgUnit" : "Organization's person",
-  // TODO New key - Add a translation
-  "explore.index.isPersonOfOrgUnit" : "Organization's person",
-
-  // "explore.index.isPersonOfProject" : "Project's person",
-  // TODO New key - Add a translation
-  "explore.index.isPersonOfProject" : "Project's person",
-
-  // "explore.index.isProjectOfOrgUnit" : "Organization's project",
-  // TODO New key - Add a translation
-  "explore.index.isProjectOfOrgUnit" : "Organization's project",
-
-  // "explore.index.isProjectOfPerson" : "Person's project",
-  // TODO New key - Add a translation
-  "explore.index.isProjectOfPerson" : "Person's project",
-
-  // "explore.index.isProjectOfPublication" : "Publication's project",
-  // TODO New key - Add a translation
-  "explore.index.isProjectOfPublication" : "Publication's project",
-
-  // "explore.index.isPublicationOfAuthor" : "Author's publication",
-  // TODO New key - Add a translation
-  "explore.index.isPublicationOfAuthor" : "Author's publication",
-
-  // "explore.index.isPublicationOfJournalIssue" : "Journal issue's publication",
-  // TODO New key - Add a translation
-  "explore.index.isPublicationOfJournalIssue" : "Journal issue's publication",
-
-  // "explore.index.isPublicationOfOrgUnit" : "Organization's publication",
-  // TODO New key - Add a translation
-  "explore.index.isPublicationOfOrgUnit" : "Organization's publication",
-
-  // "explore.index.isPublicationOfProject" : "Project's publication",
-  // TODO New key - Add a translation
-  "explore.index.isPublicationOfProject" : "Project's publication",
-
-  // "explore.index.itemidentifier" : "Item identifier",
-  // TODO New key - Add a translation
-  "explore.index.itemidentifier" : "Item identifier",
-
-  // "explore.index.jobTitle" : "Job title",
-  // TODO New key - Add a translation
-  "explore.index.jobTitle" : "Job title",
-
-  // "explore.index.knowsLanguage" : "Knows languages",
-  // TODO New key - Add a translation
-  "explore.index.knowsLanguage" : "Knows languages",
-
-  // "explore.index.organization" : "Organization",
-  // TODO New key - Add a translation
-  "explore.index.organization" : "Organization",
-
-  // "explore.index.organizationAddressCountry" : "Organization address country",
-  // TODO New key - Add a translation
-  "explore.index.organizationAddressCountry" : "Organization address country",
-
-  // "explore.index.organizationAddressLocality" : "Organization address locality",
-  // TODO New key - Add a translation
-  "explore.index.organizationAddressLocality" : "Organization address locality",
-
-  // "explore.index.organizationFoundingDate" : "Organization founding date",
-  // TODO New key - Add a translation
-  "explore.index.organizationFoundingDate" : "Organization founding date",
-
-  // "explore.index.organizationLegalName" : "Organization legal name",
-  // TODO New key - Add a translation
-  "explore.index.organizationLegalName" : "Organization legal name",
-
-  // "explore.index.original_bundle_descriptions" : "Original bundle descriptions",
-  // TODO New key - Add a translation
-  "explore.index.original_bundle_descriptions" : "Original bundle descriptions",
-
-  // "explore.index.original_bundle_filenames" : "Original bundle filenames",
-  // TODO New key - Add a translation
-  "explore.index.original_bundle_filenames" : "Original bundle filenames",
-
-  // "explore.index.ouname" : "Name",
-  // TODO New key - Add a translation
-  "explore.index.ouname" : "Name",
-
-  // "explore.index.projectOrgUnits" : "Organizations",
-  // TODO New key - Add a translation
-  "explore.index.projectOrgUnits" : "Organizations",
-
-  // "explore.index.personOrgUnits" : "Organizations",
-  // TODO New key - Add a translation
-  "explore.index.personOrgUnits" : "Organizations",
-
-  // "explore.index.pjtitle" : "Title",
-  // TODO New key - Add a translation
-  "explore.index.pjtitle" : "Title",
-
-  // "explore.index.projectinvestigators" : "Project investigators",
-  // TODO New key - Add a translation
-  "explore.index.projectinvestigators" : "Project investigators",
-
-  // "explore.index.rodept" : "Department",
-  // TODO New key - Add a translation
-  "explore.index.rodept" : "Department",
-
-  // "explore.index.rpdept" : "Department",
-  // TODO New key - Add a translation
-  "explore.index.rpdept" : "Department",
-
-  // "explore.index.rpname" : "Name",
-  // TODO New key - Add a translation
-  "explore.index.rpname" : "Name",
-
-  // "explore.index.subject" : "Subject",
-  // TODO New key - Add a translation
-  "explore.index.subject" : "Subject",
-
-  // "explore.index.title" : "Title",
-  // TODO New key - Add a translation
-  "explore.index.title" : "Title",
-
-  // "explore.index.type" : "Type",
-  // TODO New key - Add a translation
-  "explore.index.type" : "Type",
-
-  // "explore.search-section.infrastructure.title": "Infrastructure",
-  // TODO New key - Add a translation
-  "explore.search-section.infrastructure.title": "Infrastructure",
-
-  // "explore.search-section.fundings.title": "Search Projects",
-  // TODO New key - Add a translation
-  "explore.search-section.fundings.title": "Search Projects",
-
-  // "explore.search-section.fundings_and_projects.title": "Search Projects",
-  // TODO New key - Add a translation
-  "explore.search-section.fundings_and_projects.title": "Search Projects",
-
-  // "explore.search-section.orgunits.title": "Search Organizations",
-  // TODO New key - Add a translation
-  "explore.search-section.orgunits.title": "Search Organizations",
-
-  // "explore.search-section.publications.title": "Search Research Outputs",
-  // TODO New key - Add a translation
-  "explore.search-section.publications.title": "Search Research Outputs",
-
-  // "explore.search-section.researchoutputs.title": "Search Research Outputs",
-  // TODO New key - Add a translation
-  "explore.search-section.researchoutputs.title": "Search Research Outputs",
-
-  // "explore.search-section.researcherprofiles.title": "Search People",
-  // TODO New key - Add a translation
-  "explore.search-section.researcherprofiles.title": "Search People",
-
-  // "explore.search-section.search-button": "Search",
-  // TODO New key - Add a translation
-  "explore.search-section.search-button": "Search",
-
-  // "explore.search-section.reset-button": "Reset",
-  // TODO New key - Add a translation
-  "explore.search-section.reset-button": "Reset",
-
-  // "explore.infrastructure.breadcrumbs": "Infrastructure",
-  // TODO New key - Add a translation
-  "explore.infrastructure.breadcrumbs": "Infrastructure",
-
-  // "explore.fundings.breadcrumbs": "Projects",
-  // TODO New key - Add a translation
-  "explore.fundings.breadcrumbs": "Projects",
-
-  // "explore.fundings_and_projects.breadcrumbs": "Projects",
-  // TODO New key - Add a translation
-  "explore.fundings_and_projects.breadcrumbs": "Projects",
-
-  // "explore.orgunits.breadcrumbs": "Organizations",
-  // TODO New key - Add a translation
-  "explore.orgunits.breadcrumbs": "Organizations",
-
-  // "explore.publications.breadcrumbs": "Research Outputs",
-  // TODO New key - Add a translation
-  "explore.publications.breadcrumbs": "Research Outputs",
-
-  // "explore.researchoutputs.breadcrumbs": "Research Outputs",
-  // TODO New key - Add a translation
-  "explore.researchoutputs.breadcrumbs": "Research Outputs",
-
-  // "explore.researcherprofiles.breadcrumbs": "People",
-  // TODO New key - Add a translation
-  "explore.researcherprofiles.breadcrumbs": "People",
-
-  // "explore.title": "Explore section",
-  // TODO New key - Add a translation
-  "explore.title": "Explore section",
+  
 
 
   // "file-section.error.header": "Error obtaining files for this item",
@@ -2763,17 +2065,8 @@
   // "form.no-value": "No value entered",
   "form.no-value": "Vērtība netika ievadīta",
 
-  // "form.other-information.data-oairecerif_author_affiliation": "Affiliation",
-  // TODO New key - Add a translation
-  "form.other-information.data-oairecerif_author_affiliation": "Affiliation",
-
-  // "form.other-information.data-oairecerif_editor_affiliation": "Affiliation",
-  // TODO New key - Add a translation
-  "form.other-information.data-oairecerif_editor_affiliation": "Affiliation",
-
-  // "form.other-information.not-available": "Not available",
-  // TODO New key - Add a translation
-  "form.other-information.not-available": "Not available",
+  // "form.other-information": {},
+  "form.other-information": {},
 
   // "form.remove": "Remove",
   "form.remove": "Dzēst",
@@ -2794,9 +2087,6 @@
   // "form.submit": "Submit",
   "form.submit": "Iesniegt",
 
-  // "funding.listelement.badge" : "Funding",
-  // TODO New key - Add a translation
-  "funding.listelement.badge" : "Funding",
 
 
   // "home.description": "",
@@ -2806,12 +2096,10 @@
   // TODO New key - Add a translation
   "home.breadcrumbs": "Home",
 
-  // "home.title": "DSpace Cris Angular :: Home",
-  // TODO New key - Add a translation
-  "home.title": "DSpace Cris Angular :: Home",
+  // "home.title": "DSpace Angular :: Home",
+  "home.title": "DSpace Angular :: Sākums",
 
-  // "home.top-level-communities.head": "Communities in DSpace Cris",
-  // TODO Source message changed - Revise the translation
+  // "home.top-level-communities.head": "Communities in DSpace",
   "home.top-level-communities.head": "DSpace Kategorijas",
 
   // "home.top-level-communities.help": "Select a community to browse its collections.",
@@ -2830,10 +2118,6 @@
   // "info.end-user-agreement.accept.success": "Successfully updated the End User Agreement",
   // TODO New key - Add a translation
   "info.end-user-agreement.accept.success": "Successfully updated the End User Agreement",
-
-  // "info.end-user-agreement.accept.warning": "Before you can proceed, you must agree to the End User Agreement",
-  // TODO New key - Add a translation
-  "info.end-user-agreement.accept.warning": "Before you can proceed, you must agree to the End User Agreement",
 
   // "info.end-user-agreement.breadcrumbs": "End User Agreement",
   // TODO New key - Add a translation
@@ -2900,170 +2184,129 @@
 
 
   // "item.bitstreams.upload.bundle": "Bundle",
-  // TODO New key - Add a translation
-  "item.bitstreams.upload.bundle": "Bundle",
+  "item.bitstreams.upload.bundle": "Kopiens",
 
   // "item.bitstreams.upload.bundle.placeholder": "Select a bundle",
-  // TODO New key - Add a translation
-  "item.bitstreams.upload.bundle.placeholder": "Select a bundle",
+  "item.bitstreams.upload.bundle.placeholder": "Izvēlēties kopienu",
 
   // "item.bitstreams.upload.bundle.new": "Create bundle",
-  // TODO New key - Add a translation
-  "item.bitstreams.upload.bundle.new": "Create bundle",
+  "item.bitstreams.upload.bundle.new": "Izveidot kopienu",
 
   // "item.bitstreams.upload.bundles.empty": "This item doesn\'t contain any bundles to upload a bitstream to.",
-  // TODO New key - Add a translation
-  "item.bitstreams.upload.bundles.empty": "This item doesn\'t contain any bundles to upload a bitstream to.",
+  "item.bitstreams.upload.bundles.empty": "Materiālā nav neviena kopiena ko augšupielādēt bitu straumē.",
 
   // "item.bitstreams.upload.cancel": "Cancel",
-  // TODO New key - Add a translation
-  "item.bitstreams.upload.cancel": "Cancel",
+  "item.bitstreams.upload.cancel": "Atcelt",
 
   // "item.bitstreams.upload.drop-message": "Drop a file to upload",
-  // TODO New key - Add a translation
-  "item.bitstreams.upload.drop-message": "Drop a file to upload",
+  "item.bitstreams.upload.drop-message": "Nomest failu augšupielādei",
 
   // "item.bitstreams.upload.item": "Item: ",
-  // TODO New key - Add a translation
-  "item.bitstreams.upload.item": "Item: ",
+  "item.bitstreams.upload.item": "Materiāls: ",
 
   // "item.bitstreams.upload.notifications.bundle.created.content": "Successfully created new bundle.",
-  // TODO New key - Add a translation
-  "item.bitstreams.upload.notifications.bundle.created.content": "Successfully created new bundle.",
+  "item.bitstreams.upload.notifications.bundle.created.content": "Veiksmīgi izveidota kopiena.",
 
   // "item.bitstreams.upload.notifications.bundle.created.title": "Created bundle",
-  // TODO New key - Add a translation
-  "item.bitstreams.upload.notifications.bundle.created.title": "Created bundle",
+  "item.bitstreams.upload.notifications.bundle.created.title": "Izveidot kopienu",
 
   // "item.bitstreams.upload.notifications.upload.failed": "Upload failed. Please verify the content before retrying.",
-  // TODO New key - Add a translation
-  "item.bitstreams.upload.notifications.upload.failed": "Upload failed. Please verify the content before retrying.",
+  "item.bitstreams.upload.notifications.upload.failed": "Augšupielāde neizdevās. Lūdzu pārbaudi saturu pirms mēģini vēlreiz.",
 
   // "item.bitstreams.upload.title": "Upload bitstream",
-  // TODO New key - Add a translation
-  "item.bitstreams.upload.title": "Upload bitstream",
+  "item.bitstreams.upload.title": "Augšupielādēt bitu straumi",
 
 
 
   // "item.edit.bitstreams.bundle.edit.buttons.upload": "Upload",
-  // TODO New key - Add a translation
-  "item.edit.bitstreams.bundle.edit.buttons.upload": "Upload",
+  "item.edit.bitstreams.bundle.edit.buttons.upload": "Augšupielādēt",
 
   // "item.edit.bitstreams.bundle.displaying": "Currently displaying {{ amount }} bitstreams of {{ total }}.",
-  // TODO New key - Add a translation
-  "item.edit.bitstreams.bundle.displaying": "Currently displaying {{ amount }} bitstreams of {{ total }}.",
+  "item.edit.bitstreams.bundle.displaying": "Šobrīd rāda {{ amount }} bitu straumes no {{ total }}.",
 
   // "item.edit.bitstreams.bundle.load.all": "Load all ({{ total }})",
-  // TODO New key - Add a translation
-  "item.edit.bitstreams.bundle.load.all": "Load all ({{ total }})",
+  "item.edit.bitstreams.bundle.load.all": "Ielādēt visus ({{ total }})",
 
   // "item.edit.bitstreams.bundle.load.more": "Load more",
-  // TODO New key - Add a translation
-  "item.edit.bitstreams.bundle.load.more": "Load more",
+  "item.edit.bitstreams.bundle.load.more": "Ielādēt vēl",
 
   // "item.edit.bitstreams.bundle.name": "BUNDLE: {{ name }}",
-  // TODO New key - Add a translation
-  "item.edit.bitstreams.bundle.name": "BUNDLE: {{ name }}",
+  "item.edit.bitstreams.bundle.name": "KOPIENA: {{ name }}",
 
   // "item.edit.bitstreams.discard-button": "Discard",
-  // TODO New key - Add a translation
-  "item.edit.bitstreams.discard-button": "Discard",
+  "item.edit.bitstreams.discard-button": "Atsaukt",
 
   // "item.edit.bitstreams.edit.buttons.download": "Download",
-  // TODO New key - Add a translation
-  "item.edit.bitstreams.edit.buttons.download": "Download",
+  "item.edit.bitstreams.edit.buttons.download": "Lejupielādēt",
 
   // "item.edit.bitstreams.edit.buttons.drag": "Drag",
-  // TODO New key - Add a translation
-  "item.edit.bitstreams.edit.buttons.drag": "Drag",
+  "item.edit.bitstreams.edit.buttons.drag": "Vilkt",
 
   // "item.edit.bitstreams.edit.buttons.edit": "Edit",
-  // TODO New key - Add a translation
-  "item.edit.bitstreams.edit.buttons.edit": "Edit",
+  "item.edit.bitstreams.edit.buttons.edit": "Rediģēt",
 
   // "item.edit.bitstreams.edit.buttons.remove": "Remove",
-  // TODO New key - Add a translation
-  "item.edit.bitstreams.edit.buttons.remove": "Remove",
+  "item.edit.bitstreams.edit.buttons.remove": "Noņemt",
 
   // "item.edit.bitstreams.edit.buttons.undo": "Undo changes",
-  // TODO New key - Add a translation
-  "item.edit.bitstreams.edit.buttons.undo": "Undo changes",
+  "item.edit.bitstreams.edit.buttons.undo": "Atlikt izmaiņas",
 
   // "item.edit.bitstreams.empty": "This item doesn't contain any bitstreams. Click the upload button to create one.",
-  // TODO New key - Add a translation
-  "item.edit.bitstreams.empty": "This item doesn't contain any bitstreams. Click the upload button to create one.",
+  "item.edit.bitstreams.empty": "Šis materiāls nesatur bitu straumi. Nospied augšupielādes pogu, lai izveidotu jaunu.",
 
   // "item.edit.bitstreams.headers.actions": "Actions",
-  // TODO New key - Add a translation
-  "item.edit.bitstreams.headers.actions": "Actions",
+  "item.edit.bitstreams.headers.actions": "Darbības",
 
   // "item.edit.bitstreams.headers.bundle": "Bundle",
-  // TODO New key - Add a translation
-  "item.edit.bitstreams.headers.bundle": "Bundle",
+  "item.edit.bitstreams.headers.bundle": "Kopiena",
 
   // "item.edit.bitstreams.headers.description": "Description",
-  // TODO New key - Add a translation
-  "item.edit.bitstreams.headers.description": "Description",
+  "item.edit.bitstreams.headers.description": "Apraksts",
 
   // "item.edit.bitstreams.headers.format": "Format",
-  // TODO New key - Add a translation
-  "item.edit.bitstreams.headers.format": "Format",
+  "item.edit.bitstreams.headers.format": "Formāts",
 
   // "item.edit.bitstreams.headers.name": "Name",
-  // TODO New key - Add a translation
-  "item.edit.bitstreams.headers.name": "Name",
+  "item.edit.bitstreams.headers.name": "Nosaukums",
 
   // "item.edit.bitstreams.notifications.discarded.content": "Your changes were discarded. To reinstate your changes click the 'Undo' button",
-  // TODO New key - Add a translation
-  "item.edit.bitstreams.notifications.discarded.content": "Your changes were discarded. To reinstate your changes click the 'Undo' button",
+  "item.edit.bitstreams.notifications.discarded.content": "Jūsu veiktās izmaiņas tika atsaukt. Lai atjaunotu izmaiņas, noklikšķiniet uz pogas Atsaukt",
 
   // "item.edit.bitstreams.notifications.discarded.title": "Changes discarded",
-  // TODO New key - Add a translation
-  "item.edit.bitstreams.notifications.discarded.title": "Changes discarded",
+  "item.edit.bitstreams.notifications.discarded.title": "Izmaiņas atsauktas",
 
   // "item.edit.bitstreams.notifications.move.failed.title": "Error moving bitstreams",
-  // TODO New key - Add a translation
-  "item.edit.bitstreams.notifications.move.failed.title": "Error moving bitstreams",
+  "item.edit.bitstreams.notifications.move.failed.title": "Radās kļūda pārvietojot bitu straumi",
 
   // "item.edit.bitstreams.notifications.move.saved.content": "Your move changes to this item's bitstreams and bundles have been saved.",
-  // TODO New key - Add a translation
-  "item.edit.bitstreams.notifications.move.saved.content": "Your move changes to this item's bitstreams and bundles have been saved.",
+  "item.edit.bitstreams.notifications.move.saved.content": "Jūsu pārvietošanas izmaiņas materiāla bitu straumē un kopienā ir saglabātas.",
 
   // "item.edit.bitstreams.notifications.move.saved.title": "Move changes saved",
-  // TODO New key - Add a translation
-  "item.edit.bitstreams.notifications.move.saved.title": "Move changes saved",
+  "item.edit.bitstreams.notifications.move.saved.title": "Pārvietošanas izmaiņas saglabātas",
 
   // "item.edit.bitstreams.notifications.outdated.content": "The item you're currently working on has been changed by another user. Your current changes are discarded to prevent conflicts",
-  // TODO New key - Add a translation
-  "item.edit.bitstreams.notifications.outdated.content": "The item you're currently working on has been changed by another user. Your current changes are discarded to prevent conflicts",
+  "item.edit.bitstreams.notifications.outdated.content": "Materiāls, kurā pašlaik strādājat, ir mainījis kāds cits lietotājs. Jūsu pašreizējās izmaiņas tiek atmestas, lai novērstu konfliktus",
 
   // "item.edit.bitstreams.notifications.outdated.title": "Changes outdated",
-  // TODO New key - Add a translation
-  "item.edit.bitstreams.notifications.outdated.title": "Changes outdated",
+  "item.edit.bitstreams.notifications.outdated.title": "Novecojušas izmaiņas",
 
   // "item.edit.bitstreams.notifications.remove.failed.title": "Error deleting bitstream",
-  // TODO New key - Add a translation
-  "item.edit.bitstreams.notifications.remove.failed.title": "Error deleting bitstream",
+  "item.edit.bitstreams.notifications.remove.failed.title": "Radās kļūda dzēšot bitu straumi",
 
   // "item.edit.bitstreams.notifications.remove.saved.content": "Your removal changes to this item's bitstreams have been saved.",
-  // TODO New key - Add a translation
-  "item.edit.bitstreams.notifications.remove.saved.content": "Your removal changes to this item's bitstreams have been saved.",
+  "item.edit.bitstreams.notifications.remove.saved.content": "Jūsu materiāla bitu straumes izņemšanas izmaiņas ir saglabātas.",
 
   // "item.edit.bitstreams.notifications.remove.saved.title": "Removal changes saved",
-  // TODO New key - Add a translation
-  "item.edit.bitstreams.notifications.remove.saved.title": "Removal changes saved",
+  "item.edit.bitstreams.notifications.remove.saved.title": "Izņemšanas izmaiņas ir saglabātas",
 
   // "item.edit.bitstreams.reinstate-button": "Undo",
-  // TODO New key - Add a translation
-  "item.edit.bitstreams.reinstate-button": "Undo",
+  "item.edit.bitstreams.reinstate-button": "Atlikt",
 
   // "item.edit.bitstreams.save-button": "Save",
-  // TODO New key - Add a translation
-  "item.edit.bitstreams.save-button": "Save",
+  "item.edit.bitstreams.save-button": "Saglabāt",
 
   // "item.edit.bitstreams.upload-button": "Upload",
-  // TODO New key - Add a translation
-  "item.edit.bitstreams.upload-button": "Upload",
+  "item.edit.bitstreams.upload-button": "Augšupielādēt",
 
 
 
@@ -3092,6 +2335,13 @@
   "item.edit.breadcrumbs": "Rediģēt Materiālu",
 
 
+  // "item.edit.tabs.mapper.head": "Collection Mapper",
+  // TODO New key - Add a translation
+  "item.edit.tabs.mapper.head": "Collection Mapper",
+
+  // "item.edit.tabs.item-mapper.title": "Item Edit - Collection Mapper",
+  // TODO New key - Add a translation
+  "item.edit.tabs.item-mapper.title": "Item Edit - Collection Mapper",
 
   // "item.edit.item-mapper.buttons.add": "Map item to selected collections",
   "item.edit.item-mapper.buttons.add": "Piesaistīt materiālu piesaistītajai kolekcijai",
@@ -3370,15 +2620,14 @@
   // "item.edit.relationships.save-button": "Save",
   "item.edit.relationships.save-button": "Saglabāt",
 
-  // "item.edit.relationships.no-entity-type": "Add 'relationship.type' metadata to enable relationships for this item",
+  // "item.edit.relationships.no-entity-type": "Add 'dspace.entity.type' metadata to enable relationships for this item",
   // TODO New key - Add a translation
-  "item.edit.relationships.no-entity-type": "Add 'relationship.type' metadata to enable relationships for this item",
+  "item.edit.relationships.no-entity-type": "Add 'dspace.entity.type' metadata to enable relationships for this item",
 
 
 
   // "item.edit.tabs.bitstreams.head": "Bitstreams",
-  // TODO Source message changed - Revise the translation
-  "item.edit.tabs.bitstreams.head": "Materiālu Bitstreams",
+  "item.edit.tabs.bitstreams.head": "Bitu straume",
 
   // "item.edit.tabs.bitstreams.title": "Item Edit - Bitstreams",
   "item.edit.tabs.bitstreams.title": "Rediģēt Materiālu - Bitu straumes",
@@ -3390,15 +2639,13 @@
   "item.edit.tabs.curate.title": "Rediģēt Materiālu - Pārvaldība",
 
   // "item.edit.tabs.metadata.head": "Metadata",
-  // TODO Source message changed - Revise the translation
-  "item.edit.tabs.metadata.head": "Materiāla Metadati",
+  "item.edit.tabs.metadata.head": "Metadati",
 
   // "item.edit.tabs.metadata.title": "Item Edit -  Metadata",
   "item.edit.tabs.metadata.title": "Rediģēt Materiālu - Metadati",
 
   // "item.edit.tabs.relationships.head": "Relationships",
-  // TODO Source message changed - Revise the translation
-  "item.edit.tabs.relationships.head": "Materiāla Attiecības",
+  "item.edit.tabs.relationships.head": "Attiecības",
 
   // "item.edit.tabs.relationships.title": "Item Edit - Relationships",
   "item.edit.tabs.relationships.title": "Rediģēt Materiālu - Attiecības",
@@ -3455,8 +2702,7 @@
   "item.edit.tabs.status.description": "Laipni lūdzam vienumu pārvaldības lapā. Šeit jūs varat materiālu izņemt, atjaunot, pārvietot vai izdzēst. Citās cilnēs varat arī atjaunināt vai pievienot jaunus metadatus / bitu straumes.",
 
   // "item.edit.tabs.status.head": "Status",
-  // TODO Source message changed - Revise the translation
-  "item.edit.tabs.status.head": "Materiāla Status",
+  "item.edit.tabs.status.head": "Status",
 
   // "item.edit.tabs.status.labels.handle": "Handle",
   "item.edit.tabs.status.labels.handle": "Apstrāde",
@@ -3598,54 +2844,6 @@
   // "item.page.link.simple": "Simple item page",
   "item.page.link.simple": "Vienkārša materiālu lapa",
 
-  // "item.page.metric.deltaPeriod1": "Last Week",
-  // TODO New key - Add a translation
-  "item.page.metric.deltaPeriod1": "Last Week",
-
-  // "item.page.metric.deltaPeriod2": "Last Month",
-  // TODO New key - Add a translation
-  "item.page.metric.deltaPeriod2": "Last Month",
-
-  // "item.page.metric.label.altmetrics": "Altmetrics",
-  // TODO New key - Add a translation
-  "item.page.metric.label.altmetrics": "Altmetrics",
-
-  // "item.page.metric.label.google-scholar": "Google Scholar",
-  // TODO New key - Add a translation
-  "item.page.metric.label.google-scholar": "Google Scholar",
-
-  // "item.page.metric.label.scopusCitation": "Scopus citations",
-  // TODO New key - Add a translation
-  "item.page.metric.label.scopusCitation": "Scopus citations",
-
-  // "item.page.metric.label.scopus-author-h-index": "H-index",
-  // TODO New key - Add a translation
-  "item.page.metric.label.scopus-author-h-index": "H-index",
-
-  // "item.page.metric.label.scopus-author-coauthor-count": "Coauthor",
-  // TODO New key - Add a translation
-  "item.page.metric.label.scopus-author-coauthor-count": "Coauthor",
-
-  // "item.page.metric.label.scopus-author-cited-count": "Cited By",
-  // TODO New key - Add a translation
-  "item.page.metric.label.scopus-author-cited-count": "Cited By",
-
-  // "item.page.metric.label.scopus-author-citation-count": "Author Citations",
-  // TODO New key - Add a translation
-  "item.page.metric.label.scopus-author-citation-count": "Author Citations",
-
-  // "item.page.metric.label.scopus-author-document-count": "Author Documents",
-  // TODO New key - Add a translation
-  "item.page.metric.label.scopus-author-document-count": "Author Documents",
-
-  // "item.page.metric.label.wosCitation": "WOS citations",
-  // TODO New key - Add a translation
-  "item.page.metric.label.wosCitation": "WOS citations",
-
-  // "item.page.metric.label.wosPersonCitation": "WOS citations",
-  // TODO New key - Add a translation
-  "item.page.metric.label.wosPersonCitation": "WOS citations",
-
   // "item.page.person.search.title": "Articles by this author",
   "item.page.person.search.title": "Šī autora raksti",
 
@@ -3689,61 +2887,13 @@
   // TODO New key - Add a translation
   "item.page.filesection.license.bundle" : "License bundle",
 
-  // "item.preview.dc.description.tableOfContents" : "Table of Contents",
-  // TODO New key - Add a translation
-  "item.preview.dc.description.tableOfContents" : "Table of Contents",
-
-  // "item.preview.dc.identifier.doi" : "DOI",
-  // TODO New key - Add a translation
-  "item.preview.dc.identifier.doi" : "DOI",
-
-  // "item.preview.dc.identifier.issn" : "ISSN",
-  // TODO New key - Add a translation
-  "item.preview.dc.identifier.issn" : "ISSN",
-
-  // "item.preview.dc.identifier.scopus" : "Scopus id",
-  // TODO New key - Add a translation
-  "item.preview.dc.identifier.scopus" : "Scopus id",
-
-  // "item.preview.dc.publisher" : "Publisher",
-  // TODO New key - Add a translation
-  "item.preview.dc.publisher" : "Publisher",
-
-  // "item.preview.dc.relation.grantno" : "Grant no.",
-  // TODO New key - Add a translation
-  "item.preview.dc.relation.grantno" : "Grant no.",
-
-  // "item.preview.dc.relation.ispartof" : "Journal or Serie",
-  // TODO New key - Add a translation
-  "item.preview.dc.relation.ispartof" : "Journal or Serie",
-
-  // "item.preview.dc.relation.ispartofseries" : "Serie",
-  // TODO New key - Add a translation
-  "item.preview.dc.relation.ispartofseries" : "Serie",
-
-  // "item.preview.dc.identifier.isbn" : "ISBN",
-  // TODO New key - Add a translation
-  "item.preview.dc.identifier.isbn" : "ISBN",
-
   // "item.preview.dc.identifier.uri": "Identifier:",
   // TODO New key - Add a translation
   "item.preview.dc.identifier.uri": "Identifier:",
 
-  // "item.preview.dc.contributor.advisor" : "Advisor",
-  // TODO New key - Add a translation
-  "item.preview.dc.contributor.advisor" : "Advisor",
-
   // "item.preview.dc.contributor.author": "Authors:",
   // TODO New key - Add a translation
   "item.preview.dc.contributor.author": "Authors:",
-
-  // "item.preview.dc.contributor.editor": "Editors:",
-  // TODO New key - Add a translation
-  "item.preview.dc.contributor.editor": "Editors:",
-
-  // "item.preview.dc.date.embargoEnd" : "Embargo End",
-  // TODO New key - Add a translation
-  "item.preview.dc.date.embargoEnd" : "Embargo End",
 
   // "item.preview.dc.date.issued": "Published date:",
   // TODO New key - Add a translation
@@ -3753,33 +2903,13 @@
   // TODO New key - Add a translation
   "item.preview.dc.description.abstract": "Abstract:",
 
-  // "item.preview.dc.description.sponsorship" : "Sponsorship",
-  // TODO New key - Add a translation
-  "item.preview.dc.description.sponsorship" : "Sponsorship",
-
   // "item.preview.dc.identifier.other": "Other identifier:",
   // TODO New key - Add a translation
   "item.preview.dc.identifier.other": "Other identifier:",
 
-  // "item.preview.dc.identifier.pmid" : "Pubmed Id",
-  // TODO New key - Add a translation
-  "item.preview.dc.identifier.pmid" : "Pubmed Id",
-
   // "item.preview.dc.language.iso": "Language:",
   // TODO New key - Add a translation
   "item.preview.dc.language.iso": "Language:",
-
-  // "item.preview.dc.relation.uri" : "Relation URI",
-  // TODO New key - Add a translation
-  "item.preview.dc.relation.uri" : "Relation URI",
-
-  // "item.preview.dc.rights" : "Rights",
-  // TODO New key - Add a translation
-  "item.preview.dc.rights" : "Rights",
-
-  // "item.preview.dc.rights.uri" : "Rights URI",
-  // TODO New key - Add a translation
-  "item.preview.dc.rights.uri" : "Rights URI",
 
   // "item.preview.dc.subject": "Subjects:",
   // TODO New key - Add a translation
@@ -3788,46 +2918,6 @@
   // "item.preview.dc.title": "Title:",
   // TODO New key - Add a translation
   "item.preview.dc.title": "Title:",
-
-  // "item.preview.dc.title.alternative" : "Alternative Title",
-  // TODO New key - Add a translation
-  "item.preview.dc.title.alternative" : "Alternative Title",
-
-  // "item.preview.dc.type": "Type:",
-  // TODO New key - Add a translation
-  "item.preview.dc.type": "Type:",
-
-  // "item.preview.dc.type.version" : "Version",
-  // TODO New key - Add a translation
-  "item.preview.dc.type.version" : "Version",
-
-  // "item.preview.dc.identifier": "Identifier:",
-  // TODO New key - Add a translation
-  "item.preview.dc.identifier": "Identifier:",
-
-  // "item.preview.dc.source": "Source:",
-  // TODO New key - Add a translation
-  "item.preview.dc.source": "Source:",
-
-  // "item.preview.dc.relation.isbn" : "ISBN",
-  // TODO New key - Add a translation
-  "item.preview.dc.relation.isbn" : "ISBN",
-
-  // "item.preview.dc.relation.issn" : "ISSN",
-  // TODO New key - Add a translation
-  "item.preview.dc.relation.issn" : "ISSN",
-
-  // "item.preview.oaire.citation.issue" : "Issue",
-  // TODO New key - Add a translation
-  "item.preview.oaire.citation.issue" : "Issue",
-
-  // "item.preview.oaire.citation.volume" : "Volume",
-  // TODO New key - Add a translation
-  "item.preview.oaire.citation.volume" : "Volume",
-
-  // "item.preview.oairecerif.affiliation.orgunit": "Affiliation",
-  // TODO New key - Add a translation
-  "item.preview.oairecerif.affiliation.orgunit": "Affiliation",
 
   // "item.preview.person.familyName": "Surname:",
   // TODO New key - Add a translation
@@ -3841,9 +2931,6 @@
   // TODO New key - Add a translation
   "item.preview.person.identifier.orcid": "ORCID:",
 
-  // "item.preview.person.identifier.scopus-author-id": "Scopus Author Id",
-  // TODO New key - Add a translation
-  "item.preview.person.identifier.scopus-author-id": "Scopus Author Id",
 
   // "item.select.confirm": "Confirm selected",
   "item.select.confirm": "Apstiprināt izvēlētos",
@@ -3855,7 +2942,6 @@
   "item.select.table.author": "Autors",
 
   // "item.select.table.collection": "Collection",
-  // TODO Source message changed - Revise the translation
   "item.select.table.collection": "Kolekcija",
 
   // "item.select.table.title": "Title",
@@ -3921,9 +3007,8 @@
   // "journal.search.results.head": "Journal Search Results",
   "journal.search.results.head": "Žurnālu meklēšanas rezultāti",
 
-  // "journal.search.title": "DSpace Cris Angular :: Journal Search",
-  // TODO New key - Add a translation
-  "journal.search.title": "DSpace Cris Angular :: Journal Search",
+  // "journal.search.title": "DSpace Angular :: Journal Search",
+  "journal.search.title": "DSpace Angular :: Žurnālu Meklēšana",
 
 
 
@@ -3979,12 +3064,10 @@
 
 
   // "loading.bitstream": "Loading bitstream...",
-  // TODO New key - Add a translation
-  "loading.bitstream": "Loading bitstream...",
+  "loading.bitstream": "Notiek bitu straumes ielāde...",
 
   // "loading.bitstreams": "Loading bitstreams...",
-  // TODO New key - Add a translation
-  "loading.bitstreams": "Loading bitstreams...",
+  "loading.bitstreams": "Notiek bitu straumes ielāde...",
 
   // "loading.browse-by": "Loading items...",
   "loading.browse-by": "Notiek materiālu ielāde...",
@@ -4114,7 +3197,6 @@
   "menu.section.browse_community": "Šī kategorija",
 
   // "menu.section.browse_community_by_author": "By Author",
-  // TODO Source message changed - Revise the translation
   "menu.section.browse_community_by_author": "Pēc Autora",
 
   // "menu.section.browse_community_by_issue_date": "By Issue Date",
@@ -4123,37 +3205,23 @@
   // "menu.section.browse_community_by_title": "By Title",
   "menu.section.browse_community_by_title": "Pēc Nosaukuma",
 
-  // "menu.section.explore_infrastructure": "Infrastructure",
-  // TODO New key - Add a translation
-  "menu.section.explore_infrastructure": "Infrastructure",
+  // "menu.section.browse_global": "All of DSpace",
+  "menu.section.browse_global": "Viss no DSpace",
 
-  // "menu.section.explore_publications": "Research Outputs",
-  // TODO New key - Add a translation
-  "menu.section.explore_publications": "Research Outputs",
+  // "menu.section.browse_global_by_author": "By Author",
+  "menu.section.browse_global_by_author": "Pēc Autora",
 
-  // "menu.section.explore_researchoutputs": "Research Outputs",
-  // TODO New key - Add a translation
-  "menu.section.explore_researchoutputs": "Research Outputs",
+  // "menu.section.browse_global_by_dateissued": "By Issue Date",
+  "menu.section.browse_global_by_dateissued": "Pēc Izdošanas Datuma",
 
-  // "menu.section.explore_researcherprofiles": "People",
-  // TODO New key - Add a translation
-  "menu.section.explore_researcherprofiles": "People",
+  // "menu.section.browse_global_by_subject": "By Subject",
+  "menu.section.browse_global_by_subject": "Pēc Priekšmeta",
 
-  // "menu.section.explore_orgunits": "Organizations",
-  // TODO New key - Add a translation
-  "menu.section.explore_orgunits": "Organizations",
+  // "menu.section.browse_global_by_title": "By Title",
+  "menu.section.browse_global_by_title": "Pēc Nosaukuma",
 
-  // "menu.section.explore_fundings": "Projects",
-  // TODO New key - Add a translation
-  "menu.section.explore_fundings": "Projects",
-
-  // "menu.section.explore_fundings_and_projects": "Projects",
-  // TODO New key - Add a translation
-  "menu.section.explore_fundings_and_projects": "Projects",
-
-  // "menu.section.communities_and_collections": "Communities & Collections",
-  // TODO New key - Add a translation
-  "menu.section.communities_and_collections": "Communities & Collections",
+  // "menu.section.browse_global_communities_and_collections": "Communities & Collections",
+  "menu.section.browse_global_communities_and_collections": "Kategorijas & Kolekcijas",
 
 
 
@@ -4256,7 +3324,7 @@
   "menu.section.new": "Jauns",
 
   // "menu.section.new_collection": "Collection",
-  "menu.section.new_collection": "Kolkecija",
+  "menu.section.new_collection": "Kolekcija",
 
   // "menu.section.new_community": "Community",
   "menu.section.new_community": "Kategorija",
@@ -4282,8 +3350,7 @@
 
 
   // "menu.section.processes": "Processes",
-  // TODO New key - Add a translation
-  "menu.section.processes": "Processes",
+  "menu.section.processes": "Procesi",
 
 
 
@@ -4336,13 +3403,10 @@
   // "menu.section.toggle.statistics_task": "Toggle Statistics Task section",
   "menu.section.toggle.statistics_task": "Pārslēgt Statistikas Uzdevumu sadaļu",
 
-  // "menu.section.edit_user_agreement":"Edit User Agreement",
-  // TODO New key - Add a translation
-  "menu.section.edit_user_agreement":"Edit User Agreement",
 
   // "menu.section.workflow": "Administer Workflow",
-  // TODO New key - Add a translation
-  "menu.section.workflow": "Administer Workflow",
+  // TODO Source message changed - Revise the translation
+  "menu.section.workflow": "Administrēt darba plūsmu",
 
 
   // "mydspace.description": "",
@@ -4581,187 +3645,6 @@
   // "person.page.orcid": "ORCID",
   "person.page.orcid": "ORCID",
 
-  // "person.page.orcid.create": "Create an ORCID ID",
-  // TODO New key - Add a translation
-  "person.page.orcid.create": "Create an ORCID ID",
-
-  // "person.page.orcid.granted-authorizations": "Granted authorizations",
-  // TODO New key - Add a translation
-  "person.page.orcid.granted-authorizations": "Granted authorizations",
-
-  // "person.page.orcid.link": "Connect to ORCID ID",
-  // TODO New key - Add a translation
-  "person.page.orcid.link": "Connect to ORCID ID",
-
-  // "person.page.orcid.missing-authorizations": "Missing authorizations",
-  // TODO New key - Add a translation
-  "person.page.orcid.missing-authorizations": "Missing authorizations",
-
-  // "person.page.orcid.missing-authorizations-message": "The following authorizations are missing:",
-  // TODO New key - Add a translation
-  "person.page.orcid.missing-authorizations-message": "The following authorizations are missing:",
-
-  // "person.page.orcid.no-missing-authorizations-message": "Great! This box is empty, so you have granted all access rights to use all functions offers by your institution.",
-  // TODO New key - Add a translation
-  "person.page.orcid.no-missing-authorizations-message": "Great! This box is empty, so you have granted all access rights to use all functions offers by your institution.",
-
-  // "person.page.orcid.no-orcid-message": "No ORCID iD associated yet",
-  // TODO New key - Add a translation
-  "person.page.orcid.no-orcid-message": "No ORCID iD associated yet",
-
-  // "person.page.orcid.profile-preferences": "Profile preferences",
-  // TODO New key - Add a translation
-  "person.page.orcid.profile-preferences": "Profile preferences",
-
-  // "person.page.orcid.project-preferences": "Project preferences",
-  // TODO New key - Add a translation
-  "person.page.orcid.project-preferences": "Project preferences",
-
-  // "person.page.orcid.publications-preferences": "Publication preferences",
-  // TODO New key - Add a translation
-  "person.page.orcid.publications-preferences": "Publication preferences",
-
-  // "person.page.orcid.remove-orcid-message": "If you need to remove your ORCID, please contact the repository administrator",
-  // TODO New key - Add a translation
-  "person.page.orcid.remove-orcid-message": "If you need to remove your ORCID, please contact the repository administrator",
-
-  // "person.page.orcid.save.preference.changes": "Save changes",
-  // TODO New key - Add a translation
-  "person.page.orcid.save.preference.changes": "Save changes",
-
-  // "person.page.orcid.sync-profile.affiliation" : "Affiliation",
-  // TODO New key - Add a translation
-  "person.page.orcid.sync-profile.affiliation" : "Affiliation",
-
-  // "person.page.orcid.sync-profile.bibliographic" : "Bibliographic data",
-  // TODO New key - Add a translation
-  "person.page.orcid.sync-profile.bibliographic" : "Bibliographic data",
-
-  // "person.page.orcid.sync-profile.education" : "Education",
-  // TODO New key - Add a translation
-  "person.page.orcid.sync-profile.education" : "Education",
-
-  // "person.page.orcid.sync-profile.identifiers" : "Identifiers",
-  // TODO New key - Add a translation
-  "person.page.orcid.sync-profile.identifiers" : "Identifiers",
-
-  // "person.page.orcid.sync-projects.all" : "All projects",
-  // TODO New key - Add a translation
-  "person.page.orcid.sync-projects.all" : "All projects",
-
-  // "person.page.orcid.sync-projects.mine" : "My projects",
-  // TODO New key - Add a translation
-  "person.page.orcid.sync-projects.mine" : "My projects",
-
-  // "person.page.orcid.sync-projects.my-selected" : "Selected projects",
-  // TODO New key - Add a translation
-  "person.page.orcid.sync-projects.my-selected" : "Selected projects",
-
-  // "person.page.orcid.sync-projects.disabled" : "Disabled",
-  // TODO New key - Add a translation
-  "person.page.orcid.sync-projects.disabled" : "Disabled",
-
-  // "person.page.orcid.sync-publications.all" : "All publications",
-  // TODO New key - Add a translation
-  "person.page.orcid.sync-publications.all" : "All publications",
-
-  // "person.page.orcid.sync-publications.mine" : "My publications",
-  // TODO New key - Add a translation
-  "person.page.orcid.sync-publications.mine" : "My publications",
-
-  // "person.page.orcid.sync-publications.my-selected" : "Selected publications",
-  // TODO New key - Add a translation
-  "person.page.orcid.sync-publications.my-selected" : "Selected publications",
-
-  // "person.page.orcid.sync-publications.disabled" : "Disabled",
-  // TODO New key - Add a translation
-  "person.page.orcid.sync-publications.disabled" : "Disabled",
-
-  // "person.page.orcid.sync-queue.delete" : "Delete",
-  // TODO New key - Add a translation
-  "person.page.orcid.sync-queue.delete" : "Delete",
-
-  // "person.page.orcid.sync-queue.delete.error": "The deletion of the ORCID queue record failed",
-  // TODO New key - Add a translation
-  "person.page.orcid.sync-queue.delete.error": "The deletion of the ORCID queue record failed",
-
-  // "person.page.orcid.sync-queue.delete.success": "The ORCID queue record have been deleted successfully",
-  // TODO New key - Add a translation
-  "person.page.orcid.sync-queue.delete.success": "The ORCID queue record have been deleted successfully",
-
-  // "person.page.orcid.sync-queue.empty-message": "The ORCID queue registry is empty",
-  // TODO New key - Add a translation
-  "person.page.orcid.sync-queue.empty-message": "The ORCID queue registry is empty",
-
-  // "person.page.orcid.sync-queue.entity-name" : "Name",
-  // TODO New key - Add a translation
-  "person.page.orcid.sync-queue.entity-name" : "Name",
-
-  // "person.page.orcid.sync-queue.send" : "Send",
-  // TODO New key - Add a translation
-  "person.page.orcid.sync-queue.send" : "Send",
-
-  // "person.page.orcid.sync-queue.send.error": "The submission to ORCID failed",
-  // TODO New key - Add a translation
-  "person.page.orcid.sync-queue.send.error": "The submission to ORCID failed",
-
-  // "person.page.orcid.sync-queue.send.conflict-error": "The submission to ORCID failed because the resource is already present on the ORCID registry",
-  // TODO New key - Add a translation
-  "person.page.orcid.sync-queue.send.conflict-error": "The submission to ORCID failed because the resource is already present on the ORCID registry",
-
-  // "person.page.orcid.sync-queue.send.not-found-error": "The submission to ORCID failed because the expected resource to be update does not exists anymore on the ORCID registry.",
-  // TODO New key - Add a translation
-  "person.page.orcid.sync-queue.send.not-found-error": "The submission to ORCID failed because the expected resource to be update does not exists anymore on the ORCID registry.",
-
-  // "person.page.orcid.sync-queue.send.success": "The submission to ORCID was completed successfully",
-  // TODO New key - Add a translation
-  "person.page.orcid.sync-queue.send.success": "The submission to ORCID was completed successfully",
-
-  // "person.page.orcid.synchronization-mode": "Synchronization mode",
-  // TODO New key - Add a translation
-  "person.page.orcid.synchronization-mode": "Synchronization mode",
-
-  // "person.page.orcid.synchronization-mode.batch": "Batch",
-  // TODO New key - Add a translation
-  "person.page.orcid.synchronization-mode.batch": "Batch",
-
-  // "person.page.orcid.synchronization-mode.label": "Synchronization mode",
-  // TODO New key - Add a translation
-  "person.page.orcid.synchronization-mode.label": "Synchronization mode",
-
-  // "person.page.orcid.synchronization-mode-message": "Enable 'Manual' Synchronization mode to disable batch synchronization, so you must send your data to ORCID Registry manually",
-  // TODO New key - Add a translation
-  "person.page.orcid.synchronization-mode-message": "Enable 'Manual' Synchronization mode to disable batch synchronization, so you must send your data to ORCID Registry manually",
-
-  // "person.page.orcid.synchronization-settings-update.success": "The synchronization settings have been updated successfully",
-  // TODO New key - Add a translation
-  "person.page.orcid.synchronization-settings-update.success": "The synchronization settings have been updated successfully",
-
-  // "person.page.orcid.synchronization-settings-update.error": "The update of the synchronization settings failed",
-  // TODO New key - Add a translation
-  "person.page.orcid.synchronization-settings-update.error": "The update of the synchronization settings failed",
-
-
-  // "person.page.orcid.synchronization-mode.manual": "Manual",
-  // TODO New key - Add a translation
-  "person.page.orcid.synchronization-mode.manual": "Manual",
-
-  // "person.page.orcid.scope.authenticate": "Get your ORCID iD",
-  // TODO New key - Add a translation
-  "person.page.orcid.scope.authenticate": "Get your ORCID iD",
-
-  // "person.page.orcid.scope.read-limited": "Read your information with visibility set to Trusted Parties",
-  // TODO New key - Add a translation
-  "person.page.orcid.scope.read-limited": "Read your information with visibility set to Trusted Parties",
-
-  // "person.page.orcid.scope.activities-update": "Add/update your research activities",
-  // TODO New key - Add a translation
-  "person.page.orcid.scope.activities-update": "Add/update your research activities",
-
-  // "person.page.orcid.scope.person-update": "Add/update other information about you",
-  // TODO New key - Add a translation
-  "person.page.orcid.scope.person-update": "Add/update other information about you",
-
   // "person.page.staffid": "Staff ID",
   "person.page.staffid": "Personāla ID",
 
@@ -4771,9 +3654,8 @@
   // "person.search.results.head": "Person Search Results",
   "person.search.results.head": "Personas meklēšanas rezultāti",
 
-  // "person.search.title": "DSpace Cris Angular :: Person Search",
-  // TODO New key - Add a translation
-  "person.search.title": "DSpace Cris Angular :: Person Search",
+  // "person.search.title": "DSpace Angular :: Person Search",
+  "person.search.title": "DSpace Angular :: Personas Meklēšana",
 
 
 
@@ -4952,92 +3834,7 @@
   // "process.overview.new": "New",
   // TODO New key - Add a translation
   "process.overview.new": "New",
-
-
-  // "audit.overview.title": "Audit Logs Overview",
-  // TODO New key - Add a translation
-  "audit.overview.title": "Audit Logs Overview",
-
-  // "audit.overview.table.id" : "Audit ID",
-  // TODO New key - Add a translation
-  "audit.overview.table.id" : "Audit ID",
-
-  // "audit.overview.table.objectUUID" : "Object ID",
-  // TODO New key - Add a translation
-  "audit.overview.table.objectUUID" : "Object ID",
-
-  // "audit.overview.table.objectType" : "Object Type",
-  // TODO New key - Add a translation
-  "audit.overview.table.objectType" : "Object Type",
-
-  // "audit.overview.table.subjectUUID" : "Subject ID",
-  // TODO New key - Add a translation
-  "audit.overview.table.subjectUUID" : "Subject ID",
-
-  // "audit.overview.table.subjectType" : "Subject Type",
-  // TODO New key - Add a translation
-  "audit.overview.table.subjectType" : "Subject Type",
-
-  // "audit.overview.table.entityType" : "Audit Type",
-  // TODO New key - Add a translation
-  "audit.overview.table.entityType" : "Audit Type",
-
-  // "audit.overview.table.eperson" : "EPerson",
-  // TODO New key - Add a translation
-  "audit.overview.table.eperson" : "EPerson",
-
-  // "audit.overview.table.timestamp" : "Time",
-  // TODO New key - Add a translation
-  "audit.overview.table.timestamp" : "Time",
-
-  // "audit.overview.breadcrumbs": "Audit Logs Overview",
-  // TODO New key - Add a translation
-  "audit.overview.breadcrumbs": "Audit Logs Overview",
-
-  // "audit.object.overview.title": "Subject Audit Logs Overview",
-  // TODO New key - Add a translation
-  "audit.object.overview.title": "Subject Audit Logs Overview",
-
-
-  // "audit.detail.title" : "Audit Detail",
-  // TODO New key - Add a translation
-  "audit.detail.title" : "Audit Detail",
-
-  // "audit.detail.id" : "Audit Id",
-  // TODO New key - Add a translation
-  "audit.detail.id" : "Audit Id",
-
-  // "audit.detail.subjectUUID" : "Subject ID",
-  // TODO New key - Add a translation
-  "audit.detail.subjectUUID" : "Subject ID",
-
-  // "audit.detail.subjectType" : "Subject Type",
-  // TODO New key - Add a translation
-  "audit.detail.subjectType" : "Subject Type",
-
-  // "audit.detail.eventType" : "Audit Type",
-  // TODO New key - Add a translation
-  "audit.detail.eventType" : "Audit Type",
-
-  // "audit.detail.eperson" : "EPerson",
-  // TODO New key - Add a translation
-  "audit.detail.eperson" : "EPerson",
-
-  // "audit.detail.timeStamp" : "Time",
-  // TODO New key - Add a translation
-  "audit.detail.timeStamp" : "Time",
-
-  // "audit.detail.back" : "All Audit Logs",
-  // TODO New key - Add a translation
-  "audit.detail.back" : "All Audit Logs",
-
-  // "audit.detail.back.subject": "Subject Audit Logs",
-  // TODO New key - Add a translation
-  "audit.detail.back.subject": "Subject Audit Logs",
-
-  // "patent.listelement.badge": "Patent",
-  // TODO New key - Add a translation
-  "patent.listelement.badge": "Patent",
+  
 
   // "profile.breadcrumbs": "Update Profile",
   "profile.breadcrumbs": "Atjaunot Profilu",
@@ -5122,98 +3919,8 @@
 
   // "profile.title": "Update Profile",
   "profile.title": "Atjaunot profilu",
-
-
-
-  // "profile.breadcrumbs": "Update Profile",
-  "profile.breadcrumbs": "Atjaunot Profilu",
-
-  // "profile.card.identify": "Identify",
-  "profile.card.identify": "Identificēt",
-
-  // "profile.card.security": "Security",
-  "profile.card.security": "Drošība",
-
-  // "profile.card.researcher": "Researcher Profile",
-  // TODO New key - Add a translation
-  "profile.card.researcher": "Researcher Profile",
-
-  // "profile.form.submit": "Update Profile",
-  "profile.form.submit": "Atjaunot Profilu",
-
-  // "profile.groups.head": "Authorization groups you belong to",
-  "profile.groups.head": "Autorizācijas grupas, kurām jūs piederat",
-
-  // "profile.head": "Update Profile",
-  "profile.head": "Atjaunot Profilu",
-
-  // "profile.metadata.form.error.firstname.required": "First Name is required",
-  "profile.metadata.form.error.firstname.required": "Vārds ir nepieciešams",
-
-  // "profile.metadata.form.error.lastname.required": "Last Name is required",
-  "profile.metadata.form.error.lastname.required": "Uzvārds ir nepieciešams",
-
-  // "profile.metadata.form.label.email": "Email Address",
-  "profile.metadata.form.label.email": "E-pasta adrese",
-
-  // "profile.metadata.form.label.firstname": "First Name",
-  "profile.metadata.form.label.firstname": "Vārds",
-
-  // "profile.metadata.form.label.language": "Language",
-  "profile.metadata.form.label.language": "Valoda",
-
-  // "profile.metadata.form.label.lastname": "Last Name",
-  "profile.metadata.form.label.lastname": "Uzvārds",
-
-  // "profile.metadata.form.label.phone": "Contact Telephone",
-  "profile.metadata.form.label.phone": "Kontakttālrunis",
-
-  // "profile.metadata.form.notifications.success.content": "Your changes to the profile were saved.",
-  "profile.metadata.form.notifications.success.content": "Profila izmaiņas tika saglabātas.",
-
-  // "profile.metadata.form.notifications.success.title": "Profile saved",
-  "profile.metadata.form.notifications.success.title": "Profils saglabāts",
-
-  // "profile.notifications.warning.no-changes.content": "No changes were made to the Profile.",
-  "profile.notifications.warning.no-changes.content": "Profilā izmaiņas netika veiktas.",
-
-  // "profile.notifications.warning.no-changes.title": "No changes",
-  "profile.notifications.warning.no-changes.title": "Bez izmaiņām",
-
-  // "profile.security.form.error.matching-passwords": "The passwords do not match.",
-  "profile.security.form.error.matching-passwords": "Paroles nesakrīt.",
-
-  // "profile.security.form.error.password-length": "The password should be at least 6 characters long.",
-  "profile.security.form.error.password-length": "Parolei jābūt vismaz 6 rakstzīmju garai.",
-
-  // "profile.security.form.info": "Optionally, you can enter a new password in the box below, and confirm it by typing it again into the second box. It should be at least six characters long.",
-  "profile.security.form.info": "Pēc izvēles zemāk esošajā lodziņā varat ievadīt jaunu paroli un apstiprināt to, atkārtoti ierakstot to otrajā lodziņā. Tam jābūt vismaz sešu rakstzīmju garam.",
-
-  // "profile.security.form.label.password": "Password",
-  "profile.security.form.label.password": "Parole",
-
-  // "profile.security.form.label.passwordrepeat": "Retype to confirm",
-  "profile.security.form.label.passwordrepeat": "Atkārtojiet, lai apstiprinātu",
-
-  // "profile.security.form.notifications.success.content": "Your changes to the password were saved.",
-  "profile.security.form.notifications.success.content": "Jūsu paroles izmaiņas tika saglabātas.",
-
-  // "profile.security.form.notifications.success.title": "Password saved",
-  "profile.security.form.notifications.success.title": "Parole saglabāta",
-
-  // "profile.security.form.notifications.error.title": "Error changing passwords",
-  "profile.security.form.notifications.error.title": "Kļūda mainot paroles",
-
-  // "profile.security.form.notifications.error.not-long-enough": "The password has to be at least 6 characters long.",
-  "profile.security.form.notifications.error.not-long-enough": "Parolei jābūt vismaz 6 rakstzīmju garai.",
-
-  // "profile.security.form.notifications.error.not-same": "The provided passwords are not the same.",
-  "profile.security.form.notifications.error.not-same": "Norādītās paroles nav vienādas.",
-
-  // "profile.title": "Update Profile",
-  "profile.title": "Atjaunot profilu",
-
-
+  
+  
 
   // "project.listelement.badge": "Research Project",
   "project.listelement.badge": "Izpētes projekts",
@@ -5279,9 +3986,8 @@
   // "publication.search.results.head": "Publication Search Results",
   "publication.search.results.head": "Publikāciju meklēšanas rezultāti",
 
-  // "publication.search.title": "DSpace Cris Angular :: Publication Search",
-  // TODO New key - Add a translation
-  "publication.search.title": "DSpace Cris Angular :: Publication Search",
+  // "publication.search.title": "DSpace Angular :: Publication Search",
+  "publication.search.title": "DSpace Angular :: Publikācijas meklēšana",
 
 
   // "register-email.title": "New user registration",
@@ -5419,6 +4125,18 @@
 
 
 
+  // "relationships.add.error.relationship-type.content": "No suitable match could be found for relationship type {{ type }} between the two items",
+  // TODO New key - Add a translation
+  "relationships.add.error.relationship-type.content": "No suitable match could be found for relationship type {{ type }} between the two items",
+
+  // "relationships.add.error.server.content": "The server returned an error",
+  // TODO New key - Add a translation
+  "relationships.add.error.server.content": "The server returned an error",
+
+  // "relationships.add.error.title": "Unable to add relationship",
+  // TODO New key - Add a translation
+  "relationships.add.error.title": "Unable to add relationship",
+
   // "relationships.isAuthorOf": "Authors",
   "relationships.isAuthorOf": "Autori",
 
@@ -5465,50 +4183,8 @@
 
   // "relationships.isContributorOf": "Contributors",
   "relationships.isContributorOf": "Līdzautori",
-
-
-
-  // "researcher.profile.action.processing" : "Processing...",
-  // TODO New key - Add a translation
-  "researcher.profile.action.processing" : "Processing...",
-
-  // "researcher.profile.associated": "Researcher profile associated",
-  // TODO New key - Add a translation
-  "researcher.profile.associated": "Researcher profile associated",
-
-  // "researcher.profile.create.new": "Create new",
-  // TODO New key - Add a translation
-  "researcher.profile.create.new": "Create new",
-
-  // "researcher.profile.delete": "Delete",
-  // TODO New key - Add a translation
-  "researcher.profile.delete": "Delete",
-
-  // "researcher.profile.expose": "Expose",
-  // TODO New key - Add a translation
-  "researcher.profile.expose": "Expose",
-
-  // "researcher.profile.hide": "Hide",
-  // TODO New key - Add a translation
-  "researcher.profile.hide": "Hide",
-
-  // "researcher.profile.not.associated": "Researcher profile not yet associated",
-  // TODO New key - Add a translation
-  "researcher.profile.not.associated": "Researcher profile not yet associated",
-
-  // "researcher.profile.view": "View",
-  // TODO New key - Add a translation
-  "researcher.profile.view": "View",
-
-  // "researcher.profile.private.visibility" : "PRIVATE",
-  // TODO New key - Add a translation
-  "researcher.profile.private.visibility" : "PRIVATE",
-
-  // "researcher.profile.public.visibility" : "PUBLIC",
-  // TODO New key - Add a translation
-  "researcher.profile.public.visibility" : "PUBLIC",
-
-
+  
+  
 
   // "resource-policies.add.button": "Add",
   // TODO New key - Add a translation
@@ -5594,9 +4270,9 @@
   // TODO New key - Add a translation
   "resource-policies.form.action-type.required": "You must select the resource policy action.",
 
-  // "resource-policies.form.eperson-group-list.label": "The eperson or group that will be grant of the permission",
+  // "resource-policies.form.eperson-group-list.label": "The eperson or group that will be granted the permission",
   // TODO New key - Add a translation
-  "resource-policies.form.eperson-group-list.label": "The eperson or group that will be grant of the permission",
+  "resource-policies.form.eperson-group-list.label": "The eperson or group that will be granted the permission",
 
   // "resource-policies.form.eperson-group-list.select.btn": "Select",
   // TODO New key - Add a translation
@@ -5718,9 +4394,8 @@
   // "search.switch-configuration.title": "Show",
   "search.switch-configuration.title": "Rādīt",
 
-  // "search.title": "DSpace Cris Angular :: Search",
-  // TODO New key - Add a translation
-  "search.title": "DSpace Cris Angular :: Search",
+  // "search.title": "DSpace Angular :: Search",
+  "search.title": "DSpace Angular :: Meklēt",
 
   // "search.breadcrumbs": "Search",
   "search.breadcrumbs": "Meklēt",
@@ -5770,45 +4445,7 @@
 
   // "search.filters.applied.f.withdrawn": "Withdrawn",
   "search.filters.applied.f.withdrawn": "Atsaukts",
-
-
-  // "search.filters.applied.charts.chart.bar.dateIssued.year.tab" : "Date Issued",
-  // TODO New key - Add a translation
-  "search.filters.applied.charts.chart.bar.dateIssued.year.tab" : "Date Issued",
-
-  // "search.filters.applied.charts.chart.pie.itemtype_filter.tab" : "Item Type",
-  // TODO New key - Add a translation
-  "search.filters.applied.charts.chart.pie.itemtype_filter.tab" : "Item Type",
-
-  // "search.filters.applied.charts.graphitemtype.tab" : "Visualization by Type",
-  // TODO New key - Add a translation
-  "search.filters.applied.charts.graphitemtype.tab" : "Visualization by Type",
-
-  // "search.filters.applied.charts.graphpubldate.tab" : "Visualization by Date",
-  // TODO New key - Add a translation
-  "search.filters.applied.charts.graphpubldate.tab" : "Visualization by Date",
-
-  // "search.filters.applied.charts.graphpubldateltr.tab" : "Visualization Demo LTR",
-  // TODO New key - Add a translation
-  "search.filters.applied.charts.graphpubldateltr.tab" : "Visualization Demo LTR",
-
-  // "search.filters.applied.charts.graphpubldatetrl.tab" : "Visualization Demo RTL",
-  // TODO New key - Add a translation
-  "search.filters.applied.charts.graphpubldatetrl.tab" : "Visualization Demo RTL",
-
-  // "search.filters.applied.charts.default.title": "Search Output",
-  // TODO New key - Add a translation
-  "search.filters.applied.charts.default.title": "Search Output",
-
-  // "search.filters.applied.charts.RELATION.Person.researchoutputs.title": "Research Output",
-  // TODO New key - Add a translation
-  "search.filters.applied.charts.RELATION.Person.researchoutputs.title": "Research Output",
-
-  // "search.filters.applied.charts.no.data.found": "No data found",
-  // TODO New key - Add a translation
-  "search.filters.applied.charts.no.data.found": "No data found",
-
-
+  
 
 
   // "search.filters.filter.author.head": "Author",
@@ -5865,14 +4502,6 @@
   // "search.filters.filter.discoverable.head": "Private",
   "search.filters.filter.discoverable.head": "Privāts",
 
-  // "search.filters.filter.editor.head": "Editor",
-  // TODO New key - Add a translation
-  "search.filters.filter.editor.head": "Editor",
-
-  // "search.filters.filter.editor.placeholder": "Editor",
-  // TODO New key - Add a translation
-  "search.filters.filter.editor.placeholder": "Editor",
-
   // "search.filters.filter.withdrawn.head": "Withdrawn",
   "search.filters.filter.withdrawn.head": "Atsaukts",
 
@@ -5882,30 +4511,6 @@
   // "search.filters.filter.entityType.placeholder": "Item Type",
   "search.filters.filter.entityType.placeholder": "Materiāla tips",
 
-  // "search.filters.filter.eqowner.head": "Researcher",
-  // TODO New key - Add a translation
-  "search.filters.filter.eqowner.head": "Researcher",
-
-  // "search.filters.filter.eqowner.placeholder": "Researcher",
-  // TODO New key - Add a translation
-  "search.filters.filter.eqowner.placeholder": "Researcher",
-
-  // "search.filters.filter.eqorgunit.head": "Organization",
-  // TODO New key - Add a translation
-  "search.filters.filter.eqorgunit.head": "Organization",
-
-  // "search.filters.filter.eqorgunit.placeholder": "Organization",
-  // TODO New key - Add a translation
-  "search.filters.filter.eqorgunit.placeholder": "Organization",
-
-  // "search.filters.filter.funding.head": "Funding",
-  // TODO New key - Add a translation
-  "search.filters.filter.funding.head": "Funding",
-
-  // "search.filters.filter.funding.placeholder": "Funding",
-  // TODO New key - Add a translation
-  "search.filters.filter.funding.placeholder": "Funding",
-
   // "search.filters.filter.has_content_in_original_bundle.head": "Has files",
   "search.filters.filter.has_content_in_original_bundle.head": "Ir faili",
 
@@ -5914,14 +4519,6 @@
 
   // "search.filters.filter.itemtype.placeholder": "Type",
   "search.filters.filter.itemtype.placeholder": "Tips",
-
-  // "search.filters.filter.investigators.head": "Researcher",
-  // TODO New key - Add a translation
-  "search.filters.filter.investigators.head": "Researcher",
-
-  // "search.filters.filter.investigators.placeholder": "Researcher",
-  // TODO New key - Add a translation
-  "search.filters.filter.investigators.placeholder": "Researcher",
 
   // "search.filters.filter.jobTitle.head": "Job Title",
   "search.filters.filter.jobTitle.head": "Ieņemamais Amats",
@@ -5935,23 +4532,6 @@
   // "search.filters.filter.knowsLanguage.placeholder": "Known language",
   "search.filters.filter.knowsLanguage.placeholder": "Pārvalda valodu",
 
-
-  // "search.filters.filter.projectOrgUnits.head" : "Organizations",
-  // TODO New key - Add a translation
-  "search.filters.filter.projectOrgUnits.head" : "Organizations",
-
-  // "search.filters.filter.projectOrgUnits.placeholder" : "Organizations",
-  // TODO New key - Add a translation
-  "search.filters.filter.projectOrgUnits.placeholder" : "Organizations",
-
-  // "search.filters.filter.personOrgUnits.head" : "Organizations",
-  // TODO New key - Add a translation
-  "search.filters.filter.personOrgUnits.head" : "Organizations",
-
-  // "search.filters.filter.personOrgUnits.placeholder" : "Organizations",
-  // TODO New key - Add a translation
-  "search.filters.filter.personOrgUnits.placeholder" : "Organizations",
-
   // "search.filters.filter.namedresourcetype.head": "Status",
   "search.filters.filter.namedresourcetype.head": "Status",
 
@@ -5963,14 +4543,6 @@
 
   // "search.filters.filter.objectpeople.placeholder": "People",
   "search.filters.filter.objectpeople.placeholder": "Personas",
-
-  // "search.filters.filter.organization.head": "Organization",
-  // TODO New key - Add a translation
-  "search.filters.filter.organization.head": "Organization",
-
-  // "search.filters.filter.organization.placeholder": "Organization",
-  // TODO New key - Add a translation
-  "search.filters.filter.organization.placeholder": "Organization",
 
   // "search.filters.filter.organizationAddressCountry.head": "Country",
   "search.filters.filter.organizationAddressCountry.head": "Valsts",
@@ -6013,9 +4585,8 @@
 
   // "search.filters.filter.submitter.placeholder": "Submitter",
   "search.filters.filter.submitter.placeholder": "Iesniedzējs",
-
-
-
+  
+  
 
   // "search.filters.entityType.JournalIssue": "Journal Issue",
   "search.filters.entityType.JournalIssue": "Žurnāla Izdevums",
@@ -6207,10 +4778,6 @@
   // "submission.general.save-later": "Save for later",
   "submission.general.save-later": "Saglabāt vēlākam",
 
-  // "submission.general.save-later.edit-item": "Save and return",
-  // TODO New key - Add a translation
-  "submission.general.save-later.edit-item": "Save and return",
-
 
   // "submission.import-external.page.title": "Import metadata from an external source",
   // TODO New key - Add a translation
@@ -6220,53 +4787,9 @@
   // TODO New key - Add a translation
   "submission.import-external.title": "Import metadata from an external source",
 
-  // "submission.import-external.title.Dataset": "Import dataset from an external source",
-  // TODO New key - Add a translation
-  "submission.import-external.title.Dataset": "Import dataset from an external source",
-
-  // "submission.import-external.title.Equipment": "Import equipment from an external source",
-  // TODO New key - Add a translation
-  "submission.import-external.title.Equipment": "Import equipment from an external source",
-
-  // "submission.import-external.title.Event": "Import event from an external source",
-  // TODO New key - Add a translation
-  "submission.import-external.title.Event": "Import event from an external source",
-
-  // "submission.import-external.title.Funding": "Import fund from an external source",
-  // TODO New key - Add a translation
-  "submission.import-external.title.Funding": "Import fund from an external source",
-
-  // "submission.import-external.title.Journal": "Import journal from an external source",
-  // TODO New key - Add a translation
-  "submission.import-external.title.Journal": "Import journal from an external source",
-
-  // "submission.import-external.title.OrgUnit": "Import publisher from an external source",
-  // TODO New key - Add a translation
-  "submission.import-external.title.OrgUnit": "Import publisher from an external source",
-
-  // "submission.import-external.title.Patent": "Import patent from an external source",
-  // TODO New key - Add a translation
-  "submission.import-external.title.Patent": "Import patent from an external source",
-
-  // "submission.import-external.title.Person": "Import person from an external source",
-  // TODO New key - Add a translation
-  "submission.import-external.title.Person": "Import person from an external source",
-
-  // "submission.import-external.title.Project": "Import project from an external source",
-  // TODO New key - Add a translation
-  "submission.import-external.title.Project": "Import project from an external source",
-
-  // "submission.import-external.title.Publication": "Import publication from an external source",
-  // TODO New key - Add a translation
-  "submission.import-external.title.Publication": "Import publication from an external source",
-
   // "submission.import-external.page.hint": "Enter a query above to find items from the web to import in to DSpace.",
   // TODO New key - Add a translation
   "submission.import-external.page.hint": "Enter a query above to find items from the web to import in to DSpace.",
-
-  // "submission.import-external.page.noentity": "An entity type must be selected in order to use this page. Select it using the 'Import metadata from an external source' button in 'MyDspace' page.",
-  // TODO New key - Add a translation
-  "submission.import-external.page.noentity": "An entity type must be selected in order to use this page. Select it using the 'Import metadata from an external source' button in 'MyDspace' page.",
 
   // "submission.import-external.back-to-my-dspace": "Back to MyDSpace",
   // TODO New key - Add a translation
@@ -6288,21 +4811,9 @@
   // TODO New key - Add a translation
   "submission.import-external.search.source.hint": "Pick an external source",
 
-  // "submission.import-external.source.ads": "Ads",
-  // TODO New key - Add a translation
-  "submission.import-external.source.ads": "Ads",
-
   // "submission.import-external.source.arxiv": "arXiv",
   // TODO New key - Add a translation
   "submission.import-external.source.arxiv": "arXiv",
-
-  // "submission.import-external.source.cinii": "Cinii",
-  // TODO New key - Add a translation
-  "submission.import-external.source.cinii": "Cinii",
-
-  // "submission.import-external.source.crossref": "CrossRef",
-  // TODO New key - Add a translation
-  "submission.import-external.source.crossref": "CrossRef",
 
   // "submission.import-external.source.loading": "Loading ...",
   // TODO New key - Add a translation
@@ -6324,65 +4835,13 @@
   // TODO New key - Add a translation
   "submission.import-external.source.pubmed": "Pubmed",
 
-  // "submission.import-external.source.pubmedeu": "Pubmed EU",
-  // TODO New key - Add a translation
-  "submission.import-external.source.pubmedeu": "Pubmed EU",
-
   // "submission.import-external.source.lcname": "Library of Congress Names",
   // TODO New key - Add a translation
   "submission.import-external.source.lcname": "Library of Congress Names",
 
-  // "submission.import-external.source.scopus": "Scopus",
+  // "submission.import-external.preview.title": "Item Preview",
   // TODO New key - Add a translation
-  "submission.import-external.source.scopus": "Scopus",
-
-  // "submission.import-external.source.openaire": "OpenAIRE",
-  // TODO New key - Add a translation
-  "submission.import-external.source.openaire": "OpenAIRE",
-
-  // "submission.import-external.source.epo": "European Patent Office (EPO)",
-  // TODO New key - Add a translation
-  "submission.import-external.source.epo": "European Patent Office (EPO)",
-
-  // "submission.import-external.preview.title.Dataset": "Dataset Preview",
-  // TODO New key - Add a translation
-  "submission.import-external.preview.title.Dataset": "Dataset Preview",
-
-  // "submission.import-external.preview.title.Equipment": "Equipment Preview",
-  // TODO New key - Add a translation
-  "submission.import-external.preview.title.Equipment": "Equipment Preview",
-
-  // "submission.import-external.preview.title.Event": "Event Preview",
-  // TODO New key - Add a translation
-  "submission.import-external.preview.title.Event": "Event Preview",
-
-  // "submission.import-external.preview.title.Funding": "Funding Preview",
-  // TODO New key - Add a translation
-  "submission.import-external.preview.title.Funding": "Funding Preview",
-
-  // "submission.import-external.preview.title.Journal": "Journal Preview",
-  // TODO New key - Add a translation
-  "submission.import-external.preview.title.Journal": "Journal Preview",
-
-  // "submission.import-external.preview.title.OrgUnit": "Publisher Preview",
-  // TODO New key - Add a translation
-  "submission.import-external.preview.title.OrgUnit": "Publisher Preview",
-
-  // "submission.import-external.preview.title.Patent": "Patent Preview",
-  // TODO New key - Add a translation
-  "submission.import-external.preview.title.Patent": "Patent Preview",
-
-  // "submission.import-external.preview.title.Person": "Person Preview",
-  // TODO New key - Add a translation
-  "submission.import-external.preview.title.Person": "Person Preview",
-
-  // "submission.import-external.preview.title.Project": "Project Preview",
-  // TODO New key - Add a translation
-  "submission.import-external.preview.title.Project": "Project Preview",
-
-  // "submission.import-external.preview.title.Publication": "Publication Preview",
-  // TODO New key - Add a translation
-  "submission.import-external.preview.title.Publication": "Publication Preview",
+  "submission.import-external.preview.title": "Item Preview",
 
   // "submission.import-external.preview.subtitle": "The metadata below was imported from an external source. It will be pre-filled when you start the submission.",
   // TODO New key - Add a translation
@@ -6399,83 +4858,6 @@
   // "submission.import-external.preview.error.import.body": "An error occurs during the external source entry import process.",
   // TODO New key - Add a translation
   "submission.import-external.preview.error.import.body": "An error occurs during the external source entry import process.",
-  // "submission.sections.detect-duplicate.clear-decision": "Undo",
-  // TODO New key - Add a translation
-  "submission.sections.detect-duplicate.clear-decision": "Undo",
-
-  // "submission.sections.detect-duplicate.clear-decision-help": "Click for clear the decision about this pontential duplicate",
-  // TODO New key - Add a translation
-  "submission.sections.detect-duplicate.clear-decision-help": "Click for clear the decision about this pontential duplicate",
-
-  // "submission.sections.detect-duplicate.confirm-duplicate": "Confirm (It's a duplicate)",
-  // TODO New key - Add a translation
-  "submission.sections.detect-duplicate.confirm-duplicate": "Confirm (It's a duplicate)",
-
-  // "submission.sections.detect-duplicate.confirm-not-duplicate": "Confirm (It's not a duplicate)",
-  // TODO New key - Add a translation
-  "submission.sections.detect-duplicate.confirm-not-duplicate": "Confirm (It's not a duplicate)",
-
-  // "submission.sections.detect-duplicate.decision-success-notice": "Choice registered successfully",
-  // TODO New key - Add a translation
-  "submission.sections.detect-duplicate.decision-success-notice": "Choice registered successfully",
-
-  // "submission.sections.detect-duplicate.disclaimer": "The system has identified some potential duplicates. Please carefully review the list and flag each occurency with the appropriate choice or discard this submission.",
-  // TODO New key - Add a translation
-  "submission.sections.detect-duplicate.disclaimer": "The system has identified some potential duplicates. Please carefully review the list and flag each occurency with the appropriate choice or discard this submission.",
-
-  // "submission.sections.detect-duplicate.disclaimer-ctrl": "The system has identified some potential duplicates. Please carefully review the list and the submitter comments and perform the appropriate action.",
-  // TODO New key - Add a translation
-  "submission.sections.detect-duplicate.disclaimer-ctrl": "The system has identified some potential duplicates. Please carefully review the list and the submitter comments and perform the appropriate action.",
-
-  // "submission.sections.detect-duplicate.disclaimer-no-match": "All your feedback on potential duplicates have been registered correctly.",
-  // TODO New key - Add a translation
-  "submission.sections.detect-duplicate.disclaimer-no-match": "All your feedback on potential duplicates have been registered correctly.",
-
-  // "submission.sections.detect-duplicate.duplicate": "It's a duplicate",
-  // TODO New key - Add a translation
-  "submission.sections.detect-duplicate.duplicate": "It's a duplicate",
-
-  // "submission.sections.detect-duplicate.duplicate-ctrl": "Mark the record to merge",
-  // TODO New key - Add a translation
-  "submission.sections.detect-duplicate.duplicate-ctrl": "Mark the record to merge",
-
-  // "submission.sections.detect-duplicate.duplicate-detected": "Potential duplicate detected",
-  // TODO New key - Add a translation
-  "submission.sections.detect-duplicate.duplicate-detected": "Potential duplicate detected",
-
-  // "submission.sections.detect-duplicate.duplicate-help": "Click here if this is a duplicate of your item",
-  // TODO New key - Add a translation
-  "submission.sections.detect-duplicate.duplicate-help": "Click here if this is a duplicate of your item",
-
-  // "submission.sections.detect-duplicate.note-help": "Please enter your reason for the duplication into the box below.",
-  // TODO New key - Add a translation
-  "submission.sections.detect-duplicate.note-help": "Please enter your reason for the duplication into the box below.",
-
-  // "submission.sections.detect-duplicate.note-placeholder": "Describe the reason of duplication",
-  // TODO New key - Add a translation
-  "submission.sections.detect-duplicate.note-placeholder": "Describe the reason of duplication",
-
-  // "submission.sections.detect-duplicate.no-decision": "No decision yet",
-  // TODO New key - Add a translation
-  "submission.sections.detect-duplicate.no-decision": "No decision yet",
-
-  // "submission.sections.detect-duplicate.not-duplicate": "It's not a duplicate",
-  // TODO New key - Add a translation
-  "submission.sections.detect-duplicate.not-duplicate": "It's not a duplicate",
-
-  // "submission.sections.detect-duplicate.not-duplicate-help": "Click here if this is not a duplicate of your item",
-  // TODO New key - Add a translation
-  "submission.sections.detect-duplicate.not-duplicate-help": "Click here if this is not a duplicate of your item",
-
-  // "submission.sections.detect-duplicate.submitter-decision": "Submitter decision:",
-  // TODO New key - Add a translation
-  "submission.sections.detect-duplicate.submitter-decision": "Submitter decision:",
-
-  // "submission.sections.detect-duplicate.submitter-note": "Submitter note:",
-  // TODO New key - Add a translation
-  "submission.sections.detect-duplicate.submitter-note": "Submitter note:",
-
-
 
   // "submission.sections.describe.relationship-lookup.close": "Close",
   "submission.sections.describe.relationship-lookup.close": "Aizvērt",
@@ -6499,45 +4881,6 @@
   // "submission.sections.describe.relationship-lookup.external-source.import-modal.isAuthorOfPublication.title": "Import Remote Author",
   // TODO New key - Add a translation
   "submission.sections.describe.relationship-lookup.external-source.import-modal.isAuthorOfPublication.title": "Import Remote Author",
-
-  // "submission.sections.describe.relationship-lookup.external-source.import-button-title.Person": "Import remote person",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.external-source.import-button-title.Person": "Import remote person",
-
-  // "submission.sections.describe.relationship-lookup.external-source.import-button-title.Dataset": "Import remote dataset",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.external-source.import-button-title.Dataset": "Import remote dataset",
-
-  // "submission.sections.describe.relationship-lookup.external-source.import-button-title.Equipment": "Import remote equipment",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.external-source.import-button-title.Equipment": "Import remote equipment",
-
-  // "submission.sections.describe.relationship-lookup.external-source.import-button-title.Event": "Import remote event",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.external-source.import-button-title.Event": "Import remote event",
-
-  // "submission.sections.describe.relationship-lookup.external-source.import-button-title.Funding": "Import remote fund",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.external-source.import-button-title.Funding": "Import remote fund",
-
-  // "submission.sections.describe.relationship-lookup.external-source.import-button-title.OrgUnit": "Import remote publisher",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.external-source.import-button-title.OrgUnit": "Import remote publisher",
-
-  // "submission.sections.describe.relationship-lookup.external-source.import-button-title.Patent": "Import remote patent",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.external-source.import-button-title.Patent": "Import remote patent",
-
-  // "submission.sections.describe.relationship-lookup.external-source.import-button-title.Project": "Import remote project",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.external-source.import-button-title.Project": "Import remote project",
-
-  // "submission.sections.describe.relationship-lookup.external-source.import-button-title.Publication": "Import remote publication",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.external-source.import-button-title.Publication": "Import remote publication",
-
-  // "submission.sections.describe.relationship-lookup.external-source.import-modal.Author.title": "Import Remote Author",
-  "submission.sections.describe.relationship-lookup.external-source.import-modal.Author.title": "Importēt Attālinātu Autoru",
 
   // "submission.sections.describe.relationship-lookup.external-source.import-modal.isAuthorOfPublication.added.local-entity": "Successfully added local author to the selection",
   // TODO New key - Add a translation
@@ -6570,10 +4913,6 @@
 
   // "submission.sections.describe.relationship-lookup.external-source.import-modal.head.orcid": "Importing from ORCID",
   "submission.sections.describe.relationship-lookup.external-source.import-modal.head.orcid": "Importē no ORCID",
-
-  // "submission.sections.describe.relationship-lookup.external-source.import-modal.head.crossref": "Importing from CrossRef",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.external-source.import-modal.head.crossref": "Importing from CrossRef",
 
   // "submission.sections.describe.relationship-lookup.external-source.import-modal.head.sherpaJournal": "Importing from Sherpa Journal",
   "submission.sections.describe.relationship-lookup.external-source.import-modal.head.sherpaJournal": "Importē no Sherpa Žurnāla",
@@ -6693,10 +5032,6 @@
   // "submission.sections.describe.relationship-lookup.search-tab.tab-title.JournalVolume": "Local Journal Volumes ({{ count }})",
   // TODO New key - Add a translation
   "submission.sections.describe.relationship-lookup.search-tab.tab-title.JournalVolume": "Local Journal Volumes ({{ count }})",
-
-  // "submission.sections.describe.relationship-lookup.search-tab.tab-title.crossref": "Crossref ({{ count }})",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.search-tab.tab-title.crossref": "Crossref ({{ count }})",
 
   // "submission.sections.describe.relationship-lookup.search-tab.tab-title.sherpaJournal": "Sherpa Journals ({{ count }})",
   "submission.sections.describe.relationship-lookup.search-tab.tab-title.sherpaJournal": "Sherpa Žurnāli ({{ count }})",
@@ -6865,10 +5200,6 @@
   // "submission.sections.describe.relationship-lookup.selection-tab.title.sherpaJournal": "Search Results",
   "submission.sections.describe.relationship-lookup.selection-tab.title.sherpaJournal": "Meklēšanas rezultāti",
 
-  // "submission.sections.describe.relationship-lookup.selection-tab.title.crossref": "Search Results",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.selection-tab.title.crossref": "Search Results",
-
   // "submission.sections.describe.relationship-lookup.selection-tab.title.sherpaPublisher": "Search Results",
   "submission.sections.describe.relationship-lookup.selection-tab.title.sherpaPublisher": "Meklēšanas rezultāti",
 
@@ -6889,18 +5220,6 @@
   // "submission.sections.describe.relationship-lookup.selection-tab.title.arxiv": "Search Results",
   // TODO New key - Add a translation
   "submission.sections.describe.relationship-lookup.selection-tab.title.arxiv": "Search Results",
-
-  // "submission.sections.describe.relationship-lookup.selection-tab.title.openaire": "Search Results",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.selection-tab.title.openaire": "Search Results",
-
-  // "submission.sections.describe.relationship-lookup.selection-tab.title.epo": "Search Results",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.selection-tab.title.epo": "Search Results",
-
-  // "submission.sections.describe.relationship-lookup.selection-tab.title.scopus": "Search Results",
-  // TODO New key - Add a translation
-  "submission.sections.describe.relationship-lookup.selection-tab.title.scopus": "Search Results",
 
   // "submission.sections.describe.relationship-lookup.name-variant.notification.content": "Would you like to save \"{{ value }}\" as a name variant for this person so you and others can reuse it for future submissions? If you don\'t you can still use it for this submission.",
   "submission.sections.describe.relationship-lookup.name-variant.notification.content": "Vai vēlaties saglabāt \"{{ value }}\" kā vārda variantu šai personai, lai jūs un citi varētu to izmantot turpmākai iesniegšanai? Ja nē, jūs joprojām varat to izmantot šai iesniegšanai.",
@@ -6966,10 +5285,6 @@
   // "submission.sections.general.no-collection": "No collection found",
   "submission.sections.general.no-collection": "Kolekcijas nav atrastas",
 
-  // "submission.sections.general.no-entity": "No entity found",
-  // TODO New key - Add a translation
-  "submission.sections.general.no-entity": "No entity found",
-
   // "submission.sections.general.no-sections": "No options available",
   "submission.sections.general.no-sections": "Opcijas nav pieejamas",
 
@@ -6990,78 +5305,6 @@
   // "submission.sections.submit.progressbar.CClicense": "Creative commons license",
   // TODO New key - Add a translation
   "submission.sections.submit.progressbar.CClicense": "Creative commons license",
-
-  // "submission.sections.submit.progressbar.describe.equipment": "Equipment basic information",
-  // TODO New key - Add a translation
-  "submission.sections.submit.progressbar.describe.equipment": "Equipment basic information",
-
-  // "submission.sections.submit.progressbar.describe.event": "Event basic information",
-  // TODO New key - Add a translation
-  "submission.sections.submit.progressbar.describe.event": "Event basic information",
-
-  // "submission.sections.submit.progressbar.describe.funding": "Funding basic information",
-  // TODO New key - Add a translation
-  "submission.sections.submit.progressbar.describe.funding": "Funding basic information",
-
-  // "submission.sections.submit.progressbar.describe.journal": "Journal basic information",
-  // TODO New key - Add a translation
-  "submission.sections.submit.progressbar.describe.journal": "Journal basic information",
-
-  // "submission.sections.submit.progressbar.describe.orgunit": "Org Unit basic information",
-  // TODO New key - Add a translation
-  "submission.sections.submit.progressbar.describe.orgunit": "Org Unit basic information",
-
-  // "submission.sections.submit.progressbar.describe.patent": "Patent basic information",
-  // TODO New key - Add a translation
-  "submission.sections.submit.progressbar.describe.patent": "Patent basic information",
-
-  // "submission.sections.submit.progressbar.describe.patent_indexing": "Patent indexing",
-  // TODO New key - Add a translation
-  "submission.sections.submit.progressbar.describe.patent_indexing": "Patent indexing",
-
-  // "submission.sections.submit.progressbar.describe.patent_references": "Patent references",
-  // TODO New key - Add a translation
-  "submission.sections.submit.progressbar.describe.patent_references": "Patent references",
-
-  // "submission.sections.submit.progressbar.describe.person": "Person basic information",
-  // TODO New key - Add a translation
-  "submission.sections.submit.progressbar.describe.person": "Person basic information",
-
-  // "submission.sections.submit.progressbar.describe.product": "Product basic information",
-  // TODO New key - Add a translation
-  "submission.sections.submit.progressbar.describe.product": "Product basic information",
-
-  // "submission.sections.submit.progressbar.describe.product_indexing": "Product indexing",
-  // TODO New key - Add a translation
-  "submission.sections.submit.progressbar.describe.product_indexing": "Product indexing",
-
-  // "submission.sections.submit.progressbar.describe.product_references": "Product references",
-  // TODO New key - Add a translation
-  "submission.sections.submit.progressbar.describe.product_references": "Product references",
-
-  // "submission.sections.submit.progressbar.describe.project": "Project basic information",
-  // TODO New key - Add a translation
-  "submission.sections.submit.progressbar.describe.project": "Project basic information",
-
-  // "submission.sections.submit.progressbar.describe.publication": "Publication basic information",
-  // TODO New key - Add a translation
-  "submission.sections.submit.progressbar.describe.publication": "Publication basic information",
-
-  // "submission.sections.submit.progressbar.describe.publication_bibliographic_details": "Publication bibliographic details",
-  // TODO New key - Add a translation
-  "submission.sections.submit.progressbar.describe.publication_bibliographic_details": "Publication bibliographic details",
-
-  // "submission.sections.submit.progressbar.describe.publication_indexing": "Publication indexing",
-  // TODO New key - Add a translation
-  "submission.sections.submit.progressbar.describe.publication_indexing": "Publication indexing",
-
-  // "submission.sections.submit.progressbar.describe.publication_references": "Publication references",
-  // TODO New key - Add a translation
-  "submission.sections.submit.progressbar.describe.publication_references": "Publication references",
-
-  // "submission.sections.submit.progressbar.describe.rp": "Researcher basic information",
-  // TODO New key - Add a translation
-  "submission.sections.submit.progressbar.describe.rp": "Researcher basic information",
 
   // "submission.sections.submit.progressbar.describe.recycle": "Recycle",
   "submission.sections.submit.progressbar.describe.recycle": "Pārstrādāt",
@@ -7250,45 +5493,10 @@
 
 
 
-  // "title": "DSpace Cris",
-  // TODO Source message changed - Revise the translation
+  // "title": "DSpace",
   "title": "DSpace",
-
-
-
-  // "tree.description.srsc": "Research Subject Categories",
-  // TODO New key - Add a translation
-  "tree.description.srsc": "Research Subject Categories",
-
-
-
-  // "treeview.header": "Hierarchical tree view",
-  // TODO New key - Add a translation
-  "treeview.header": "Hierarchical tree view",
-
-
-
-  // "treeview.search.form.reset": "Reset",
-  // TODO New key - Add a translation
-  "treeview.search.form.reset": "Reset",
-
-  // "treeview.search.form.search": "Search",
-  // TODO New key - Add a translation
-  "treeview.search.form.search": "Search",
-
-  // "treeview.search.no-result": "There were no items to show",
-  // TODO New key - Add a translation
-  "treeview.search.no-result": "There were no items to show",
-
-
-
-  // "treeview.load-more": "Load more",
-  // TODO New key - Add a translation
-  "treeview.load-more": "Load more",
-
-
-
-
+  
+  
 
   // "vocabulary-treeview.header": "Hierarchical tree view",
   // TODO New key - Add a translation
@@ -7317,16 +5525,8 @@
   // "vocabulary-treeview.tree.description.srsc": "Research Subject Categories",
   // TODO New key - Add a translation
   "vocabulary-treeview.tree.description.srsc": "Research Subject Categories",
-
-
-
-  // "administrativeView.search.results.head": "Administrative Search",
-  "administrativeView.search.results.head": "Administratīvā meklēšana",
-
-  // "menu.section.admin_search": "Admin Search",
-  "menu.section.admin_search": "Administratora Meklēšana",
-
-
+  
+  
 
   // "uploader.browse": "browse",
   "uploader.browse": "pārlūkot",
@@ -7356,8 +5556,7 @@
 
 
   // "workflowAdmin.search.results.head": "Administer Workflow",
-  // TODO New key - Add a translation
-  "workflowAdmin.search.results.head": "Administer Workflow",
+  "workflowAdmin.search.results.head": "Administrēt darba plūsmu"
 
 
 
@@ -7422,22 +5621,9 @@
   // TODO New key - Add a translation
   "workflow-item.send-back.button.cancel": "Cancel",
 
-  // "workflow-item.send-back.button.confirm": "Send back",
+  // "workflow-item.send-back.button.confirm": "Send back"
   // TODO New key - Add a translation
-  "workflow-item.send-back.button.confirm": "Send back",
-
-  // "relation.rp.researchoutputs.search.results.head": "Related Publications",
-  // TODO New key - Add a translation
-  "relation.rp.researchoutputs.search.results.head": "Related Publications",
-
-  // "relation.rp.projects.search.results.head": "Related Projects",
-  // TODO New key - Add a translation
-  "relation.rp.projects.search.results.head": "Related Projects",
-
-  // "layout.i18n.link.default": "link"
-  // TODO New key - Add a translation
-  "layout.i18n.link.default": "link"
-
+  "workflow-item.send-back.button.confirm": "Send back"
 
 
 }

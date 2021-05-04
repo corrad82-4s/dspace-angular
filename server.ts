@@ -159,6 +159,11 @@ function ngApp(req, res) {
     }, (err, data) => {
       if (hasNoValue(err) && hasValue(data)) {
         res.send(data);
+      } else if (hasValue(err) && err.code === 'ERR_HTTP_HEADERS_SENT') {
+        // When this error occurs we can't fall back to CSR because the response has already been
+        // sent. These errors occur for various reasons in universal, not all of which are in our
+        // control to solve.
+        console.warn('Warning [ERR_HTTP_HEADERS_SENT]: Tried to set headers after they were sent to the client');
       } else {
         console.warn('Error in SSR, serving for direct CSR.');
         if (hasValue(err)) {
@@ -170,7 +175,7 @@ function ngApp(req, res) {
   } else {
     // If preboot is disabled, just serve the client
     console.log('Universal off, serving for direct CSR');
-    res.sendFile(indexHtml);
+    res.sendFile(DIST_FOLDER + '/index.html');
   }
 }
 

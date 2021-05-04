@@ -7,7 +7,10 @@ export enum FieldRendetingType {
   IDENTIFIER = 'IDENTIFIER',
   CRISREF = 'CRISREF',
   THUMBNAIL = 'THUMBNAIL',
-  ATTACHMENT = 'ATTACHMENT'
+  ATTACHMENT = 'ATTACHMENT',
+  TABLE = 'TABLE',
+  INLINE = 'INLINE',
+  TEXTVERIFIED = 'TEXTVERIFIED',
 }
 
 const fieldType = new Map();

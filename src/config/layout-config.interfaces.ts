@@ -10,7 +10,15 @@ export interface CrisRefConfig extends Config {
   icon: string;
 }
 
+export interface MetadataIcon extends Config {
+  metadata: string;
+  icon: string;
+  classes: string;
+  title: string;
+}
+
 export interface LayoutConfig extends Config {
   urn: UrnConfig[];
   crisRef: CrisRefConfig[];
+  metadataIcons: MetadataIcon[];
 }

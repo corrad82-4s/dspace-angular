@@ -1,11 +1,10 @@
-import { hasCompleted, isSuccess } from './../data/request.reducer';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 import { Store } from '@ngrx/store';
-import { AddOperation, ReplaceOperation } from 'fast-json-patch';
+import { AddOperation, Operation, ReplaceOperation } from 'fast-json-patch';
 import { Observable, of as observableOf } from 'rxjs';
-import { catchError, distinctUntilChanged, filter, find, flatMap, map, switchMap, take, tap} from 'rxjs/operators';
+import { catchError, find, map, switchMap, tap } from 'rxjs/operators';
 
 import { NotificationsService } from '../../shared/notifications/notifications.service';
 import { dataService } from '../cache/builders/build-decorators';
@@ -21,15 +20,12 @@ import {
     getFirstSucceededRemoteDataPayload,
     getFinishedRemoteData,
     getFirstCompletedRemoteData,
-    getResponseFromEntry
 } from '../shared/operators';
 import { ResearcherProfile } from './model/researcher-profile.model';
 import { RESEARCHER_PROFILE } from './model/researcher-profile.resource-type';
-import { RestResponse } from '../cache/response.models';
-import { hasValue, isNotEmpty} from '../../shared/empty.util';
-import { PostRequest, SubmissionPostRequest} from '../data/request.models';
+import { hasValue } from '../../shared/empty.util';
+import { PostRequest } from '../data/request.models';
 import { RemoteData} from '../data/remote-data';
-import { RequestEntry} from '../data/request.reducer';
 import { NoContent } from '../shared/NoContent.model';
 import { HttpOptions} from '../dspace-rest/dspace-rest.service';
 
@@ -90,8 +86,7 @@ export class ResearcherProfileService {
     findById(uuid: string): Observable<ResearcherProfile> {
         return this.dataService.findById ( uuid )
             .pipe ( getFinishedRemoteData(),
-                map((remoteData) => remoteData.payload),
-                tap((profile) => this.requestService.removeByHrefSubstring('cris/profiles/' + uuid)));
+                map((remoteData) => remoteData.payload));
     }
 
     /**
@@ -120,7 +115,7 @@ export class ResearcherProfileService {
       find((href: string) => hasValue(href)),
       map((href: string) => {
         const request = new PostRequest(requestId, href, sourceUri, options);
-        this.requestService.configure(request);
+        this.requestService.send(request);
       })
     ).subscribe();
 
@@ -167,14 +162,19 @@ export class ResearcherProfileService {
      */
     setVisibility(researcherProfile: ResearcherProfile, visible: boolean): Observable<ResearcherProfile> {
 
-        const replaceOperation: ReplaceOperation<boolean> = {
-            path: '/visible',
-            op: 'replace',
-            value: visible
-        };
+      const replaceOperation: ReplaceOperation<boolean> = {
+          path: '/visible',
+          op: 'replace',
+          value: visible
+      };
 
-        return this.dataService.patch(researcherProfile, [replaceOperation])
-            .pipe (flatMap( (response ) => this.findById(researcherProfile.id)));
+      return this.patch(researcherProfile, [replaceOperation]).pipe (
+        switchMap( ( ) => this.findById(researcherProfile.id))
+      );
+    }
+
+    patch(researcherProfile: ResearcherProfile, operations: Operation[]): Observable<RemoteData<ResearcherProfile>> {
+      return this.dataService.patch(researcherProfile, operations);
     }
 
     /**

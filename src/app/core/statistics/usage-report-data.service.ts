@@ -13,8 +13,9 @@ import { DefaultChangeAnalyzer } from '../data/default-change-analyzer.service';
 import { USAGE_REPORT } from './models/usage-report.resource-type';
 import { UsageReport } from './models/usage-report.model';
 import { Observable } from 'rxjs';
-import { getRemoteDataPayload, getFirstSucceededRemoteData } from '../shared/operators';
+import { getFirstSucceededRemoteData, getRemoteDataPayload } from '../shared/operators';
 import { map } from 'rxjs/operators';
+
 
 /**
  * A service to retrieve {@link UsageReport}s from the REST API
@@ -45,15 +46,36 @@ export class UsageReportService extends DataService<UsageReport> {
     );
   }
 
-  searchStatistics(uri: string, page: number, size: number): Observable<UsageReport[]> {
-    return this.searchBy('object', {
-      searchParams: [{
+  searchStatistics(uri: string, page: number, size: number, categoryId?: string, startDate?: string, endDate?: string): Observable<UsageReport[]> {
+    const params = [
+      {
         fieldName: `uri`,
         fieldValue: uri,
-      }],
+      },{
+        fieldName: `category`,
+        fieldValue: categoryId,
+      }
+    ];
+
+    if (startDate !== undefined) {
+      params.push({
+        fieldName: `startDate`,
+        fieldValue: startDate,
+      });
+    }
+
+    if (endDate !== undefined) {
+      params.push({
+        fieldName: `endDate`,
+        fieldValue: endDate,
+      });
+    }
+
+    return this.searchBy('object', {
+      searchParams: params,
       currentPage: page,
       elementsPerPage: size,
-    }, false).pipe(
+    }, true, false).pipe(
       getFirstSucceededRemoteData(),
       getRemoteDataPayload(),
       map((list) => list.page),

@@ -52,8 +52,9 @@ describe('RegisterDniProfileComponent', () => {
   });
 
   describe('canSubmit', () => {
-    it('should allow submit when password is valid', () => {
+    it('should allow submit when password and email are valid', () => {
       comp.isInValidPassword = false;
+      comp.emailForm.patchValue({email: 'user@gmail.com'});
 
       const canSubmit = comp.canSubmit();
 
@@ -62,6 +63,13 @@ describe('RegisterDniProfileComponent', () => {
 
     it('should prevent submit when password is invalid', () => {
       comp.isInValidPassword = true;
+
+      const canSubmit = comp.canSubmit();
+
+      expect(canSubmit).toEqual(false);
+    });
+
+    it('should prevent submit when email is invalid', () => {
 
       const canSubmit = comp.canSubmit();
 
