@@ -160,7 +160,6 @@ export class ResearcherProfileService {
       return this.itemService.findByHref ( researcherProfile._links.item.href)
         .pipe (getFirstSucceededRemoteDataPayload(),
           catchError((error) => {
-            console.debug(error);
             return observableOf(null);
           }));
     }
