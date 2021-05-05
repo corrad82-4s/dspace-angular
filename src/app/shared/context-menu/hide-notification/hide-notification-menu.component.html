@@ -1,6 +1,6 @@
-<ng-container *ngIf="isNotification">
+<ng-container *ngIf="(isResearcherNotification$ | async)">
 
-  <ng-container *ngIf="(isHidden$ | async) else showTemplate">
+  <ng-container *ngIf="!(isHidden) else showTemplate">
     <button ngbDropdownItem (click)="hide()" id="hideBtn">
       <ng-container *ngIf="!(isProcessing$ | async) else spinner">
         {{'context-menu.actions.hide-notification.btn' | translate}}

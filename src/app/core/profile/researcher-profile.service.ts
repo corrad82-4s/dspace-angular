@@ -28,6 +28,8 @@ import { PostRequest } from '../data/request.models';
 import { RemoteData} from '../data/remote-data';
 import { NoContent } from '../shared/NoContent.model';
 import { HttpOptions} from '../dspace-rest/dspace-rest.service';
+import { Item } from '../shared/item.model';
+import { EPerson } from '../eperson/models/eperson.model';
 
 /* tslint:disable:max-classes-per-file */
 
@@ -145,13 +147,21 @@ export class ResearcherProfileService {
      * @param researcherProfile the profile to find for
      */
     findRelatedItemId( researcherProfile: ResearcherProfile ): Observable<string> {
-        return this.itemService.findByHref ( researcherProfile._links.item.href)
-            .pipe (getFirstSucceededRemoteDataPayload(),
-            catchError((error) => {
-                console.debug(error);
-                return observableOf(null);
-            }),
+        return this.findRelatedItem(researcherProfile).pipe(
             map((item) => item != null ? item.id : null ));
+    }
+
+    /**
+     * Find the item related to the given researcher profile.
+     *
+     * @param researcherProfile the profile to find for
+     */
+    findRelatedItem( researcherProfile: ResearcherProfile ): Observable<Item> {
+      return this.itemService.findByHref ( researcherProfile._links.item.href)
+        .pipe (getFirstSucceededRemoteDataPayload(),
+          catchError((error) => {
+            return observableOf(null);
+          }));
     }
 
     /**
@@ -193,4 +203,16 @@ export class ResearcherProfileService {
 
         return this.dataService.patch(researcherProfile, [replaceOperation]);
     }
+
+  /**
+   * Retrieve the CtiVitae for the EPerson.
+   * @param ePerson
+   */
+  getCtiVitaeFromEPerson(ePerson: EPerson): Observable<Item> {
+    return this.findById(ePerson.id).pipe(
+      switchMap((researcherProfile: ResearcherProfile) => {
+        return this.findRelatedItem(researcherProfile);
+      })
+    );
+  }
 }
