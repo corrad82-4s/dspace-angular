@@ -127,14 +127,14 @@ export class AdminSidebarComponent extends MenuComponent implements OnInit {
             type: MenuItemType.TEXT,
             text: 'menu.section.new'
           } as TextMenuItemModel,
-        icon: 'plus',
+        icon: 'plus-circle',
           index: 0
         },
         {
           id: 'new_community',
           parentID: 'new',
           active: false,
-          visible: isCommunityAdmin,
+          visible: true,
           model: {
             type: MenuItemType.ONCLICK,
             text: 'menu.section.new_community',
@@ -147,7 +147,7 @@ export class AdminSidebarComponent extends MenuComponent implements OnInit {
           id: 'new_collection',
           parentID: 'new',
           active: false,
-          visible: isCommunityAdmin,
+          visible: true,
           model: {
             type: MenuItemType.ONCLICK,
             text: 'menu.section.new_collection',
@@ -173,7 +173,7 @@ export class AdminSidebarComponent extends MenuComponent implements OnInit {
           id: 'new_process',
           parentID: 'new',
           active: false,
-          visible: isCollectionAdmin,
+          visible: true,
           model: {
             type: MenuItemType.LINK,
             text: 'menu.section.new_process',
@@ -208,7 +208,7 @@ export class AdminSidebarComponent extends MenuComponent implements OnInit {
           id: 'edit_community',
           parentID: 'edit',
           active: false,
-          visible: isCommunityAdmin,
+          visible: true,
           model: {
             type: MenuItemType.ONCLICK,
             text: 'menu.section.edit_community',
@@ -221,7 +221,7 @@ export class AdminSidebarComponent extends MenuComponent implements OnInit {
           id: 'edit_collection',
           parentID: 'edit',
           active: false,
-          visible: isCollectionAdmin,
+          visible: true,
           model: {
             type: MenuItemType.ONCLICK,
             text: 'menu.section.edit_collection',
@@ -248,7 +248,7 @@ export class AdminSidebarComponent extends MenuComponent implements OnInit {
         {
           id: 'curation_tasks',
           active: false,
-          visible: isCollectionAdmin,
+          visible: true,
           model: {
             type: MenuItemType.LINK,
             text: 'menu.section.curation_task',
@@ -276,7 +276,7 @@ export class AdminSidebarComponent extends MenuComponent implements OnInit {
         {
           id: 'control_panel',
           active: false,
-          visible: isSiteAdmin,
+          visible: true,
           model: {
             type: MenuItemType.LINK,
             text: 'menu.section.control_panel',
@@ -290,7 +290,7 @@ export class AdminSidebarComponent extends MenuComponent implements OnInit {
         {
           id: 'processes',
           active: false,
-          visible: isSiteAdmin,
+          visible: true,
           model: {
             type: MenuItemType.LINK,
             text: 'menu.section.processes',
@@ -321,7 +321,7 @@ export class AdminSidebarComponent extends MenuComponent implements OnInit {
           type: MenuItemType.TEXT,
           text: 'menu.section.export'
         } as TextMenuItemModel,
-        icon: 'file-export',
+        icon: 'sign-out-alt',
         index: 3,
         shouldPersistOnRouteChange: true
       },
@@ -404,7 +404,7 @@ export class AdminSidebarComponent extends MenuComponent implements OnInit {
           type: MenuItemType.TEXT,
           text: 'menu.section.import'
         } as TextMenuItemModel,
-        icon: 'file-import',
+        icon: 'sign-in-alt',
         index: 2
       },
       {
@@ -622,9 +622,20 @@ export class AdminSidebarComponent extends MenuComponent implements OnInit {
    * Create menu sections dependent on whether or not the current user can manage access control groups
    */
   createAccessControlMenuSections() {
-    this.authorizationService.isAuthorized(FeatureID.CanManageGroups).subscribe((authorized) => {
+    this.authorizationService.isAuthorized(FeatureID.AdministratorOf).subscribe((authorized) => {
       const menuList = [
         /* Access Control */
+        {
+          id: 'access_control',
+          active: false,
+          visible: authorized,
+          model: {
+            type: MenuItemType.TEXT,
+            text: 'menu.section.access_control'
+          } as TextMenuItemModel,
+          icon: 'key',
+          index: 5
+        },
         {
           id: 'access_control_people',
           parentID: 'access_control',
@@ -633,7 +644,7 @@ export class AdminSidebarComponent extends MenuComponent implements OnInit {
           model: {
             type: MenuItemType.LINK,
             text: 'menu.section.access_control_people',
-            link: '/access-control/epeople'
+            link: '/admin/access-control/epeople'
           } as LinkMenuItemModel,
         },
         {
@@ -644,7 +655,7 @@ export class AdminSidebarComponent extends MenuComponent implements OnInit {
           model: {
             type: MenuItemType.LINK,
             text: 'menu.section.access_control_groups',
-            link: '/access-control/groups'
+            link: '/admin/access-control/groups'
           } as LinkMenuItemModel,
         },
         {
@@ -657,17 +668,6 @@ export class AdminSidebarComponent extends MenuComponent implements OnInit {
             text: 'menu.section.access_control_authorizations',
             link: ''
           } as LinkMenuItemModel,
-        },
-        {
-          id: 'access_control',
-          active: false,
-          visible: authorized,
-          model: {
-            type: MenuItemType.TEXT,
-            text: 'menu.section.access_control'
-          } as TextMenuItemModel,
-          icon: 'key',
-          index: 4
         },
       ];
 
