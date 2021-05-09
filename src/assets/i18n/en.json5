@@ -3413,6 +3413,10 @@
 
   "notification.listelement.badge": "Notification",
 
+  "notification.read.success": "Notification marked as read.",
+
+  "notification.unread.success": "Notification marked as unread.",
+
   "orgunit.listelement.badge": "Organizational Unit",
 
   "orgunit.page.city": "City",
@@ -4721,6 +4725,10 @@
   "sorting.dc.title.ASC": "Title Ascending",
 
   "sorting.dc.title.DESC": "Title Descending",
+
+  "sorting.authorselection.ASC": "Author selection Ascending",
+
+  "sorting.authorselection.DESC": "Author selection Descending",
 
   "sorting.score.ASC": "Relevance Ascending",
 

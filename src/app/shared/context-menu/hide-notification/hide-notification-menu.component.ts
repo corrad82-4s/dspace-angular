@@ -10,6 +10,7 @@ import { Item } from '../../../core/shared/item.model';
 import { take } from 'rxjs/operators';
 import { NotificationMenuService } from './notification-menu.service';
 import { NotificationsService } from '../../notifications/notifications.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'ds-context-menu-hide-notification',
@@ -32,7 +33,8 @@ export class HideNotificationMenuComponent extends ContextMenuEntryComponent imp
     @Inject('contextMenuObjectTypeProvider') protected injectedContextMenuObjectType: DSpaceObjectType,
     protected configurationDataService: ConfigurationDataService,
     protected notificationMenuService: NotificationMenuService,
-    protected notificationsService: NotificationsService
+    protected notificationsService: NotificationsService,
+    protected translateService: TranslateService
   ) {
     super(injectedContextMenuObject, injectedContextMenuObjectType);
   }
@@ -49,7 +51,7 @@ export class HideNotificationMenuComponent extends ContextMenuEntryComponent imp
       .pipe(take(1))
       .subscribe((response) => {
         this.isProcessing$.next(false);
-        this.notificationsService.success('The notification is now visible.');
+        this.notificationsService.success(this.translateService.get('notification.unread.success'));
         this.updateIsHidden();
       });
   }
@@ -60,7 +62,7 @@ export class HideNotificationMenuComponent extends ContextMenuEntryComponent imp
       .pipe(take(1))
       .subscribe((response) => {
         this.isProcessing$.next(false);
-        this.notificationsService.success('The notification is now hidden.');
+        this.notificationsService.success(this.translateService.get('notification.read.success'));
         this.updateIsHidden();
       });
   }
