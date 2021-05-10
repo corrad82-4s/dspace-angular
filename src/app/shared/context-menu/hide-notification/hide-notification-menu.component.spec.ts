@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { RouterTestingModule } from '@angular/router/testing';
-import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import {TranslateLoader, TranslateModule, TranslateService} from '@ngx-translate/core';
 import { getTestScheduler } from 'jasmine-marbles';
 import { TestScheduler } from 'rxjs/testing';
 import { ConfigurationDataService } from '../../../core/data/configuration-data.service';
@@ -14,6 +14,8 @@ import { createSuccessfulRemoteDataObject$ } from '../../remote-data.utils';
 import { HideNotificationMenuComponent } from './hide-notification-menu.component';
 import { of } from 'rxjs/internal/observable/of';
 import { NotificationMenuService } from './notification-menu.service';
+import { NotificationsService } from '../../notifications/notifications.service';
+import { NotificationsServiceStub } from '../../testing/notifications-service.stub';
 
 describe('HideNotificationMenuComponent', () => {
   let component: HideNotificationMenuComponent;
@@ -22,6 +24,7 @@ describe('HideNotificationMenuComponent', () => {
   let scheduler: TestScheduler;
   let configurationDataService: any;
   let notificationMenuService: any;
+  let notificationsService: any;
 
   let dso: DSpaceObject;
 
@@ -47,10 +50,13 @@ describe('HideNotificationMenuComponent', () => {
     });
 
     notificationMenuService = jasmine.createSpyObj('NotificationMenuService', {
+      isResearcherNotification: of(true),
       isHiddenObs: of(true),
       showNotification: createSuccessfulRemoteDataObject$({}),
       hideNotification: createSuccessfulRemoteDataObject$({})
     });
+
+    notificationsService = new NotificationsServiceStub();
 
     TestBed.configureTestingModule({
       declarations: [ HideNotificationMenuComponent ],
@@ -64,9 +70,11 @@ describe('HideNotificationMenuComponent', () => {
         })
       ],
       providers: [
+        TranslateService,
         { provide: 'contextMenuObjectProvider', useValue: dso },
         { provide: 'contextMenuObjectTypeProvider', useValue: DSpaceObjectType.ITEM },
-        { provide: ConfigurationDataService, useValue: configurationDataService}
+        { provide: ConfigurationDataService, useValue: configurationDataService},
+        { provide: NotificationsService, useValue: notificationsService },
       ]
     });
 
@@ -94,14 +102,14 @@ describe('HideNotificationMenuComponent', () => {
 
   it('when notification is shown should render an hide button', (done) => {
 
-    component.isHidden$ = of(false);
+    component.isHidden = false;
 
     fixture.detectChanges();
 
     fixture.whenStable().then(() => {
-      const showBtn = fixture.debugElement.query(By.css('button'));
-      expect(showBtn).not.toBeNull();
-      expect(showBtn.nativeElement.id).toEqual('showBtn');
+      const btn = fixture.debugElement.query(By.css('button'));
+      expect(btn).not.toBeNull();
+      expect(btn.nativeElement.id).toEqual('hideBtn');
       done();
     });
 
@@ -109,14 +117,14 @@ describe('HideNotificationMenuComponent', () => {
 
   it('when notification is shown should render an hide button', (done) => {
 
-    component.isHidden$ = of(true);
+    component.isHidden = true;
 
     fixture.detectChanges();
 
     fixture.whenStable().then(() => {
-      const hideBtn = fixture.debugElement.query(By.css('button'));
-      expect(hideBtn).not.toBeNull();
-      expect(hideBtn.nativeElement.id).toEqual('hideBtn');
+      const btn = fixture.debugElement.query(By.css('button'));
+      expect(btn).not.toBeNull();
+      expect(btn.nativeElement.id).toEqual('showBtn');
       done();
     });
   });
