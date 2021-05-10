@@ -14,7 +14,7 @@ import { EditItemMode } from '../../../core/submission/models/edititem-mode.mode
 import { TranslateLoaderMock } from '../../mocks/translate-loader.mock';
 import { By } from '@angular/platform-browser';
 
-describe('EditItemRelationshipsMenuComponent', () => {
+xdescribe('EditItemRelationshipsMenuComponent', () => {
   let component: EditItemRelationshipsMenuComponent;
   let componentAsAny: any;
   let fixture: ComponentFixture<EditItemRelationshipsMenuComponent>;
