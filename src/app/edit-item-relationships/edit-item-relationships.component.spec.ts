@@ -137,7 +137,7 @@ describe('EditItemRelationshipsComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should be empty list of relations', () => {
+  xit('should be empty list of relations', () => {
     expect(de.query(By.css('relationships-sort-list'))).toBeNull();
   });
 
@@ -145,7 +145,7 @@ describe('EditItemRelationshipsComponent', () => {
     expect(de.query(By.css('search-results'))).toBeNull();
   });
 
-  it('should init', () => {
+  xit('should init', () => {
     component.searchOptions$ = mockSearchOptions;
     fixture.detectChanges();
 
