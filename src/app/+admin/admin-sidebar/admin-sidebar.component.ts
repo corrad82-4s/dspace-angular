@@ -644,7 +644,7 @@ export class AdminSidebarComponent extends MenuComponent implements OnInit {
           model: {
             type: MenuItemType.LINK,
             text: 'menu.section.access_control_people',
-            link: '/admin/access-control/epeople'
+            link: '/access-control/epeople'
           } as LinkMenuItemModel,
         },
         {
@@ -655,7 +655,7 @@ export class AdminSidebarComponent extends MenuComponent implements OnInit {
           model: {
             type: MenuItemType.LINK,
             text: 'menu.section.access_control_groups',
-            link: '/admin/access-control/groups'
+            link: '/access-control/groups'
           } as LinkMenuItemModel,
         },
         {
