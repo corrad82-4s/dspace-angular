@@ -5350,9 +5350,15 @@
 
   "submission.sections.submit.progressbar.describe.project": "Project basic information",
 
+  "submission.sections.submit.progressbar.describe.project_openaire_id": "OpenAIRE references",
+
   "submission.sections.submit.progressbar.describe.institution-project": "Project basic information",
 
+  "submission.sections.submit.progressbar.describe.institution-project_openaire_id": "OpenAIRE references",
+
   "submission.sections.submit.progressbar.describe.cv-project": "Project basic information",
+
+  "submission.sections.submit.progressbar.describe.cv-project_openaire_id": "OpenAIRE references",
 
   "submission.sections.submit.progressbar.describe.publication": "Publication basic information",
 
