@@ -622,20 +622,9 @@ export class AdminSidebarComponent extends MenuComponent implements OnInit {
    * Create menu sections dependent on whether or not the current user can manage access control groups
    */
   createAccessControlMenuSections() {
-    this.authorizationService.isAuthorized(FeatureID.AdministratorOf).subscribe((authorized) => {
+    this.authorizationService.isAuthorized(FeatureID.CanManageGroups).subscribe((authorized) => {
       const menuList = [
         /* Access Control */
-        {
-          id: 'access_control',
-          active: false,
-          visible: authorized,
-          model: {
-            type: MenuItemType.TEXT,
-            text: 'menu.section.access_control'
-          } as TextMenuItemModel,
-          icon: 'key',
-          index: 5
-        },
         {
           id: 'access_control_people',
           parentID: 'access_control',
@@ -658,16 +647,28 @@ export class AdminSidebarComponent extends MenuComponent implements OnInit {
             link: '/access-control/groups'
           } as LinkMenuItemModel,
         },
+        // TODO: enable this menu item once the feature has been implemented
+        // {
+        //   id: 'access_control_authorizations',
+        //   parentID: 'access_control',
+        //   active: false,
+        //   visible: authorized,
+        //   model: {
+        //     type: MenuItemType.LINK,
+        //     text: 'menu.section.access_control_authorizations',
+        //     link: ''
+        //   } as LinkMenuItemModel,
+        // },
         {
-          id: 'access_control_authorizations',
-          parentID: 'access_control',
+          id: 'access_control',
           active: false,
           visible: authorized,
           model: {
-            type: MenuItemType.LINK,
-            text: 'menu.section.access_control_authorizations',
-            link: ''
-          } as LinkMenuItemModel,
+            type: MenuItemType.TEXT,
+            text: 'menu.section.access_control'
+          } as TextMenuItemModel,
+          icon: 'key',
+          index: 4
         },
       ];
 
