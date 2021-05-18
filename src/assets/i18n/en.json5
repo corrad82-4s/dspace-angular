@@ -1646,6 +1646,10 @@
 
   "error.validation.filerequired": "The file upload is mandatory",
 
+  "error.validation.ubigeoRequired": "UBIGEO Required",
+
+  "error.validation.mandateUrlRequired" : "Mandate URL Required",
+
 
   "explore.browse-section.title" : "Browse",
 
