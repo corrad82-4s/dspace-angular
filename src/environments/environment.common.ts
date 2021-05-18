@@ -423,7 +423,11 @@ export const environment: GlobalConfig = {
     //   // This theme will use the default bootstrap styling for DSpace components
     //   name: BASE_THEME_NAME
     // },
-
+    {
+      // A theme for the ctivitae community and all collections and/or items within it
+      name: 'ctivitae',
+      handle: '123456789/23576'
+    },
     {
       // The default dspace theme
       name: 'peru'

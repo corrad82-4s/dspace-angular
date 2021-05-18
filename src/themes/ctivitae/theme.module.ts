@@ -28,7 +28,6 @@ import { StatisticsModule } from '../../app/statistics/statistics.module';
 import { StoreModule } from '@ngrx/store';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
 import { TranslateModule } from '@ngx-translate/core';
-import { HomeNewsComponent } from './app/+home-page/home-news/home-news.component';
 import { HomePageModule } from '../../app/+home-page/home-page.module';
 import { AppModule } from '../../app/app.module';
 import { ItemPageModule } from '../../app/+item-page/item-page.module';
@@ -41,15 +40,12 @@ import { CollectionPageModule } from '../../app/+collection-page/collection-page
 import { SubmissionModule } from '../../app/submission/submission.module';
 import { MyDSpacePageModule } from '../../app/+my-dspace-page/my-dspace-page.module';
 import { NavbarComponent } from './app/navbar/navbar.component';
-import { FooterComponent } from './app/footer/footer.component';
 import { HeaderComponent } from './app/header/header.component';
 
 
 const DECLARATIONS = [
-  HomeNewsComponent,
-  HeaderComponent,
   NavbarComponent,
-  FooterComponent
+  HeaderComponent
 ];
 
 @NgModule({
