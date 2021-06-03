@@ -7,13 +7,13 @@ import { slideMobileNav } from '../../../../app/shared/animations/slide';
  */
 @Component({
   selector: 'ds-navbar',
-  styleUrls: ['./navbar.component.scss'],
-  templateUrl: './navbar.component.html',
+  styleUrls: ['../../../peru/app/navbar/navbar.component.scss'],
+  templateUrl: '../../../peru/app/navbar/navbar.component.html',
   animations: [slideMobileNav]
 })
 export class NavbarComponent extends BaseComponent {
 
   logoSrc(): string {
-    return 'assets/images/perucris-logo.jpg';
+    return 'assets/images/logo_dina_alta.png';
   }
 }

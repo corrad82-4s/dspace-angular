@@ -70,6 +70,11 @@
                 "input": "src/themes/peru/styles/theme.scss",
                 "inject": false,
                 "bundleName": "peru-theme"
+              },
+              {
+                "input": "src/themes/ctivitae/styles/theme.scss",
+                "inject": false,
+                "bundleName": "ctivitae-theme"
               }
             ],
             "scripts": []

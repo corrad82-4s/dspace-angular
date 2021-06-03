@@ -873,7 +873,7 @@
   // "admin.search.title": "Administrative Search",
   // TODO New key - Add a translation
   "admin.search.title": "Búsqueda Administrativa",
-  
+
   // "administrativeView.search.results.head": "Administrative Search",
   // TODO New key - Add a translation
   "administrativeView.search.results.head": "Administrative Search",
@@ -1479,15 +1479,15 @@
 
   // "collection.edit.logo.notifications.delete.error.title": "Error deleting logo",
   "collection.edit.logo.notifications.delete.error.title": "Error al borrar el logotipo",
-  
+
   // "collection.edit.logo.upload": "Drop a Collection Logo to upload",
   "collection.edit.logo.upload": "Suelte un logotipo de la colección para cargarlo",
-  
+
 
 
   // "collection.edit.notifications.success": "Successfully edited the Collection",
   "collection.edit.notifications.success": "Edición exitosa de la Colección",
-  
+
   // "collection.edit.return": "Return",
   "collection.edit.return": "Volver",
 
@@ -1571,7 +1571,7 @@
   "collection.edit.tabs.source.head": "Fuente Contenido",
 
   // "collection.edit.tabs.source.notifications.discarded.content": "Your changes were discarded. To reinstate your changes click the 'Undo' button",
-  "collection.edit.tabs.source.notifications.discarded.content": "Sus cambios fueron descartados. Para restablecer los cambios, haga clic en el botón "Deshacer".",
+  "collection.edit.tabs.source.notifications.discarded.content": "Sus cambios fueron descartados. Para restablecer los cambios, haga clic en el botón \"Deshacer\".",
 
   // "collection.edit.tabs.source.notifications.discarded.title": "Changed discarded",
   "collection.edit.tabs.source.notifications.discarded.title": "Cambios descartados",
@@ -2230,7 +2230,7 @@
   "confirmation-modal.delete-eperson.header": "Eliminar usuario \"{{ dsoName }}\"",
 
   // "confirmation-modal.delete-eperson.info": "Are you sure you want to delete EPerson \"{{ dsoName }}\"",
-  "confirmation-modal.delete-eperson.info": "¿Está seguro de que desea eliminar al usuario \"{{ dsoName }}\ ?"",
+  "confirmation-modal.delete-eperson.info": "¿Está seguro de que desea eliminar al usuario \"{{ dsoName }} ?\"",
 
   // "confirmation-modal.delete-eperson.cancel": "Cancel",
   "confirmation-modal.delete-eperson.cancel": "Cancelar",
@@ -2327,7 +2327,7 @@
   // "explore.counters-section.orgunit.enterprises" : "Enterprises",
   // TODO New key - Add a translation
   "explore.counters-section.orgunit.enterprises" : "Enterprises",
-  
+
   // "explore.counters-section.orgunit.cti_funders" : "CTI Funders",
   // TODO New key - Add a translation
   "explore.counters-section.orgunit.cti_funders" : "CTI Funders",
@@ -3031,16 +3031,16 @@
 
   // "item.bitstreams.upload.bundles.empty": "This item doesn\'t contain any bundles to upload a bitstream to.",
   "item.bitstreams.upload.bundles.empty": "Este ítem no contiene ningún bundle al que cargar un bitstream.",
-  
+
   // "item.bitstreams.upload.cancel": "Cancel",
   "item.bitstreams.upload.cancel": "Cancelar",
-  
+
   // "item.bitstreams.upload.drop-message": "Drop a file to upload",
   "item.bitstreams.upload.drop-message": "Suelte un archivo para cargarlo",
-  
+
   // "item.bitstreams.upload.item": "Item:  ",
   "item.bitstreams.upload.item": "Item:  ",
-  
+
   // "item.bitstreams.upload.notifications.bundle.created.content": "Successfully created new bundle.",
   "item.bitstreams.upload.notifications.bundle.created.content": "Se ha creado con éxito un nuevo bundle.",
 
@@ -3107,7 +3107,7 @@
   "item.edit.bitstreams.headers.name": "Nombre",
 
   // "item.edit.bitstreams.notifications.discarded.content": "Your changes were discarded. To reinstate your changes click the 'Undo' button",
-  "item.edit.bitstreams.notifications.discarded.content": "Sus cambios fueron descartados. Para restablecer los cambios, haga clic en el botón "Deshacer".",
+  "item.edit.bitstreams.notifications.discarded.content": "Sus cambios fueron descartados. Para restablecer los cambios, haga clic en el botón \"Deshacer\".",
 
   // "item.edit.bitstreams.notifications.discarded.title": "Changes discarded",
   "item.edit.bitstreams.notifications.discarded.title": "Cambios descartados",
@@ -4766,7 +4766,7 @@
   "openaire.broker.event.action.saved": "Su decisión se ha guardado con éxito.",
 
   // "openaire.broker.event.action.error": "An error has occurred. Your decision has not been saved.",
-    "openaire.broker.event.action.error": "Se ha producido un error. Su decisión no se ha guardado.",
+  "openaire.broker.event.action.error": "Se ha producido un error. Su decisión no se ha guardado.",
 
   // "openaire.broker.event.modal.project.title": "Choose a project to bound",
   "openaire.broker.event.modal.project.title": "Elija un proyecto para vincular",
@@ -4781,19 +4781,19 @@
   "openaire.broker.event.modal.project.select": "Búsqueda de proyecto",
 
   // "openaire.broker.event.modal.project.search": "Search",
-    "openaire.broker.event.modal.project.search": "Búsqueda",
+  "openaire.broker.event.modal.project.search": "Búsqueda",
 
   // "openaire.broker.event.modal.project.clear": "Clear",
   "openaire.broker.event.modal.project.clear": "Quitar",
 
   // "openaire.broker.event.modal.project.cancel": "Cancel",
-    "openaire.broker.event.modal.project.cancel": "Cancelar",
+  "openaire.broker.event.modal.project.cancel": "Cancelar",
 
   // "openaire.broker.event.modal.project.bound": "Bound project",
   "openaire.broker.event.modal.project.bound": "Vincular proyecto",
 
   // "openaire.broker.event.modal.project.placeholder": "Enter a project name",
-    "openaire.broker.event.modal.project.placeholder": "Ingrese el nombre del proyecto",
+  "openaire.broker.event.modal.project.placeholder": "Ingrese el nombre del proyecto",
 
   // "openaire.broker.event.modal.project.notFound": "No project found.",
   "openaire.broker.event.modal.project.notFound": "No se ha encontrado ningún proyecto.",
@@ -5816,7 +5816,7 @@
   // "register-page.create-profile-dni.validation.success": "Dni and Date of Birth are valid for registration.",
   "register-page.create-profile-dni.validation.success": "El DNI y la fecha de nacimiento son válidos para el registro.",
 
-  
+
 
 
   // "relationships.add.error.relationship-type.content": "No suitable match could be found for relationship type {{ type }} between the two items",
@@ -6867,7 +6867,7 @@
   "submission.import-external.page.hint": "Introduzca una consulta en la parte superior para encontrar ítems de la web para importarlos a DSpace.",
 
   // "submission.import-external.page.noentity": "An entity type must be selected in order to use this page. Select it using the 'Import metadata from an external source' button in 'MyDspace' page.",
-  "submission.import-external.page.noentity": "Es necesario seleccionar un tipo de entidad para poder utilizar esta página. Selecciónelo mediante el botón "Importar metadatos de una fuente externa" en la página "MyDspace".",
+  "submission.import-external.page.noentity": "Es necesario seleccionar un tipo de entidad para poder utilizar esta página. Selecciónelo mediante el botón \"Importar metadatos de una fuente externa\" en la página \"MyDspace\".",
 
   // "submission.import-external.back-to-my-dspace": "Back to MyDSpace",
   "submission.import-external.back-to-my-dspace": "Volver a MyDSpace",
@@ -8135,7 +8135,7 @@
   "peru-layout.corrections.back": "Volver",
 
   // "peru-layout.shadow-copies": "Sources of information: ",
-  "peru-layout.shadow-copies": "Fuentes de información: "
+  "peru-layout.shadow-copies": "Fuentes de información: ",
 
   // "cris.tab.label.profile": "Profile",
   "cris.tab.label.profile": "Perfil",
@@ -8815,8 +8815,5 @@
 
   // "cris.boxmetadata.label.message": "Message"
   "cris.boxmetadata.label.message": "Mensaje"
-
-
-
 
 }
