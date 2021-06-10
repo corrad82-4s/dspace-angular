@@ -1,6 +1,16 @@
 <div class="container">
   <ds-suggestions-notification></ds-suggestions-notification>
   <ds-my-dspace-new-submission *dsShowOnlyForRole="[roleTypeEnum.Submitter]"></ds-my-dspace-new-submission>
+  <div class="my-4 d-flex justify-content-end">
+    <button class="btn btn-outline-primary mt-1 ml-2" type="button"
+            attr.aria-label="{{'mydspace.processes' | translate}}"
+            title="{{'mydspace.processes' | translate}}"
+            (click)="toProcesses()">
+
+      <i class="fa fa-terminal" aria-hidden="true"></i>
+      {{'mydspace.processes' | translate}}
+    </button>
+  </div>
   <div class="search-page row">
       <ds-search-sidebar *ngIf="!(isXsOrSm$ | async)" class="col-3 sidebar-md-sticky"
                          id="search-sidebar"
