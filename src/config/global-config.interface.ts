@@ -13,7 +13,7 @@ import { ThemeConfig } from './theme.model';
 import { AuthConfig } from './auth-config.interfaces';
 import { UIServerConfig } from './ui-server-config.interface';
 import { MediaViewerConfig } from './media-viewer-config.interface';
-import { LayoutConfig } from './layout-config.interfaces';
+import { LayoutConfig, SuggestionConfig } from './layout-config.interfaces';
 
 export interface GlobalConfig extends Config {
   ui: UIServerConfig;
@@ -36,4 +36,5 @@ export interface GlobalConfig extends Config {
   rewriteDownloadUrls: boolean;
   mediaViewer: MediaViewerConfig;
   layout: LayoutConfig;
+  suggestion: SuggestionConfig[];
 }
