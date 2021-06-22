@@ -483,5 +483,21 @@ export const environment: GlobalConfig = {
 
     ]
   },
-  suggestion: []
+  suggestion: [
+    {
+      // The CvPublication collection UUID
+      source: 'ctiPublication',
+      collectionId: ''
+    },
+    {
+      // The CvProject collection UUID
+      source: 'ctiProject',
+      collectionId: ''
+    },
+    {
+      // The CvPatent collection UUID
+      source: 'ctiPatent',
+      collectionId: ''
+    },
+  ]
 };
