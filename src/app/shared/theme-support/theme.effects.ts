@@ -70,7 +70,7 @@ export class ThemeEffects {
         if (this.hasDynamicTheme === true && isNotEmpty(this.themes)) {
           const currentRouteUrl = navigatedAction.payload.routerState.url;
           // If resolvedAction exists, and deals with the current url
-          if (hasValue(resolvedAction) && resolvedAction.payload.url === currentRouteUrl) {
+          if (hasValue(resolvedAction) && currentRouteUrl.startsWith(resolvedAction.payload.url)) {
             // Start with the resolved dso and go recursively through its parents until you reach the top-level community
             return observableOf(resolvedAction.payload.dso).pipe(
               this.getAncestorDSOs(),

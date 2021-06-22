@@ -26,7 +26,7 @@ describe('AddCvPublicationMenuComponent', () => {
     dso = Object.assign(new Item(), {
       id: 'test-item',
       metadata: {
-        'relationship.type' : [
+        'dspace.entity.type' : [
           {
             value: 'CvPerson'
           }

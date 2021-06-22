@@ -1,0 +1,14 @@
+// Add any global css for the theme here
+
+// @ Not required here since this theme imports the peru theme global_style
+// ------------------------------------------------------------------------
+// imports the base global style
+// @import '../../../styles/_global-styles.scss';
+// ------------------------------------------------------------------------
+
+
+
+#sidebar ul li.active > a, a[aria-expanded="true"] {
+  color: #fff !important;
+  background: #00a0af !important;
+}
