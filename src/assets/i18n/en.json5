@@ -4318,6 +4318,16 @@
 
   "search.filters.applied.charts.default.title": "Search Output",
 
+  "search.filters.applied.charts.infrastructure.title": "Infrastructure",
+
+  "search.filters.applied.charts.orgunits.title": "Organizations",
+
+  "search.filters.applied.charts.person.title": "People",
+
+  "search.filters.applied.charts.project_funding.title": "Projects",
+
+  "search.filters.applied.charts.researchoutputs.title": "Research Outputs",
+
   "search.filters.applied.charts.RELATION.CvPerson.selectedresearchoutputs.title": "Selected Research Outputs",
 
   "search.filters.applied.charts.RELATION.CvPerson.researchoutputs.title": "Research Outputs",
@@ -4733,6 +4743,34 @@
   "sorting.authorselection.ASC": "Author selection Ascending",
 
   "sorting.authorselection.DESC": "Author selection Descending",
+
+  "sorting.organization.legalName.ASC": "Legal Name Ascending",
+
+  "sorting.organization.legalName.DESC": "Legal Name Descending",
+
+  "sorting.organization.address.addressCountry.ASC": "Country Ascending",
+
+  "sorting.address.addressCountry.DESC": "Country Descending",
+
+  "sorting.organization.address.addressLocality.ASC": "Locality Ascending",
+
+  "sorting.organization.address.addressLocality.DESC": "Locality Descending",
+
+  "sorting.organization.foundingDate.ASC": "Founding Date Ascending",
+
+  "sorting.organization.foundingDate.DESC": "Founding Date Descending",
+
+  "sorting.person.familyName.ASC": "Family Name Ascending",
+
+  "sorting.person.familyName.DESC": "Family Name Descending",
+
+  "sorting.person.givenName.ASC": "Given Name Ascending",
+
+  "sorting.person.givenName.DESC": "Given Name Descending",
+
+  "sorting.person.birthDate.ASC": "Date of Birth Ascending",
+
+  "sorting.person.birthDate.DESC": "Date of Birth Descending",
 
   "sorting.score.ASC": "Relevance Ascending",
 
