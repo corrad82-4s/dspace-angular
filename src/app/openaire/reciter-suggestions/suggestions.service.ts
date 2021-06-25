@@ -244,10 +244,35 @@ export class SuggestionsService {
   public getNotificationSuggestionInterpolation(suggestionTarget: OpenaireSuggestionTarget): any {
     return {
       count: suggestionTarget.total,
-      source: this.translateService.instant('reciter.suggestion.source.oaire'),
+      source: this.translateService.instant(this.translateSuggestionSource(suggestionTarget.source)),
+      type:  this.translateService.instant(this.translateSuggestionType(suggestionTarget.source)),
       suggestionId: suggestionTarget.id,
       displayName: suggestionTarget.display
     };
+  }
+
+  private translateSuggestionType(source: string): string {
+    switch (source) {
+      case 'ctiPublication':
+        return 'reciter.suggestion.type.ctiPublication';
+      case 'ctiProject':
+        return 'reciter.suggestion.type.ctiProject';
+      case 'ctiPatent':
+        return 'reciter.suggestion.type.ctiPatent';
+      default:
+        return 'reciter.suggestion.type.oaire';
+    }
+  }
+
+  private translateSuggestionSource(source: string): string {
+    switch (source) {
+      case 'ctiPublication':
+      case 'ctiProject':
+      case 'ctiPatent':
+        return 'reciter.suggestion.source.cti';
+      default:
+        return 'reciter.suggestion.source.oaire';
+    }
   }
 
   /**
