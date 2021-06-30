@@ -486,5 +486,22 @@ export const environment: GlobalConfig = {
       }
 
     ]
-  }
+  },
+  suggestion: [
+    {
+      // The CvPublication collection UUID
+      source: 'ctiPublication',
+      collectionId: '406fa638-1323-451f-9829-c7f6800036be'
+    },
+    {
+      // The CvProject collection UUID
+      source: 'ctiProject',
+      collectionId: '1d505b5b-3969-4f90-8478-f5d32cbf17df'
+    },
+    {
+      // The CvPatent collection UUID
+      source: 'ctiPatent',
+      collectionId: '824974ef-5377-4d13-912e-4d9099847477'
+    },
+  ]
 };

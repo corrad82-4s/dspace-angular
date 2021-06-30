@@ -246,4 +246,12 @@ export class SuggestionsPageComponent implements OnInit {
     return Object.keys(this.selectedSuggestions).length;
   }
 
+  /**
+   * Return true if all the suggestion are configured with the same fixed collection in the configuration.
+   * @param suggestions
+   */
+  isCollectionFixed(suggestions: OpenaireSuggestion[]): boolean {
+    return this.suggestionService.isCollectionFixed(suggestions);
+  }
+
 }
