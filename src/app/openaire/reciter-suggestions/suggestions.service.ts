@@ -251,7 +251,7 @@ export class SuggestionsService {
     };
   }
 
-  private translateSuggestionType(source: string): string {
+  public translateSuggestionType(source: string): string {
     switch (source) {
       case 'ctiPublication':
         return 'reciter.suggestion.type.ctiPublication';
@@ -264,7 +264,7 @@ export class SuggestionsService {
     }
   }
 
-  private translateSuggestionSource(source: string): string {
+  public translateSuggestionSource(source: string): string {
     switch (source) {
       case 'ctiPublication':
       case 'ctiProject':

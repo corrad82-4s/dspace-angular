@@ -60,6 +60,7 @@ export class SuggestionsPageComponent implements OnInit {
   targetId$: Observable<string>;
 
   suggestionId: any;
+  suggestionSource: any;
   researcherName: any;
   researcherUuid: any;
 
@@ -94,6 +95,7 @@ export class SuggestionsPageComponent implements OnInit {
     ).subscribe((suggestionTarget: OpenaireSuggestionTarget) => {
       this.suggestionId = suggestionTarget.id;
       this.researcherName = suggestionTarget.display;
+      this.suggestionSource = suggestionTarget.source;
       this.researcherUuid = this.suggestionService.getTargetUuid(suggestionTarget);
       this.updatePage();
     });
@@ -252,6 +254,20 @@ export class SuggestionsPageComponent implements OnInit {
    */
   isCollectionFixed(suggestions: OpenaireSuggestion[]): boolean {
     return this.suggestionService.isCollectionFixed(suggestions);
+  }
+
+  /**
+   * Label to be used to translate the suggestion source.
+   */
+  translateSuggestionSource() {
+    return this.suggestionService.translateSuggestionSource(this.suggestionSource);
+  }
+
+  /**
+   * Label to be used to translate the suggestion type.
+   */
+  translateSuggestionType() {
+    return this.suggestionService.translateSuggestionType(this.suggestionSource);
   }
 
 }

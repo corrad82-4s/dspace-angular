@@ -5,9 +5,10 @@
           <div *ngIf="suggestionsRD?.pageInfo?.totalElements > 0">
 
             <h2>
+              {{ translateSuggestionType() | translate }}
               {{'reciter.suggestion.suggestionFor' | translate}}
               <a target="_blank" [routerLink]="['/items', researcherUuid]">{{researcherName}}</a>
-              {{'reciter.suggestion.from.source' | translate}} {{'reciter.suggestion.source.oaire' | translate}}
+              {{'reciter.suggestion.from.source' | translate}} {{ translateSuggestionSource() | translate }}
             </h2>
 
             <div class="mb-3 mt-3">
