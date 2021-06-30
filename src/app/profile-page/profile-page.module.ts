@@ -10,12 +10,14 @@ import { ThemedProfilePageComponent } from './themed-profile-page.component';
 import { ProfilePageGrantedApplicationsComponent } from './profile-page-granted-applications/profile-page-granted-applications.component';
 import { ProfilePageTwophaseAuthenticationComponent } from './profile-page-twophase-authentication/profile-page-twophase-authentication.component';
 import { ProfilePageVerifiedIdentifiersComponent } from './profile-page-verified-identifiers/profile-page-verified-identifiers.component';
+import { OpenaireModule } from '../openaire/openaire.module';
 
 @NgModule({
   imports: [
     ProfilePageRoutingModule,
     CommonModule,
-    SharedModule
+    SharedModule,
+    OpenaireModule
   ],
   exports: [
     ProfilePageSecurityFormComponent
