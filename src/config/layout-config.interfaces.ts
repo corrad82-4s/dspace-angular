@@ -22,3 +22,8 @@ export interface LayoutConfig extends Config {
   crisRef: CrisRefConfig[];
   metadataIcons: MetadataIcon[];
 }
+
+export interface SuggestionConfig extends Config {
+  source: string;
+  collectionId: string;
+}

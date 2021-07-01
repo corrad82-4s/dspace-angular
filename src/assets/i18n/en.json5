@@ -3196,9 +3196,9 @@
 
   "mydspace.update-btn.help": "Submit a correction request",
 
-  "mydspace.notification.suggestion": "We found <b>{{count}} publications</b><br> in the {{source}} that seems to be related to your profile.<br> Please <a href='/suggestions/{{suggestionId}}'>review the suggestions</a>",
+  "mydspace.notification.suggestion": "We found <b>{{count}} {{type}}</b><br> in the {{source}} that seems to be related to your profile.<br> Please <a href='/suggestions/{{suggestionId}}'>review the suggestions</a>",
 
-  "mydspace.notification.suggestion.page": "We found <b>{{count}} publications</b> in the {{source}} that seems to be related to your profile. Please <a href='/suggestions/{{suggestionId}}'>review the suggestions.</a>",
+  "mydspace.notification.suggestion.page": "We found <b>{{count}} {{type}}</b> in the {{source}} that seems to be related to your profile. Please <a href='/suggestions/{{suggestionId}}'>review the suggestions.</a>",
 
   "mydspace.item.new-submission-request": "New submission",
 
@@ -3406,13 +3406,19 @@
 
   "reciter.suggestion.source.oaire": "OpenAIRE Graph",
 
+  "reciter.suggestion.source.cti": "CTI Database",
+
   "reciter.suggestion.from.source": "from the ",
 
   "reciter.suggestion.totalScore": "Total Score",
 
+  "reciter.suggestion.type.oaire": "Publications",
 
+  "reciter.suggestion.type.ctiPublication": "Publications",
 
+  "reciter.suggestion.type.ctiProject": "Projects",
 
+  "reciter.suggestion.type.ctiPatent": "Patents",
 
 
   "notification.listelement.badge": "Notification",
@@ -4131,7 +4137,7 @@
 
   "researcher.profile.hide": "Hide",
 
-  "researcher.profile.not.associated": "CTIVitae profile not yet associated",
+  "researcher.profile.not.associated": "CTIVitae profile not yet associated to this user. It is possible to create a new one by clicking \"Create new\" button or by claiming an existing profile from the Directorio de Talento Humano. Profile will be created using data available in PeruCRIS, CTIVItae, Reniec and ORCID platforms",
 
   "researcher.profile.view": "View",
 
@@ -4317,6 +4323,16 @@
   "search.filters.applied.charts.graphpubldatetrl.tab" : "Visualization Demo RTL",
 
   "search.filters.applied.charts.default.title": "Search Output",
+
+  "search.filters.applied.charts.infrastructure.title": "Infrastructure",
+
+  "search.filters.applied.charts.orgunits.title": "Organizations",
+
+  "search.filters.applied.charts.person.title": "People",
+
+  "search.filters.applied.charts.project_funding.title": "Projects",
+
+  "search.filters.applied.charts.researchoutputs.title": "Research Outputs",
 
   "search.filters.applied.charts.RELATION.CvPerson.selectedresearchoutputs.title": "Selected Research Outputs",
 
@@ -4733,6 +4749,34 @@
   "sorting.authorselection.ASC": "Author selection Ascending",
 
   "sorting.authorselection.DESC": "Author selection Descending",
+
+  "sorting.organization.legalName.ASC": "Legal Name Ascending",
+
+  "sorting.organization.legalName.DESC": "Legal Name Descending",
+
+  "sorting.organization.address.addressCountry.ASC": "Country Ascending",
+
+  "sorting.address.addressCountry.DESC": "Country Descending",
+
+  "sorting.organization.address.addressLocality.ASC": "Locality Ascending",
+
+  "sorting.organization.address.addressLocality.DESC": "Locality Descending",
+
+  "sorting.organization.foundingDate.ASC": "Founding Date Ascending",
+
+  "sorting.organization.foundingDate.DESC": "Founding Date Descending",
+
+  "sorting.person.familyName.ASC": "Family Name Ascending",
+
+  "sorting.person.familyName.DESC": "Family Name Descending",
+
+  "sorting.person.givenName.ASC": "Given Name Ascending",
+
+  "sorting.person.givenName.DESC": "Given Name Descending",
+
+  "sorting.person.birthDate.ASC": "Date of Birth Ascending",
+
+  "sorting.person.birthDate.DESC": "Date of Birth Descending",
 
   "sorting.score.ASC": "Relevance Ascending",
 
@@ -5772,7 +5816,7 @@
 
   "cris.box.label.hrprofiles": "Linked Profile",
 
-  "cris.box.label.metrics": "CTIVitae Profiles",
+  "cris.box.label.metrics": "Metrics",
 
   "cris.box.label.selectedprojects": "Selected Projects",
 
