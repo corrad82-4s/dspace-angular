@@ -183,7 +183,7 @@ export class SuggestionsPageComponent implements OnInit {
     this.suggestionService.approveAndImport(this.workspaceItemService, event.suggestion, event.collectionId)
       .subscribe((response: any) => {
         this.suggestionTargetsStateService.dispatchRefreshUserSuggestionsAction();
-        this.notificationService.success('reciter.suggestion.approveAndImport.success');
+        this.notificationService.success(this.translateService.get('reciter.suggestion.approveAndImport.success'));
         this.updatePage();
       });
   }

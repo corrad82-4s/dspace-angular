@@ -4137,7 +4137,7 @@
 
   "researcher.profile.hide": "Hide",
 
-  "researcher.profile.not.associated": "CTIVitae profile not yet associated to this user. It is possible to create a new one by clicking \"Create new\" button or by claiming an existing profile from the Directorio de Talento Humano. Profile will be created using data available in PeruCRIS, Reneic, ORCID and CTIVItae platform",
+  "researcher.profile.not.associated": "CTIVitae profile not yet associated to this user. It is possible to create a new one by clicking \"Create new\" button or by claiming an existing profile from the Directorio de Talento Humano. Profile will be created using data available in PeruCRIS, CTIVItae, Reniec and ORCID platforms",
 
   "researcher.profile.view": "View",
 
