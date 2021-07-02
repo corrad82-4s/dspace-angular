@@ -24,6 +24,7 @@ import { SearchResult } from '../shared/search/search-result.model';
 import { Context } from '../core/shared/context.model';
 import { SortOptions } from '../core/cache/models/sort-options.model';
 import { RouteService } from '../core/services/route.service';
+import {Router} from '@angular/router';
 
 export const MYDSPACE_ROUTE = '/mydspace';
 export const SEARCH_CONFIG_SERVICE: InjectionToken<SearchConfigurationService> = new InjectionToken<SearchConfigurationService>('searchConfigurationService');
@@ -110,7 +111,8 @@ export class MyDSpacePageComponent implements OnInit {
               private sidebarService: SidebarService,
               private windowService: HostWindowService,
               @Inject(SEARCH_CONFIG_SERVICE) public searchConfigService: MyDSpaceConfigurationService,
-              private routeService: RouteService) {
+              private routeService: RouteService,
+              private router: Router) {
     this.isXsOrSm$ = this.windowService.isXsOrSm();
     this.service.setServiceOptions(MyDSpaceResponseParsingService, MyDSpaceRequest);
   }
@@ -205,5 +207,9 @@ export class MyDSpacePageComponent implements OnInit {
       this.sub.unsubscribe();
     }
     this.refreshFilters.complete();
+  }
+
+  toProcesses() {
+    this.router.navigateByUrl('/processes');
   }
 }
